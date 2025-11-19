@@ -1,0 +1,346 @@
+\documentclass[11pt]{article}
+
+% -----------------------------
+% FONT: Times New Roman
+% -----------------------------
+\usepackage{times} % Closest to Times New Roman
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% -----------------------------
+% GEOMETRY & SPACING
+% -----------------------------
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\onehalfspacing{}
+
+% -----------------------------
+% SECTION HEADER SIZE
+% -----------------------------
+\usepackage{titlesec}
+\titleformat{\section}{\normalsize\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\small\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\small\itshape\/}{\thesubsubsection}{1em}{}
+
+% -----------------------------
+% USEFUL PACKAGES
+% -----------------------------
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{amsmath, amssymb}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+
+% -----------------------------
+% HEADERS & FOOTERS
+% -----------------------------
+\usepackage{fancyhdr}
+\setlength{\headheight}{13.6pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Project Outline}
+\fancyhead[R]{\today}
+\fancyfoot[C]{\thepage}
+
+
+% -----------------------------
+% HYPERREF (clickable emails, refs, links)
+% -----------------------------
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+
+
+
+% -----------------------------
+% BIBLIOGRAPHY STYLE
+% -----------------------------
+\bibliographystyle{plain}   % You can change: unsrt, alpha, ieeetr, etc.
+
+% -----------------------------
+% TITLE INFORMATION
+% -----------------------------
+\title{
+    \textbf{Ordinary Differential Equations} \\[0.5em]
+    \large Programming Concepts in Scientific Computing \\
+    Professor: Guillaume Anciaux
+}
+
+\author{
+    Ahmed Rockey Saikia \\ 
+    \texttt{\href{mailto:ahmed.saikia@epfl.ch}{ahmed.saikia@epfl.ch}}
+    \and
+    Andras Horkay \\
+    \texttt{\href{mailto:andras.horkay@epfl.ch}{andras.horkay@epfl.ch}}
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% -----------------------------
+% CONTENT
+% -----------------------------
+\section{Scientific Question}
+This projects aims to write efficient and modular C++ code to solve ordinary differential equations (ODEs) using various numerical methods. The general, non-linear form of an ODE is given by:
+\begin{equation}
+    \frac{dy}{dt} = f(t, y)
+    \label{eq:ode}
+\end{equation}
+where $y$ is the dependent variable, $t$ is the independent variable (often time), and $f(t, y)$ is a given function that defines the relationship between $y$ and $t$. The goal is to implement numerical methods to approximate the solution of such equations over a specified interval. It remains to be seen if an initial value problem (IVP) or a boundary value problem (BVP) will be tackled in this project.
+
+The algorithms that the project will implement will surely include:
+\begin{itemize}
+    \item A basic Forward Euler method (explicit)
+    \item A basic Backward Euler method (implicit)
+    \item Multistep Adams-Bashforth method up to 4 steps (explicit)
+\end{itemize}
+Other advanced methods may be considered based on time and complexity, such as:
+\begin{itemize}
+    \item Runge-Kutta methods (e.g., RK4)
+    \item Backward Differentiation Formulas (BDF)
+    \item Multistep Adams-Moulton method (implicit)
+\end{itemize}
+
+The project is due on \textbf{Friday 12th December 2025 at 12:00}. The various criteria are listed in the project description
+
+\section{Problem Formulation}
+\subsection{Mathematical Formulation}
+The project will focus on solving ordinary differential equations (ODEs) of the form given in Equation\ \ref{eq:ode}. The specific problem formulation will depend on whether an initial value problem (IVP) or a boundary value problem (BVP) is chosen. Apart from the different algorithms definitions, there is not much mathematical basis to be formulated here.
+
+\paragraph{Euler's Forward Method} is summarised in Alg.\ \ref{alg:forward_euler}, as defined in\ \cite{2022Forward}.
+
+\begin{algorithm}
+\caption{Forward Euler Method}\label{alg:forward_euler}
+\begin{algorithmic}[1]
+\STATE{\textbf{Input:} Initial vector $\mathbf{y}_0 \in \mathbb{R}^m$, start time $t_0$, end time $t_{end}$, time step $h$}
+\STATE{\textbf{Output:} Approximate solution vectors $\mathbf{y}_i$ at each time step}
+\STATE{Initialise  $n = (t_{end} - t_0)/h$, $\mathbf{y} = [\,\mathbf{y}_0\,]$, and $t = [\,t_0\,]$}
+\FOR{$i = 0$ to $n-1$}
+    \STATE{$\mathbf{y}_{i+1} = \mathbf{y}_i + h \cdot \mathbf{f}(t_i, \mathbf{y}_i)$}
+    \STATE{$t_{i+1} = t_i + h$}
+    \STATE{Append $\mathbf{y}_{i+1}$ to $\mathbf{y}$ and $t_{i+1}$ to $t$}
+\ENDFOR{}
+\STATE{\textbf{Return} $\mathbf{y}, t$}
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Adams-Bashforth Method} The project will implement Adams-Bashforth methods up to 4 steps. That is, there are four different versions of the method, each using a different number of previous points to estimate the next point. The general formula for the Adams-Bashforth method is given by:
+\begin{equation}
+    y_{n+1} = y_n + h \sum_{j=0}^{k-1} b_j f(t_{n-j}, y_{n-j})
+\end{equation}
+where $k$ is the number of steps (1 to 4 in this case), and $b_j$ are the coefficients specific to each version of the method. The $b_j$ coefficients are chosen in such a way as to obtain the desired order of accuracy for the method. An Adams-Bashforth method with $s$ steps has an order of accuracy of $s$. The coefficients do not need to be derived from scratch, as they are well-documented in numerical analysis literature. The coefficients taken in this project originate from\ \cite{ABmethod}. The first step (1-step) is equivalent to the Forward Euler method, shown in Alg.\ \ref{alg:forward_euler}. The 2-step, 3-step, and 4-step Adams-Bashforth methods are summarised in Algs.\ \ref{alg:adams_bashforth_2},\ \ref{alg:adams_bashforth_3}, and\ \ref{alg:adams_bashforth_4} respectively.
+\begin{algorithm}
+\caption{2-step Adams-Bashforth Method}\label{alg:adams_bashforth_2}
+\begin{algorithmic}[1]
+\STATE{\textbf{Input:} Initial vectors $\mathbf{y}_0, \mathbf{y}_1 \in \mathbb{R}^m$, start time $t_0$, end time $t_{end}$, time step $h$}
+\STATE{\textbf{Output:} Approximate solution vectors $\mathbf{y}_i$ at each time step}
+\STATE{Initialise  $n = (t_{end} - t_0)/h$, $\mathbf{y} = [\,\mathbf{y}_0, \mathbf{y}_1\,]$, and $t = [\,t_0, t_1\,]$}
+\FOR{$i = 1$ to $n-1$}
+    \STATE{$\mathbf{y}_{i+1} = \mathbf{y}_i + \frac{h}{2} \left( 3\mathbf{f}(t_i, \mathbf{y}_i) - \mathbf{f}(t_{i-1}, \mathbf{y}_{i-1}) \right)$}
+    \STATE{$t_{i+1} = t_i + h$}
+    \STATE{Append $\mathbf{y}_{i+1}$ to $\mathbf{y}$ and $t_{i+1}$ to $t$}
+\ENDFOR{}
+\STATE{\textbf{Return} $\mathbf{y}, t$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{3-step Adams-Bashforth Method}\label{alg:adams_bashforth_3}
+\begin{algorithmic}[1]
+\STATE{\textbf{Input:} Initial vectors $\mathbf{y}_0, \mathbf{y}_1, \mathbf{y}_2 \in \mathbb{R}^m$, start time $t_0$, end time $t_{end}$, time step $h$}
+\STATE{\textbf{Output:} Approximate solution vectors $\mathbf{y}_i$ at each time step}
+\STATE{Initialise  $n = (t_{end} - t_0)/h$, $\mathbf{y} = [\,\mathbf{y}_0, \mathbf{y}_1, \mathbf{y}_2\,]$, and $t = [\,t_0, t_1, t_2\,]$}
+\FOR{$i = 2$ to $n-1$}
+    \STATE{$\mathbf{y}_{i+1} = \mathbf{y}_i + \frac{h}{12} \left( 23\mathbf{f}(t_i, \mathbf{y}_i) - 16\mathbf{f}(t_{i-1}, \mathbf{y}_{i-1}) + 5\mathbf{f}(t_{i-2}, \mathbf{y}_{i-2}) \right)$}
+    \STATE{$t_{i+1} = t_i + h$}
+    \STATE{Append $\mathbf{y}_{i+1}$ to $\mathbf{y}$ and $t_{i+1}$ to $t$}
+\ENDFOR{}
+\STATE{\textbf{Return} $\mathbf{y}, t$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{4-step Adams-Bashforth Method}\label{alg:adams_bashforth_4}
+\begin{algorithmic}[1]
+\STATE{\textbf{Input:} Initial vectors $\mathbf{y}_0, \mathbf{y}_1, \mathbf{y}_2, \mathbf{y}_3 \in \mathbb{R}^m$, start time $t_0$, end time $t_{end}$, time step $h$}
+\STATE{\textbf{Output:} Approximate solution vectors $\mathbf{y}_i$ at each time step}
+\STATE{Initialise  $n = (t_{end} - t_0)/h$, $\mathbf{y} = [\,\mathbf{y}_0, \mathbf{y}_1, \mathbf{y}_2, \mathbf{y}_3\,]$, and $t = [\,t_0, t_1, t_2, t_3\,]$}
+\FOR{$i = 3$ to $n-1$}
+    \STATE{$\mathbf{y}_{i+1} = \mathbf{y}_i + \frac{h}{24} \left( 55\mathbf{f}(t_i, \mathbf{y}_i) - 59\mathbf{f}(t_{i-1}, \mathbf{y}_{i-1}) + 37\mathbf{f}(t_{i-2}, \mathbf{y}_{i-2}) - 9\mathbf{f}(t_{i-3}, \mathbf{y}_{i-3}) \right)$}
+    \STATE{$t_{i+1} = t_i + h$}
+    \STATE{Append $\mathbf{y}_{i+1}$ to $\mathbf{y}$ and $t_{i+1}$ to $t$}
+\ENDFOR{}
+\STATE{\textbf{Return} $\mathbf{y}, t$}
+\end{algorithmic}
+\end{algorithm}
+Notice that the $s\geq 2$ methods require $s-1$ initial values to start the iteration. These initial values can be obtained using a single-step method like the Forward Euler method or any other suitable method, depending on the desired accuracy. For highest accuracy, it is suggested to use a RK4 method to generate these initial values, as it is a 4th order method.
+
+\paragraph{Backward Euler Method} is an implicit method, which means that at each time step, a root-finding problem must be solved to find the next value. The method is summarised in Alg.\ \ref{alg:backward_euler}, as defined in\ \cite{2022Backward}.
+\begin{algorithm}
+\caption{Backward Euler Method}\label{alg:backward_euler}
+\begin{algorithmic}[1]
+\STATE{\textbf{Input:} Initial vector $\mathbf{y}_0 \in \mathbb{R}^m$, start time $t_0$, end time $t_{end}$, time step $h$}
+\STATE\textbf{Output:} Approximate solution vectors $\mathbf{y}_i$ at each time step
+\STATE{Initialise  $n = (t_{end} - t_0)/h$, $\mathbf{y} = [\,\mathbf{y}_0\,]$, and $t = [\,t_0\,]$}
+\FOR{$i = 0$ to $n-1$}
+    \STATE{Solve the equation $\mathbf{y}_{i+1} - \mathbf{y}_i - h \cdot \mathbf{f}(t_{i+1}, \mathbf{y}_{i+1}) = 0$ for $\mathbf{y}_{i+1}$}
+    \STATE{$t_{i+1} = t_i + h$}
+    \STATE{Append $\mathbf{y}_{i+1}$ to $\mathbf{y}$ and $t_{i+1}$ to $t$}
+\ENDFOR{}
+\STATE{\textbf{Return} $\mathbf{y}, t$}
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Runge-Kutta Methods} may also be implemented, with the most common being the classical 4th-order Runge-Kutta method (RK4). Without creating too much difficulty for ourselves, we may only implement the RK4 method, but all RK algorithms up to order 4 are included below, see Algs.\ \ref{alg:rk2},\ \ref{alg:rk3}, and\ \ref{alg:rk4} (order 1 is simply the Forward Euler method). The algorithms were taken from\ \cite{RKmethods}.
+\begin{algorithm}
+\caption{2nd-order Runge-Kutta Method (RK2)}\label{alg:rk2}
+\begin{algorithmic}[1]
+\STATE{\textbf{Input:} Initial vector $\mathbf{y}_0 \in \mathbb{R}^m$, start time $t_0$, end time $t_{end}$, time step $h$}
+\STATE{\textbf{Output:} Approximate solution vectors $\mathbf{y}_i$ at each time step}
+\STATE{Initialise  $n = (t_{end} - t_0)/h$, $\mathbf{y} = [\,\mathbf{y}_0\,]$, and $t = [\,t_0\,]$}
+\FOR{$i = 0$ to $n-1$}
+    \STATE{$k_1 = h \cdot \mathbf{f}(t_i, \mathbf{y}_i)$}
+    \STATE{$k_2 = h \cdot \mathbf{f}(t_i + h, \mathbf{y}_i + k_1)$}
+    \STATE{$\mathbf{y}_{i+1} = \mathbf{y}_i + \frac{1}{2}(k_1 + k_2)$}
+    \STATE{$t_{i+1} = t_i + h$}
+    \STATE{Append $\mathbf{y}_{i+1}$ to $\mathbf{y}$ and $t_{i+1}$ to $t$}
+\ENDFOR{}
+\STATE{\textbf{Return} $\mathbf{y}, t$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{3rd-order Runge-Kutta Method (RK3)}\label{alg:rk3}
+\begin{algorithmic}[1]
+\STATE{\textbf{Input:} Initial vector $\mathbf{y}_0 \in \mathbb{R}^m$, start time $t_0$, end time $t_{end}$, time step $h$}
+\STATE{\textbf{Output:} Approximate solution vectors $\mathbf{y}_i$ at each time step}
+\STATE{Initialise  $n = (t_{end} - t_0)/h$, $\mathbf{y} = [\,\mathbf{y}_0\,]$, and $t = [\,t_0\,]$}
+\FOR{$i = 0$ to $n-1$}
+    \STATE{$k_1 = h \cdot \mathbf{f}(t_i, \mathbf{y}_i)$}
+    \STATE{$k_2 = h \cdot \mathbf{f}(t_i + \frac{h}{2}, \mathbf{y}_i + \frac{1}{2}k_1)$}
+    \STATE{$k_3 = h \cdot \mathbf{f}(t_i + h, \mathbf{y}_i - k_1 + 2k_2)$}
+    \STATE{$\mathbf{y}_{i+1} = \mathbf{y}_i + \frac{1}{6}(k_1 + 4k_2 + k_3)$}
+    \STATE{$t_{i+1} = t_i + h$}
+    \STATE{Append $\mathbf{y}_{i+1}$ to $\mathbf{y}$ and $t_{i+1}$ to $t$}
+\ENDFOR{}
+\STATE{\textbf{Return} $\mathbf{y}, t$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{4th-order Runge-Kutta Method (RK4)}\label{alg:rk4}
+\begin{algorithmic}[1]
+\STATE{\textbf{Input:} Initial vector $\mathbf{y}_0 \in \mathbb{R}^m$, start time $t_0$, end time $t_{end}$, time step $h$}
+\STATE{\textbf{Output:} Approximate solution vectors $\mathbf{y}_i$ at each time step}
+\STATE{Initialise  $n = (t_{end} - t_0)/h$, $\mathbf{y} = [\,\mathbf{y}_0\,]$, and $t = [\,t_0\,]$}
+\FOR{$i = 0$ to $n-1$}
+    \STATE{$k_1 = h \cdot \mathbf{f}(t_i, \mathbf{y}_i)$}
+    \STATE{$k_2 = h \cdot \mathbf{f}(t_i + \frac{h}{2}, \mathbf{y}_i + \frac{1}{2}k_1)$}
+    \STATE{$k_3 = h \cdot \mathbf{f}(t_i + \frac{h}{2}, \mathbf{y}_i + \frac{1}{2}k_2)$}
+    \STATE{$k_4 = h \cdot \mathbf{f}(t_i + h, \mathbf{y}_i + k_3)$}
+    \STATE{$\mathbf{y}_{i+1} = \mathbf{y}_i + \frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$}
+    \STATE{$t_{i+1} = t_i + h$}
+    \STATE{Append $\mathbf{y}_{i+1}$ to $\mathbf{y}$ and $t_{i+1}$ to $t$}
+\ENDFOR{}
+\STATE{\textbf{Return} $\mathbf{y}, t$}
+\end{algorithmic}
+\end{algorithm}
+The shortcoming of RK methods is that the value of the function $f$ needs to be evaluated multiple times per time step, which can be computationally expensive for complex functions. However, they offer higher accuracy and stability compared to single-step methods like Euler's method.
+
+\newpage
+\subsection{Identification of Inputs, Outputs, and Data Structures}
+A key problem in the implementation of the project and the algorithms is that whenever we read an input, we must convert it to the correct data structure. All algorithms take as input an initial vector $\mathbf{y}_0 \in \mathbb{R}^m$ (or multiple initial vectors for multistep methods), start time $t_0$, end time $t_{end}$, and time step $h$. The output of all algorithms is a set of approximate solution vectors $\mathbf{y}_i$ at each time step, along with the corresponding time values $t_i$. The chosen data structures are as follows:
+\begin{itemize}
+    \item Vectors $\mathbf{y}_i$:
+    \item Time values $t_i$:
+    \item Function $\mathbf{f(t, y)}$:
+    \item Other parameters (e.g., time step $h$, start time $t_0$, end time $t_{end}$):
+\end{itemize}
+
+We need to then decide what are the possible input formats for the user to provide the necessary data. Possible formats include:
+\begin{itemize}
+    \item CSV files
+    \item txt files
+    \item CMD line arguments
+    \item From a web interface (if time permits)?
+\end{itemize}
+
+Finally, we need to decide how to visualise the output data. Possible formats include:
+\begin{itemize}
+    \item CSV files
+    \item txt files
+    \item CMD line output
+    \item Plots using a library like Gnuplot in C++ (only for 1D ODEs)?
+    \item Output to a web interface (if time permits)?
+\end{itemize}
+
+\newpage
+\section{Algorithms Description}
+Here is a brief description of the various tasks and milestones that are planned for the project, along with ideas for code structure.
+
+\paragraph{Task 1: Decide data structures}
+Evidently, the first task is to decide on the data structures to be used for storing vectors, time values, and functions. This will involve choosing appropriate C++ data types or libraries (e.g., STL vectors, Eigen library, etc.) that can efficiently handle the required operations. It also needs to be decided how the function $f(t, y)$ will be represented in the code. Options include using function pointers, functors, or lambda functions.
+
+\paragraph{Task 2: Handle input formats}
+This task involves implementing functionality to read input data from various formats. The code should be able to parse CSV files, txt files, and command line arguments to extract the initial conditions, time parameters, and function definitions. The extraction of the data must then convert the data into the chosen data structures, as to simplify all subsequent operations.
+
+\paragraph{Task 3: Handle the solver class and algorithms}
+This task involves creating a solver class that encapsulates the various numerical methods for solving ODEs. The class should have as subclass the different algorithms (Forward Euler, Backward Euler, Adams-Bashforth, Runge-Kutta, etc.) as methods. Each method should implement the corresponding algorithm as described in the problem formulation section. The solver class should also handle the iteration over time steps and store the results in the chosen data structures.
+
+This task may also involve implementing error handling and stability checks to ensure that the numerical methods are applied correctly and efficiently.
+
+\paragraph{Task 4: Handle output formats and visualisation}
+Once the numerical methods are implemented and validated, the next task is to handle the output formats. This involves writing the results to CSV files, txt files, or displaying them on the command line. If time permits, we may also implement visualisation of the results using a plotting library like Gnuplot for 1D ODEs. This will help in better understanding the behaviour of the solutions over time. 
+
+\paragraph{Task 5: Create tests and validation cases}
+The test cases will be created to validate the correctness and accuracy of the implemented algorithms. This may involve comparing the numerical solutions obtained from the code with known analytical solutions for specific ODEs. Additionally, convergence tests can be performed by varying the time step $h$ and observing how the solution changes. We should also consider edge cases (and error cases), such as very small or very large time steps, to ensure the robustness of the implementation.
+
+\subsection{Data Structures}
+The data structure we use is shown in Fig.\ \ref{fig:data_class_diagram}. This creates an ODE, defined by its function $f(t, y)$, initial condition(s), and time parameters. The data structure also includes methods to evaluate the function at given points and to retrieve the initial conditions and time parameters.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{data_class_diagram.pdf}
+    \caption{Class diagram for data structure.}\label{fig:data_class_diagram}
+\end{figure}
+
+\subsection{Input Formats}
+We need to create a parent class called \texttt{Reader} that will handle all input formats. This class will have subclasses for each input format, such as \texttt{CSVReader}, \texttt{TXTReader}, and \texttt{CMDReader}. Each subclass will implement methods to read the specific format and convert the data into the chosen data structures. Fig.\ \ref{fig:input_class_diagram} shows a simple class diagram for the input handling structure.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{input_class_diagram.pdf}
+    \caption{Class diagram for input handling structure.}\label{fig:input_class_diagram}
+\end{figure}
+\subsection{Solver Class}
+Again, we need to create a parent class called \texttt{Solver} that will handle all numerical methods. We can further split this into two subclasses: \texttt{ExplicitSolver} and \texttt{ImplicitSolver}. Each subclass will have methods for the specific algorithms, such as \texttt{ForwardEuler}, \texttt{AdamsBashforth}, and \newline
+\texttt{BackwardEuler}. Fig.\ \ref{fig:solver_class_diagram} shows a simple class diagram for the solver structure. The reason for splitting into explicit and implicit solvers is that implicit methods often require solving equations at each time step, which may involve additional data structures and methods (e.g., for root-finding).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{solver_class_diagram.pdf}
+    \caption{Class diagram for solver structure.}\label{fig:solver_class_diagram}
+\end{figure}
+
+\subsection{Output Formats}
+Similar to the input handling, we need to create a parent class called \texttt{Writer} that will handle all output formats. This class will have subclasses for each output format, such as \texttt{CSVWriter}, \texttt{TXTWriter}, and \texttt{CMDWriter}. Each subclass will implement methods to write the results in the specific format. Fig.\ \ref{fig:output_class_diagram} shows a simple class diagram for the output handling structure.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{output_class_diagram.pdf}
+    \caption{Class diagram for output handling structure.}\label{fig:output_class_diagram}
+\end{figure}
+
+\section{Implementation Details}
+We will be hosting on Gitlab, link unknown for the time being. We need to decide on a coding style, and find out if we can use any libraries (e.g., Eigen for linear algebra, Gnuplot for plotting, etc.). We will then need to structure the repository with folders for source code, tests, documentation, and examples. We will also set up a build system (e.g., CMake) to manage the compilation process.
+
+% -----------------------------
+% REFERENCES
+% -----------------------------
+\bibliography{references} % uses references.bib
+
+\end{document}

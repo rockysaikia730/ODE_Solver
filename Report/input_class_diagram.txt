@@ -1,0 +1,26 @@
+site: https://codeskeleton-nyvvxr7lzakw9hvk3r5xya.streamlit.app/
+class Reader
+  protected std::string filename;
+  protected char sep;
+  public pure virtual data Read();
+  public Reader(std::string, char);
+  public std::string & getFileName();
+  public void setFileName();
+  public char & getSeparator();
+  public void setSeparator();
+  public pure virtual bool checkFileName();
+  public bool checkFileExist();
+
+
+class CSVReader(Reader)
+  public virtual data Read();
+  public virtual bool checkFileName();
+
+class TXTReader(Reader)
+  public virtual data Read();
+  public virtual bool checkFileName();
+
+class CMDReader(Reader)
+  public virtual data Read();
+  public virtual bool checkFileName();
+

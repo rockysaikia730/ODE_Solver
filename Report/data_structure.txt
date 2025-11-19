@@ -1,0 +1,22 @@
+site: https://codeskeleton-nyvvxr7lzakw9hvk3r5xya.streamlit.app/
+
+
+class ODE
+  private double t0;
+  private StateType y0;
+  private StateType (*f)(double, const StateType &);
+  private std::vector<StateType> data;
+  private StateType domain[2];
+  
+
+  public void setTimeIn(double t);
+  public void setCondIn(const std::vector<double> &input);
+  public void setFunction(StateType (*func)(double, const StateType &));
+  public void setDomain(StateType a, StateType b);
+
+  public double getTimeIn() const;
+  public StateType getCondIn() const;
+  public StateType (*getFunction() const)(double, const StateType &);
+  public std::array<StateType, 2> getDomain() const;
+  
+

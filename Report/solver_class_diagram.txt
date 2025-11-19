@@ -1,0 +1,51 @@
+site: https://codeskeleton-nyvvxr7lzakw9hvk3r5xya.streamlit.app/
+
+template <typename StateType>
+
+class Solver
+  protected double t0;
+  protected double tf;
+  protected int nsteps;
+  protected double dt;
+  protected double tol;
+  protected int maxsteps;
+  protected std::shared_ptr<ODE<StateType>> ode;
+  protected std::vector<StateType> solution;
+
+  public void setTimeIn(double t);
+  public void setTimeFin(double t);
+  public void setNsteps(int nsteps);
+  public void setDt(double dt);
+  public void setTol(double tol);
+  public void setMaxsteps(double maxsteps);
+
+  public pure virtual void Solve();
+  public pure virtual void Step();
+
+class ExplicitSolver(Solver)
+
+class RKSolver(ExplicitSolver)
+  public virtual void Solve();
+  public virtual void Step();
+
+class ForwardEulerSolver(ExplicitSolver)
+  public virtual void Solve();
+  public virtual void Step();
+
+class AdBaSolver(ExplicitSolver)
+  public virtual void Solve();
+  public virtual void Step();
+
+
+class ImplicitSolver(Solver)
+  public pure virtual StateType findRoot();
+  
+class BackwardEulerSolver(ImplicitSolver)
+  public virtual StateType findRoot();
+  public virtual void Solve();
+  public virtual void Step();
+
+class CrankNicholsonSolver(ImplicitSolver)
+  public virtual StateType findRoot();
+  public virtual void Solve();
+  public virtual void Step();
