@@ -35,6 +35,7 @@
 \usepackage{url}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage[most]{tcolorbox} % for the comment box
 
 
 % -----------------------------
@@ -48,7 +49,19 @@
 \fancyhead[R]{\today}
 \fancyfoot[C]{\thepage}
 
-
+\newtcolorbox{commentbox}[1][]{%
+  enhanced,
+  breakable,
+  colback=white,
+  colframe=gray,
+  coltitle=black,
+  fonttitle=\bfseries,
+  title=#1, % shows a title if provided; no title if left empty
+  boxed title style={colback=white, colframe=gray},
+  % tweak spacing if you like:
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  attach boxed title to top left={yshift*=-1mm, xshift=2mm},
+}
 % -----------------------------
 % HYPERREF (clickable emails, refs, links)
 % -----------------------------
@@ -303,12 +316,20 @@ Once the numerical methods are implemented and validated, the next task is to ha
 The test cases will be created to validate the correctness and accuracy of the implemented algorithms. This may involve comparing the numerical solutions obtained from the code with known analytical solutions for specific ODEs. Additionally, convergence tests can be performed by varying the time step $h$ and observing how the solution changes. We should also consider edge cases (and error cases), such as very small or very large time steps, to ensure the robustness of the implementation.
 
 \subsection{Data Structures}
-The data structure we use is shown in Fig.\ \ref{fig:data_class_diagram}. This creates an ODE, defined by its function $f(t, y)$, initial condition(s), and time parameters. The data structure also includes methods to evaluate the function at given points and to retrieve the initial conditions and time parameters.
+The project will create a class called \texttt{ODE} which will encapsulate a general ODE problem. In a general ODE, we have a function $\mathbf{f}(t, \mathbf{y})$ that defines the relationship between the dependent variable $\mathbf{y}$ and the independent variable $t$. Time is generally a \texttt{double}, while $\mathbf{y}$ is a vector which should be able to contain \texttt{double}, \texttt{Complex}, and other types for which ODE problems are generally defined. We therefore need to use templates to be able to handle different data types. Similarly, when solving an ODE numerically, we do not need to actually have access to the function $\mathbf{f}$ itself, but rather a list of its evaluations at different points in time and space. I found there is a neat way in doing this by using \texttt{std::variant} from the C++ STL library, which allows us to store different types in a single variable. At first, I will allow the function to be precomputed values tored at different time steps, and also allow functors to be passed. This decision is made so that we can handle the two dataformats: precomputed values from input files, and functions defined in the code itself. Furthermore, functors allow templating and therefore different data types. The decision not to use function pointers or lambda functions is made because they do not allow templating, and therefore we would be limited to only one data type (e.g., \texttt{double}). It could be included later, that we can also pass function pointers or lambda functions, but for now, functors should suffice. Apart from what is mentioned above, an \texttt{ODE} is associated to an initial value $\mathbf{y}_0$, and a start time $t_0$. 
+
+We need to template the class itself then, to allow the different data types for $\mathbf{y}$ and for the function evaluations. This is achieved by defining the class as \texttt{template<typename T, typename F>} where \texttt{T} is the data type for $\mathbf{y}$ (e.g., \texttt{double}, \texttt{Complex}, etc.) and \texttt{F} is the data type for the function evaluations (e.g., \texttt{std::vector<T>}, functor, etc.).
+
+I would argue that an \texttt{ODE} should not have an end time $t_{end}$ or a time step $h$, as these are properties of the numerical solver rather than the ODE itself. Therefore, these parameters will be passed to the solver class instead. The solver class will be able to take an \texttt{ODE} object as input, along with the time parameters, and will then perform the numerical solution accordingly, but more on this later. The class diagram for the \texttt{ODE} class is shown in Fig.\ \ref{fig:ode_class_diagram}.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{data_class_diagram.pdf}
-    \caption{Class diagram for data structure.}\label{fig:data_class_diagram}
+    \caption{Class diagram for the ODE class.}\label{fig:ode_class_diagram}
 \end{figure}
+
+\begin{commentbox}[Questions]
+    I was thinking that I can create a constructor that takes as input a function, then create a sort of wrapper that turns the function into a functor, so I don't need an extra condition in my std::variant. Is this a good idea? Or should I just allow functions to be passed as well, making my variant have three options? 
+\end{commentbox}
 
 \subsection{Input Formats}
 We need to create a parent class called \texttt{Reader} that will handle all input formats. This class will have subclasses for each input format, such as \texttt{CSVReader}, \texttt{TXTReader}, and \texttt{CMDReader}. Each subclass will implement methods to read the specific format and convert the data into the chosen data structures. Fig.\ \ref{fig:input_class_diagram} shows a simple class diagram for the input handling structure.
@@ -317,15 +338,28 @@ We need to create a parent class called \texttt{Reader} that will handle all inp
     \includegraphics[width=0.6\textwidth]{input_class_diagram.pdf}
     \caption{Class diagram for input handling structure.}\label{fig:input_class_diagram}
 \end{figure}
+
 \subsection{Solver Class}
 Again, we need to create a parent class called \texttt{Solver} that will handle all numerical methods. We can further split this into two subclasses: \texttt{ExplicitSolver} and \texttt{ImplicitSolver}. Each subclass will have methods for the specific algorithms, such as \texttt{ForwardEuler}, \texttt{AdamsBashforth}, and \newline
 \texttt{BackwardEuler}. Fig.\ \ref{fig:solver_class_diagram} shows a simple class diagram for the solver structure. The reason for splitting into explicit and implicit solvers is that implicit methods often require solving equations at each time step, which may involve additional data structures and methods (e.g., for root-finding).
+
+In the solver class, we have to hold a reference to an \texttt{ODE} object, as well as the time parameters $t_{end}$, $h$ and other parameters like tolerances for implicit methods, max iteration numbers for root-finding, etc. A difficulty arises mainly when thinking of root-finding algorithms for the implic methods. We need to also know the derivative of the function $\mathbf{f}$ with respect to $\mathbf{y}$, i.e., the Jacobian matrix $\frac{\partial \mathbf{f}}{\partial \mathbf{y}}$. This is necessary for methods like Newton-Raphson, which require the Jacobian to update the solution iteratively. Therefore, we may need to extend the \texttt{ODE} class to include a method for computing the Jacobian, or we may need to pass it as an additional functor or precomputed values.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{solver_class_diagram.pdf}
     \caption{Class diagram for solver structure.}\label{fig:solver_class_diagram}
 \end{figure}
+
+\begin{commentbox}[Questions]
+    How should we handle the Jacobian problem for implicit methods? 
+    \begin{itemize}
+        \item Should we extend the \texttt{ODE} class to include a method for computing the Jacobian?
+        \item Should we pass the Jacobian as an additional functor or precomputed values? both?
+        \item Should it be an extra argument simply in the solver methods for implicit methods, or should it be a property of the solver class itself?
+    \end{itemize}
+    My initial plan is to pass it as a class attribute to the implicit solver class, as a std::variant that can either be precomputed values or a functor. This way, we can handle both cases where the Jacobian is known in advance or needs to be computed. However, what if someone resets the ODE in the solver? Then the Jacobian may no longer be valid. Should we then make the Jacobian a property of the ODE class itself? But then, what if someone wants to use different Jacobians for the same ODE (e.g., approximated vs exact)?
+\end{commentbox}
 
 \subsection{Output Formats}
 Similar to the input handling, we need to create a parent class called \texttt{Writer} that will handle all output formats. This class will have subclasses for each output format, such as \texttt{CSVWriter}, \texttt{TXTWriter}, and \texttt{CMDWriter}. Each subclass will implement methods to write the results in the specific format. Fig.\ \ref{fig:output_class_diagram} shows a simple class diagram for the output handling structure.
@@ -336,7 +370,7 @@ Similar to the input handling, we need to create a parent class called \texttt{W
 \end{figure}
 
 \section{Implementation Details}
-We will be hosting on Gitlab, link unknown for the time being. We need to decide on a coding style, and find out if we can use any libraries (e.g., Eigen for linear algebra, Gnuplot for plotting, etc.). We will then need to structure the repository with folders for source code, tests, documentation, and examples. We will also set up a build system (e.g., CMake) to manage the compilation process.
+We will be hosting on Github, link unknown for the time being. We need to decide on a coding style, and find out if we can use any libraries (e.g., Eigen for linear algebra, Gnuplot for plotting, etc.). We will then need to structure the repository with folders for source code, tests, documentation, and examples. We will also set up a build system (e.g., CMake) to manage the compilation process.
 
 % -----------------------------
 % REFERENCES
