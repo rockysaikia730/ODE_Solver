@@ -5,7 +5,6 @@
 #ifndef CODES_ODEFUNCTION_H
 #define CODES_ODEFUNCTION_H
 #include "ODE.h"
-#include "Reader.h"
 #include <vector>
 #include <functional>
 
@@ -15,8 +14,12 @@ class ODEFunction: public ODE<T> {
     using Function = std::function<State(double, const State& )>;
 public:
     //ODEFunction(const Reader & );
-    ODEFunction(double t0, double y0, std::function<State(double t, const State& y)>);
-    virtual State evaluate(double t, const State& y) const;
+
+    virtual ~ODEFunction() = default;
+    ODEFunction(double t0, const State& y0, const Function& f, const std::string& name);
+    ODEFunction(double t0, const T& y0, const Function& f, const std::string& name);
+    virtual State evaluate(double t, const State& y) const override;
+    virtual State evaluate(double t, const T& y) const override;
 private:
     Function rhs;
 };

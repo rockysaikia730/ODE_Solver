@@ -73,7 +73,9 @@ class ODE
 
 class ODEFunction(ODE)
   public ODEFunction(const Reader & );
+  public ODEFunction(double t0, double y0, std::function<State(double, State)>);
   public virtual State evaluate() const;
+  private 
 
 class ODEFunctor(ODE)
   public ODEFunctor(const Reader & );
