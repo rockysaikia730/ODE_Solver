@@ -1,22 +1,87 @@
 site: https://codeskeleton-nyvvxr7lzakw9hvk3r5xya.streamlit.app/
 
+struct TablePoint {
+    double t;
+    State  y;
+    State  f;
+  };
 
+/////////////////////////////////////////////////////////////
+template<typename T, typename Func>
 class ODE
+  using State = std::vector<T>;
   private double t0;
-  private StateType y0;
-  private StateType (*f)(double, const StateType &);
-  private std::vector<StateType> data;
-  private StateType domain[2];
+  private State y0;
+  private std::variant<Func, std::vector<TablePoint>> function;
+  //private State domain[2];
   
+  public ODE(const std::vector<TablePoint>& table);
+  public ODE(const Func& f);
 
   public void setTimeIn(double t);
-  public void setCondIn(const std::vector<double> &input);
-  public void setFunction(StateType (*func)(double, const StateType &));
-  public void setDomain(StateType a, StateType b);
+  public void setCondIn(const State &input);
+  //public void setDomain(State a, State b);
+  public void setFunctor(const Func& functor);
+  public setTable(const std::vector<TablePoint>& table)
+  
 
   public double getTimeIn() const;
-  public StateType getCondIn() const;
-  public StateType (*getFunction() const)(double, const StateType &);
-  public std::array<StateType, 2> getDomain() const;
+  public State getCondIn() const;
+  //public std::array<State, 2> getDomain() const;
+  public const Func& getFunctor() const;
+  public const std::vector<TablePoint>& getTable() const;
+  public bool isTable() const;
+  public bool isFunctor() const;
+  public evaluate(double t, const State & y) const;
+
+/////////////////////////////////////////////////////////////
+class ODE
+  using State = std::vector<T>;
+  private double t0;
+  private State y0;
+  private Func functor;
+  private std::vector<TablePoint> table;
   
+  public ODE(const std::vector<TablePoint>& table);
+  public ODE(const Func& f);
+
+  public void setTimeIn(double t);
+  public void setCondIn(const State &input);
+  public void setFunctor(const Func& functor);
+  public setTable(const std::vector<TablePoint>& table)
+  
+
+  public double getTimeIn() const;
+  public State getCondIn() const;
+  public const Func& getFunctor() const;
+  public const std::vector<TablePoint>& getTable() const;
+  public bool isTable() const;
+  public bool isFunctor() const;
+  public evaluate(double t, const State & y) const;
+
+/////////////////////////////////////////////////////////////
+class ODE
+  private double t0;
+  private State y0;
+  
+  public virtual ~ODE();
+  public void setTimeIn(double t);
+  public void setCondIn(const State &input);
+  public double getTimeIn() const;
+  public State getCondIn() const;
+  public pure virtual State evaluate() const;
+
+class ODEFunction(ODE)
+  public ODEFunction(const Reader & );
+  public virtual State evaluate() const;
+
+class ODEFunctor(ODE)
+  public ODEFunctor(const Reader & );
+  public virtual State evaluate() const;
+
+class ODETable(ODE)
+  public ODETable(const Reader & );
+  public virtual State evaluate() const;
+  
+
 
