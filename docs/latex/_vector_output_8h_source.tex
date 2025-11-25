@@ -1,0 +1,26 @@
+\doxysection{Vector\+Output.\+h}
+\hypertarget{_vector_output_8h_source}{}\label{_vector_output_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/VectorOutput.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/VectorOutput.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ andra\ on\ 21/11/2025.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ CODES\_VECTOROUTPUT\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ CODES\_VECTOROUTPUT\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00011\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ std::vector<T>\&\ vec)\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ vec.size();\ ++i)\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ os\ <<\ vec[i];}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ vec.size()\ -\/\ 1)\ os\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+\DoxyCodeLine{00017\ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00019\ \}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//CODES\_VECTOROUTPUT\_H}}
+
+\end{DoxyCode}
