@@ -7,6 +7,7 @@ doxygen ../docs/Doxyfile
 
 # For compiling and generating the Doxygen documentation
 ```bash
+mkdir build
 cd build
 cmake ..
 make
