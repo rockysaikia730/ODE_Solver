@@ -2,7 +2,8 @@
 
 # For executing only the Doxyfile
 ```bash
-doxygen ../docs/Doxyfile
+cd docs
+doxygen
 ```
 
 # For compiling and generating the Doxygen documentation
