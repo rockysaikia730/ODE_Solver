@@ -47,9 +47,11 @@ const std\+::vector$<$ \mbox{\hyperlink{struct_o_d_e_table_1_1_table_entry}{Tabl
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_o_d_e}{ODE$<$ T $>$}}}
 \begin{DoxyCompactItemize}
 \item 
-void {\bfseries set\+T0} (double in\+Time)
+void {\bfseries set\+T0} (const double in\+Time)
 \item 
-void {\bfseries set\+Y0} (double in\+Y0)
+void {\bfseries set\+Y0} (const State \&in\+Y0)
+\item 
+void {\bfseries set\+Y0} (const T \&in\+Y0)
 \item 
 void {\bfseries set\+Name} (const std\+::string \&in\+Name)
 \item 

@@ -1,0 +1,81 @@
+\doxysection{ode\+\_\+solver.\+h}
+\hypertarget{ode__solver_8h_source}{}\label{ode__solver_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/ode\_solver.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/ode\_solver.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CODES\_ODE\_SOLVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CODES\_ODE\_SOLVER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}ODE.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }OdeSolver\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{using\ }State\ =\ std::vector<T>;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~OdeSolver()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Step(\textcolor{keywordtype}{double}\ current\_time,\ \textcolor{keyword}{const}\ State\&\ current\_state)\ =\ 0;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ SetStartTime(\textcolor{keywordtype}{double}\ start\_time)\ \{start\_time\_\ =\ start\_time;\}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ SetEndTime(\textcolor{keywordtype}{double}\ end\_time)\ \{end\_time\_\ =\ end\_time;\}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ SetStepSize(\textcolor{keywordtype}{double}\ step\_size)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ step\_size\_\ =\ step\_size;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ num\_of\_steps\_\ =\ std::ceil((end\_time\_\ -\/\ start\_time\_)/step\_size\_);}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ SetNumOfSteps(\textcolor{keywordtype}{int}\ num\_of\_steps)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ num\_of\_steps\_\ =\ num\_of\_steps;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ step\_size\_\ =\ (end\_time\_\ -\/\ start\_time\_)/num\_of\_steps\_;}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{double}\ GetStartTime()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ start\_time\_;\}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{double}\ GetEndTime()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ end\_time\_;\}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ GetStepSize()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ step\_size\_;\}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ GetNumOfSteps()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ num\_of\_steps\_;\}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<State>\&\ GetSolution()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ solutions\_;\}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ GetTimeHistory()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ times\_;\}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Solve()\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ current\_time\ =\ start\_time\_;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ State\ current\_state\ =\ ode\_.getCondIn();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ solutions\_.clear();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ solutions\_.push\_back(current\_state);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ times\_.clear();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ times\_.push\_back(current\_time);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ i\ =\ 0;\ i\ <\ num\_of\_steps\_;\ i++)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ current\_state\ =\ Step(current\_time,\ current\_state);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ current\_time\ +=\ step\_size\_;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ solutions\_.push\_back(current\_state);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ times\_.push\_back(current\_time);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ OdeSolver(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_o_d_e}{ODE<T>}}\&\ ode,\ \textcolor{keywordtype}{double}\ start\_time,\ \textcolor{keywordtype}{double}\ end\_time,\ \ \textcolor{keywordtype}{int}\ num\_of\_steps\ =\ 1)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ :\ start\_time\_(start\_time),}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ end\_time\_(end\_time),}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ num\_of\_steps\_(num\_of\_steps),}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ ode\_(ode)\ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(num\_of\_steps\_\ >\ 0)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ step\_size\_\ =\ (end\_time\_\ -\/\ start\_time\_)/num\_of\_steps\_;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ step\_size\_\ =\ 0.01;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ num\_of\_steps\_\ =\ std::ceil((end\_time\_\ -\/\ start\_time\_)/step\_size\_);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{double}\ start\_time\_;}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{double}\ end\_time\_;}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_of\_steps\_;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{double}\ step\_size\_;}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_o_d_e}{ODE<T>}}\&\ ode\_;}
+\DoxyCodeLine{00079\ \ \ \ \ std::vector<State>\ solutions\_;}
+\DoxyCodeLine{00080\ \ \ \ \ std::vector<double>\ times\_;}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

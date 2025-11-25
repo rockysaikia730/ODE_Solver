@@ -1,0 +1,104 @@
+\doxysection{Ode\+Solver\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_ode_solver}{}\label{class_ode_solver}\index{OdeSolver$<$ T $>$@{OdeSolver$<$ T $>$}}
+
+
+Abstract base class for Ordinary Differential Equation (\doxylink{class_o_d_e}{ODE}) solvers.  
+
+
+
+
+{\ttfamily \#include $<$ode\+\_\+solver.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ode_solver_ac178f280a3d59ca4ad1ff57807d5e834}\label{class_ode_solver_ac178f280a3d59ca4ad1ff57807d5e834} 
+using {\bfseries State} = std\+::vector$<$T$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ode_solver_a65a43430b38c588f1ea87ad24432298f}\label{class_ode_solver_a65a43430b38c588f1ea87ad24432298f} 
+virtual void {\bfseries Step} (double current\+\_\+time, const State \&current\+\_\+state)=0
+\item 
+\Hypertarget{class_ode_solver_a38fda1823b656805cf9d9110b6f1bae2}\label{class_ode_solver_a38fda1823b656805cf9d9110b6f1bae2} 
+void {\bfseries Set\+Start\+Time} (double start\+\_\+time)
+\item 
+\Hypertarget{class_ode_solver_a44b801f0d7bd5c0559048e8c4203c20c}\label{class_ode_solver_a44b801f0d7bd5c0559048e8c4203c20c} 
+void {\bfseries Set\+End\+Time} (double end\+\_\+time)
+\item 
+\Hypertarget{class_ode_solver_a85a9e0cb1ada20d3741428662751f2f0}\label{class_ode_solver_a85a9e0cb1ada20d3741428662751f2f0} 
+void {\bfseries Set\+Step\+Size} (double step\+\_\+size)
+\item 
+\Hypertarget{class_ode_solver_ab81c5a3ef97ae2aa13ed029a0f0f51ba}\label{class_ode_solver_ab81c5a3ef97ae2aa13ed029a0f0f51ba} 
+void {\bfseries Set\+Num\+Of\+Steps} (int num\+\_\+of\+\_\+steps)
+\item 
+\Hypertarget{class_ode_solver_adf22937046d8e9d8e722c4cbe174d7fc}\label{class_ode_solver_adf22937046d8e9d8e722c4cbe174d7fc} 
+double {\bfseries Get\+Start\+Time} () const
+\item 
+\Hypertarget{class_ode_solver_a6d46945c4fc1b5ee35fe45ce531cb316}\label{class_ode_solver_a6d46945c4fc1b5ee35fe45ce531cb316} 
+double {\bfseries Get\+End\+Time} () const
+\item 
+\Hypertarget{class_ode_solver_ad60d1e498d9f01bb007eb5a9d43129cd}\label{class_ode_solver_ad60d1e498d9f01bb007eb5a9d43129cd} 
+double {\bfseries Get\+Step\+Size} () const
+\item 
+\Hypertarget{class_ode_solver_abddf0f4d530660d465a35d137e1b56a1}\label{class_ode_solver_abddf0f4d530660d465a35d137e1b56a1} 
+double {\bfseries Get\+Num\+Of\+Steps} () const
+\item 
+\Hypertarget{class_ode_solver_a41b2be774ce4965295c6d9d4ae394ead}\label{class_ode_solver_a41b2be774ce4965295c6d9d4ae394ead} 
+const std\+::vector$<$ State $>$ \& {\bfseries Get\+Solution} () const
+\item 
+\Hypertarget{class_ode_solver_a3d568f640fd80d88787d5ed68ab06344}\label{class_ode_solver_a3d568f640fd80d88787d5ed68ab06344} 
+const std\+::vector$<$ double $>$ \& {\bfseries Get\+Time\+History} () const
+\item 
+\Hypertarget{class_ode_solver_aabdc727ecc643456c765cd26c04fbeb8}\label{class_ode_solver_aabdc727ecc643456c765cd26c04fbeb8} 
+virtual void {\bfseries Solve} ()
+\item 
+\Hypertarget{class_ode_solver_af7023f02cd986aa71258dfecf6e44385}\label{class_ode_solver_af7023f02cd986aa71258dfecf6e44385} 
+{\bfseries Ode\+Solver} (const \mbox{\hyperlink{class_o_d_e}{ODE}}$<$ T $>$ \&ode, double start\+\_\+time, double end\+\_\+time, int num\+\_\+of\+\_\+steps=1)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ode_solver_a147f8e774c34db6560ffcb817b41c4ee}\label{class_ode_solver_a147f8e774c34db6560ffcb817b41c4ee} 
+double {\bfseries start\+\_\+time\+\_\+}
+\item 
+\Hypertarget{class_ode_solver_ab7323b8aa30a522206cbdcca33209c0c}\label{class_ode_solver_ab7323b8aa30a522206cbdcca33209c0c} 
+double {\bfseries end\+\_\+time\+\_\+}
+\item 
+\Hypertarget{class_ode_solver_ab1f1e25abb6054755941ad39b0318225}\label{class_ode_solver_ab1f1e25abb6054755941ad39b0318225} 
+int {\bfseries num\+\_\+of\+\_\+steps\+\_\+}
+\item 
+\Hypertarget{class_ode_solver_a0b45f0bf993f56bf99fdb8798d383bf1}\label{class_ode_solver_a0b45f0bf993f56bf99fdb8798d383bf1} 
+double {\bfseries step\+\_\+size\+\_\+}
+\item 
+\Hypertarget{class_ode_solver_a9666d544fc16816a9a26d1a20b99c245}\label{class_ode_solver_a9666d544fc16816a9a26d1a20b99c245} 
+const \mbox{\hyperlink{class_o_d_e}{ODE}}$<$ T $>$ \& {\bfseries ode\+\_\+}
+\item 
+\Hypertarget{class_ode_solver_afb11ba0df20b8408732d22684c2361d9}\label{class_ode_solver_afb11ba0df20b8408732d22684c2361d9} 
+std\+::vector$<$ State $>$ {\bfseries solutions\+\_\+}
+\item 
+\Hypertarget{class_ode_solver_ad7bea471d65724afec12beea3793fe39}\label{class_ode_solver_ad7bea471d65724afec12beea3793fe39} 
+std\+::vector$<$ double $>$ {\bfseries times\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Ode\+Solver$<$ T $>$}
+Abstract base class for Ordinary Differential Equation (\doxylink{class_o_d_e}{ODE}) solvers. 
+
+
+\begin{DoxyItemize}
+\item This class provides the framework for solving ODEs numerically using specific integration methods.
+\item 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The data type used for calculations (usually double or float). \\
+\hline
+\end{DoxyTemplParams}
+
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/ode\+\_\+solver.\+h\end{DoxyCompactItemize}
