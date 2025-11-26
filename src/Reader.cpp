@@ -6,27 +6,30 @@
 #include <fstream>
 
 template<typename T>
-bool Reader<T>::checkFileName() const {
-    bool result = false;
-
-    return result;
-}
-
-template<typename T>
 bool Reader<T>::checkFileExist() const {
     bool result = true;
-    if (!) {
+    if (!file.is_open()) {
         throw std::runtime_error("File does not exist");
     }
 
     return file.good();
 }
+template<typename T>
+void Reader<T>::setFile(const std::string &newname) {
+    bool result = false;
+    
+    file.open(newname);
+    result = checkFileExist();
+
+    if (result) {
+        filename = newname;
+    }
+}
 
 template<typename T>
-Reader<T>::Reader(const std::string &newfile,const char &newsep) {
+Reader<T>::Reader(const std::string &newfile, const char &newsep) {
     bool result = false;
 
-    result = checkFileName();
     file.open(newfile);
     result = checkFileExist();
 
@@ -34,5 +37,4 @@ Reader<T>::Reader(const std::string &newfile,const char &newsep) {
         filename = newfile;
         sep = newsep;
     }
-
 }

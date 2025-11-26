@@ -8,10 +8,11 @@
 #include <stdexcept>
 #include <iostream>
 #include "VectorOutput.h"
+#include "TableEntry.h"
 using namespace std;
 
 template <typename  T>
-ODETable<T>::ODETable(const vector<TableEntry>& entries, const string& name, double tol): ODE<T>(
+ODETable<T>::ODETable(const vector<TableEntry<T>>& entries, const string& name, double tol): ODE<T>(
     entries.empty() ? 0.0 : entries[0].t,
     entries.empty() ? typename ODE<T>::State{} : entries[0].y,
     name),
@@ -20,7 +21,7 @@ ODETable<T>::ODETable(const vector<TableEntry>& entries, const string& name, dou
 {}
 
 template <typename  T>
-ODETable<T>::ODETable(const TableEntry& entries, const string& name, double tol): ODE<T>(
+ODETable<T>::ODETable(const TableEntry<T>& entries, const string& name, double tol): ODE<T>(
     entries.empty() ? 0.0 : entries[0].t,
     entries.empty() ? typename ODE<T>::State{} : entries[0].y,
     name),
@@ -85,11 +86,11 @@ int main() {
     cout << "Test: ODETable" << endl;
 
     // 1D table entries
-    ODETable<double>::TableEntry e1{0.0, {1.0}, {2.0}};
-    ODETable<double>::TableEntry e2{1.0, {2.0}, {4.0}};
-    ODETable<double>::TableEntry e3{2.0, {3.0}, {6.0}};
+    TableEntry<double> e1{0.0, {1.0}, {2.0}};
+    TableEntry<double> e2{1.0, {2.0}, {4.0}};
+    TableEntry<double> e3{2.0, {3.0}, {6.0}};
 
-    vector<ODETable<double>::TableEntry> tableEntries{e1, e2, e3};
+    vector<TableEntry<double>> tableEntries{e1, e2, e3};
 
     // Create ODETable
     ODETable<double> table1D(tableEntries, "TestTable1D");

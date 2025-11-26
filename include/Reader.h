@@ -8,27 +8,22 @@
 #include <functional>
 #include <variant>
 #include <fstream>
+#include "TableEntry.h"
 
 template <typename T>
 class Reader{
 protected:
     using State = std::vector<T>;
-    struct TableEntry {
-        double t;
-        State y;
-        State f;
-    };
+    using Function = std::function<State(double, const State& )>;
+    using data = std::variant<Function, TableEntry<T>>;
     char sep;
     std::string filename;
     std::ifstream file;
-    using Function = std::function<State(double, const State& )>;
-    using data = std::variant<Function, TableEntry>;
 
-    virtual bool checkFileName() const;
+    virtual bool checkExtension() const = 0;
 
 public:
-    Reader(std::string, char);
-    virtual ~Reader();
+    virtual ~Reader() = default;
     virtual bool checkFileExist() const;
     virtual data Read() = 0;
 
