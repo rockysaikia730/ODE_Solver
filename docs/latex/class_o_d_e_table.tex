@@ -1,0 +1,100 @@
+\doxysection{ODETable\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_o_d_e_table}{}\label{class_o_d_e_table}\index{ODETable$<$ T $>$@{ODETable$<$ T $>$}}
+Inheritance diagram for ODETable\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_o_d_e_table}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_o_d_e_table_1_1_table_entry}{Table\+Entry}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_o_d_e_table_a7dc76e55dd8aaec19f2fe6f35f318dc1}\label{class_o_d_e_table_a7dc76e55dd8aaec19f2fe6f35f318dc1} 
+using {\bfseries State} = std\+::vector$<$T$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_o_d_e}{ODE$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries State} = std\+::vector$<$T$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_o_d_e_table_a9f1ba80ab4ee6b201723e72196212d5e}\label{class_o_d_e_table_a9f1ba80ab4ee6b201723e72196212d5e} 
+{\bfseries ODETable} (const std\+::vector$<$ \mbox{\hyperlink{struct_o_d_e_table_1_1_table_entry}{Table\+Entry}} $>$ \&entries, const std\+::string \&name, double tol=1e-\/6)
+\item 
+\Hypertarget{class_o_d_e_table_a5d1d2a84b749224d11027edf986ecc11}\label{class_o_d_e_table_a5d1d2a84b749224d11027edf986ecc11} 
+{\bfseries ODETable} (const \mbox{\hyperlink{struct_o_d_e_table_1_1_table_entry}{Table\+Entry}} \&entries, const std\+::string \&name, double tol=1e-\/6)
+\item 
+virtual State \mbox{\hyperlink{class_o_d_e_table_a27c0dff6549aef85e08ab2ceff41320e}{evaluate}} (double t, const State \&y) const override
+\item 
+virtual State \mbox{\hyperlink{class_o_d_e_table_a9c3318d9175243fc239461dc8b0ffb1e}{evaluate}} (double t, const T \&y) const override
+\item 
+\Hypertarget{class_o_d_e_table_a9eba262bd9cc62dde52ca51a0f2fae14}\label{class_o_d_e_table_a9eba262bd9cc62dde52ca51a0f2fae14} 
+virtual State {\bfseries evaluate} (int i) const
+\item 
+\Hypertarget{class_o_d_e_table_a6be50e6ae6d0fbffd32392e688273b38}\label{class_o_d_e_table_a6be50e6ae6d0fbffd32392e688273b38} 
+void {\bfseries set\+Table} (const std\+::vector$<$ \mbox{\hyperlink{struct_o_d_e_table_1_1_table_entry}{Table\+Entry}} $>$ \&entries)
+\item 
+\Hypertarget{class_o_d_e_table_a63d320e8d205055aa8100450520c09b3}\label{class_o_d_e_table_a63d320e8d205055aa8100450520c09b3} 
+const std\+::vector$<$ \mbox{\hyperlink{struct_o_d_e_table_1_1_table_entry}{Table\+Entry}} $>$ \& {\bfseries get\+Table} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_o_d_e}{ODE$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries set\+T0} (const double in\+Time)
+\item 
+void {\bfseries set\+Y0} (const State \&in\+Y0)
+\item 
+void {\bfseries set\+Y0} (const T \&in\+Y0)
+\item 
+void {\bfseries set\+Name} (const std\+::string \&in\+Name)
+\item 
+double {\bfseries get\+Time\+In} () const
+\item 
+const State \& {\bfseries get\+Cond\+In} () const
+\item 
+const std\+::string \& {\bfseries get\+Name} () const
+\item 
+{\bfseries ODE} (double in\+Time, const State \&in\+Y0, const std\+::string \&in\+Name)
+\item 
+{\bfseries ODE} (double in\+Time, const T \&in\+Y0, const std\+::string \&in\+Name)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_o_d_e_table_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_o_d_e_table_a27c0dff6549aef85e08ab2ceff41320e}\index{ODETable$<$ T $>$@{ODETable$<$ T $>$}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ODETable$<$ T $>$@{ODETable$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_d_e_table_a27c0dff6549aef85e08ab2ceff41320e} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_o_d_e_table}{ODETable}}$<$ T $>$\+::\+State \mbox{\hyperlink{class_o_d_e_table}{ODETable}}$<$ T $>$\+::evaluate (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{const State \&}]{y}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_o_d_e}{ODE$<$ T $>$}}.
+
+\Hypertarget{class_o_d_e_table_a9c3318d9175243fc239461dc8b0ffb1e}\index{ODETable$<$ T $>$@{ODETable$<$ T $>$}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ODETable$<$ T $>$@{ODETable$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_d_e_table_a9c3318d9175243fc239461dc8b0ffb1e} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_o_d_e_table}{ODETable}}$<$ T $>$\+::\+State \mbox{\hyperlink{class_o_d_e_table}{ODETable}}$<$ T $>$\+::evaluate (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{const T \&}]{y}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_o_d_e}{ODE$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/ODETable.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/ODETable.\+cpp\end{DoxyCompactItemize}

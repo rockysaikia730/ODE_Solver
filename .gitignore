@@ -1,0 +1,9 @@
+.DS_Store
+
+#--- Ignore Build File ----
+build/
+
+#---.idea Directory------
+.idea/
+
+.vscode/

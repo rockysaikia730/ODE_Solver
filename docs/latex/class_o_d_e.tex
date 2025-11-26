@@ -1,0 +1,55 @@
+\doxysection{ODE\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_o_d_e}{}\label{class_o_d_e}\index{ODE$<$ T $>$@{ODE$<$ T $>$}}
+Inheritance diagram for ODE\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_o_d_e}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_o_d_e_abe14c7ee304016184df7fb4a0aa0ff88}\label{class_o_d_e_abe14c7ee304016184df7fb4a0aa0ff88} 
+using {\bfseries State} = std\+::vector$<$T$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_o_d_e_aede66bf98c818fc2508f44a41f5406a6}\label{class_o_d_e_aede66bf98c818fc2508f44a41f5406a6} 
+void {\bfseries set\+T0} (const double in\+Time)
+\item 
+\Hypertarget{class_o_d_e_ae2f7be33fe4b226b82bf9e8bd4de8339}\label{class_o_d_e_ae2f7be33fe4b226b82bf9e8bd4de8339} 
+void {\bfseries set\+Y0} (const State \&in\+Y0)
+\item 
+\Hypertarget{class_o_d_e_a25a36c4bb7ba77a5500ff3479a808923}\label{class_o_d_e_a25a36c4bb7ba77a5500ff3479a808923} 
+void {\bfseries set\+Y0} (const T \&in\+Y0)
+\item 
+\Hypertarget{class_o_d_e_af0d5cd3f1e0521104ef9269b457b2cb1}\label{class_o_d_e_af0d5cd3f1e0521104ef9269b457b2cb1} 
+void {\bfseries set\+Name} (const std\+::string \&in\+Name)
+\item 
+\Hypertarget{class_o_d_e_a0928a54c45a3763f286738dd844ee340}\label{class_o_d_e_a0928a54c45a3763f286738dd844ee340} 
+double {\bfseries get\+Time\+In} () const
+\item 
+\Hypertarget{class_o_d_e_a0afa2f66e1557a67a68f3f226ba3d44b}\label{class_o_d_e_a0afa2f66e1557a67a68f3f226ba3d44b} 
+const State \& {\bfseries get\+Cond\+In} () const
+\item 
+\Hypertarget{class_o_d_e_acc9cded10270212be3c4ffb409843e08}\label{class_o_d_e_acc9cded10270212be3c4ffb409843e08} 
+const std\+::string \& {\bfseries get\+Name} () const
+\item 
+\Hypertarget{class_o_d_e_a27ec00ed77af14cf43a204b9bfec7360}\label{class_o_d_e_a27ec00ed77af14cf43a204b9bfec7360} 
+virtual State {\bfseries evaluate} (double t, const State \&y) const =0
+\item 
+\Hypertarget{class_o_d_e_af416896880a880c0cabc534cc7043b27}\label{class_o_d_e_af416896880a880c0cabc534cc7043b27} 
+virtual State {\bfseries evaluate} (double t, const T \&y) const =0
+\item 
+\Hypertarget{class_o_d_e_a3d12911530f234013622b21019a5c6e5}\label{class_o_d_e_a3d12911530f234013622b21019a5c6e5} 
+{\bfseries ODE} (double in\+Time, const State \&in\+Y0, const std\+::string \&in\+Name)
+\item 
+\Hypertarget{class_o_d_e_a2e6d42122c3c506d5f0cc24063008295}\label{class_o_d_e_a2e6d42122c3c506d5f0cc24063008295} 
+{\bfseries ODE} (double in\+Time, const T \&in\+Y0, const std\+::string \&in\+Name)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/ODE.\+h\end{DoxyCompactItemize}

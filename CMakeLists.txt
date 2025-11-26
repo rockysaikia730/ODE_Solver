@@ -1,0 +1,30 @@
+cmake_minimum_required(VERSION 3.22)
+project(Codes)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(ODEFunctionTest
+        src/ODE.cpp
+        src/ODEFunction.cpp
+        src/VectorOutput.cpp
+)
+
+target_include_directories(ODEFunctionTest PRIVATE include)
+
+add_executable(ODETableTest
+        src/ODE.cpp
+        src/ODETable.cpp
+        src/VectorOutput.cpp
+)
+
+target_include_directories(ODETableTest PRIVATE include)
+
+find_package(Doxygen)
+if(DOXYGEN_FOUND)
+	add_custom_target(doxygen ALL
+
+	COMMAND ${DOXYGEN_EXECUTABLE} Doxyfile
+	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/docs
+	COMMENT "Generating Doxygen Documentation"
+	VERBATIM)
+endif()

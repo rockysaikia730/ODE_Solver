@@ -1,0 +1,63 @@
+\doxysection{Reader\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_reader}{}\label{class_reader}\index{Reader$<$ T $>$@{Reader$<$ T $>$}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_reader_1_1_table_entry}{Table\+Entry}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_reader_aa93aa3f7b6e0089073e8b520ea0607eb}\label{class_reader_aa93aa3f7b6e0089073e8b520ea0607eb} 
+{\bfseries Reader} (std\+::string, char)
+\item 
+\Hypertarget{class_reader_a98fdf40c9e687d7b6babd7a741c3f7ea}\label{class_reader_a98fdf40c9e687d7b6babd7a741c3f7ea} 
+virtual bool {\bfseries check\+File\+Exist} () const
+\item 
+\Hypertarget{class_reader_a141eb5cb165bf34a149aae7ba321a4ab}\label{class_reader_a141eb5cb165bf34a149aae7ba321a4ab} 
+virtual data {\bfseries Read} ()=0
+\item 
+\Hypertarget{class_reader_a7b359df4e46448ec48107048c5c01e1c}\label{class_reader_a7b359df4e46448ec48107048c5c01e1c} 
+void {\bfseries set\+File\+Name} (const std\+::string \&newname)
+\item 
+\Hypertarget{class_reader_a2ef2f2e8f7e495de509b9990eaafcf54}\label{class_reader_a2ef2f2e8f7e495de509b9990eaafcf54} 
+void {\bfseries set\+File\+Separator} (const char \&newsep)
+\item 
+\Hypertarget{class_reader_aed16535d8dc83044c47b6997b8a59a24}\label{class_reader_aed16535d8dc83044c47b6997b8a59a24} 
+std\+::string {\bfseries get\+File\+Name} () const
+\item 
+\Hypertarget{class_reader_ac18006ff01694c28d789fc4c648d19c2}\label{class_reader_ac18006ff01694c28d789fc4c648d19c2} 
+char {\bfseries get\+Char} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_reader_a6c3375bfa9517a3f466cb3396b226d33}\label{class_reader_a6c3375bfa9517a3f466cb3396b226d33} 
+using {\bfseries State} = std\+::vector$<$T$>$
+\item 
+\Hypertarget{class_reader_a6a88974acdd343b224af47dd94db1db9}\label{class_reader_a6a88974acdd343b224af47dd94db1db9} 
+using {\bfseries Function} = std\+::function$<$State(double, const State\& )$>$
+\item 
+\Hypertarget{class_reader_a960fb78850bd6047705d7d2da69294c4}\label{class_reader_a960fb78850bd6047705d7d2da69294c4} 
+using {\bfseries data} = std\+::variant$<$Function, \mbox{\hyperlink{struct_reader_1_1_table_entry}{Table\+Entry}}$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_reader_aec96b21b60c595722ea6fbe04867e117}\label{class_reader_aec96b21b60c595722ea6fbe04867e117} 
+virtual bool {\bfseries check\+File\+Name} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_reader_a1a1ada0c115e53caa5dc18f58e454acf}\label{class_reader_a1a1ada0c115e53caa5dc18f58e454acf} 
+char {\bfseries sep}
+\item 
+\Hypertarget{class_reader_a3ce41d6a4b337bca73c10cf970704c30}\label{class_reader_a3ce41d6a4b337bca73c10cf970704c30} 
+std\+::string {\bfseries filename}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/Reader.\+h\end{DoxyCompactItemize}
