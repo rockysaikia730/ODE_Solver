@@ -372,6 +372,52 @@ Similar to the input handling, we need to create a parent class called \texttt{W
 \section{Implementation Details}
 We will be hosting on Github, link unknown for the time being. We need to decide on a coding style, and find out if we can use any libraries (e.g., Eigen for linear algebra, Gnuplot for plotting, etc.). We will then need to structure the repository with folders for source code, tests, documentation, and examples. We will also set up a build system (e.g., CMake) to manage the compilation process.
 
+
+\section{Revisions done pre-coding}
+\begin{center}
+    \textit{Here is the final agreed upon outline and data structures before starting the coding phase. These were agreed upon 0n the 28.11.2025 after the class}
+\end{center}
+Our project is structured around four main classes: \texttt{Reader}, \texttt{ODE}, \texttt{Solver}, and \texttt{Writer}. First, the \texttt{Reader} class is responsible for handling various input formats and creating an object that can be easily used by the \texttt{ODE} class. The \texttt{ODE} class defines the ODE problem using data extracted from the \texttt{Reader} object. The \texttt{Solver} class takes in an \texttt{ODE}, as well as the numerical parameters needed for solving the ODE (like time step, end time, etc.), and implements the numerical algorithms to solve the ODE. Finally, the \texttt{Writer} class takes the results from the \texttt{Solver} and writes them to the desired output format.
+
+We choose that the only thing we allow is \texttt{vector<double>} as every data structure can be trated as a vector of doubles, through careful conversions when reading the input files. This greatly simplifies the implementation and compilation, as we do not need to template every class and method to handle different data types. Instead, we can focus on implementing the core functionality of reading, solving, and writing ODEs using a single data type. We choose vectors from the STL library, as they are flexible and easy to use for dynamic arrays. We choose them over fixed-size arrays because at compilation time, we do not know the size of the vectors needed for the ODE problems.
+
+\subsection{Structures}
+Here is a summary of some data structures that are necessary for the implementation of the classes.
+\subsection{The Reader Class}
+The reader class is possibly the most complex of all as it needs to handle the multiple input formats and create an object that can easily be used by the ODE class. The class diagram is shown in Fig.\ \ref{fig:final_reader_class_diagram}, but we will explain the decisions and thought process here.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{final_reader_class_diagram.pdf}
+    \caption{Final class diagram for the Reader class.}\label{fig:final_reader_class_diagram}
+\end{figure}
+%MISSING
+
+\subsection{The ODE Class}
+The ODE class will take in a Reader object at construction, and extract the necessary data to define the ODE problem. The class diagram is shown in Fig.\ \ref{fig:final_ode_class_diagram}, but we will explain the decisions and thought process here.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{final_ode_class_diagram.pdf}
+    \caption{Final class diagram for the ODE class.}\label{fig:final_ode_class_diagram}
+\end{figure}
+%MISSING
+\subsection{The Solver Class}
+The Solver class will take in an ODE object at construction, along with the time parameters and other solver-specific parameters. The class diagram is shown in Fig.\ \ref{fig:final_solver_class_diagram}, but we will explain the decisions and thought process here.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{final_solver_class_diagram.pdf}
+    \caption{Final class diagram for the Solver class.}\label{fig:final_solver_class_diagram}
+\end{figure}
+%MISSING
+
+\subsection{The Writer Class}
+The Writer class will take in the results from the Solver class and write them to the desired output format. The class diagram is shown in Fig.\ \ref{fig:final_writer_class_diagram}, but we will explain the decisions and thought process here.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{final_writer_class_diagram.pdf}
+    \caption{Final class diagram for the Writer class.}\label{fig:final_writer_class_diagram}
+\end{figure}
+%MISSING
+
 % -----------------------------
 % REFERENCES
 % -----------------------------

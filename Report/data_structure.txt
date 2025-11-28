@@ -1,89 +1,22 @@
 site: https://codeskeleton-nyvvxr7lzakw9hvk3r5xya.streamlit.app/
 
-struct TablePoint {
-    double t;
-    State  y;
-    State  f;
-  };
+using tensor_container = Eigen::TensorMap<Eigen::Tensor<double, Eigen::Dynamic>>
+Use this! It is basically a tensor with unknown dimensions at compilation time.
 
-/////////////////////////////////////////////////////////////
-template<typename T, typename Func>
-class ODE
-  using State = std::vector<T>;
-  private double t0;
-  private State y0;
-  private std::variant<Func, std::vector<TablePoint>> function;
-  //private State domain[2];
-  
-  public ODE(const std::vector<TablePoint>& table);
-  public ODE(const Func& f);
-
-  public void setTimeIn(double t);
-  public void setCondIn(const State &input);
-  //public void setDomain(State a, State b);
-  public void setFunctor(const Func& functor);
-  public setTable(const std::vector<TablePoint>& table)
-  
-
-  public double getTimeIn() const;
-  public State getCondIn() const;
-  //public std::array<State, 2> getDomain() const;
-  public const Func& getFunctor() const;
-  public const std::vector<TablePoint>& getTable() const;
-  public bool isTable() const;
-  public bool isFunctor() const;
-  public evaluate(double t, const State & y) const;
-
-/////////////////////////////////////////////////////////////
-class ODE
-  using State = std::vector<T>;
-  private double t0;
-  private State y0;
-  private Func functor;
-  private std::vector<TablePoint> table;
-  
-  public ODE(const std::vector<TablePoint>& table);
-  public ODE(const Func& f);
-
-  public void setTimeIn(double t);
-  public void setCondIn(const State &input);
-  public void setFunctor(const Func& functor);
-  public setTable(const std::vector<TablePoint>& table)
-  
-
-  public double getTimeIn() const;
-  public State getCondIn() const;
-  public const Func& getFunctor() const;
-  public const std::vector<TablePoint>& getTable() const;
-  public bool isTable() const;
-  public bool isFunctor() const;
-  public evaluate(double t, const State & y) const;
-
-/////////////////////////////////////////////////////////////
-class ODE
-  private double t0;
-  private State y0;
-  
-  public virtual ~ODE();
-  public void setTimeIn(double t);
-  public void setCondIn(const State &input);
-  public double getTimeIn() const;
-  public State getCondIn() const;
-  public pure virtual State evaluate() const;
-
-class ODEFunction(ODE)
-  public ODEFunction(const Reader & );
-  public ODEFunction(double t0, double y0, std::function<State(double, State)>);
-  public virtual State evaluate() const;
-  private 
-
-class ODEFunctor(ODE)
-  public ODEFunctor(const Reader & );
-  public virtual State evaluate() const;
-
-class ODETable(ODE)
-  public ODETable(const Reader & );
-  public virtual State evaluate() const;
+class Ode
+  private vector<double> y_input_;
+  private double t_init_;
+  private double step_size_;
+  private int number_steps_;
+  private double t_final_;
+  private double tol_;
+  private int max_iter_;
+  protected std::shared_pointer<Function> function_;
+  protected std::shared_pointer<RootFinder> root_finder_;
+  protected vector<double> y_solution_;
+  protected vector<int> dimentions_;
+  private flatten(); // not needed if using Tensor
+  public tensor_container evaluate(const tensor_container & new);
   
 
 

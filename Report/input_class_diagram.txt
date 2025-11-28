@@ -1,26 +1,47 @@
 site: https://codeskeleton-nyvvxr7lzakw9hvk3r5xya.streamlit.app/
+
 class Reader
-  protected std::string filename;
-  protected char sep;
-  public pure virtual data Read();
+  private std::string filename_;
+  private char sep_;
+  private int input_dim_;
+  private vector<double> y_input_;
+  private double t_init_;
+  private double step_size_;
+  private int number_steps_;
+  private double t_final_;
+  private double tol_;
+  private int max_iter_;
+  protected std::string file_extension_;
+  protected std::shared_pointer<Function> rhs_;
+  protected std::shared_pointer<RootFinder> root_finder_;
+  
+  public pure virtual void Read();
+
   public Reader(std::string, char);
-  public std::string & getFileName();
-  public void setFileName();
-  public char & getSeparator();
-  public void setSeparator();
-  public pure virtual bool checkFileName();
-  public bool checkFileExist();
+  public virtual ~Reader() = default;
+  
+  public const std::ifstream& GetFile();
+  public void SetFile();
+  
+  public std::string & GetFileName();
+  
+  public const char & GetSeparator();
+  public void SetSeparator(const char & newsep);
+  
+  public bool CheckFileExist();
 
 
-class CSVReader(Reader)
-  public virtual data Read();
-  public virtual bool checkFileName();
+class ReaderCsv(Reader)
+  public virtual void Read(const Function & );
 
-class TXTReader(Reader)
-  public virtual data Read();
-  public virtual bool checkFileName();
+class ReaderTxt(Reader)
+  public virtual void Read(const Function & );
 
-class CMDReader(Reader)
-  public virtual data Read();
-  public virtual bool checkFileName();
+class ReaderCmd(Reader)
+  public virtual void Read(const Function & );
 
+class ReaderInCode(Reader)
+  public virtual void Read(const Function & );
+
+class ReaderJson(Reader)
+  public virtual void Read(const Function & );

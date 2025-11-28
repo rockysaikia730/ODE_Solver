@@ -302,12 +302,6 @@ INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstop
 INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT .\ProjectOutline.out
-INPUT .\ProjectOutline.out
-INPUT ProjectOutline.out
-INPUT ProjectOutline.out
-INPUT .\ProjectOutline.out
-INPUT .\ProjectOutline.out
 OUTPUT ProjectOutline.out
 INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8t.tfm
 INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
@@ -400,6 +394,15 @@ INPUT .\output_class_diagram.pdf
 INPUT .\output_class_diagram.pdf
 INPUT .\output_class_diagram.pdf
 INPUT .\output_class_diagram.pdf
+INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8t.tfm
+INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmri8t.vf
+INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
+INPUT .\final_solver_class_diagram.pdf
+INPUT .\final_solver_class_diagram.pdf
+INPUT .\final_solver_class_diagram.pdf
+INPUT .\final_solver_class_diagram.pdf
+INPUT .\final_solver_class_diagram.pdf
+INPUT .\final_solver_class_diagram.pdf
 INPUT .\ProjectOutline.bbl
 INPUT .\ProjectOutline.bbl
 INPUT ProjectOutline.bbl
@@ -432,3 +435,5 @@ INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmb8a.
 INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
 INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
 INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
+INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmri8a.pfb
+INPUT C:\Users\andra\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmri8a.pfb
