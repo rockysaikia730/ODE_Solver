@@ -6,11 +6,6 @@ Inheritance diagram for ODETable\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>
 \includegraphics[height=2.000000cm]{class_o_d_e_table}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{struct_o_d_e_table_1_1_table_entry}{Table\+Entry}}
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,11 +20,11 @@ using {\bfseries State} = std\+::vector$<$T$>$
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_o_d_e_table_a9f1ba80ab4ee6b201723e72196212d5e}\label{class_o_d_e_table_a9f1ba80ab4ee6b201723e72196212d5e} 
-{\bfseries ODETable} (const std\+::vector$<$ \mbox{\hyperlink{struct_o_d_e_table_1_1_table_entry}{Table\+Entry}} $>$ \&entries, const std\+::string \&name, double tol=1e-\/6)
+\Hypertarget{class_o_d_e_table_a46eb5cf7ff64d46b7374963334fa2038}\label{class_o_d_e_table_a46eb5cf7ff64d46b7374963334fa2038} 
+{\bfseries ODETable} (const std\+::vector$<$ \mbox{\hyperlink{struct_table_entry}{Table\+Entry}}$<$ T $>$ $>$ \&entries, const std\+::string \&name, double tol=1e-\/6)
 \item 
-\Hypertarget{class_o_d_e_table_a5d1d2a84b749224d11027edf986ecc11}\label{class_o_d_e_table_a5d1d2a84b749224d11027edf986ecc11} 
-{\bfseries ODETable} (const \mbox{\hyperlink{struct_o_d_e_table_1_1_table_entry}{Table\+Entry}} \&entries, const std\+::string \&name, double tol=1e-\/6)
+\Hypertarget{class_o_d_e_table_aa5db4076bccfd16b7ffe46a0c155abb7}\label{class_o_d_e_table_aa5db4076bccfd16b7ffe46a0c155abb7} 
+{\bfseries ODETable} (const \mbox{\hyperlink{struct_table_entry}{Table\+Entry}}$<$ T $>$ \&entries, const std\+::string \&name, double tol=1e-\/6)
 \item 
 virtual State \mbox{\hyperlink{class_o_d_e_table_a27c0dff6549aef85e08ab2ceff41320e}{evaluate}} (double t, const State \&y) const override
 \item 
@@ -38,11 +33,11 @@ virtual State \mbox{\hyperlink{class_o_d_e_table_a9c3318d9175243fc239461dc8b0ffb
 \Hypertarget{class_o_d_e_table_a9eba262bd9cc62dde52ca51a0f2fae14}\label{class_o_d_e_table_a9eba262bd9cc62dde52ca51a0f2fae14} 
 virtual State {\bfseries evaluate} (int i) const
 \item 
-\Hypertarget{class_o_d_e_table_a6be50e6ae6d0fbffd32392e688273b38}\label{class_o_d_e_table_a6be50e6ae6d0fbffd32392e688273b38} 
-void {\bfseries set\+Table} (const std\+::vector$<$ \mbox{\hyperlink{struct_o_d_e_table_1_1_table_entry}{Table\+Entry}} $>$ \&entries)
+\Hypertarget{class_o_d_e_table_ac8134ae1dabe5c22c49ac160800c6cdc}\label{class_o_d_e_table_ac8134ae1dabe5c22c49ac160800c6cdc} 
+void {\bfseries set\+Table} (const std\+::vector$<$ \mbox{\hyperlink{struct_table_entry}{Table\+Entry}}$<$ T $>$ $>$ \&entries)
 \item 
-\Hypertarget{class_o_d_e_table_a63d320e8d205055aa8100450520c09b3}\label{class_o_d_e_table_a63d320e8d205055aa8100450520c09b3} 
-const std\+::vector$<$ \mbox{\hyperlink{struct_o_d_e_table_1_1_table_entry}{Table\+Entry}} $>$ \& {\bfseries get\+Table} () const
+\Hypertarget{class_o_d_e_table_a28aa0178b11693536ea8e4e38a4e26fa}\label{class_o_d_e_table_a28aa0178b11693536ea8e4e38a4e26fa} 
+const std\+::vector$<$ \mbox{\hyperlink{struct_table_entry}{Table\+Entry}}$<$ T $>$ $>$ \& {\bfseries get\+Table} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_o_d_e}{ODE$<$ T $>$}}}
 \begin{DoxyCompactItemize}

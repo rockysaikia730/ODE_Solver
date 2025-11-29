@@ -1,0 +1,45 @@
+\doxysection{dynamic\+\_\+tensor.\+h}
+\hypertarget{dynamic__tensor_8h_source}{}\label{dynamic__tensor_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/dynamic\_tensor.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/dynamic\_tensor.h}}
+\mbox{\hyperlink{dynamic__tensor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ DYNAMIC\_TENSOR\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ DYNAMIC\_TENSOR\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <cstddef>}\ \textcolor{comment}{//\ for\ size\_t}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}(\textcolor{keyword}{const}\ std::vector<size\_t>\&\ input\_shape,\ \textcolor{keywordtype}{double}\ initial\_value\ =\ 0.0);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}(\textcolor{keyword}{const}\ std::vector<size\_t>\&\ input\_shape,\ \textcolor{keyword}{const}\ std::vector<double>\&\ data);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{class_dynamic_tensor_a85e39600c8266e6df893640e55cdf439}{at}}(\textcolor{keyword}{const}\ std::vector<size\_t>\&\ indices);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{class_dynamic_tensor_a85e39600c8266e6df893640e55cdf439}{at}}(\textcolor{keyword}{const}\ std::vector<size\_t>\&\ indices)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{class_dynamic_tensor_ae3ff42311f6f05892312f2d13670849e}{operator[]}}(\textcolor{keywordtype}{size\_t}\ i);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{class_dynamic_tensor_ae3ff42311f6f05892312f2d13670849e}{operator[]}}(\textcolor{keywordtype}{size\_t}\ i)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_dynamic_tensor_a80d631cc2d2151a0e3c9da15edbd870d}{size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<size\_t>\&\ \mbox{\hyperlink{class_dynamic_tensor_a42b1bfd00a94348fe8b1ce43a2f6cf7e}{get\_shape}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138ebf6}{rank}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00110\ \ \ \ \ std::vector<double>\ data\_;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \ \ \ \ std::vector<size\_t>\ shape\_;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ calculate\_index(\textcolor{keyword}{const}\ std::vector<size\_t>\&\ indices)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DYNAMIC\_TENSOR\_H\_}}
+
+\end{DoxyCode}

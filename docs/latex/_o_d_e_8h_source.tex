@@ -11,37 +11,38 @@
 \DoxyCodeLine{00007\ }
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00010\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }ODE\ \{}
-\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{using\ }State\ =\ std::vector<T>;}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~ODE()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ setT0(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ inTime)\{t0\_\ =\ inTime;\};}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ setY0(\textcolor{keyword}{const}\ State\&\ inY0)\{y0\_\ =\ inY0;\};\textcolor{comment}{//Verify\ copy}}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ setY0(\textcolor{keyword}{const}\ T\&\ inY0)\ \{y0\_\ =\ \{inY0\};\};}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ setName(\textcolor{keyword}{const}\ std::string\&\ inName)\{name\_\ =\ inName;\};}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ getTimeIn()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ t0\_;\};}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{const}\ State\&\ getCondIn()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ y0\_;\};}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ getName()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ name\_;\};}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ State\ evaluate(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ State\&\ y)\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ State\ evaluate(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ T\&\ y)\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ ODE(\textcolor{keywordtype}{double}\ inTime,\ \textcolor{keyword}{const}\ State\&\ inY0,\ \textcolor{keyword}{const}\ std::string\&\ inName)\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ t0\_\ =\ inTime;}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ y0\_\ =\ inY0;}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ name\_\ =\ inName;}
-\DoxyCodeLine{00029\ \ \ \ \ \}}
-\DoxyCodeLine{00030\ \ \ \ \ ODE(\textcolor{keywordtype}{double}\ inTime,\ \textcolor{keyword}{const}\ T\&\ inY0,\ \textcolor{keyword}{const}\ std::string\&\ inName)\ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ t0\_\ =\ inTime;}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ y0\_\ =\ \{inY0\};}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ name\_\ =\ inName;}
-\DoxyCodeLine{00034\ \ \ \ \ \}}
-\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ t0\_;}
-\DoxyCodeLine{00037\ \ \ \ \ State\ y0\_;}
-\DoxyCodeLine{00038\ \ \ \ \ std::string\ name\_;}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \};}
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//CODES\_ODE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }ODE\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{using\ }State\ =\ std::vector<T>;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~ODE()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ setT0(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ inTime)\{t0\_\ =\ inTime;\};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ setY0(\textcolor{keyword}{const}\ State\&\ inY0)\{y0\_\ =\ inY0;\};\textcolor{comment}{//Verify\ copy}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ setY0(\textcolor{keyword}{const}\ T\&\ inY0)\ \{y0\_\ =\ \{inY0\};\};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ setName(\textcolor{keyword}{const}\ std::string\&\ inName)\{name\_\ =\ inName;\};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{double}\ getTimeIn()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ t0\_;\};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ State\&\ getCondIn()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ y0\_;\};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ getName()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ name\_;\};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ State\ evaluate(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ State\&\ y)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ State\ evaluate(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ T\&\ y)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ ODE(\textcolor{keywordtype}{double}\ inTime,\ \textcolor{keyword}{const}\ State\&\ inY0,\ \textcolor{keyword}{const}\ std::string\&\ inName)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ t0\_\ =\ inTime;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ y0\_\ =\ inY0;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ name\_\ =\ inName;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ ODE(\textcolor{keywordtype}{double}\ inTime,\ \textcolor{keyword}{const}\ T\&\ inY0,\ \textcolor{keyword}{const}\ std::string\&\ inName)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ t0\_\ =\ inTime;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ y0\_\ =\ \{inY0\};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ name\_\ =\ inName;}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ t0\_;}
+\DoxyCodeLine{00038\ \ \ \ \ State\ y0\_;}
+\DoxyCodeLine{00039\ \ \ \ \ std::string\ name\_;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//CODES\_ODE\_H}}
 
 \end{DoxyCode}

@@ -1,0 +1,204 @@
+\doxysection{Dynamic\+Tensor Class Reference}
+\hypertarget{class_dynamic_tensor}{}\label{class_dynamic_tensor}\index{DynamicTensor@{DynamicTensor}}
+
+
+A class to represent a mathematical tensor of arbitrary rank at runtime.  
+
+
+
+
+{\ttfamily \#include $<$dynamic\+\_\+tensor.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}\label{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323} 
+{\bfseries Dynamic\+Tensor} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Creates an empty tensor with rank 0 and size 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dynamic_tensor_ac1aafc74a0f63ec00917120e91f966da}{Dynamic\+Tensor}} (const std\+::vector$<$ size\+\_\+t $>$ \&input\+\_\+shape, double initial\+\_\+value=0.\+0)
+\begin{DoxyCompactList}\small\item\em Shape constructor. Allocates memory based on the product of the shape dimensions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dynamic_tensor_ac02ff8b1de5fb4ff6d5fc437d24602fc}{Dynamic\+Tensor}} (const std\+::vector$<$ size\+\_\+t $>$ \&input\+\_\+shape, const std\+::vector$<$ double $>$ \&data)
+\begin{DoxyCompactList}\small\item\em Data constructor. Creates a tensor with specific shape and pre-\/existing data. \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{class_dynamic_tensor_a85e39600c8266e6df893640e55cdf439}{at}} (const std\+::vector$<$ size\+\_\+t $>$ \&indices)
+\begin{DoxyCompactList}\small\item\em Access element at N-\/dimensional coordinate (Read/\+Write). Performs bounds checking via assert(). \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{class_dynamic_tensor_aba823f85d3abe6b1572da92da3420321}{at}} (const std\+::vector$<$ size\+\_\+t $>$ \&indices) const
+\begin{DoxyCompactList}\small\item\em Access element at N-\/dimensional coordinate (Read-\/only). Performs bounds checking via assert(). \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{class_dynamic_tensor_ae3ff42311f6f05892312f2d13670849e}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t i)
+\begin{DoxyCompactList}\small\item\em Access element by flat index (Read/\+Write). Useful for iterating linearly through the tensor without caring about shape. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{class_dynamic_tensor_a2fbdea8a29139563cbdf37ae3777c064}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em Access element by flat index (Read-\/only). \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_dynamic_tensor_a80d631cc2d2151a0e3c9da15edbd870d}{size}} () const
+\begin{DoxyCompactList}\small\item\em Get the total number of elements in the tensor. \end{DoxyCompactList}\item 
+const std\+::vector$<$ size\+\_\+t $>$ \& \mbox{\hyperlink{class_dynamic_tensor_a42b1bfd00a94348fe8b1ce43a2f6cf7e}{get\+\_\+shape}} () const
+\begin{DoxyCompactList}\small\item\em Get the shape of the tensor. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138ebf6}{rank}} () const
+\begin{DoxyCompactList}\small\item\em Get the rank (number of dimensions) of the tensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to represent a mathematical tensor of arbitrary rank at runtime. 
+
+The \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} stores data in a contiguous 1D memory block (std\+::vector) but provides an interface to access elements using N-\/dimensional coordinates. It uses Row-\/\+Major ordering (last dimension changes fastest). 
+
+\label{doc-constructors}
+\Hypertarget{class_dynamic_tensor_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_dynamic_tensor_ac1aafc74a0f63ec00917120e91f966da}\index{DynamicTensor@{DynamicTensor}!DynamicTensor@{DynamicTensor}}
+\index{DynamicTensor@{DynamicTensor}!DynamicTensor@{DynamicTensor}}
+\doxysubsubsection{\texorpdfstring{DynamicTensor()}{DynamicTensor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_ac1aafc74a0f63ec00917120e91f966da} 
+Dynamic\+Tensor\+::\+Dynamic\+Tensor (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{input\+\_\+shape}{, }\item[{double}]{initial\+\_\+value}{ = {\ttfamily 0.0}}\end{DoxyParamCaption})}
+
+
+
+Shape constructor. Allocates memory based on the product of the shape dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+shape} & A vector containing the size of each dimension. \\
+\hline
+{\em initial\+\_\+value} & The value to initialize all elements with (default\+: 0.\+0). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dynamic_tensor_ac02ff8b1de5fb4ff6d5fc437d24602fc}\index{DynamicTensor@{DynamicTensor}!DynamicTensor@{DynamicTensor}}
+\index{DynamicTensor@{DynamicTensor}!DynamicTensor@{DynamicTensor}}
+\doxysubsubsection{\texorpdfstring{DynamicTensor()}{DynamicTensor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_ac02ff8b1de5fb4ff6d5fc437d24602fc} 
+Dynamic\+Tensor\+::\+Dynamic\+Tensor (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{input\+\_\+shape}{, }\item[{const std\+::vector$<$ double $>$ \&}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Data constructor. Creates a tensor with specific shape and pre-\/existing data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+shape} & A vector containing the size of each dimension. \\
+\hline
+{\em data} & The flat vector of data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The size of {\ttfamily data} must exactly match the product of {\ttfamily input\+\_\+shape}. 
+\end{DoxyWarning}
+
+
+\label{doc-func-members}
+\Hypertarget{class_dynamic_tensor_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dynamic_tensor_a85e39600c8266e6df893640e55cdf439}\index{DynamicTensor@{DynamicTensor}!at@{at}}
+\index{at@{at}!DynamicTensor@{DynamicTensor}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_a85e39600c8266e6df893640e55cdf439} 
+double \& Dynamic\+Tensor\+::at (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{indices}{}\end{DoxyParamCaption})}
+
+
+
+Access element at N-\/dimensional coordinate (Read/\+Write). Performs bounds checking via assert(). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indices} & A vector of coordinates (e.\+g., \{x, y, z\}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the double value at that position. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_tensor_aba823f85d3abe6b1572da92da3420321}\index{DynamicTensor@{DynamicTensor}!at@{at}}
+\index{at@{at}!DynamicTensor@{DynamicTensor}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_aba823f85d3abe6b1572da92da3420321} 
+const double \& Dynamic\+Tensor\+::at (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{indices}{}\end{DoxyParamCaption}) const}
+
+
+
+Access element at N-\/dimensional coordinate (Read-\/only). Performs bounds checking via assert(). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indices} & A vector of coordinates (e.\+g., \{x, y, z\}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Const reference to the double value. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_tensor_a42b1bfd00a94348fe8b1ce43a2f6cf7e}\index{DynamicTensor@{DynamicTensor}!get\_shape@{get\_shape}}
+\index{get\_shape@{get\_shape}!DynamicTensor@{DynamicTensor}}
+\doxysubsubsection{\texorpdfstring{get\_shape()}{get\_shape()}}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_a42b1bfd00a94348fe8b1ce43a2f6cf7e} 
+const std\+::vector$<$ size\+\_\+t $>$ \& Dynamic\+Tensor\+::get\+\_\+shape (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the shape of the tensor. 
+
+\begin{DoxyReturn}{Returns}
+A const reference to the vector of dimensions. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_tensor_ae3ff42311f6f05892312f2d13670849e}\index{DynamicTensor@{DynamicTensor}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!DynamicTensor@{DynamicTensor}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_ae3ff42311f6f05892312f2d13670849e} 
+double \& Dynamic\+Tensor\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i}{}\end{DoxyParamCaption})}
+
+
+
+Access element by flat index (Read/\+Write). Useful for iterating linearly through the tensor without caring about shape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The linear index in the underlying storage. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the double value. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_tensor_a2fbdea8a29139563cbdf37ae3777c064}\index{DynamicTensor@{DynamicTensor}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!DynamicTensor@{DynamicTensor}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_a2fbdea8a29139563cbdf37ae3777c064} 
+const double \& Dynamic\+Tensor\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i}{}\end{DoxyParamCaption}) const}
+
+
+
+Access element by flat index (Read-\/only). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The linear index in the underlying storage. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Const reference to the double value. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138ebf6}\index{DynamicTensor@{DynamicTensor}!rank@{rank}}
+\index{rank@{rank}!DynamicTensor@{DynamicTensor}}
+\doxysubsubsection{\texorpdfstring{rank()}{rank()}}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138ebf6} 
+size\+\_\+t Dynamic\+Tensor\+::rank (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the rank (number of dimensions) of the tensor. 
+
+\begin{DoxyReturn}{Returns}
+The size of the shape vector (e.\+g., a 3D volume returns 3). 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_tensor_a80d631cc2d2151a0e3c9da15edbd870d}\index{DynamicTensor@{DynamicTensor}!size@{size}}
+\index{size@{size}!DynamicTensor@{DynamicTensor}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_a80d631cc2d2151a0e3c9da15edbd870d} 
+size\+\_\+t Dynamic\+Tensor\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the total number of elements in the tensor. 
+
+\begin{DoxyReturn}{Returns}
+The product of all dimensions (e.\+g., 2x3x4 = 24). 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\+\_\+tensor.\+h}}\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/dynamic\+\_\+tensor.\+cpp\end{DoxyCompactItemize}

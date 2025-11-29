@@ -51,8 +51,8 @@ const std\+::vector$<$ State $>$ \& {\bfseries Get\+Solution} () const
 \Hypertarget{class_ode_solver_a3d568f640fd80d88787d5ed68ab06344}\label{class_ode_solver_a3d568f640fd80d88787d5ed68ab06344} 
 const std\+::vector$<$ double $>$ \& {\bfseries Get\+Time\+History} () const
 \item 
-\Hypertarget{class_ode_solver_aabdc727ecc643456c765cd26c04fbeb8}\label{class_ode_solver_aabdc727ecc643456c765cd26c04fbeb8} 
-virtual void {\bfseries Solve} ()
+\Hypertarget{class_ode_solver_a3cbf12fbc11c8eb7a417274c90ca71b0}\label{class_ode_solver_a3cbf12fbc11c8eb7a417274c90ca71b0} 
+void {\bfseries Solve} ()
 \item 
 \Hypertarget{class_ode_solver_af7023f02cd986aa71258dfecf6e44385}\label{class_ode_solver_af7023f02cd986aa71258dfecf6e44385} 
 {\bfseries Ode\+Solver} (const \mbox{\hyperlink{class_o_d_e}{ODE}}$<$ T $>$ \&ode, double start\+\_\+time, double end\+\_\+time, int num\+\_\+of\+\_\+steps=1)
@@ -93,7 +93,7 @@ Abstract base class for Ordinary Differential Equation (\doxylink{class_o_d_e}{O
 \item This class provides the framework for solving ODEs numerically using specific integration methods.
 \item 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em T} & The data type used for calculations (usually double or float). \\
+{\em T} & The data type used for calculations (usually double). \\
 \hline
 \end{DoxyTemplParams}
 

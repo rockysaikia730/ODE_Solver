@@ -1,63 +1,272 @@
 \doxysection{Reader\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
 \hypertarget{class_reader}{}\label{class_reader}\index{Reader$<$ T $>$@{Reader$<$ T $>$}}
-\doxysubsubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{struct_reader_1_1_table_entry}{Table\+Entry}}
-\end{DoxyCompactItemize}
+
+
+Abstract base class for reading \doxylink{class_o_d_e}{ODE} input data from files.  
+
+
+
+
+{\ttfamily \#include $<$Reader.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_reader_aa93aa3f7b6e0089073e8b520ea0607eb}\label{class_reader_aa93aa3f7b6e0089073e8b520ea0607eb} 
-{\bfseries Reader} (std\+::string, char)
-\item 
-\Hypertarget{class_reader_a98fdf40c9e687d7b6babd7a741c3f7ea}\label{class_reader_a98fdf40c9e687d7b6babd7a741c3f7ea} 
-virtual bool {\bfseries check\+File\+Exist} () const
-\item 
-\Hypertarget{class_reader_a141eb5cb165bf34a149aae7ba321a4ab}\label{class_reader_a141eb5cb165bf34a149aae7ba321a4ab} 
-virtual data {\bfseries Read} ()=0
-\item 
-\Hypertarget{class_reader_a7b359df4e46448ec48107048c5c01e1c}\label{class_reader_a7b359df4e46448ec48107048c5c01e1c} 
-void {\bfseries set\+File\+Name} (const std\+::string \&newname)
-\item 
-\Hypertarget{class_reader_a2ef2f2e8f7e495de509b9990eaafcf54}\label{class_reader_a2ef2f2e8f7e495de509b9990eaafcf54} 
-void {\bfseries set\+File\+Separator} (const char \&newsep)
-\item 
-\Hypertarget{class_reader_aed16535d8dc83044c47b6997b8a59a24}\label{class_reader_aed16535d8dc83044c47b6997b8a59a24} 
-std\+::string {\bfseries get\+File\+Name} () const
-\item 
-\Hypertarget{class_reader_ac18006ff01694c28d789fc4c648d19c2}\label{class_reader_ac18006ff01694c28d789fc4c648d19c2} 
-char {\bfseries get\+Char} () const
-\end{DoxyCompactItemize}
+\Hypertarget{class_reader_a528f5d3c246d774aec86a546ef481917}\label{class_reader_a528f5d3c246d774aec86a546ef481917} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Reader} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper polymorphic cleanup. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_reader_a9ca081b04c9de23952c68fdf23735031}{Check\+File\+Exist}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the file exists and can be opened. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_reader_afa3f020d2cf3c43f74ec8296fd666207}{Data}} \mbox{\hyperlink{class_reader_a7d9acd2bfc171097e6f487371897f788}{Read}} ()=0
+\begin{DoxyCompactList}\small\item\em Read and parse the file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_reader_ae3c137f54c97bfbeae122976bf0b74aa}{Reader}} (const std\+::string \&filename, const char \&sep)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{class_reader}{Reader} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_reader_a48db119f54e1530cf4dca3171906b263}{Set\+File}} (const std\+::string \&new\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Change the file to be read. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_reader_adf43d0a5311c3632d476a16278411d01}{Set\+File\+Separator}} (const char \&new\+\_\+sep)
+\begin{DoxyCompactList}\small\item\em Set the character used as field separator. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_reader_a2203e6e7a5e4f8d5f132eb7c03dc72a6}{Get\+File\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Get the current file name. \end{DoxyCompactList}\item 
+const std\+::ifstream \& \mbox{\hyperlink{class_reader_a5f8c3f34a0a2318e1c4e00a8dbb5beec}{Get\+File}} () const
+\begin{DoxyCompactList}\small\item\em Get a const reference to the file stream. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_reader_ab0d6c813d54b548fd2df75ff007d2ba7}{Get\+Char}} () const
+\begin{DoxyCompactList}\small\item\em Get the current field separator character. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Types}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_reader_a6c3375bfa9517a3f466cb3396b226d33}\label{class_reader_a6c3375bfa9517a3f466cb3396b226d33} 
 using {\bfseries State} = std\+::vector$<$T$>$
-\item 
-\Hypertarget{class_reader_a6a88974acdd343b224af47dd94db1db9}\label{class_reader_a6a88974acdd343b224af47dd94db1db9} 
-using {\bfseries Function} = std\+::function$<$State(double, const State\& )$>$
-\item 
-\Hypertarget{class_reader_a960fb78850bd6047705d7d2da69294c4}\label{class_reader_a960fb78850bd6047705d7d2da69294c4} 
-using {\bfseries data} = std\+::variant$<$Function, \mbox{\hyperlink{struct_reader_1_1_table_entry}{Table\+Entry}}$>$
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Convenience alias for \doxylink{class_o_d_e}{ODE} state vector. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{class_reader_a2e34ee325f6e7469930d46755f16f6ed}{Function}} = std\+::function$<$\mbox{\hyperlink{class_reader_a6c3375bfa9517a3f466cb3396b226d33}{State}}(double, const \mbox{\hyperlink{class_reader_a6c3375bfa9517a3f466cb3396b226d33}{State}}\&)$>$
+\begin{DoxyCompactList}\small\item\em Callable representing the RHS function f(t, y). \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{class_reader_afa3f020d2cf3c43f74ec8296fd666207}{Data}} = std\+::variant$<$\mbox{\hyperlink{class_reader_a2e34ee325f6e7469930d46755f16f6ed}{Function}}, \mbox{\hyperlink{struct_table_entry}{Table\+Entry}}$<$T$>$$>$
+\begin{DoxyCompactList}\small\item\em Variant of possible readable data types. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_reader_aec96b21b60c595722ea6fbe04867e117}\label{class_reader_aec96b21b60c595722ea6fbe04867e117} 
-virtual bool {\bfseries check\+File\+Name} () const
-\end{DoxyCompactItemize}
+virtual bool \mbox{\hyperlink{class_reader_acea3fffc32b3d42f63ca2a7c7a781be5}{Check\+Extension}} () const =0
+\begin{DoxyCompactList}\small\item\em Checks whether the file extension matches what this \doxylink{class_reader}{Reader} supports. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_reader_a1a1ada0c115e53caa5dc18f58e454acf}\label{class_reader_a1a1ada0c115e53caa5dc18f58e454acf} 
-char {\bfseries sep}
-\item 
-\Hypertarget{class_reader_a3ce41d6a4b337bca73c10cf970704c30}\label{class_reader_a3ce41d6a4b337bca73c10cf970704c30} 
-std\+::string {\bfseries filename}
-\end{DoxyCompactItemize}
+\Hypertarget{class_reader_aadc5e6ffda6f935d86c95c5afb2197f0}\label{class_reader_aadc5e6ffda6f935d86c95c5afb2197f0} 
+char {\bfseries sep\+\_\+}
+\begin{DoxyCompactList}\small\item\em Field separator used when parsing (e.\+g., \textquotesingle{},\textquotesingle{}, \textquotesingle{};\textquotesingle{}, \textquotesingle{} \textquotesingle{}). \end{DoxyCompactList}\item 
+\Hypertarget{class_reader_aa5e52df9d57830b86b31ae0b478b380c}\label{class_reader_aa5e52df9d57830b86b31ae0b478b380c} 
+std\+::string {\bfseries filename\+\_\+}
+\begin{DoxyCompactList}\small\item\em Name of the file to read from. \end{DoxyCompactList}\item 
+\Hypertarget{class_reader_a422199170aa6c35a46abe88fd4b836d9}\label{class_reader_a422199170aa6c35a46abe88fd4b836d9} 
+std\+::ifstream {\bfseries file\+\_\+}
+\begin{DoxyCompactList}\small\item\em File stream used internally for reading. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Reader$<$ T $>$}
+Abstract base class for reading \doxylink{class_o_d_e}{ODE} input data from files. 
+
+This class defines a common interface used by all reader types (e.\+g., CSV reader, TXT reader, JSON reader).
+
+The \doxylink{class_reader}{Reader}\+:
+\begin{DoxyItemize}
+\item Stores a filename and a field separator character.
+\item Provides functions to check file existence and file extension.
+\item Returns parsed data as either a \doxylink{class_reader_a2e34ee325f6e7469930d46755f16f6ed}{Function} or a \doxylink{struct_table_entry}{Table\+Entry$<$\+T$>$}.
+\end{DoxyItemize}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Scalar type of the \doxylink{class_o_d_e}{ODE} state (e.\+g., double, std\+::complex$<$double$>$). \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-typedef-members}
+\Hypertarget{class_reader_doc-typedef-members}
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_reader_afa3f020d2cf3c43f74ec8296fd666207}\index{Reader$<$ T $>$@{Reader$<$ T $>$}!Data@{Data}}
+\index{Data@{Data}!Reader$<$ T $>$@{Reader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily \label{class_reader_afa3f020d2cf3c43f74ec8296fd666207} 
+template$<$typename T$>$ \\
+using \mbox{\hyperlink{class_reader}{Reader}}$<$ T $>$\+::\+Data = std\+::variant$<$\mbox{\hyperlink{class_reader_a2e34ee325f6e7469930d46755f16f6ed}{Function}}, \mbox{\hyperlink{struct_table_entry}{Table\+Entry}}$<$T$>$$>$\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Variant of possible readable data types. 
+
+A \doxylink{class_reader}{Reader} may return\+:
+\begin{DoxyItemize}
+\item A \doxylink{class_reader_a2e34ee325f6e7469930d46755f16f6ed}{Function} (parsed from file or predefined)
+\item A \doxylink{struct_table_entry}{Table\+Entry$<$\+T$>$} (for table-\/based or tabulated data) 
+\end{DoxyItemize}\Hypertarget{class_reader_a2e34ee325f6e7469930d46755f16f6ed}\index{Reader$<$ T $>$@{Reader$<$ T $>$}!Function@{Function}}
+\index{Function@{Function}!Reader$<$ T $>$@{Reader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Function}{Function}}
+{\footnotesize\ttfamily \label{class_reader_a2e34ee325f6e7469930d46755f16f6ed} 
+template$<$typename T$>$ \\
+using \mbox{\hyperlink{class_reader}{Reader}}$<$ T $>$\+::\+Function = std\+::function$<$\mbox{\hyperlink{class_reader_a6c3375bfa9517a3f466cb3396b226d33}{State}}(double, const \mbox{\hyperlink{class_reader_a6c3375bfa9517a3f466cb3396b226d33}{State}}\&)$>$\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Callable representing the RHS function f(t, y). 
+
+The signature \doxylink{class_reader_a6c3375bfa9517a3f466cb3396b226d33}{State(double t, const State\& y)} must return the derivative vector. 
+
+\label{doc-constructors}
+\Hypertarget{class_reader_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_reader_ae3c137f54c97bfbeae122976bf0b74aa}\index{Reader$<$ T $>$@{Reader$<$ T $>$}!Reader@{Reader}}
+\index{Reader@{Reader}!Reader$<$ T $>$@{Reader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Reader()}{Reader()}}
+{\footnotesize\ttfamily \label{class_reader_ae3c137f54c97bfbeae122976bf0b74aa} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_reader}{Reader}}$<$ T $>$\+::\+Reader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const char \&}]{sep}{}\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{class_reader}{Reader} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file to read. \\
+\hline
+{\em sep} & Field separator character. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_reader_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_reader_acea3fffc32b3d42f63ca2a7c7a781be5}\index{Reader$<$ T $>$@{Reader$<$ T $>$}!CheckExtension@{CheckExtension}}
+\index{CheckExtension@{CheckExtension}!Reader$<$ T $>$@{Reader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{CheckExtension()}{CheckExtension()}}
+{\footnotesize\ttfamily \label{class_reader_acea3fffc32b3d42f63ca2a7c7a781be5} 
+template$<$typename T$>$ \\
+virtual bool \mbox{\hyperlink{class_reader}{Reader}}$<$ T $>$\+::\+Check\+Extension (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Checks whether the file extension matches what this \doxylink{class_reader}{Reader} supports. 
+
+Pure virtual so each subclass implements its own check.
+
+\begin{DoxyReturn}{Returns}
+true if the extension is acceptable, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_reader_a9ca081b04c9de23952c68fdf23735031}\index{Reader$<$ T $>$@{Reader$<$ T $>$}!CheckFileExist@{CheckFileExist}}
+\index{CheckFileExist@{CheckFileExist}!Reader$<$ T $>$@{Reader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{CheckFileExist()}{CheckFileExist()}}
+{\footnotesize\ttfamily \label{class_reader_a9ca081b04c9de23952c68fdf23735031} 
+template$<$typename T$>$ \\
+virtual bool \mbox{\hyperlink{class_reader}{Reader}}$<$ T $>$\+::\+Check\+File\+Exist (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks whether the file exists and can be opened. 
+
+\begin{DoxyReturn}{Returns}
+true if file exists and is readable, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_reader_ab0d6c813d54b548fd2df75ff007d2ba7}\index{Reader$<$ T $>$@{Reader$<$ T $>$}!GetChar@{GetChar}}
+\index{GetChar@{GetChar}!Reader$<$ T $>$@{Reader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetChar()}{GetChar()}}
+{\footnotesize\ttfamily \label{class_reader_ab0d6c813d54b548fd2df75ff007d2ba7} 
+template$<$typename T$>$ \\
+char \mbox{\hyperlink{class_reader}{Reader}}$<$ T $>$\+::\+Get\+Char (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current field separator character. 
+
+\begin{DoxyReturn}{Returns}
+Separator character. 
+\end{DoxyReturn}
+\Hypertarget{class_reader_a5f8c3f34a0a2318e1c4e00a8dbb5beec}\index{Reader$<$ T $>$@{Reader$<$ T $>$}!GetFile@{GetFile}}
+\index{GetFile@{GetFile}!Reader$<$ T $>$@{Reader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetFile()}{GetFile()}}
+{\footnotesize\ttfamily \label{class_reader_a5f8c3f34a0a2318e1c4e00a8dbb5beec} 
+template$<$typename T$>$ \\
+const std\+::ifstream \& \mbox{\hyperlink{class_reader}{Reader}}$<$ T $>$\+::\+Get\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a const reference to the file stream. 
+
+\begin{DoxyReturn}{Returns}
+Const reference to the internal std\+::ifstream. 
+\end{DoxyReturn}
+\Hypertarget{class_reader_a2203e6e7a5e4f8d5f132eb7c03dc72a6}\index{Reader$<$ T $>$@{Reader$<$ T $>$}!GetFileName@{GetFileName}}
+\index{GetFileName@{GetFileName}!Reader$<$ T $>$@{Reader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetFileName()}{GetFileName()}}
+{\footnotesize\ttfamily \label{class_reader_a2203e6e7a5e4f8d5f132eb7c03dc72a6} 
+template$<$typename T$>$ \\
+std\+::string \mbox{\hyperlink{class_reader}{Reader}}$<$ T $>$\+::\+Get\+File\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current file name. 
+
+\begin{DoxyReturn}{Returns}
+The stored filename. 
+\end{DoxyReturn}
+\Hypertarget{class_reader_a7d9acd2bfc171097e6f487371897f788}\index{Reader$<$ T $>$@{Reader$<$ T $>$}!Read@{Read}}
+\index{Read@{Read}!Reader$<$ T $>$@{Reader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily \label{class_reader_a7d9acd2bfc171097e6f487371897f788} 
+template$<$typename T$>$ \\
+virtual \mbox{\hyperlink{class_reader_afa3f020d2cf3c43f74ec8296fd666207}{Data}} \mbox{\hyperlink{class_reader}{Reader}}$<$ T $>$\+::\+Read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Read and parse the file. 
+
+Subclasses implement the interpretation of file contents and return either\+:
+\begin{DoxyItemize}
+\item A \doxylink{class_reader_a2e34ee325f6e7469930d46755f16f6ed}{Function} (parsed expression or compiled functor)
+\item A \doxylink{struct_table_entry}{Table\+Entry$<$\+T$>$} (parsed numeric table)
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_reader_afa3f020d2cf3c43f74ec8296fd666207}{Data} variant containing parsed information. 
+\end{DoxyReturn}
+\Hypertarget{class_reader_a48db119f54e1530cf4dca3171906b263}\index{Reader$<$ T $>$@{Reader$<$ T $>$}!SetFile@{SetFile}}
+\index{SetFile@{SetFile}!Reader$<$ T $>$@{Reader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetFile()}{SetFile()}}
+{\footnotesize\ttfamily \label{class_reader_a48db119f54e1530cf4dca3171906b263} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_reader}{Reader}}$<$ T $>$\+::\+Set\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{new\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Change the file to be read. 
+
+Resets the filename and closes any previously opened file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+name} & New file name. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_reader_adf43d0a5311c3632d476a16278411d01}\index{Reader$<$ T $>$@{Reader$<$ T $>$}!SetFileSeparator@{SetFileSeparator}}
+\index{SetFileSeparator@{SetFileSeparator}!Reader$<$ T $>$@{Reader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetFileSeparator()}{SetFileSeparator()}}
+{\footnotesize\ttfamily \label{class_reader_adf43d0a5311c3632d476a16278411d01} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_reader}{Reader}}$<$ T $>$\+::\+Set\+File\+Separator (\begin{DoxyParamCaption}\item[{const char \&}]{new\+\_\+sep}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the character used as field separator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+sep} & Separator character. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/Reader.\+h\end{DoxyCompactItemize}
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/\mbox{\hyperlink{_reader_8h}{Reader.\+h}}\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/Reader.\+cpp\end{DoxyCompactItemize}

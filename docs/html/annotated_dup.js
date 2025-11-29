@@ -1,9 +1,11 @@
 var annotated_dup =
 [
+    [ "DynamicTensor", "class_dynamic_tensor.html", "class_dynamic_tensor" ],
     [ "ODE", "class_o_d_e.html", null ],
     [ "ODEFunction", "class_o_d_e_function.html", null ],
     [ "OdeSolver", "class_ode_solver.html", null ],
-    [ "ODETable", "class_o_d_e_table.html", "class_o_d_e_table" ],
+    [ "ODETable", "class_o_d_e_table.html", null ],
     [ "Reader", "class_reader.html", "class_reader" ],
-    [ "ScaleFunctor", "struct_scale_functor.html", null ]
+    [ "ScaleFunctor", "struct_scale_functor.html", null ],
+    [ "TableEntry", "struct_table_entry.html", null ]
 ];

@@ -91,51 +91,419 @@ $(function(){initNavTree('class_reader.html','','class_reader-members'); });
   <div class="headertitle"><div class="title">Reader&lt; T &gt; Class Template Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract base class for reading <a class="el" href="class_o_d_e.html">ODE</a> input data from files.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_reader_8h_source.html">Reader.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:TableEntry" id="r_TableEntry"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_reader_1_1_table_entry.html">TableEntry</a></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa93aa3f7b6e0089073e8b520ea0607eb" id="r_aa93aa3f7b6e0089073e8b520ea0607eb"><td class="memItemLeft" align="right" valign="top"><a id="aa93aa3f7b6e0089073e8b520ea0607eb" name="aa93aa3f7b6e0089073e8b520ea0607eb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Reader</b> (std::string, char)</td></tr>
-<tr class="memitem:a98fdf40c9e687d7b6babd7a741c3f7ea" id="r_a98fdf40c9e687d7b6babd7a741c3f7ea"><td class="memItemLeft" align="right" valign="top"><a id="a98fdf40c9e687d7b6babd7a741c3f7ea" name="a98fdf40c9e687d7b6babd7a741c3f7ea"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>checkFileExist</b> () const</td></tr>
-<tr class="memitem:a141eb5cb165bf34a149aae7ba321a4ab" id="r_a141eb5cb165bf34a149aae7ba321a4ab"><td class="memItemLeft" align="right" valign="top"><a id="a141eb5cb165bf34a149aae7ba321a4ab" name="a141eb5cb165bf34a149aae7ba321a4ab"></a>
-virtual data&#160;</td><td class="memItemRight" valign="bottom"><b>Read</b> ()=0</td></tr>
-<tr class="memitem:a7b359df4e46448ec48107048c5c01e1c" id="r_a7b359df4e46448ec48107048c5c01e1c"><td class="memItemLeft" align="right" valign="top"><a id="a7b359df4e46448ec48107048c5c01e1c" name="a7b359df4e46448ec48107048c5c01e1c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setFileName</b> (const std::string &amp;newname)</td></tr>
-<tr class="memitem:a2ef2f2e8f7e495de509b9990eaafcf54" id="r_a2ef2f2e8f7e495de509b9990eaafcf54"><td class="memItemLeft" align="right" valign="top"><a id="a2ef2f2e8f7e495de509b9990eaafcf54" name="a2ef2f2e8f7e495de509b9990eaafcf54"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setFileSeparator</b> (const char &amp;newsep)</td></tr>
-<tr class="memitem:aed16535d8dc83044c47b6997b8a59a24" id="r_aed16535d8dc83044c47b6997b8a59a24"><td class="memItemLeft" align="right" valign="top"><a id="aed16535d8dc83044c47b6997b8a59a24" name="aed16535d8dc83044c47b6997b8a59a24"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getFileName</b> () const</td></tr>
-<tr class="memitem:ac18006ff01694c28d789fc4c648d19c2" id="r_ac18006ff01694c28d789fc4c648d19c2"><td class="memItemLeft" align="right" valign="top"><a id="ac18006ff01694c28d789fc4c648d19c2" name="ac18006ff01694c28d789fc4c648d19c2"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>getChar</b> () const</td></tr>
+<tr class="memitem:a528f5d3c246d774aec86a546ef481917" id="r_a528f5d3c246d774aec86a546ef481917"><td class="memItemLeft" align="right" valign="top"><a id="a528f5d3c246d774aec86a546ef481917" name="a528f5d3c246d774aec86a546ef481917"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Reader</b> ()=default</td></tr>
+<tr class="memdesc:a528f5d3c246d774aec86a546ef481917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for proper polymorphic cleanup. <br /></td></tr>
+<tr class="memitem:a9ca081b04c9de23952c68fdf23735031" id="r_a9ca081b04c9de23952c68fdf23735031"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ca081b04c9de23952c68fdf23735031">CheckFileExist</a> () const</td></tr>
+<tr class="memdesc:a9ca081b04c9de23952c68fdf23735031"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the file exists and can be opened.  <br /></td></tr>
+<tr class="memitem:a7d9acd2bfc171097e6f487371897f788" id="r_a7d9acd2bfc171097e6f487371897f788"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#afa3f020d2cf3c43f74ec8296fd666207">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d9acd2bfc171097e6f487371897f788">Read</a> ()=0</td></tr>
+<tr class="memdesc:a7d9acd2bfc171097e6f487371897f788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read and parse the file.  <br /></td></tr>
+<tr class="memitem:ae3c137f54c97bfbeae122976bf0b74aa" id="r_ae3c137f54c97bfbeae122976bf0b74aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3c137f54c97bfbeae122976bf0b74aa">Reader</a> (const std::string &amp;filename, const char &amp;sep)</td></tr>
+<tr class="memdesc:ae3c137f54c97bfbeae122976bf0b74aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_reader.html" title="Abstract base class for reading ODE input data from files.">Reader</a> object.  <br /></td></tr>
+<tr class="memitem:a48db119f54e1530cf4dca3171906b263" id="r_a48db119f54e1530cf4dca3171906b263"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48db119f54e1530cf4dca3171906b263">SetFile</a> (const std::string &amp;new_name)</td></tr>
+<tr class="memdesc:a48db119f54e1530cf4dca3171906b263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the file to be read.  <br /></td></tr>
+<tr class="memitem:adf43d0a5311c3632d476a16278411d01" id="r_adf43d0a5311c3632d476a16278411d01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf43d0a5311c3632d476a16278411d01">SetFileSeparator</a> (const char &amp;new_sep)</td></tr>
+<tr class="memdesc:adf43d0a5311c3632d476a16278411d01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the character used as field separator.  <br /></td></tr>
+<tr class="memitem:a2203e6e7a5e4f8d5f132eb7c03dc72a6" id="r_a2203e6e7a5e4f8d5f132eb7c03dc72a6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2203e6e7a5e4f8d5f132eb7c03dc72a6">GetFileName</a> () const</td></tr>
+<tr class="memdesc:a2203e6e7a5e4f8d5f132eb7c03dc72a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current file name.  <br /></td></tr>
+<tr class="memitem:a5f8c3f34a0a2318e1c4e00a8dbb5beec" id="r_a5f8c3f34a0a2318e1c4e00a8dbb5beec"><td class="memItemLeft" align="right" valign="top">const std::ifstream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f8c3f34a0a2318e1c4e00a8dbb5beec">GetFile</a> () const</td></tr>
+<tr class="memdesc:a5f8c3f34a0a2318e1c4e00a8dbb5beec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a const reference to the file stream.  <br /></td></tr>
+<tr class="memitem:ab0d6c813d54b548fd2df75ff007d2ba7" id="r_ab0d6c813d54b548fd2df75ff007d2ba7"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0d6c813d54b548fd2df75ff007d2ba7">GetChar</a> () const</td></tr>
+<tr class="memdesc:ab0d6c813d54b548fd2df75ff007d2ba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current field separator character.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-types" class="groupheader"><a id="pro-types" name="pro-types"></a>
 Protected Types</h2></td></tr>
 <tr class="memitem:a6c3375bfa9517a3f466cb3396b226d33" id="r_a6c3375bfa9517a3f466cb3396b226d33"><td class="memItemLeft" align="right" valign="top"><a id="a6c3375bfa9517a3f466cb3396b226d33" name="a6c3375bfa9517a3f466cb3396b226d33"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>State</b> = std::vector&lt;T&gt;</td></tr>
-<tr class="memitem:a6a88974acdd343b224af47dd94db1db9" id="r_a6a88974acdd343b224af47dd94db1db9"><td class="memItemLeft" align="right" valign="top"><a id="a6a88974acdd343b224af47dd94db1db9" name="a6a88974acdd343b224af47dd94db1db9"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Function</b> = std::function&lt;State(double, const State&amp; )&gt;</td></tr>
-<tr class="memitem:a960fb78850bd6047705d7d2da69294c4" id="r_a960fb78850bd6047705d7d2da69294c4"><td class="memItemLeft" align="right" valign="top"><a id="a960fb78850bd6047705d7d2da69294c4" name="a960fb78850bd6047705d7d2da69294c4"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>data</b> = std::variant&lt;Function, <a class="el" href="struct_reader_1_1_table_entry.html">TableEntry</a>&gt;</td></tr>
+<tr class="memdesc:a6c3375bfa9517a3f466cb3396b226d33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience alias for <a class="el" href="class_o_d_e.html">ODE</a> state vector. <br /></td></tr>
+<tr class="memitem:a2e34ee325f6e7469930d46755f16f6ed" id="r_a2e34ee325f6e7469930d46755f16f6ed"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e34ee325f6e7469930d46755f16f6ed">Function</a> = std::function&lt;<a class="el" href="#a6c3375bfa9517a3f466cb3396b226d33">State</a>(double, const <a class="el" href="#a6c3375bfa9517a3f466cb3396b226d33">State</a>&amp;)&gt;</td></tr>
+<tr class="memdesc:a2e34ee325f6e7469930d46755f16f6ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callable representing the RHS function f(t, y).  <br /></td></tr>
+<tr class="memitem:afa3f020d2cf3c43f74ec8296fd666207" id="r_afa3f020d2cf3c43f74ec8296fd666207"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa3f020d2cf3c43f74ec8296fd666207">Data</a> = std::variant&lt;<a class="el" href="#a2e34ee325f6e7469930d46755f16f6ed">Function</a>, <a class="el" href="struct_table_entry.html">TableEntry</a>&lt;T&gt;&gt;</td></tr>
+<tr class="memdesc:afa3f020d2cf3c43f74ec8296fd666207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variant of possible readable data types.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:aec96b21b60c595722ea6fbe04867e117" id="r_aec96b21b60c595722ea6fbe04867e117"><td class="memItemLeft" align="right" valign="top"><a id="aec96b21b60c595722ea6fbe04867e117" name="aec96b21b60c595722ea6fbe04867e117"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>checkFileName</b> () const</td></tr>
+<tr class="memitem:acea3fffc32b3d42f63ca2a7c7a781be5" id="r_acea3fffc32b3d42f63ca2a7c7a781be5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acea3fffc32b3d42f63ca2a7c7a781be5">CheckExtension</a> () const =0</td></tr>
+<tr class="memdesc:acea3fffc32b3d42f63ca2a7c7a781be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the file extension matches what this <a class="el" href="class_reader.html" title="Abstract base class for reading ODE input data from files.">Reader</a> supports.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a1a1ada0c115e53caa5dc18f58e454acf" id="r_a1a1ada0c115e53caa5dc18f58e454acf"><td class="memItemLeft" align="right" valign="top"><a id="a1a1ada0c115e53caa5dc18f58e454acf" name="a1a1ada0c115e53caa5dc18f58e454acf"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>sep</b></td></tr>
-<tr class="memitem:a3ce41d6a4b337bca73c10cf970704c30" id="r_a3ce41d6a4b337bca73c10cf970704c30"><td class="memItemLeft" align="right" valign="top"><a id="a3ce41d6a4b337bca73c10cf970704c30" name="a3ce41d6a4b337bca73c10cf970704c30"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>filename</b></td></tr>
+<tr class="memitem:aadc5e6ffda6f935d86c95c5afb2197f0" id="r_aadc5e6ffda6f935d86c95c5afb2197f0"><td class="memItemLeft" align="right" valign="top"><a id="aadc5e6ffda6f935d86c95c5afb2197f0" name="aadc5e6ffda6f935d86c95c5afb2197f0"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>sep_</b></td></tr>
+<tr class="memdesc:aadc5e6ffda6f935d86c95c5afb2197f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Field separator used when parsing (e.g., ',', ';', ' '). <br /></td></tr>
+<tr class="memitem:aa5e52df9d57830b86b31ae0b478b380c" id="r_aa5e52df9d57830b86b31ae0b478b380c"><td class="memItemLeft" align="right" valign="top"><a id="aa5e52df9d57830b86b31ae0b478b380c" name="aa5e52df9d57830b86b31ae0b478b380c"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>filename_</b></td></tr>
+<tr class="memdesc:aa5e52df9d57830b86b31ae0b478b380c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the file to read from. <br /></td></tr>
+<tr class="memitem:a422199170aa6c35a46abe88fd4b836d9" id="r_a422199170aa6c35a46abe88fd4b836d9"><td class="memItemLeft" align="right" valign="top"><a id="a422199170aa6c35a46abe88fd4b836d9" name="a422199170aa6c35a46abe88fd4b836d9"></a>
+std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_</b></td></tr>
+<tr class="memdesc:a422199170aa6c35a46abe88fd4b836d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">File stream used internally for reading. <br /></td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+class Reader&lt; T &gt;</div><p>Abstract base class for reading <a class="el" href="class_o_d_e.html">ODE</a> input data from files. </p>
+<p>This class defines a common interface used by all reader types (e.g., CSV reader, TXT reader, JSON reader).</p>
+<p>The <a class="el" href="class_reader.html" title="Abstract base class for reading ODE input data from files.">Reader</a>:</p><ul>
+<li>Stores a filename and a field separator character.</li>
+<li>Provides functions to check file existence and file extension.</li>
+<li>Returns parsed data as either a <a class="el" href="#a2e34ee325f6e7469930d46755f16f6ed" title="Callable representing the RHS function f(t, y).">Function</a> or a <a class="el" href="struct_table_entry.html">TableEntry&lt;T&gt;</a>.</li>
+</ul>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Scalar type of the <a class="el" href="class_o_d_e.html">ODE</a> state (e.g., double, std::complex&lt;double&gt;). </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
+<a id="afa3f020d2cf3c43f74ec8296fd666207" name="afa3f020d2cf3c43f74ec8296fd666207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa3f020d2cf3c43f74ec8296fd666207">&#9670;&#160;</a></span>Data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_reader.html">Reader</a>&lt; T &gt;::Data = std::variant&lt;<a class="el" href="#a2e34ee325f6e7469930d46755f16f6ed">Function</a>, <a class="el" href="struct_table_entry.html">TableEntry</a>&lt;T&gt;&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variant of possible readable data types. </p>
+<p>A <a class="el" href="class_reader.html" title="Abstract base class for reading ODE input data from files.">Reader</a> may return:</p><ul>
+<li>A <a class="el" href="#a2e34ee325f6e7469930d46755f16f6ed" title="Callable representing the RHS function f(t, y).">Function</a> (parsed from file or predefined)</li>
+<li>A <a class="el" href="struct_table_entry.html">TableEntry&lt;T&gt;</a> (for table-based or tabulated data) </li>
+</ul>
+
+</div>
+</div>
+<a id="a2e34ee325f6e7469930d46755f16f6ed" name="a2e34ee325f6e7469930d46755f16f6ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e34ee325f6e7469930d46755f16f6ed">&#9670;&#160;</a></span>Function</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_reader.html">Reader</a>&lt; T &gt;::Function = std::function&lt;<a class="el" href="#a6c3375bfa9517a3f466cb3396b226d33">State</a>(double, const <a class="el" href="#a6c3375bfa9517a3f466cb3396b226d33">State</a>&amp;)&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callable representing the RHS function f(t, y). </p>
+<p>The signature <a class="el" href="#a6c3375bfa9517a3f466cb3396b226d33" title="Convenience alias for ODE state vector.">State(double t, const State&amp; y)</a> must return the derivative vector. </p>
+
+</div>
+</div>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae3c137f54c97bfbeae122976bf0b74aa" name="ae3c137f54c97bfbeae122976bf0b74aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3c137f54c97bfbeae122976bf0b74aa">&#9670;&#160;</a></span>Reader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_reader.html">Reader</a>&lt; T &gt;::Reader </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char &amp;</td>          <td class="paramname"><span class="paramname"><em>sep</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a <a class="el" href="class_reader.html" title="Abstract base class for reading ODE input data from files.">Reader</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Name of the file to read. </td></tr>
+    <tr><td class="paramname">sep</td><td>Field separator character. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="acea3fffc32b3d42f63ca2a7c7a781be5" name="acea3fffc32b3d42f63ca2a7c7a781be5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acea3fffc32b3d42f63ca2a7c7a781be5">&#9670;&#160;</a></span>CheckExtension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="class_reader.html">Reader</a>&lt; T &gt;::CheckExtension </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks whether the file extension matches what this <a class="el" href="class_reader.html" title="Abstract base class for reading ODE input data from files.">Reader</a> supports. </p>
+<p>Pure virtual so each subclass implements its own check.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if the extension is acceptable, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a9ca081b04c9de23952c68fdf23735031" name="a9ca081b04c9de23952c68fdf23735031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ca081b04c9de23952c68fdf23735031">&#9670;&#160;</a></span>CheckFileExist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="class_reader.html">Reader</a>&lt; T &gt;::CheckFileExist </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks whether the file exists and can be opened. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if file exists and is readable, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ab0d6c813d54b548fd2df75ff007d2ba7" name="ab0d6c813d54b548fd2df75ff007d2ba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0d6c813d54b548fd2df75ff007d2ba7">&#9670;&#160;</a></span>GetChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char <a class="el" href="class_reader.html">Reader</a>&lt; T &gt;::GetChar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the current field separator character. </p>
+<dl class="section return"><dt>Returns</dt><dd>Separator character. </dd></dl>
+
+</div>
+</div>
+<a id="a5f8c3f34a0a2318e1c4e00a8dbb5beec" name="a5f8c3f34a0a2318e1c4e00a8dbb5beec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f8c3f34a0a2318e1c4e00a8dbb5beec">&#9670;&#160;</a></span>GetFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::ifstream &amp; <a class="el" href="class_reader.html">Reader</a>&lt; T &gt;::GetFile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a const reference to the file stream. </p>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to the internal std::ifstream. </dd></dl>
+
+</div>
+</div>
+<a id="a2203e6e7a5e4f8d5f132eb7c03dc72a6" name="a2203e6e7a5e4f8d5f132eb7c03dc72a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2203e6e7a5e4f8d5f132eb7c03dc72a6">&#9670;&#160;</a></span>GetFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="class_reader.html">Reader</a>&lt; T &gt;::GetFileName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the current file name. </p>
+<dl class="section return"><dt>Returns</dt><dd>The stored filename. </dd></dl>
+
+</div>
+</div>
+<a id="a7d9acd2bfc171097e6f487371897f788" name="a7d9acd2bfc171097e6f487371897f788"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d9acd2bfc171097e6f487371897f788">&#9670;&#160;</a></span>Read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="#afa3f020d2cf3c43f74ec8296fd666207">Data</a> <a class="el" href="class_reader.html">Reader</a>&lt; T &gt;::Read </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read and parse the file. </p>
+<p>Subclasses implement the interpretation of file contents and return either:</p><ul>
+<li>A <a class="el" href="#a2e34ee325f6e7469930d46755f16f6ed" title="Callable representing the RHS function f(t, y).">Function</a> (parsed expression or compiled functor)</li>
+<li>A <a class="el" href="struct_table_entry.html">TableEntry&lt;T&gt;</a> (parsed numeric table)</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="#afa3f020d2cf3c43f74ec8296fd666207" title="Variant of possible readable data types.">Data</a> variant containing parsed information. </dd></dl>
+
+</div>
+</div>
+<a id="a48db119f54e1530cf4dca3171906b263" name="a48db119f54e1530cf4dca3171906b263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48db119f54e1530cf4dca3171906b263">&#9670;&#160;</a></span>SetFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_reader.html">Reader</a>&lt; T &gt;::SetFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>new_name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change the file to be read. </p>
+<p>Resets the filename and closes any previously opened file.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_name</td><td>New file name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adf43d0a5311c3632d476a16278411d01" name="adf43d0a5311c3632d476a16278411d01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf43d0a5311c3632d476a16278411d01">&#9670;&#160;</a></span>SetFileSeparator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_reader.html">Reader</a>&lt; T &gt;::SetFileSeparator </td>
+          <td>(</td>
+          <td class="paramtype">const char &amp;</td>          <td class="paramname"><span class="paramname"><em>new_sep</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the character used as field separator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_sep</td><td>Separator character. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/rocky/notes/Scientific Computing/ODE_Solver/include/<a class="el" href="_reader_8h_source.html">Reader.h</a></li>
+<li>/Users/rocky/notes/Scientific Computing/ODE_Solver/src/<b>Reader.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -101,10 +101,6 @@ Inheritance diagram for ODETable&lt; T &gt;:</div>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:TableEntry" id="r_TableEntry"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_o_d_e_table_1_1_table_entry.html">TableEntry</a></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a7dc76e55dd8aaec19f2fe6f35f318dc1" id="r_a7dc76e55dd8aaec19f2fe6f35f318dc1"><td class="memItemLeft" align="right" valign="top"><a id="a7dc76e55dd8aaec19f2fe6f35f318dc1" name="a7dc76e55dd8aaec19f2fe6f35f318dc1"></a>
@@ -115,18 +111,18 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>State</b> = std::vec
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9f1ba80ab4ee6b201723e72196212d5e" id="r_a9f1ba80ab4ee6b201723e72196212d5e"><td class="memItemLeft" align="right" valign="top"><a id="a9f1ba80ab4ee6b201723e72196212d5e" name="a9f1ba80ab4ee6b201723e72196212d5e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ODETable</b> (const std::vector&lt; <a class="el" href="struct_o_d_e_table_1_1_table_entry.html">TableEntry</a> &gt; &amp;entries, const std::string &amp;name, double tol=1e-6)</td></tr>
-<tr class="memitem:a5d1d2a84b749224d11027edf986ecc11" id="r_a5d1d2a84b749224d11027edf986ecc11"><td class="memItemLeft" align="right" valign="top"><a id="a5d1d2a84b749224d11027edf986ecc11" name="a5d1d2a84b749224d11027edf986ecc11"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ODETable</b> (const <a class="el" href="struct_o_d_e_table_1_1_table_entry.html">TableEntry</a> &amp;entries, const std::string &amp;name, double tol=1e-6)</td></tr>
+<tr class="memitem:a46eb5cf7ff64d46b7374963334fa2038" id="r_a46eb5cf7ff64d46b7374963334fa2038"><td class="memItemLeft" align="right" valign="top"><a id="a46eb5cf7ff64d46b7374963334fa2038" name="a46eb5cf7ff64d46b7374963334fa2038"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ODETable</b> (const std::vector&lt; <a class="el" href="struct_table_entry.html">TableEntry</a>&lt; T &gt; &gt; &amp;entries, const std::string &amp;name, double tol=1e-6)</td></tr>
+<tr class="memitem:aa5db4076bccfd16b7ffe46a0c155abb7" id="r_aa5db4076bccfd16b7ffe46a0c155abb7"><td class="memItemLeft" align="right" valign="top"><a id="aa5db4076bccfd16b7ffe46a0c155abb7" name="aa5db4076bccfd16b7ffe46a0c155abb7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ODETable</b> (const <a class="el" href="struct_table_entry.html">TableEntry</a>&lt; T &gt; &amp;entries, const std::string &amp;name, double tol=1e-6)</td></tr>
 <tr class="memitem:a27c0dff6549aef85e08ab2ceff41320e" id="r_a27c0dff6549aef85e08ab2ceff41320e"><td class="memItemLeft" align="right" valign="top">virtual State&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27c0dff6549aef85e08ab2ceff41320e">evaluate</a> (double t, const State &amp;y) const override</td></tr>
 <tr class="memitem:a9c3318d9175243fc239461dc8b0ffb1e" id="r_a9c3318d9175243fc239461dc8b0ffb1e"><td class="memItemLeft" align="right" valign="top">virtual State&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c3318d9175243fc239461dc8b0ffb1e">evaluate</a> (double t, const T &amp;y) const override</td></tr>
 <tr class="memitem:a9eba262bd9cc62dde52ca51a0f2fae14" id="r_a9eba262bd9cc62dde52ca51a0f2fae14"><td class="memItemLeft" align="right" valign="top"><a id="a9eba262bd9cc62dde52ca51a0f2fae14" name="a9eba262bd9cc62dde52ca51a0f2fae14"></a>
 virtual State&#160;</td><td class="memItemRight" valign="bottom"><b>evaluate</b> (int i) const</td></tr>
-<tr class="memitem:a6be50e6ae6d0fbffd32392e688273b38" id="r_a6be50e6ae6d0fbffd32392e688273b38"><td class="memItemLeft" align="right" valign="top"><a id="a6be50e6ae6d0fbffd32392e688273b38" name="a6be50e6ae6d0fbffd32392e688273b38"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setTable</b> (const std::vector&lt; <a class="el" href="struct_o_d_e_table_1_1_table_entry.html">TableEntry</a> &gt; &amp;entries)</td></tr>
-<tr class="memitem:a63d320e8d205055aa8100450520c09b3" id="r_a63d320e8d205055aa8100450520c09b3"><td class="memItemLeft" align="right" valign="top"><a id="a63d320e8d205055aa8100450520c09b3" name="a63d320e8d205055aa8100450520c09b3"></a>
-const std::vector&lt; <a class="el" href="struct_o_d_e_table_1_1_table_entry.html">TableEntry</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getTable</b> () const</td></tr>
+<tr class="memitem:ac8134ae1dabe5c22c49ac160800c6cdc" id="r_ac8134ae1dabe5c22c49ac160800c6cdc"><td class="memItemLeft" align="right" valign="top"><a id="ac8134ae1dabe5c22c49ac160800c6cdc" name="ac8134ae1dabe5c22c49ac160800c6cdc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setTable</b> (const std::vector&lt; <a class="el" href="struct_table_entry.html">TableEntry</a>&lt; T &gt; &gt; &amp;entries)</td></tr>
+<tr class="memitem:a28aa0178b11693536ea8e4e38a4e26fa" id="r_a28aa0178b11693536ea8e4e38a4e26fa"><td class="memItemLeft" align="right" valign="top"><a id="a28aa0178b11693536ea8e4e38a4e26fa" name="a28aa0178b11693536ea8e4e38a4e26fa"></a>
+const std::vector&lt; <a class="el" href="struct_table_entry.html">TableEntry</a>&lt; T &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getTable</b> () const</td></tr>
 <tr class="inherit_header pub_methods_class_o_d_e"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_o_d_e')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_o_d_e.html">ODE&lt; T &gt;</a></td></tr>
 <tr class="memitem:aede66bf98c818fc2508f44a41f5406a6 inherit pub_methods_class_o_d_e" id="r_aede66bf98c818fc2508f44a41f5406a6"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setT0</b> (const double inTime)</td></tr>
