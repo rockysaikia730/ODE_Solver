@@ -19,15 +19,23 @@ DynamicTensor::DynamicTensor(const std::vector<size_t>& input_shape, double init
 }
 
 // Constructor with shape and data
-DynamicTensor::DynamicTensor(const std::vector<size_t>& input_shape, const std::vector<double>& data)
-    : data_(data), shape_(input_shape) {
-    size_t required_size = 1;
-    if (!shape_.empty()) {
-        for (size_t dim : shape_) required_size *= dim;
-    } else {
-        required_size = 0;
+DynamicTensor::DynamicTensor(const std::vector<double>& data, const std::vector<size_t>& input_shape)
+    : data_(data) {
+    if (input_shape.empty()) {
+        if (data_.empty()) { 
+            shape_ = {}; 
+        } else {
+            shape_ = { data_.size() }; 
+        }
     }
-    assert(data_.size() == required_size && "Data size does not match shape dimensions");
+    else {
+        shape_ = input_shape;
+        size_t required_size = 1;
+        for (size_t dim : shape_) {
+            required_size *= dim;
+        }
+        assert(data_.size() == required_size && "Data size does not match shape dimensions");
+    }
 }
 
 // Private helper

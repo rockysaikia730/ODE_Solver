@@ -48,9 +48,9 @@ public:
      *
      * @param input_shape A vector containing the size of each dimension.
      * @param data The flat vector of data.
-     * @warning The size of @p data must exactly match the product of @p input_shape.
+     * @warning The size of @p data must exactly match the product of @p input_shape. Otherwise it is flattened
      */
-    DynamicTensor(const std::vector<size_t>& input_shape, const std::vector<double>& data);
+    DynamicTensor(const std::vector<double>& data, const std::vector<size_t>& input_shape = {});
 
     /**
      * @brief Access element at N-dimensional coordinate (Read/Write).
