@@ -38,9 +38,9 @@ public:
      * Allocates memory based on the product of the shape dimensions.
      *
      * @param input_shape A vector containing the size of each dimension.
-     * @param initial_value The value to initialize all elements with (default: 0.0).
+     * @param initial_value The value to initialize all elements with.
      */
-    DynamicTensor(const std::vector<size_t>& input_shape, double initial_value = 0.0);
+    DynamicTensor(const std::vector<size_t>& input_shape, double initial_value);
 
     /**
      * @brief Data constructor.
