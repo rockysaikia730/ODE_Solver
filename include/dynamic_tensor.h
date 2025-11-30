@@ -10,8 +10,9 @@
 #define DYNAMIC_TENSOR_H_
 
 #include <vector>
-#include <cstddef> // for size_t
-
+#include <cstddef> 
+#include <complex>
+#include <variant>
 /**
  * @class DynamicTensor
  * @brief A class to represent a mathematical tensor of arbitrary rank at runtime.
@@ -27,9 +28,11 @@
  */
 class DynamicTensor {
 public:
+    using Complex = std::complex<double>;
+    enum class Type { REAL, COMPLEX };
     /**
      * @brief Default constructor.
-     * Creates an empty tensor with rank 0 and size 0.
+     * Creates an empty real tensor with rank 0 and size 0.
      */
     DynamicTensor();
 
@@ -41,7 +44,7 @@ public:
      * @param initial_value The value to initialize all elements with.
      */
     DynamicTensor(const std::vector<size_t>& input_shape, double initial_value);
-
+    DynamicTensor(const std::vector<size_t>& input_shape, Complex initial_value);
     /**
      * @brief Data constructor.
      * Creates a tensor with specific shape and pre-existing data.
@@ -51,41 +54,43 @@ public:
      * @warning The size of @p data must exactly match the product of @p input_shape. Otherwise it is flattened
      */
     DynamicTensor(const std::vector<double>& data, const std::vector<size_t>& input_shape = {});
+    DynamicTensor(const std::vector<Complex>& data, const std::vector<size_t>& input_shape = {});
+
+    bool IsComplex() const;
+    Type GetType() const;
 
     /**
-     * @brief Access element at N-dimensional coordinate (Read/Write).
-     * Performs bounds checking via assert().
-     *
-     * @param indices A vector of coordinates (e.g., {x, y, z}).
-     * @return Reference to the double value at that position.
+     * @brief Unified Templated Accessor.
+     * Usage: tensor.at<double>({0}) or tensor.at<Complex>({0})
      */
-    double& at(const std::vector<size_t>& indices);
+    template <typename T>
+    T& at(const std::vector<size_t>& indices) {
+        if constexpr (std::is_same_v<T, double>) {
+            return std::get<std::vector<double>>(data_)[calculate_index(indices)];
+        } else if constexpr (std::is_same_v<T, Complex>) {
+            return std::get<std::vector<Complex>>(data_)[calculate_index(indices)];
+        }
+    }
+
+    template <typename T>
+    const T& at(const std::vector<size_t>& indices) const {
+        if constexpr (std::is_same_v<T, double>) {
+            return std::get<std::vector<double>>(data_)[calculate_index(indices)];
+        } else if constexpr (std::is_same_v<T, Complex>) {
+            return std::get<std::vector<Complex>>(data_)[calculate_index(indices)];
+        }
+    }
 
     /**
-     * @brief Access element at N-dimensional coordinate (Read-only).
-     * Performs bounds checking via assert().
-     *
-     * @param indices A vector of coordinates (e.g., {x, y, z}).
-     * @return Const reference to the double value.
+     * @brief Element-wise Addition.
+     * Handles Real+Real, Complex+Complex
      */
-    const double& at(const std::vector<size_t>& indices) const;
+    DynamicTensor operator+(const DynamicTensor& second_tensor) const;
 
     /**
-     * @brief Access element by flat index (Read/Write).
-     * Useful for iterating linearly through the tensor without caring about shape.
-     *
-     * @param i The linear index in the underlying storage.
-     * @return Reference to the double value.
+     * @brief Scalar Multiplication (Tensor * double).
      */
-    double& operator[](size_t i);
-
-    /**
-     * @brief Access element by flat index (Read-only).
-     *
-     * @param i The linear index in the underlying storage.
-     * @return Const reference to the double value.
-     */
-    const double& operator[](size_t i) const;
+    DynamicTensor operator*(double scalar) const;
 
     /**
      * @brief Get the total number of elements in the tensor.
@@ -107,7 +112,7 @@ public:
 
 private:
     /// @brief Flattened storage of tensor data.
-    std::vector<double> data_;
+    std::variant<std::vector<double>, std::vector<Complex>> data_;
 
     /// @brief Dimensions of the tensor.
     std::vector<size_t> shape_;

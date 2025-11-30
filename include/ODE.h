@@ -1,42 +1,34 @@
-//
-// Created by andra on 21/11/2025.
-//
-
 #ifndef CODES_ODE_H
 #define CODES_ODE_H
 
 #include <vector>
 #include <string>
+#include <dynamic_tensor.h>
+#include "function.h"
+#include "root_finder.h"
 
-template <typename T>
-class ODE {
+class Ode {
 public:
-    using State = std::vector<T>;
-    virtual ~ODE() = default;
-    void setT0(const double inTime){t0_ = inTime;};
-    void setY0(const State& inY0){y0_ = inY0;};//Verify copy
-    void setY0(const T& inY0) {y0_ = {inY0};};
-    void setName(const std::string& inName){name_ = inName;};
-    double getTimeIn() const{ return t0_;};
-    const State& getCondIn() const{ return y0_;};
-    const std::string& getName() const{ return name_;};
-    virtual State evaluate(double t, const State& y) const = 0;
-    virtual State evaluate(double t, const T& y) const = 0;
+    Ode(double inTime, const DynamicTensor& inY0, const std::string& in_name);
+    Ode(double inTime, const double& inY0, const std::string& in_name);
 
-    ODE(double inTime, const State& inY0, const std::string& inName) {
-        t0_ = inTime;
-        y0_ = inY0;
-        name_ = inName;
-    }
-    ODE(double inTime, const T& inY0, const std::string& inName) {
-        t0_ = inTime;
-        y0_ = {inY0};
-        name_ = inName;
-    }
+    virtual ~Ode();
+
+    void SetT0(const double in_time);
+    void SetY0(const DynamicTensor& in_y0);
+    void SetY0(double& in_y0);
+    void SetName(const std::string& in_name);
+
+    double GetTimeIn() const{ return t0_;};
+    const DynamicTensor& GetCondIn() const;
+    const std::string& GetName() const;
+
+    DynamicTensor Evaluate(double t, const DynamicTensor& y) const;
 private:
     double t0_;
-    State y0_;
+    DynamicTensor y0_;
     std::string name_;
-
+    const Function& func_;
+    const RootFinder& root_finder_;
 };
-#endif //CODES_ODE_H
+#endif
