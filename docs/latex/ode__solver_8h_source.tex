@@ -8,7 +8,7 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cmath>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}ODE.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ode_8h}{ODE.h}}"{}}}
 \DoxyCodeLine{00008\ }
 \DoxyCodeLine{00016\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
 \DoxyCodeLine{00017\ \textcolor{keyword}{class\ }OdeSolver\ \{}
@@ -53,7 +53,7 @@
 \DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00057\ \ \ \ \ \}}
 \DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ OdeSolver(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_o_d_e}{ODE<T>}}\&\ ode,\ \textcolor{keywordtype}{double}\ start\_time,\ \textcolor{keywordtype}{double}\ end\_time,\ \ \textcolor{keywordtype}{int}\ num\_of\_steps\ =\ 1)}
+\DoxyCodeLine{00059\ \ \ \ \ OdeSolver(\textcolor{keyword}{const}\ ODE<T>\&\ ode,\ \textcolor{keywordtype}{double}\ start\_time,\ \textcolor{keywordtype}{double}\ end\_time,\ \ \textcolor{keywordtype}{int}\ num\_of\_steps\ =\ 1)}
 \DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ :\ start\_time\_(start\_time),}
 \DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ end\_time\_(end\_time),}
 \DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ num\_of\_steps\_(num\_of\_steps),}
@@ -72,7 +72,7 @@
 \DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{double}\ end\_time\_;}
 \DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_of\_steps\_;}
 \DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{double}\ step\_size\_;}
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_o_d_e}{ODE<T>}}\&\ ode\_;}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ ODE<T>\&\ ode\_;}
 \DoxyCodeLine{00079\ \ \ \ \ std::vector<State>\ solutions\_;}
 \DoxyCodeLine{00080\ \ \ \ \ std::vector<double>\ times\_;}
 \DoxyCodeLine{00081\ \};}

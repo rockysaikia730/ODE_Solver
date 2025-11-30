@@ -10,69 +10,17 @@ Inheritance diagram for ODEFunction\texorpdfstring{$<$}{<} T \texorpdfstring{$>$
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_o_d_e_function_a11b91032bbb7fe743964fe1453187ad2}\label{class_o_d_e_function_a11b91032bbb7fe743964fe1453187ad2} 
-{\bfseries ODEFunction} (double t0, const State \&y0, const Function \&f, const std\+::string \&name)
+{\bfseries ODEFunction} (double t0, const State \&y0, const \mbox{\hyperlink{class_function}{Function}} \&f, const std\+::string \&name)
 \item 
 \Hypertarget{class_o_d_e_function_adefe6d46a3c597203d4c1dec4b302083}\label{class_o_d_e_function_adefe6d46a3c597203d4c1dec4b302083} 
-{\bfseries ODEFunction} (double t0, const T \&y0, const Function \&f, const std\+::string \&name)
+{\bfseries ODEFunction} (double t0, const T \&y0, const \mbox{\hyperlink{class_function}{Function}} \&f, const std\+::string \&name)
 \item 
-virtual State \mbox{\hyperlink{class_o_d_e_function_a7950a958a9354ce65ed6d834efe07435}{evaluate}} (double t, const State \&y) const override
+\Hypertarget{class_o_d_e_function_a7950a958a9354ce65ed6d834efe07435}\label{class_o_d_e_function_a7950a958a9354ce65ed6d834efe07435} 
+virtual State {\bfseries evaluate} (double t, const State \&y) const override
 \item 
-virtual State \mbox{\hyperlink{class_o_d_e_function_a31919d7ee49b75b5d93930a5da87b57b}{evaluate}} (double t, const T \&y) const override
+\Hypertarget{class_o_d_e_function_a31919d7ee49b75b5d93930a5da87b57b}\label{class_o_d_e_function_a31919d7ee49b75b5d93930a5da87b57b} 
+virtual State {\bfseries evaluate} (double t, const T \&y) const override
 \end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_o_d_e}{ODE$<$ T $>$}}}
-\begin{DoxyCompactItemize}
-\item 
-void {\bfseries set\+T0} (const double in\+Time)
-\item 
-void {\bfseries set\+Y0} (const State \&in\+Y0)
-\item 
-void {\bfseries set\+Y0} (const T \&in\+Y0)
-\item 
-void {\bfseries set\+Name} (const std\+::string \&in\+Name)
-\item 
-double {\bfseries get\+Time\+In} () const
-\item 
-const State \& {\bfseries get\+Cond\+In} () const
-\item 
-const std\+::string \& {\bfseries get\+Name} () const
-\item 
-{\bfseries ODE} (double in\+Time, const State \&in\+Y0, const std\+::string \&in\+Name)
-\item 
-{\bfseries ODE} (double in\+Time, const T \&in\+Y0, const std\+::string \&in\+Name)
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_o_d_e}{ODE$<$ T $>$}}}
-\begin{DoxyCompactItemize}
-\item 
-using {\bfseries State} = std\+::vector$<$T$>$
-\end{DoxyCompactItemize}
-
-
-\label{doc-func-members}
-\Hypertarget{class_o_d_e_function_doc-func-members}
-\doxysubsection{Member Function Documentation}
-\Hypertarget{class_o_d_e_function_a7950a958a9354ce65ed6d834efe07435}\index{ODEFunction$<$ T $>$@{ODEFunction$<$ T $>$}!evaluate@{evaluate}}
-\index{evaluate@{evaluate}!ODEFunction$<$ T $>$@{ODEFunction$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_o_d_e_function_a7950a958a9354ce65ed6d834efe07435} 
-template$<$typename T$>$ \\
-\mbox{\hyperlink{class_o_d_e_function}{ODEFunction}}$<$ T $>$\+::\+State \mbox{\hyperlink{class_o_d_e_function}{ODEFunction}}$<$ T $>$\+::evaluate (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{const State \&}]{y}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Implements \mbox{\hyperlink{class_o_d_e}{ODE$<$ T $>$}}.
-
-\Hypertarget{class_o_d_e_function_a31919d7ee49b75b5d93930a5da87b57b}\index{ODEFunction$<$ T $>$@{ODEFunction$<$ T $>$}!evaluate@{evaluate}}
-\index{evaluate@{evaluate}!ODEFunction$<$ T $>$@{ODEFunction$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_o_d_e_function_a31919d7ee49b75b5d93930a5da87b57b} 
-template$<$typename T$>$ \\
-\mbox{\hyperlink{class_o_d_e_function}{ODEFunction}}$<$ T $>$\+::\+State \mbox{\hyperlink{class_o_d_e_function}{ODEFunction}}$<$ T $>$\+::evaluate (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{const T \&}]{y}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Implements \mbox{\hyperlink{class_o_d_e}{ODE$<$ T $>$}}.
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

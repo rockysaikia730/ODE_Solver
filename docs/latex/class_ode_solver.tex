@@ -2,7 +2,7 @@
 \hypertarget{class_ode_solver}{}\label{class_ode_solver}\index{OdeSolver$<$ T $>$@{OdeSolver$<$ T $>$}}
 
 
-Abstract base class for Ordinary Differential Equation (\doxylink{class_o_d_e}{ODE}) solvers.  
+Abstract base class for Ordinary Differential Equation (ODE) solvers.  
 
 
 
@@ -55,7 +55,7 @@ const std\+::vector$<$ double $>$ \& {\bfseries Get\+Time\+History} () const
 void {\bfseries Solve} ()
 \item 
 \Hypertarget{class_ode_solver_af7023f02cd986aa71258dfecf6e44385}\label{class_ode_solver_af7023f02cd986aa71258dfecf6e44385} 
-{\bfseries Ode\+Solver} (const \mbox{\hyperlink{class_o_d_e}{ODE}}$<$ T $>$ \&ode, double start\+\_\+time, double end\+\_\+time, int num\+\_\+of\+\_\+steps=1)
+{\bfseries Ode\+Solver} (const ODE$<$ T $>$ \&ode, double start\+\_\+time, double end\+\_\+time, int num\+\_\+of\+\_\+steps=1)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -73,7 +73,7 @@ int {\bfseries num\+\_\+of\+\_\+steps\+\_\+}
 double {\bfseries step\+\_\+size\+\_\+}
 \item 
 \Hypertarget{class_ode_solver_a9666d544fc16816a9a26d1a20b99c245}\label{class_ode_solver_a9666d544fc16816a9a26d1a20b99c245} 
-const \mbox{\hyperlink{class_o_d_e}{ODE}}$<$ T $>$ \& {\bfseries ode\+\_\+}
+const ODE$<$ T $>$ \& {\bfseries ode\+\_\+}
 \item 
 \Hypertarget{class_ode_solver_afb11ba0df20b8408732d22684c2361d9}\label{class_ode_solver_afb11ba0df20b8408732d22684c2361d9} 
 std\+::vector$<$ State $>$ {\bfseries solutions\+\_\+}
@@ -86,7 +86,7 @@ std\+::vector$<$ double $>$ {\bfseries times\+\_\+}
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$typename T$>$\newline
 class Ode\+Solver$<$ T $>$}
-Abstract base class for Ordinary Differential Equation (\doxylink{class_o_d_e}{ODE}) solvers. 
+Abstract base class for Ordinary Differential Equation (ODE) solvers. 
 
 
 \begin{DoxyItemize}

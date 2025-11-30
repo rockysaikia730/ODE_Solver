@@ -1,7 +1,12 @@
 var searchData=
 [
-  ['rank_0',['rank',['../class_dynamic_tensor.html#a094738c223cbe58ad0b81dbae138ebf6',1,'DynamicTensor']]],
-  ['read_1',['Read',['../class_reader.html#a7d9acd2bfc171097e6f487371897f788',1,'Reader']]],
-  ['reader_2',['Reader',['../class_reader.html',1,'Reader&lt; T &gt;'],['../class_reader.html#ae3c137f54c97bfbeae122976bf0b74aa',1,'Reader::Reader()']]],
-  ['reader_2eh_3',['Reader.h',['../_reader_8h.html',1,'']]]
+  ['ode_0',['Ode',['../class_ode.html',1,'Ode'],['../class_ode.html#aa96be18b8d0d1fe6a521d1a91d42848e',1,'Ode::Ode(double in_time, const DynamicTensor &amp;in_y0, const std::string &amp;in_name, std::shared_ptr&lt; Function &gt; func, std::shared_ptr&lt; RootFinder &gt; root_finder)'],['../class_ode.html#aeb668eecfb030d5b19fdc28c74a28c12',1,'Ode::Ode(double in_time, const double &amp;in_y0, const std::string &amp;in_name, std::shared_ptr&lt; Function &gt; func, std::shared_ptr&lt; RootFinder &gt; root_finder)']]],
+  ['ode_2eh_1',['ode.h',['../ode_8h.html',1,'']]],
+  ['ode_5fsolver_2',['ODE_Solver',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md0',1,'']]],
+  ['odefunction_3',['ODEFunction',['../class_o_d_e_function.html',1,'']]],
+  ['odesolver_4',['OdeSolver',['../class_ode_solver.html',1,'']]],
+  ['odetable_5',['ODETable',['../class_o_d_e_table.html',1,'']]],
+  ['only_20the_20doxyfile_6',['For executing only the Doxyfile',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md1',1,'']]],
+  ['operator_2a_7',['operator*',['../class_dynamic_tensor.html#a5c8bb1fa42a99911cfda9336b1876554',1,'DynamicTensor']]],
+  ['operator_2b_8',['operator+',['../class_dynamic_tensor.html#a951b70d3817858d411b94771bc7207e0',1,'DynamicTensor']]]
 ];

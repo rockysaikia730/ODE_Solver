@@ -97,7 +97,7 @@ $(function(){initNavTree('ode__solver_8h_source.html','',''); });
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;ODE.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="ode_8h.html">ODE.h</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
@@ -143,7 +143,7 @@ $(function(){initNavTree('ode__solver_8h_source.html','',''); });
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    OdeSolver(<span class="keyword">const</span> <a class="code hl_class" href="class_o_d_e.html">ODE&lt;T&gt;</a>&amp; ode, <span class="keywordtype">double</span> start_time, <span class="keywordtype">double</span> end_time,  <span class="keywordtype">int</span> num_of_steps = 1)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    OdeSolver(<span class="keyword">const</span> ODE&lt;T&gt;&amp; ode, <span class="keywordtype">double</span> start_time, <span class="keywordtype">double</span> end_time,  <span class="keywordtype">int</span> num_of_steps = 1)</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        : start_time_(start_time),</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>          end_time_(end_time),</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>          num_of_steps_(num_of_steps),</div>
@@ -162,13 +162,13 @@ $(function(){initNavTree('ode__solver_8h_source.html','',''); });
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">double</span> end_time_;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">int</span> num_of_steps_;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">double</span> step_size_;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_o_d_e.html">ODE&lt;T&gt;</a>&amp; ode_;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">const</span> ODE&lt;T&gt;&amp; ode_;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    std::vector&lt;State&gt; solutions_;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    std::vector&lt;double&gt; times_;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
 </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_o_d_e_html"><div class="ttname"><a href="class_o_d_e.html">ODE</a></div><div class="ttdef"><b>Definition</b> ODE.h:12</div></div>
+<div class="ttc" id="aode_8h_html"><div class="ttname"><a href="ode_8h.html">ode.h</a></div><div class="ttdoc">Header definition for the Ode class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

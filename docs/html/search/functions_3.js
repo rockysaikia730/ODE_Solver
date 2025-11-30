@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['get_5fshape_0',['get_shape',['../class_dynamic_tensor.html#a42b1bfd00a94348fe8b1ce43a2f6cf7e',1,'DynamicTensor']]],
-  ['getchar_1',['GetChar',['../class_reader.html#ab0d6c813d54b548fd2df75ff007d2ba7',1,'Reader']]],
-  ['getfile_2',['GetFile',['../class_reader.html#a5f8c3f34a0a2318e1c4e00a8dbb5beec',1,'Reader']]],
-  ['getfilename_3',['GetFileName',['../class_reader.html#a2203e6e7a5e4f8d5f132eb7c03dc72a6',1,'Reader']]]
+  ['dynamictensor_0',['DynamicTensor',['../class_dynamic_tensor.html#aaf404565bd07c4410bccaa3b94373323',1,'DynamicTensor::DynamicTensor()'],['../class_dynamic_tensor.html#a595b2d7fb3043fd29ac32cf77194aee7',1,'DynamicTensor::DynamicTensor(const std::vector&lt; size_t &gt; &amp;input_shape, double initial_value)'],['../class_dynamic_tensor.html#a34e9dacaef2bd672eda1667d5380b7c1',1,'DynamicTensor::DynamicTensor(const std::vector&lt; double &gt; &amp;data, const std::vector&lt; size_t &gt; &amp;input_shape={})']]]
 ];

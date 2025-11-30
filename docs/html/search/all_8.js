@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['scalefunctor_0',['ScaleFunctor',['../struct_scale_functor.html',1,'']]],
-  ['sep_5f_1',['sep_',['../class_reader.html#aadc5e6ffda6f935d86c95c5afb2197f0',1,'Reader']]],
-  ['setfile_2',['SetFile',['../class_reader.html#a48db119f54e1530cf4dca3171906b263',1,'Reader']]],
-  ['setfileseparator_3',['SetFileSeparator',['../class_reader.html#adf43d0a5311c3632d476a16278411d01',1,'Reader']]],
-  ['size_4',['size',['../class_dynamic_tensor.html#a80d631cc2d2151a0e3c9da15edbd870d',1,'DynamicTensor']]],
-  ['state_5',['State',['../class_reader.html#a6c3375bfa9517a3f466cb3396b226d33',1,'Reader']]]
+  ['rank_0',['rank',['../class_dynamic_tensor.html#a094738c223cbe58ad0b81dbae138ebf6',1,'DynamicTensor']]],
+  ['read_1',['Read',['../class_reader.html#a7d9acd2bfc171097e6f487371897f788',1,'Reader']]],
+  ['reader_2',['Reader',['../class_reader.html',1,'Reader&lt; T &gt;'],['../class_reader.html#ae3c137f54c97bfbeae122976bf0b74aa',1,'Reader::Reader()']]],
+  ['reader_2eh_3',['Reader.h',['../_reader_8h.html',1,'']]],
+  ['rootfinder_4',['RootFinder',['../class_root_finder.html',1,'']]]
 ];

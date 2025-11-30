@@ -2,7 +2,7 @@
 \hypertarget{class_reader}{}\label{class_reader}\index{Reader$<$ T $>$@{Reader$<$ T $>$}}
 
 
-Abstract base class for reading \doxylink{class_o_d_e}{ODE} input data from files.  
+Abstract base class for reading ODE input data from files.  
 
 
 
@@ -36,10 +36,10 @@ char \mbox{\hyperlink{class_reader_ab0d6c813d54b548fd2df75ff007d2ba7}{Get\+Char}
 \item 
 \Hypertarget{class_reader_a6c3375bfa9517a3f466cb3396b226d33}\label{class_reader_a6c3375bfa9517a3f466cb3396b226d33} 
 using {\bfseries State} = std\+::vector$<$T$>$
-\begin{DoxyCompactList}\small\item\em Convenience alias for \doxylink{class_o_d_e}{ODE} state vector. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Convenience alias for ODE state vector. \end{DoxyCompactList}\item 
 using \mbox{\hyperlink{class_reader_a2e34ee325f6e7469930d46755f16f6ed}{Function}} = std\+::function$<$\mbox{\hyperlink{class_reader_a6c3375bfa9517a3f466cb3396b226d33}{State}}(double, const \mbox{\hyperlink{class_reader_a6c3375bfa9517a3f466cb3396b226d33}{State}}\&)$>$
 \begin{DoxyCompactList}\small\item\em Callable representing the RHS function f(t, y). \end{DoxyCompactList}\item 
-using \mbox{\hyperlink{class_reader_afa3f020d2cf3c43f74ec8296fd666207}{Data}} = std\+::variant$<$\mbox{\hyperlink{class_reader_a2e34ee325f6e7469930d46755f16f6ed}{Function}}, \mbox{\hyperlink{struct_table_entry}{Table\+Entry}}$<$T$>$$>$
+using \mbox{\hyperlink{class_reader_afa3f020d2cf3c43f74ec8296fd666207}{Data}} = std\+::variant$<$\mbox{\hyperlink{class_reader_a2e34ee325f6e7469930d46755f16f6ed}{Function}}\mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{struct_table_entry}{Table\+Entry}}$<$T$>$$>$
 \begin{DoxyCompactList}\small\item\em Variant of possible readable data types. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -63,7 +63,7 @@ std\+::ifstream {\bfseries file\+\_\+}
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$typename T$>$\newline
 class Reader$<$ T $>$}
-Abstract base class for reading \doxylink{class_o_d_e}{ODE} input data from files. 
+Abstract base class for reading ODE input data from files. 
 
 This class defines a common interface used by all reader types (e.\+g., CSV reader, TXT reader, JSON reader).
 
@@ -71,12 +71,12 @@ The \doxylink{class_reader}{Reader}\+:
 \begin{DoxyItemize}
 \item Stores a filename and a field separator character.
 \item Provides functions to check file existence and file extension.
-\item Returns parsed data as either a \doxylink{class_reader_a2e34ee325f6e7469930d46755f16f6ed}{Function} or a \doxylink{struct_table_entry}{Table\+Entry$<$\+T$>$}.
+\item Returns parsed data as either a \doxylink{class_function}{Function} or a \doxylink{struct_table_entry}{Table\+Entry$<$\+T$>$}.
 \end{DoxyItemize}
 
 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em T} & Scalar type of the \doxylink{class_o_d_e}{ODE} state (e.\+g., double, std\+::complex$<$double$>$). \\
+{\em T} & Scalar type of the ODE state (e.\+g., double, std\+::complex$<$double$>$). \\
 \hline
 \end{DoxyTemplParams}
 
@@ -89,7 +89,7 @@ The \doxylink{class_reader}{Reader}\+:
 \doxysubsubsection{\texorpdfstring{Data}{Data}}
 {\footnotesize\ttfamily \label{class_reader_afa3f020d2cf3c43f74ec8296fd666207} 
 template$<$typename T$>$ \\
-using \mbox{\hyperlink{class_reader}{Reader}}$<$ T $>$\+::\+Data = std\+::variant$<$\mbox{\hyperlink{class_reader_a2e34ee325f6e7469930d46755f16f6ed}{Function}}, \mbox{\hyperlink{struct_table_entry}{Table\+Entry}}$<$T$>$$>$\hspace{0.3cm}{\ttfamily [protected]}}
+using \mbox{\hyperlink{class_reader}{Reader}}$<$ T $>$\+::\+Data = std\+::variant$<$\mbox{\hyperlink{class_reader_a2e34ee325f6e7469930d46755f16f6ed}{Function}}\mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{struct_table_entry}{Table\+Entry}}$<$T$>$$>$\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -97,7 +97,7 @@ Variant of possible readable data types.
 
 A \doxylink{class_reader}{Reader} may return\+:
 \begin{DoxyItemize}
-\item A \doxylink{class_reader_a2e34ee325f6e7469930d46755f16f6ed}{Function} (parsed from file or predefined)
+\item A \doxylink{class_function}{Function} (parsed from file or predefined)
 \item A \doxylink{struct_table_entry}{Table\+Entry$<$\+T$>$} (for table-\/based or tabulated data) 
 \end{DoxyItemize}\Hypertarget{class_reader_a2e34ee325f6e7469930d46755f16f6ed}\index{Reader$<$ T $>$@{Reader$<$ T $>$}!Function@{Function}}
 \index{Function@{Function}!Reader$<$ T $>$@{Reader$<$ T $>$}}
@@ -223,7 +223,7 @@ Read and parse the file.
 
 Subclasses implement the interpretation of file contents and return either\+:
 \begin{DoxyItemize}
-\item A \doxylink{class_reader_a2e34ee325f6e7469930d46755f16f6ed}{Function} (parsed expression or compiled functor)
+\item A \doxylink{class_function}{Function} (parsed expression or compiled functor)
 \item A \doxylink{struct_table_entry}{Table\+Entry$<$\+T$>$} (parsed numeric table)
 \end{DoxyItemize}
 
