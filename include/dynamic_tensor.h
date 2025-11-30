@@ -28,8 +28,8 @@
  */
 class DynamicTensor {
 public:
-    using Complex = std::complex<double>;
     enum class Type { REAL, COMPLEX };
+    using Complex = std::complex<double>;
     /**
      * @brief Default constructor.
      * Creates an empty real tensor with rank 0 and size 0.
@@ -64,26 +64,30 @@ public:
      * Usage: tensor.at<double>({0}) or tensor.at<Complex>({0})
      */
     template <typename T>
-    T& at(const std::vector<size_t>& indices) {
-        if constexpr (std::is_same_v<T, double>) {
-            return std::get<std::vector<double>>(data_)[calculate_index(indices)];
-        } else if constexpr (std::is_same_v<T, Complex>) {
-            return std::get<std::vector<Complex>>(data_)[calculate_index(indices)];
-        }
-    }
+    T& at(const std::vector<size_t>& indices) {return GetVec<T>()[calculate_index(indices)];}
 
     template <typename T>
-    const T& at(const std::vector<size_t>& indices) const {
-        if constexpr (std::is_same_v<T, double>) {
-            return std::get<std::vector<double>>(data_)[calculate_index(indices)];
-        } else if constexpr (std::is_same_v<T, Complex>) {
-            return std::get<std::vector<Complex>>(data_)[calculate_index(indices)];
-        }
-    }
+    const T& at(const std::vector<size_t>& indices) const {return GetVec<T>()[calculate_index(indices)];}
+
+    /**
+     * @brief Universal Templated Iterators
+     * Usage: auto it = tensor.begin<double>();
+     */
+    template <typename T>
+    auto begin() {return GetVec<T>().begin();}
+
+    template <typename T>
+    auto end() {return GetVec<T>().end()}
+
+    template <typename T>
+    auto begin() const {return GetVec<T>().begin();}
+
+    template <typename T>
+    auto end() const {return GetVec<T>().end();}
 
     /**
      * @brief Element-wise Addition.
-     * Handles Real+Real, Complex+Complex
+     * Handles Real+Real and Complex+Complex
      */
     DynamicTensor operator+(const DynamicTensor& second_tensor) const;
 
@@ -125,6 +129,47 @@ private:
      * @return The calculated linear index.
      */
     size_t calculate_index(const std::vector<size_t>& indices) const;
+
+
+    /**
+     * @brief Helper to return reference to the specific std::vector
+     *
+     * @return Rference to the specific std::vector
+     */
+    template <typename T>
+    std::vector<T>& GetVec() {
+        if constexpr (std::is_same_v<T, double>) {
+            if (IsComplex()) throw std::runtime_error("Type Mismatch: Tensor is Complex, requested double.");
+            return std::get<std::vector<double>>(data_);
+        } 
+        else if constexpr (std::is_same_v<T, Complex>) {
+            if (!IsComplex()) throw std::runtime_error("Type Mismatch: Tensor is Real, requested Complex.");
+            return std::get<std::vector<Complex>>(data_);
+        } 
+        else {
+            static_assert(always_false<T>, "Invalid Type");
+        }
+    }
+
+    /**
+     * @brief Const helper to return reference to the specific std::vector
+     *
+     * @return Rference to the specific std::vector
+     */
+    template <typename T>
+    const std::vector<T>& GetVec() const {
+        if constexpr (std::is_same_v<T, double>) {
+            if (IsComplex()) throw std::runtime_error("Type Mismatch: Tensor is Complex, requested double.");
+            return std::get<std::vector<double>>(data_);
+        } 
+        else if constexpr (std::is_same_v<T, Complex>) {
+            if (!IsComplex()) throw std::runtime_error("Type Mismatch: Tensor is Real, requested Complex.");
+            return std::get<std::vector<Complex>>(data_);
+        } 
+        else {
+            static_assert(always_false<T>, "Invalid Type");
+        }
+    }
 };
 
-#endif // DYNAMIC_TENSOR_H_
+#endif
