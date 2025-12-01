@@ -56,6 +56,9 @@ public:
     DynamicTensor(const std::vector<double>& data, const std::vector<size_t>& input_shape = {});
     DynamicTensor(const std::vector<Complex>& data, const std::vector<size_t>& input_shape = {});
 
+    DynamicTensor(double data);
+    DynamicTensor(Complex data);
+
     bool IsComplex() const;
     Type GetType() const;
 
@@ -146,9 +149,6 @@ private:
             if (!IsComplex()) throw std::runtime_error("Type Mismatch: Tensor is Real, requested Complex.");
             return std::get<std::vector<Complex>>(data_);
         } 
-        else {
-            static_assert(always_false<T>, "Invalid Type");
-        }
     }
 
     /**
@@ -166,9 +166,6 @@ private:
             if (!IsComplex()) throw std::runtime_error("Type Mismatch: Tensor is Real, requested Complex.");
             return std::get<std::vector<Complex>>(data_);
         } 
-        else {
-            static_assert(always_false<T>, "Invalid Type");
-        }
     }
 };
 

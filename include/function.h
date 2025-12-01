@@ -5,7 +5,7 @@
 
 class Function {
 public:
-    Function() {};
+    virtual ~Function() = default;
     virtual DynamicTensor Eval(double t, const DynamicTensor& y) const = 0;
 };
 #endif

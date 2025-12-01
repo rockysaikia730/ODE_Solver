@@ -1,0 +1,73 @@
+\doxysection{ode.\+h}
+\hypertarget{ode_8h_source}{}\label{ode_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/ode.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/ode.h}}
+\mbox{\hyperlink{ode_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ CODES\_ODE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ CODES\_ODE\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\_tensor.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}function.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}root\_finder.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ode_aa96be18b8d0d1fe6a521d1a91d42848e}{Ode}}\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_ode_aa96be18b8d0d1fe6a521d1a91d42848e}{Ode}}(\textcolor{keywordtype}{double}\ in\_time,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ in\_y0,\ \textcolor{keyword}{const}\ std::string\&\ in\_name,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::shared\_ptr<Function>\ func,\ std::shared\_ptr<RootFinder>\ root\_finder);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_ode_aa96be18b8d0d1fe6a521d1a91d42848e}{Ode}}(\textcolor{keywordtype}{double}\ in\_time,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ in\_y0,\ \textcolor{keyword}{const}\ std::string\&\ in\_name,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::shared\_ptr<Function>\ func,\ std::shared\_ptr<RootFinder>\ root\_finder);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_ode_af859a1a7e2f0ff437c400a8c4033f7ad}{\string~Ode}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ =========================================================}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ =========================================================}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_a4856ed6d10e8f7a8218a7f81ff576918}{SetT0}}(\textcolor{keywordtype}{double}\ in\_time);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_ac3c249eedd399493d573a5a823172b82}{SetY0}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ in\_y0);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_ac3c249eedd399493d573a5a823172b82}{SetY0}}(\textcolor{keywordtype}{double}\ in\_y0);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_ac0bda460d709fed3c4680b0d8468d871}{SetName}}(\textcolor{keyword}{const}\ std::string\&\ in\_name);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_a01227434e93e5835f0a933641de56139}{SetFunction}}(std::shared\_ptr<Function>\ func);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_a53c09a13019c843e03b918438074777a}{SetRootFinder}}(std::shared\_ptr<RootFinder>\ root\_finder);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ =========================================================}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//\ =========================================================}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_ode_a68b7580e063b949bfc0046e4142ad490}{GetTimeIn}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ \mbox{\hyperlink{class_ode_a6c360986d0f06b497d3b311ead9c0366}{GetCondIn}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_ode_a6356a2c5b5b923378b5cc41951dc3575}{GetName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ =========================================================}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//\ Logic}}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ =========================================================}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_ode_a3fc74d1b3f982351bd6dad5054f2cab7}{Evaluate}}(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{double}\ t0\_;}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ y0\_;}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00143\ \ \ \ \ std::string\ name\_;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00146\ \ \ \ \ std::shared\_ptr<Function>\ func\_;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00149\ \ \ \ \ std::shared\_ptr<RootFinder>\ root\_finder\_;}
+\DoxyCodeLine{00150\ \};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CODES\_ODE\_H}}
+
+\end{DoxyCode}

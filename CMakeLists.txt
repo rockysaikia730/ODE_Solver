@@ -3,12 +3,13 @@ project(Codes)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(DynamicTensor
+add_executable(everything
         src/main.cpp
         src/dynamic_tensor.cpp
+		src/ode.cpp
 )
 
-target_include_directories(DynamicTensor PRIVATE include)
+target_include_directories(everything PRIVATE include)
 
 find_package(Doxygen)
 if(DOXYGEN_FOUND)

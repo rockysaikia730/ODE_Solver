@@ -6,6 +6,15 @@
 // Default constructor
 DynamicTensor::DynamicTensor() : data_(std::vector<double>()) {}
 
+// Constructor for scalars
+DynamicTensor::DynamicTensor(double data)
+    : data_(std::vector<double>{data}),
+      shape_({1}) {}
+
+DynamicTensor::DynamicTensor(Complex data)
+    : data_(std::vector<Complex>{data}),
+      shape_({1}) {}
+
 // Constructor with shape for Real
 DynamicTensor::DynamicTensor(const std::vector<size_t>& input_shape, double initial_value)
     : shape_(input_shape) {

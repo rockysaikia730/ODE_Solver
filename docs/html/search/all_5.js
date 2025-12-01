@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['generating_20the_20doxygen_20documentation_0',['For compiling and generating the Doxygen documentation',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md2',1,'']]],
-  ['get_5fshape_1',['get_shape',['../class_dynamic_tensor.html#a42b1bfd00a94348fe8b1ce43a2f6cf7e',1,'DynamicTensor']]],
-  ['getchar_2',['GetChar',['../class_reader.html#ab0d6c813d54b548fd2df75ff007d2ba7',1,'Reader']]],
-  ['getfile_3',['GetFile',['../class_reader.html#a5f8c3f34a0a2318e1c4e00a8dbb5beec',1,'Reader']]],
-  ['getfilename_4',['GetFileName',['../class_reader.html#a2203e6e7a5e4f8d5f132eb7c03dc72a6',1,'Reader']]]
+  ['file_5f_0',['file_',['../class_reader.html#a422199170aa6c35a46abe88fd4b836d9',1,'Reader']]],
+  ['filename_5f_1',['filename_',['../class_reader.html#aa5e52df9d57830b86b31ae0b478b380c',1,'Reader']]],
+  ['for_20compiling_20and_20generating_20the_20doxygen_20documentation_2',['For compiling and generating the Doxygen documentation',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md2',1,'']]],
+  ['for_20executing_20only_20the_20doxyfile_3',['For executing only the Doxyfile',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md1',1,'']]],
+  ['function_4',['Function',['../class_function.html',1,'Function'],['../class_reader.html#a2e34ee325f6e7469930d46755f16f6ed',1,'Reader::Function']]]
 ];

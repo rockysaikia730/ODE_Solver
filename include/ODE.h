@@ -1,34 +1,152 @@
+/**
+ * @file Ode.h
+ * @brief Header definition for the Ode class.
+ *
+ * This file defines the structure for an Ordinary Differential Equation problem,
+ * aggregating the initial conditions, the derivative function, and the solver strategy.
+ */
+
 #ifndef CODES_ODE_H
 #define CODES_ODE_H
 
 #include <vector>
 #include <string>
-#include <dynamic_tensor.h>
+#include <memory>
+#include "dynamic_tensor.h"
 #include "function.h"
 #include "root_finder.h"
 
+/**
+ * @class Ode
+ * @brief Represents an Ordinary Differential Equation (ODE) problem definition.
+ *
+ * The Ode class acts as a container for the problem definition. It holds:
+ * 1. The Initial Value Problem (IVP) conditions (t0, y0).
+ * 2. The physics/math function defining the derivative (dy/dt).
+ * 3. A root finding strategy (used for implicit solving methods).
+ *
+ * 
+ */
 class Ode {
 public:
-    Ode(double inTime, const DynamicTensor& inY0, const std::string& in_name);
-    Ode(double inTime, const double& inY0, const std::string& in_name);
+    /**
+     * @brief Constructor with Tensor state.
+     * * @param in_time The initial time (t0).
+     * @param in_y0 The initial state vector/tensor (y0).
+     * @param in_name A unique identifier name for this ODE system.
+     * @param func Shared pointer to the function defining dy/dt = f(t, y).
+     * @param root_finder Shared pointer to the root finding strategy (for implicit solvers).
+     */
+    Ode(double in_time, const DynamicTensor& in_y0, const std::string& in_name,
+        std::shared_ptr<Function> func, std::shared_ptr<RootFinder> root_finder);
 
+    /**
+     * @brief Constructor with Scalar state.
+     * Convenience constructor that promotes a double to a Rank-1 Tensor.
+     * * @param in_time The initial time (t0).
+     * @param in_y0 The initial state scalar (will be converted to Tensor).
+     * @param in_name A unique identifier name for this ODE system.
+     * @param func Shared pointer to the function defining dy/dt = f(t, y).
+     * @param root_finder Shared pointer to the root finding strategy.
+     */
+    Ode(double in_time, const double& in_y0, const std::string& in_name,
+        std::shared_ptr<Function> func, std::shared_ptr<RootFinder> root_finder);
+
+    /**
+     * @brief Virtual destructor.
+     */
     virtual ~Ode();
 
-    void SetT0(const double in_time);
+    // =========================================================
+    // Setters
+    // =========================================================
+
+    /**
+     * @brief Set the initial time.
+     * @param in_time The new initial time.
+     */
+    void SetT0(double in_time);
+
+    /**
+     * @brief Set the initial state using a Tensor.
+     * @param in_y0 The new initial state tensor.
+     */
     void SetY0(const DynamicTensor& in_y0);
-    void SetY0(double& in_y0);
+
+    /**
+     * @brief Set the initial state using a scalar.
+     * @param in_y0 The new initial state scalar (promoted to Tensor).
+     */
+    void SetY0(double in_y0);
+
+    /**
+     * @brief Set the name of the ODE system.
+     * @param in_name The new name.
+     */
     void SetName(const std::string& in_name);
 
-    double GetTimeIn() const{ return t0_;};
+    /**
+     * @brief Inject a new derivative function.
+     * @param func Shared pointer to the new Function.
+     */
+    void SetFunction(std::shared_ptr<Function> func);
+
+    /**
+     * @brief Inject a new root finder.
+     * @param root_finder Shared pointer to the new RootFinder.
+     */
+    void SetRootFinder(std::shared_ptr<RootFinder> root_finder);
+
+    // =========================================================
+    // Getters
+    // =========================================================
+
+    /**
+     * @brief Get the initial time.
+     * @return The initial time (t0).
+     */
+    double GetTimeIn() const;
+
+    /**
+     * @brief Get the initial condition tensor.
+     * @return Const reference to the initial state (y0).
+     */
     const DynamicTensor& GetCondIn() const;
+
+    /**
+     * @brief Get the name of the system.
+     * @return The name string.
+     */
     const std::string& GetName() const;
 
+    // =========================================================
+    // Logic
+    // =========================================================
+
+    /**
+     * @brief Evaluate the derivative function f(t, y).
+     * * This method delegates the calculation to the stored Function object.
+     * * @param t The current time.
+     * @param y The current state tensor.
+     * @return A DynamicTensor representing dy/dt.
+     */
     DynamicTensor Evaluate(double t, const DynamicTensor& y) const;
+
 private:
+    /// @brief Initial time.
     double t0_;
+
+    /// @brief Initial state tensor.
     DynamicTensor y0_;
+
+    /// @brief Identifier name.
     std::string name_;
-    const Function& func_;
-    const RootFinder& root_finder_;
+
+    /// @brief Pointer to the derivative function logic.
+    std::shared_ptr<Function> func_;
+
+    /// @brief Pointer to the root finding logic (optional/strategy pattern).
+    std::shared_ptr<RootFinder> root_finder_;
 };
-#endif
+
+#endif // CODES_ODE_H

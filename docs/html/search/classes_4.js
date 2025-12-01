@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tableentry_0',['TableEntry',['../struct_table_entry.html',1,'']]]
+  ['scalefunctor_0',['ScaleFunctor',['../struct_scale_functor.html',1,'']]]
 ];
