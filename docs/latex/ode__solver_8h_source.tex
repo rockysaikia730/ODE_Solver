@@ -1,81 +1,67 @@
 \doxysection{ode\+\_\+solver.\+h}
 \hypertarget{ode__solver_8h_source}{}\label{ode__solver_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/ode\_solver.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/ode\_solver.h}}
-
+\mbox{\hyperlink{ode__solver_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CODES\_ODE\_SOLVER\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CODES\_ODE\_SOLVER\_H}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cmath>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ode_8h}{ODE.h}}"{}}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }OdeSolver\ \{}
-\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{using\ }State\ =\ std::vector<T>;}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~OdeSolver()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Step(\textcolor{keywordtype}{double}\ current\_time,\ \textcolor{keyword}{const}\ State\&\ current\_state)\ =\ 0;}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ SetStartTime(\textcolor{keywordtype}{double}\ start\_time)\ \{start\_time\_\ =\ start\_time;\}}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ SetEndTime(\textcolor{keywordtype}{double}\ end\_time)\ \{end\_time\_\ =\ end\_time;\}}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ SetStepSize(\textcolor{keywordtype}{double}\ step\_size)\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ step\_size\_\ =\ step\_size;}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ num\_of\_steps\_\ =\ std::ceil((end\_time\_\ -\/\ start\_time\_)/step\_size\_);}
-\DoxyCodeLine{00028\ \ \ \ \ \}}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ SetNumOfSteps(\textcolor{keywordtype}{int}\ num\_of\_steps)\ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ num\_of\_steps\_\ =\ num\_of\_steps;}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ step\_size\_\ =\ (end\_time\_\ -\/\ start\_time\_)/num\_of\_steps\_;}
-\DoxyCodeLine{00032\ \ \ \ \ \}}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{double}\ GetStartTime()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ start\_time\_;\}}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{double}\ GetEndTime()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ end\_time\_;\}}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ GetStepSize()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ step\_size\_;\}}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ GetNumOfSteps()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ num\_of\_steps\_;\}}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<State>\&\ GetSolution()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ solutions\_;\}}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ GetTimeHistory()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ times\_;\}}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ Solve()\ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ current\_time\ =\ start\_time\_;}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ State\ current\_state\ =\ ode\_.getCondIn();}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ solutions\_.clear();}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ solutions\_.push\_back(current\_state);}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ times\_.clear();}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ times\_.push\_back(current\_time);}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ CODES\_ODE\_SOLVER\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ CODES\_ODE\_SOLVER\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ode_8h}{ode.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\_tensor.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ode_solver_aa71a2af25e87c1951f876a937fe46fd2}{OdeSolver}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_ode_solver_a18be896e3a9772213317a4c554100206}{\string~OdeSolver}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_ode_solver_a7a8a1ae3eb6213f9656a9b47ebbbe4fe}{Step}}()\ =\ 0;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_ae543d1973f9c00665e04c470d3819e47}{SetStartTime}}(\textcolor{keywordtype}{double}\ start\_time);}
 \DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ i\ =\ 0;\ i\ <\ num\_of\_steps\_;\ i++)\ \{}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ current\_state\ =\ Step(current\_time,\ current\_state);}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ current\_time\ +=\ step\_size\_;}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ solutions\_.push\_back(current\_state);}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ times\_.push\_back(current\_time);}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00057\ \ \ \ \ \}}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ OdeSolver(\textcolor{keyword}{const}\ ODE<T>\&\ ode,\ \textcolor{keywordtype}{double}\ start\_time,\ \textcolor{keywordtype}{double}\ end\_time,\ \ \textcolor{keywordtype}{int}\ num\_of\_steps\ =\ 1)}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ :\ start\_time\_(start\_time),}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ end\_time\_(end\_time),}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ num\_of\_steps\_(num\_of\_steps),}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ ode\_(ode)\ \ \ }
-\DoxyCodeLine{00064\ \ \ \ \ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(num\_of\_steps\_\ >\ 0)\ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ step\_size\_\ =\ (end\_time\_\ -\/\ start\_time\_)/num\_of\_steps\_;}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ step\_size\_\ =\ 0.01;}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ num\_of\_steps\_\ =\ std::ceil((end\_time\_\ -\/\ start\_time\_)/step\_size\_);}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00072\ \ \ \ \ \}}
-\DoxyCodeLine{00073\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{double}\ start\_time\_;}
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{double}\ end\_time\_;}
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_of\_steps\_;}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{double}\ step\_size\_;}
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ ODE<T>\&\ ode\_;}
-\DoxyCodeLine{00079\ \ \ \ \ std::vector<State>\ solutions\_;}
-\DoxyCodeLine{00080\ \ \ \ \ std::vector<double>\ times\_;}
-\DoxyCodeLine{00081\ \};}
-\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_a662cff46a2025f9b99295d5fcefbe0b6}{SetEndTime}}(\textcolor{keywordtype}{double}\ end\_time);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_ae1242b79d094ce57a73b76661cdbdc94}{SetTimeSpan}}(\textcolor{keywordtype}{int}\ num\_of\_steps);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_ae1242b79d094ce57a73b76661cdbdc94}{SetTimeSpan}}(\textcolor{keywordtype}{double}\ step\_size);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Getters\ -\/-\/-\/}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_ode_solver_a967817c4339501ddb984023977d093a1}{GetStartTime}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_ode_solver_a6b634912c4c923a14e5ce7994f46b2a4}{GetEndTime}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_ode_solver_adee8ff045eeb481ef911c9eee1b596c8}{GetStepSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ode_solver_ad0bbb5894abf1b510845a61e9b42ea61}{GetNumberOfSteps}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Control\ Flow\ -\/-\/-\/}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_a1cc5668fdf4d5bd99ee21c4f91c6aca3}{Reset}}();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}}();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Constructors\ -\/-\/-\/}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{class_ode_solver_aa71a2af25e87c1951f876a937fe46fd2}{OdeSolver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ end\_time,\ \textcolor{keywordtype}{int}\ num\_of\_steps);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{class_ode_solver_aa71a2af25e87c1951f876a937fe46fd2}{OdeSolver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ end\_time,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ \mbox{\hyperlink{class_ode_solver_a9155f5d877dad198b513d24150dff5a4}{ode\_}};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_ode_solver_a349bdd8382aed99df05dddd5d7d747a2}{start\_time\_}};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_ode_solver_afe384debfb2aaf066067567b86660e80}{end\_time\_}};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_ode_solver_a27c98f59e22ca709d451b8ba15bf3e16}{step\_size\_}};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_ode_solver_a8e42a49ba25b6c2c5b029cd70e75d38e}{solution\_}};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_ode_solver_a8e1bfe7801ae316ea876682778396e24}{current\_time\_}};}
+\DoxyCodeLine{00153\ \};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CODES\_ODE\_SOLVER\_H}}
 
 \end{DoxyCode}

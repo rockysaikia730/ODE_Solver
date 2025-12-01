@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ODE_Solver: Class List</title>
+<title>ODE_Solver: /Users/rocky/notes/Scientific Computing/ODE_Solver/include/ode_solver.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('annotated.html','',''); });
+$(function(){initNavTree('ode__solver_8h.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -88,29 +88,40 @@ $(function(){initNavTree('annotated.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Class List</div></div>
+  <div class="headertitle"><div class="title">ode_solver.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here are the classes, structs, unions and interfaces with brief descriptions:</div><div class="directory">
-<table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_dynamic_tensor.html" target="_self">DynamicTensor</a></td><td class="desc">A class to represent a mathematical tensor of arbitrary rank at runtime </td></tr>
-<tr id="row_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_function.html" target="_self">Function</a></td><td class="desc"></td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_ode.html" target="_self">Ode</a></td><td class="desc">Represents an Ordinary Differential Equation (ODE) problem definition </td></tr>
-<tr id="row_3_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_o_d_e_function.html" target="_self">ODEFunction</a></td><td class="desc"></td></tr>
-<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_ode_solver.html" target="_self">OdeSolver</a></td><td class="desc">Abstract base class for iterative Ordinary Differential Equation solvers </td></tr>
-<tr id="row_5_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_o_d_e_table.html" target="_self">ODETable</a></td><td class="desc"></td></tr>
-<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_reader.html" target="_self">Reader</a></td><td class="desc">Abstract base class for reading ODE input data from files </td></tr>
-<tr id="row_7_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_root_finder.html" target="_self">RootFinder</a></td><td class="desc"></td></tr>
-<tr id="row_8_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_scale_functor.html" target="_self">ScaleFunctor</a></td><td class="desc"></td></tr>
-<tr id="row_9_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_table_entry.html" target="_self">TableEntry</a></td><td class="desc"></td></tr>
+
+<p>Definition of the abstract base class for ODE Solvers.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;cmath&gt;</code><br />
+<code>#include &quot;<a class="el" href="ode_8h_source.html">ode.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="dynamic__tensor_8h_source.html">dynamic_tensor.h</a>&quot;</code><br />
+</div>
+<p><a href="ode__solver_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:OdeSolver" id="r_OdeSolver"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ode_solver.html">OdeSolver</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract base class for iterative Ordinary Differential Equation solvers.  <a href="class_ode_solver.html#details">More...</a><br /></td></tr>
 </table>
-</div><!-- directory -->
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Definition of the abstract base class for ODE Solvers. </p>
+<p>This file defines the generic interface for solving Ordinary Differential Equations. Concrete implementations (e.g., ForwardEuler, RungeKutta4) should inherit from this class and implement the Step() method. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><b>include</b></li><li class="navelem"><a href="ode__solver_8h.html">ode_solver.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

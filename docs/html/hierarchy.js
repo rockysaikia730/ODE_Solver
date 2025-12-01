@@ -7,7 +7,7 @@ var hierarchy =
       [ "ODETable< T >", "class_o_d_e_table.html", null ]
     ] ],
     [ "Ode", "class_ode.html", null ],
-    [ "OdeSolver&lt; T &gt;", "class_ode_solver.html", null ],
+    [ "OdeSolver", "class_ode_solver.html", null ],
     [ "Reader&lt; T &gt;", "class_reader.html", null ],
     [ "RootFinder", "class_root_finder.html", null ],
     [ "ScaleFunctor", "struct_scale_functor.html", null ],

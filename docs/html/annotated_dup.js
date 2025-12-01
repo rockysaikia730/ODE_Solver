@@ -4,7 +4,7 @@ var annotated_dup =
     [ "Function", "class_function.html", null ],
     [ "Ode", "class_ode.html", "class_ode" ],
     [ "ODEFunction", "class_o_d_e_function.html", null ],
-    [ "OdeSolver", "class_ode_solver.html", null ],
+    [ "OdeSolver", "class_ode_solver.html", "class_ode_solver" ],
     [ "ODETable", "class_o_d_e_table.html", null ],
     [ "Reader", "class_reader.html", "class_reader" ],
     [ "RootFinder", "class_root_finder.html", null ],

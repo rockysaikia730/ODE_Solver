@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ODE_Solver: OdeSolver&lt; T &gt; Class Template Reference</title>
+<title>ODE_Solver: OdeSolver Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,81 +88,386 @@ $(function(){initNavTree('class_ode_solver.html','','class_ode_solver-members');
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">OdeSolver&lt; T &gt; Class Template Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">OdeSolver Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract base class for Ordinary Differential Equation (ODE) solvers.  
+<p>Abstract base class for iterative Ordinary Differential Equation solvers.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ode__solver_8h_source.html">ode_solver.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:ac178f280a3d59ca4ad1ff57807d5e834" id="r_ac178f280a3d59ca4ad1ff57807d5e834"><td class="memItemLeft" align="right" valign="top"><a id="ac178f280a3d59ca4ad1ff57807d5e834" name="ac178f280a3d59ca4ad1ff57807d5e834"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>State</b> = std::vector&lt;T&gt;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a65a43430b38c588f1ea87ad24432298f" id="r_a65a43430b38c588f1ea87ad24432298f"><td class="memItemLeft" align="right" valign="top"><a id="a65a43430b38c588f1ea87ad24432298f" name="a65a43430b38c588f1ea87ad24432298f"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Step</b> (double current_time, const State &amp;current_state)=0</td></tr>
-<tr class="memitem:a38fda1823b656805cf9d9110b6f1bae2" id="r_a38fda1823b656805cf9d9110b6f1bae2"><td class="memItemLeft" align="right" valign="top"><a id="a38fda1823b656805cf9d9110b6f1bae2" name="a38fda1823b656805cf9d9110b6f1bae2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetStartTime</b> (double start_time)</td></tr>
-<tr class="memitem:a44b801f0d7bd5c0559048e8c4203c20c" id="r_a44b801f0d7bd5c0559048e8c4203c20c"><td class="memItemLeft" align="right" valign="top"><a id="a44b801f0d7bd5c0559048e8c4203c20c" name="a44b801f0d7bd5c0559048e8c4203c20c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetEndTime</b> (double end_time)</td></tr>
-<tr class="memitem:a85a9e0cb1ada20d3741428662751f2f0" id="r_a85a9e0cb1ada20d3741428662751f2f0"><td class="memItemLeft" align="right" valign="top"><a id="a85a9e0cb1ada20d3741428662751f2f0" name="a85a9e0cb1ada20d3741428662751f2f0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetStepSize</b> (double step_size)</td></tr>
-<tr class="memitem:ab81c5a3ef97ae2aa13ed029a0f0f51ba" id="r_ab81c5a3ef97ae2aa13ed029a0f0f51ba"><td class="memItemLeft" align="right" valign="top"><a id="ab81c5a3ef97ae2aa13ed029a0f0f51ba" name="ab81c5a3ef97ae2aa13ed029a0f0f51ba"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetNumOfSteps</b> (int num_of_steps)</td></tr>
-<tr class="memitem:adf22937046d8e9d8e722c4cbe174d7fc" id="r_adf22937046d8e9d8e722c4cbe174d7fc"><td class="memItemLeft" align="right" valign="top"><a id="adf22937046d8e9d8e722c4cbe174d7fc" name="adf22937046d8e9d8e722c4cbe174d7fc"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>GetStartTime</b> () const</td></tr>
-<tr class="memitem:a6d46945c4fc1b5ee35fe45ce531cb316" id="r_a6d46945c4fc1b5ee35fe45ce531cb316"><td class="memItemLeft" align="right" valign="top"><a id="a6d46945c4fc1b5ee35fe45ce531cb316" name="a6d46945c4fc1b5ee35fe45ce531cb316"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>GetEndTime</b> () const</td></tr>
-<tr class="memitem:ad60d1e498d9f01bb007eb5a9d43129cd" id="r_ad60d1e498d9f01bb007eb5a9d43129cd"><td class="memItemLeft" align="right" valign="top"><a id="ad60d1e498d9f01bb007eb5a9d43129cd" name="ad60d1e498d9f01bb007eb5a9d43129cd"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>GetStepSize</b> () const</td></tr>
-<tr class="memitem:abddf0f4d530660d465a35d137e1b56a1" id="r_abddf0f4d530660d465a35d137e1b56a1"><td class="memItemLeft" align="right" valign="top"><a id="abddf0f4d530660d465a35d137e1b56a1" name="abddf0f4d530660d465a35d137e1b56a1"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>GetNumOfSteps</b> () const</td></tr>
-<tr class="memitem:a41b2be774ce4965295c6d9d4ae394ead" id="r_a41b2be774ce4965295c6d9d4ae394ead"><td class="memItemLeft" align="right" valign="top"><a id="a41b2be774ce4965295c6d9d4ae394ead" name="a41b2be774ce4965295c6d9d4ae394ead"></a>
-const std::vector&lt; State &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetSolution</b> () const</td></tr>
-<tr class="memitem:a3d568f640fd80d88787d5ed68ab06344" id="r_a3d568f640fd80d88787d5ed68ab06344"><td class="memItemLeft" align="right" valign="top"><a id="a3d568f640fd80d88787d5ed68ab06344" name="a3d568f640fd80d88787d5ed68ab06344"></a>
-const std::vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetTimeHistory</b> () const</td></tr>
-<tr class="memitem:a3cbf12fbc11c8eb7a417274c90ca71b0" id="r_a3cbf12fbc11c8eb7a417274c90ca71b0"><td class="memItemLeft" align="right" valign="top"><a id="a3cbf12fbc11c8eb7a417274c90ca71b0" name="a3cbf12fbc11c8eb7a417274c90ca71b0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Solve</b> ()</td></tr>
-<tr class="memitem:af7023f02cd986aa71258dfecf6e44385" id="r_af7023f02cd986aa71258dfecf6e44385"><td class="memItemLeft" align="right" valign="top"><a id="af7023f02cd986aa71258dfecf6e44385" name="af7023f02cd986aa71258dfecf6e44385"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>OdeSolver</b> (const ODE&lt; T &gt; &amp;ode, double start_time, double end_time, int num_of_steps=1)</td></tr>
+<tr class="memitem:a18be896e3a9772213317a4c554100206" id="r_a18be896e3a9772213317a4c554100206"><td class="memItemLeft" align="right" valign="top"><a id="a18be896e3a9772213317a4c554100206" name="a18be896e3a9772213317a4c554100206"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~OdeSolver</b> ()=default</td></tr>
+<tr class="memdesc:a18be896e3a9772213317a4c554100206"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. <br /></td></tr>
+<tr class="memitem:a7a8a1ae3eb6213f9656a9b47ebbbe4fe" id="r_a7a8a1ae3eb6213f9656a9b47ebbbe4fe"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a8a1ae3eb6213f9656a9b47ebbbe4fe">Step</a> ()=0</td></tr>
+<tr class="memdesc:a7a8a1ae3eb6213f9656a9b47ebbbe4fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the solution at the next time step.  <br /></td></tr>
+<tr class="memitem:ae543d1973f9c00665e04c470d3819e47" id="r_ae543d1973f9c00665e04c470d3819e47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae543d1973f9c00665e04c470d3819e47">SetStartTime</a> (double start_time)</td></tr>
+<tr class="memdesc:ae543d1973f9c00665e04c470d3819e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the simulation start time.  <br /></td></tr>
+<tr class="memitem:a662cff46a2025f9b99295d5fcefbe0b6" id="r_a662cff46a2025f9b99295d5fcefbe0b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a662cff46a2025f9b99295d5fcefbe0b6">SetEndTime</a> (double end_time)</td></tr>
+<tr class="memdesc:a662cff46a2025f9b99295d5fcefbe0b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the simulation end time.  <br /></td></tr>
+<tr class="memitem:ae1242b79d094ce57a73b76661cdbdc94" id="r_ae1242b79d094ce57a73b76661cdbdc94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1242b79d094ce57a73b76661cdbdc94">SetTimeSpan</a> (int num_of_steps)</td></tr>
+<tr class="memdesc:ae1242b79d094ce57a73b76661cdbdc94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the solver based on a fixed number of steps.  <br /></td></tr>
+<tr class="memitem:a673fb059d7379dfc9bfea833318b4049" id="r_a673fb059d7379dfc9bfea833318b4049"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a673fb059d7379dfc9bfea833318b4049">SetTimeSpan</a> (double step_size)</td></tr>
+<tr class="memdesc:a673fb059d7379dfc9bfea833318b4049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the solver based on a fixed step size.  <br /></td></tr>
+<tr class="memitem:a967817c4339501ddb984023977d093a1" id="r_a967817c4339501ddb984023977d093a1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a967817c4339501ddb984023977d093a1">GetStartTime</a> () const</td></tr>
+<tr class="memitem:a6b634912c4c923a14e5ce7994f46b2a4" id="r_a6b634912c4c923a14e5ce7994f46b2a4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b634912c4c923a14e5ce7994f46b2a4">GetEndTime</a> () const</td></tr>
+<tr class="memitem:adee8ff045eeb481ef911c9eee1b596c8" id="r_adee8ff045eeb481ef911c9eee1b596c8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adee8ff045eeb481ef911c9eee1b596c8">GetStepSize</a> () const</td></tr>
+<tr class="memitem:ad0bbb5894abf1b510845a61e9b42ea61" id="r_ad0bbb5894abf1b510845a61e9b42ea61"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0bbb5894abf1b510845a61e9b42ea61">GetNumberOfSteps</a> () const</td></tr>
+<tr class="memitem:a1cc5668fdf4d5bd99ee21c4f91c6aca3" id="r_a1cc5668fdf4d5bd99ee21c4f91c6aca3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cc5668fdf4d5bd99ee21c4f91c6aca3">Reset</a> ()</td></tr>
+<tr class="memdesc:a1cc5668fdf4d5bd99ee21c4f91c6aca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the solver state to the initial conditions.  <br /></td></tr>
+<tr class="memitem:a8528789990b812fe0b498fabb7e1521f" id="r_a8528789990b812fe0b498fabb7e1521f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8528789990b812fe0b498fabb7e1521f">Solve</a> ()</td></tr>
+<tr class="memdesc:a8528789990b812fe0b498fabb7e1521f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the simulation loop (Batch Mode).  <br /></td></tr>
+<tr class="memitem:aa71a2af25e87c1951f876a937fe46fd2" id="r_aa71a2af25e87c1951f876a937fe46fd2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa71a2af25e87c1951f876a937fe46fd2">OdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double end_time, int num_of_steps)</td></tr>
+<tr class="memdesc:aa71a2af25e87c1951f876a937fe46fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for fixed number of steps.  <br /></td></tr>
+<tr class="memitem:ae83ffce1c4785ec33c5e4deefdd9cc8c" id="r_ae83ffce1c4785ec33c5e4deefdd9cc8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae83ffce1c4785ec33c5e4deefdd9cc8c">OdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double end_time, double step_size=0.01)</td></tr>
+<tr class="memdesc:ae83ffce1c4785ec33c5e4deefdd9cc8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for fixed step size.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a147f8e774c34db6560ffcb817b41c4ee" id="r_a147f8e774c34db6560ffcb817b41c4ee"><td class="memItemLeft" align="right" valign="top"><a id="a147f8e774c34db6560ffcb817b41c4ee" name="a147f8e774c34db6560ffcb817b41c4ee"></a>
+<tr class="memitem:a9155f5d877dad198b513d24150dff5a4" id="r_a9155f5d877dad198b513d24150dff5a4"><td class="memItemLeft" align="right" valign="top"><a id="a9155f5d877dad198b513d24150dff5a4" name="a9155f5d877dad198b513d24150dff5a4"></a>
+const <a class="el" href="class_ode.html">Ode</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>ode_</b></td></tr>
+<tr class="memdesc:a9155f5d877dad198b513d24150dff5a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the ODE problem definition. Guaranteed to be valid as long as the user maintains the <a class="el" href="class_ode.html" title="Represents an Ordinary Differential Equation (ODE) problem definition.">Ode</a> object scope. <br /></td></tr>
+<tr class="memitem:a349bdd8382aed99df05dddd5d7d747a2" id="r_a349bdd8382aed99df05dddd5d7d747a2"><td class="memItemLeft" align="right" valign="top"><a id="a349bdd8382aed99df05dddd5d7d747a2" name="a349bdd8382aed99df05dddd5d7d747a2"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>start_time_</b></td></tr>
-<tr class="memitem:ab7323b8aa30a522206cbdcca33209c0c" id="r_ab7323b8aa30a522206cbdcca33209c0c"><td class="memItemLeft" align="right" valign="top"><a id="ab7323b8aa30a522206cbdcca33209c0c" name="ab7323b8aa30a522206cbdcca33209c0c"></a>
+<tr class="memdesc:a349bdd8382aed99df05dddd5d7d747a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The simulation start time. <br /></td></tr>
+<tr class="memitem:afe384debfb2aaf066067567b86660e80" id="r_afe384debfb2aaf066067567b86660e80"><td class="memItemLeft" align="right" valign="top"><a id="afe384debfb2aaf066067567b86660e80" name="afe384debfb2aaf066067567b86660e80"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>end_time_</b></td></tr>
-<tr class="memitem:ab1f1e25abb6054755941ad39b0318225" id="r_ab1f1e25abb6054755941ad39b0318225"><td class="memItemLeft" align="right" valign="top"><a id="ab1f1e25abb6054755941ad39b0318225" name="ab1f1e25abb6054755941ad39b0318225"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>num_of_steps_</b></td></tr>
-<tr class="memitem:a0b45f0bf993f56bf99fdb8798d383bf1" id="r_a0b45f0bf993f56bf99fdb8798d383bf1"><td class="memItemLeft" align="right" valign="top"><a id="a0b45f0bf993f56bf99fdb8798d383bf1" name="a0b45f0bf993f56bf99fdb8798d383bf1"></a>
+<tr class="memdesc:afe384debfb2aaf066067567b86660e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">The simulation target end time. <br /></td></tr>
+<tr class="memitem:a27c98f59e22ca709d451b8ba15bf3e16" id="r_a27c98f59e22ca709d451b8ba15bf3e16"><td class="memItemLeft" align="right" valign="top"><a id="a27c98f59e22ca709d451b8ba15bf3e16" name="a27c98f59e22ca709d451b8ba15bf3e16"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>step_size_</b></td></tr>
-<tr class="memitem:a9666d544fc16816a9a26d1a20b99c245" id="r_a9666d544fc16816a9a26d1a20b99c245"><td class="memItemLeft" align="right" valign="top"><a id="a9666d544fc16816a9a26d1a20b99c245" name="a9666d544fc16816a9a26d1a20b99c245"></a>
-const ODE&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>ode_</b></td></tr>
-<tr class="memitem:afb11ba0df20b8408732d22684c2361d9" id="r_afb11ba0df20b8408732d22684c2361d9"><td class="memItemLeft" align="right" valign="top"><a id="afb11ba0df20b8408732d22684c2361d9" name="afb11ba0df20b8408732d22684c2361d9"></a>
-std::vector&lt; State &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>solutions_</b></td></tr>
-<tr class="memitem:ad7bea471d65724afec12beea3793fe39" id="r_ad7bea471d65724afec12beea3793fe39"><td class="memItemLeft" align="right" valign="top"><a id="ad7bea471d65724afec12beea3793fe39" name="ad7bea471d65724afec12beea3793fe39"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>times_</b></td></tr>
+<tr class="memdesc:a27c98f59e22ca709d451b8ba15bf3e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">The time step (dt). <br /></td></tr>
+<tr class="memitem:a8e42a49ba25b6c2c5b029cd70e75d38e" id="r_a8e42a49ba25b6c2c5b029cd70e75d38e"><td class="memItemLeft" align="right" valign="top"><a id="a8e42a49ba25b6c2c5b029cd70e75d38e" name="a8e42a49ba25b6c2c5b029cd70e75d38e"></a>
+<a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>solution_</b></td></tr>
+<tr class="memdesc:a8e42a49ba25b6c2c5b029cd70e75d38e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current state vector y(t). Updated at every <a class="el" href="#a7a8a1ae3eb6213f9656a9b47ebbbe4fe" title="Calculates the solution at the next time step.">Step()</a>. <br /></td></tr>
+<tr class="memitem:a8e1bfe7801ae316ea876682778396e24" id="r_a8e1bfe7801ae316ea876682778396e24"><td class="memItemLeft" align="right" valign="top"><a id="a8e1bfe7801ae316ea876682778396e24" name="a8e1bfe7801ae316ea876682778396e24"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></td></tr>
+<tr class="memdesc:a8e1bfe7801ae316ea876682778396e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current simulation time t. Updated at every <a class="el" href="#a7a8a1ae3eb6213f9656a9b47ebbbe4fe" title="Calculates the solution at the next time step.">Step()</a>. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-class OdeSolver&lt; T &gt;</div><p>Abstract base class for Ordinary Differential Equation (ODE) solvers. </p>
-<ul>
-<li>This class provides the framework for solving ODEs numerically using specific integration methods.</li>
-<li><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The data type used for calculations (usually double). </td></tr>
+<div class="textblock"><p>Abstract base class for iterative Ordinary Differential Equation solvers. </p>
+<p>The <a class="el" href="class_ode_solver.html" title="Abstract base class for iterative Ordinary Differential Equation solvers.">OdeSolver</a> manages the simulation loop, time tracking, and state updates. It holds a reference to the problem definition (<a class="el" href="class_ode.html" title="Represents an Ordinary Differential Equation (ODE) problem definition.">Ode</a>) and uses a specific numerical method (implemented in derived classes via <a class="el" href="#a7a8a1ae3eb6213f9656a9b47ebbbe4fe" title="Calculates the solution at the next time step.">Step()</a>) to advance the solution. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa71a2af25e87c1951f876a937fe46fd2" name="aa71a2af25e87c1951f876a937fe46fd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa71a2af25e87c1951f876a937fe46fd2">&#9670;&#160;</a></span>OdeSolver() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OdeSolver::OdeSolver </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_ode.html">Ode</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>end_time</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>num_of_steps</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for fixed number of steps. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ode</td><td>A constant reference to the ODE definition. Must outlive the solver. </td></tr>
+    <tr><td class="paramname">end_time</td><td>The target simulation time. </td></tr>
+    <tr><td class="paramname">num_of_steps</td><td>The number of intervals to divide the time span into. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+
+</div>
+</div>
+<a id="ae83ffce1c4785ec33c5e4deefdd9cc8c" name="ae83ffce1c4785ec33c5e4deefdd9cc8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae83ffce1c4785ec33c5e4deefdd9cc8c">&#9670;&#160;</a></span>OdeSolver() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OdeSolver::OdeSolver </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_ode.html">Ode</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>end_time</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>step_size</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.01</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for fixed step size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ode</td><td>A constant reference to the ODE definition. Must outlive the solver. </td></tr>
+    <tr><td class="paramname">end_time</td><td>The target simulation time. </td></tr>
+    <tr><td class="paramname">step_size</td><td>The time step (dt). Defaults to 0.01. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a6b634912c4c923a14e5ce7994f46b2a4" name="a6b634912c4c923a14e5ce7994f46b2a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b634912c4c923a14e5ce7994f46b2a4">&#9670;&#160;</a></span>GetEndTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double OdeSolver::GetEndTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The configured end time. </dd></dl>
+
+</div>
+</div>
+<a id="ad0bbb5894abf1b510845a61e9b42ea61" name="ad0bbb5894abf1b510845a61e9b42ea61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0bbb5894abf1b510845a61e9b42ea61">&#9670;&#160;</a></span>GetNumberOfSteps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OdeSolver::GetNumberOfSteps </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The derived number of steps based on duration and step size. </dd></dl>
+
+</div>
+</div>
+<a id="a967817c4339501ddb984023977d093a1" name="a967817c4339501ddb984023977d093a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a967817c4339501ddb984023977d093a1">&#9670;&#160;</a></span>GetStartTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double OdeSolver::GetStartTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The configured start time. </dd></dl>
+
+</div>
+</div>
+<a id="adee8ff045eeb481ef911c9eee1b596c8" name="adee8ff045eeb481ef911c9eee1b596c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adee8ff045eeb481ef911c9eee1b596c8">&#9670;&#160;</a></span>GetStepSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double OdeSolver::GetStepSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The current time step size (dt). </dd></dl>
+
+</div>
+</div>
+<a id="a1cc5668fdf4d5bd99ee21c4f91c6aca3" name="a1cc5668fdf4d5bd99ee21c4f91c6aca3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cc5668fdf4d5bd99ee21c4f91c6aca3">&#9670;&#160;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OdeSolver::Reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the solver state to the initial conditions. </p>
+<p>Sets current_time_ to start_time_ and current solution_ to ode_.GetCondIn(). This must be called before restarting a simulation. </p>
+
+</div>
+</div>
+<a id="a662cff46a2025f9b99295d5fcefbe0b6" name="a662cff46a2025f9b99295d5fcefbe0b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a662cff46a2025f9b99295d5fcefbe0b6">&#9670;&#160;</a></span>SetEndTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OdeSolver::SetEndTime </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>end_time</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the simulation end time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">end_time</td><td>The target time t_end. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae543d1973f9c00665e04c470d3819e47" name="ae543d1973f9c00665e04c470d3819e47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae543d1973f9c00665e04c470d3819e47">&#9670;&#160;</a></span>SetStartTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OdeSolver::SetStartTime </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>start_time</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the simulation start time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start_time</td><td>The time t0. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a673fb059d7379dfc9bfea833318b4049" name="a673fb059d7379dfc9bfea833318b4049"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a673fb059d7379dfc9bfea833318b4049">&#9670;&#160;</a></span>SetTimeSpan() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OdeSolver::SetTimeSpan </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>step_size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configures the solver based on a fixed step size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">step_size</td><td>The time delta (dt) for each iteration. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae1242b79d094ce57a73b76661cdbdc94" name="ae1242b79d094ce57a73b76661cdbdc94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1242b79d094ce57a73b76661cdbdc94">&#9670;&#160;</a></span>SetTimeSpan() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OdeSolver::SetTimeSpan </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>num_of_steps</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configures the solver based on a fixed number of steps. </p>
+<p>Automatically calculates and updates the step_size_ based on the formula: dt = (end_time - start_time) / num_of_steps.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num_of_steps</td><td>The total number of iterations to perform. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8528789990b812fe0b498fabb7e1521f" name="a8528789990b812fe0b498fabb7e1521f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8528789990b812fe0b498fabb7e1521f">&#9670;&#160;</a></span>Solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OdeSolver::Solve </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes the simulation loop (Batch Mode). </p>
+<p>Runs the simulation from current_time_ until end_time_ is reached. Internally calls <a class="el" href="#a7a8a1ae3eb6213f9656a9b47ebbbe4fe" title="Calculates the solution at the next time step.">Step()</a> repeatedly and updates the internal state. </p>
+
+</div>
+</div>
+<a id="a7a8a1ae3eb6213f9656a9b47ebbbe4fe" name="a7a8a1ae3eb6213f9656a9b47ebbbe4fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a8a1ae3eb6213f9656a9b47ebbbe4fe">&#9670;&#160;</a></span>Step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> OdeSolver::Step </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates the solution at the next time step. </p>
+<p>This is a pure virtual function that must be implemented by derived classes. It uses the specific numerical algorithm (e.g., RK4, Euler) to calculate y(t + dt) based on y(t).</p>
+<dl class="section return"><dt>Returns</dt><dd>The calculated state tensor for the next time step. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/rocky/notes/Scientific Computing/ODE_Solver/include/<a class="el" href="ode__solver_8h_source.html">ode_solver.h</a></li>
+<li>/Users/rocky/notes/Scientific Computing/ODE_Solver/src/<b>ode_solver.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

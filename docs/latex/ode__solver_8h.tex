@@ -1,0 +1,21 @@
+\doxysection{/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/ode\+\_\+solver.h File Reference}
+\hypertarget{ode__solver_8h}{}\label{ode__solver_8h}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/ode\_solver.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/ode\_solver.h}}
+
+
+Definition of the abstract base class for ODE Solvers.  
+
+
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include "{}ode.\+h"{}}\newline
+{\ttfamily \#include "{}dynamic\+\_\+tensor.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}
+\begin{DoxyCompactList}\small\item\em Abstract base class for iterative Ordinary Differential Equation solvers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of the abstract base class for ODE Solvers. 
+
+This file defines the generic interface for solving Ordinary Differential Equations. Concrete implementations (e.\+g., Forward\+Euler, Runge\+Kutta4) should inherit from this class and implement the Step() method. 

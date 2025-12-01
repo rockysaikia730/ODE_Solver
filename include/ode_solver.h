@@ -1,82 +1,155 @@
+/**
+ * @file ode_solver.h
+ * @brief Definition of the abstract base class for ODE Solvers.
+ *
+ * This file defines the generic interface for solving Ordinary Differential
+ * Equations. Concrete implementations (e.g., ForwardEuler, RungeKutta4)
+ * should inherit from this class and implement the Step() method.
+ */
+
 #ifndef CODES_ODE_SOLVER_H
 #define CODES_ODE_SOLVER_H
 
-#include <memory>
-#include <vector>
+
 #include <cmath>
-#include "ODE.h"
+#include "ode.h"
+#include "dynamic_tensor.h"
 
 /**
  * @class OdeSolver
- * @brief Abstract base class for Ordinary Differential Equation (ODE) solvers.
- * * This class provides the framework for solving ODEs numerically using specific
- * integration methods. 
- * * @tparam T The data type used for calculations (usually double).
+ * @brief Abstract base class for iterative Ordinary Differential Equation solvers.
+ *
+ * The OdeSolver manages the simulation loop, time tracking, and state updates.
+ * It holds a reference to the problem definition (Ode) and uses a specific
+ * numerical method (implemented in derived classes via Step()) to advance the solution.
  */
-template <typename T>
 class OdeSolver {
 public:
-    using State = std::vector<T>;
+    /**
+     * @brief Virtual destructor.
+     */
     virtual ~OdeSolver() = default;
-    virtual void Step(double current_time, const State& current_state) = 0;
 
-    void SetStartTime(double start_time) {start_time_ = start_time;}
-    void SetEndTime(double end_time) {end_time_ = end_time;}
-    void SetStepSize(double step_size) {
-        step_size_ = step_size;
-        num_of_steps_ = std::ceil((end_time_ - start_time_)/step_size_);
-    }
-    void SetNumOfSteps(int num_of_steps) {
-        num_of_steps_ = num_of_steps;
-        step_size_ = (end_time_ - start_time_)/num_of_steps_;
-    }
+    /**
+     * @brief Calculates the solution at the next time step.
+     *
+     * This is a pure virtual function that must be implemented by derived classes.
+     * It uses the specific numerical algorithm (e.g., RK4, Euler) to calculate
+     * y(t + dt) based on y(t).
+     *
+     * @return The calculated state tensor for the next time step.
+     */
+    virtual DynamicTensor Step() = 0;
 
-    double GetStartTime() const {return start_time_;}
-    double GetEndTime() const {return end_time_;}
-    double GetStepSize() const {return step_size_;}
-    double GetNumOfSteps() const {return num_of_steps_;}
-    const std::vector<State>& GetSolution() const {return solutions_;}
-    const std::vector<double>& GetTimeHistory() const {return times_;}
+    /**
+     * @brief Sets the simulation start time.
+     * @param start_time The time t0.
+     */
+    void SetStartTime(double start_time);
 
-    void Solve() {
-        double current_time = start_time_;
-        State current_state = ode_.getCondIn();
+    /**
+     * @brief Sets the simulation end time.
+     * @param end_time The target time t_end.
+     */
+    void SetEndTime(double end_time);
 
-        solutions_.clear();
-        solutions_.push_back(current_state);
-        times_.clear();
-        times_.push_back(current_time);
+    /**
+     * @brief Configures the solver based on a fixed number of steps.
+     *
+     * Automatically calculates and updates the step_size_ based on the formula:
+     * dt = (end_time - start_time) / num_of_steps.
+     *
+     * @param num_of_steps The total number of iterations to perform.
+     */
+    void SetTimeSpan(int num_of_steps);
 
-        for(long long i = 0; i < num_of_steps_; i++) {
-            current_state = Step(current_time, current_state);
-            current_time += step_size_;
+    /**
+     * @brief Configures the solver based on a fixed step size.
+     * @param step_size The time delta (dt) for each iteration.
+     */
+    void SetTimeSpan(double step_size);
 
-            solutions_.push_back(current_state);
-            times_.push_back(current_time);
-        }
-    }
+    // --- Getters ---
 
-    OdeSolver(const ODE<T>& ode, double start_time, double end_time,  int num_of_steps = 1)
-        : start_time_(start_time),
-          end_time_(end_time),
-          num_of_steps_(num_of_steps),
-          ode_(ode)   
-    {
-        if(num_of_steps_ > 0) {
-            step_size_ = (end_time_ - start_time_)/num_of_steps_;
-        }
-        else {
-            step_size_ = 0.01;
-            num_of_steps_ = std::ceil((end_time_ - start_time_)/step_size_);
-        }
-    }
+    /**
+     * @return The configured start time.
+     */
+    double GetStartTime() const;
+
+    /**
+     * @return The configured end time.
+     */
+    double GetEndTime() const;
+
+    /**
+     * @return The current time step size (dt).
+     */
+    double GetStepSize() const;
+
+    /**
+     * @return The derived number of steps based on duration and step size.
+     */
+    int GetNumberOfSteps() const;
+
+    // --- Control Flow ---
+
+    /**
+     * @brief Resets the solver state to the initial conditions.
+     *
+     * Sets current_time_ to start_time_ and current solution_ to ode_.GetCondIn().
+     * This must be called before restarting a simulation.
+     */
+    void Reset();
+
+    /**
+     * @brief Executes the simulation loop (Batch Mode).
+     *
+     * Runs the simulation from current_time_ until end_time_ is reached.
+     * Internally calls Step() repeatedly and updates the internal state.
+     */
+    void Solve();
+
+    // --- Constructors ---
+
+    /**
+     * @brief Constructor for fixed number of steps.
+     *
+     * @param ode A constant reference to the ODE definition. Must outlive the solver.
+     * @param end_time The target simulation time.
+     * @param num_of_steps The number of intervals to divide the time span into.
+     */
+    OdeSolver(const Ode& ode, double end_time, int num_of_steps);
+
+    /**
+     * @brief Constructor for fixed step size.
+     *
+     * @param ode A constant reference to the ODE definition. Must outlive the solver.
+     * @param end_time The target simulation time.
+     * @param step_size The time step (dt). Defaults to 0.01.
+     */
+    OdeSolver(const Ode& ode, double end_time, double step_size = 0.01);
+
 protected:
+    /**
+     * @brief Reference to the ODE problem definition.
+     * Guaranteed to be valid as long as the user maintains the Ode object scope.
+     */
+    const Ode& ode_;
+
+    /// @brief The simulation start time.
     double start_time_;
+
+    /// @brief The simulation target end time.
     double end_time_;
-    int num_of_steps_;
+
+    /// @brief The time step (dt).
     double step_size_;
-    const ODE<T>& ode_;
-    std::vector<State> solutions_;
-    std::vector<double> times_;
+
+    /// @brief The current state vector y(t). Updated at every Step().
+    DynamicTensor solution_;
+
+    /// @brief The current simulation time t. Updated at every Step().
+    double current_time_;
 };
-#endif
+
+#endif // CODES_ODE_SOLVER_H

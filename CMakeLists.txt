@@ -7,6 +7,7 @@ add_executable(everything
         src/main.cpp
         src/dynamic_tensor.cpp
 		src/ode.cpp
+		src/ode_solver.cpp
 )
 
 target_include_directories(everything PRIVATE include)
