@@ -77,7 +77,7 @@ public:
     auto begin() {return GetVec<T>().begin();}
 
     template <typename T>
-    auto end() {return GetVec<T>().end()}
+    auto end() {return GetVec<T>().end();}
 
     template <typename T>
     auto begin() const {return GetVec<T>().begin();}

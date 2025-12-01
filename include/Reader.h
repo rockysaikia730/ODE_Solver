@@ -1,144 +1,72 @@
-//
-// Created by andra on 21/11/2025.
-//
-
-
-
-
-#ifndef INCLUDE_READER_H_
-#define INCLUDE_READER_H_
-
-/**
- * @file reader.h
- * @brief Defines the abstract Reader class template for loading ODE input data.
- */
+#ifndef READER_H
+#define READER_H
 
 #include <string>
-#include <functional>
-#include <variant>
-#include <fstream>
-#include "TableEntry.h"
+#include "../Data_structures/dynamic_tensor.h"
+#include "../Data_structures/ode_raw_data.h"
+
 /**
- * @brief Abstract base class for reading ODE input data from files.
+ * @class Reader
+ * @brief A class responsible for reading and parsing data from various sources.
  *
- * This class defines a common interface used by all reader types 
- * (e.g., CSV reader, TXT reader, JSON reader).
- * 
- * The Reader:
- *   - Stores a filename and a field separator character.
- *   - Provides functions to check file existence and file extension.
- *   - Returns parsed data as either a Function or a TableEntry<T>.
- *
- * @tparam T Scalar type of the ODE state (e.g., double, std::complex<double>).
+ * The Reader class provides methods to read data from files, databases, or other input streams,
+ * and convert them into DynamicTensor objects for further processing.
  */
-template <typename T>
 class Reader {
-protected:
-    /// Convenience alias for ODE state vector.
-    using State = std::vector<T>;
-
-    /**
-     * @brief Callable representing the RHS function f(t, y).
-     *
-     * The signature State(double t, const State& y) must return the derivative vector.
-     */
-    using Function = std::function<State(double, const State&)>;
-
-    /**
-     * @brief Variant of possible readable data types.
-     *
-     * A Reader may return:
-     *   - A Function (parsed from file or predefined)
-     *   - A TableEntry<T> (for table-based or tabulated data)
-     */
-    using Data = std::variant<Function, TableEntry<T>>;
-
-    /// Field separator used when parsing (e.g., ',', ';', ' ').
-    char sep_;
-
-    /// Name of the file to read from.
-    std::string filename_;
-
-    /// File stream used internally for reading.
-    std::ifstream file_;
-
-    /**
-     * @brief Checks whether the file extension matches what this Reader supports.
-     *
-     * Pure virtual so each subclass implements its own check.
-     *
-     * @return true if the extension is acceptable, false otherwise.
-     */
-    virtual bool CheckExtension() const = 0;
-
 public:
     /**
-     * @brief Virtual destructor for proper polymorphic cleanup.
+     * @brief Constructor that initializes the Reader with a file name.
+     * @param file_name The name of the file to read data from.
+     */
+    Reader(const std::string& file_name);
+    
+    /**
+     * @brief Virtual destructor.
      */
     virtual ~Reader() = default;
 
     /**
-     * @brief Checks whether the file exists and can be opened.
-     *
-     * @return true if file exists and is readable, false otherwise.
+     * @brief Reads data from the source and returns it as an OdeRawData object.
+     * @return An OdeRawData object containing the read data.
      */
-    virtual bool CheckFileExist() const;
+    virtual OdeRawData Read() = 0;
+
 
     /**
-     * @brief Read and parse the file.
-     *
-     * Subclasses implement the interpretation of file contents
-     * and return either:
-     *   - A Function (parsed expression or compiled functor)
-     *   - A TableEntry<T> (parsed numeric table)
-     *
-     * @return A Data variant containing parsed information.
+     * @brief Get the file name associated with the Reader.
+     * @return The file name as a string.
      */
-    virtual Data Read() = 0;
+    std::string GetFileName() const;
+    
+    
+    /**
+     * @brief Get the file extension associated with the Reader.
+     * @return The file extension as a string.
+     */
+    std::string GetFileExtension() const;
 
     /**
-     * @brief Construct a Reader object.
-     *
-     * @param filename Name of the file to read.
-     * @param sep Field separator character.
+     * @brief Set the file name for the Reader.
+     * @param file_name The new file name to set.
      */
-    Reader(const std::string& filename, const char& sep);
+    void SetFileName(const std::string& file_name);
 
     /**
-     * @brief Change the file to be read.
-     *
-     * Resets the filename and closes any previously opened file.
-     *
-     * @param new_name New file name.
+     * @brief Set the file extension for the Reader.
+     * @param file_extension The new file extension to set.
      */
-    void SetFile(const std::string& new_name);
+    void SetFileExtension(const std::string& file_extension);
+
+protected:
+    std::string file_name_;
+    std::string file_extension_;
 
     /**
-     * @brief Set the character used as field separator.
-     *
-     * @param new_sep Separator character.
+     * @brief Checks if a string represents a numeric value.
+     * @param str The string to check.
+     * @return True if the string is numeric, false otherwise.
      */
-    void SetFileSeparator(const char& new_sep) { sep_ = new_sep; }
-
-    /**
-     * @brief Get the current file name.
-     *
-     * @return The stored filename.
-     */
-    std::string GetFileName() const { return filename_; }
-
-    /**
-    * @brief Get a const reference to the file stream.
-    *
-    * @return Const reference to the internal std::ifstream.
-    */
-    const std::ifstream& GetFile() const { return file_; }
-
-    /**
-     * @brief Get the current field separator character.
-     *
-     * @return Separator character.
-     */
-    char GetChar() const { return sep_; }
+    bool IsNumeric(const std::string& str) const;
 };
-#endif // INCLUDE_READER_H_
+
+#endif // READER_H
