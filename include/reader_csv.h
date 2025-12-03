@@ -3,10 +3,10 @@
 
 #include <string>
 #include <fstream>
-#include "reader_file.h"
-#include "../Data_structures/ode_raw_data.h"
+#include "reader.h"
+#include "ode_raw_data.h"
 
-class CsvReader: public FileReader {
+class CsvReader: public Reader {
 public:
     CsvReader(const std::string& file_name, char separator = ',');
     virtual ~CsvReader() = default;

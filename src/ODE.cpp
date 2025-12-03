@@ -29,13 +29,16 @@ DynamicTensor Ode::Evaluate(double t, const DynamicTensor& y) const {
     return func_->Eval(t, y);
 }
 
+Ode::Ode(const Reader& reader) {
+    OdeRawData raw_data = reader.GetRawData();
+    t0_ = raw_data.time_params.t0;
+    y0_ = raw_data.y0;
+}
 const std::string& Ode::GetName() const {return name_;}
 
 const DynamicTensor& Ode::GetCondIn() const {return y0_;}
-double Ode::GetTimeIn() const {return t0_;}
 
 void Ode::SetT0(double time) {t0_ = time;}
-
 void Ode::SetY0(const DynamicTensor& y0) {y0_ = y0;}
 void Ode::SetY0(double in_y0) {y0_ = DynamicTensor(in_y0);}
 void Ode::SetName(const std::string& name) {name_ = name;}
