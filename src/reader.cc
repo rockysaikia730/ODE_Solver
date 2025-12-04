@@ -61,7 +61,7 @@ char Reader::GetSeparator() const {
     return separator_;
 }
 
-std::vector<std::string> Reader::Split(const std::string& str, const char& separator) {
+std::vector<std::string> Reader::Split(const std::string& str, const char& separator) const {
     std::vector<std::string> tokens; // to store the split tokens
     std::string token;
     std::istringstream token_stream(str); // Reading from the input string
@@ -71,7 +71,7 @@ std::vector<std::string> Reader::Split(const std::string& str, const char& separ
     return tokens;
 }
 
-std::vector<std::string> Reader::Trim(const std::vector<std::string>& tokens) {
+std::vector<std::string> Reader::Trim(const std::vector<std::string>& tokens) const {
     std::vector<std::string> trimmed_tokens; // to store the trimmed tokens
 
     for (const auto& token : tokens) {
@@ -363,5 +363,63 @@ bool Reader::HasComplexNumber(const std::string& str) const {
     return false;
 }
 
+void Reader::ParseSolverMethodFromString(const std::string& method_string) {
+        if (method_string == "ExplicitEuler") {
+            raw_data_.solver_params.method = SolverMethod::kExplicitEuler;
+        } else if (method_string == "RungeKutta4") {
+            raw_data_.solver_params.method = SolverMethod::kRungeKutta4;
+        } else if (method_string == "ImplicitEuler") {
+            raw_data_.solver_params.method = SolverMethod::kImplicitEuler;
+        } else if (method_string == "AdamsBashforth") {
+            raw_data_.solver_params.method = SolverMethod::kAdamsBashforth;
+        } else {
+            // Default or unknown method handling
+            raw_data_.solver_params.method = SolverMethod::kUnknown;
+        }
+    }
 
+
+void Reader::InterpretKeyValuePair(const std::string& key, const std::string& value) {
+
+
+    if (key == "t0") {
+        raw_data_.time_params.t0 = ParseDouble(value);
+    }
+    else if (key == "tf") {
+        raw_data_.time_params.t_final = ParseDouble(value);
+    }
+    else if (key == "y0") {
+        raw_data_.y0 = ParseTensor(value);
+    }
+    else if (key == "step_size") {
+        raw_data_.time_params.step_size = ParseDouble(value);
+    }
+    else if (key == "number_of_steps") {
+        raw_data_.time_params.number_of_steps = static_cast<size_t>(ParseDouble(value));
+    }
+    else if (key == "solver_method") {
+        //lower for this:
+        std::string lower_value = ToLower(value);
+        ParseSolverMethodFromString(value);
+    }
+    else if (key == "tolerance") {
+        raw_data_.solver_params.tolerance = ParseDouble(value);
+    }
+    else if (key == "max_iterations") {
+        raw_data_.solver_params.max_iterations = static_cast<size_t>(ParseDouble(value));
+    }
+    else {
+        // Handle unknown key! MISSING IMPLEMENTATION
+    }
+}
+
+std::string Reader::Trim(const std::string& str) const {
+    size_t start = 0;
+    size_t end = str.size();
+
+    while (start < end && std::isspace( static_cast<unsigned char>(str[start]))) start++;
+    while (end > start && std::isspace(static_cast<unsigned char>(str[end - 1]))) end--;
+
+    return str.substr(start, end - start);
+}
 

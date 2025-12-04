@@ -28,7 +28,8 @@ public:
      * Multiple key-value pairs can be present in a single line, separated by inline_separator.
      */
     virtual void Read() override;
-private:
+
+    private:
     char comment_char_;
     char inline_separator_;
 };

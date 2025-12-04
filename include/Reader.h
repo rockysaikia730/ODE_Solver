@@ -7,6 +7,7 @@
 #include <vector>
 #include "dynamic_tensor.h"
 #include "ode_raw_data.h"
+#include "solver_methods.h"
 
 
 /**
@@ -136,14 +137,14 @@ protected:
      * @param separator The character to use as the delimiter.
      * @return A vector of tokens.
      */
-    virtual std::vector<std::string> Split(const std::string& str, const char& separator);
+    std::vector<std::string> Split(const std::string& str, const char& separator) const;
 
     /**
      * @brief Trims whitespace from each token if there is a space at the beginning or end of the token. It should not remove spaces within the token, as those may be vector values.
      * @param tokens The vector of strings to trim.
      * @return A vector of trimmed strings.
      */
-    virtual std::vector<std::string> Trim(const std::vector<std::string>& tokens);
+    std::vector<std::string> Trim(const std::vector<std::string>& tokens) const;
 
     /**
      * @brief Helper function to parse a string into a DynamicTensor.
@@ -176,6 +177,44 @@ protected:
      */
     bool LineEndsWith(const std::string& line, const std::string& end) const;
 
+    /**
+         * @brief Parses a string representing a complex number in the form (a,b).
+         * @param str The string to parse.
+         * @return A std::complex<double> object.
+         */
+        std::complex<double> ParseComplexNumber(const std::string& str) const;
+
+        /**
+         * @brief Parses a string representing a double.
+         * @param str The string to parse.
+         * @return A double value.
+         */
+        double ParseDouble(const std::string& str) const;
+
+        /**
+         * @brief Parses the solver method from a string and sets it in raw_data_.
+         * @param method_string The string representing the solver method.
+         * This method updates the solver method in the raw_data_ member variable based on the provided string.
+         * It does not guarantee that this method will be used by the solver.
+         */
+        void ParseSolverMethodFromString(const std::string& method_string);
+
+        /**
+         * @brief Key-value pair interpreter for reading lines.
+         * @param key The key string.
+         * @param value The value string.
+         * This method interprets the key-value pairs and updates the raw_data_ member variable accordingly.
+         */
+        void InterpretKeyValuePair(const std::string& key, const std::string& value);
+
+        /**
+         * @brief trim a single string
+         * @param str The string to trim.
+         * @return The trimmed string.
+         * This method removes leading and trailing whitespace from the input string.
+         */
+        std::string Trim(const std::string& str) const;
+        
     private:
         /**
          * @brief Recursive helper function to parse nested tensor strings.
@@ -196,26 +235,11 @@ protected:
         std::vector<size_t> ParseTensorRecursive(const std::string& str, size_t& pos, std::vector<std::complex<double>>& data);
 
         /**
-         * @brief Parses a string representing a complex number in the form (a,b).
-         * @param str The string to parse.
-         * @return A std::complex<double> object.
-         */
-        std::complex<double> ParseComplexNumber(const std::string& str) const;
-
-        /**
-         * @brief Parses a string representing a double.
-         * @param str The string to parse.
-         * @return A double value.
-         */
-        double ParseDouble(const std::string& str) const;
-
-        /**
          * @brief Checks if a whole string has a complex number in it
          * @param str The string to check.
          * @return True if the string has a complex number, false otherwise.
          */
         bool HasComplexNumber(const std::string& str) const;
-
     };
 
 #endif // READER_H

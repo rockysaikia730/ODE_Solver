@@ -4,6 +4,7 @@
 #include "dynamic_tensor.h"
 #include "solver_methods.h"
 #include <function.h>
+#include <memory>
 
 /**
  * @struct OdeRawData
