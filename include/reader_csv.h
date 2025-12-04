@@ -11,6 +11,6 @@ public:
     CsvReader(const std::string& file_name, char separator = ',');
     virtual ~CsvReader() = default;
 
-    virtual OdeRawData Read() override;
+    virtual void Read() override;
 };
 #endif // READER_CSV_H

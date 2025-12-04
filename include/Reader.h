@@ -3,15 +3,17 @@
 
 #include <string>
 #include <fstream>
+#include <complex>
+#include <vector>
 #include "dynamic_tensor.h"
 #include "ode_raw_data.h"
+
 
 /**
  * @class Reader
  * @brief A class responsible for reading and parsing data from various sources.
- *
- * The Reader class provides methods to read data from files, databases, or other input streams,
- * and convert them into DynamicTensor objects for further processing.
+ * The reader can handle the simulation parameters, initial conditions, but cannot read the function itself.
+ * Function parsing is not implemented for now, it has to be passed in the constructor of the ODE solver.
  */
 class Reader {
 public:
@@ -131,9 +133,10 @@ protected:
     /**
      * @brief Splits a string into tokens based on a delimiter.
      * @param str The string to split.
+     * @param separator The character to use as the delimiter.
      * @return A vector of tokens.
      */
-    virtual std::vector<std::string> Split(const std::string& str);
+    virtual std::vector<std::string> Split(const std::string& str, const char& separator);
 
     /**
      * @brief Trims whitespace from each token if there is a space at the beginning or end of the token. It should not remove spaces within the token, as those may be vector values.
@@ -150,17 +153,11 @@ protected:
     DynamicTensor ParseTensor(const std::string& str);
 
     /**
-     * @brief Helper function to check if tring is a complex number or a double.
+     * @brief Helper function to check if string is a complex number or a double.
      * @param str The string to check.
      * @return True if the string is complex, false if double.
      */
     bool IsComplexNumber(const std::string& str) const;
-
-    /**
-     * @brief Create a function and save the shared pointer to it in raw_data_.func.
-     * @param func_str The string representing the function.
-     */
-    void ParseFunction(const std::string& func_str);
 
     /**
      * @brief Converts a string to lowercase.
@@ -168,18 +165,6 @@ protected:
      * @return The lowercase version of the string.
      */
     std::string ToLower(const std::string& str) const;
-
-    /**
-     * @brief Reads a line from the file stream.
-     * @return The line read from the file.
-     */
-    std::string ReadLine();
-
-    /**
-     * @brief Reads next non-empty line from the file stream.
-     * @return The next non-empty line read from the file.
-     */
-    std::string ReadNextNonEmptyLine();
 
     /**
      * @brief Returns the starting value of line
@@ -191,30 +176,46 @@ protected:
      */
     bool LineEndsWith(const std::string& line, const std::string& end) const;
 
-    /**
-     * @brief Removes whitespace and new line characters from both ends of a string.
-     */
-    std::string TrimString(const std::string& str) const;
+    private:
+        /**
+         * @brief Recursive helper function to parse nested tensor strings.
+         * @param str The string to parse.
+         * @param pos The current position in the string.
+         * @param data The vector to store parsed data. Passed by reference to accumulate values.
+         * @return The shape of the tensor as a vector of sizes.
+         */
+        std::vector<size_t> ParseTensorRecursive(const std::string& str, size_t& pos, std::vector<double>& data);
 
-    /**
-     * @brief Tokenise a string based on the separator character.
-     */
-    virtual std::vector<std::string> Tokenise(const std::string& str) = 0;
+        /**
+         * @brief Recursive helper function to parse nested tensor strings for complex numbers.
+         * @param str The string to parse.
+         * @param pos The current position in the string.
+         * @param data The vector to store parsed data. Passed by reference to accumulate values.
+         * @return The shape of the tensor as a vector of sizes.
+         */
+        std::vector<size_t> ParseTensorRecursive(const std::string& str, size_t& pos, std::vector<std::complex<double>>& data);
 
-    /**
-     * @brief Parse a double value from a string.
-     */
-    double ParseDouble(const std::string& str) const;
+        /**
+         * @brief Parses a string representing a complex number in the form (a,b).
+         * @param str The string to parse.
+         * @return A std::complex<double> object.
+         */
+        std::complex<double> ParseComplexNumber(const std::string& str) const;
 
-    /**
-     * @brief Parse an integer value from a string.
-     */
-    int ParseInt(const std::string& str) const;
+        /**
+         * @brief Parses a string representing a double.
+         * @param str The string to parse.
+         * @return A double value.
+         */
+        double ParseDouble(const std::string& str) const;
 
-    /**
-     * @brief Parse a complex value from a string.
-     */
-    std::complex<double> ParseComplex(const std::string& str) const;
-};
+        /**
+         * @brief Checks if a whole string has a complex number in it
+         * @param str The string to check.
+         * @return True if the string has a complex number, false otherwise.
+         */
+        bool HasComplexNumber(const std::string& str) const;
+
+    };
 
 #endif // READER_H
