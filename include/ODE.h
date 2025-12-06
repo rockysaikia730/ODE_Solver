@@ -9,7 +9,7 @@
 #ifndef CODES_ODE_H
 #define CODES_ODE_H
 
-#include <vector>
+
 #include <string>
 #include <memory>
 #include "dynamic_tensor.h"
@@ -32,7 +32,7 @@ public:
     /**
      * @brief Constructor with Tensor state.
      * * @param in_time The initial time (t0).
-     * @param in_y0 The initial state vector/tensor (y0).
+     * @param in_y0 The initial state tensor (y0).
      * @param in_name A unique identifier name for this ODE system.
      * @param func Shared pointer to the function defining dy/dt = f(t, y).
      * @param root_finder Shared pointer to the root finding strategy (for implicit solvers).
@@ -118,6 +118,18 @@ public:
      * @return The name string.
      */
     const std::string& GetName() const;
+    
+    /**
+     * @brief Get the RHS function.
+     * @return Const reference to the Function.
+     */
+    const Function& GetFunction() const;
+
+    /**
+     * @brief Get the RootFinder Routine.
+     * @return Const reference to the RootFinder Routine.
+     */
+    const std::shared_ptr<RootFinder>& GetRootFinder() const;
 
     // =========================================================
     // Logic

@@ -1,0 +1,42 @@
+\doxysection{reader\+\_\+file.\+h}
+\hypertarget{reader__file_8h_source}{}\label{reader__file_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/reader\_file.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/reader\_file.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ READER\_FILE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ READER\_FILE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}reader.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_file_reader_a17fda1989feb82538a34b321e2d73473}{FileReader}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_reader_a6da108ba26678537964ffa902181e756}{Reader}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_file_reader_a17fda1989feb82538a34b321e2d73473}{FileReader}}(\textcolor{keyword}{const}\ std::string\&\ file\_name,\ \textcolor{keywordtype}{char}\ separator\ =\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_file_reader_ae1646173945fada0c335cd09c46e178b}{\string~FileReader}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_file_reader_a94c476d28850e1e4a46ca51daa1d0d1e}{Open}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_reader_a01679e0c723733146c09dd681afcea24}{Close}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_reader_a4de9019cdb234fdfb93aab20fedd5774}{SetSeparator}}(\textcolor{keywordtype}{char}\ separator);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_file_reader_affd81929b8c985d94ed215a0e53df093}{GetSeparator}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00050\ \ \ \ \ std::ifstream\ \mbox{\hyperlink{class_file_reader_a5b1035d537b44731ebbd31874676653a}{file\_stream\_}};}
+\DoxyCodeLine{00051\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_file_reader_a598e471b8241008c71f371087134403d}{separator\_}};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<std::string>\ \mbox{\hyperlink{class_file_reader_a3d38c8973a01cfab666b9c3360c12241}{Split}}(\textcolor{keyword}{const}\ std::string\&\ str);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<std::string>\ \mbox{\hyperlink{class_file_reader_ab6b95e0c6727709f384864acc8e0902b}{Trim}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ tokens);}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ READER\_FILE\_H}}
+
+\end{DoxyCode}

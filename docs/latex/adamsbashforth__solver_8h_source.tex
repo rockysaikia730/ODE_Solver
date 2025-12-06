@@ -1,0 +1,27 @@
+\doxysection{adamsbashforth\+\_\+solver.\+h}
+\hypertarget{adamsbashforth__solver_8h_source}{}\label{adamsbashforth__solver_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/adamsbashforth\_solver.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/adamsbashforth\_solver.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ADAMSBASHFORTH\_SOLVER\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ADAMSBASHFORTH\_SOLVER\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ode_8h}{ode.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}multistep\_ode\_solver.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\_tensor.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }AdamsBashforth\ :\ \textcolor{keyword}{public}\ MultiStepOdeSolver\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ AdamsBashforth(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ \ \textcolor{keywordtype}{int}\ order\ =\ 4);}
+\DoxyCodeLine{00012\ \ \ \ \ AdamsBashforth(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ \textcolor{keywordtype}{int}\ order\ =\ 4);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_adams_bashforth_a1a7a6e06ee0fa286e0738578b77a29c1}{ComputeStep}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ GetOrder();}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ order\_;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ GetCoefficient()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

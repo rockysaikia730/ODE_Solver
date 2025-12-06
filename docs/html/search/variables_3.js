@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ode_5f_0',['ode_',['../class_ode_solver.html#a9155f5d877dad198b513d24150dff5a4',1,'OdeSolver']]]
+  ['input_5fdim_5fstring_0',['input_dim_string',['../struct_ode_raw_data.html#a010807378b4ef22b533dffb05686418b',1,'OdeRawData']]]
 ];

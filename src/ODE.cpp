@@ -2,7 +2,6 @@
 #include "dynamic_tensor.h"
 #include "function.h"
 #include "root_finder.h"
-#include <vector>
 #include <string>
 #include <memory>
 
@@ -30,9 +29,10 @@ DynamicTensor Ode::Evaluate(double t, const DynamicTensor& y) const {
 }
 
 const std::string& Ode::GetName() const {return name_;}
-
 const DynamicTensor& Ode::GetCondIn() const {return y0_;}
 double Ode::GetTimeIn() const {return t0_;}
+const Function& Ode::GetFunction() const {return *func_;}
+const std::shared_ptr<RootFinder>& Ode::GetRootFinder() const {return root_finder_;}
 
 void Ode::SetT0(double time) {t0_ = time;}
 

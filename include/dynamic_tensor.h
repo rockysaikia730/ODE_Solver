@@ -98,6 +98,17 @@ public:
      * @brief Scalar Multiplication (Tensor * double).
      */
     DynamicTensor operator*(double scalar) const;
+    friend DynamicTensor operator*(double scalar, const DynamicTensor& tensor);
+
+    /**
+     * @brief Element-wise Subtraction (t1 - t2)
+     */
+    DynamicTensor operator-(const DynamicTensor& second_tensor) const;
+
+    /**
+     * @brief Scalar Division (Tensor / double).
+     */
+    DynamicTensor operator/(double scalar) const;
 
     /**
      * @brief Get the total number of elements in the tensor.

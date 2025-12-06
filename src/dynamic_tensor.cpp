@@ -136,6 +136,19 @@ DynamicTensor DynamicTensor::operator*(double scalar) const {
     return result;
 }
 
+DynamicTensor operator*(double scalar, const DynamicTensor& tensor) {
+    return tensor * scalar;
+}
+
+DynamicTensor DynamicTensor::operator-(const DynamicTensor& second_tensor) const {
+    return *this + (-1.0 * second_tensor);
+}
+
+DynamicTensor DynamicTensor::operator/(double scalar) const {
+    if (scalar == 0.0) throw std::runtime_error("Division by zero");
+    return *this * (1/scalar);
+}
+
 size_t DynamicTensor::size() const {
     if (IsComplex()) {
         return std::get<std::vector<Complex>>(data_).size();

@@ -7,7 +7,7 @@
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ CODES\_ODE\_H}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ CODES\_ODE\_H}}
 \DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\_tensor.h}}"{}}}
@@ -49,25 +49,29 @@
 \DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ \mbox{\hyperlink{class_ode_a6c360986d0f06b497d3b311ead9c0366}{GetCondIn}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00115\ }
 \DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_ode_a6356a2c5b5b923378b5cc41951dc3575}{GetName}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ =========================================================}}
-\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//\ Logic}}
-\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ =========================================================}}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_ode_a3fc74d1b3f982351bd6dad5054f2cab7}{Evaluate}}(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00134\ }
-\DoxyCodeLine{00135\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{double}\ t0\_;}
-\DoxyCodeLine{00138\ }
-\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ y0\_;}
-\DoxyCodeLine{00141\ }
-\DoxyCodeLine{00143\ \ \ \ \ std::string\ name\_;}
-\DoxyCodeLine{00144\ }
-\DoxyCodeLine{00146\ \ \ \ \ std::shared\_ptr<Function>\ func\_;}
-\DoxyCodeLine{00147\ }
-\DoxyCodeLine{00149\ \ \ \ \ std::shared\_ptr<RootFinder>\ root\_finder\_;}
-\DoxyCodeLine{00150\ \};}
-\DoxyCodeLine{00151\ }
-\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CODES\_ODE\_H}}
+\DoxyCodeLine{00121\ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_function}{Function}}\&\ \mbox{\hyperlink{class_ode_adcb8ece3558bd7a29aefcfe9319e7dd4}{GetFunction}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<RootFinder>\&\ \mbox{\hyperlink{class_ode_a739b332b95ace434b930cf5a879ec46c}{GetRootFinder}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{//\ =========================================================}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{//\ Logic}}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{comment}{//\ =========================================================}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_ode_a3fc74d1b3f982351bd6dad5054f2cab7}{Evaluate}}(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{double}\ t0\_;}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ y0\_;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00155\ \ \ \ \ std::string\ name\_;}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00158\ \ \ \ \ std::shared\_ptr<Function>\ func\_;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00161\ \ \ \ \ std::shared\_ptr<RootFinder>\ root\_finder\_;}
+\DoxyCodeLine{00162\ \};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CODES\_ODE\_H}}
 
 \end{DoxyCode}

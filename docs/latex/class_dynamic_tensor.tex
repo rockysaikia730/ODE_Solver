@@ -72,12 +72,24 @@ Type {\bfseries Get\+Type} () const
 \Hypertarget{class_dynamic_tensor_a5c8bb1fa42a99911cfda9336b1876554}\label{class_dynamic_tensor_a5c8bb1fa42a99911cfda9336b1876554} 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator\texorpdfstring{$\ast$}{*}} (double scalar) const
 \begin{DoxyCompactList}\small\item\em Scalar Multiplication (Tensor \texorpdfstring{$\ast$}{*} double). \end{DoxyCompactList}\item 
+\Hypertarget{class_dynamic_tensor_a05dae46dbd83e82cfeb69d331799fc6f}\label{class_dynamic_tensor_a05dae46dbd83e82cfeb69d331799fc6f} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator-\/} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&second\+\_\+tensor) const
+\begin{DoxyCompactList}\small\item\em Element-\/wise Subtraction (t1 -\/ t2). \end{DoxyCompactList}\item 
+\Hypertarget{class_dynamic_tensor_aa34c71de9006beb7962e333128d35f9b}\label{class_dynamic_tensor_aa34c71de9006beb7962e333128d35f9b} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator/} (double scalar) const
+\begin{DoxyCompactList}\small\item\em Scalar Division (Tensor / double). \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{class_dynamic_tensor_a80d631cc2d2151a0e3c9da15edbd870d}{size}} () const
 \begin{DoxyCompactList}\small\item\em Get the total number of elements in the tensor. \end{DoxyCompactList}\item 
 const std\+::vector$<$ size\+\_\+t $>$ \& \mbox{\hyperlink{class_dynamic_tensor_a42b1bfd00a94348fe8b1ce43a2f6cf7e}{get\+\_\+shape}} () const
 \begin{DoxyCompactList}\small\item\em Get the shape of the tensor. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138ebf6}{rank}} () const
 \begin{DoxyCompactList}\small\item\em Get the rank (number of dimensions) of the tensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dynamic_tensor_a246d5cf637d28d9d40f6d43e00863315}\label{class_dynamic_tensor_a246d5cf637d28d9d40f6d43e00863315} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator\texorpdfstring{$\ast$}{*}} (double scalar, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&tensor)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

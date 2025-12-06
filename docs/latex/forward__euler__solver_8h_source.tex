@@ -1,0 +1,20 @@
+\doxysection{forward\+\_\+euler\+\_\+solver.\+h}
+\hypertarget{forward__euler__solver_8h_source}{}\label{forward__euler__solver_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/forward\_euler\_solver.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/forward\_euler\_solver.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FORWARD\_EULER\_SOLVER\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FORWARD\_EULER\_SOLVER\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\_tensor.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ode__solver_8h}{ode\_solver.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }ForwardEuler:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{OdeSolver}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ ForwardEuler(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ end\_time,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01);}
+\DoxyCodeLine{00010\ \ \ \ \ ForwardEuler(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ end\_time,\ \textcolor{keywordtype}{int}\ num\_of\_steps);}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_forward_euler_a21588c8895f32f0a5a58f8d71993888c}{ComputeStep}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

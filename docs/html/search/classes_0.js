@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['dynamictensor_0',['DynamicTensor',['../class_dynamic_tensor.html',1,'']]]
+  ['adammoulton_0',['AdamMoulton',['../class_adam_moulton.html',1,'']]],
+  ['adamsbashforth_1',['AdamsBashforth',['../class_adams_bashforth.html',1,'']]]
 ];

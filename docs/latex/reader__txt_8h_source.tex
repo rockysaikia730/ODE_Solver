@@ -1,0 +1,23 @@
+\doxysection{reader\+\_\+txt.\+h}
+\hypertarget{reader__txt_8h_source}{}\label{reader__txt_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/reader\_txt.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/reader\_txt.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ READER\_TXT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ READER\_TXT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}reader\_file.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../Data\_structures/ode\_raw\_data.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }TxtReader:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_file_reader_a17fda1989feb82538a34b321e2d73473}{FileReader}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ TxtReader(\textcolor{keyword}{const}\ std::string\&\ file\_name,\ \textcolor{keywordtype}{char}\ separator\ =\ \textcolor{charliteral}{'\(\backslash\)t'});}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~TxtReader()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_ode_raw_data}{OdeRawData}}\ \mbox{\hyperlink{class_txt_reader_a9f16db79816689a2c72d3f258f9f39ca}{Read}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ READER\_TXT\_H}}
+
+\end{DoxyCode}

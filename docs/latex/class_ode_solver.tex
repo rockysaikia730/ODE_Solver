@@ -9,22 +9,30 @@ Abstract base class for iterative Ordinary Differential Equation solvers.
 
 {\ttfamily \#include $<$ode\+\_\+solver.\+h$>$}
 
+Inheritance diagram for Ode\+Solver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_ode_solver}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_ode_solver_a18be896e3a9772213317a4c554100206}\label{class_ode_solver_a18be896e3a9772213317a4c554100206} 
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ode\+Solver} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
-virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_ode_solver_a7a8a1ae3eb6213f9656a9b47ebbbe4fe}{Step}} ()=0
+virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_ode_solver_a35a9d27d9c3b484dae31ed1c6905a04a}{Compute\+Step}} ()=0
 \begin{DoxyCompactList}\small\item\em Calculates the solution at the next time step. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_ode_solver_ae543d1973f9c00665e04c470d3819e47}{Set\+Start\+Time}} (double start\+\_\+time)
-\begin{DoxyCompactList}\small\item\em Sets the simulation start time. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step}} ()
+\begin{DoxyCompactList}\small\item\em Updates the solution\+\_\+ and time for next time step. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ode_solver_a662cff46a2025f9b99295d5fcefbe0b6}{Set\+End\+Time}} (double end\+\_\+time)
 \begin{DoxyCompactList}\small\item\em Sets the simulation end time. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ode_solver_ae1242b79d094ce57a73b76661cdbdc94}{Set\+Time\+Span}} (int num\+\_\+of\+\_\+steps)
 \begin{DoxyCompactList}\small\item\em Configures the solver based on a fixed number of steps. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ode_solver_a673fb059d7379dfc9bfea833318b4049}{Set\+Time\+Span}} (double step\+\_\+size)
 \begin{DoxyCompactList}\small\item\em Configures the solver based on a fixed step size. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \& \mbox{\hyperlink{class_ode_solver_a187c86329e6909b9830becf465c127d0}{Get\+Solution}} () const
+\item 
 double \mbox{\hyperlink{class_ode_solver_a967817c4339501ddb984023977d093a1}{Get\+Start\+Time}} () const
 \item 
 double \mbox{\hyperlink{class_ode_solver_a6b634912c4c923a14e5ce7994f46b2a4}{Get\+End\+Time}} () const
@@ -33,20 +41,20 @@ double \mbox{\hyperlink{class_ode_solver_adee8ff045eeb481ef911c9eee1b596c8}{Get\
 \item 
 int \mbox{\hyperlink{class_ode_solver_ad0bbb5894abf1b510845a61e9b42ea61}{Get\+Number\+Of\+Steps}} () const
 \item 
-void \mbox{\hyperlink{class_ode_solver_a1cc5668fdf4d5bd99ee21c4f91c6aca3}{Reset}} ()
+virtual void \mbox{\hyperlink{class_ode_solver_a1cc5668fdf4d5bd99ee21c4f91c6aca3}{Reset}} ()
 \begin{DoxyCompactList}\small\item\em Resets the solver state to the initial conditions. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}} ()
 \begin{DoxyCompactList}\small\item\em Executes the simulation loop (Batch Mode). \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_ode_solver_aa71a2af25e87c1951f876a937fe46fd2}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double end\+\_\+time, int num\+\_\+of\+\_\+steps)
+\mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time)
 \begin{DoxyCompactList}\small\item\em Constructor for fixed number of steps. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_ode_solver_ae83ffce1c4785ec33c5e4deefdd9cc8c}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double end\+\_\+time, double step\+\_\+size=0.\+01)
+\mbox{\hyperlink{class_ode_solver_aead5f819e881f42a8c398d48678e4e16}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0)
 \begin{DoxyCompactList}\small\item\em Constructor for fixed step size. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_ode_solver_a9155f5d877dad198b513d24150dff5a4}\label{class_ode_solver_a9155f5d877dad198b513d24150dff5a4} 
 const \mbox{\hyperlink{class_ode}{Ode}} \& {\bfseries ode\+\_\+}
-\begin{DoxyCompactList}\small\item\em Reference to the ODE problem definition. Guaranteed to be valid as long as the user maintains the \doxylink{class_ode}{Ode} object scope. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Reference to the \doxylink{class_o_d_e}{ODE} problem definition. Guaranteed to be valid as long as the user maintains the \doxylink{class_ode}{Ode} object scope. \end{DoxyCompactList}\item 
 \Hypertarget{class_ode_solver_a349bdd8382aed99df05dddd5d7d747a2}\label{class_ode_solver_a349bdd8382aed99df05dddd5d7d747a2} 
 double {\bfseries start\+\_\+time\+\_\+}
 \begin{DoxyCompactList}\small\item\em The simulation start time. \end{DoxyCompactList}\item 
@@ -58,25 +66,25 @@ double {\bfseries step\+\_\+size\+\_\+}
 \begin{DoxyCompactList}\small\item\em The time step (dt). \end{DoxyCompactList}\item 
 \Hypertarget{class_ode_solver_a8e42a49ba25b6c2c5b029cd70e75d38e}\label{class_ode_solver_a8e42a49ba25b6c2c5b029cd70e75d38e} 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries solution\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current state vector y(t). Updated at every \doxylink{class_ode_solver_a7a8a1ae3eb6213f9656a9b47ebbbe4fe}{Step()}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\item 
 \Hypertarget{class_ode_solver_a8e1bfe7801ae316ea876682778396e24}\label{class_ode_solver_a8e1bfe7801ae316ea876682778396e24} 
 double {\bfseries current\+\_\+time\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_a7a8a1ae3eb6213f9656a9b47ebbbe4fe}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Abstract base class for iterative Ordinary Differential Equation solvers. 
 
-The \doxylink{class_ode_solver}{Ode\+Solver} manages the simulation loop, time tracking, and state updates. It holds a reference to the problem definition (\doxylink{class_ode}{Ode}) and uses a specific numerical method (implemented in derived classes via \doxylink{class_ode_solver_a7a8a1ae3eb6213f9656a9b47ebbbe4fe}{Step()}) to advance the solution. 
+The \doxylink{class_ode_solver}{Ode\+Solver} manages the simulation loop, time tracking, and state updates. It holds a reference to the problem definition (\doxylink{class_ode}{Ode}) and uses a specific numerical method (implemented in derived classes via \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}) to advance the solution. 
 
 \label{doc-constructors}
 \Hypertarget{class_ode_solver_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_ode_solver_aa71a2af25e87c1951f876a937fe46fd2}\index{OdeSolver@{OdeSolver}!OdeSolver@{OdeSolver}}
+\Hypertarget{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}\index{OdeSolver@{OdeSolver}!OdeSolver@{OdeSolver}}
 \index{OdeSolver@{OdeSolver}!OdeSolver@{OdeSolver}}
 \doxysubsubsection{\texorpdfstring{OdeSolver()}{OdeSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_ode_solver_aa71a2af25e87c1951f876a937fe46fd2} 
-Ode\+Solver\+::\+Ode\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{double}]{end\+\_\+time}{, }\item[{int}]{num\+\_\+of\+\_\+steps}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c} 
+Ode\+Solver\+::\+Ode\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{int}]{num\+\_\+of\+\_\+steps}{, }\item[{double}]{end\+\_\+time}{}\end{DoxyParamCaption})}
 
 
 
@@ -84,18 +92,18 @@ Constructor for fixed number of steps.
 
 
 \begin{DoxyParams}{Parameters}
-{\em ode} & A constant reference to the ODE definition. Must outlive the solver. \\
+{\em ode} & A constant reference to the \doxylink{class_o_d_e}{ODE} definition. Must outlive the solver. \\
 \hline
 {\em end\+\_\+time} & The target simulation time. \\
 \hline
 {\em num\+\_\+of\+\_\+steps} & The number of intervals to divide the time span into. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_ode_solver_ae83ffce1c4785ec33c5e4deefdd9cc8c}\index{OdeSolver@{OdeSolver}!OdeSolver@{OdeSolver}}
+\Hypertarget{class_ode_solver_aead5f819e881f42a8c398d48678e4e16}\index{OdeSolver@{OdeSolver}!OdeSolver@{OdeSolver}}
 \index{OdeSolver@{OdeSolver}!OdeSolver@{OdeSolver}}
 \doxysubsubsection{\texorpdfstring{OdeSolver()}{OdeSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_ode_solver_ae83ffce1c4785ec33c5e4deefdd9cc8c} 
-Ode\+Solver\+::\+Ode\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{double}]{end\+\_\+time}{, }\item[{double}]{step\+\_\+size}{ = {\ttfamily 0.01}}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_ode_solver_aead5f819e881f42a8c398d48678e4e16} 
+Ode\+Solver\+::\+Ode\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{double}]{step\+\_\+size}{ = {\ttfamily 0.01}, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}}\end{DoxyParamCaption})}
 
 
 
@@ -103,7 +111,7 @@ Constructor for fixed step size.
 
 
 \begin{DoxyParams}{Parameters}
-{\em ode} & A constant reference to the ODE definition. Must outlive the solver. \\
+{\em ode} & A constant reference to the \doxylink{class_o_d_e}{ODE} definition. Must outlive the solver. \\
 \hline
 {\em end\+\_\+time} & The target simulation time. \\
 \hline
@@ -115,6 +123,25 @@ Constructor for fixed step size.
 \label{doc-func-members}
 \Hypertarget{class_ode_solver_doc-func-members}
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_ode_solver_a35a9d27d9c3b484dae31ed1c6905a04a}\index{OdeSolver@{OdeSolver}!ComputeStep@{ComputeStep}}
+\index{ComputeStep@{ComputeStep}!OdeSolver@{OdeSolver}}
+\doxysubsubsection{\texorpdfstring{ComputeStep()}{ComputeStep()}}
+{\footnotesize\ttfamily \label{class_ode_solver_a35a9d27d9c3b484dae31ed1c6905a04a} 
+virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Ode\+Solver\+::\+Compute\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Calculates the solution at the next time step. 
+
+This is a pure virtual function that must be implemented by derived classes. It uses the specific numerical algorithm (e.\+g., RK4, Euler) to calculate y(t + dt) based on y(t).
+
+\begin{DoxyReturn}{Returns}
+The calculated state tensor for the next time step. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_adams_bashforth_a1a7a6e06ee0fa286e0738578b77a29c1}{Adams\+Bashforth}}, \mbox{\hyperlink{class_forward_euler_a21588c8895f32f0a5a58f8d71993888c}{Forward\+Euler}}, \mbox{\hyperlink{class_implicit_solver_a4f79fcbfa43f5b7c2207ce61a4420d74}{Implicit\+Solver}}, and \mbox{\hyperlink{class_runge_kutta_aa30cf8dbdf67cb07ca8c3a48d6427605}{Runge\+Kutta}}.
+
 \Hypertarget{class_ode_solver_a6b634912c4c923a14e5ce7994f46b2a4}\index{OdeSolver@{OdeSolver}!GetEndTime@{GetEndTime}}
 \index{GetEndTime@{GetEndTime}!OdeSolver@{OdeSolver}}
 \doxysubsubsection{\texorpdfstring{GetEndTime()}{GetEndTime()}}
@@ -132,6 +159,15 @@ int Ode\+Solver\+::\+Get\+Number\+Of\+Steps (\begin{DoxyParamCaption}{}{}\end{Do
 
 \begin{DoxyReturn}{Returns}
 The derived number of steps based on duration and step size. 
+\end{DoxyReturn}
+\Hypertarget{class_ode_solver_a187c86329e6909b9830becf465c127d0}\index{OdeSolver@{OdeSolver}!GetSolution@{GetSolution}}
+\index{GetSolution@{GetSolution}!OdeSolver@{OdeSolver}}
+\doxysubsubsection{\texorpdfstring{GetSolution()}{GetSolution()}}
+{\footnotesize\ttfamily \label{class_ode_solver_a187c86329e6909b9830becf465c127d0} 
+const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \& Ode\+Solver\+::\+Get\+Solution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The final solution. 
 \end{DoxyReturn}
 \Hypertarget{class_ode_solver_a967817c4339501ddb984023977d093a1}\index{OdeSolver@{OdeSolver}!GetStartTime@{GetStartTime}}
 \index{GetStartTime@{GetStartTime}!OdeSolver@{OdeSolver}}
@@ -155,13 +191,17 @@ The current time step size (dt).
 \index{Reset@{Reset}!OdeSolver@{OdeSolver}}
 \doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
 {\footnotesize\ttfamily \label{class_ode_solver_a1cc5668fdf4d5bd99ee21c4f91c6aca3} 
-void Ode\+Solver\+::\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+void Ode\+Solver\+::\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 Resets the solver state to the initial conditions. 
 
-Sets current\+\_\+time\+\_\+ to start\+\_\+time\+\_\+ and current solution\+\_\+ to ode\+\_\+.\+Get\+Cond\+In(). This must be called before restarting a simulation. \Hypertarget{class_ode_solver_a662cff46a2025f9b99295d5fcefbe0b6}\index{OdeSolver@{OdeSolver}!SetEndTime@{SetEndTime}}
+Sets current\+\_\+time\+\_\+ to start\+\_\+time\+\_\+ and current solution\+\_\+ to ode\+\_\+.\+Get\+Cond\+In(). This must be called before restarting a simulation. 
+
+Reimplemented in \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Multi\+Step\+Ode\+Solver}}.
+
+\Hypertarget{class_ode_solver_a662cff46a2025f9b99295d5fcefbe0b6}\index{OdeSolver@{OdeSolver}!SetEndTime@{SetEndTime}}
 \index{SetEndTime@{SetEndTime}!OdeSolver@{OdeSolver}}
 \doxysubsubsection{\texorpdfstring{SetEndTime()}{SetEndTime()}}
 {\footnotesize\ttfamily \label{class_ode_solver_a662cff46a2025f9b99295d5fcefbe0b6} 
@@ -174,21 +214,6 @@ Sets the simulation end time.
 
 \begin{DoxyParams}{Parameters}
 {\em end\+\_\+time} & The target time t\+\_\+end. \\
-\hline
-\end{DoxyParams}
-\Hypertarget{class_ode_solver_ae543d1973f9c00665e04c470d3819e47}\index{OdeSolver@{OdeSolver}!SetStartTime@{SetStartTime}}
-\index{SetStartTime@{SetStartTime}!OdeSolver@{OdeSolver}}
-\doxysubsubsection{\texorpdfstring{SetStartTime()}{SetStartTime()}}
-{\footnotesize\ttfamily \label{class_ode_solver_ae543d1973f9c00665e04c470d3819e47} 
-void Ode\+Solver\+::\+Set\+Start\+Time (\begin{DoxyParamCaption}\item[{double}]{start\+\_\+time}{}\end{DoxyParamCaption})}
-
-
-
-Sets the simulation start time. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em start\+\_\+time} & The time t0. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_ode_solver_a673fb059d7379dfc9bfea833318b4049}\index{OdeSolver@{OdeSolver}!SetTimeSpan@{SetTimeSpan}}
@@ -233,21 +258,20 @@ void Ode\+Solver\+::\+Solve (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})
 
 Executes the simulation loop (Batch Mode). 
 
-Runs the simulation from current\+\_\+time\+\_\+ until end\+\_\+time\+\_\+ is reached. Internally calls \doxylink{class_ode_solver_a7a8a1ae3eb6213f9656a9b47ebbbe4fe}{Step()} repeatedly and updates the internal state. \Hypertarget{class_ode_solver_a7a8a1ae3eb6213f9656a9b47ebbbe4fe}\index{OdeSolver@{OdeSolver}!Step@{Step}}
+Runs the simulation from current\+\_\+time\+\_\+ until end\+\_\+time\+\_\+ is reached. Internally calls \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()} repeatedly and updates the internal state. \Hypertarget{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}\index{OdeSolver@{OdeSolver}!Step@{Step}}
 \index{Step@{Step}!OdeSolver@{OdeSolver}}
 \doxysubsubsection{\texorpdfstring{Step()}{Step()}}
-{\footnotesize\ttfamily \label{class_ode_solver_a7a8a1ae3eb6213f9656a9b47ebbbe4fe} 
-virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Ode\+Solver\+::\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily \label{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5} 
+void Ode\+Solver\+::\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Calculates the solution at the next time step. 
+Updates the solution\+\_\+ and time for next time step. 
 
-This is a pure virtual function that must be implemented by derived classes. It uses the specific numerical algorithm (e.\+g., RK4, Euler) to calculate y(t + dt) based on y(t).
 
-\begin{DoxyReturn}{Returns}
-The calculated state tensor for the next time step. 
-\end{DoxyReturn}
+
+Reimplemented in \mbox{\hyperlink{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90}{Multi\+Step\+Ode\+Solver}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

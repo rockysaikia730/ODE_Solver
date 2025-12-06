@@ -101,14 +101,13 @@ $(function(){initNavTree('functions.html','',''); });
 
 
 <h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
-<li>CheckExtension()&#160;:&#160;<a class="el" href="class_reader.html#acea3fffc32b3d42f63ca2a7c7a781be5">Reader&lt; T &gt;</a></li>
-<li>CheckFileExist()&#160;:&#160;<a class="el" href="class_reader.html#a9ca081b04c9de23952c68fdf23735031">Reader&lt; T &gt;</a></li>
+<li>Close()&#160;:&#160;<a class="el" href="class_file_reader.html#a01679e0c723733146c09dd681afcea24">FileReader</a></li>
+<li>ComputeStep()&#160;:&#160;<a class="el" href="class_adams_bashforth.html#a1a7a6e06ee0fa286e0738578b77a29c1">AdamsBashforth</a>, <a class="el" href="class_forward_euler.html#a21588c8895f32f0a5a58f8d71993888c">ForwardEuler</a>, <a class="el" href="class_implicit_solver.html#a4f79fcbfa43f5b7c2207ce61a4420d74">ImplicitSolver</a>, <a class="el" href="class_ode_solver.html#a35a9d27d9c3b484dae31ed1c6905a04a">OdeSolver</a>, <a class="el" href="class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605">RungeKutta</a></li>
 <li>current_time_&#160;:&#160;<a class="el" href="class_ode_solver.html#a8e1bfe7801ae316ea876682778396e24">OdeSolver</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_d" name="index_d"></a>- d -</h3><ul>
-<li>Data&#160;:&#160;<a class="el" href="class_reader.html#afa3f020d2cf3c43f74ec8296fd666207">Reader&lt; T &gt;</a></li>
 <li>DynamicTensor()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#aaf404565bd07c4410bccaa3b94373323">DynamicTensor</a></li>
 </ul>
 
@@ -116,74 +115,123 @@ $(function(){initNavTree('functions.html','',''); });
 <h3 class="doxsection"><a id="index_e" name="index_e"></a>- e -</h3><ul>
 <li>end_time_&#160;:&#160;<a class="el" href="class_ode_solver.html#afe384debfb2aaf066067567b86660e80">OdeSolver</a></li>
 <li>Evaluate()&#160;:&#160;<a class="el" href="class_ode.html#a3fc74d1b3f982351bd6dad5054f2cab7">Ode</a></li>
+<li>EvaluateRhs()&#160;:&#160;<a class="el" href="class_ode.html#a4d48f3f1df9423c4e835a8d142cefdea">Ode</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_f" name="index_f"></a>- f -</h3><ul>
-<li>file_&#160;:&#160;<a class="el" href="class_reader.html#a422199170aa6c35a46abe88fd4b836d9">Reader&lt; T &gt;</a></li>
-<li>filename_&#160;:&#160;<a class="el" href="class_reader.html#aa5e52df9d57830b86b31ae0b478b380c">Reader&lt; T &gt;</a></li>
-<li>Function&#160;:&#160;<a class="el" href="class_reader.html#a2e34ee325f6e7469930d46755f16f6ed">Reader&lt; T &gt;</a></li>
+<li>file_stream_&#160;:&#160;<a class="el" href="class_file_reader.html#a5b1035d537b44731ebbd31874676653a">FileReader</a></li>
+<li>FileReader()&#160;:&#160;<a class="el" href="class_file_reader.html#a17fda1989feb82538a34b321e2d73473">FileReader</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_g" name="index_g"></a>- g -</h3><ul>
 <li>get_shape()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a42b1bfd00a94348fe8b1ce43a2f6cf7e">DynamicTensor</a></li>
-<li>GetChar()&#160;:&#160;<a class="el" href="class_reader.html#ab0d6c813d54b548fd2df75ff007d2ba7">Reader&lt; T &gt;</a></li>
 <li>GetCondIn()&#160;:&#160;<a class="el" href="class_ode.html#a6c360986d0f06b497d3b311ead9c0366">Ode</a></li>
 <li>GetEndTime()&#160;:&#160;<a class="el" href="class_ode_solver.html#a6b634912c4c923a14e5ce7994f46b2a4">OdeSolver</a></li>
-<li>GetFile()&#160;:&#160;<a class="el" href="class_reader.html#a5f8c3f34a0a2318e1c4e00a8dbb5beec">Reader&lt; T &gt;</a></li>
-<li>GetFileName()&#160;:&#160;<a class="el" href="class_reader.html#a2203e6e7a5e4f8d5f132eb7c03dc72a6">Reader&lt; T &gt;</a></li>
+<li>GetFileExtension()&#160;:&#160;<a class="el" href="class_reader.html#a5f7f2919f37f15cb95be1580b2028897">Reader</a></li>
+<li>GetFileName()&#160;:&#160;<a class="el" href="class_reader.html#afff48614961ffb79bfb627adc4b52f70">Reader</a></li>
+<li>GetFinalTime()&#160;:&#160;<a class="el" href="class_ode.html#ad03b6166ce56ea984ed90777b75af169">Ode</a></li>
+<li>GetFunction()&#160;:&#160;<a class="el" href="class_ode.html#adcb8ece3558bd7a29aefcfe9319e7dd4">Ode</a></li>
+<li>GetInitialCondition()&#160;:&#160;<a class="el" href="class_ode.html#a61f1826882690c3f9865bf37ee5021e9">Ode</a></li>
+<li>GetInitialTime()&#160;:&#160;<a class="el" href="class_ode.html#ac0d3e4f67e2531e7c0b50fbd78dc4a55">Ode</a></li>
+<li>GetInputDimension()&#160;:&#160;<a class="el" href="class_ode.html#ab243f964976e91f2c4b83d5e2aac54e9">Ode</a></li>
+<li>GetMaxIterations()&#160;:&#160;<a class="el" href="class_ode.html#a933d900dfe84d35e6a60a0c69c21f0a5">Ode</a></li>
 <li>GetName()&#160;:&#160;<a class="el" href="class_ode.html#a6356a2c5b5b923378b5cc41951dc3575">Ode</a></li>
-<li>GetNumberOfSteps()&#160;:&#160;<a class="el" href="class_ode_solver.html#ad0bbb5894abf1b510845a61e9b42ea61">OdeSolver</a></li>
+<li>GetNumberOfSteps()&#160;:&#160;<a class="el" href="class_ode.html#a3ef187a4dbbdebf5b21ac9683d18f245">Ode</a>, <a class="el" href="class_ode_solver.html#ad0bbb5894abf1b510845a61e9b42ea61">OdeSolver</a></li>
+<li>GetRootFinder()&#160;:&#160;<a class="el" href="class_ode.html#a739b332b95ace434b930cf5a879ec46c">Ode</a></li>
+<li>GetSeparator()&#160;:&#160;<a class="el" href="class_file_reader.html#affd81929b8c985d94ed215a0e53df093">FileReader</a></li>
+<li>GetSolution()&#160;:&#160;<a class="el" href="class_ode_solver.html#a187c86329e6909b9830becf465c127d0">OdeSolver</a></li>
+<li>GetSolverMethod()&#160;:&#160;<a class="el" href="class_ode.html#a56237235ff74af5e056625e17f7637c5">Ode</a></li>
 <li>GetStartTime()&#160;:&#160;<a class="el" href="class_ode_solver.html#a967817c4339501ddb984023977d093a1">OdeSolver</a></li>
-<li>GetStepSize()&#160;:&#160;<a class="el" href="class_ode_solver.html#adee8ff045eeb481ef911c9eee1b596c8">OdeSolver</a></li>
+<li>GetStepSize()&#160;:&#160;<a class="el" href="class_ode.html#abf8066539df35587dd98f87815af9311">Ode</a>, <a class="el" href="class_ode_solver.html#adee8ff045eeb481ef911c9eee1b596c8">OdeSolver</a></li>
 <li>GetTimeIn()&#160;:&#160;<a class="el" href="class_ode.html#a68b7580e063b949bfc0046e4142ad490">Ode</a></li>
+<li>GetTolerance()&#160;:&#160;<a class="el" href="class_ode.html#ade5dfcb147ff53e745bf77de2aca5991">Ode</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_i" name="index_i"></a>- i -</h3><ul>
+<li>input_dim_string&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#a010807378b4ef22b533dffb05686418b">OdeRawData</a></li>
+<li>IsNumeric()&#160;:&#160;<a class="el" href="class_reader.html#a30a4105a8595150cb94854c71637ed3f">Reader</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_m" name="index_m"></a>- m -</h3><ul>
+<li>max_iterations_string&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#a5bfa3a51756d35ab90dc60b2ac2beb50">OdeRawData</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_o" name="index_o"></a>- o -</h3><ul>
 <li>Ode()&#160;:&#160;<a class="el" href="class_ode.html#aa96be18b8d0d1fe6a521d1a91d42848e">Ode</a></li>
 <li>ode_&#160;:&#160;<a class="el" href="class_ode_solver.html#a9155f5d877dad198b513d24150dff5a4">OdeSolver</a></li>
-<li>OdeSolver()&#160;:&#160;<a class="el" href="class_ode_solver.html#aa71a2af25e87c1951f876a937fe46fd2">OdeSolver</a></li>
+<li>OdeSolver()&#160;:&#160;<a class="el" href="class_ode_solver.html#ab8375f1f3330bf275d6b18fc936deb3c">OdeSolver</a></li>
+<li>Open()&#160;:&#160;<a class="el" href="class_file_reader.html#a94c476d28850e1e4a46ca51daa1d0d1e">FileReader</a></li>
 <li>operator*()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a5c8bb1fa42a99911cfda9336b1876554">DynamicTensor</a></li>
 <li>operator+()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a951b70d3817858d411b94771bc7207e0">DynamicTensor</a></li>
+<li>operator-()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a05dae46dbd83e82cfeb69d331799fc6f">DynamicTensor</a></li>
+<li>operator/()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#aa34c71de9006beb7962e333128d35f9b">DynamicTensor</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_r" name="index_r"></a>- r -</h3><ul>
 <li>rank()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a094738c223cbe58ad0b81dbae138ebf6">DynamicTensor</a></li>
-<li>Read()&#160;:&#160;<a class="el" href="class_reader.html#a7d9acd2bfc171097e6f487371897f788">Reader&lt; T &gt;</a></li>
-<li>Reader()&#160;:&#160;<a class="el" href="class_reader.html#ae3c137f54c97bfbeae122976bf0b74aa">Reader&lt; T &gt;</a></li>
-<li>Reset()&#160;:&#160;<a class="el" href="class_ode_solver.html#a1cc5668fdf4d5bd99ee21c4f91c6aca3">OdeSolver</a></li>
+<li>Read()&#160;:&#160;<a class="el" href="class_csv_reader.html#a88a0aa19a2a89a14a54d2c1790807b91">CsvReader</a>, <a class="el" href="class_reader.html#a8d9e54309942b2f508ec74b3eac1da80">Reader</a>, <a class="el" href="class_txt_reader.html#a9f16db79816689a2c72d3f258f9f39ca">TxtReader</a></li>
+<li>Reader()&#160;:&#160;<a class="el" href="class_reader.html#a6da108ba26678537964ffa902181e756">Reader</a></li>
+<li>Reset()&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#a3753c8d27e7420e4470aa5e88e44bbee">MultiStepOdeSolver</a>, <a class="el" href="class_ode_solver.html#a1cc5668fdf4d5bd99ee21c4f91c6aca3">OdeSolver</a></li>
+<li>rhs_function_string&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#a49d118cbf2ea90beaf5aa7bfe0fd8a99">OdeRawData</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_s" name="index_s"></a>- s -</h3><ul>
-<li>sep_&#160;:&#160;<a class="el" href="class_reader.html#aadc5e6ffda6f935d86c95c5afb2197f0">Reader&lt; T &gt;</a></li>
+<li>separator_&#160;:&#160;<a class="el" href="class_file_reader.html#a598e471b8241008c71f371087134403d">FileReader</a></li>
 <li>SetEndTime()&#160;:&#160;<a class="el" href="class_ode_solver.html#a662cff46a2025f9b99295d5fcefbe0b6">OdeSolver</a></li>
-<li>SetFile()&#160;:&#160;<a class="el" href="class_reader.html#a48db119f54e1530cf4dca3171906b263">Reader&lt; T &gt;</a></li>
-<li>SetFileSeparator()&#160;:&#160;<a class="el" href="class_reader.html#adf43d0a5311c3632d476a16278411d01">Reader&lt; T &gt;</a></li>
+<li>SetFileExtension()&#160;:&#160;<a class="el" href="class_reader.html#aca06f0a9f6d41e0d9abf0d8d3f2be274">Reader</a></li>
+<li>SetFileName()&#160;:&#160;<a class="el" href="class_reader.html#ae142b32ae6481733b84b20141cdafda2">Reader</a></li>
+<li>SetFinalTime()&#160;:&#160;<a class="el" href="class_ode.html#a707917323067fc0398ea578c4e5a9e41">Ode</a></li>
 <li>SetFunction()&#160;:&#160;<a class="el" href="class_ode.html#a01227434e93e5835f0a933641de56139">Ode</a></li>
+<li>SetInitialCondition()&#160;:&#160;<a class="el" href="class_ode.html#ac7f844c34e418345c33e16de0b50329f">Ode</a></li>
+<li>SetInitialTime()&#160;:&#160;<a class="el" href="class_ode.html#a268e0840f2dd0eab4d6d2ff363e39acf">Ode</a></li>
+<li>SetMaxIterations()&#160;:&#160;<a class="el" href="class_ode.html#a0286b2bd927d79d9b85ecf21e0a21237">Ode</a></li>
 <li>SetName()&#160;:&#160;<a class="el" href="class_ode.html#ac0bda460d709fed3c4680b0d8468d871">Ode</a></li>
+<li>SetNumberOfSteps()&#160;:&#160;<a class="el" href="class_ode.html#a76b6cde52b157c34977c9030e65741f0">Ode</a></li>
 <li>SetRootFinder()&#160;:&#160;<a class="el" href="class_ode.html#a53c09a13019c843e03b918438074777a">Ode</a></li>
-<li>SetStartTime()&#160;:&#160;<a class="el" href="class_ode_solver.html#ae543d1973f9c00665e04c470d3819e47">OdeSolver</a></li>
+<li>SetSeparator()&#160;:&#160;<a class="el" href="class_file_reader.html#a4de9019cdb234fdfb93aab20fedd5774">FileReader</a></li>
+<li>SetSolverMethod()&#160;:&#160;<a class="el" href="class_ode.html#aadfe7f1ebb398afe04eb52c9a41e7099">Ode</a></li>
+<li>SetStepSize()&#160;:&#160;<a class="el" href="class_ode.html#a0d35e08bbd16104106d39cdde0ee1203">Ode</a></li>
 <li>SetT0()&#160;:&#160;<a class="el" href="class_ode.html#a4856ed6d10e8f7a8218a7f81ff576918">Ode</a></li>
 <li>SetTimeSpan()&#160;:&#160;<a class="el" href="class_ode_solver.html#ae1242b79d094ce57a73b76661cdbdc94">OdeSolver</a></li>
+<li>SetTolerance()&#160;:&#160;<a class="el" href="class_ode.html#aa22e58ffe5005a41cf12f9ee0be14cf4">Ode</a></li>
 <li>SetY0()&#160;:&#160;<a class="el" href="class_ode.html#ac3c249eedd399493d573a5a823172b82">Ode</a></li>
 <li>size()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a80d631cc2d2151a0e3c9da15edbd870d">DynamicTensor</a></li>
 <li>solution_&#160;:&#160;<a class="el" href="class_ode_solver.html#a8e42a49ba25b6c2c5b029cd70e75d38e">OdeSolver</a></li>
 <li>Solve()&#160;:&#160;<a class="el" href="class_ode_solver.html#a8528789990b812fe0b498fabb7e1521f">OdeSolver</a></li>
+<li>solver_method_string&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#a5068e85aa391c0065e754ce6c1595c6c">OdeRawData</a></li>
+<li>Split()&#160;:&#160;<a class="el" href="class_file_reader.html#a3d38c8973a01cfab666b9c3360c12241">FileReader</a></li>
 <li>start_time_&#160;:&#160;<a class="el" href="class_ode_solver.html#a349bdd8382aed99df05dddd5d7d747a2">OdeSolver</a></li>
-<li>State&#160;:&#160;<a class="el" href="class_reader.html#a6c3375bfa9517a3f466cb3396b226d33">Reader&lt; T &gt;</a></li>
-<li>Step()&#160;:&#160;<a class="el" href="class_ode_solver.html#a7a8a1ae3eb6213f9656a9b47ebbbe4fe">OdeSolver</a></li>
+<li>Step()&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#aad3953387824f19957cfe9e1e4eb1b90">MultiStepOdeSolver</a>, <a class="el" href="class_ode_solver.html#af1842eb01ec5d591bb813ce2a064adc5">OdeSolver</a></li>
 <li>step_size_&#160;:&#160;<a class="el" href="class_ode_solver.html#a27c98f59e22ca709d451b8ba15bf3e16">OdeSolver</a></li>
+<li>step_size_string&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#abfbd2101f39feb4ddb4a0839c7179067">OdeRawData</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>t_final_string&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#ad68a50b1fb53e5bb881895fa010abbb7">OdeRawData</a></li>
+<li>t_init_string&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#ab54cde9f3ed108312b4ef7bbdda47193">OdeRawData</a></li>
+<li>tolerance_string&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#a95b3eadbd720d9b2d34ca702d0da523b">OdeRawData</a></li>
+<li>Trim()&#160;:&#160;<a class="el" href="class_file_reader.html#ab6b95e0c6727709f384864acc8e0902b">FileReader</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_y" name="index_y"></a>- y -</h3><ul>
+<li>y0_string&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#a6d488874e71baa9d466ece91d73c6d56">OdeRawData</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
+<li>~FileReader()&#160;:&#160;<a class="el" href="class_file_reader.html#ae1646173945fada0c335cd09c46e178b">FileReader</a></li>
 <li>~Ode()&#160;:&#160;<a class="el" href="class_ode.html#af859a1a7e2f0ff437c400a8c4033f7ad">Ode</a></li>
 <li>~OdeSolver()&#160;:&#160;<a class="el" href="class_ode_solver.html#a18be896e3a9772213317a4c554100206">OdeSolver</a></li>
-<li>~Reader()&#160;:&#160;<a class="el" href="class_reader.html#a528f5d3c246d774aec86a546ef481917">Reader&lt; T &gt;</a></li>
+<li>~Reader()&#160;:&#160;<a class="el" href="class_reader.html#a5a9e1a05a3683982e7dbafd75e2ff773">Reader</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,0 +1,101 @@
+\doxysection{Csv\+Reader Class Reference}
+\hypertarget{class_csv_reader}{}\label{class_csv_reader}\index{CsvReader@{CsvReader}}
+Inheritance diagram for Csv\+Reader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_csv_reader}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_csv_reader_a736c306aad1ce2a854a1192400455224}\label{class_csv_reader_a736c306aad1ce2a854a1192400455224} 
+{\bfseries Csv\+Reader} (const std\+::string \&file\+\_\+name, char separator=\textquotesingle{},\textquotesingle{})
+\item 
+virtual \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \mbox{\hyperlink{class_csv_reader_a88a0aa19a2a89a14a54d2c1790807b91}{Read}} () override
+\begin{DoxyCompactList}\small\item\em Reads data from the source and returns it as an \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_file_reader}{File\+Reader}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_file_reader_a17fda1989feb82538a34b321e2d73473}{File\+Reader}} (const std\+::string \&file\+\_\+name, char separator=\textquotesingle{};\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the \doxylink{class_file_reader}{File\+Reader} with a file name. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+File\+Reader} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_file_reader_a94c476d28850e1e4a46ca51daa1d0d1e}{Open}} ()
+\begin{DoxyCompactList}\small\item\em Opens the data source for reading. \end{DoxyCompactList}\item 
+virtual void {\bfseries Close} ()
+\begin{DoxyCompactList}\small\item\em Closes the data source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_file_reader_a4de9019cdb234fdfb93aab20fedd5774}{Set\+Separator}} (char separator)
+\begin{DoxyCompactList}\small\item\em Sets the separator character used in the file. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_file_reader_affd81929b8c985d94ed215a0e53df093}{Get\+Separator}} () const
+\begin{DoxyCompactList}\small\item\em Gets the separator character used in the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_reader}{Reader}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_reader_a6da108ba26678537964ffa902181e756}{Reader}} (const std\+::string \&file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the \doxylink{class_reader}{Reader} with a file name. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Reader} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_reader_afff48614961ffb79bfb627adc4b52f70}{Get\+File\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Get the file name associated with the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_reader_a5f7f2919f37f15cb95be1580b2028897}{Get\+File\+Extension}} () const
+\begin{DoxyCompactList}\small\item\em Get the file extension associated with the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_reader_ae142b32ae6481733b84b20141cdafda2}{Set\+File\+Name}} (const std\+::string \&file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Set the file name for the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_reader_aca06f0a9f6d41e0d9abf0d8d3f2be274}{Set\+File\+Extension}} (const std\+::string \&file\+\_\+extension)
+\begin{DoxyCompactList}\small\item\em Set the file extension for the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_file_reader}{File\+Reader}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_file_reader_a3d38c8973a01cfab666b9c3360c12241}{Split}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Splits a string into tokens based on a delimiter. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_file_reader_ab6b95e0c6727709f384864acc8e0902b}{Trim}} (const std\+::vector$<$ std\+::string $>$ \&tokens)
+\begin{DoxyCompactList}\small\item\em Trims whitespace from each token if there is a space at the beginning or end of the token. It should not remove spaces within the token, as those may be vector values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_reader}{Reader}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_reader_a30a4105a8595150cb94854c71637ed3f}{Is\+Numeric}} (const std\+::string \&str) const
+\begin{DoxyCompactList}\small\item\em Checks if a string represents a numeric value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_file_reader}{File\+Reader}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ifstream {\bfseries file\+\_\+stream\+\_\+}
+\begin{DoxyCompactList}\small\item\em File stream for reading data. \end{DoxyCompactList}\item 
+char {\bfseries separator\+\_\+}
+\begin{DoxyCompactList}\small\item\em Character used as a separator in the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_reader}{Reader}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries file\+\_\+name\+\_\+}
+\item 
+std\+::string {\bfseries file\+\_\+extension\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_csv_reader_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_csv_reader_a88a0aa19a2a89a14a54d2c1790807b91}\index{CsvReader@{CsvReader}!Read@{Read}}
+\index{Read@{Read}!CsvReader@{CsvReader}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily \label{class_csv_reader_a88a0aa19a2a89a14a54d2c1790807b91} 
+\mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} Csv\+Reader\+::\+Read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads data from the source and returns it as an \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data} object. 
+
+\begin{DoxyReturn}{Returns}
+An \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data} object containing the read data. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_reader_a8d9e54309942b2f508ec74b3eac1da80}{Reader}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/reader\+\_\+csv.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/reader\+\_\+csv.\+cc\end{DoxyCompactItemize}

@@ -152,12 +152,23 @@ template&lt;typename T&gt; </td></tr>
 <tr class="memitem:a5c8bb1fa42a99911cfda9336b1876554" id="r_a5c8bb1fa42a99911cfda9336b1876554"><td class="memItemLeft" align="right" valign="top"><a id="a5c8bb1fa42a99911cfda9336b1876554" name="a5c8bb1fa42a99911cfda9336b1876554"></a>
 <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (double scalar) const</td></tr>
 <tr class="memdesc:a5c8bb1fa42a99911cfda9336b1876554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scalar Multiplication (Tensor * double). <br /></td></tr>
+<tr class="memitem:a05dae46dbd83e82cfeb69d331799fc6f" id="r_a05dae46dbd83e82cfeb69d331799fc6f"><td class="memItemLeft" align="right" valign="top"><a id="a05dae46dbd83e82cfeb69d331799fc6f" name="a05dae46dbd83e82cfeb69d331799fc6f"></a>
+<a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> &amp;second_tensor) const</td></tr>
+<tr class="memdesc:a05dae46dbd83e82cfeb69d331799fc6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Element-wise Subtraction (t1 - t2). <br /></td></tr>
+<tr class="memitem:aa34c71de9006beb7962e333128d35f9b" id="r_aa34c71de9006beb7962e333128d35f9b"><td class="memItemLeft" align="right" valign="top"><a id="aa34c71de9006beb7962e333128d35f9b" name="aa34c71de9006beb7962e333128d35f9b"></a>
+<a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator/</b> (double scalar) const</td></tr>
+<tr class="memdesc:aa34c71de9006beb7962e333128d35f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scalar Division (Tensor / double). <br /></td></tr>
 <tr class="memitem:a80d631cc2d2151a0e3c9da15edbd870d" id="r_a80d631cc2d2151a0e3c9da15edbd870d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80d631cc2d2151a0e3c9da15edbd870d">size</a> () const</td></tr>
 <tr class="memdesc:a80d631cc2d2151a0e3c9da15edbd870d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of elements in the tensor.  <br /></td></tr>
 <tr class="memitem:a42b1bfd00a94348fe8b1ce43a2f6cf7e" id="r_a42b1bfd00a94348fe8b1ce43a2f6cf7e"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; size_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42b1bfd00a94348fe8b1ce43a2f6cf7e">get_shape</a> () const</td></tr>
 <tr class="memdesc:a42b1bfd00a94348fe8b1ce43a2f6cf7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the shape of the tensor.  <br /></td></tr>
 <tr class="memitem:a094738c223cbe58ad0b81dbae138ebf6" id="r_a094738c223cbe58ad0b81dbae138ebf6"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a094738c223cbe58ad0b81dbae138ebf6">rank</a> () const</td></tr>
 <tr class="memdesc:a094738c223cbe58ad0b81dbae138ebf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the rank (number of dimensions) of the tensor.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a246d5cf637d28d9d40f6d43e00863315" id="r_a246d5cf637d28d9d40f6d43e00863315"><td class="memItemLeft" align="right" valign="top"><a id="a246d5cf637d28d9d40f6d43e00863315" name="a246d5cf637d28d9d40f6d43e00863315"></a>
+<a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (double scalar, const <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> &amp;tensor)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class to represent a mathematical tensor of arbitrary rank at runtime. </p>

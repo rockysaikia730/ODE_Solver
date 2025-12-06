@@ -92,7 +92,7 @@ $(function(){initNavTree('class_ode.html','','class_ode-members'); });
 </div><!--header-->
 <div class="contents">
 
-<p>Represents an Ordinary Differential Equation (ODE) problem definition.  
+<p>Represents an Ordinary Differential Equation (<a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a>) problem definition.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ode_8h_source.html">ode.h</a>&gt;</code></p>
@@ -113,7 +113,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
 <tr class="memitem:a9c1f258b5c30cb458cb66121d76ff604" id="r_a9c1f258b5c30cb458cb66121d76ff604"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c1f258b5c30cb458cb66121d76ff604">SetY0</a> (double in_y0)</td></tr>
 <tr class="memdesc:a9c1f258b5c30cb458cb66121d76ff604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the initial state using a scalar.  <br /></td></tr>
 <tr class="memitem:ac0bda460d709fed3c4680b0d8468d871" id="r_ac0bda460d709fed3c4680b0d8468d871"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0bda460d709fed3c4680b0d8468d871">SetName</a> (const std::string &amp;in_name)</td></tr>
-<tr class="memdesc:ac0bda460d709fed3c4680b0d8468d871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the name of the ODE system.  <br /></td></tr>
+<tr class="memdesc:ac0bda460d709fed3c4680b0d8468d871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the name of the <a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a> system.  <br /></td></tr>
 <tr class="memitem:a01227434e93e5835f0a933641de56139" id="r_a01227434e93e5835f0a933641de56139"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01227434e93e5835f0a933641de56139">SetFunction</a> (std::shared_ptr&lt; <a class="el" href="class_function.html">Function</a> &gt; func)</td></tr>
 <tr class="memdesc:a01227434e93e5835f0a933641de56139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inject a new derivative function.  <br /></td></tr>
 <tr class="memitem:a53c09a13019c843e03b918438074777a" id="r_a53c09a13019c843e03b918438074777a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53c09a13019c843e03b918438074777a">SetRootFinder</a> (std::shared_ptr&lt; <a class="el" href="class_root_finder.html">RootFinder</a> &gt; root_finder)</td></tr>
@@ -124,11 +124,56 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
 <tr class="memdesc:a6c360986d0f06b497d3b311ead9c0366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the initial condition tensor.  <br /></td></tr>
 <tr class="memitem:a6356a2c5b5b923378b5cc41951dc3575" id="r_a6356a2c5b5b923378b5cc41951dc3575"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6356a2c5b5b923378b5cc41951dc3575">GetName</a> () const</td></tr>
 <tr class="memdesc:a6356a2c5b5b923378b5cc41951dc3575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the system.  <br /></td></tr>
+<tr class="memitem:adcb8ece3558bd7a29aefcfe9319e7dd4" id="r_adcb8ece3558bd7a29aefcfe9319e7dd4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_function.html">Function</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcb8ece3558bd7a29aefcfe9319e7dd4">GetFunction</a> () const</td></tr>
+<tr class="memdesc:adcb8ece3558bd7a29aefcfe9319e7dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the RHS function.  <br /></td></tr>
+<tr class="memitem:a739b332b95ace434b930cf5a879ec46c" id="r_a739b332b95ace434b930cf5a879ec46c"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="class_root_finder.html">RootFinder</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a739b332b95ace434b930cf5a879ec46c">GetRootFinder</a> () const</td></tr>
+<tr class="memdesc:a739b332b95ace434b930cf5a879ec46c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="class_root_finder.html">RootFinder</a> Routine.  <br /></td></tr>
 <tr class="memitem:a3fc74d1b3f982351bd6dad5054f2cab7" id="r_a3fc74d1b3f982351bd6dad5054f2cab7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fc74d1b3f982351bd6dad5054f2cab7">Evaluate</a> (double t, const <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> &amp;y) const</td></tr>
 <tr class="memdesc:a3fc74d1b3f982351bd6dad5054f2cab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the derivative function f(t, y).  <br /></td></tr>
+<tr class="memitem:a3fb641140651884add33ea329c0532cb" id="r_a3fb641140651884add33ea329c0532cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fb641140651884add33ea329c0532cb">Ode</a> (const <a class="el" href="struct_ode_raw_data.html">OdeRawData</a> &amp;raw_data)</td></tr>
+<tr class="memdesc:a3fb641140651884add33ea329c0532cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that initializes the <a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a> with given parameters.  <br /></td></tr>
+<tr class="memitem:ac6468fab017c86c1fac0fd35545fe4b5" id="r_ac6468fab017c86c1fac0fd35545fe4b5"><td class="memItemLeft" align="right" valign="top"><a id="ac6468fab017c86c1fac0fd35545fe4b5" name="ac6468fab017c86c1fac0fd35545fe4b5"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()=default</td></tr>
+<tr class="memdesc:ac6468fab017c86c1fac0fd35545fe4b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. <br /></td></tr>
+<tr class="memitem:ac0d3e4f67e2531e7c0b50fbd78dc4a55" id="r_ac0d3e4f67e2531e7c0b50fbd78dc4a55"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0d3e4f67e2531e7c0b50fbd78dc4a55">GetInitialTime</a> () const</td></tr>
+<tr class="memdesc:ac0d3e4f67e2531e7c0b50fbd78dc4a55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the initial time.  <br /></td></tr>
+<tr class="memitem:ad03b6166ce56ea984ed90777b75af169" id="r_ad03b6166ce56ea984ed90777b75af169"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad03b6166ce56ea984ed90777b75af169">GetFinalTime</a> () const</td></tr>
+<tr class="memdesc:ad03b6166ce56ea984ed90777b75af169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the final time.  <br /></td></tr>
+<tr class="memitem:a61f1826882690c3f9865bf37ee5021e9" id="r_a61f1826882690c3f9865bf37ee5021e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61f1826882690c3f9865bf37ee5021e9">GetInitialCondition</a> () const</td></tr>
+<tr class="memdesc:a61f1826882690c3f9865bf37ee5021e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the initial condition tensor.  <br /></td></tr>
+<tr class="memitem:ab243f964976e91f2c4b83d5e2aac54e9" id="r_ab243f964976e91f2c4b83d5e2aac54e9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab243f964976e91f2c4b83d5e2aac54e9">GetInputDimension</a> () const</td></tr>
+<tr class="memdesc:ab243f964976e91f2c4b83d5e2aac54e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the dimension of the <a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a> system.  <br /></td></tr>
+<tr class="memitem:abf8066539df35587dd98f87815af9311" id="r_abf8066539df35587dd98f87815af9311"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf8066539df35587dd98f87815af9311">GetStepSize</a> () const</td></tr>
+<tr class="memdesc:abf8066539df35587dd98f87815af9311"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the step size for numerical solving.  <br /></td></tr>
+<tr class="memitem:a3ef187a4dbbdebf5b21ac9683d18f245" id="r_a3ef187a4dbbdebf5b21ac9683d18f245"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ef187a4dbbdebf5b21ac9683d18f245">GetNumberOfSteps</a> () const</td></tr>
+<tr class="memdesc:a3ef187a4dbbdebf5b21ac9683d18f245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of steps for numerical solving.  <br /></td></tr>
+<tr class="memitem:ade5dfcb147ff53e745bf77de2aca5991" id="r_ade5dfcb147ff53e745bf77de2aca5991"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade5dfcb147ff53e745bf77de2aca5991">GetTolerance</a> () const</td></tr>
+<tr class="memdesc:ade5dfcb147ff53e745bf77de2aca5991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the tolerance for numerical methods.  <br /></td></tr>
+<tr class="memitem:a933d900dfe84d35e6a60a0c69c21f0a5" id="r_a933d900dfe84d35e6a60a0c69c21f0a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a933d900dfe84d35e6a60a0c69c21f0a5">GetMaxIterations</a> () const</td></tr>
+<tr class="memdesc:a933d900dfe84d35e6a60a0c69c21f0a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum number of iterations for iterative methods.  <br /></td></tr>
+<tr class="memitem:a56237235ff74af5e056625e17f7637c5" id="r_a56237235ff74af5e056625e17f7637c5"><td class="memItemLeft" align="right" valign="top">SolverMethod&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56237235ff74af5e056625e17f7637c5">GetSolverMethod</a> () const</td></tr>
+<tr class="memdesc:a56237235ff74af5e056625e17f7637c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the solver method to be used.  <br /></td></tr>
+<tr class="memitem:aadfe7f1ebb398afe04eb52c9a41e7099" id="r_aadfe7f1ebb398afe04eb52c9a41e7099"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadfe7f1ebb398afe04eb52c9a41e7099">SetSolverMethod</a> (SolverMethod method)</td></tr>
+<tr class="memdesc:aadfe7f1ebb398afe04eb52c9a41e7099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the RHS function defining the <a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a>.  <br /></td></tr>
+<tr class="memitem:a0286b2bd927d79d9b85ecf21e0a21237" id="r_a0286b2bd927d79d9b85ecf21e0a21237"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0286b2bd927d79d9b85ecf21e0a21237">SetMaxIterations</a> (int max_iterations)</td></tr>
+<tr class="memdesc:a0286b2bd927d79d9b85ecf21e0a21237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum number of iterations for iterative methods.  <br /></td></tr>
+<tr class="memitem:aa22e58ffe5005a41cf12f9ee0be14cf4" id="r_aa22e58ffe5005a41cf12f9ee0be14cf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa22e58ffe5005a41cf12f9ee0be14cf4">SetTolerance</a> (double tolerance)</td></tr>
+<tr class="memdesc:aa22e58ffe5005a41cf12f9ee0be14cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the tolerance for numerical methods.  <br /></td></tr>
+<tr class="memitem:a0d35e08bbd16104106d39cdde0ee1203" id="r_a0d35e08bbd16104106d39cdde0ee1203"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d35e08bbd16104106d39cdde0ee1203">SetStepSize</a> (double step_size)</td></tr>
+<tr class="memdesc:a0d35e08bbd16104106d39cdde0ee1203"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the step size for numerical solving.  <br /></td></tr>
+<tr class="memitem:a76b6cde52b157c34977c9030e65741f0" id="r_a76b6cde52b157c34977c9030e65741f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76b6cde52b157c34977c9030e65741f0">SetNumberOfSteps</a> (int number_of_steps)</td></tr>
+<tr class="memdesc:a76b6cde52b157c34977c9030e65741f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of steps for numerical solving.  <br /></td></tr>
+<tr class="memitem:ac7f844c34e418345c33e16de0b50329f" id="r_ac7f844c34e418345c33e16de0b50329f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7f844c34e418345c33e16de0b50329f">SetInitialCondition</a> (const <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> &amp;y0)</td></tr>
+<tr class="memdesc:ac7f844c34e418345c33e16de0b50329f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the initial condition tensor.  <br /></td></tr>
+<tr class="memitem:a268e0840f2dd0eab4d6d2ff363e39acf" id="r_a268e0840f2dd0eab4d6d2ff363e39acf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a268e0840f2dd0eab4d6d2ff363e39acf">SetInitialTime</a> (double t_init)</td></tr>
+<tr class="memdesc:a268e0840f2dd0eab4d6d2ff363e39acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the initial time.  <br /></td></tr>
+<tr class="memitem:a707917323067fc0398ea578c4e5a9e41" id="r_a707917323067fc0398ea578c4e5a9e41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a707917323067fc0398ea578c4e5a9e41">SetFinalTime</a> (double t_final)</td></tr>
+<tr class="memdesc:a707917323067fc0398ea578c4e5a9e41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the final time.  <br /></td></tr>
+<tr class="memitem:a4d48f3f1df9423c4e835a8d142cefdea" id="r_a4d48f3f1df9423c4e835a8d142cefdea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d48f3f1df9423c4e835a8d142cefdea">EvaluateRhs</a> (double t, const <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> &amp;y) const</td></tr>
+<tr class="memdesc:a4d48f3f1df9423c4e835a8d142cefdea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the RHS function at a given time and state.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents an Ordinary Differential Equation (ODE) problem definition. </p>
+<div class="textblock"><p>Represents an Ordinary Differential Equation (<a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a>) problem definition. </p>
 <p>The <a class="el" href="class_ode.html" title="Represents an Ordinary Differential Equation (ODE) problem definition.">Ode</a> class acts as a container for the problem definition. It holds:</p><ol type="1">
 <li>The Initial Value Problem (IVP) conditions (t0, y0).</li>
 <li>The physics/math function defining the derivative (dy/dt).</li>
@@ -136,7 +181,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
 </ol>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa96be18b8d0d1fe6a521d1a91d42848e" name="aa96be18b8d0d1fe6a521d1a91d42848e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa96be18b8d0d1fe6a521d1a91d42848e">&#9670;&#160;</a></span>Ode() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa96be18b8d0d1fe6a521d1a91d42848e">&#9670;&#160;</a></span>Ode() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,8 +219,8 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
 <li><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">in_time</td><td>The initial time (t0). </td></tr>
-    <tr><td class="paramname">in_y0</td><td>The initial state vector/tensor (y0). </td></tr>
-    <tr><td class="paramname">in_name</td><td>A unique identifier name for this ODE system. </td></tr>
+    <tr><td class="paramname">in_y0</td><td>The initial state tensor (y0). </td></tr>
+    <tr><td class="paramname">in_name</td><td>A unique identifier name for this <a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a> system. </td></tr>
     <tr><td class="paramname">func</td><td>Shared pointer to the function defining dy/dt = f(t, y). </td></tr>
     <tr><td class="paramname">root_finder</td><td>Shared pointer to the root finding strategy (for implicit solvers). </td></tr>
   </table>
@@ -187,7 +232,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
 </div>
 </div>
 <a id="aeb668eecfb030d5b19fdc28c74a28c12" name="aeb668eecfb030d5b19fdc28c74a28c12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb668eecfb030d5b19fdc28c74a28c12">&#9670;&#160;</a></span>Ode() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb668eecfb030d5b19fdc28c74a28c12">&#9670;&#160;</a></span>Ode() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,7 +271,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
   <table class="params">
     <tr><td class="paramname">in_time</td><td>The initial time (t0). </td></tr>
     <tr><td class="paramname">in_y0</td><td>The initial state scalar (will be converted to Tensor). </td></tr>
-    <tr><td class="paramname">in_name</td><td>A unique identifier name for this ODE system. </td></tr>
+    <tr><td class="paramname">in_name</td><td>A unique identifier name for this <a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a> system. </td></tr>
     <tr><td class="paramname">func</td><td>Shared pointer to the function defining dy/dt = f(t, y). </td></tr>
     <tr><td class="paramname">root_finder</td><td>Shared pointer to the root finding strategy. </td></tr>
   </table>
@@ -234,6 +279,31 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
 </dl>
 </li>
 </ul>
+
+</div>
+</div>
+<a id="a3fb641140651884add33ea329c0532cb" name="a3fb641140651884add33ea329c0532cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fb641140651884add33ea329c0532cb">&#9670;&#160;</a></span>Ode() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ode::Ode </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_ode_raw_data.html">OdeRawData</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>raw_data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor that initializes the <a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a> with given parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">raw_data</td><td>An <a class="el" href="struct_ode_raw_data.html" title="Raw, unparsed data extracted by a Reader. All values are strings or simple primitives.">OdeRawData</a> object containing raw data for initializing the <a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a>. The constructor is responsible for parsing the raw data and setting up the <a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -273,6 +343,37 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
 
 </div>
 </div>
+<a id="a4d48f3f1df9423c4e835a8d142cefdea" name="a4d48f3f1df9423c4e835a8d142cefdea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d48f3f1df9423c4e835a8d142cefdea">&#9670;&#160;</a></span>EvaluateRhs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> Ode::EvaluateRhs </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>t</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluate the RHS function at a given time and state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The current time. </td></tr>
+    <tr><td class="paramname">y</td><td>The current state as a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the RHS function as a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a>. </dd></dl>
+
+</div>
+</div>
 <a id="a6c360986d0f06b497d3b311ead9c0366" name="a6c360986d0f06b497d3b311ead9c0366"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c360986d0f06b497d3b311ead9c0366">&#9670;&#160;</a></span>GetCondIn()</h2>
 
@@ -290,6 +391,126 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
 
 <p>Get the initial condition tensor. </p>
 <dl class="section return"><dt>Returns</dt><dd>Const reference to the initial state (y0). </dd></dl>
+
+</div>
+</div>
+<a id="ad03b6166ce56ea984ed90777b75af169" name="ad03b6166ce56ea984ed90777b75af169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad03b6166ce56ea984ed90777b75af169">&#9670;&#160;</a></span>GetFinalTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Ode::GetFinalTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the final time. </p>
+<dl class="section return"><dt>Returns</dt><dd>The final time as a double. </dd></dl>
+
+</div>
+</div>
+<a id="adcb8ece3558bd7a29aefcfe9319e7dd4" name="adcb8ece3558bd7a29aefcfe9319e7dd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcb8ece3558bd7a29aefcfe9319e7dd4">&#9670;&#160;</a></span>GetFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_function.html">Function</a> &amp; Ode::GetFunction </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the RHS function. </p>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to the <a class="el" href="class_function.html">Function</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a61f1826882690c3f9865bf37ee5021e9" name="a61f1826882690c3f9865bf37ee5021e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61f1826882690c3f9865bf37ee5021e9">&#9670;&#160;</a></span>GetInitialCondition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> Ode::GetInitialCondition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the initial condition tensor. </p>
+<dl class="section return"><dt>Returns</dt><dd>The initial condition as a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ac0d3e4f67e2531e7c0b50fbd78dc4a55" name="ac0d3e4f67e2531e7c0b50fbd78dc4a55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0d3e4f67e2531e7c0b50fbd78dc4a55">&#9670;&#160;</a></span>GetInitialTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Ode::GetInitialTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the initial time. </p>
+<dl class="section return"><dt>Returns</dt><dd>The initial time as a double. </dd></dl>
+
+</div>
+</div>
+<a id="ab243f964976e91f2c4b83d5e2aac54e9" name="ab243f964976e91f2c4b83d5e2aac54e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab243f964976e91f2c4b83d5e2aac54e9">&#9670;&#160;</a></span>GetInputDimension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; int &gt; Ode::GetInputDimension </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the dimension of the <a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a> system. </p>
+<dl class="section return"><dt>Returns</dt><dd>The dimension as a vector as dimension depends on the tensor. </dd></dl>
+
+</div>
+</div>
+<a id="a933d900dfe84d35e6a60a0c69c21f0a5" name="a933d900dfe84d35e6a60a0c69c21f0a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a933d900dfe84d35e6a60a0c69c21f0a5">&#9670;&#160;</a></span>GetMaxIterations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Ode::GetMaxIterations </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the maximum number of iterations for iterative methods. </p>
+<dl class="section return"><dt>Returns</dt><dd>The maximum number of iterations as an integer. </dd></dl>
 
 </div>
 </div>
@@ -313,6 +534,86 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
 
 </div>
 </div>
+<a id="a3ef187a4dbbdebf5b21ac9683d18f245" name="a3ef187a4dbbdebf5b21ac9683d18f245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ef187a4dbbdebf5b21ac9683d18f245">&#9670;&#160;</a></span>GetNumberOfSteps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Ode::GetNumberOfSteps </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of steps for numerical solving. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of steps as an integer. </dd></dl>
+
+</div>
+</div>
+<a id="a739b332b95ace434b930cf5a879ec46c" name="a739b332b95ace434b930cf5a879ec46c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a739b332b95ace434b930cf5a879ec46c">&#9670;&#160;</a></span>GetRootFinder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::shared_ptr&lt; <a class="el" href="class_root_finder.html">RootFinder</a> &gt; &amp; Ode::GetRootFinder </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the <a class="el" href="class_root_finder.html">RootFinder</a> Routine. </p>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to the <a class="el" href="class_root_finder.html">RootFinder</a> Routine. </dd></dl>
+
+</div>
+</div>
+<a id="a56237235ff74af5e056625e17f7637c5" name="a56237235ff74af5e056625e17f7637c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56237235ff74af5e056625e17f7637c5">&#9670;&#160;</a></span>GetSolverMethod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SolverMethod Ode::GetSolverMethod </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the solver method to be used. </p>
+<dl class="section return"><dt>Returns</dt><dd>The solver method as a SolverMethod enum. This is only the text representation; it does not return the actual solver object. </dd></dl>
+
+</div>
+</div>
+<a id="abf8066539df35587dd98f87815af9311" name="abf8066539df35587dd98f87815af9311"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf8066539df35587dd98f87815af9311">&#9670;&#160;</a></span>GetStepSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Ode::GetStepSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the step size for numerical solving. </p>
+<dl class="section return"><dt>Returns</dt><dd>The step size as a double. </dd></dl>
+
+</div>
+</div>
 <a id="a68b7580e063b949bfc0046e4142ad490" name="a68b7580e063b949bfc0046e4142ad490"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68b7580e063b949bfc0046e4142ad490">&#9670;&#160;</a></span>GetTimeIn()</h2>
 
@@ -330,6 +631,51 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
 
 <p>Get the initial time. </p>
 <dl class="section return"><dt>Returns</dt><dd>The initial time (t0). </dd></dl>
+
+</div>
+</div>
+<a id="ade5dfcb147ff53e745bf77de2aca5991" name="ade5dfcb147ff53e745bf77de2aca5991"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade5dfcb147ff53e745bf77de2aca5991">&#9670;&#160;</a></span>GetTolerance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Ode::GetTolerance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the tolerance for numerical methods. </p>
+<dl class="section return"><dt>Returns</dt><dd>The tolerance as a double. </dd></dl>
+
+</div>
+</div>
+<a id="a707917323067fc0398ea578c4e5a9e41" name="a707917323067fc0398ea578c4e5a9e41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a707917323067fc0398ea578c4e5a9e41">&#9670;&#160;</a></span>SetFinalTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ode::SetFinalTime </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>t_final</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the final time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_final</td><td>The final time as a double. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -358,6 +704,81 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
 
 </div>
 </div>
+<a id="ac7f844c34e418345c33e16de0b50329f" name="ac7f844c34e418345c33e16de0b50329f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7f844c34e418345c33e16de0b50329f">&#9670;&#160;</a></span>SetInitialCondition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ode::SetInitialCondition </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>y0</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the initial condition tensor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y0</td><td>The initial condition as a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a268e0840f2dd0eab4d6d2ff363e39acf" name="a268e0840f2dd0eab4d6d2ff363e39acf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a268e0840f2dd0eab4d6d2ff363e39acf">&#9670;&#160;</a></span>SetInitialTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ode::SetInitialTime </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>t_init</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the initial time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_init</td><td>The initial time as a double. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0286b2bd927d79d9b85ecf21e0a21237" name="a0286b2bd927d79d9b85ecf21e0a21237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0286b2bd927d79d9b85ecf21e0a21237">&#9670;&#160;</a></span>SetMaxIterations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ode::SetMaxIterations </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max_iterations</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the maximum number of iterations for iterative methods. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_iterations</td><td>The maximum number of iterations as an integer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac0bda460d709fed3c4680b0d8468d871" name="ac0bda460d709fed3c4680b0d8468d871"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac0bda460d709fed3c4680b0d8468d871">&#9670;&#160;</a></span>SetName()</h2>
 
@@ -373,10 +794,35 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
       </table>
 </div><div class="memdoc">
 
-<p>Set the name of the ODE system. </p>
+<p>Set the name of the <a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a> system. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">in_name</td><td>The new name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a76b6cde52b157c34977c9030e65741f0" name="a76b6cde52b157c34977c9030e65741f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76b6cde52b157c34977c9030e65741f0">&#9670;&#160;</a></span>SetNumberOfSteps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ode::SetNumberOfSteps </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>number_of_steps</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the number of steps for numerical solving. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number_of_steps</td><td>The number of steps as an integer. </td></tr>
   </table>
   </dd>
 </dl>
@@ -408,6 +854,63 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
 
 </div>
 </div>
+<a id="aadfe7f1ebb398afe04eb52c9a41e7099" name="aadfe7f1ebb398afe04eb52c9a41e7099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadfe7f1ebb398afe04eb52c9a41e7099">&#9670;&#160;</a></span>SetSolverMethod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ode::SetSolverMethod </td>
+          <td>(</td>
+          <td class="paramtype">SolverMethod</td>          <td class="paramname"><span class="paramname"><em>method</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the RHS function defining the <a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A function pointer or object representing the RHS function. This is a placeholder; actual implementation depends on how functions are represented.</dd></dl>
+<p>Set the RHS function defining the <a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">function</td><td>A function pointer or object representing the RHS function. This is a placeholder; actual implementation depends on how functions are represented.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Set the solver method to be used. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>The solver method as a SolverMethod enum. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0d35e08bbd16104106d39cdde0ee1203" name="a0d35e08bbd16104106d39cdde0ee1203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d35e08bbd16104106d39cdde0ee1203">&#9670;&#160;</a></span>SetStepSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ode::SetStepSize </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>step_size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the step size for numerical solving. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">step_size</td><td>The step size as a double. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a4856ed6d10e8f7a8218a7f81ff576918" name="a4856ed6d10e8f7a8218a7f81ff576918"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4856ed6d10e8f7a8218a7f81ff576918">&#9670;&#160;</a></span>SetT0()</h2>
 
@@ -427,6 +930,31 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">in_time</td><td>The new initial time. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa22e58ffe5005a41cf12f9ee0be14cf4" name="aa22e58ffe5005a41cf12f9ee0be14cf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa22e58ffe5005a41cf12f9ee0be14cf4">&#9670;&#160;</a></span>SetTolerance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ode::SetTolerance </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tolerance</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the tolerance for numerical methods. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tolerance</td><td>The tolerance as a double. </td></tr>
   </table>
   </dd>
 </dl>
@@ -485,7 +1013,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Ode</b> ()</td></
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/rocky/notes/Scientific Computing/ODE_Solver/include/<a class="el" href="ode_8h_source.html">ode.h</a></li>
+<li>/Users/rocky/notes/Scientific Computing/ODE_Solver/include/<a class="el" href="ode__copy_8h_source.html">ode_copy.h</a></li>
 <li>/Users/rocky/notes/Scientific Computing/ODE_Solver/src/<b>ode.cpp</b></li>
+<li>/Users/rocky/notes/Scientific Computing/ODE_Solver/src/<b>ode_copy.cc</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
