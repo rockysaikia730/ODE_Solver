@@ -13,6 +13,7 @@
 #include <string>
 #include <memory>
 #include "dynamic_tensor.h"
+#include "reader.h"
 #include "function.h"
 #include "root_finder.h"
 
@@ -31,8 +32,13 @@ class Ode {
 public:
     /**
      * @brief Constructor with Tensor state.
+<<<<<<< HEAD
      * * @param in_time The initial time (t0).
      * @param in_y0 The initial state tensor (y0).
+=======
+     * @param in_time The initial time (t0).
+     * @param in_y0 The initial state vector/tensor (y0).
+>>>>>>> abdf63854e79db3d55258863c51ffe5111d5af18
      * @param in_name A unique identifier name for this ODE system.
      * @param func Shared pointer to the function defining dy/dt = f(t, y).
      * @param root_finder Shared pointer to the root finding strategy (for implicit solvers).
@@ -43,7 +49,7 @@ public:
     /**
      * @brief Constructor with Scalar state.
      * Convenience constructor that promotes a double to a Rank-1 Tensor.
-     * * @param in_time The initial time (t0).
+     * @param in_time The initial time (t0).
      * @param in_y0 The initial state scalar (will be converted to Tensor).
      * @param in_name A unique identifier name for this ODE system.
      * @param func Shared pointer to the function defining dy/dt = f(t, y).
@@ -51,6 +57,12 @@ public:
      */
     Ode(double in_time, const double& in_y0, const std::string& in_name,
         std::shared_ptr<Function> func, std::shared_ptr<RootFinder> root_finder);
+
+    /**
+     * @brief Constructor from Reader.
+     * @param reader A Reader object which reades from input file to initialise the ODE.
+     */
+    Ode(const Reader& reader);
 
     /**
      * @brief Virtual destructor.
@@ -63,9 +75,9 @@ public:
 
     /**
      * @brief Set the initial time.
-     * @param in_time The new initial time.
+     * @param time The new initial time as a double.
      */
-    void SetT0(double in_time);
+    void SetT0(double time);
 
     /**
      * @brief Set the initial state using a Tensor.

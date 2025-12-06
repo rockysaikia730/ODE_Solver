@@ -172,20 +172,7 @@ void Ode::ParseRhsFunctionFromString(const std::string& function_string) {
     // }
 }
 
-void Ode::ParseSolverMethodFromString(const std::string& method_string) {
-    if (method_string == "ExplicitEuler") {
-        solver_method_enum_ = SolverMethod::kExplicitEuler;
-    } else if (method_string == "RungeKutta4") {
-        solver_method_enum_ = SolverMethod::kRungeKutta4;
-    } else if (method_string == "ImplicitEuler") {
-        solver_method_enum_ = SolverMethod::kImplicitEuler;
-    } else if (method_string == "AdamsBashforth") {
-        solver_method_enum_ = SolverMethod::kAdamsBashforth;
-    } else {
-        // Default or unknown method handling
-        solver_method_enum_ = SolverMethod::kUnknown;
-    }
-}
+
 
 void Ode::SetDimensionFromInitialCondition() {
     // MISSING IMPLEMENTATION - depends on how dimension is defined from y0_

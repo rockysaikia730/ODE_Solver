@@ -171,6 +171,7 @@ private:
     double tolerance_;
     /// @brief Maximum number of iterations for iterative methods
     int max_iterations_;
+    
     /// @brief Function defining the ODE's right-hand side
     //function pointer or contains actual function class we create?
 

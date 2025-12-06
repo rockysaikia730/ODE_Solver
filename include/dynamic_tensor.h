@@ -128,6 +128,27 @@ public:
      */
     size_t rank() const;
 
+    /**
+     * @brief Get the flattened data as a vector.
+     * @return A constant reference to the internal data vector.
+     * @note The changes here are suggested by ChatGPT.
+     */
+    template <typename T>
+    const T& flat(size_t index) const {
+        return GetVec<T>()[index];
+    }
+
+    /**
+     * @brief Get the flattened data as a vector.
+     * @return A reference to the internal data vector. The caller can modify the data.
+     * @note The changes here are suggested by ChatGPT.
+     */
+    template <typename T>
+    T& flat(size_t index) {
+        return GetVec<T>()[index];
+    }
+
+
 private:
     /// @brief Flattened storage of tensor data.
     std::variant<std::vector<double>, std::vector<Complex>> data_;

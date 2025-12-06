@@ -1,76 +1,42 @@
 #include <fstream>
+#include "reader.h"
 #include "reader_csv.h"
-#include "../Data_structures/ode_raw_data.h"
+#include "ode_raw_data.h"
 
-CsvReader::CsvReader(const std::string& file_name, char separator)
-    : FileReader(file_name, separator) {}
+CsvReader::CsvReader(const std::string& file_name, char separator, bool has_header)
+    : Reader(file_name, separator), has_header_(has_header) {}
 
 
-OdeRawData CsvReader::Read() {
-    OdeRawData raw_data;
-    bool is_open = Open();
-    if (!is_open) {
-        // Handle error: could not open file
-        return raw_data;
+void CsvReader::Read() {
+    if (!Open()) {
+        // Handle error! MISSING IMPLEMENTATION
     }
 
     std::string line;
-    int line_number = 1;
-    bool header_present = false;
-    while (std::getline(file_stream_, line)) {
-        std::vector<std::string> tokens = Split(line);
-        
-        // Skip header line if present
-        if(line_number == 1){
-            for(const auto& token : tokens){
-                if(!IsNumeric(token)){
-                    header_present = true;
-                    break; // Exit the loop if a non-numeric token is found
-                }
-            }
-        }
-        
-        line_number++;
 
-        if(header_present && line_number == 1){
-            line_number++;
-            continue; // Skip header line
-        }
-
-        // Assume each line has key-value pairs for simplicity
-        std::string key = tokens[0];
-        std::string value = tokens[1];
-
-        if(key == "t0"){
-            raw_data.t_init_string = value;
-        } 
-        else if(key == "tfinal"){
-            raw_data.t_final_string = value;
-        } 
-        else if(key == "step_size"){
-            raw_data.step_size_string = value;
-        } 
-        else if(key == "number_of_steps"){
-            raw_data.number_of_steps_string = value;
-        } 
-        else if(key == "max_iterations"){
-            raw_data.max_iterations_string = value;
-        } 
-        else if(key == "tolerance"){
-            raw_data.tolerance_string = value;
-        } 
-        else if(key == "input_dim"){
-            raw_data.input_dim_string = value;
-        } 
-        else if(key == "y0"){
-            raw_data.y0_string = value;
-        } 
-        else if(key == "function"){
-            raw_data.rhs_function_string = value;
-        }
+    if (has_header_) {
+        std::getline(file_stream_, line);
     }
 
-    file_stream_.close();
+    while (std::getline(file_stream_, line)) {
+        // Trim entire line
+        line = Trim(line);
+        
+        if(line.empty()) {
+            continue; // Skip empty lines
+        }
+        auto tokens = Split(line, separator_);
+        tokens = Trim(tokens);
 
-    return raw_data;
+        if (tokens.size() != 2) {
+            // Handle error! MISSING IMPLEMENTATION
+        }
+
+        std::string key = ToLower(tokens[0]);
+        std::string value = tokens[1];
+
+        InterpretKeyValuePair(key, value);
+    }
+
+    Close();
 }
