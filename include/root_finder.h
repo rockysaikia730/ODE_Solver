@@ -7,6 +7,6 @@
 class RootFinder {
 public:
     virtual ~RootFinder() = default;
-    virtual DynamicTensor FindRoot(const Function& f, const DynamicTensor& initial_guess) const = 0;
+    virtual DynamicTensor FindRoot(const Function& f, const DynamicTensor& initial_guess, double t, int max_iter = 100) const = 0;
 };
 #endif
