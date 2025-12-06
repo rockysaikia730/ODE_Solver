@@ -5,6 +5,7 @@
 #include <fstream>
 #include <complex>
 #include <vector>
+#include <memory>
 #include "dynamic_tensor.h"
 #include "ode_raw_data.h"
 #include "solver_methods.h"
@@ -94,7 +95,7 @@ public:
      * @brief Get the raw data read by the Reader.
      * @return An OdeRawData object containing the read data.
      */
-    OdeRawData GetRawData() const {
+    const OdeRawData& GetRawData() const {
         return raw_data_;
     }
 
@@ -178,26 +179,24 @@ protected:
     bool LineEndsWith(const std::string& line, const std::string& end) const;
 
     /**
-         * @brief Parses a string representing a complex number in the form (a,b).
-         * @param str The string to parse.
-         * @return A std::complex<double> object.
-         */
-        std::complex<double> ParseComplexNumber(const std::string& str) const;
+     * @brief Parses a string representing a complex number in the form (a,b).
+     * @param str The string to parse.
+     * @return A std::complex<double> object.
+     */
+    std::complex<double> ParseComplexNumber(const std::string& str) const;
 
-        /**
-         * @brief Parses a string representing a double.
-         * @param str The string to parse.
-         * @return A double value.
-         */
-        double ParseDouble(const std::string& str) const;
+    /**
+     * @brief Parses a string representing a double.
+     * @param str The string to parse.
+     * @return A double value.
+     */
+    double ParseDouble(const std::string& str) const;
 
         /**
          * @brief Parses the solver method from a string and sets it in raw_data_.
-         * @param method_string The string representing the solver method.
-         * This method updates the solver method in the raw_data_ member variable based on the provided string.
-         * It does not guarantee that this method will be used by the solver.
-         */
-        void ParseSolverMethodFromString(const std::string& method_string);
+         * @param method_string 
+         * @returns a vector of size_t representing the shape of the parsed tensor.
+         * 
 
         /**
          * @brief Key-value pair interpreter for reading lines.
@@ -215,31 +214,31 @@ protected:
          */
         std::string Trim(const std::string& str) const;
         
+        /**
+         * @brief Parses the solver method from a string and sets it in raw_data_.
+         * @param method_string The string representing the solver method.
+         * @return void. Sets the solver method in raw_data_.
+         */
+        void ParseSolverMethodFromString(const std::string& method_string);
+
+        /**
+         * @brief Recursive helper function that parses a function string into an instance of Function.
+         * @param str The function string to parse. Expected form is a flattened list of expressions (eg. "[[sin(t)+y0, cos(t)],[y1^2, exp(t)]]" for a 2x2 system).
+         * @return a pointer to the created Function instance.
+         */
+        std::shared_ptr<Function> ParseFunction(const std::string& str);
+
     private:
-        /**
-         * @brief Recursive helper function to parse nested tensor strings.
-         * @param str The string to parse.
-         * @param pos The current position in the string.
-         * @param data The vector to store parsed data. Passed by reference to accumulate values.
-         * @return The shape of the tensor as a vector of sizes.
-         */
-        std::vector<size_t> ParseTensorRecursive(const std::string& str, size_t& pos, std::vector<double>& data);
 
-        /**
-         * @brief Recursive helper function to parse nested tensor strings for complex numbers.
-         * @param str The string to parse.
-         * @param pos The current position in the string.
-         * @param data The vector to store parsed data. Passed by reference to accumulate values.
-         * @return The shape of the tensor as a vector of sizes.
-         */
-        std::vector<size_t> ParseTensorRecursive(const std::string& str, size_t& pos, std::vector<std::complex<double>>& data);
-
+        template <typename T>
+        std::vector<size_t> ParseTensorRecursive(const std::string& str, size_t& pos, std::vector<T>& data);
         /**
          * @brief Checks if a whole string has a complex number in it
          * @param str The string to check.
          * @return True if the string has a complex number, false otherwise.
          */
         bool HasComplexNumber(const std::string& str) const;
+    
     };
 
 #endif // READER_H

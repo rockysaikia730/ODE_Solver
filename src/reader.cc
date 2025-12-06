@@ -2,6 +2,7 @@
 #include <sstream>
 #include <vector>
 #include <complex>
+#include <memory>
 #include "reader.h"
 #include "ode_raw_data.h"
 #include "dynamic_tensor.h"
@@ -95,188 +96,92 @@ std::vector<std::string> Reader::Trim(const std::vector<std::string>& tokens) co
 }
 
 DynamicTensor Reader::ParseTensor(const std::string& str) {
-    std::string content;
-    content.reserve(str.size());
-
-    // Remove all whitespace from the string
-    for (char c : str) {
-        if (!std::isspace(c)) {
-            content += c;
-        }
-    }
-
-
-    if (content.empty()) {
-        // Handle error! MISSING IMPLEMENTATION
-    }
-
-
-    if (!(content.front() == '[' && content.back() == ']')) {
-        //Base case: single value
-        
-        if(IsComplexNumber(content)){
-            // must be a single complex value
-            return DynamicTensor(ParseComplexNumber(content));
-        }
-        if (IsNumeric(content)) {
-            // must be a single double value
-            return DynamicTensor(ParseDouble(content));
-        }
-        // Handle error! MISSING IMPLEMENTATION
-    }
-
-    //General case: we have a nested bracket list
     size_t pos = 0;
-    bool contains_complex = HasComplexNumber(content);
-
-    if (!contains_complex) {
-        std::vector<double> data;
-        std::vector<size_t> shape = ParseTensorRecursive(content, pos, data);
+    if (HasComplexNumber(str)) {
+        std::vector<DynamicTensor::Complex> data;
+        std::vector<size_t> shape = ParseTensorRecursive(str, pos, data);
         return DynamicTensor(data, shape);
     } else {
-        std::vector<std::complex<double>> data;
-        std::vector<size_t> shape = ParseTensorRecursive(content, pos, data);
+        std::vector<double> data;
+        std::vector<size_t> shape = ParseTensorRecursive(str, pos, data);
         return DynamicTensor(data, shape);
     }
-
 }
 
-std::vector<size_t> Reader::ParseTensorRecursive(const std::string& str, size_t& pos, std::vector<double>& data) {
-    if (str[pos] != '[') {
-        // Handle error! MISSING IMPLEMENTATION
-    }
-    ++pos; // Move past the opening bracket '['
-    
-    std::vector<std::vector<size_t>> lower_shapes;
-    size_t current_dimension_size = data.size();
-    bool detected_double = false;
-    bool detected_nested = false;
+template <typename T>
+std::vector<size_t> Reader::ParseTensorRecursive(const std::string& str, size_t& pos, std::vector<T>& data) {
+    std::vector<size_t> shape;
 
-    while (pos < str.size()){
-        char c = str[pos];
+    while (pos < str.size()) {
+        if (str[pos] == '[') {
+            // Start of a new dimension
+            ++pos; // Move past '['
+            std::vector<T> nested_data;
+            size_t old_size = data.size();
+            std::vector<size_t> nested_shape = ParseTensorRecursive(str, pos, nested_data);
 
-        if (c == '['){
-            detected_nested = true;
-            if (detected_double) {
-                // Mixed types detected
+            data.insert(data.end(), nested_data.begin(), nested_data.end());
+
+            if (shape.empty()) {
+                shape = nested_shape;
+            } else if (shape != nested_shape) {
                 // Handle error! MISSING IMPLEMENTATION
             }
-            lower_shapes.push_back(ParseTensorRecursive(str, pos, data));
         }
-        else if (c == ']'){
+        else if (str[pos] == ']') {
+            // End of the current dimension
+            ++pos; // Move past ']'
+            break;
+        }
+        else if (str[pos] == ',' || std::isspace(str[pos])) {
+            // Separator or whitespace, just move on
             ++pos;
-            break; // End of current tensor level
-        }
-        else if (c == ','){
-            ++pos; // Move past the comma
         }
         else {
-            detected_double = true;
-            if (detected_nested) {
-                // Mixed types detected
-                // Handle error! MISSING IMPLEMENTATION
-            }
-            // Parse a number
-            size_t start_pos = pos;
-            while (pos < str.size() && (std::isdigit(str[pos]) || str[pos] == '+' || str[pos] == '.' || str[pos] == '-' || str[pos] == 'e' || str[pos] == 'E')) {
+            //parse a value: either complex or double
+            std::string value_str;
+            while (pos < str.size() && str[pos] != ',' && str[pos] != ']' && str[pos] != '[') {
+                value_str += str[pos];
                 ++pos;
             }
-            double value = ParseDouble(str.substr(start_pos, pos - start_pos));
-            data.push_back(value); 
+            value_str = Trim(value_str);// trim spaces
+            
+            T value;
+            if constexpr (std::is_same_v<T, double>){
+                // T is double
+                value = ParseDouble(value_str);
+            } 
+            else if constexpr (std::is_same_v<T, DynamicTensor::Complex>){
+                if (!value_str.empty() && value_str[0] == '(' && value_str.back() == ')') {
+                    // T is complex
+                    value = ParseComplexNumber(value_str);
+                } 
+                else {
+                    // real part only (eg. "3.0" instead of "(3.0,0.0)", but other entries are complex)
+                    double real_part = ParseDouble(value_str);
+                    value = DynamicTensor::Complex(real_part, 0.0);
+                }
+            }
+            data.push_back(value);
         }
     }
-
-    // Determine the shape of the current tensor level
-    if (detected_nested){
-        const auto& first_shape = lower_shapes.front();
-        for (const auto& shape : lower_shapes) {
-            if (shape != first_shape) {
-                // Inconsistent shapes detected
-                // Handle error! MISSING IMPLEMENTATION
-            }
-        }
-
-        std::vector<size_t> current_shape;
-        current_shape.push_back(lower_shapes.size());
-        current_shape.insert(current_shape.end(), first_shape.begin(), first_shape.end());
-        return current_shape;
+    if (shape.empty()) {
+        // First dimension size, scalar count
+        return {data.size()};
     }
-    return {data.size() - current_dimension_size};
-}
-
-std::vector<size_t> Reader::ParseTensorRecursive(const std::string& str, size_t& pos, std::vector<std::complex<double>>& data) {
-    if (str[pos] != '[') {
-        // Handle error! MISSING IMPLEMENTATION
+    else{
+        // Add current dimension size
+        size_t product = 1;
+        for (auto& dim : shape){
+            product *= dim;
+        }
+        shape.insert(shape.begin(), data.size()/product); // prepend current dimension size
     }
-    ++pos; // Move past the opening bracket '['
-    
-    std::vector<std::vector<size_t>> lower_shapes;
-    size_t current_dimension_size = data.size();
-    bool detected_complex = false;
-    bool detected_nested = false;
-
-    while (pos < str.size()){
-        char c = str[pos];
-
-        if (c == '['){
-            detected_nested = true;
-            if (detected_complex) {
-                // Mixed types detected
-                // Handle error! MISSING IMPLEMENTATION
-            }
-            lower_shapes.push_back(ParseTensorRecursive(str, pos, data));
-        }
-        else if (c == ']'){
-            ++pos;
-            break; // End of current tensor level
-        }
-        else if (c == ','){
-            ++pos; // Move past the comma
-        }
-        else {
-            detected_complex = true;
-            if (detected_nested) {
-                // Mixed types detected
-                // Handle error! MISSING IMPLEMENTATION
-            }
-            // Parse a complex number
-            size_t start_pos = pos;
-            if (str[pos] != '(') {
-                // Handle error! MISSING IMPLEMENTATION
-            }
-            while (pos < str.size() && str[pos] != ')') {
-                ++pos;
-            }
-
-            if (pos == str.size()) {
-                // Handle error! MISSING IMPLEMENTATION
-            }
-            ++pos; // Move past the closing parenthesis ')'
-            std::complex<double> value = ParseComplexNumber(str.substr(start_pos, pos - start_pos));
-            data.push_back(value); 
-        }
-    }
-
-    // Determine the shape of the current tensor level
-    if (detected_nested){
-        const auto& first_shape = lower_shapes.front();
-        for (const auto& shape : lower_shapes) {
-            if (shape != first_shape) {
-                // Inconsistent shapes detected
-                // Handle error! MISSING IMPLEMENTATION
-            }
-        }
-
-        std::vector<size_t> current_shape;
-        current_shape.push_back(lower_shapes.size());
-        current_shape.insert(current_shape.end(), first_shape.begin(), first_shape.end());
-        return current_shape;
-    }
-    return {data.size() - current_dimension_size};
+    return shape;
 }
 
 bool Reader::IsComplexNumber(const std::string& str) const {
-    // A simple check for the presence of 'i' or 'j' to indicate a complex number
+    // A simple check for the strict format of complex numbers
     // complex numbers must be represented as (a,b) where a is the real part and b is the imaginary part
     if (str.size() < 5) return false; // minimum size for a complex number representation "(a,b)"
     if (str.front() != '(' || str.back() != ')') return false;
@@ -421,5 +326,10 @@ std::string Reader::Trim(const std::string& str) const {
     while (end > start && std::isspace(static_cast<unsigned char>(str[end - 1]))) end--;
 
     return str.substr(start, end - start);
+}
+
+void Reader::ParseFunctionFromString(const std::string& function_string) {
+    // The expression is of the form [[[expr1],[expr2],...]] for multiple dimensions
+    //MISSING IMPLEMENTATION
 }
 
