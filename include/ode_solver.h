@@ -95,6 +95,13 @@ public:
      */
     int GetNumberOfSteps() const;
 
+    /**
+     * @return The current time
+     */
+    double GetCurrentTime() const;
+
+    
+
     // --- Control Flow ---
 
     /**

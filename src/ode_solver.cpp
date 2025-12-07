@@ -45,6 +45,7 @@ double OdeSolver::GetEndTime() const {return end_time_;}
 double OdeSolver::GetStepSize() const {return step_size_;}
 int OdeSolver::GetNumberOfSteps() const {return std::floor((end_time_ - start_time_)/step_size_);}
 const DynamicTensor& OdeSolver::GetSolution() const {return solution_;}
+double OdeSolver::GetCurrentTime() const {return current_time_;}
 
 void OdeSolver::SetEndTime(double end_time) {end_time_ = end_time;}
 void OdeSolver::SetTimeSpan(double step_size) {step_size_ = step_size;}
