@@ -32,19 +32,14 @@ class Ode {
 public:
     /**
      * @brief Constructor with Tensor state.
-<<<<<<< HEAD
-     * * @param in_time The initial time (t0).
-     * @param in_y0 The initial state tensor (y0).
-=======
      * @param in_time The initial time (t0).
      * @param in_y0 The initial state vector/tensor (y0).
->>>>>>> abdf63854e79db3d55258863c51ffe5111d5af18
      * @param in_name A unique identifier name for this ODE system.
      * @param func Shared pointer to the function defining dy/dt = f(t, y).
      * @param root_finder Shared pointer to the root finding strategy (for implicit solvers).
      */
     Ode(double in_time, const DynamicTensor& in_y0, const std::string& in_name,
-        std::shared_ptr<Function> func, std::shared_ptr<RootFinder> root_finder);
+        std::shared_ptr<Function> func, std::shared_ptr<RootFinder> root_finder = nullptr);
 
     /**
      * @brief Constructor with Scalar state.
@@ -56,7 +51,7 @@ public:
      * @param root_finder Shared pointer to the root finding strategy.
      */
     Ode(double in_time, const double& in_y0, const std::string& in_name,
-        std::shared_ptr<Function> func, std::shared_ptr<RootFinder> root_finder);
+        std::shared_ptr<Function> func, std::shared_ptr<RootFinder> root_finder = nullptr);
 
     /**
      * @brief Constructor from Reader.
