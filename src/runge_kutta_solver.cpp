@@ -2,10 +2,10 @@
 #include "ode_solver.h"
 
 RungeKutta::RungeKutta(const Ode& ode, double step_size, double end_time) 
-    : OdeSolver(ode, end_time, step_size) {}
+    : OdeSolver(ode, step_size, end_time) {}
 
 RungeKutta::RungeKutta(const Ode& ode, int num_of_steps, double end_time) 
-    : OdeSolver(ode, end_time, num_of_steps) {}
+    : OdeSolver(ode, num_of_steps, end_time) {}
 
 DynamicTensor RungeKutta::ComputeStep() {
     static const double coeffs[3][2] = {
