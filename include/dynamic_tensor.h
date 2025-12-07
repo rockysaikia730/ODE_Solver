@@ -106,6 +106,11 @@ public:
     DynamicTensor operator-(const DynamicTensor& second_tensor) const;
 
     /**
+     * @brief Element-wise Multiplication (t1 - t2)
+     */
+    DynamicTensor operator*(const DynamicTensor& second_tensor) const;
+
+    /**
      * @brief Scalar Division (Tensor / double).
      */
     DynamicTensor operator/(double scalar) const;
