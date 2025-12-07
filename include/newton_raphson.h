@@ -2,10 +2,9 @@
 #define NEWTON_RAPHSON_H_
 
 #include "root_finder.h"
-/////------Implementation needed-----------
 
 class NewtonRaphson : public RootFinder {
 public:
-    int y;
+    DynamicTensor FindRoot(const Function& f, const DynamicTensor& initial_guess, double t, int max_iter = 100) const override;
 };
 #endif
