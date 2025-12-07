@@ -137,8 +137,53 @@ DynamicTensor DynamicTensor::operator*(const DynamicTensor& second_tensor) const
         auto& res_vec = result.data_.emplace<std::vector<double>>(v1.size());
         for (size_t i = 0; i < v1.size(); i++) res_vec[i] = v1[i] * v2[i];
     }
-
     return result;
+}
+
+DynamicTensor DynamicTensor::operator/(const DynamicTensor& second_tensor) const {
+        assert(shape_ == second_tensor.shape_ && "Shape mismatch in addition");
+    if (GetType() != second_tensor.GetType()) throw std::runtime_error("Strict Mode: Cannot add Real and Complex tensors directly.");
+    
+    DynamicTensor result;
+    result.shape_ = shape_;
+    if (IsComplex()) {
+        const auto& v1 = std::get<std::vector<Complex>>(data_);
+        const auto& v2 = std::get<std::vector<Complex>>(second_tensor.data_);
+        auto& res_vec = result.data_.emplace<std::vector<Complex>>(v1.size());
+        for (size_t i = 0; i < v1.size(); i++) res_vec[i] = v1[i] / v2[i];
+    } else {
+        const auto& v1 = std::get<std::vector<double>>(data_);
+        const auto& v2 = std::get<std::vector<double>>(second_tensor.data_);
+        auto& res_vec = result.data_.emplace<std::vector<double>>(v1.size());
+        for (size_t i = 0; i < v1.size(); i++) res_vec[i] = v1[i] / v2[i];
+    }
+    return result;
+}
+
+DynamicTensor DynamicTensor::operator+(double scalar) const {
+    DynamicTensor result;
+    result.shape_ = shape_;
+    const auto& vec = std::get<std::vector<double>>(data_);
+    auto& res_vec = result.data_.emplace<std::vector<double>>(vec.size());
+    for (size_t i = 0; i < vec.size(); ++i) res_vec[i] = vec[i] + scalar;
+    return result;
+}
+
+DynamicTensor operator+(double scalar, const DynamicTensor& tensor) {
+    return tensor + scalar;
+}
+
+DynamicTensor DynamicTensor::operator+(Complex scalar) const {
+    DynamicTensor result;
+    result.shape_ = shape_;
+    const auto& vec = std::get<std::vector<Complex>>(data_);
+    auto& res_vec = result.data_.emplace<std::vector<Complex>>(vec.size());
+    for (size_t i = 0; i < vec.size(); ++i) res_vec[i] = vec[i] + scalar;
+    return result;
+}
+
+DynamicTensor operator+(std::complex<double> scalar, const DynamicTensor& tensor) {
+    return tensor + scalar;
 }
 
 // Multiplication with real scalars (t1 * h)
