@@ -31,7 +31,7 @@ public:
      * @param y The state variable as a DynamicTensor.
      * @return The Gradient of the function evaluation as a DynamicTensor.
      */
-    virtual DynamicTensor Grad(double t, const DynamicTensor& y, double dt = 0.1) const;
+    virtual DynamicTensor Grad(double t, const DynamicTensor& y, double dy = 0.1) const;
     /**
      * @brief Creates a deep copy of the Function object.
      * This is useful to be able to copy an ODE problem including its function.
