@@ -9,29 +9,52 @@ Inheritance diagram for Implicit\+Solver\+::Implicit\+Equation\+:\begin{figure}[
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_implicit_solver_1_1_implicit_equation_a4369edf20080ce88a6fb3251c1a6669f}\label{class_implicit_solver_1_1_implicit_equation_a4369edf20080ce88a6fb3251c1a6669f} 
-{\bfseries Implicit\+Equation} (const \mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}} \&solver, double t, double h)
+\Hypertarget{class_implicit_solver_1_1_implicit_equation_a018900e7229bc49bb358dd4e5dc20bff}\label{class_implicit_solver_1_1_implicit_equation_a018900e7229bc49bb358dd4e5dc20bff} 
+{\bfseries Implicit\+Equation} (const \mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}} \&solver)
 \item 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_implicit_solver_1_1_implicit_equation_a8e4ed6176155127e40b8fb1d9cdad06f}{Eval}} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y\+\_\+guess) const override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluates the function at a given time and state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_function}{Function}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Function} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_function_a46edab05fbafe2413e8dac3de7c6186f}{Grad}} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y, double dy=0.\+1) const
+\begin{DoxyCompactList}\small\item\em Finds Gradient of the function using central difference method. \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ \mbox{\hyperlink{class_function_a606b5938afb38cef8b0ad96df774fe9d}{Clone}} () const =0
+\begin{DoxyCompactList}\small\item\em Creates a deep copy of the \doxylink{class_function}{Function} object. This is useful to be able to copy an \doxylink{class_o_d_e}{ODE} problem including its function. \end{DoxyCompactList}\item 
+virtual const std\+::vector$<$ size\+\_\+t $>$ \& \mbox{\hyperlink{class_function_a6e523f37f3ef8fd6cbdd3c0f424e36f3}{Get\+Shape}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the Shape of the output tensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\label{doc-func-members}
-\Hypertarget{class_implicit_solver_1_1_implicit_equation_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_implicit_solver_1_1_implicit_equation_a8e4ed6176155127e40b8fb1d9cdad06f}\index{ImplicitSolver::ImplicitEquation@{ImplicitSolver::ImplicitEquation}!Eval@{Eval}}
+\Hypertarget{class_implicit_solver_1_1_implicit_equation_a8e4ed6176155127e40b8fb1d9cdad06f}\label{class_implicit_solver_1_1_implicit_equation_a8e4ed6176155127e40b8fb1d9cdad06f} 
+\index{ImplicitSolver::ImplicitEquation@{ImplicitSolver::ImplicitEquation}!Eval@{Eval}}
 \index{Eval@{Eval}!ImplicitSolver::ImplicitEquation@{ImplicitSolver::ImplicitEquation}}
 \doxysubsubsection{\texorpdfstring{Eval()}{Eval()}}
-{\footnotesize\ttfamily \label{class_implicit_solver_1_1_implicit_equation_a8e4ed6176155127e40b8fb1d9cdad06f} 
-\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Implicit\+Solver\+::\+Implicit\+Equation\+::\+Eval (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y\+\_\+guess}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Implicit\+Solver\+::\+Implicit\+Equation\+::\+Eval (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Implements \mbox{\hyperlink{class_function}{Function}}.
+Evaluates the function at a given time and state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The time variable. \\
+\hline
+{\em y} & The state variable as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the function evaluation as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_function_a7bb6bbdd01c508cb0a4d4ad545915d3c}{Function}}.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/implicit\+\_\+solver.\+h\item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/implicit\+\_\+solver.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/implicit\+\_\+solver.\+h\item 
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/implicit\+\_\+solver.\+cpp\end{DoxyCompactItemize}

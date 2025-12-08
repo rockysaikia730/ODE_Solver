@@ -1,25 +1,4 @@
 var searchData=
 [
-  ['setendtime_0',['SetEndTime',['../class_ode_solver.html#a662cff46a2025f9b99295d5fcefbe0b6',1,'OdeSolver']]],
-  ['setfileextension_1',['SetFileExtension',['../class_reader.html#aca06f0a9f6d41e0d9abf0d8d3f2be274',1,'Reader']]],
-  ['setfilename_2',['SetFileName',['../class_reader.html#ae142b32ae6481733b84b20141cdafda2',1,'Reader']]],
-  ['setfinaltime_3',['SetFinalTime',['../class_ode.html#a707917323067fc0398ea578c4e5a9e41',1,'Ode']]],
-  ['setfunction_4',['SetFunction',['../class_ode.html#a01227434e93e5835f0a933641de56139',1,'Ode']]],
-  ['setinitialcondition_5',['SetInitialCondition',['../class_ode.html#ac7f844c34e418345c33e16de0b50329f',1,'Ode']]],
-  ['setinitialtime_6',['SetInitialTime',['../class_ode.html#a268e0840f2dd0eab4d6d2ff363e39acf',1,'Ode']]],
-  ['setmaxiterations_7',['SetMaxIterations',['../class_ode.html#a0286b2bd927d79d9b85ecf21e0a21237',1,'Ode']]],
-  ['setname_8',['SetName',['../class_ode.html#ac0bda460d709fed3c4680b0d8468d871',1,'Ode']]],
-  ['setnumberofsteps_9',['SetNumberOfSteps',['../class_ode.html#a76b6cde52b157c34977c9030e65741f0',1,'Ode']]],
-  ['setrootfinder_10',['SetRootFinder',['../class_ode.html#a53c09a13019c843e03b918438074777a',1,'Ode']]],
-  ['setseparator_11',['SetSeparator',['../class_file_reader.html#a4de9019cdb234fdfb93aab20fedd5774',1,'FileReader']]],
-  ['setsolvermethod_12',['SetSolverMethod',['../class_ode.html#aadfe7f1ebb398afe04eb52c9a41e7099',1,'Ode']]],
-  ['setstepsize_13',['SetStepSize',['../class_ode.html#a0d35e08bbd16104106d39cdde0ee1203',1,'Ode']]],
-  ['sett0_14',['SetT0',['../class_ode.html#a4856ed6d10e8f7a8218a7f81ff576918',1,'Ode']]],
-  ['settimespan_15',['SetTimeSpan',['../class_ode_solver.html#ae1242b79d094ce57a73b76661cdbdc94',1,'OdeSolver::SetTimeSpan(int num_of_steps)'],['../class_ode_solver.html#a673fb059d7379dfc9bfea833318b4049',1,'OdeSolver::SetTimeSpan(double step_size)']]],
-  ['settolerance_16',['SetTolerance',['../class_ode.html#aa22e58ffe5005a41cf12f9ee0be14cf4',1,'Ode']]],
-  ['sety0_17',['SetY0',['../class_ode.html#ac3c249eedd399493d573a5a823172b82',1,'Ode::SetY0(const DynamicTensor &amp;in_y0)'],['../class_ode.html#a9c1f258b5c30cb458cb66121d76ff604',1,'Ode::SetY0(double in_y0)']]],
-  ['size_18',['size',['../class_dynamic_tensor.html#a80d631cc2d2151a0e3c9da15edbd870d',1,'DynamicTensor']]],
-  ['solve_19',['Solve',['../class_ode_solver.html#a8528789990b812fe0b498fabb7e1521f',1,'OdeSolver']]],
-  ['split_20',['Split',['../class_file_reader.html#a3d38c8973a01cfab666b9c3360c12241',1,'FileReader']]],
-  ['step_21',['Step',['../class_multi_step_ode_solver.html#aad3953387824f19957cfe9e1e4eb1b90',1,'MultiStepOdeSolver::Step()'],['../class_ode_solver.html#af1842eb01ec5d591bb813ce2a064adc5',1,'OdeSolver::Step()']]]
+  ['main_0',['Main',['../namespacegmock__test__utils.html#ab436e920b5feb62a33936b0d839702e7',1,'gmock_test_utils.Main()'],['../namespacegtest__test__utils.html#affb42cd189bf8fb9618e5b7178fd34fd',1,'gtest_test_utils.Main()']]]
 ];

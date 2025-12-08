@@ -1,19 +1,121 @@
 \doxysection{Function Class Reference}
 \hypertarget{class_function}{}\label{class_function}\index{Function@{Function}}
+
+
+Abstract base class representing a mathematical function for ODEs. This class defines the interface for evaluating functions that take a time and a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} as input and return a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} as output.  
+
+
+
+
+{\ttfamily \#include $<$function.\+h$>$}
+
 Inheritance diagram for Function\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_function}
+\includegraphics[height=1.197861cm]{class_function}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\Hypertarget{class_function_a2be1da6c238e7db53480b193351b96c1}\label{class_function_a2be1da6c238e7db53480b193351b96c1} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Function} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_function_a7bb6bbdd01c508cb0a4d4ad545915d3c}{Eval}} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y) const =0
+\begin{DoxyCompactList}\small\item\em Evaluates the function at a given time and state. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_function_a46edab05fbafe2413e8dac3de7c6186f}{Grad}} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y, double dy=0.\+1) const
+\begin{DoxyCompactList}\small\item\em Finds Gradient of the function using central difference method. \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ \mbox{\hyperlink{class_function_a606b5938afb38cef8b0ad96df774fe9d}{Clone}} () const =0
+\begin{DoxyCompactList}\small\item\em Creates a deep copy of the \doxylink{class_function}{Function} object. This is useful to be able to copy an \doxylink{class_o_d_e}{ODE} problem including its function. \end{DoxyCompactList}\item 
+virtual const std\+::vector$<$ size\+\_\+t $>$ \& \mbox{\hyperlink{class_function_a6e523f37f3ef8fd6cbdd3c0f424e36f3}{Get\+Shape}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the Shape of the output tensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a mathematical function for ODEs. This class defines the interface for evaluating functions that take a time and a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} as input and return a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} as output. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_function_a606b5938afb38cef8b0ad96df774fe9d}\label{class_function_a606b5938afb38cef8b0ad96df774fe9d} 
+\index{Function@{Function}!Clone@{Clone}}
+\index{Clone@{Clone}!Function@{Function}}
+\doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ Function\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Creates a deep copy of the \doxylink{class_function}{Function} object. This is useful to be able to copy an \doxylink{class_o_d_e}{ODE} problem including its function. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to the cloned \doxylink{class_function}{Function} object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_rhs_ad4526351680c0042e79c5f580394bfeb}{Rhs}}, \mbox{\hyperlink{class_parsed_function_aa4b8bb63f83f4afbc057ff0c989b0da3}{Parsed\+Function}}, \mbox{\hyperlink{class_my_func_a3b138b2c4378e71d6bb0962357f36ac8}{My\+Func}}, and \mbox{\hyperlink{class_squared_root_a437b9a32ca4209b0b443c63d95cd4c46}{Squared\+Root}}.
+
 \Hypertarget{class_function_a7bb6bbdd01c508cb0a4d4ad545915d3c}\label{class_function_a7bb6bbdd01c508cb0a4d4ad545915d3c} 
-virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries Eval} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y) const =0
-\end{DoxyCompactItemize}
+\index{Function@{Function}!Eval@{Eval}}
+\index{Eval@{Eval}!Function@{Function}}
+\doxysubsubsection{\texorpdfstring{Eval()}{Eval()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Function\+::\+Eval (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+
+Evaluates the function at a given time and state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The time variable. \\
+\hline
+{\em y} & The state variable as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the function evaluation as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_rhs_a377b99130561c4cedb30ae47cf8fbd68}{Rhs}}, \mbox{\hyperlink{class_parsed_function_a874b816d9b82a34ac2bebdecc74036e4}{Parsed\+Function}}, \mbox{\hyperlink{class_my_func_adf92064b45dcd339d530eaa7b561b6a6}{My\+Func}}, \mbox{\hyperlink{class_squared_root_a2e553fa270cc68c31d5a5b42f238b2a7}{Squared\+Root}}, and \mbox{\hyperlink{class_implicit_solver_1_1_implicit_equation_a8e4ed6176155127e40b8fb1d9cdad06f}{Implicit\+Solver\+::\+Implicit\+Equation}}.
+
+\Hypertarget{class_function_a6e523f37f3ef8fd6cbdd3c0f424e36f3}\label{class_function_a6e523f37f3ef8fd6cbdd3c0f424e36f3} 
+\index{Function@{Function}!GetShape@{GetShape}}
+\index{GetShape@{GetShape}!Function@{Function}}
+\doxysubsubsection{\texorpdfstring{GetShape()}{GetShape()}}
+{\footnotesize\ttfamily virtual const std\+::vector$<$ size\+\_\+t $>$ \& Function\+::\+Get\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the Shape of the output tensor. 
+
+\begin{DoxyReturn}{Returns}
+A vector representing the shape of the output tensor. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_parsed_function_aa29356b3f105690fa18b67a2799f7741}{Parsed\+Function}}, \mbox{\hyperlink{class_my_func_a5d4a74e522dba7bd6a6479d9bdcc3d4e}{My\+Func}}, and \mbox{\hyperlink{class_squared_root_ab0fc5242d8b2935aa19f5ed2a1ff74ee}{Squared\+Root}}.
+
+\Hypertarget{class_function_a46edab05fbafe2413e8dac3de7c6186f}\label{class_function_a46edab05fbafe2413e8dac3de7c6186f} 
+\index{Function@{Function}!Grad@{Grad}}
+\index{Grad@{Grad}!Function@{Function}}
+\doxysubsubsection{\texorpdfstring{Grad()}{Grad()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Function\+::\+Grad (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y,  }\item[{double}]{dy = {\ttfamily 0.1} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Finds Gradient of the function using central difference method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The time variable. \\
+\hline
+{\em y} & The state variable as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Gradient of the function evaluation as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/function.\+h\end{DoxyCompactItemize}
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/function.\+h\item 
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/function.\+cpp\end{DoxyCompactItemize}

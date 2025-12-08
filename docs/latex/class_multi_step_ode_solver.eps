@@ -177,6 +177,7 @@ boxfont setfont
 (OdeSolver) cw
 (AdamsBashforth) cw
 (ImplicitSolver) cw
+(ForwardEuler) cw
 (AdamMoulton) cw
 (Bdf) cw
 (BackwardEuler) cw
@@ -191,37 +192,42 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (MultiStepOdeSolver) 0.500000 3.000000 box
- (OdeSolver) 0.500000 4.000000 box
+ (MultiStepOdeSolver) 0.750000 3.000000 box
+ (OdeSolver) 0.750000 4.000000 box
  (AdamsBashforth) 0.000000 2.000000 box
- (ImplicitSolver) 1.000000 2.000000 box
- (AdamMoulton) 0.500000 1.000000 box
- (Bdf) 1.500000 1.000000 box
- (BackwardEuler) 1.500000 0.000000 box
+ (ImplicitSolver) 1.500000 2.000000 box
+ (ForwardEuler) 0.000000 1.000000 box
+ (AdamMoulton) 1.000000 1.000000 box
+ (Bdf) 2.000000 1.000000 box
+ (BackwardEuler) 2.000000 0.000000 box
 
 % ----- relations -----
 
 solid
-0 0.500000 3.000000 out
+0 0.750000 3.000000 out
 solid
-1 0.500000 4.000000 in
+1 0.750000 4.000000 in
 solid
-1 0.500000 2.250000 out
+1 0.750000 2.250000 out
 solid
-0.000000 1.000000 3.000000 conn
+0.000000 1.500000 3.000000 conn
 solid
 0 0.000000 2.750000 in
 solid
-0 1.000000 2.750000 in
+1 0.000000 1.250000 out
 solid
-1 1.000000 1.250000 out
+0 1.500000 2.750000 in
 solid
-0.500000 1.500000 2.000000 conn
+1 1.500000 1.250000 out
 solid
-0 0.500000 1.750000 in
+1.000000 2.000000 2.000000 conn
 solid
-0 1.500000 1.750000 in
+0 0.000000 1.750000 in
 solid
-1 1.500000 0.250000 out
+0 1.000000 1.750000 in
 solid
-0 1.500000 0.750000 in
+0 2.000000 1.750000 in
+solid
+1 2.000000 0.250000 out
+solid
+0 2.000000 0.750000 in

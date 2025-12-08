@@ -1,5 +1,4 @@
 #include "dynamic_tensor.h"
-
 #include <vector>
 #include <cassert>
 

@@ -32,3 +32,4 @@ OdeRawData& OdeRawData::operator=(const OdeRawData& other) {
     }
     return *this;
 }
+

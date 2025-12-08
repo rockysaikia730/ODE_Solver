@@ -32,11 +32,18 @@ public:
      * @return The Gradient of the function evaluation as a DynamicTensor.
      */
     virtual DynamicTensor Grad(double t, const DynamicTensor& y, double dy = 0.1) const;
+    
     /**
      * @brief Creates a deep copy of the Function object.
      * This is useful to be able to copy an ODE problem including its function.
      * @return A unique pointer to the cloned Function object.
      */
     virtual std::unique_ptr<Function> Clone() const = 0;
+
+    /**
+     * @brief Get the Shape of the output tensor.
+     * @return A vector representing the shape of the output tensor.
+     */
+    virtual const std::vector<size_t>& GetShape() const = 0;
 };
 #endif

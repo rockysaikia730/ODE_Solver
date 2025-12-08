@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y0_5fstring_0',['y0_string',['../struct_ode_raw_data.html#a6d488874e71baa9d466ece91d73c6d56',1,'OdeRawData']]]
+  ['ode_5f_0',['ode_',['../class_ode_solver.html#a9155f5d877dad198b513d24150dff5a4',1,'OdeSolver']]]
 ];

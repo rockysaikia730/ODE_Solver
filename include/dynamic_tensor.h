@@ -13,6 +13,7 @@
 #include <cstddef> 
 #include <complex>
 #include <variant>
+#include <iostream>
 /**
  * @class DynamicTensor
  * @brief A class to represent a mathematical tensor of arbitrary rank at runtime.
@@ -221,5 +222,33 @@ private:
         } 
     }
 };
+
+inline std::ostream& operator<<(std::ostream& os, const DynamicTensor& tensor) {
+    os << "DynamicTensor(shape=[";
+
+    const auto& shape = tensor.get_shape();
+    for (size_t i = 0; i < shape.size(); ++i) {
+        os << shape[i];
+        if (i < shape.size() - 1) {
+            os << ", ";
+        }
+    }
+
+    //printing in flat form.
+    os << "], data=[";
+    size_t total_size = tensor.size();
+    for (size_t i = 0; i < total_size; ++i) {
+        if (tensor.IsComplex()) {
+            os << tensor.flat<DynamicTensor::Complex>(i);
+        } else {
+            os << tensor.flat<double>(i);
+        }
+        if (i < total_size - 1) {
+            os << ", ";
+        }
+    }
+    os << "])";
+    return os;
+}
 
 #endif

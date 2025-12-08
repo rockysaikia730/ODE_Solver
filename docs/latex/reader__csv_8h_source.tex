@@ -1,5 +1,5 @@
 \doxysection{reader\+\_\+csv.\+h}
-\hypertarget{reader__csv_8h_source}{}\label{reader__csv_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/reader\_csv.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/reader\_csv.h}}
+\hypertarget{reader__csv_8h_source}{}\label{reader__csv_8h_source}\index{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/reader\_csv.h@{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/reader\_csv.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ READER\_CSV\_H}}
@@ -7,16 +7,21 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}reader\_file.h"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../Data\_structures/ode\_raw\_data.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}reader.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}ode\_raw\_data.h"{}}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }CsvReader:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_file_reader_a17fda1989feb82538a34b321e2d73473}{FileReader}}\ \{}
-\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00011\ \ \ \ \ CsvReader(\textcolor{keyword}{const}\ std::string\&\ file\_name,\ \textcolor{keywordtype}{char}\ separator\ =\ \textcolor{charliteral}{','});}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~CsvReader()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_ode_raw_data}{OdeRawData}}\ \mbox{\hyperlink{class_csv_reader_a88a0aa19a2a89a14a54d2c1790807b91}{Read}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00015\ \};}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ READER\_CSV\_H}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_csv_reader}{CsvReader}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_reader}{Reader}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_csv_reader_aa6b6e6ddeb120a67ad8e077f9e07d244}{CsvReader}}(\textcolor{keyword}{const}\ std::string\&\ file\_name,\ \textcolor{keywordtype}{char}\ separator\ =\ \textcolor{charliteral}{','},\ \textcolor{keywordtype}{bool}\ has\_header\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00024\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_csv_reader_ad5af5dd28d664c2aafc6ad5918c56eae}{\string~CsvReader}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_csv_reader_a653c29a6d16c9caad06ba5a0a25a6a6c}{Read}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_header\_;}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ READER\_CSV\_H}}
 
 \end{DoxyCode}

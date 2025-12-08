@@ -1,7 +1,10 @@
 var class_ode =
 [
-    [ "Ode", "class_ode.html#aa96be18b8d0d1fe6a521d1a91d42848e", null ],
-    [ "Ode", "class_ode.html#aeb668eecfb030d5b19fdc28c74a28c12", null ],
+    [ "Ode", "class_ode.html#a159abef7cc2b214d6b518f951e09f0e1", null ],
+    [ "Ode", "class_ode.html#a5b719e6c606f7b3fcbbb80f040efd24b", null ],
+    [ "Ode", "class_ode.html#af8f3b705253b3eb58dc7e58d5dbd7c22", null ],
+    [ "Ode", "class_ode.html#a1d34ac07569d4bbe02ef04d5ad6fab2b", null ],
+    [ "Ode", "class_ode.html#a757142bfffd7d5420feda0e5e6a91af9", null ],
     [ "~Ode", "class_ode.html#af859a1a7e2f0ff437c400a8c4033f7ad", null ],
     [ "Ode", "class_ode.html#a3fb641140651884add33ea329c0532cb", null ],
     [ "~Ode", "class_ode.html#ac6468fab017c86c1fac0fd35545fe4b5", null ],
@@ -21,8 +24,10 @@ var class_ode =
     [ "GetStepSize", "class_ode.html#abf8066539df35587dd98f87815af9311", null ],
     [ "GetTimeIn", "class_ode.html#a68b7580e063b949bfc0046e4142ad490", null ],
     [ "GetTolerance", "class_ode.html#ade5dfcb147ff53e745bf77de2aca5991", null ],
+    [ "operator=", "class_ode.html#a4805c892fd883ca707d625758bad04e1", null ],
+    [ "SetDerivative", "class_ode.html#ad7b04426bd683c5bee659a793e1e83dd", null ],
     [ "SetFinalTime", "class_ode.html#a707917323067fc0398ea578c4e5a9e41", null ],
-    [ "SetFunction", "class_ode.html#a01227434e93e5835f0a933641de56139", null ],
+    [ "SetFunction", "class_ode.html#a0c9abf2b9a62a38d22e0f41b1101a310", null ],
     [ "SetInitialCondition", "class_ode.html#ac7f844c34e418345c33e16de0b50329f", null ],
     [ "SetInitialTime", "class_ode.html#a268e0840f2dd0eab4d6d2ff363e39acf", null ],
     [ "SetMaxIterations", "class_ode.html#a0286b2bd927d79d9b85ecf21e0a21237", null ],
@@ -31,7 +36,7 @@ var class_ode =
     [ "SetRootFinder", "class_ode.html#a53c09a13019c843e03b918438074777a", null ],
     [ "SetSolverMethod", "class_ode.html#aadfe7f1ebb398afe04eb52c9a41e7099", null ],
     [ "SetStepSize", "class_ode.html#a0d35e08bbd16104106d39cdde0ee1203", null ],
-    [ "SetT0", "class_ode.html#a4856ed6d10e8f7a8218a7f81ff576918", null ],
+    [ "SetT0", "class_ode.html#aee3a5d1ff24f6143623fedc3b78ccd7f", null ],
     [ "SetTolerance", "class_ode.html#aa22e58ffe5005a41cf12f9ee0be14cf4", null ],
     [ "SetY0", "class_ode.html#ac3c249eedd399493d573a5a823172b82", null ],
     [ "SetY0", "class_ode.html#a9c1f258b5c30cb458cb66121d76ff604", null ]

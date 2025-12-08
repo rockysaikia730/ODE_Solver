@@ -1,53 +1,60 @@
 #ifndef PARSED_FUNCTION_H_
 #define PARSED_FUNCTION_H_
+
 #include <vector>
 #include <string>
 #include <memory>
-#include <muParserX.h>
+#include <mpParser.h>
 #include "function.h"
 #include "dynamic_tensor.h"
 
+/**
+ * @class ParsedFunction
+ * @brief Concrete implementation of Function using muParserX for parsing mathematical expressions.
+ *
+ * This class allows users to define ODE functions using string expressions that are parsed
+ * and evaluated at runtime. It supports multiple output expressions and can handle tensor inputs.
+ */
 class ParsedFunction : public Function {
 public:
     /**
-     * @brief Constructor that initializes the ParsedFunction with given expressions.
-     * @param expressions A vector of strings representing the mathematical expressions for each output dimension.
+     * @brief Constructor.
+     * @param expressions A vector of string expressions representing the function outputs.
+     * @param shape The shape of the output tensor.
      */
-    ParsedFunction(const std::vector<std::string>& expressions);
+    ParsedFunction(const std::vector<std::string>& expressions, const std::vector<size_t>& shape);
 
     /**
-     * @brief Copy Constructor.
-     * @param other The ParsedFunction object to copy from.
-     */
-    ParsedFunction(const ParsedFunction& other);
-
-    /**
-     * @brief Copy Assignment Operator.
-     * @param other The ParsedFunction object to assign from.
-     * @return A reference to the assigned ParsedFunction object.
-     */
-    ParsedFunction& operator=(const ParsedFunction& other);
-
-    /**
-     * @brief Creates a deep copy of the ParsedFunction object.
+     * @brief Create a deep copy of the ParsedFunction object.
      * @return A unique pointer to the cloned ParsedFunction object.
      */
     std::unique_ptr<Function> Clone() const override;
-
+    
     /**
-     * @brief Evaluates the function at a given time and state.
+     * @brief Evaluates the parsed function at a given time and state.
      * @param t The time variable.
      * @param y The state variable as a DynamicTensor.
      * @return The result of the function evaluation as a DynamicTensor.
      */
     DynamicTensor Eval(double t, const DynamicTensor& y) const override;
 
-private:
-    mutable mup::ParserX parser_;
-    mutable double t_;
-    mutable std::vector<mup::Value> y_vars_;
-    std::vector<size_t> state_shape_;
+    /**
+     * @brief Get the dimension of the output tensor.
+     * @return A vector representing the shape of the output tensor.
+     */
+    const std::vector<size_t>& GetShape() const;
+    
 
-    void AssignVariables();
+private:
+
+    /**
+     * @brief Expressions to be parsed and evaluated.
+     */
+    std::vector<std::string> expressions_;
+
+    /**
+     * @brief Shape of the output tensor.
+     */
+    std::vector<size_t> shape_;
 };
 #endif // PARSED_FUNCTION_H_
