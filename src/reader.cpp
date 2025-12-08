@@ -325,8 +325,7 @@ void Reader::InterpretKeyValuePair(const std::string& key, const std::string& va
         raw_data_.derivative = ParseFunction(value);
     }
     else {
-        // Handle unknown key! MISSING IMPLEMENTATION
-        throw std::invalid_argument("Unknown key skipped: " + key);
+        // Unknown key is skipped.
     }
 }
 
