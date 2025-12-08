@@ -46,6 +46,8 @@ int main() {
         try {
             CsvReader csvReader("test_data.csv", ';', true);
             csvReader.Read();
+            std::cout << "Reader y0 IsComplex: " << std::boolalpha 
+            << csvReader.GetRawData().y0.IsComplex() << "\n";
             Ode odeFromCsv(csvReader);
             std::cout << "ODE constructed successfully from CSV data." << std::endl;
         } catch (const std::exception& e) {
@@ -69,7 +71,7 @@ int main() {
             DynamicTensor result = odeFromCsv.Evaluate(odeFromCsv.GetTimeIn(), odeFromCsv.GetCondIn());
             std::cout << "ODE evaluated successfully at t0 and y0." << std::endl;
             std::cout << "Result: ";
-            std::cout << result.at<double>({0}) << std::endl;
+            std::cout << result.at<DynamicTensor::Complex>({0}) << std::endl;
         }
 
         catch (const std::exception& e) {

@@ -89,6 +89,12 @@ Ode::Ode(const Reader& reader) {
         func_ = nullptr;
     }
     name_ = reader.GetFileName();
+    if (raw_data.derivative != nullptr) {
+        derivative_ = raw_data.derivative->Clone();
+    } else {
+        derivative_ = nullptr;
+    }
+    VerifyDimensions();
 }
 
 Ode::Ode(const OdeRawData& raw)
