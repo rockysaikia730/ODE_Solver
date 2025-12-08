@@ -212,7 +212,7 @@ protected:
          * @return The trimmed string.
          * This method removes leading and trailing whitespace from the input string.
          */
-        std::string Trim(const std::string& str) const;
+        std::string TrimString(const std::string& s) const;
         
         /**
          * @brief Parses the solver method from a string and sets it in raw_data_.

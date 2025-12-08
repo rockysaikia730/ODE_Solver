@@ -16,7 +16,7 @@ void TxtReader::Read() {
     std::string line;
 
     while (std::getline(file_stream_, line)) {
-        std::string trimmed = Trim(line);
+        std::string trimmed = TrimString(line);
         if(trimmed.empty() || LineStartsWith(trimmed, std::string(1, comment_char_))) {
             continue; // Skip empty lines and comment lines
         }

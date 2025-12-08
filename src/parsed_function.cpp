@@ -2,6 +2,7 @@
 #include <complex>
 #include <string>
 #include <mpParser.h>
+#include <iostream>
 #include "parsed_function.h"
 #include "dynamic_tensor.h"
 #include "function.h"
@@ -17,36 +18,40 @@ std::unique_ptr<Function> ParsedFunction::Clone() const {
 
 DynamicTensor ParsedFunction::Eval(double t, const DynamicTensor& y) const {
     bool is_complex = y.IsComplex();
+
     size_t N = expressions_.size();
-    DynamicTensor result(shape_, is_complex ? DynamicTensor::Complex(0.0, 0.0) : 0.0);
+    DynamicTensor result = is_complex ? DynamicTensor(shape_, DynamicTensor::Complex{0.0, 0.0}) : DynamicTensor(shape_, double{0.0});
+    //persistent storage for parser objects
+    mup::Value t_val;
+    std::vector<mup::Value> y_val(y.size());
 
     for (size_t i = 0; i < N; ++i) {
         mup::ParserX parser;
 
-        //define t
-        mup::Value t_var = t;
-        mup::Variable t_var_obj(&t_var);
-        parser.DefineVar("t", t_var_obj);
+        // defining t variable
+        if (is_complex){
+            t_val = mup::cmplx_type(t, 0.0);
+        }
+        else {
+            t_val = t;
+        }
+
+        parser.DefineVar("t", mup::Variable(&t_val));
 
         //define y[i] variables
         for (size_t j = 0; j < y.size(); ++j) {
             if (is_complex) {
                 auto c = y.flat<DynamicTensor::Complex>(j);
-                mup::Value v(mup::cmplx_type(c.real(), c.imag()));
-                mup::Variable var(&v);
-                parser.DefineVar("y" + std::to_string(j), var);
+                y_val[j] = mup::cmplx_type(c.real(), c.imag());
+            } else {
+                y_val[j] = y.flat<double>(j);
             }
-            else {
-                mup::Value v(y.flat<double>(j));
-                mup::Variable var(&v);
-                parser.DefineVar("y" + std::to_string(j), var);
-            }
+            parser.DefineVar("y" + std::to_string(j), mup::Variable(&y_val[j]));
         }
 
         // Set the expression
         parser.SetExpr(expressions_[i]);
         mup::Value val = parser.Eval();
-
         // Assign the result in the output tensor
         if (!is_complex) {
             result.flat<double>(i) = val.GetFloat();

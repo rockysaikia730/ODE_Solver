@@ -2,6 +2,7 @@
 #include <sstream>
 #include <vector>
 #include <complex>
+#include <iostream>
 #include <memory>
 #include "reader.h"
 #include "ode_raw_data.h"
@@ -98,6 +99,7 @@ std::vector<std::string> Reader::Trim(const std::vector<std::string>& tokens) co
 
 DynamicTensor Reader::ParseTensor(const std::string& str) {
     size_t pos = 0;
+    std::cout << "[DEBUG] ParseTensor got: >" << str << "<\n";
     if (HasComplexNumber(str)) {
         std::vector<DynamicTensor::Complex> data;
         std::vector<size_t> shape = ParseTensorRecursive(str, pos, data);
@@ -110,76 +112,104 @@ DynamicTensor Reader::ParseTensor(const std::string& str) {
 }
 
 template <typename T>
-std::vector<size_t> Reader::ParseTensorRecursive(const std::string& str, size_t& pos, std::vector<T>& data) {
+std::vector<size_t> Reader::ParseTensorRecursive(
+    const std::string& str, size_t& pos, std::vector<T>& data)
+{
     std::vector<size_t> shape;
 
     while (pos < str.size()) {
+
         if (str[pos] == '[') {
             // Start of a new dimension
-            ++pos; // Move past '['
+            ++pos;
+
             std::vector<T> nested_data;
-            size_t old_size = data.size();
-            std::vector<size_t> nested_shape = ParseTensorRecursive(str, pos, nested_data);
+            std::vector<size_t> nested_shape =
+                ParseTensorRecursive(str, pos, nested_data);
 
             data.insert(data.end(), nested_data.begin(), nested_data.end());
 
             if (shape.empty()) {
                 shape = nested_shape;
             } else if (shape != nested_shape) {
-                // Handle error! MISSING IMPLEMENTATION
                 throw std::invalid_argument("Inconsistent tensor shape detected.");
             }
         }
+
         else if (str[pos] == ']') {
-            // End of the current dimension
-            ++pos; // Move past ']'
+            // End of this dimension
+            ++pos;
             break;
         }
-        else if (str[pos] == ',' || std::isspace(str[pos])) {
-            // Separator or whitespace, just move on
+
+        else if (str[pos] == ',' || std::isspace(static_cast<unsigned char>(str[pos]))) {
+            // Skip separators and whitespace
             ++pos;
         }
+
         else {
-            //parse a value: either complex or double
+            // Parse a scalar (double) or complex number
             std::string value_str;
-            while (pos < str.size() && str[pos] != ',' && str[pos] != ']' && str[pos] != '[') {
-                value_str += str[pos];
-                ++pos;
+
+            if (str[pos] == '(') {
+                // Complex number: read matched parentheses
+                int depth = 0;
+                do {
+                    if (str[pos] == '(') depth++;
+                    else if (str[pos] == ')') depth--;
+
+                    value_str += str[pos];
+                    ++pos;
+                } while (pos < str.size() && depth > 0);
             }
-            value_str = Trim(value_str);// trim spaces
-            
+            else {
+                // Real number: read until next separator
+                while (pos < str.size() &&
+                       str[pos] != ',' &&
+                       str[pos] != ']' &&
+                       str[pos] != '[' &&
+                       !std::isspace(static_cast<unsigned char>(str[pos])))
+                {
+                    value_str += str[pos];
+                    ++pos;
+                }
+            }
+
+            value_str = TrimString(value_str);
+
+            // Convert the string into a value of type T
             T value;
-            if constexpr (std::is_same_v<T, double>){
-                // T is double
+
+            if constexpr (std::is_same_v<T, double>) {
                 value = ParseDouble(value_str);
-            } 
-            else if constexpr (std::is_same_v<T, DynamicTensor::Complex>){
-                if (!value_str.empty() && value_str[0] == '(' && value_str.back() == ')') {
-                    // T is complex
+            }
+            else if constexpr (std::is_same_v<T, DynamicTensor::Complex>) {
+                if (!value_str.empty() &&
+                    value_str.front() == '(' &&
+                    value_str.back() == ')')
+                {
                     value = ParseComplexNumber(value_str);
-                } 
+                }
                 else {
-                    // real part only (eg. "3.0" instead of "(3.0,0.0)", but other entries are complex)
                     double real_part = ParseDouble(value_str);
                     value = DynamicTensor::Complex(real_part, 0.0);
                 }
             }
+
             data.push_back(value);
         }
     }
+
+    // Compute shape
     if (shape.empty()) {
-        // First dimension size, scalar count
-        return {data.size()};
+        return { data.size() };
     }
-    else{
-        // Add current dimension size
+    else {
         size_t product = 1;
-        for (auto& dim : shape){
-            product *= dim;
-        }
-        shape.insert(shape.begin(), data.size()/product); // prepend current dimension size
+        for (auto& dim : shape) product *= dim;
+        shape.insert(shape.begin(), data.size() / product);
+        return shape;
     }
-    return shape;
 }
 
 bool Reader::IsComplexNumber(const std::string& str) const {
@@ -253,6 +283,7 @@ double Reader::ParseDouble(const std::string& str) const {
 }
 
 bool Reader::HasComplexNumber(const std::string& str) const {
+    std::cout << "[DEBUG] HasComplexNumber checking: >" << str << "<\n";
     for (size_t i = 0; i < str.size(); ++i) {
         if (str[i] == '(') {
             // Look for the closing parenthesis
@@ -329,7 +360,7 @@ void Reader::InterpretKeyValuePair(const std::string& key, const std::string& va
     }
 }
 
-std::string Reader::Trim(const std::string& str) const {
+std::string Reader::TrimString(const std::string& str) const {
     size_t start = 0;
     size_t end = str.size();
 
@@ -384,7 +415,7 @@ std::vector<size_t> Reader::ParseFunctionRecursive(const std::string& str, size_
                 token += str[pos];
                 ++pos;
             }
-            token = Trim(token);
+            token = TrimString(token);
             flat_expressions.push_back(token);
         }
     }

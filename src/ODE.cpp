@@ -7,6 +7,7 @@
 #include <vector>
 #include <string>
 #include <memory>
+#include <iostream>
 
 
 Ode::Ode(double in_time, const DynamicTensor& in_y0, const std::string& in_name,

@@ -89,7 +89,7 @@ target_include_directories(reader_test PRIVATE
     ${CMAKE_SOURCE_DIR}/external/muparserx/parser
 )
 
-target_link_libraries(reader_test PRIVATE muparserx)
+target_link_libraries(reader_test PRIVATE muparserx GTest::gtest_main)
 
 # Generate documentation with Doxygen
 #find_package(Doxygen)

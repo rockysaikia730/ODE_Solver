@@ -21,7 +21,7 @@ void CsvReader::Read() {
 
     while (std::getline(file_stream_, line)) {
         // Trim entire line
-        line = Trim(line);
+        line = TrimString(line);
         
         if(line.empty()) {
             continue; // Skip empty lines
