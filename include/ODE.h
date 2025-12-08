@@ -37,10 +37,11 @@ public:
      * @param in_y0 The initial state vector/tensor (y0).
      * @param in_name A unique identifier name for this ODE system.
      * @param func Shared pointer to the function defining dy/dt = f(t, y).
+     * @param derivative Shared pointer to the derivative function (optional).
      * @param root_finder Shared pointer to the root finding strategy (for implicit solvers).
      */
     Ode(double in_time, const DynamicTensor& in_y0, const std::string& in_name,
-        std::unique_ptr<Function> func, std::shared_ptr<RootFinder> root_finder = nullptr);
+        std::unique_ptr<Function> func, std::unique_ptr<Function> derivative = nullptr, std::shared_ptr<RootFinder> root_finder = nullptr);
 
     /**
      * @brief Constructor with Scalar state.
@@ -49,10 +50,11 @@ public:
      * @param in_y0 The initial state scalar (will be converted to Tensor).
      * @param in_name A unique identifier name for this ODE system.
      * @param func Shared pointer to the function defining dy/dt = f(t, y).
+     * @param derivative Shared pointer to the derivative function (optional).
      * @param root_finder Shared pointer to the root finding strategy.
      */
     Ode(double in_time, const double& in_y0, const std::string& in_name,
-        std::unique_ptr<Function> func, std::shared_ptr<RootFinder> root_finder = nullptr);
+        std::unique_ptr<Function> func, std::unique_ptr<Function> derivative = nullptr, std::shared_ptr<RootFinder> root_finder = nullptr);
 
     /**
      * @brief Constructor from Reader.
@@ -195,6 +197,9 @@ private:
 
     /// @brief Pointer to the derivative function (optional).
     std::unique_ptr<Function> derivative_;
+
+    ///@brief Helper function to verify input dimensions
+    void VerifyDimensions() const;
 };
 
 #endif // CODES_ODE_H

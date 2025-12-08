@@ -8,9 +8,13 @@ var class_dynamic_tensor =
     [ "flat", "class_dynamic_tensor.html#a2241c8d89e1a3e78dfd3d5e89aab9254", null ],
     [ "flat", "class_dynamic_tensor.html#a5403ad1ea0c54fac03c94f4dd2285133", null ],
     [ "get_shape", "class_dynamic_tensor.html#a42b1bfd00a94348fe8b1ce43a2f6cf7e", null ],
+    [ "operator*", "class_dynamic_tensor.html#a2ef2a8a7880995863f339d4a064a3d4f", null ],
     [ "operator*", "class_dynamic_tensor.html#a5c8bb1fa42a99911cfda9336b1876554", null ],
+    [ "operator+", "class_dynamic_tensor.html#abc4e56d2f5ee63b4907e50bd44049721", null ],
     [ "operator+", "class_dynamic_tensor.html#a951b70d3817858d411b94771bc7207e0", null ],
+    [ "operator+", "class_dynamic_tensor.html#a4ce651a0af3018351f27d9c397e8cd0e", null ],
     [ "operator-", "class_dynamic_tensor.html#a05dae46dbd83e82cfeb69d331799fc6f", null ],
+    [ "operator/", "class_dynamic_tensor.html#a1dccb4f844dc683c29af7e962eeef03b", null ],
     [ "operator/", "class_dynamic_tensor.html#aa34c71de9006beb7962e333128d35f9b", null ],
     [ "rank", "class_dynamic_tensor.html#a094738c223cbe58ad0b81dbae138ebf6", null ],
     [ "size", "class_dynamic_tensor.html#a80d631cc2d2151a0e3c9da15edbd870d", null ]

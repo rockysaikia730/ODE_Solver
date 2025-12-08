@@ -1,37 +1,52 @@
 \doxysection{ode\+\_\+raw\+\_\+data.\+h}
-\hypertarget{ode__raw__data_8h_source}{}\label{ode__raw__data_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/ode\_raw\_data.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/ode\_raw\_data.h}}
+\hypertarget{ode__raw__data_8h_source}{}\label{ode__raw__data_8h_source}\index{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/ode\_raw\_data.h@{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/ode\_raw\_data.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ODE\_RAW\_DATA\_H\_}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ODE\_RAW\_DATA\_H\_}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\_tensor.h}}"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}solver\_methods.h"{}}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ode_raw_data}{OdeRawData}}\ \{}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00016\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_ode_raw_data_ab54cde9f3ed108312b4ef7bbdda47193}{t\_init\_string}}\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00019\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_ode_raw_data_ad68a50b1fb53e5bb881895fa010abbb7}{t\_final\_string}}\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00022\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_ode_raw_data_a6d488874e71baa9d466ece91d73c6d56}{y0\_string}}\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00025\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_ode_raw_data_a010807378b4ef22b533dffb05686418b}{input\_dim\_string}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\_tensor.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}solver\_methods.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}function.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}root\_finder.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ode_raw_data}{OdeRawData}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}{OdeRawData}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_abc985a147144b568f8158166b4b0e51d}{\string~OdeRawData}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00028\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_ode_raw_data_abfbd2101f39feb4ddb4a0839c7179067}{step\_size\_string}}\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00029\ \ \ \ \ std::string\ number\_of\_steps\_string\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00032\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_ode_raw_data_a95b3eadbd720d9b2d34ca702d0da523b}{tolerance\_string}}\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00036\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_ode_raw_data_a5bfa3a51756d35ab90dc60b2ac2beb50}{max\_iterations\_string}}\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00039\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_ode_raw_data_a49d118cbf2ea90beaf5aa7bfe0fd8a99}{rhs\_function\_string}}\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00042\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_ode_raw_data_a5068e85aa391c0065e754ce6c1595c6c}{solver\_method\_string}}\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00043\ \};}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ODE\_RAW\_DATA\_H\_}}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}{OdeRawData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ode_raw_data}{OdeRawData}}\&\ other);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data}{OdeRawData}}\&\ \mbox{\hyperlink{struct_ode_raw_data_a9f5c0f8a439d20553e51daa09735324e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ode_raw_data}{OdeRawData}}\&\ other);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\_params}}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t0;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t\_final\ =\ 0.0;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ number\_of\_steps;}
+\DoxyCodeLine{00046\ \ \ \ \ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{solver\_params}}\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ SolverMethod\ method\ =\ SolverMethod::kRungeKutta4;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ max\_iterations\ =\ 1000;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tolerance\ =\ 1e-\/6;}
+\DoxyCodeLine{00056\ \ \ \ \ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{struct_ode_raw_data_aea54b8bbd84870e883509af463d1c1b0}{y0}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ \ \ std::unique\_ptr<Function>\ \mbox{\hyperlink{struct_ode_raw_data_ae758b90b3f8e1644570efc2ce8e57c87}{function}};\ \textcolor{comment}{//\ Or\ should\ it\ be\ a\ shared\_ptr?}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\_params}}\ \mbox{\hyperlink{struct_ode_raw_data_a95452e49794ae26225d0cdeeee663cec}{time\_params}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{solver\_params}}\ \mbox{\hyperlink{struct_ode_raw_data_ac471176ce831357580713545540425a5}{solver\_params}};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \ \ \ \ std::shared\_ptr<RootFinder>\ \mbox{\hyperlink{struct_ode_raw_data_aed44367a2804104047b9394291cb0d58}{root\_finder}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \ \ \ \ std::unique\_ptr<Function>\ \mbox{\hyperlink{struct_ode_raw_data_a96cfff0fb5bc7cd161463fde5911b5e4}{derivative}};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ODE\_RAW\_DATA\_H\_}}
 
 \end{DoxyCode}

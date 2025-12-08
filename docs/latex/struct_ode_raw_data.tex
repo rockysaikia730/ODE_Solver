@@ -2,51 +2,62 @@
 \hypertarget{struct_ode_raw_data}{}\label{struct_ode_raw_data}\index{OdeRawData@{OdeRawData}}
 
 
-Raw, unparsed data extracted by a \doxylink{class_reader}{Reader}. All values are strings or simple primitives.  
+A structure holding all data read from the input source in a form compatible with \doxylink{class_o_d_e}{ODE} and Solver classes. This struct serves as an intermediate container for raw data.  
 
 
 
 
 {\ttfamily \#include $<$ode\+\_\+raw\+\_\+data.\+h$>$}
 
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{solver\+\_\+params}}
+\begin{DoxyCompactList}\small\item\em Structure to hold solver-\/related parameters for \doxylink{class_o_d_e}{ODE} solving. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\+\_\+params}}
+\begin{DoxyCompactList}\small\item\em Structure to hold time-\/related parameters for \doxylink{class_o_d_e}{ODE} solving. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}\label{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2} 
+{\bfseries Ode\+Raw\+Data} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{struct_ode_raw_data_abc985a147144b568f8158166b4b0e51d}\label{struct_ode_raw_data_abc985a147144b568f8158166b4b0e51d} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Ode\+Raw\+Data} ()=default
+\begin{DoxyCompactList}\small\item\em Default Destructor. \end{DoxyCompactList}\item 
+\Hypertarget{struct_ode_raw_data_a3cf1725b2b33f4a867f117adfe4af11f}\label{struct_ode_raw_data_a3cf1725b2b33f4a867f117adfe4af11f} 
+{\bfseries Ode\+Raw\+Data} (const \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{struct_ode_raw_data_a9f5c0f8a439d20553e51daa09735324e}\label{struct_ode_raw_data_a9f5c0f8a439d20553e51daa09735324e} 
+\mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \& {\bfseries operator=} (const \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy Assignment Operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{struct_ode_raw_data_ab54cde9f3ed108312b4ef7bbdda47193}\label{struct_ode_raw_data_ab54cde9f3ed108312b4ef7bbdda47193} 
-std\+::string {\bfseries t\+\_\+init\+\_\+string} = "{}"{}
-\begin{DoxyCompactList}\small\item\em Initial time as string. \end{DoxyCompactList}\item 
-\Hypertarget{struct_ode_raw_data_ad68a50b1fb53e5bb881895fa010abbb7}\label{struct_ode_raw_data_ad68a50b1fb53e5bb881895fa010abbb7} 
-std\+::string {\bfseries t\+\_\+final\+\_\+string} = "{}"{}
-\begin{DoxyCompactList}\small\item\em Final time as string. \end{DoxyCompactList}\item 
-\Hypertarget{struct_ode_raw_data_a6d488874e71baa9d466ece91d73c6d56}\label{struct_ode_raw_data_a6d488874e71baa9d466ece91d73c6d56} 
-std\+::string {\bfseries y0\+\_\+string} = "{}"{}
-\begin{DoxyCompactList}\small\item\em Initial condition tensor as string. \end{DoxyCompactList}\item 
-\Hypertarget{struct_ode_raw_data_a010807378b4ef22b533dffb05686418b}\label{struct_ode_raw_data_a010807378b4ef22b533dffb05686418b} 
-std\+::string {\bfseries input\+\_\+dim\+\_\+string} = "{}"{}
-\begin{DoxyCompactList}\small\item\em Dimension (optional), can be inferred from y0. \end{DoxyCompactList}\item 
-\Hypertarget{struct_ode_raw_data_abfbd2101f39feb4ddb4a0839c7179067}\label{struct_ode_raw_data_abfbd2101f39feb4ddb4a0839c7179067} 
-std\+::string {\bfseries step\+\_\+size\+\_\+string} = "{}"{}
-\begin{DoxyCompactList}\small\item\em Step size and number of steps as strings. \end{DoxyCompactList}\item 
-\Hypertarget{struct_ode_raw_data_a2078021e64334121e12a1fa46e827b8f}\label{struct_ode_raw_data_a2078021e64334121e12a1fa46e827b8f} 
-std\+::string {\bfseries number\+\_\+of\+\_\+steps\+\_\+string} = "{}"{}
-\item 
-\Hypertarget{struct_ode_raw_data_a95b3eadbd720d9b2d34ca702d0da523b}\label{struct_ode_raw_data_a95b3eadbd720d9b2d34ca702d0da523b} 
-std\+::string {\bfseries tolerance\+\_\+string} = "{}"{}
-\begin{DoxyCompactList}\small\item\em Tolerance of numerical similarity. \end{DoxyCompactList}\item 
-\Hypertarget{struct_ode_raw_data_a5bfa3a51756d35ab90dc60b2ac2beb50}\label{struct_ode_raw_data_a5bfa3a51756d35ab90dc60b2ac2beb50} 
-std\+::string {\bfseries max\+\_\+iterations\+\_\+string} = "{}"{}
-\begin{DoxyCompactList}\small\item\em Maximum number of iterations as string. \end{DoxyCompactList}\item 
-\Hypertarget{struct_ode_raw_data_a49d118cbf2ea90beaf5aa7bfe0fd8a99}\label{struct_ode_raw_data_a49d118cbf2ea90beaf5aa7bfe0fd8a99} 
-std\+::string {\bfseries rhs\+\_\+function\+\_\+string} = "{}"{}
-\begin{DoxyCompactList}\small\item\em RHS function selection as string. \end{DoxyCompactList}\item 
-\Hypertarget{struct_ode_raw_data_a5068e85aa391c0065e754ce6c1595c6c}\label{struct_ode_raw_data_a5068e85aa391c0065e754ce6c1595c6c} 
-std\+::string {\bfseries solver\+\_\+method\+\_\+string} = "{}"{}
-\begin{DoxyCompactList}\small\item\em Solver method selection as string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{struct_ode_raw_data_aea54b8bbd84870e883509af463d1c1b0}\label{struct_ode_raw_data_aea54b8bbd84870e883509af463d1c1b0} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries y0}
+\begin{DoxyCompactList}\small\item\em Initial condition tensor. \end{DoxyCompactList}\item 
+\Hypertarget{struct_ode_raw_data_ae758b90b3f8e1644570efc2ce8e57c87}\label{struct_ode_raw_data_ae758b90b3f8e1644570efc2ce8e57c87} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ {\bfseries function}
+\begin{DoxyCompactList}\small\item\em Pointer to the function defining the \doxylink{class_o_d_e}{ODE}. \end{DoxyCompactList}\item 
+\Hypertarget{struct_ode_raw_data_a95452e49794ae26225d0cdeeee663cec}\label{struct_ode_raw_data_a95452e49794ae26225d0cdeeee663cec} 
+time\+\_\+params {\bfseries time\+\_\+params}
+\begin{DoxyCompactList}\small\item\em Time-\/related parameters. \end{DoxyCompactList}\item 
+\Hypertarget{struct_ode_raw_data_ac471176ce831357580713545540425a5}\label{struct_ode_raw_data_ac471176ce831357580713545540425a5} 
+solver\+\_\+params {\bfseries solver\+\_\+params}
+\begin{DoxyCompactList}\small\item\em Solver-\/related parameters. \end{DoxyCompactList}\item 
+\Hypertarget{struct_ode_raw_data_aed44367a2804104047b9394291cb0d58}\label{struct_ode_raw_data_aed44367a2804104047b9394291cb0d58} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ {\bfseries root\+\_\+finder}
+\begin{DoxyCompactList}\small\item\em Pointer to the root finding strategy (optional). \end{DoxyCompactList}\item 
+\Hypertarget{struct_ode_raw_data_a96cfff0fb5bc7cd161463fde5911b5e4}\label{struct_ode_raw_data_a96cfff0fb5bc7cd161463fde5911b5e4} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ {\bfseries derivative}
+\begin{DoxyCompactList}\small\item\em Pointer to a derivative function (optional). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Raw, unparsed data extracted by a \doxylink{class_reader}{Reader}. All values are strings or simple primitives. 
+A structure holding all data read from the input source in a form compatible with \doxylink{class_o_d_e}{ODE} and Solver classes. This struct serves as an intermediate container for raw data. 
 
-The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/ode\+\_\+raw\+\_\+data.\+h\end{DoxyCompactItemize}
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/ode\+\_\+raw\+\_\+data.\+h\item 
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/ode\+\_\+raw\+\_\+data.\+cpp\end{DoxyCompactItemize}

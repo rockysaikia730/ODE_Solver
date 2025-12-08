@@ -69,12 +69,24 @@ Type {\bfseries Get\+Type} () const
 \Hypertarget{class_dynamic_tensor_a951b70d3817858d411b94771bc7207e0}\label{class_dynamic_tensor_a951b70d3817858d411b94771bc7207e0} 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator+} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&second\+\_\+tensor) const
 \begin{DoxyCompactList}\small\item\em Element-\/wise Addition. Handles Real+\+Real and Complex+\+Complex. \end{DoxyCompactList}\item 
+\Hypertarget{class_dynamic_tensor_a4ce651a0af3018351f27d9c397e8cd0e}\label{class_dynamic_tensor_a4ce651a0af3018351f27d9c397e8cd0e} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator+} (double scalar) const
+\begin{DoxyCompactList}\small\item\em Broadcasting with Real scalar. \end{DoxyCompactList}\item 
+\Hypertarget{class_dynamic_tensor_abc4e56d2f5ee63b4907e50bd44049721}\label{class_dynamic_tensor_abc4e56d2f5ee63b4907e50bd44049721} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator+} (Complex scalar) const
+\begin{DoxyCompactList}\small\item\em Broadcasting with Complex scalar. \end{DoxyCompactList}\item 
 \Hypertarget{class_dynamic_tensor_a5c8bb1fa42a99911cfda9336b1876554}\label{class_dynamic_tensor_a5c8bb1fa42a99911cfda9336b1876554} 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator\texorpdfstring{$\ast$}{*}} (double scalar) const
 \begin{DoxyCompactList}\small\item\em Scalar Multiplication (Tensor \texorpdfstring{$\ast$}{*} double). \end{DoxyCompactList}\item 
 \Hypertarget{class_dynamic_tensor_a05dae46dbd83e82cfeb69d331799fc6f}\label{class_dynamic_tensor_a05dae46dbd83e82cfeb69d331799fc6f} 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator-\/} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&second\+\_\+tensor) const
-\begin{DoxyCompactList}\small\item\em Element-\/wise Subtraction (t1 -\/ t2). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Element-\/wise Subtraction (t1 -\/ t2) \end{DoxyCompactList}\item 
+\Hypertarget{class_dynamic_tensor_a2ef2a8a7880995863f339d4a064a3d4f}\label{class_dynamic_tensor_a2ef2a8a7880995863f339d4a064a3d4f} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator\texorpdfstring{$\ast$}{*}} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&second\+\_\+tensor) const
+\begin{DoxyCompactList}\small\item\em Element-\/wise Multiplication (t1 -\/ t2) \end{DoxyCompactList}\item 
+\Hypertarget{class_dynamic_tensor_a1dccb4f844dc683c29af7e962eeef03b}\label{class_dynamic_tensor_a1dccb4f844dc683c29af7e962eeef03b} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator/} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&second\+\_\+tensor) const
+\begin{DoxyCompactList}\small\item\em Element-\/wise Division (t1 / t2) \end{DoxyCompactList}\item 
 \Hypertarget{class_dynamic_tensor_aa34c71de9006beb7962e333128d35f9b}\label{class_dynamic_tensor_aa34c71de9006beb7962e333128d35f9b} 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator/} (double scalar) const
 \begin{DoxyCompactList}\small\item\em Scalar Division (Tensor / double). \end{DoxyCompactList}\item 
@@ -83,24 +95,23 @@ size\+\_\+t \mbox{\hyperlink{class_dynamic_tensor_a80d631cc2d2151a0e3c9da15edbd8
 const std\+::vector$<$ size\+\_\+t $>$ \& \mbox{\hyperlink{class_dynamic_tensor_a42b1bfd00a94348fe8b1ce43a2f6cf7e}{get\+\_\+shape}} () const
 \begin{DoxyCompactList}\small\item\em Get the shape of the tensor. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138ebf6}{rank}} () const
-<<<<<<< HEAD
 \begin{DoxyCompactList}\small\item\em Get the rank (number of dimensions) of the tensor. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\const T \& \mbox{\hyperlink{class_dynamic_tensor_a5403ad1ea0c54fac03c94f4dd2285133}{flat}} (size\+\_\+t index) const
 \begin{DoxyCompactList}\small\item\em Get the flattened data as a vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\T \& \mbox{\hyperlink{class_dynamic_tensor_a2241c8d89e1a3e78dfd3d5e89aab9254}{flat}} (size\+\_\+t index)
 \begin{DoxyCompactList}\small\item\em Get the flattened data as a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
-=======
-\begin{DoxyCompactList}\small\item\em Get the rank (number of dimensions) of the tensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dynamic_tensor_a980fa7efcf195f8457febc9e8fd95c3d}\label{class_dynamic_tensor_a980fa7efcf195f8457febc9e8fd95c3d} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator+} (double scalar, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&tensor)
+\item 
+\Hypertarget{class_dynamic_tensor_ad89a6acec640cad2fba7aa5d5d4be41a}\label{class_dynamic_tensor_ad89a6acec640cad2fba7aa5d5d4be41a} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator+} (Complex scalar, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&tensor)
 \item 
 \Hypertarget{class_dynamic_tensor_a246d5cf637d28d9d40f6d43e00863315}\label{class_dynamic_tensor_a246d5cf637d28d9d40f6d43e00863315} 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator\texorpdfstring{$\ast$}{*}} (double scalar, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&tensor)
 \end{DoxyCompactItemize}
-<<<<<<< HEAD
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 
 
 \doxysubsection{Detailed Description}

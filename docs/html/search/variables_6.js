@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rhs_5ffunction_5fstring_0',['rhs_function_string',['../struct_ode_raw_data.html#a49d118cbf2ea90beaf5aa7bfe0fd8a99',1,'OdeRawData']]]
+  ['hint_0',['Hint',['../struct_error_context.html#a13788f1a844e3cbff1d68d4e9d83c098',1,'ErrorContext']]]
 ];

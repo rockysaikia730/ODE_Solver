@@ -24,10 +24,19 @@ void {\bfseries Update\+Derivative} (const \mbox{\hyperlink{class_dynamic_tensor
 \Hypertarget{class_multi_step_ode_solver_a5bda016c46d93c7c7ce9e8b693048ed6}\label{class_multi_step_ode_solver_a5bda016c46d93c7c7ce9e8b693048ed6} 
 void {\bfseries Update\+Solution} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y)
 \item 
+\Hypertarget{class_multi_step_ode_solver_a5637d19a28ae7ac068fb5f751f1ca9d6}\label{class_multi_step_ode_solver_a5637d19a28ae7ac068fb5f751f1ca9d6} 
+void {\bfseries Update\+Window\+Sum} ()
+\item 
 void \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}} () override
 \begin{DoxyCompactList}\small\item\em Resets the solver state to the initial conditions. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90}{Step}} () override
-\begin{DoxyCompactList}\small\item\em Updates the solution\+\_\+ and time for next time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Updates the solution\+\_\+ and time for next time step. \end{DoxyCompactList}\item 
+\Hypertarget{class_multi_step_ode_solver_a09c62a908bebab5946e61ec2a9373f20}\label{class_multi_step_ode_solver_a09c62a908bebab5946e61ec2a9373f20} 
+virtual const std\+::vector$<$ double $>$ \& {\bfseries Get\+CoeffsY} () const =0
+\item 
+\Hypertarget{class_multi_step_ode_solver_a359ebb566d4d4e84a8408fe1d0da456d}\label{class_multi_step_ode_solver_a359ebb566d4d4e84a8408fe1d0da456d} 
+virtual const std\+::vector$<$ double $>$ \& {\bfseries Get\+CoeffsdY} () const =0
+\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,6 +60,8 @@ double \mbox{\hyperlink{class_ode_solver_adee8ff045eeb481ef911c9eee1b596c8}{Get\
 \item 
 int \mbox{\hyperlink{class_ode_solver_ad0bbb5894abf1b510845a61e9b42ea61}{Get\+Number\+Of\+Steps}} () const
 \item 
+double \mbox{\hyperlink{class_ode_solver_a93ba8bfb62598239c78200ca6253fa02}{Get\+Current\+Time}} () const
+\item 
 void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}} ()
 \begin{DoxyCompactList}\small\item\em Executes the simulation loop (Batch Mode). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time)
@@ -65,6 +76,9 @@ int {\bfseries order\+\_\+sol\+\_\+}
 \item 
 \Hypertarget{class_multi_step_ode_solver_afb46f4af493bc59026f816c7ee45605d}\label{class_multi_step_ode_solver_afb46f4af493bc59026f816c7ee45605d} 
 int {\bfseries order\+\_\+derivative\+\_\+}
+\item 
+\Hypertarget{class_multi_step_ode_solver_ab4c210a8b67372ce8eca42ca82b176bd}\label{class_multi_step_ode_solver_ab4c210a8b67372ce8eca42ca82b176bd} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries sum\+\_\+tn\+\_\+}
 \item 
 \Hypertarget{class_multi_step_ode_solver_a6b14064cb4f3b28f99d913874d018177}\label{class_multi_step_ode_solver_a6b14064cb4f3b28f99d913874d018177} 
 std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\bfseries solutions\+\_\+buffer\+\_\+}
@@ -89,14 +103,12 @@ double {\bfseries current\+\_\+time\+\_\+}
 \begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\label{doc-func-members}
-\Hypertarget{class_multi_step_ode_solver_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}\index{MultiStepOdeSolver@{MultiStepOdeSolver}!Reset@{Reset}}
+\Hypertarget{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}\label{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee} 
+\index{MultiStepOdeSolver@{MultiStepOdeSolver}!Reset@{Reset}}
 \index{Reset@{Reset}!MultiStepOdeSolver@{MultiStepOdeSolver}}
 \doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
-{\footnotesize\ttfamily \label{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee} 
-void Multi\+Step\+Ode\+Solver\+::\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Multi\+Step\+Ode\+Solver\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -106,11 +118,11 @@ Sets current\+\_\+time\+\_\+ to start\+\_\+time\+\_\+ and current solution\+\_\+
 
 Reimplemented from \mbox{\hyperlink{class_ode_solver_a1cc5668fdf4d5bd99ee21c4f91c6aca3}{Ode\+Solver}}.
 
-\Hypertarget{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90}\index{MultiStepOdeSolver@{MultiStepOdeSolver}!Step@{Step}}
+\Hypertarget{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90}\label{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90} 
+\index{MultiStepOdeSolver@{MultiStepOdeSolver}!Step@{Step}}
 \index{Step@{Step}!MultiStepOdeSolver@{MultiStepOdeSolver}}
 \doxysubsubsection{\texorpdfstring{Step()}{Step()}}
-{\footnotesize\ttfamily \label{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90} 
-void Multi\+Step\+Ode\+Solver\+::\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Multi\+Step\+Ode\+Solver\+::\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -124,5 +136,5 @@ Reimplemented from \mbox{\hyperlink{class_ode_solver_af1842eb01ec5d591bb813ce2a0
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/multistep\+\_\+ode\+\_\+solver.\+h\item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/multistep\+\_\+ode\+\_\+solver.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/multistep\+\_\+ode\+\_\+solver.\+h\item 
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/multistep\+\_\+ode\+\_\+solver.\+cpp\end{DoxyCompactItemize}

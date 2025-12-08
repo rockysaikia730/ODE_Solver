@@ -3,36 +3,23 @@
 Inheritance diagram for Txt\+Reader\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_txt_reader}
+\includegraphics[height=2.000000cm]{class_txt_reader}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_txt_reader_a561c225f6e2dbdd3390b50ca56778c60}\label{class_txt_reader_a561c225f6e2dbdd3390b50ca56778c60} 
-{\bfseries Txt\+Reader} (const std\+::string \&file\+\_\+name, char separator=\textquotesingle{}\textbackslash{}t\textquotesingle{})
-\item 
-virtual \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \mbox{\hyperlink{class_txt_reader_a9f16db79816689a2c72d3f258f9f39ca}{Read}} () override
-\begin{DoxyCompactList}\small\item\em Reads data from the source and returns it as an \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_file_reader}{File\+Reader}}}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{class_file_reader_a17fda1989feb82538a34b321e2d73473}{File\+Reader}} (const std\+::string \&file\+\_\+name, char separator=\textquotesingle{};\textquotesingle{})
-\begin{DoxyCompactList}\small\item\em Constructor that initializes the \doxylink{class_file_reader}{File\+Reader} with a file name. \end{DoxyCompactList}\item 
-virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+File\+Reader} ()=default
+\mbox{\hyperlink{class_txt_reader_ad311f7e47af8a08a4ca9a162f0454956}{Txt\+Reader}} (const std\+::string \&file\+\_\+name, char separator=\textquotesingle{}=\textquotesingle{}, char inline\+\_\+separator=\textquotesingle{};\textquotesingle{}, char comment\+\_\+char=\textquotesingle{}\#\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_txt_reader}{Txt\+Reader}. \end{DoxyCompactList}\item 
+\Hypertarget{class_txt_reader_ad4db532b40321716319b4ab98b3f0dae}\label{class_txt_reader_ad4db532b40321716319b4ab98b3f0dae} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Txt\+Reader} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{class_file_reader_a94c476d28850e1e4a46ca51daa1d0d1e}{Open}} ()
-\begin{DoxyCompactList}\small\item\em Opens the data source for reading. \end{DoxyCompactList}\item 
-virtual void {\bfseries Close} ()
-\begin{DoxyCompactList}\small\item\em Closes the data source. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_file_reader_a4de9019cdb234fdfb93aab20fedd5774}{Set\+Separator}} (char separator)
-\begin{DoxyCompactList}\small\item\em Sets the separator character used in the file. \end{DoxyCompactList}\item 
-char \mbox{\hyperlink{class_file_reader_affd81929b8c985d94ed215a0e53df093}{Get\+Separator}} () const
-\begin{DoxyCompactList}\small\item\em Gets the separator character used in the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{class_txt_reader_a331736cf6c2407d480103d3cfacc709f}{Read}} () override
+\begin{DoxyCompactList}\small\item\em Reads data from the text file and populates the \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data} structure. Comments lines starting with comment\+\_\+char are ignored. Multiple key-\/value pairs can be present in a single line, separated by inline\+\_\+separator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_reader}{Reader}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_reader_a6da108ba26678537964ffa902181e756}{Reader}} (const std\+::string \&file\+\_\+name)
+\mbox{\hyperlink{class_reader_ad682ef952dbf2312dc5e5c36b7432588}{Reader}} (const std\+::string \&file\+\_\+name, char separator=\textquotesingle{};\textquotesingle{})
 \begin{DoxyCompactList}\small\item\em Constructor that initializes the \doxylink{class_reader}{Reader} with a file name. \end{DoxyCompactList}\item 
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Reader} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
@@ -43,59 +30,106 @@ std\+::string \mbox{\hyperlink{class_reader_a5f7f2919f37f15cb95be1580b2028897}{G
 void \mbox{\hyperlink{class_reader_ae142b32ae6481733b84b20141cdafda2}{Set\+File\+Name}} (const std\+::string \&file\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Set the file name for the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_reader_aca06f0a9f6d41e0d9abf0d8d3f2be274}{Set\+File\+Extension}} (const std\+::string \&file\+\_\+extension)
-\begin{DoxyCompactList}\small\item\em Set the file extension for the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set the file extension for the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_reader_a33c491f270968d5c129807b5d3dfa3a4}{Open}} ()
+\begin{DoxyCompactList}\small\item\em Opens the data source for reading. \end{DoxyCompactList}\item 
+virtual void {\bfseries Close} ()
+\begin{DoxyCompactList}\small\item\em Closes the data source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_reader_ad204b9322007aab318b9e444bb5dbcea}{Set\+Separator}} (char separator)
+\begin{DoxyCompactList}\small\item\em Sets the separator character used in the file. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_reader_ac679fdc16a819d641ad6baee637cc618}{Get\+Separator}} () const
+\begin{DoxyCompactList}\small\item\em Gets the separator character used in the file. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \& \mbox{\hyperlink{class_reader_a58d1e5e33b0ec8169420fb3be600de32}{Get\+Raw\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Parser to convert a string into a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_file_reader}{File\+Reader}}}
-\begin{DoxyCompactItemize}
-\item 
-virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_file_reader_a3d38c8973a01cfab666b9c3360c12241}{Split}} (const std\+::string \&str)
-\begin{DoxyCompactList}\small\item\em Splits a string into tokens based on a delimiter. \end{DoxyCompactList}\item 
-virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_file_reader_ab6b95e0c6727709f384864acc8e0902b}{Trim}} (const std\+::vector$<$ std\+::string $>$ \&tokens)
-\begin{DoxyCompactList}\small\item\em Trims whitespace from each token if there is a space at the beginning or end of the token. It should not remove spaces within the token, as those may be vector values. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_reader}{Reader}}}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{class_reader_a30a4105a8595150cb94854c71637ed3f}{Is\+Numeric}} (const std\+::string \&str) const
-\begin{DoxyCompactList}\small\item\em Checks if a string represents a numeric value. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_file_reader}{File\+Reader}}}
-\begin{DoxyCompactItemize}
-\item 
-std\+::ifstream {\bfseries file\+\_\+stream\+\_\+}
-\begin{DoxyCompactList}\small\item\em File stream for reading data. \end{DoxyCompactList}\item 
-char {\bfseries separator\+\_\+}
-\begin{DoxyCompactList}\small\item\em Character used as a separator in the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks if a string represents a numeric value. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_reader_a1949190ed8188132c3a25e886f10d376}{Split}} (const std\+::string \&str, const char \&separator) const
+\begin{DoxyCompactList}\small\item\em Splits a string into tokens based on a delimiter. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_reader_a024e3b94ffc0b0c8a14fb6e20059ea03}{Trim}} (const std\+::vector$<$ std\+::string $>$ \&tokens) const
+\begin{DoxyCompactList}\small\item\em Trims whitespace from each token if there is a space at the beginning or end of the token. It should not remove spaces within the token, as those may be vector values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_reader_aee6eaf793ada4d73dc1d9bb28a50d2a3}{Parse\+Tensor}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Helper function to parse a string into a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_reader_a4ad23af590282f6c953777d81d190a4e}{Is\+Complex\+Number}} (const std\+::string \&str) const
+\begin{DoxyCompactList}\small\item\em Helper function to check if string is a complex number or a double. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_reader_a872ff0b4164a7f84c49c1b1f7fa5cdd3}{To\+Lower}} (const std\+::string \&str) const
+\begin{DoxyCompactList}\small\item\em Converts a string to lowercase. \end{DoxyCompactList}\item 
+bool {\bfseries Line\+Starts\+With} (const std\+::string \&line, const std\+::string \&start) const
+\begin{DoxyCompactList}\small\item\em Returns the starting value of line. \end{DoxyCompactList}\item 
+bool {\bfseries Line\+Ends\+With} (const std\+::string \&line, const std\+::string \&end) const
+\begin{DoxyCompactList}\small\item\em Returns the ending value of line. \end{DoxyCompactList}\item 
+std\+::complex$<$ double $>$ \mbox{\hyperlink{class_reader_a149ef0f9b7c40881ec30a1dc38a8c513}{Parse\+Complex\+Number}} (const std\+::string \&str) const
+\begin{DoxyCompactList}\small\item\em Parses a string representing a complex number in the form (a,b). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_reader_a1407cb6d6c193ab9bcbcdd82558fe879}{Parse\+Double}} (const std\+::string \&str) const
+\begin{DoxyCompactList}\small\item\em Parses a string representing a double. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_reader_a891f6505346d7f7389f5eadc35d1d1bf}{Interpret\+Key\+Value\+Pair}} (const std\+::string \&key, const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Parses the solver method from a string and sets it in raw\+\_\+data\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_reader_ae8ecacd23cd8c0672aff1583c10b8d4d}{Trim}} (const std\+::string \&str) const
+\begin{DoxyCompactList}\small\item\em trim a single string \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_reader_aa8fc2dbf2e8a036539e632d2aee16e3e}{Parse\+Solver\+Method\+From\+String}} (const std\+::string \&method\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Parses the solver method from a string and sets it in raw\+\_\+data\+\_\+. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ \mbox{\hyperlink{class_reader_a0bef7707d1cf66a0b320f77212954150}{Parse\+Function}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Recursive helper function that parses a function string into an instance of \doxylink{class_function}{Function}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_reader}{Reader}}}
 \begin{DoxyCompactItemize}
 \item 
 std\+::string {\bfseries file\+\_\+name\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em The name of the file to read from. \end{DoxyCompactList}\item 
 std\+::string {\bfseries file\+\_\+extension\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The file extension of the file to read from. \end{DoxyCompactList}\item 
+char {\bfseries separator\+\_\+}
+\begin{DoxyCompactList}\small\item\em The separator character used in the file. \end{DoxyCompactList}\item 
+std\+::ifstream {\bfseries file\+\_\+stream\+\_\+}
+\begin{DoxyCompactList}\small\item\em The input file stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} {\bfseries raw\+\_\+data\+\_\+}
+\begin{DoxyCompactList}\small\item\em Container for all read data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\label{doc-func-members}
-\Hypertarget{class_txt_reader_doc-func-members}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_txt_reader_ad311f7e47af8a08a4ca9a162f0454956}\label{class_txt_reader_ad311f7e47af8a08a4ca9a162f0454956} 
+\index{TxtReader@{TxtReader}!TxtReader@{TxtReader}}
+\index{TxtReader@{TxtReader}!TxtReader@{TxtReader}}
+\doxysubsubsection{\texorpdfstring{TxtReader()}{TxtReader()}}
+{\footnotesize\ttfamily Txt\+Reader\+::\+Txt\+Reader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name,  }\item[{char}]{separator = {\ttfamily \textquotesingle{}=\textquotesingle{}},  }\item[{char}]{inline\+\_\+separator = {\ttfamily \textquotesingle{};\textquotesingle{}},  }\item[{char}]{comment\+\_\+char = {\ttfamily \textquotesingle{}\#\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{class_txt_reader}{Txt\+Reader}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & The name of the text file to read from. \\
+\hline
+{\em separator} & The character that separates key-\/value pairs. \\
+\hline
+{\em inline\+\_\+separator} & The character that separates multiple key-\/value pairs in a single line. \\
+\hline
+{\em comment\+\_\+char} & The character that indicates the start of a comment line. \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_txt_reader_a9f16db79816689a2c72d3f258f9f39ca}\index{TxtReader@{TxtReader}!Read@{Read}}
+\Hypertarget{class_txt_reader_a331736cf6c2407d480103d3cfacc709f}\label{class_txt_reader_a331736cf6c2407d480103d3cfacc709f} 
+\index{TxtReader@{TxtReader}!Read@{Read}}
 \index{Read@{Read}!TxtReader@{TxtReader}}
 \doxysubsubsection{\texorpdfstring{Read()}{Read()}}
-{\footnotesize\ttfamily \label{class_txt_reader_a9f16db79816689a2c72d3f258f9f39ca} 
-\mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} Txt\+Reader\+::\+Read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Txt\+Reader\+::\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Reads data from the source and returns it as an \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data} object. 
-
-\begin{DoxyReturn}{Returns}
-An \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data} object containing the read data. 
-\end{DoxyReturn}
+Reads data from the text file and populates the \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data} structure. Comments lines starting with comment\+\_\+char are ignored. Multiple key-\/value pairs can be present in a single line, separated by inline\+\_\+separator. 
 
 
-Implements \mbox{\hyperlink{class_reader_a8d9e54309942b2f508ec74b3eac1da80}{Reader}}.
+
+Implements \mbox{\hyperlink{class_reader_a782ef0f80b0d27b8a3e32be538fed057}{Reader}}.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/reader\+\_\+txt.\+h\item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/reader\+\_\+txt.\+cc\end{DoxyCompactItemize}
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/reader\+\_\+txt.\+h\item 
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/reader\+\_\+txt.\+cpp\end{DoxyCompactItemize}

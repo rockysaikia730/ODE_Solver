@@ -2,6 +2,7 @@
 #include "function.h"
 #include "dynamic_tensor.h"
 #include <memory>
+#include <vector>
 
 
 class MyFunc : public Function {
@@ -12,6 +13,11 @@ public:
     std::unique_ptr<Function> Clone() const override {
         return std::make_unique<MyFunc>(*this);
     };
+    const std::vector<size_t>& GetShape() const override {
+        static std::vector<size_t> shape = {1};
+        return shape;
+    };
+    
 };
 
 TEST(Function, Evaluation) {

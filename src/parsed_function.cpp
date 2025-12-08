@@ -59,3 +59,7 @@ DynamicTensor ParsedFunction::Eval(double t, const DynamicTensor& y) const {
 
     return result;
 }
+
+const std::vector<size_t>& ParsedFunction::GetShape() const {
+    return shape_;
+}

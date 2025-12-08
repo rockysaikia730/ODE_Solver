@@ -1,18 +1,18 @@
 \doxysection{backward\+\_\+euler\+\_\+solver.\+h}
-\hypertarget{backward__euler__solver_8h_source}{}\label{backward__euler__solver_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/backward\_euler\_solver.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/backward\_euler\_solver.h}}
+\hypertarget{backward__euler__solver_8h_source}{}\label{backward__euler__solver_8h_source}\index{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/backward\_euler\_solver.h@{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/backward\_euler\_solver.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BACKWARD\_EULER\_SOLVER\_H\_}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BACKWARD\_EULER\_SOLVER\_H\_}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ode_8h}{ode.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_o_d_e_8h}{ode.h}}"{}}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}backward\_differentiation\_solver.h"{}}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }BackwardEuler:\ \textcolor{keyword}{public}\ Bdf\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_backward_euler}{BackwardEuler}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_bdf}{Bdf}}\ \{}
 \DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00009\ \ \ \ \ BackwardEuler(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_backward_euler}{BackwardEuler}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
 \DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00011\ \ \ \ \ BackwardEuler(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_backward_euler}{BackwardEuler}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
 \DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
 \DoxyCodeLine{00013\ \};}
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}

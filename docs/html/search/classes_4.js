@@ -1,58 +1,18 @@
 var searchData=
 [
-<<<<<<< HEAD
-<<<<<<< HEAD
-  ['funbenchmark_0',['FunBenchmark',['../class_fun_benchmark.html',1,'']]],
-  ['funcmplxabs_1',['FunCmplxAbs',['../class_fun_cmplx_abs.html',1,'']]],
-  ['funcmplxarg_2',['FunCmplxArg',['../class_fun_cmplx_arg.html',1,'']]],
-  ['funcmplxconj_3',['FunCmplxConj',['../class_fun_cmplx_conj.html',1,'']]],
-  ['funcmplxcos_4',['FunCmplxCos',['../class_fun_cmplx_cos.html',1,'']]],
-  ['funcmplxcosh_5',['FunCmplxCosH',['../class_fun_cmplx_cos_h.html',1,'']]],
-  ['funcmplxexp_6',['FunCmplxExp',['../class_fun_cmplx_exp.html',1,'']]],
-  ['funcmplximag_7',['FunCmplxImag',['../class_fun_cmplx_imag.html',1,'']]],
-  ['funcmplxln_8',['FunCmplxLn',['../class_fun_cmplx_ln.html',1,'']]],
-  ['funcmplxlog_9',['FunCmplxLog',['../class_fun_cmplx_log.html',1,'']]],
-  ['funcmplxlog10_10',['FunCmplxLog10',['../class_fun_cmplx_log10.html',1,'']]],
-  ['funcmplxlog2_11',['FunCmplxLog2',['../class_fun_cmplx_log2.html',1,'']]],
-  ['funcmplxnorm_12',['FunCmplxNorm',['../class_fun_cmplx_norm.html',1,'']]],
-  ['funcmplxpow_13',['FunCmplxPow',['../class_fun_cmplx_pow.html',1,'']]],
-  ['funcmplxreal_14',['FunCmplxReal',['../class_fun_cmplx_real.html',1,'']]],
-  ['funcmplxsin_15',['FunCmplxSin',['../class_fun_cmplx_sin.html',1,'']]],
-  ['funcmplxsinh_16',['FunCmplxSinH',['../class_fun_cmplx_sin_h.html',1,'']]],
-  ['funcmplxsqrt_17',['FunCmplxSqrt',['../class_fun_cmplx_sqrt.html',1,'']]],
-  ['funcmplxtan_18',['FunCmplxTan',['../class_fun_cmplx_tan.html',1,'']]],
-  ['funcmplxtanh_19',['FunCmplxTanH',['../class_fun_cmplx_tan_h.html',1,'']]],
-  ['function_20',['Function',['../class_function.html',1,'']]],
-  ['funenabledebugdump_21',['FunEnableDebugDump',['../class_fun_enable_debug_dump.html',1,'']]],
-  ['funenableoptimizer_22',['FunEnableOptimizer',['../class_fun_enable_optimizer.html',1,'']]],
-  ['funlistconst_23',['FunListConst',['../class_fun_list_const.html',1,'']]],
-  ['funlistfunctions_24',['FunListFunctions',['../class_fun_list_functions.html',1,'']]],
-  ['funlistvar_25',['FunListVar',['../class_fun_list_var.html',1,'']]],
-  ['funmatrixeye_26',['FunMatrixEye',['../class_fun_matrix_eye.html',1,'']]],
-  ['funmatrixones_27',['FunMatrixOnes',['../class_fun_matrix_ones.html',1,'']]],
-  ['funmatrixsize_28',['FunMatrixSize',['../class_fun_matrix_size.html',1,'']]],
-  ['funmatrixzeros_29',['FunMatrixZeros',['../class_fun_matrix_zeros.html',1,'']]],
-  ['funmax_30',['FunMax',['../class_fun_max.html',1,'']]],
-  ['funmin_31',['FunMin',['../class_fun_min.html',1,'']]],
-  ['funparserid_32',['FunParserID',['../class_fun_parser_i_d.html',1,'']]],
-  ['funprint_33',['FunPrint',['../class_fun_print.html',1,'']]],
-  ['funreturnfalse_34',['FunReturnFalse',['../class_fun_return_false.html',1,'']]],
-  ['funselftest_35',['FunSelfTest',['../class_fun_self_test.html',1,'']]],
-  ['funsizeof_36',['FunSizeOf',['../class_fun_size_of.html',1,'']]],
-  ['funstrlen_37',['FunStrLen',['../class_fun_str_len.html',1,'']]],
-  ['funstrtodbl_38',['FunStrToDbl',['../class_fun_str_to_dbl.html',1,'']]],
-  ['funstrtolower_39',['FunStrToLower',['../class_fun_str_to_lower.html',1,'']]],
-  ['funstrtoupper_40',['FunStrToUpper',['../class_fun_str_to_upper.html',1,'']]],
-  ['funsum_41',['FunSum',['../class_fun_sum.html',1,'']]],
-  ['funtest0_42',['FunTest0',['../class_fun_test0.html',1,'']]]
-=======
-  ['filereader_0',['FileReader',['../class_file_reader.html',1,'']]],
-  ['forwardeuler_1',['ForwardEuler',['../class_forward_euler.html',1,'']]],
-  ['function_2',['Function',['../class_function.html',1,'']]]
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
-  ['filereader_0',['FileReader',['../class_file_reader.html',1,'']]],
-  ['forwardeuler_1',['ForwardEuler',['../class_forward_euler.html',1,'']]],
-  ['function_2',['Function',['../class_function.html',1,'']]]
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+  ['elemfromlist_0',['ElemFromList',['../structtesting_1_1internal_1_1_elem_from_list.html',1,'testing::internal']]],
+  ['elemfromlist_3c_20i_2c_20t_2e_2e_2e_20_3e_1',['ElemFromList&lt; I, T... &gt;',['../structtesting_1_1internal_1_1_elem_from_list.html',1,'testing::internal']]],
+  ['elemfromlistimpl_2',['ElemFromListImpl',['../structtesting_1_1internal_1_1_elem_from_list_impl.html',1,'testing::internal']]],
+  ['elemfromlistimpl_3c_20indexsequence_3c_20i_2e_2e_2e_20_3e_20_3e_3',['ElemFromListImpl&lt; IndexSequence&lt; I... &gt; &gt;',['../structtesting_1_1internal_1_1_elem_from_list_impl_3_01_index_sequence_3_01_i_8_8_8_01_4_01_4.html',1,'testing::internal']]],
+  ['emptybasenameparaminst_4',['EmptyBasenameParamInst',['../class_empty_basename_param_inst.html',1,'']]],
+  ['environmentinvocationcatcher_5',['EnvironmentInvocationCatcher',['../classtesting_1_1internal_1_1_environment_invocation_catcher.html',1,'testing::internal']]],
+  ['eqhelper_6',['EqHelper',['../classtesting_1_1internal_1_1_eq_helper.html',1,'testing::internal']]],
+  ['errorcontext_7',['ErrorContext',['../struct_error_context.html',1,'']]],
+  ['eventrecordinglistener_8',['EventRecordingListener',['../classtesting_1_1internal_1_1_event_recording_listener.html',1,'testing::internal']]],
+  ['eventrecordinglistener2_9',['EventRecordingListener2',['../classtesting_1_1internal_1_1_event_recording_listener2.html',1,'testing::internal']]],
+  ['excessivearg_10',['ExcessiveArg',['../structtesting_1_1internal_1_1_excessive_arg.html',1,'testing::internal']]],
+  ['expectcalltest_11',['ExpectCallTest',['../classtesting_1_1gmock__function__mocker__test_1_1_expect_call_test.html',1,'testing::gmock_function_mocker_test']]],
+  ['expectfailuretest_12',['ExpectFailureTest',['../class_expect_failure_test.html',1,'']]],
+  ['externalgeneratortest_13',['ExternalGeneratorTest',['../class_external_generator_test.html',1,'']]],
+  ['externalinstantiationtest_14',['ExternalInstantiationTest',['../class_external_instantiation_test.html',1,'']]]
 ];

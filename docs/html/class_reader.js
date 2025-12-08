@@ -1,7 +1,5 @@
 var class_reader =
 [
-<<<<<<< HEAD
-<<<<<<< HEAD
     [ "Reader", "class_reader.html#ad682ef952dbf2312dc5e5c36b7432588", null ],
     [ "~Reader", "class_reader.html#a5a9e1a05a3683982e7dbafd75e2ff773", null ],
     [ "Close", "class_reader.html#a36852f38ab45088da044919c88392311", null ],
@@ -33,19 +31,4 @@ var class_reader =
     [ "file_stream_", "class_reader.html#a74a6ac6c04056f68d5cd16ddeecdae34", null ],
     [ "raw_data_", "class_reader.html#a33d6ed307d1324254b34811a9003103c", null ],
     [ "separator_", "class_reader.html#abf552b3a25392737537633019196ff08", null ]
-=======
-=======
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-    [ "Reader", "class_reader.html#a6da108ba26678537964ffa902181e756", null ],
-    [ "~Reader", "class_reader.html#a5a9e1a05a3683982e7dbafd75e2ff773", null ],
-    [ "GetFileExtension", "class_reader.html#a5f7f2919f37f15cb95be1580b2028897", null ],
-    [ "GetFileName", "class_reader.html#afff48614961ffb79bfb627adc4b52f70", null ],
-    [ "IsNumeric", "class_reader.html#a30a4105a8595150cb94854c71637ed3f", null ],
-    [ "Read", "class_reader.html#a8d9e54309942b2f508ec74b3eac1da80", null ],
-    [ "SetFileExtension", "class_reader.html#aca06f0a9f6d41e0d9abf0d8d3f2be274", null ],
-    [ "SetFileName", "class_reader.html#ae142b32ae6481733b84b20141cdafda2", null ]
-<<<<<<< HEAD
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 ];

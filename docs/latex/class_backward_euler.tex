@@ -23,6 +23,10 @@ Inheritance diagram for Backward\+Euler\+:\begin{figure}[H]
 {\bfseries Bdf} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order=4, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
 \item 
 int {\bfseries Get\+Order} ()
+\item 
+const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{class_bdf_a88a8c043f3665d605c46e876df38bedd}{Get\+CoeffsY}} () const override
+\item 
+const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{class_bdf_a4532c58e0c226a7527f59e5170c88fee}{Get\+CoeffsdY}} () const override
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}}}
 \begin{DoxyCompactItemize}
@@ -45,6 +49,8 @@ virtual void {\bfseries Init\+Buffers} ()
 void {\bfseries Update\+Derivative} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&dydt)
 \item 
 void {\bfseries Update\+Solution} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y)
+\item 
+void {\bfseries Update\+Window\+Sum} ()
 \item 
 void \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}} () override
 \begin{DoxyCompactList}\small\item\em Resets the solver state to the initial conditions. \end{DoxyCompactList}\item 
@@ -71,6 +77,8 @@ double \mbox{\hyperlink{class_ode_solver_adee8ff045eeb481ef911c9eee1b596c8}{Get\
 \item 
 int \mbox{\hyperlink{class_ode_solver_ad0bbb5894abf1b510845a61e9b42ea61}{Get\+Number\+Of\+Steps}} () const
 \item 
+double \mbox{\hyperlink{class_ode_solver_a93ba8bfb62598239c78200ca6253fa02}{Get\+Current\+Time}} () const
+\item 
 void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}} ()
 \begin{DoxyCompactList}\small\item\em Executes the simulation loop (Batch Mode). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time)
@@ -89,6 +97,8 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$
 int {\bfseries order\+\_\+sol\+\_\+}
 \item 
 int {\bfseries order\+\_\+derivative\+\_\+}
+\item 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries sum\+\_\+tn\+\_\+}
 \item 
 std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\bfseries solutions\+\_\+buffer\+\_\+}
 \item 
@@ -113,5 +123,5 @@ double {\bfseries current\+\_\+time\+\_\+}
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/backward\+\_\+euler\+\_\+solver.\+h\item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/backward\+\_\+euler\+\_\+solver.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/backward\+\_\+euler\+\_\+solver.\+h\item 
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/backward\+\_\+euler\+\_\+solver.\+cpp\end{DoxyCompactItemize}

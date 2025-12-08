@@ -109,14 +109,15 @@ Inheritance diagram for OdeSolver:</div>
  <div class="center">
   <img src="class_ode_solver.png" usemap="#OdeSolver_map" alt=""/>
   <map id="OdeSolver_map" name="OdeSolver_map">
-<area href="class_forward_euler.html" alt="ForwardEuler" shape="rect" coords="0,56,125,80"/>
-<area href="class_multi_step_ode_solver.html" alt="MultiStepOdeSolver" shape="rect" coords="135,56,260,80"/>
-<area href="class_runge_kutta.html" alt="RungeKutta" shape="rect" coords="270,56,395,80"/>
+<area href="class_forward_euler_light.html" alt="ForwardEulerLight" shape="rect" coords="0,56,125,80"/>
+<area href="class_multi_step_ode_solver.html" alt="MultiStepOdeSolver" shape="rect" coords="168,56,293,80"/>
+<area href="class_runge_kutta.html" alt="RungeKutta" shape="rect" coords="303,56,428,80"/>
 <area href="class_adams_bashforth.html" alt="AdamsBashforth" shape="rect" coords="67,112,192,136"/>
-<area href="class_implicit_solver.html" alt="ImplicitSolver" shape="rect" coords="202,112,327,136"/>
-<area href="class_adam_moulton.html" alt="AdamMoulton" shape="rect" coords="135,168,260,192"/>
-<area href="class_bdf.html" alt="Bdf" shape="rect" coords="270,168,395,192"/>
-<area href="class_backward_euler.html" alt="BackwardEuler" shape="rect" coords="270,224,395,248"/>
+<area href="class_implicit_solver.html" alt="ImplicitSolver" shape="rect" coords="270,112,395,136"/>
+<area href="class_forward_euler.html" alt="ForwardEuler" shape="rect" coords="67,168,192,192"/>
+<area href="class_adam_moulton.html" alt="AdamMoulton" shape="rect" coords="202,168,327,192"/>
+<area href="class_bdf.html" alt="Bdf" shape="rect" coords="337,168,462,192"/>
+<area href="class_backward_euler.html" alt="BackwardEuler" shape="rect" coords="337,224,462,248"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -125,26 +126,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a18be896e3a9772213317a4c554100206" id="r_a18be896e3a9772213317a4c554100206"><td class="memItemLeft" align="right" valign="top"><a id="a18be896e3a9772213317a4c554100206" name="a18be896e3a9772213317a4c554100206"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~OdeSolver</b> ()=default</td></tr>
 <tr class="memdesc:a18be896e3a9772213317a4c554100206"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. <br /></td></tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
 <tr class="separator:a18be896e3a9772213317a4c554100206"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a8a1ae3eb6213f9656a9b47ebbbe4fe" id="r_a7a8a1ae3eb6213f9656a9b47ebbbe4fe"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a8a1ae3eb6213f9656a9b47ebbbe4fe">Step</a> ()=0</td></tr>
-<tr class="memdesc:a7a8a1ae3eb6213f9656a9b47ebbbe4fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the solution at the next time step.  <br /></td></tr>
-<tr class="separator:a7a8a1ae3eb6213f9656a9b47ebbbe4fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae543d1973f9c00665e04c470d3819e47" id="r_ae543d1973f9c00665e04c470d3819e47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae543d1973f9c00665e04c470d3819e47">SetStartTime</a> (double start_time)</td></tr>
-<tr class="memdesc:ae543d1973f9c00665e04c470d3819e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the simulation start time.  <br /></td></tr>
-<tr class="separator:ae543d1973f9c00665e04c470d3819e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-=======
-=======
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 <tr class="memitem:a35a9d27d9c3b484dae31ed1c6905a04a" id="r_a35a9d27d9c3b484dae31ed1c6905a04a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35a9d27d9c3b484dae31ed1c6905a04a">ComputeStep</a> ()=0</td></tr>
 <tr class="memdesc:a35a9d27d9c3b484dae31ed1c6905a04a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the solution at the next time step.  <br /></td></tr>
+<tr class="separator:a35a9d27d9c3b484dae31ed1c6905a04a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1842eb01ec5d591bb813ce2a064adc5" id="r_af1842eb01ec5d591bb813ce2a064adc5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1842eb01ec5d591bb813ce2a064adc5">Step</a> ()</td></tr>
 <tr class="memdesc:af1842eb01ec5d591bb813ce2a064adc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the solution_ and time for next time step.  <br /></td></tr>
-<<<<<<< HEAD
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+<tr class="separator:af1842eb01ec5d591bb813ce2a064adc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a662cff46a2025f9b99295d5fcefbe0b6" id="r_a662cff46a2025f9b99295d5fcefbe0b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a662cff46a2025f9b99295d5fcefbe0b6">SetEndTime</a> (double end_time)</td></tr>
 <tr class="memdesc:a662cff46a2025f9b99295d5fcefbe0b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the simulation end time.  <br /></td></tr>
 <tr class="separator:a662cff46a2025f9b99295d5fcefbe0b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,15 +141,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~OdeSolver</b> ()=
 <tr class="separator:ae1242b79d094ce57a73b76661cdbdc94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a673fb059d7379dfc9bfea833318b4049" id="r_a673fb059d7379dfc9bfea833318b4049"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a673fb059d7379dfc9bfea833318b4049">SetTimeSpan</a> (double step_size)</td></tr>
 <tr class="memdesc:a673fb059d7379dfc9bfea833318b4049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the solver based on a fixed step size.  <br /></td></tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
 <tr class="separator:a673fb059d7379dfc9bfea833318b4049"><td class="memSeparator" colspan="2">&#160;</td></tr>
-=======
 <tr class="memitem:a187c86329e6909b9830becf465c127d0" id="r_a187c86329e6909b9830becf465c127d0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a187c86329e6909b9830becf465c127d0">GetSolution</a> () const</td></tr>
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
-<tr class="memitem:a187c86329e6909b9830becf465c127d0" id="r_a187c86329e6909b9830becf465c127d0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a187c86329e6909b9830becf465c127d0">GetSolution</a> () const</td></tr>
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+<tr class="separator:a187c86329e6909b9830becf465c127d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a967817c4339501ddb984023977d093a1" id="r_a967817c4339501ddb984023977d093a1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a967817c4339501ddb984023977d093a1">GetStartTime</a> () const</td></tr>
 <tr class="separator:a967817c4339501ddb984023977d093a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b634912c4c923a14e5ce7994f46b2a4" id="r_a6b634912c4c923a14e5ce7994f46b2a4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b634912c4c923a14e5ce7994f46b2a4">GetEndTime</a> () const</td></tr>
@@ -169,53 +151,28 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~OdeSolver</b> ()=
 <tr class="memitem:adee8ff045eeb481ef911c9eee1b596c8" id="r_adee8ff045eeb481ef911c9eee1b596c8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adee8ff045eeb481ef911c9eee1b596c8">GetStepSize</a> () const</td></tr>
 <tr class="separator:adee8ff045eeb481ef911c9eee1b596c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0bbb5894abf1b510845a61e9b42ea61" id="r_ad0bbb5894abf1b510845a61e9b42ea61"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0bbb5894abf1b510845a61e9b42ea61">GetNumberOfSteps</a> () const</td></tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
 <tr class="separator:ad0bbb5894abf1b510845a61e9b42ea61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cc5668fdf4d5bd99ee21c4f91c6aca3" id="r_a1cc5668fdf4d5bd99ee21c4f91c6aca3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cc5668fdf4d5bd99ee21c4f91c6aca3">Reset</a> ()</td></tr>
-=======
+<tr class="memitem:a93ba8bfb62598239c78200ca6253fa02" id="r_a93ba8bfb62598239c78200ca6253fa02"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93ba8bfb62598239c78200ca6253fa02">GetCurrentTime</a> () const</td></tr>
+<tr class="separator:a93ba8bfb62598239c78200ca6253fa02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cc5668fdf4d5bd99ee21c4f91c6aca3" id="r_a1cc5668fdf4d5bd99ee21c4f91c6aca3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cc5668fdf4d5bd99ee21c4f91c6aca3">Reset</a> ()</td></tr>
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
-<tr class="memitem:a1cc5668fdf4d5bd99ee21c4f91c6aca3" id="r_a1cc5668fdf4d5bd99ee21c4f91c6aca3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cc5668fdf4d5bd99ee21c4f91c6aca3">Reset</a> ()</td></tr>
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 <tr class="memdesc:a1cc5668fdf4d5bd99ee21c4f91c6aca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the solver state to the initial conditions.  <br /></td></tr>
 <tr class="separator:a1cc5668fdf4d5bd99ee21c4f91c6aca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8528789990b812fe0b498fabb7e1521f" id="r_a8528789990b812fe0b498fabb7e1521f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8528789990b812fe0b498fabb7e1521f">Solve</a> ()</td></tr>
 <tr class="memdesc:a8528789990b812fe0b498fabb7e1521f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the simulation loop (Batch Mode).  <br /></td></tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
 <tr class="separator:a8528789990b812fe0b498fabb7e1521f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa71a2af25e87c1951f876a937fe46fd2" id="r_aa71a2af25e87c1951f876a937fe46fd2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa71a2af25e87c1951f876a937fe46fd2">OdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double end_time, int num_of_steps)</td></tr>
-<tr class="memdesc:aa71a2af25e87c1951f876a937fe46fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for fixed number of steps.  <br /></td></tr>
-<tr class="separator:aa71a2af25e87c1951f876a937fe46fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae83ffce1c4785ec33c5e4deefdd9cc8c" id="r_ae83ffce1c4785ec33c5e4deefdd9cc8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae83ffce1c4785ec33c5e4deefdd9cc8c">OdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double end_time, double step_size=0.01)</td></tr>
-<tr class="memdesc:ae83ffce1c4785ec33c5e4deefdd9cc8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for fixed step size.  <br /></td></tr>
-<tr class="separator:ae83ffce1c4785ec33c5e4deefdd9cc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-=======
-=======
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 <tr class="memitem:ab8375f1f3330bf275d6b18fc936deb3c" id="r_ab8375f1f3330bf275d6b18fc936deb3c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8375f1f3330bf275d6b18fc936deb3c">OdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, int num_of_steps, double end_time)</td></tr>
 <tr class="memdesc:ab8375f1f3330bf275d6b18fc936deb3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for fixed number of steps.  <br /></td></tr>
+<tr class="separator:ab8375f1f3330bf275d6b18fc936deb3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aead5f819e881f42a8c398d48678e4e16" id="r_aead5f819e881f42a8c398d48678e4e16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aead5f819e881f42a8c398d48678e4e16">OdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double step_size=0.01, double end_time=0.0)</td></tr>
 <tr class="memdesc:aead5f819e881f42a8c398d48678e4e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for fixed step size.  <br /></td></tr>
-<<<<<<< HEAD
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+<tr class="separator:aead5f819e881f42a8c398d48678e4e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a9155f5d877dad198b513d24150dff5a4" id="r_a9155f5d877dad198b513d24150dff5a4"><td class="memItemLeft" align="right" valign="top"><a id="a9155f5d877dad198b513d24150dff5a4" name="a9155f5d877dad198b513d24150dff5a4"></a>
 const <a class="el" href="class_ode.html">Ode</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>ode_</b></td></tr>
 <tr class="memdesc:a9155f5d877dad198b513d24150dff5a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the <a class="el" href="class_o_d_e.html" title="A class representing an ordinary differential equation (ODE).">ODE</a> problem definition. Guaranteed to be valid as long as the user maintains the <a class="el" href="class_ode.html" title="Represents an Ordinary Differential Equation (ODE) problem definition.">Ode</a> object scope. <br /></td></tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
 <tr class="separator:a9155f5d877dad198b513d24150dff5a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-=======
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 <tr class="memitem:a349bdd8382aed99df05dddd5d7d747a2" id="r_a349bdd8382aed99df05dddd5d7d747a2"><td class="memItemLeft" align="right" valign="top"><a id="a349bdd8382aed99df05dddd5d7d747a2" name="a349bdd8382aed99df05dddd5d7d747a2"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>start_time_</b></td></tr>
 <tr class="memdesc:a349bdd8382aed99df05dddd5d7d747a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The simulation start time. <br /></td></tr>
@@ -230,46 +187,19 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>step_size_</b></td>
 <tr class="separator:a27c98f59e22ca709d451b8ba15bf3e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e42a49ba25b6c2c5b029cd70e75d38e" id="r_a8e42a49ba25b6c2c5b029cd70e75d38e"><td class="memItemLeft" align="right" valign="top"><a id="a8e42a49ba25b6c2c5b029cd70e75d38e" name="a8e42a49ba25b6c2c5b029cd70e75d38e"></a>
 <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>solution_</b></td></tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<tr class="memdesc:a8e42a49ba25b6c2c5b029cd70e75d38e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current state vector y(t). Updated at every <a class="el" href="#a7a8a1ae3eb6213f9656a9b47ebbbe4fe" title="Calculates the solution at the next time step.">Step()</a>. <br /></td></tr>
+<tr class="memdesc:a8e42a49ba25b6c2c5b029cd70e75d38e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current state y(t). Updated at every <a class="el" href="#af1842eb01ec5d591bb813ce2a064adc5" title="Updates the solution_ and time for next time step.">Step()</a>. <br /></td></tr>
 <tr class="separator:a8e42a49ba25b6c2c5b029cd70e75d38e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e1bfe7801ae316ea876682778396e24" id="r_a8e1bfe7801ae316ea876682778396e24"><td class="memItemLeft" align="right" valign="top"><a id="a8e1bfe7801ae316ea876682778396e24" name="a8e1bfe7801ae316ea876682778396e24"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></td></tr>
-<tr class="memdesc:a8e1bfe7801ae316ea876682778396e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current simulation time t. Updated at every <a class="el" href="#a7a8a1ae3eb6213f9656a9b47ebbbe4fe" title="Calculates the solution at the next time step.">Step()</a>. <br /></td></tr>
+<tr class="memdesc:a8e1bfe7801ae316ea876682778396e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current simulation time t. Updated at every <a class="el" href="#af1842eb01ec5d591bb813ce2a064adc5" title="Updates the solution_ and time for next time step.">Step()</a>. <br /></td></tr>
 <tr class="separator:a8e1bfe7801ae316ea876682778396e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-=======
-<tr class="memdesc:a8e42a49ba25b6c2c5b029cd70e75d38e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current state y(t). Updated at every <a class="el" href="#af1842eb01ec5d591bb813ce2a064adc5" title="Updates the solution_ and time for next time step.">Step()</a>. <br /></td></tr>
-<tr class="memitem:a8e1bfe7801ae316ea876682778396e24" id="r_a8e1bfe7801ae316ea876682778396e24"><td class="memItemLeft" align="right" valign="top"><a id="a8e1bfe7801ae316ea876682778396e24" name="a8e1bfe7801ae316ea876682778396e24"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></td></tr>
-<tr class="memdesc:a8e1bfe7801ae316ea876682778396e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current simulation time t. Updated at every <a class="el" href="#af1842eb01ec5d591bb813ce2a064adc5" title="Updates the solution_ and time for next time step.">Step()</a>. <br /></td></tr>
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
-<tr class="memdesc:a8e42a49ba25b6c2c5b029cd70e75d38e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current state y(t). Updated at every <a class="el" href="#af1842eb01ec5d591bb813ce2a064adc5" title="Updates the solution_ and time for next time step.">Step()</a>. <br /></td></tr>
-<tr class="memitem:a8e1bfe7801ae316ea876682778396e24" id="r_a8e1bfe7801ae316ea876682778396e24"><td class="memItemLeft" align="right" valign="top"><a id="a8e1bfe7801ae316ea876682778396e24" name="a8e1bfe7801ae316ea876682778396e24"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></td></tr>
-<tr class="memdesc:a8e1bfe7801ae316ea876682778396e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current simulation time t. Updated at every <a class="el" href="#af1842eb01ec5d591bb813ce2a064adc5" title="Updates the solution_ and time for next time step.">Step()</a>. <br /></td></tr>
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for iterative Ordinary Differential Equation solvers. </p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<p>The <a class="el" href="class_ode_solver.html" title="Abstract base class for iterative Ordinary Differential Equation solvers.">OdeSolver</a> manages the simulation loop, time tracking, and state updates. It holds a reference to the problem definition (<a class="el" href="class_ode.html" title="Represents an Ordinary Differential Equation (ODE) problem definition.">Ode</a>) and uses a specific numerical method (implemented in derived classes via <a class="el" href="#a7a8a1ae3eb6213f9656a9b47ebbbe4fe" title="Calculates the solution at the next time step.">Step()</a>) to advance the solution. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa71a2af25e87c1951f876a937fe46fd2" name="aa71a2af25e87c1951f876a937fe46fd2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa71a2af25e87c1951f876a937fe46fd2">&#9670;&#160;</a></span>OdeSolver() <span class="overload">[1/2]</span></h2>
-=======
-=======
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 <p>The <a class="el" href="class_ode_solver.html" title="Abstract base class for iterative Ordinary Differential Equation solvers.">OdeSolver</a> manages the simulation loop, time tracking, and state updates. It holds a reference to the problem definition (<a class="el" href="class_ode.html" title="Represents an Ordinary Differential Equation (ODE) problem definition.">Ode</a>) and uses a specific numerical method (implemented in derived classes via <a class="el" href="#af1842eb01ec5d591bb813ce2a064adc5" title="Updates the solution_ and time for next time step.">Step()</a>) to advance the solution. </p>
-</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab8375f1f3330bf275d6b18fc936deb3c" name="ab8375f1f3330bf275d6b18fc936deb3c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab8375f1f3330bf275d6b18fc936deb3c">&#9670;&#160;</a></span>OdeSolver() <span class="overload">[1/2]</span></h2>
-<<<<<<< HEAD
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 
 <div class="memitem">
 <div class="memproto">
@@ -282,15 +212,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
         <tr>
           <td class="paramkey"></td>
           <td></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>end_time</em>, </span></td>
-=======
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>num_of_steps</em></span>, </td>
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>num_of_steps</em></span>, </td>
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>num_of_steps</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -326,28 +248,12 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
         <tr>
           <td class="paramkey"></td>
           <td></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>end_time</em>, </span></td>
-=======
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>step_size</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.01</span>, </td>
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>step_size</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.01</span>, </td>
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>step_size</em><span class="paramdefsep"> = </span><span class="paramdefval">0.01</span>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>step_size</em><span class="paramdefsep"> = </span><span class="paramdefval">0.01</span></span>&#160;)</td>
-=======
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>end_time</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.0</span>&#160;)</td>
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>end_time</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.0</span>&#160;)</td>
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>end_time</em><span class="paramdefsep"> = </span><span class="paramdefval">0.0</span></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -364,10 +270,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
 
 </div>
 </div>
-<<<<<<< HEAD
 <h2 class="groupheader">Member Function Documentation</h2>
-=======
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a35a9d27d9c3b484dae31ed1c6905a04a" name="a35a9d27d9c3b484dae31ed1c6905a04a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35a9d27d9c3b484dae31ed1c6905a04a">&#9670;&#160;</a></span>ComputeStep()</h2>
 
@@ -380,13 +283,13 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
         <tr>
           <td class="memname">virtual <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> OdeSolver::ComputeStep </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -395,14 +298,28 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
 <p>This is a pure virtual function that must be implemented by derived classes. It uses the specific numerical algorithm (e.g., RK4, Euler) to calculate y(t + dt) based on y(t).</p>
 <dl class="section return"><dt>Returns</dt><dd>The calculated state tensor for the next time step. </dd></dl>
 
-<p>Implemented in <a class="el" href="class_adams_bashforth.html#a1a7a6e06ee0fa286e0738578b77a29c1">AdamsBashforth</a>, <a class="el" href="class_forward_euler.html#a21588c8895f32f0a5a58f8d71993888c">ForwardEuler</a>, <a class="el" href="class_implicit_solver.html#a4f79fcbfa43f5b7c2207ce61a4420d74">ImplicitSolver</a>, and <a class="el" href="class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605">RungeKutta</a>.</p>
+<p>Implemented in <a class="el" href="class_adams_bashforth.html#a1a7a6e06ee0fa286e0738578b77a29c1">AdamsBashforth</a>, <a class="el" href="class_forward_euler_light.html#ab238eb77ab850a76bcea2c5042cd8c60">ForwardEulerLight</a>, <a class="el" href="class_implicit_solver.html#a4f79fcbfa43f5b7c2207ce61a4420d74">ImplicitSolver</a>, and <a class="el" href="class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605">RungeKutta</a>.</p>
 
 </div>
 </div>
-<<<<<<< HEAD
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+<a id="a93ba8bfb62598239c78200ca6253fa02" name="a93ba8bfb62598239c78200ca6253fa02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93ba8bfb62598239c78200ca6253fa02">&#9670;&#160;</a></span>GetCurrentTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double OdeSolver::GetCurrentTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The current time </dd></dl>
+
+</div>
+</div>
 <a id="a6b634912c4c923a14e5ce7994f46b2a4" name="a6b634912c4c923a14e5ce7994f46b2a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6b634912c4c923a14e5ce7994f46b2a4">&#9670;&#160;</a></span>GetEndTime()</h2>
 
@@ -448,7 +365,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
         <tr>
           <td class="memname">const <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> &amp; OdeSolver::GetSolution </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -511,7 +428,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -637,15 +554,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
       </table>
   </td>
   <td class="mlabels-right">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-=======
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
-=======
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

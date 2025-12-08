@@ -14,8 +14,12 @@
 \DoxyCodeLine{00019\ \ \ \ \ }
 \DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_function_a7bb6bbdd01c508cb0a4d4ad545915d3c}{Eval}}(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y)\ \textcolor{keyword}{const}\ =\ 0;}
 \DoxyCodeLine{00027\ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<Function>\ \mbox{\hyperlink{class_function_a606b5938afb38cef8b0ad96df774fe9d}{Clone}}()\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00034\ \};}
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_function_a46edab05fbafe2413e8dac3de7c6186f}{Grad}}(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y,\ \textcolor{keywordtype}{double}\ dy\ =\ 0.1)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<Function>\ \mbox{\hyperlink{class_function_a606b5938afb38cef8b0ad96df774fe9d}{Clone}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::vector<size\_t>\&\ \mbox{\hyperlink{class_function_a6e523f37f3ef8fd6cbdd3c0f424e36f3}{GetShape}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

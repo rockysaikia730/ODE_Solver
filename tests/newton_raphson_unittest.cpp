@@ -1,6 +1,8 @@
 #include "gtest/gtest.h"
 #include "newton_raphson.h"
 #include "function.h"
+#include "dynamic_tensor.h"
+#include <vector>
 
 class SquaredRoot : public Function {
 public:
@@ -12,6 +14,11 @@ public:
     };
     std::unique_ptr<Function> Clone() const override {
         return std::make_unique<SquaredRoot>(*this);
+    };
+
+    const std::vector<size_t>& GetShape() const override {
+        static std::vector<size_t> shape = {1};
+        return shape;
     };
 
     void SetNum(double num) {num_ = num;}

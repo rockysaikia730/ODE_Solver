@@ -1,13 +1,16 @@
 var searchData=
 [
-  ['defineconst_0',['DefineConst',['../class_parser_x_base.html#aeceb0cbb86283876d41cfd3971997967',1,'ParserXBase']]],
-  ['definefun_1',['DefineFun',['../class_parser_x_base.html#a866eac8fb53e9f262808e9f87e110e05',1,'ParserXBase']]],
-  ['defineinfixoprt_2',['DefineInfixOprt',['../class_parser_x_base.html#a28153fa3c2a5a0c2c1af3f123d51720e',1,'ParserXBase']]],
-  ['defineinfixoprtchars_3',['DefineInfixOprtChars',['../class_parser_x_base.html#ac74f9eed29c669dab7fe37fb35c98d8d',1,'ParserXBase']]],
-  ['definenamechars_4',['DefineNameChars',['../class_parser_x_base.html#aee548c390538d393be9927318b530fda',1,'ParserXBase']]],
-  ['defineoprt_5',['DefineOprt',['../class_parser_x_base.html#aecce59c0a985c3de97fea7c0589092dc',1,'ParserXBase::DefineOprt(const TokenPtr&lt; IOprtBin &gt; &amp;oprt)'],['../class_parser_x_base.html#adf571021a856ff05d20586e49b458985',1,'ParserXBase::DefineOprt(const TokenPtr&lt; IOprtBinShortcut &gt; &amp;oprt)']]],
-  ['defineoprtchars_6',['DefineOprtChars',['../class_parser_x_base.html#acdca7bbcb67b8ee29ea794ae7d92b7a2',1,'ParserXBase']]],
-  ['definepostfixoprt_7',['DefinePostfixOprt',['../class_parser_x_base.html#a1ead6017eb1958e89a9e22ac7ad9ca80',1,'ParserXBase']]],
-  ['definevar_8',['DefineVar',['../class_parser_x_base.html#a71dd65811952efda2e80a573feaa347d',1,'ParserXBase']]],
-  ['dynamictensor_9',['DynamicTensor',['../class_dynamic_tensor.html#aaf404565bd07c4410bccaa3b94373323',1,'DynamicTensor::DynamicTensor()'],['../class_dynamic_tensor.html#a595b2d7fb3043fd29ac32cf77194aee7',1,'DynamicTensor::DynamicTensor(const std::vector&lt; size_t &gt; &amp;input_shape, double initial_value)'],['../class_dynamic_tensor.html#a34e9dacaef2bd672eda1667d5380b7c1',1,'DynamicTensor::DynamicTensor(const std::vector&lt; double &gt; &amp;data, const std::vector&lt; size_t &gt; &amp;input_shape={})']]]
+  ['checkname_0',['CheckName',['../class_parser_x_base.html#a30bd611e39829014cf38a89ee6012cfe',1,'ParserXBase']]],
+  ['clearconst_1',['ClearConst',['../class_parser_x_base.html#a741b89ace00dda5e59c2fd33d97d217b',1,'ParserXBase']]],
+  ['clearfun_2',['ClearFun',['../class_parser_x_base.html#aeb2fc998e9d14203c7cd3e3c1bf77c8f',1,'ParserXBase']]],
+  ['clearinfixoprt_3',['ClearInfixOprt',['../class_parser_x_base.html#a3ba97ced34357313d5591a72988cffb1',1,'ParserXBase']]],
+  ['clearoprt_4',['ClearOprt',['../class_parser_x_base.html#aa095a92f46d4297e6caaea2a42db8f07',1,'ParserXBase']]],
+  ['clearpostfixoprt_5',['ClearPostfixOprt',['../class_parser_x_base.html#abec9dd953a1033aaf2c632da3c1c6029',1,'ParserXBase']]],
+  ['clearvar_6',['ClearVar',['../class_parser_x_base.html#a092bcdaaa7b51a250916372988be9cef',1,'ParserXBase']]],
+  ['clone_7',['Clone',['../class_i_value_reader.html#a69e6ce422514296fa00352e439791580',1,'IValueReader::Clone()'],['../class_token_reader.html#ac94a8bc419c7d19c01ce358fabc3e123',1,'TokenReader::Clone()'],['../class_dbl_val_reader.html#a03aa99a41b568a6ea0ad0392cf844715',1,'DblValReader::Clone()'],['../class_bool_val_reader.html#a276d0035f0d5473ab2d2877466245506',1,'BoolValReader::Clone()'],['../class_hex_val_reader.html#a11e9b90437a9484811b29ac776a1e277',1,'HexValReader::Clone()'],['../class_bin_val_reader.html#a5a2cae7ef549b0df7a4419d41ba6f377',1,'BinValReader::Clone()'],['../class_str_val_reader.html#a6b6b2162713c54622c1ebb7226e90a0a',1,'StrValReader::Clone()'],['../class_function.html#a606b5938afb38cef8b0ad96df774fe9d',1,'Function::Clone()'],['../class_parsed_function.html#aa4b8bb63f83f4afbc057ff0c989b0da3',1,'ParsedFunction::Clone()'],['../class_my_func.html#a3b138b2c4378e71d6bb0962357f36ac8',1,'MyFunc::Clone()'],['../class_squared_root.html#a437b9a32ca4209b0b443c63d95cd4c46',1,'SquaredRoot::Clone()'],['../class_rhs.html#ad4526351680c0042e79c5f580394bfeb',1,'Rhs::Clone()']]],
+  ['close_8',['Close',['../class_reader.html#a36852f38ab45088da044919c88392311',1,'Reader']]],
+  ['computestep_9',['ComputeStep',['../class_adams_bashforth.html#a1a7a6e06ee0fa286e0738578b77a29c1',1,'AdamsBashforth::ComputeStep()'],['../class_forward_euler_light.html#ab238eb77ab850a76bcea2c5042cd8c60',1,'ForwardEulerLight::ComputeStep()'],['../class_implicit_solver.html#a4f79fcbfa43f5b7c2207ce61a4420d74',1,'ImplicitSolver::ComputeStep()'],['../class_ode_solver.html#a35a9d27d9c3b484dae31ed1c6905a04a',1,'OdeSolver::ComputeStep()'],['../class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605',1,'RungeKutta::ComputeStep()']]],
+  ['console_10',['console',['../mp_types_8h.html#a94f2ed9bf840a880e03010f6db29e548',1,'mpTypes.h']]],
+  ['console_5fin_11',['console_in',['../mp_types_8h.html#a98895eb34cb26b9c2ae9b7628f206aaf',1,'mpTypes.h']]],
+  ['csvreader_12',['CsvReader',['../class_csv_reader.html#aa6b6e6ddeb120a67ad8e077f9e07d244',1,'CsvReader']]]
 ];

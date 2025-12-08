@@ -7,10 +7,5 @@ build/
 .idea/
 
 .vscode/
-/docs/html
-/docs/html
-/docs
-/docs/html/search
-/docs/html/search
-/docs/html
-docs/html/annotated.html
+
+docs/

@@ -44,6 +44,8 @@ void {\bfseries Update\+Derivative} (const \mbox{\hyperlink{class_dynamic_tensor
 \item 
 void {\bfseries Update\+Solution} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y)
 \item 
+void {\bfseries Update\+Window\+Sum} ()
+\item 
 void \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}} () override
 \begin{DoxyCompactList}\small\item\em Resets the solver state to the initial conditions. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90}{Step}} () override
@@ -68,6 +70,8 @@ double \mbox{\hyperlink{class_ode_solver_a6b634912c4c923a14e5ce7994f46b2a4}{Get\
 double \mbox{\hyperlink{class_ode_solver_adee8ff045eeb481ef911c9eee1b596c8}{Get\+Step\+Size}} () const
 \item 
 int \mbox{\hyperlink{class_ode_solver_ad0bbb5894abf1b510845a61e9b42ea61}{Get\+Number\+Of\+Steps}} () const
+\item 
+double \mbox{\hyperlink{class_ode_solver_a93ba8bfb62598239c78200ca6253fa02}{Get\+Current\+Time}} () const
 \item 
 void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}} ()
 \begin{DoxyCompactList}\small\item\em Executes the simulation loop (Batch Mode). \end{DoxyCompactList}\item 
@@ -94,6 +98,8 @@ int {\bfseries order\+\_\+sol\+\_\+}
 \item 
 int {\bfseries order\+\_\+derivative\+\_\+}
 \item 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries sum\+\_\+tn\+\_\+}
+\item 
 std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\bfseries solutions\+\_\+buffer\+\_\+}
 \item 
 std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\bfseries derivative\+\_\+buffer\+\_\+}
@@ -115,24 +121,22 @@ double {\bfseries current\+\_\+time\+\_\+}
 \begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\label{doc-func-members}
-\Hypertarget{class_adam_moulton_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_adam_moulton_a5c9bd3ac47674d61cedbb1bf393d3f8e}\index{AdamMoulton@{AdamMoulton}!GetCoeffsdY@{GetCoeffsdY}}
+\Hypertarget{class_adam_moulton_a5c9bd3ac47674d61cedbb1bf393d3f8e}\label{class_adam_moulton_a5c9bd3ac47674d61cedbb1bf393d3f8e} 
+\index{AdamMoulton@{AdamMoulton}!GetCoeffsdY@{GetCoeffsdY}}
 \index{GetCoeffsdY@{GetCoeffsdY}!AdamMoulton@{AdamMoulton}}
 \doxysubsubsection{\texorpdfstring{GetCoeffsdY()}{GetCoeffsdY()}}
-{\footnotesize\ttfamily \label{class_adam_moulton_a5c9bd3ac47674d61cedbb1bf393d3f8e} 
-const std\+::vector$<$ double $>$ \& Adam\+Moulton\+::\+Get\+CoeffsdY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily const std\+::vector$<$ double $>$ \& Adam\+Moulton\+::\+Get\+CoeffsdY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
 Implements \mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}}.
 
-\Hypertarget{class_adam_moulton_ad2bfcd5f4c6cf141e975c441239cfaa6}\index{AdamMoulton@{AdamMoulton}!GetCoeffsY@{GetCoeffsY}}
+\Hypertarget{class_adam_moulton_ad2bfcd5f4c6cf141e975c441239cfaa6}\label{class_adam_moulton_ad2bfcd5f4c6cf141e975c441239cfaa6} 
+\index{AdamMoulton@{AdamMoulton}!GetCoeffsY@{GetCoeffsY}}
 \index{GetCoeffsY@{GetCoeffsY}!AdamMoulton@{AdamMoulton}}
 \doxysubsubsection{\texorpdfstring{GetCoeffsY()}{GetCoeffsY()}}
-{\footnotesize\ttfamily \label{class_adam_moulton_ad2bfcd5f4c6cf141e975c441239cfaa6} 
-const std\+::vector$<$ double $>$ \& Adam\+Moulton\+::\+Get\+CoeffsY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily const std\+::vector$<$ double $>$ \& Adam\+Moulton\+::\+Get\+CoeffsY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -142,5 +146,5 @@ Implements \mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}}.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/adam\+\_\+moulton\+\_\+solver.\+h\item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/adam\+\_\+moulton\+\_\+solver.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/adam\+\_\+moulton\+\_\+solver.\+h\item 
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/adam\+\_\+moulton\+\_\+solver.\+cpp\end{DoxyCompactItemize}

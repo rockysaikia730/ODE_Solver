@@ -38,6 +38,13 @@ public:
      */
     DynamicTensor Eval(double t, const DynamicTensor& y) const override;
 
+    /**
+     * @brief Get the dimension of the output tensor.
+     * @return A vector representing the shape of the output tensor.
+     */
+    const std::vector<size_t>& GetShape() const;
+    
+
 private:
 
     /**
