@@ -1,9 +1,8 @@
 \doxysection{dynamic\+\_\+tensor.\+h}
-\hypertarget{dynamic__tensor_8h_source}{}\label{dynamic__tensor_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/dynamic\_tensor.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/dynamic\_tensor.h}}
+\hypertarget{dynamic__tensor_8h_source}{}\label{dynamic__tensor_8h_source}\index{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/dynamic\_tensor.h@{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/dynamic\_tensor.h}}
 \mbox{\hyperlink{dynamic__tensor_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
-\DoxyCodeLine{00008\ }
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ DYNAMIC\_TENSOR\_H\_}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ DYNAMIC\_TENSOR\_H\_}}
 \DoxyCodeLine{00011\ }
@@ -11,7 +10,7 @@
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <cstddef>}\ }
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <complex>}}
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <variant>}}
-\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \{}
 \DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Type\ \{\ REAL,\ COMPLEX\ \};}
 \DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{using\ }Complex\ =\ std::complex<double>;}
@@ -46,9 +45,10 @@
 \DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
 \DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{auto}\ end()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ GetVec<T>().end();\}}
 \DoxyCodeLine{00090\ }
-\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a951b70d3817858d411b94771bc7207e0}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\&\ second\_tensor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a951b70d3817858d411b94771bc7207e0}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ second\_tensor)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00096\ }
-\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a5c8bb1fa42a99911cfda9336b1876554}{operator*}}(\textcolor{keywordtype}{double}\ scalar)\ \textcolor{keyword}{const};}
+<<<<<<< HEAD
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a5c8bb1fa42a99911cfda9336b1876554}{operator*}}(\textcolor{keywordtype}{double}\ scalar)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00101\ }
 \DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_dynamic_tensor_a80d631cc2d2151a0e3c9da15edbd870d}{size}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00107\ }
@@ -56,39 +56,99 @@
 \DoxyCodeLine{00113\ }
 \DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138ebf6}{rank}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00119\ }
-\DoxyCodeLine{00120\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00122\ \ \ \ \ std::variant<std::vector<double>,\ std::vector<Complex>>\ data\_;}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00125\ \ \ \ \ std::vector<size\_t>\ shape\_;}
-\DoxyCodeLine{00126\ }
-\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ calculate\_index(\textcolor{keyword}{const}\ std::vector<size\_t>\&\ indices)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00136\ }
-\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00143\ \ \ \ \ std::vector<T>\&\ GetVec()\ \{}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ double>)\ \{}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsComplex())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Type\ Mismatch:\ Tensor\ is\ Complex,\ requested\ double."{}});}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::get<std::vector<double>>(data\_);}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \}\ }
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ Complex>)\ \{}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsComplex())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Type\ Mismatch:\ Tensor\ is\ Real,\ requested\ Complex."{}});}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::get<std::vector<Complex>>(data\_);}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}\ }
-\DoxyCodeLine{00152\ \ \ \ \ \}}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<T>\&\ GetVec()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ double>)\ \{}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsComplex())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Type\ Mismatch:\ Tensor\ is\ Complex,\ requested\ double."{}});}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::get<std::vector<double>>(data\_);}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}\ }
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ Complex>)\ \{}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsComplex())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Type\ Mismatch:\ Tensor\ is\ Real,\ requested\ Complex."{}});}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::get<std::vector<Complex>>(data\_);}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{class_dynamic_tensor_a5403ad1ea0c54fac03c94f4dd2285133}{flat}}(\textcolor{keywordtype}{size\_t}\ index)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetVec<T>()[index];}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00136\ \ \ \ \ T\&\ \mbox{\hyperlink{class_dynamic_tensor_a2241c8d89e1a3e78dfd3d5e89aab9254}{flat}}(\textcolor{keywordtype}{size\_t}\ index)\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetVec<T>()[index];}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00143\ \ \ \ \ std::variant<std::vector<double>,\ std::vector<Complex>>\ data\_;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00146\ \ \ \ \ std::vector<size\_t>\ shape\_;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ calculate\_index(\textcolor{keyword}{const}\ std::vector<size\_t>\&\ indices)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00164\ \ \ \ \ std::vector<T>\&\ GetVec()\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ double>)\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsComplex())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Type\ Mismatch:\ Tensor\ is\ Complex,\ requested\ double."{}});}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::get<std::vector<double>>(data\_);}
 \DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \}\ }
-\DoxyCodeLine{00169\ \ \ \ \ \}}
-\DoxyCodeLine{00170\ \};}
-\DoxyCodeLine{00171\ }
-\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ Complex>)\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsComplex())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Type\ Mismatch:\ Tensor\ is\ Real,\ requested\ Complex."{}});}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::get<std::vector<Complex>>(data\_);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<T>\&\ GetVec()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ double>)\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsComplex())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Type\ Mismatch:\ Tensor\ is\ Complex,\ requested\ double."{}});}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::get<std::vector<double>>(data\_);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ Complex>)\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsComplex())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Type\ Mismatch:\ Tensor\ is\ Real,\ requested\ Complex."{}});}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::get<std::vector<Complex>>(data\_);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \};}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#endif}}
+=======
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a5c8bb1fa42a99911cfda9336b1876554}{operator*}}(\textcolor{keywordtype}{double}\ scalar)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a5c8bb1fa42a99911cfda9336b1876554}{operator*}}(\textcolor{keywordtype}{double}\ scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\&\ tensor);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a05dae46dbd83e82cfeb69d331799fc6f}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\&\ second\_tensor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_aa34c71de9006beb7962e333128d35f9b}{operator/}}(\textcolor{keywordtype}{double}\ scalar)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_dynamic_tensor_a80d631cc2d2151a0e3c9da15edbd870d}{size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<size\_t>\&\ \mbox{\hyperlink{class_dynamic_tensor_a42b1bfd00a94348fe8b1ce43a2f6cf7e}{get\_shape}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138ebf6}{rank}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00133\ \ \ \ \ std::variant<std::vector<double>,\ std::vector<Complex>>\ data\_;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00136\ \ \ \ \ std::vector<size\_t>\ shape\_;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ calculate\_index(\textcolor{keyword}{const}\ std::vector<size\_t>\&\ indices)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00154\ \ \ \ \ std::vector<T>\&\ GetVec()\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ double>)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsComplex())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Type\ Mismatch:\ Tensor\ is\ Complex,\ requested\ double."{}});}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::get<std::vector<double>>(data\_);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ Complex>)\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsComplex())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Type\ Mismatch:\ Tensor\ is\ Real,\ requested\ Complex."{}});}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::get<std::vector<Complex>>(data\_);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<T>\&\ GetVec()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ double>)\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsComplex())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Type\ Mismatch:\ Tensor\ is\ Complex,\ requested\ double."{}});}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::get<std::vector<double>>(data\_);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ Complex>)\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsComplex())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Type\ Mismatch:\ Tensor\ is\ Real,\ requested\ Complex."{}});}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::get<std::vector<Complex>>(data\_);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00180\ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \};}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#endif}}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 
 \end{DoxyCode}

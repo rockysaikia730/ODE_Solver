@@ -3,7 +3,8 @@
 
 #include "dynamic_tensor.h"
 #include "solver_methods.h"
-#include <function.h>
+#include "function.h"
+#include "root_finder.h"
 #include <memory>
 
 /**
@@ -73,6 +74,16 @@ struct OdeRawData {
      * @brief Solver-related parameters.
      */
     solver_params solver_params;
+
+    /**
+     * @brief Pointer to the root finding strategy (optional).
+     */
+    std::shared_ptr<RootFinder> root_finder;
+
+    /**
+     * @brief Pointer to a derivative function (optional).
+     */
+    std::unique_ptr<Function> derivative;
 
 };
 

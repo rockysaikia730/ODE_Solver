@@ -10,6 +10,7 @@ CsvReader::CsvReader(const std::string& file_name, char separator, bool has_head
 void CsvReader::Read() {
     if (!Open()) {
         // Handle error! MISSING IMPLEMENTATION
+        throw std::runtime_error("Failed to open file: " + file_name_);
     }
 
     std::string line;
@@ -30,6 +31,7 @@ void CsvReader::Read() {
 
         if (tokens.size() != 2) {
             // Handle error! MISSING IMPLEMENTATION
+            throw std::invalid_argument("Invalid key-value pair: " + line);
         }
 
         std::string key = ToLower(tokens[0]);

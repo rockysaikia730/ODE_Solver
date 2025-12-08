@@ -226,18 +226,34 @@ protected:
          * @param str The function string to parse. Expected form is a flattened list of expressions (eg. "[[sin(t)+y0, cos(t)],[y1^2, exp(t)]]" for a 2x2 system).
          * @return a pointer to the created Function instance.
          */
-        std::shared_ptr<Function> ParseFunction(const std::string& str);
+        std::unique_ptr<Function> ParseFunction(const std::string& str);
 
     private:
 
+        /**
+         * @brief Recursive helper function to parse a tensor from a string. Only works for numeric types (double, complex).
+         * @param str The string to parse.
+         * @param pos The current position in the string.
+         * @param data The vector to store the parsed data. This will be filled with values for y0.
+         * @return A vector of size_t representing the shape of the parsed tensor.
+         */
         template <typename T>
         std::vector<size_t> ParseTensorRecursive(const std::string& str, size_t& pos, std::vector<T>& data);
+        
         /**
          * @brief Checks if a whole string has a complex number in it
          * @param str The string to check.
          * @return True if the string has a complex number, false otherwise.
          */
         bool HasComplexNumber(const std::string& str) const;
+
+        /**
+         * @brief Recursive helper function to parse a function string into a flattened list of expressions and determine the shape.
+         * @param str The function string to parse.
+         * @param pos The current position in the string.
+         * @return size_t representing the shape of the parsed function.
+         */
+        std::vector<size_t> ParseFunctionRecursive(const std::string& str, size_t& pos, std::vector<std::string>& flat_expressions);
     
     };
 

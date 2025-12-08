@@ -1,107 +1,61 @@
 #include <vector>
 #include <complex>
 #include <string>
-#include <muParserX.h>
+#include <mpParser.h>
 #include "parsed_function.h"
 #include "dynamic_tensor.h"
 #include "function.h"
 
-using Value::mup::Value;
-
-ParsedFunction::ParsedFunction(const std::vector<std::string>& expressions)
-    : t_(0.0), output_dim_(expressions.size()) {
-    
-        //Allocate number of equations
-        parser_.SetNumOutputs(static_cast<int>(output_dim_));
-
-        //Prepare y variables
-        AssignVariables();
-
-        //set expressions
-        for (size_t i = 0; i < output_dim_; ++i) {
-            parser_.SetExpr(static_cast<int>(i), expressions[i]);
-        }
-}
-
-ParsedFunction::ParsedFunction(const ParsedFunction& other)
-    : parser_(other.parser_), t_(other.t_), y_vars_(other.y_vars_), output_dim_(other.output_dim_) {
-    AssignVariables();
-}
-
-ParsedFunction& ParsedFunction::operator=(const ParsedFunction& other) {
-    if (this != &other) {
-        parser_ = other.parser_;
-        t_ = other.t_;
-        y_vars_ = other.y_vars_;
-        output_dim_ = other.output_dim_;
-        AssignVariables();
-    }
-    return *this;
+ParsedFunction::ParsedFunction(const std::vector<std::string>& expressions, const std::vector<size_t>& shape)
+    : expressions_(expressions), shape_(shape) {
 }
 
 std::unique_ptr<Function> ParsedFunction::Clone() const {
     return std::make_unique<ParsedFunction>(*this);
 }
 
-void ParsedFunction::AssignVariables() {
-    parser_.DefineVar("t", &t_);
-
-    if (!y_vars_.empty()) {
-        for (size_t i = 0; i < y_vars_.size(); ++i) {
-            std::string name = "y" + std::to_string(i);
-            parser_.DefineVar(name, &y_vars_[i]);
-        }
-    }
-
-}
 
 DynamicTensor ParsedFunction::Eval(double t, const DynamicTensor& y) const {
-    t_ = t;
+    bool is_complex = y.IsComplex();
+    size_t N = expressions_.size();
+    DynamicTensor result(shape_, is_complex ? DynamicTensor::Complex(0.0, 0.0) : 0.0);
 
-    state_shape_ = y.get_shape();
-    const size_t n = y.size();
+    for (size_t i = 0; i < N; ++i) {
+        mup::ParserX parser;
 
-    //ensuring size match
-    if (y.size() != y_vars_.size()) {
-        y_vars_.assign(y.size(), 0.0);
-        AssignVariables();
-    }
+        //define t
+        mup::Value t_var = t;
+        mup::Variable t_var_obj(&t_var);
+        parser.DefineVar("t", t_var_obj);
 
-    if (!y.IsComplex()) {
-        for(size_t i = 0; i < n; ++i) {
-            y_vars_[i] = Value(y.flat<double>()[i]);
-    }
-    else {
-        for(size_t i = 0; i < n; ++i) {
-            y_vars_[i] = Value(y.flat<DynamicTensor::Complex>()[i]);
+        //define y[i] variables
+        for (size_t j = 0; j < y.size(); ++j) {
+            if (is_complex) {
+                auto c = y.flat<DynamicTensor::Complex>(j);
+                mup::Value v(mup::cmplx_type(c.real(), c.imag()));
+                mup::Variable var(&v);
+                parser.DefineVar("y" + std::to_string(j), var);
+            }
+            else {
+                mup::Value v(y.flat<double>(j));
+                mup::Variable var(&v);
+                parser.DefineVar("y" + std::to_string(j), var);
+            }
+        }
+
+        // Set the expression
+        parser.SetExpr(expressions_[i]);
+        mup::Value val = parser.Eval();
+
+        // Assign the result in the output tensor
+        if (!is_complex) {
+            result.flat<double>(i) = val.GetFloat();
+        }
+        else {
+            auto c = val.GetComplex();
+            result.flat<DynamicTensor::Complex>(i) = DynamicTensor::Complex(c.real(), c.imag());
         }
     }
 
-    std::vector<Value> results = parser_.Eval();
-    bool is_any_complex = false;
-
-    for (const auto& res : results) {
-        if (res.GetType() == 'c' || res.GetType() == 'm'){
-            is_any_complex = true;
-            break;
-        }
-    }
-
-    if (!is_any_complex) {
-        DynamicTensor result(state_shape_, 0.0);
-        for (size_t i = 0; i < n; ++i) {
-            result.flat<double>()[i] = results[i].GetFloat();
-        }
-        return result;
-    }
-    else{
-        //At least one complex result
-        DynamicTensor result(state_shape_, DynamicTensor::Complex(0.0, 0.0));
-        for (size_t i = 0; i < n; ++i) {
-            result.flat<DynamicTensor::Complex>()[i] = results[i].GetComplex();
-        }
-        return result;
-    }
-
-
+    return result;
 }

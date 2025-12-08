@@ -26,6 +26,13 @@ public:
     virtual DynamicTensor Eval(double t, const DynamicTensor& y) const = 0;
 
     /**
+     * @brief Finds Gradient of the function using central difference method.
+     * @param t The time variable.
+     * @param y The state variable as a DynamicTensor.
+     * @return The Gradient of the function evaluation as a DynamicTensor.
+     */
+    virtual DynamicTensor Grad(double t, const DynamicTensor& y, double dy = 0.1) const;
+    /**
      * @brief Creates a deep copy of the Function object.
      * This is useful to be able to copy an ODE problem including its function.
      * @return A unique pointer to the cloned Function object.

@@ -6,6 +6,7 @@
 #include "reader.h"
 #include "ode_raw_data.h"
 #include "dynamic_tensor.h"
+#include "parsed_function.h"
 
 Reader::Reader(const std::string& file_name, char separator)
     : file_name_(file_name), separator_(separator) {
@@ -126,6 +127,7 @@ std::vector<size_t> Reader::ParseTensorRecursive(const std::string& str, size_t&
                 shape = nested_shape;
             } else if (shape != nested_shape) {
                 // Handle error! MISSING IMPLEMENTATION
+                throw std::invalid_argument("Inconsistent tensor shape detected.");
             }
         }
         else if (str[pos] == ']') {
@@ -224,6 +226,7 @@ std::complex<double> Reader::ParseComplexNumber(const std::string& str) const {
     // Assumes str is in the format "(a,b)" where a is the real part and b is the imaginary part
     if (!IsComplexNumber(str)) {
         // Handle error! MISSING IMPLEMENTATION
+        throw std::invalid_argument("Invalid complex number format: " + str);
     }
 
     std::string content = str.substr(1, str.size() - 2); // remove parentheses
@@ -240,9 +243,11 @@ double Reader::ParseDouble(const std::string& str) const {
     try {
         return std::stod(str);
     } catch (const std::invalid_argument& e) {
-        // Handle error! MISSING IMPLEMENTATION
+        //HANDLE ERROR! MISSING IMPLEMENTATION
+        throw std::invalid_argument("Invalid double format: " + str);
     } catch (const std::out_of_range& e) {
-        // Handle error! MISSING IMPLEMENTATION
+        //HANDLE ERROR! MISSING IMPLEMENTATION
+        throw std::out_of_range("Double value out of range: " + str);
     }
     return 0.0; // Default return value in case of error
 }
@@ -313,8 +318,15 @@ void Reader::InterpretKeyValuePair(const std::string& key, const std::string& va
     else if (key == "max_iterations") {
         raw_data_.solver_params.max_iterations = static_cast<size_t>(ParseDouble(value));
     }
+    else if (key == "function") {
+        raw_data_.function = ParseFunction(value);
+    }
+    else if (key == "derivative") {
+        raw_data_.derivative = ParseFunction(value);
+    }
     else {
         // Handle unknown key! MISSING IMPLEMENTATION
+        throw std::invalid_argument("Unknown key skipped: " + key);
     }
 }
 
@@ -328,8 +340,67 @@ std::string Reader::Trim(const std::string& str) const {
     return str.substr(start, end - start);
 }
 
-void Reader::ParseFunctionFromString(const std::string& function_string) {
-    // The expression is of the form [[[expr1],[expr2],...]] for multiple dimensions
-    //MISSING IMPLEMENTATION
+std::unique_ptr<Function> Reader::ParseFunction(const std::string& str) {
+    
+    size_t pos = 0;
+    std::vector<std::string> flat_expressions;
+    std::vector<size_t> shape = ParseFunctionRecursive(str, pos, flat_expressions);
+
+    return std::make_unique<ParsedFunction>(flat_expressions, shape);
+}
+
+std::vector<size_t> Reader::ParseFunctionRecursive(const std::string& str, size_t& pos, std::vector<std::string>& flat_expressions) {
+    std::vector<size_t> sub_shape;
+
+    while(pos < str.size()) {
+        if (str[pos] == '[') {
+            // Start of a new dimension
+            ++pos; // Move past '['
+            std::vector<std::string> nested_expression;
+            auto nested_shape = ParseFunctionRecursive(str, pos, nested_expression); //Recursive call on nested dimension
+
+            flat_expressions.insert(flat_expressions.end(), nested_expression.begin(), nested_expression.end()); // Flatten expressions
+
+            if (sub_shape.empty()) {
+                sub_shape = nested_shape;
+            }
+
+            else if (sub_shape != nested_shape){
+                // Handle error! MISSING IMPLEMENTATION
+                throw std::invalid_argument("Inconsistent function shape detected.");
+            }
+        }
+        else if (str[pos] == ']') {
+            // End of the current dimension
+            ++pos; // Move past ']'
+            break;
+        }
+        else if (str[pos] == ',' || std::isspace(str[pos])) {
+            // Separator between subdimension elements, or if space, just move on
+            ++pos;
+        }
+        else {
+            std::string token;
+            while (pos < str.size() && str[pos] != ',' && str[pos] != ']' && str[pos] != '[') {
+                token += str[pos];
+                ++pos;
+            }
+            token = Trim(token);
+            flat_expressions.push_back(token);
+        }
+    }
+    if (sub_shape.empty()) {
+        return {flat_expressions.size()}; // First dimension size
+    }
+    else {
+        // Add current dimension size
+        size_t product = 1;
+        for (auto& dim : sub_shape){
+            product *= dim;
+        }
+
+        sub_shape.insert(sub_shape.begin(), flat_expressions.size()/product); // divide by product of nested dimensions
+        return sub_shape;
+    }
 }
 

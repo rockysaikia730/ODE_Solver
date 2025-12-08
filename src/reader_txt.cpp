@@ -10,6 +10,7 @@ TxtReader::TxtReader(const std::string& file_name, char separator, char inline_s
 void TxtReader::Read() {
     if (!Open()) {
         // Handle error! MISSING IMPLEMENTATION
+        throw std::runtime_error("Failed to open file: " + file_name_);
     }
 
     std::string line;
@@ -29,6 +30,7 @@ void TxtReader::Read() {
 
             if (tokens.size() != 2) {
                 // Handle error! MISSING IMPLEMENTATION
+                throw std::invalid_argument("Invalid key-value pair: " + pair);
             }
 
             std::string key = ToLower(tokens[0]);

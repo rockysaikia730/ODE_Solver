@@ -1,9 +1,13 @@
 var searchData=
 [
-  ['rank_0',['rank',['../class_dynamic_tensor.html#a094738c223cbe58ad0b81dbae138ebf6',1,'DynamicTensor']]],
-  ['read_1',['Read',['../class_reader.html#a7d9acd2bfc171097e6f487371897f788',1,'Reader']]],
-  ['reader_2',['Reader',['../class_reader.html',1,'Reader&lt; T &gt;'],['../class_reader.html#ae3c137f54c97bfbeae122976bf0b74aa',1,'Reader::Reader()']]],
-  ['reader_2eh_3',['Reader.h',['../_reader_8h.html',1,'']]],
-  ['reset_4',['Reset',['../class_ode_solver.html#a1cc5668fdf4d5bd99ee21c4f91c6aca3',1,'OdeSolver']]],
-  ['rootfinder_5',['RootFinder',['../class_root_finder.html',1,'']]]
+<<<<<<< HEAD
+  ['begin_0',['begin',['../class_dynamic_tensor.html#ab3d41f03a8750b49db46f51dc61a41f7',1,'DynamicTensor']]],
+  ['binary_20operator_20callbacks_1',['Binary operator callbacks',['../group__binop.html',1,'']]],
+  ['binvalreader_2',['BinValReader',['../class_bin_val_reader.html',1,'']]],
+  ['bool_5ftype_3',['bool_type',['../mp_types_8h.html#a4e99e41c6f73a16c9a0e79f60f05019e',1,'mpTypes.h']]],
+  ['boolvalreader_4',['BoolValReader',['../class_bool_val_reader.html',1,'']]]
+=======
+  ['max_5fiterations_5fstring_0',['max_iterations_string',['../struct_ode_raw_data.html#a5bfa3a51756d35ab90dc60b2ac2beb50',1,'OdeRawData']]],
+  ['multistepodesolver_1',['MultiStepOdeSolver',['../class_multi_step_ode_solver.html',1,'']]]
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 ];

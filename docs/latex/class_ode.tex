@@ -2,12 +2,12 @@
 \hypertarget{class_ode}{}\label{class_ode}\index{Ode@{Ode}}
 
 
-Represents an Ordinary Differential Equation (ODE) problem definition.  
+Represents an Ordinary Differential Equation (\doxylink{class_o_d_e}{ODE}) problem definition.  
 
 
 
 
-{\ttfamily \#include $<$ode.\+h$>$}
+{\ttfamily \#include $<$ODE.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -16,17 +16,19 @@ Represents an Ordinary Differential Equation (ODE) problem definition.
 \begin{DoxyCompactList}\small\item\em Constructor with Tensor state. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_ode_aeb668eecfb030d5b19fdc28c74a28c12}{Ode}} (double in\+\_\+time, const double \&in\+\_\+y0, const std\+::string \&in\+\_\+name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ func, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder)
 \begin{DoxyCompactList}\small\item\em Constructor with Scalar state. Convenience constructor that promotes a double to a Rank-\/1 Tensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ode_af8f3b705253b3eb58dc7e58d5dbd7c22}{Ode}} (const \mbox{\hyperlink{class_reader}{Reader}} \&reader)
+\begin{DoxyCompactList}\small\item\em Constructor from \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
 \Hypertarget{class_ode_af859a1a7e2f0ff437c400a8c4033f7ad}\label{class_ode_af859a1a7e2f0ff437c400a8c4033f7ad} 
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ode} ()
 \begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_ode_a4856ed6d10e8f7a8218a7f81ff576918}{Set\+T0}} (double in\+\_\+time)
+void \mbox{\hyperlink{class_ode_aee3a5d1ff24f6143623fedc3b78ccd7f}{Set\+T0}} (double time)
 \begin{DoxyCompactList}\small\item\em Set the initial time. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ode_ac3c249eedd399493d573a5a823172b82}{Set\+Y0}} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&in\+\_\+y0)
 \begin{DoxyCompactList}\small\item\em Set the initial state using a Tensor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ode_a9c1f258b5c30cb458cb66121d76ff604}{Set\+Y0}} (double in\+\_\+y0)
 \begin{DoxyCompactList}\small\item\em Set the initial state using a scalar. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ode_ac0bda460d709fed3c4680b0d8468d871}{Set\+Name}} (const std\+::string \&in\+\_\+name)
-\begin{DoxyCompactList}\small\item\em Set the name of the ODE system. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set the name of the \doxylink{class_o_d_e}{ODE} system. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ode_a01227434e93e5835f0a933641de56139}{Set\+Function}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ func)
 \begin{DoxyCompactList}\small\item\em Inject a new derivative function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ode_a53c09a13019c843e03b918438074777a}{Set\+Root\+Finder}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder)
@@ -37,85 +39,181 @@ const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \& \mbox{\hyperli
 \begin{DoxyCompactList}\small\item\em Get the initial condition tensor. \end{DoxyCompactList}\item 
 const std\+::string \& \mbox{\hyperlink{class_ode_a6356a2c5b5b923378b5cc41951dc3575}{Get\+Name}} () const
 \begin{DoxyCompactList}\small\item\em Get the name of the system. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_function}{Function}} \& \mbox{\hyperlink{class_ode_adcb8ece3558bd7a29aefcfe9319e7dd4}{Get\+Function}} () const
+\begin{DoxyCompactList}\small\item\em Get the RHS function. \end{DoxyCompactList}\item 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ \& \mbox{\hyperlink{class_ode_a739b332b95ace434b930cf5a879ec46c}{Get\+Root\+Finder}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_root_finder}{Root\+Finder} Routine. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_ode_a3fc74d1b3f982351bd6dad5054f2cab7}{Evaluate}} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y) const
-\begin{DoxyCompactList}\small\item\em Evaluate the derivative function f(t, y). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluate the derivative function f(t, y). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ode_a3fb641140651884add33ea329c0532cb}{Ode}} (const \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \&raw\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the \doxylink{class_o_d_e}{ODE} with given parameters. \end{DoxyCompactList}\item 
+\Hypertarget{class_ode_ac6468fab017c86c1fac0fd35545fe4b5}\label{class_ode_ac6468fab017c86c1fac0fd35545fe4b5} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ode} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ode_ac0d3e4f67e2531e7c0b50fbd78dc4a55}{Get\+Initial\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Get the initial time. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ode_ad03b6166ce56ea984ed90777b75af169}{Get\+Final\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Get the final time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_ode_a61f1826882690c3f9865bf37ee5021e9}{Get\+Initial\+Condition}} () const
+\begin{DoxyCompactList}\small\item\em Get the initial condition tensor. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_ode_ab243f964976e91f2c4b83d5e2aac54e9}{Get\+Input\+Dimension}} () const
+\begin{DoxyCompactList}\small\item\em Get the dimension of the \doxylink{class_o_d_e}{ODE} system. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ode_abf8066539df35587dd98f87815af9311}{Get\+Step\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the step size for numerical solving. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_ode_a3ef187a4dbbdebf5b21ac9683d18f245}{Get\+Number\+Of\+Steps}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of steps for numerical solving. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ode_ade5dfcb147ff53e745bf77de2aca5991}{Get\+Tolerance}} () const
+\begin{DoxyCompactList}\small\item\em Get the tolerance for numerical methods. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_ode_a933d900dfe84d35e6a60a0c69c21f0a5}{Get\+Max\+Iterations}} () const
+\begin{DoxyCompactList}\small\item\em Get the maximum number of iterations for iterative methods. \end{DoxyCompactList}\item 
+Solver\+Method \mbox{\hyperlink{class_ode_a56237235ff74af5e056625e17f7637c5}{Get\+Solver\+Method}} () const
+\begin{DoxyCompactList}\small\item\em Get the solver method to be used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_aadfe7f1ebb398afe04eb52c9a41e7099}{Set\+Solver\+Method}} (Solver\+Method method)
+\begin{DoxyCompactList}\small\item\em Get the RHS function defining the \doxylink{class_o_d_e}{ODE}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_a0286b2bd927d79d9b85ecf21e0a21237}{Set\+Max\+Iterations}} (int max\+\_\+iterations)
+\begin{DoxyCompactList}\small\item\em Set the maximum number of iterations for iterative methods. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_aa22e58ffe5005a41cf12f9ee0be14cf4}{Set\+Tolerance}} (double tolerance)
+\begin{DoxyCompactList}\small\item\em Set the tolerance for numerical methods. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_a0d35e08bbd16104106d39cdde0ee1203}{Set\+Step\+Size}} (double step\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Set the step size for numerical solving. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_a76b6cde52b157c34977c9030e65741f0}{Set\+Number\+Of\+Steps}} (int number\+\_\+of\+\_\+steps)
+\begin{DoxyCompactList}\small\item\em Set the number of steps for numerical solving. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_ac7f844c34e418345c33e16de0b50329f}{Set\+Initial\+Condition}} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y0)
+\begin{DoxyCompactList}\small\item\em Set the initial condition tensor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_a268e0840f2dd0eab4d6d2ff363e39acf}{Set\+Initial\+Time}} (double t\+\_\+init)
+\begin{DoxyCompactList}\small\item\em Set the initial time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_a707917323067fc0398ea578c4e5a9e41}{Set\+Final\+Time}} (double t\+\_\+final)
+\begin{DoxyCompactList}\small\item\em Set the final time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_ode_a4d48f3f1df9423c4e835a8d142cefdea}{Evaluate\+Rhs}} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y) const
+\begin{DoxyCompactList}\small\item\em Evaluate the RHS function at a given time and state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Represents an Ordinary Differential Equation (ODE) problem definition. 
+Represents an Ordinary Differential Equation (\doxylink{class_o_d_e}{ODE}) problem definition. 
 
 The \doxylink{class_ode}{Ode} class acts as a container for the problem definition. It holds\+:
 \begin{DoxyEnumerate}
-\item The Initial Value Problem (IVP) conditions (t0, y0).
+\item The Initial \doxylink{class_value}{Value} Problem (IVP) conditions (t0, y0).
 \item The physics/math function defining the derivative (dy/dt).
 \item A root finding strategy (used for implicit solving methods). 
 \end{DoxyEnumerate}
 
-\label{doc-constructors}
-\Hypertarget{class_ode_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_ode_aa96be18b8d0d1fe6a521d1a91d42848e}\index{Ode@{Ode}!Ode@{Ode}}
+\Hypertarget{class_ode_aa96be18b8d0d1fe6a521d1a91d42848e}\label{class_ode_aa96be18b8d0d1fe6a521d1a91d42848e} 
 \index{Ode@{Ode}!Ode@{Ode}}
-\doxysubsubsection{\texorpdfstring{Ode()}{Ode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+<<<<<<< HEAD
+\index{Ode@{Ode}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{Ode()}{Ode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Ode\+::\+Ode (\begin{DoxyParamCaption}\item[{double}]{in\+\_\+time,  }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{in\+\_\+y0,  }\item[{const std\+::string \&}]{in\+\_\+name,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$}]{func,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder }\end{DoxyParamCaption})}
+=======
+\doxysubsubsection{\texorpdfstring{Ode()}{Ode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily \label{class_ode_aa96be18b8d0d1fe6a521d1a91d42848e} 
 Ode\+::\+Ode (\begin{DoxyParamCaption}\item[{double}]{in\+\_\+time}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{in\+\_\+y0}{, }\item[{const std\+::string \&}]{in\+\_\+name}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$}]{func}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder}{}\end{DoxyParamCaption})}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 
 
 
 Constructor with Tensor state. 
 
 
-\begin{DoxyItemize}
-\item 
 \begin{DoxyParams}{Parameters}
 {\em in\+\_\+time} & The initial time (t0). \\
 \hline
-{\em in\+\_\+y0} & The initial state vector/tensor (y0). \\
+{\em in\+\_\+y0} & The initial state tensor (y0). \\
 \hline
-{\em in\+\_\+name} & A unique identifier name for this ODE system. \\
+{\em in\+\_\+name} & A unique identifier name for this \doxylink{class_o_d_e}{ODE} system. \\
 \hline
 {\em func} & Shared pointer to the function defining dy/dt = f(t, y). \\
 \hline
 {\em root\+\_\+finder} & Shared pointer to the root finding strategy (for implicit solvers). \\
 \hline
 \end{DoxyParams}
-
-\end{DoxyItemize}\Hypertarget{class_ode_aeb668eecfb030d5b19fdc28c74a28c12}\index{Ode@{Ode}!Ode@{Ode}}
+\Hypertarget{class_ode_aeb668eecfb030d5b19fdc28c74a28c12}\label{class_ode_aeb668eecfb030d5b19fdc28c74a28c12} 
 \index{Ode@{Ode}!Ode@{Ode}}
-\doxysubsubsection{\texorpdfstring{Ode()}{Ode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+<<<<<<< HEAD
+\index{Ode@{Ode}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{Ode()}{Ode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Ode\+::\+Ode (\begin{DoxyParamCaption}\item[{double}]{in\+\_\+time,  }\item[{const double \&}]{in\+\_\+y0,  }\item[{const std\+::string \&}]{in\+\_\+name,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$}]{func,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder }\end{DoxyParamCaption})}
+=======
+\doxysubsubsection{\texorpdfstring{Ode()}{Ode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily \label{class_ode_aeb668eecfb030d5b19fdc28c74a28c12} 
 Ode\+::\+Ode (\begin{DoxyParamCaption}\item[{double}]{in\+\_\+time}{, }\item[{const double \&}]{in\+\_\+y0}{, }\item[{const std\+::string \&}]{in\+\_\+name}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$}]{func}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder}{}\end{DoxyParamCaption})}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 
 
 
 Constructor with Scalar state. Convenience constructor that promotes a double to a Rank-\/1 Tensor. 
 
 
-\begin{DoxyItemize}
-\item 
 \begin{DoxyParams}{Parameters}
 {\em in\+\_\+time} & The initial time (t0). \\
 \hline
 {\em in\+\_\+y0} & The initial state scalar (will be converted to Tensor). \\
 \hline
-{\em in\+\_\+name} & A unique identifier name for this ODE system. \\
+{\em in\+\_\+name} & A unique identifier name for this \doxylink{class_o_d_e}{ODE} system. \\
 \hline
 {\em func} & Shared pointer to the function defining dy/dt = f(t, y). \\
 \hline
 {\em root\+\_\+finder} & Shared pointer to the root finding strategy. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_ode_af8f3b705253b3eb58dc7e58d5dbd7c22}\label{class_ode_af8f3b705253b3eb58dc7e58d5dbd7c22} 
+\index{Ode@{Ode}!Ode@{Ode}}
+\index{Ode@{Ode}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{Ode()}{Ode()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Ode\+::\+Ode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_reader}{Reader}} \&}]{reader }\end{DoxyParamCaption})}
 
-\end{DoxyItemize}
 
-\label{doc-func-members}
-\Hypertarget{class_ode_doc-func-members}
+
+Constructor from \doxylink{class_reader}{Reader}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & A \doxylink{class_reader}{Reader} object which reades from input file to initialise the \doxylink{class_o_d_e}{ODE}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ode_a3fb641140651884add33ea329c0532cb}\label{class_ode_a3fb641140651884add33ea329c0532cb} 
+\index{Ode@{Ode}!Ode@{Ode}}
+\index{Ode@{Ode}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{Ode()}{Ode()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Ode\+::\+Ode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \&}]{raw\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Constructor that initializes the \doxylink{class_o_d_e}{ODE} with given parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+\_\+data} & An \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data} object containing raw data for initializing the \doxylink{class_o_d_e}{ODE}. The constructor is responsible for parsing the raw data and setting up the \doxylink{class_o_d_e}{ODE}. \\
+\hline
+\end{DoxyParams}
+
+<<<<<<< HEAD
+=======
+\end{DoxyItemize}\Hypertarget{class_ode_a3fb641140651884add33ea329c0532cb}\index{Ode@{Ode}!Ode@{Ode}}
+\index{Ode@{Ode}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{Ode()}{Ode()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_ode_a3fb641140651884add33ea329c0532cb} 
+Ode\+::\+Ode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \&}]{raw\+\_\+data}{}\end{DoxyParamCaption})}
+
+
+
+Constructor that initializes the \doxylink{class_o_d_e}{ODE} with given parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+\_\+data} & An \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data} object containing raw data for initializing the \doxylink{class_o_d_e}{ODE}. The constructor is responsible for parsing the raw data and setting up the \doxylink{class_o_d_e}{ODE}. \\
+\hline
+\end{DoxyParams}
+
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_ode_a3fc74d1b3f982351bd6dad5054f2cab7}\index{Ode@{Ode}!Evaluate@{Evaluate}}
+\Hypertarget{class_ode_a3fc74d1b3f982351bd6dad5054f2cab7}\label{class_ode_a3fc74d1b3f982351bd6dad5054f2cab7} 
+\index{Ode@{Ode}!Evaluate@{Evaluate}}
 \index{Evaluate@{Evaluate}!Ode@{Ode}}
 \doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
-{\footnotesize\ttfamily \label{class_ode_a3fc74d1b3f982351bd6dad5054f2cab7} 
-\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Ode\+::\+Evaluate (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y}{}\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Ode\+::\+Evaluate (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y }\end{DoxyParamCaption}) const}
 
 
 
@@ -135,11 +233,43 @@ Evaluate the derivative function f(t, y).
 A \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} representing dy/dt. 
 \end{DoxyReturn}
 
-\end{DoxyItemize}\Hypertarget{class_ode_a6c360986d0f06b497d3b311ead9c0366}\index{Ode@{Ode}!GetCondIn@{GetCondIn}}
+<<<<<<< HEAD
+\end{DoxyItemize}\Hypertarget{class_ode_a4d48f3f1df9423c4e835a8d142cefdea}\label{class_ode_a4d48f3f1df9423c4e835a8d142cefdea} 
+\index{Ode@{Ode}!EvaluateRhs@{EvaluateRhs}}
+\index{EvaluateRhs@{EvaluateRhs}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{EvaluateRhs()}{EvaluateRhs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Ode\+::\+Evaluate\+Rhs (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y }\end{DoxyParamCaption}) const}
+=======
+\end{DoxyItemize}\Hypertarget{class_ode_a4d48f3f1df9423c4e835a8d142cefdea}\index{Ode@{Ode}!EvaluateRhs@{EvaluateRhs}}
+\index{EvaluateRhs@{EvaluateRhs}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{EvaluateRhs()}{EvaluateRhs()}}
+{\footnotesize\ttfamily \label{class_ode_a4d48f3f1df9423c4e835a8d142cefdea} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Ode\+::\+Evaluate\+Rhs (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y}{}\end{DoxyParamCaption}) const}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Evaluate the RHS function at a given time and state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The current time. \\
+\hline
+{\em y} & The current state as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the RHS function as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. 
+\end{DoxyReturn}
+<<<<<<< HEAD
+\Hypertarget{class_ode_a6c360986d0f06b497d3b311ead9c0366}\label{class_ode_a6c360986d0f06b497d3b311ead9c0366} 
+\index{Ode@{Ode}!GetCondIn@{GetCondIn}}
+=======
+\Hypertarget{class_ode_a6c360986d0f06b497d3b311ead9c0366}\index{Ode@{Ode}!GetCondIn@{GetCondIn}}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 \index{GetCondIn@{GetCondIn}!Ode@{Ode}}
 \doxysubsubsection{\texorpdfstring{GetCondIn()}{GetCondIn()}}
-{\footnotesize\ttfamily \label{class_ode_a6c360986d0f06b497d3b311ead9c0366} 
-const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \& Ode\+::\+Get\+Cond\+In (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \& Ode\+::\+Get\+Cond\+In (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -148,11 +278,133 @@ Get the initial condition tensor.
 \begin{DoxyReturn}{Returns}
 Const reference to the initial state (y0). 
 \end{DoxyReturn}
+<<<<<<< HEAD
+\Hypertarget{class_ode_ad03b6166ce56ea984ed90777b75af169}\label{class_ode_ad03b6166ce56ea984ed90777b75af169} 
+\index{Ode@{Ode}!GetFinalTime@{GetFinalTime}}
+\index{GetFinalTime@{GetFinalTime}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetFinalTime()}{GetFinalTime()}}
+{\footnotesize\ttfamily double Ode\+::\+Get\+Final\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+=======
+\Hypertarget{class_ode_ad03b6166ce56ea984ed90777b75af169}\index{Ode@{Ode}!GetFinalTime@{GetFinalTime}}
+\index{GetFinalTime@{GetFinalTime}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetFinalTime()}{GetFinalTime()}}
+{\footnotesize\ttfamily \label{class_ode_ad03b6166ce56ea984ed90777b75af169} 
+double Ode\+::\+Get\+Final\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Get the final time. 
+
+\begin{DoxyReturn}{Returns}
+The final time as a double. 
+\end{DoxyReturn}
+<<<<<<< HEAD
+\Hypertarget{class_ode_a61f1826882690c3f9865bf37ee5021e9}\label{class_ode_a61f1826882690c3f9865bf37ee5021e9} 
+\index{Ode@{Ode}!GetInitialCondition@{GetInitialCondition}}
+\index{GetInitialCondition@{GetInitialCondition}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetInitialCondition()}{GetInitialCondition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Ode\+::\+Get\+Initial\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+=======
+\Hypertarget{class_ode_adcb8ece3558bd7a29aefcfe9319e7dd4}\index{Ode@{Ode}!GetFunction@{GetFunction}}
+\index{GetFunction@{GetFunction}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetFunction()}{GetFunction()}}
+{\footnotesize\ttfamily \label{class_ode_adcb8ece3558bd7a29aefcfe9319e7dd4} 
+const \mbox{\hyperlink{class_function}{Function}} \& Ode\+::\+Get\+Function (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the RHS function. 
+
+\begin{DoxyReturn}{Returns}
+Const reference to the \doxylink{class_function}{Function}. 
+\end{DoxyReturn}
+\Hypertarget{class_ode_a61f1826882690c3f9865bf37ee5021e9}\index{Ode@{Ode}!GetInitialCondition@{GetInitialCondition}}
+\index{GetInitialCondition@{GetInitialCondition}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetInitialCondition()}{GetInitialCondition()}}
+{\footnotesize\ttfamily \label{class_ode_a61f1826882690c3f9865bf37ee5021e9} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Ode\+::\+Get\+Initial\+Condition (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Get the initial condition tensor. 
+
+\begin{DoxyReturn}{Returns}
+The initial condition as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. 
+\end{DoxyReturn}
+<<<<<<< HEAD
+\Hypertarget{class_ode_ac0d3e4f67e2531e7c0b50fbd78dc4a55}\label{class_ode_ac0d3e4f67e2531e7c0b50fbd78dc4a55} 
+\index{Ode@{Ode}!GetInitialTime@{GetInitialTime}}
+\index{GetInitialTime@{GetInitialTime}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetInitialTime()}{GetInitialTime()}}
+{\footnotesize\ttfamily double Ode\+::\+Get\+Initial\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+=======
+\Hypertarget{class_ode_ac0d3e4f67e2531e7c0b50fbd78dc4a55}\index{Ode@{Ode}!GetInitialTime@{GetInitialTime}}
+\index{GetInitialTime@{GetInitialTime}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetInitialTime()}{GetInitialTime()}}
+{\footnotesize\ttfamily \label{class_ode_ac0d3e4f67e2531e7c0b50fbd78dc4a55} 
+double Ode\+::\+Get\+Initial\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Get the initial time. 
+
+\begin{DoxyReturn}{Returns}
+The initial time as a double. 
+\end{DoxyReturn}
+<<<<<<< HEAD
+\Hypertarget{class_ode_ab243f964976e91f2c4b83d5e2aac54e9}\label{class_ode_ab243f964976e91f2c4b83d5e2aac54e9} 
+\index{Ode@{Ode}!GetInputDimension@{GetInputDimension}}
+\index{GetInputDimension@{GetInputDimension}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetInputDimension()}{GetInputDimension()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Ode\+::\+Get\+Input\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+=======
+\Hypertarget{class_ode_ab243f964976e91f2c4b83d5e2aac54e9}\index{Ode@{Ode}!GetInputDimension@{GetInputDimension}}
+\index{GetInputDimension@{GetInputDimension}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetInputDimension()}{GetInputDimension()}}
+{\footnotesize\ttfamily \label{class_ode_ab243f964976e91f2c4b83d5e2aac54e9} 
+std\+::vector$<$ int $>$ Ode\+::\+Get\+Input\+Dimension (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Get the dimension of the \doxylink{class_o_d_e}{ODE} system. 
+
+\begin{DoxyReturn}{Returns}
+The dimension as a vector as dimension depends on the tensor. 
+\end{DoxyReturn}
+<<<<<<< HEAD
+\Hypertarget{class_ode_a933d900dfe84d35e6a60a0c69c21f0a5}\label{class_ode_a933d900dfe84d35e6a60a0c69c21f0a5} 
+\index{Ode@{Ode}!GetMaxIterations@{GetMaxIterations}}
+\index{GetMaxIterations@{GetMaxIterations}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetMaxIterations()}{GetMaxIterations()}}
+{\footnotesize\ttfamily int Ode\+::\+Get\+Max\+Iterations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+=======
+\Hypertarget{class_ode_a933d900dfe84d35e6a60a0c69c21f0a5}\index{Ode@{Ode}!GetMaxIterations@{GetMaxIterations}}
+\index{GetMaxIterations@{GetMaxIterations}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetMaxIterations()}{GetMaxIterations()}}
+{\footnotesize\ttfamily \label{class_ode_a933d900dfe84d35e6a60a0c69c21f0a5} 
+int Ode\+::\+Get\+Max\+Iterations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Get the maximum number of iterations for iterative methods. 
+
+\begin{DoxyReturn}{Returns}
+The maximum number of iterations as an integer. 
+\end{DoxyReturn}
+<<<<<<< HEAD
+\Hypertarget{class_ode_a6356a2c5b5b923378b5cc41951dc3575}\label{class_ode_a6356a2c5b5b923378b5cc41951dc3575} 
+\index{Ode@{Ode}!GetName@{GetName}}
+=======
 \Hypertarget{class_ode_a6356a2c5b5b923378b5cc41951dc3575}\index{Ode@{Ode}!GetName@{GetName}}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 \index{GetName@{GetName}!Ode@{Ode}}
 \doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
-{\footnotesize\ttfamily \label{class_ode_a6356a2c5b5b923378b5cc41951dc3575} 
-const std\+::string \& Ode\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const std\+::string \& Ode\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -161,11 +413,91 @@ Get the name of the system.
 \begin{DoxyReturn}{Returns}
 The name string. 
 \end{DoxyReturn}
+<<<<<<< HEAD
+\Hypertarget{class_ode_a3ef187a4dbbdebf5b21ac9683d18f245}\label{class_ode_a3ef187a4dbbdebf5b21ac9683d18f245} 
+\index{Ode@{Ode}!GetNumberOfSteps@{GetNumberOfSteps}}
+\index{GetNumberOfSteps@{GetNumberOfSteps}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetNumberOfSteps()}{GetNumberOfSteps()}}
+{\footnotesize\ttfamily int Ode\+::\+Get\+Number\+Of\+Steps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+=======
+\Hypertarget{class_ode_a3ef187a4dbbdebf5b21ac9683d18f245}\index{Ode@{Ode}!GetNumberOfSteps@{GetNumberOfSteps}}
+\index{GetNumberOfSteps@{GetNumberOfSteps}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetNumberOfSteps()}{GetNumberOfSteps()}}
+{\footnotesize\ttfamily \label{class_ode_a3ef187a4dbbdebf5b21ac9683d18f245} 
+int Ode\+::\+Get\+Number\+Of\+Steps (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Get the number of steps for numerical solving. 
+
+\begin{DoxyReturn}{Returns}
+The number of steps as an integer. 
+\end{DoxyReturn}
+<<<<<<< HEAD
+\Hypertarget{class_ode_a56237235ff74af5e056625e17f7637c5}\label{class_ode_a56237235ff74af5e056625e17f7637c5} 
+\index{Ode@{Ode}!GetSolverMethod@{GetSolverMethod}}
+\index{GetSolverMethod@{GetSolverMethod}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetSolverMethod()}{GetSolverMethod()}}
+{\footnotesize\ttfamily Solver\+Method Ode\+::\+Get\+Solver\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+=======
+\Hypertarget{class_ode_a739b332b95ace434b930cf5a879ec46c}\index{Ode@{Ode}!GetRootFinder@{GetRootFinder}}
+\index{GetRootFinder@{GetRootFinder}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetRootFinder()}{GetRootFinder()}}
+{\footnotesize\ttfamily \label{class_ode_a739b332b95ace434b930cf5a879ec46c} 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ \& Ode\+::\+Get\+Root\+Finder (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the \doxylink{class_root_finder}{Root\+Finder} Routine. 
+
+\begin{DoxyReturn}{Returns}
+Const reference to the \doxylink{class_root_finder}{Root\+Finder} Routine. 
+\end{DoxyReturn}
+\Hypertarget{class_ode_a56237235ff74af5e056625e17f7637c5}\index{Ode@{Ode}!GetSolverMethod@{GetSolverMethod}}
+\index{GetSolverMethod@{GetSolverMethod}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetSolverMethod()}{GetSolverMethod()}}
+{\footnotesize\ttfamily \label{class_ode_a56237235ff74af5e056625e17f7637c5} 
+Solver\+Method Ode\+::\+Get\+Solver\+Method (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Get the solver method to be used. 
+
+\begin{DoxyReturn}{Returns}
+The solver method as a Solver\+Method enum. This is only the text representation; it does not return the actual solver object. 
+\end{DoxyReturn}
+<<<<<<< HEAD
+\Hypertarget{class_ode_abf8066539df35587dd98f87815af9311}\label{class_ode_abf8066539df35587dd98f87815af9311} 
+\index{Ode@{Ode}!GetStepSize@{GetStepSize}}
+\index{GetStepSize@{GetStepSize}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetStepSize()}{GetStepSize()}}
+{\footnotesize\ttfamily double Ode\+::\+Get\+Step\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+=======
+\Hypertarget{class_ode_abf8066539df35587dd98f87815af9311}\index{Ode@{Ode}!GetStepSize@{GetStepSize}}
+\index{GetStepSize@{GetStepSize}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetStepSize()}{GetStepSize()}}
+{\footnotesize\ttfamily \label{class_ode_abf8066539df35587dd98f87815af9311} 
+double Ode\+::\+Get\+Step\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Get the step size for numerical solving. 
+
+\begin{DoxyReturn}{Returns}
+The step size as a double. 
+\end{DoxyReturn}
+<<<<<<< HEAD
+\Hypertarget{class_ode_a68b7580e063b949bfc0046e4142ad490}\label{class_ode_a68b7580e063b949bfc0046e4142ad490} 
+\index{Ode@{Ode}!GetTimeIn@{GetTimeIn}}
+=======
 \Hypertarget{class_ode_a68b7580e063b949bfc0046e4142ad490}\index{Ode@{Ode}!GetTimeIn@{GetTimeIn}}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 \index{GetTimeIn@{GetTimeIn}!Ode@{Ode}}
 \doxysubsubsection{\texorpdfstring{GetTimeIn()}{GetTimeIn()}}
-{\footnotesize\ttfamily \label{class_ode_a68b7580e063b949bfc0046e4142ad490} 
-double Ode\+::\+Get\+Time\+In (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily double Ode\+::\+Get\+Time\+In (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -174,11 +506,59 @@ Get the initial time.
 \begin{DoxyReturn}{Returns}
 The initial time (t0). 
 \end{DoxyReturn}
+<<<<<<< HEAD
+\Hypertarget{class_ode_ade5dfcb147ff53e745bf77de2aca5991}\label{class_ode_ade5dfcb147ff53e745bf77de2aca5991} 
+\index{Ode@{Ode}!GetTolerance@{GetTolerance}}
+\index{GetTolerance@{GetTolerance}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetTolerance()}{GetTolerance()}}
+{\footnotesize\ttfamily double Ode\+::\+Get\+Tolerance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+=======
+\Hypertarget{class_ode_ade5dfcb147ff53e745bf77de2aca5991}\index{Ode@{Ode}!GetTolerance@{GetTolerance}}
+\index{GetTolerance@{GetTolerance}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{GetTolerance()}{GetTolerance()}}
+{\footnotesize\ttfamily \label{class_ode_ade5dfcb147ff53e745bf77de2aca5991} 
+double Ode\+::\+Get\+Tolerance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Get the tolerance for numerical methods. 
+
+\begin{DoxyReturn}{Returns}
+The tolerance as a double. 
+\end{DoxyReturn}
+<<<<<<< HEAD
+\Hypertarget{class_ode_a707917323067fc0398ea578c4e5a9e41}\label{class_ode_a707917323067fc0398ea578c4e5a9e41} 
+\index{Ode@{Ode}!SetFinalTime@{SetFinalTime}}
+\index{SetFinalTime@{SetFinalTime}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetFinalTime()}{SetFinalTime()}}
+{\footnotesize\ttfamily void Ode\+::\+Set\+Final\+Time (\begin{DoxyParamCaption}\item[{double}]{t\+\_\+final }\end{DoxyParamCaption})}
+=======
+\Hypertarget{class_ode_a707917323067fc0398ea578c4e5a9e41}\index{Ode@{Ode}!SetFinalTime@{SetFinalTime}}
+\index{SetFinalTime@{SetFinalTime}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetFinalTime()}{SetFinalTime()}}
+{\footnotesize\ttfamily \label{class_ode_a707917323067fc0398ea578c4e5a9e41} 
+void Ode\+::\+Set\+Final\+Time (\begin{DoxyParamCaption}\item[{double}]{t\+\_\+final}{}\end{DoxyParamCaption})}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Set the final time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+final} & The final time as a double. \\
+\hline
+\end{DoxyParams}
+<<<<<<< HEAD
+\Hypertarget{class_ode_a01227434e93e5835f0a933641de56139}\label{class_ode_a01227434e93e5835f0a933641de56139} 
+\index{Ode@{Ode}!SetFunction@{SetFunction}}
+=======
 \Hypertarget{class_ode_a01227434e93e5835f0a933641de56139}\index{Ode@{Ode}!SetFunction@{SetFunction}}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 \index{SetFunction@{SetFunction}!Ode@{Ode}}
 \doxysubsubsection{\texorpdfstring{SetFunction()}{SetFunction()}}
-{\footnotesize\ttfamily \label{class_ode_a01227434e93e5835f0a933641de56139} 
-void Ode\+::\+Set\+Function (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$}]{func}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Ode\+::\+Set\+Function (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$}]{func }\end{DoxyParamCaption})}
 
 
 
@@ -189,26 +569,126 @@ Inject a new derivative function.
 {\em func} & Shared pointer to the new \doxylink{class_function}{Function}. \\
 \hline
 \end{DoxyParams}
+<<<<<<< HEAD
+\Hypertarget{class_ode_ac7f844c34e418345c33e16de0b50329f}\label{class_ode_ac7f844c34e418345c33e16de0b50329f} 
+\index{Ode@{Ode}!SetInitialCondition@{SetInitialCondition}}
+\index{SetInitialCondition@{SetInitialCondition}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetInitialCondition()}{SetInitialCondition()}}
+{\footnotesize\ttfamily void Ode\+::\+Set\+Initial\+Condition (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y0 }\end{DoxyParamCaption})}
+=======
+\Hypertarget{class_ode_ac7f844c34e418345c33e16de0b50329f}\index{Ode@{Ode}!SetInitialCondition@{SetInitialCondition}}
+\index{SetInitialCondition@{SetInitialCondition}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetInitialCondition()}{SetInitialCondition()}}
+{\footnotesize\ttfamily \label{class_ode_ac7f844c34e418345c33e16de0b50329f} 
+void Ode\+::\+Set\+Initial\+Condition (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y0}{}\end{DoxyParamCaption})}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Set the initial condition tensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y0} & The initial condition as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. \\
+\hline
+\end{DoxyParams}
+<<<<<<< HEAD
+\Hypertarget{class_ode_a268e0840f2dd0eab4d6d2ff363e39acf}\label{class_ode_a268e0840f2dd0eab4d6d2ff363e39acf} 
+\index{Ode@{Ode}!SetInitialTime@{SetInitialTime}}
+\index{SetInitialTime@{SetInitialTime}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetInitialTime()}{SetInitialTime()}}
+{\footnotesize\ttfamily void Ode\+::\+Set\+Initial\+Time (\begin{DoxyParamCaption}\item[{double}]{t\+\_\+init }\end{DoxyParamCaption})}
+=======
+\Hypertarget{class_ode_a268e0840f2dd0eab4d6d2ff363e39acf}\index{Ode@{Ode}!SetInitialTime@{SetInitialTime}}
+\index{SetInitialTime@{SetInitialTime}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetInitialTime()}{SetInitialTime()}}
+{\footnotesize\ttfamily \label{class_ode_a268e0840f2dd0eab4d6d2ff363e39acf} 
+void Ode\+::\+Set\+Initial\+Time (\begin{DoxyParamCaption}\item[{double}]{t\+\_\+init}{}\end{DoxyParamCaption})}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Set the initial time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+init} & The initial time as a double. \\
+\hline
+\end{DoxyParams}
+<<<<<<< HEAD
+\Hypertarget{class_ode_a0286b2bd927d79d9b85ecf21e0a21237}\label{class_ode_a0286b2bd927d79d9b85ecf21e0a21237} 
+\index{Ode@{Ode}!SetMaxIterations@{SetMaxIterations}}
+\index{SetMaxIterations@{SetMaxIterations}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetMaxIterations()}{SetMaxIterations()}}
+{\footnotesize\ttfamily void Ode\+::\+Set\+Max\+Iterations (\begin{DoxyParamCaption}\item[{int}]{max\+\_\+iterations }\end{DoxyParamCaption})}
+=======
+\Hypertarget{class_ode_a0286b2bd927d79d9b85ecf21e0a21237}\index{Ode@{Ode}!SetMaxIterations@{SetMaxIterations}}
+\index{SetMaxIterations@{SetMaxIterations}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetMaxIterations()}{SetMaxIterations()}}
+{\footnotesize\ttfamily \label{class_ode_a0286b2bd927d79d9b85ecf21e0a21237} 
+void Ode\+::\+Set\+Max\+Iterations (\begin{DoxyParamCaption}\item[{int}]{max\+\_\+iterations}{}\end{DoxyParamCaption})}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Set the maximum number of iterations for iterative methods. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+\_\+iterations} & The maximum number of iterations as an integer. \\
+\hline
+\end{DoxyParams}
+<<<<<<< HEAD
+\Hypertarget{class_ode_ac0bda460d709fed3c4680b0d8468d871}\label{class_ode_ac0bda460d709fed3c4680b0d8468d871} 
+\index{Ode@{Ode}!SetName@{SetName}}
+=======
 \Hypertarget{class_ode_ac0bda460d709fed3c4680b0d8468d871}\index{Ode@{Ode}!SetName@{SetName}}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 \index{SetName@{SetName}!Ode@{Ode}}
 \doxysubsubsection{\texorpdfstring{SetName()}{SetName()}}
-{\footnotesize\ttfamily \label{class_ode_ac0bda460d709fed3c4680b0d8468d871} 
-void Ode\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{in\+\_\+name}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Ode\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{in\+\_\+name }\end{DoxyParamCaption})}
 
 
 
-Set the name of the ODE system. 
+Set the name of the \doxylink{class_o_d_e}{ODE} system. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em in\+\_\+name} & The new name. \\
 \hline
 \end{DoxyParams}
+<<<<<<< HEAD
+\Hypertarget{class_ode_a76b6cde52b157c34977c9030e65741f0}\label{class_ode_a76b6cde52b157c34977c9030e65741f0} 
+\index{Ode@{Ode}!SetNumberOfSteps@{SetNumberOfSteps}}
+\index{SetNumberOfSteps@{SetNumberOfSteps}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetNumberOfSteps()}{SetNumberOfSteps()}}
+{\footnotesize\ttfamily void Ode\+::\+Set\+Number\+Of\+Steps (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+of\+\_\+steps }\end{DoxyParamCaption})}
+=======
+\Hypertarget{class_ode_a76b6cde52b157c34977c9030e65741f0}\index{Ode@{Ode}!SetNumberOfSteps@{SetNumberOfSteps}}
+\index{SetNumberOfSteps@{SetNumberOfSteps}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetNumberOfSteps()}{SetNumberOfSteps()}}
+{\footnotesize\ttfamily \label{class_ode_a76b6cde52b157c34977c9030e65741f0} 
+void Ode\+::\+Set\+Number\+Of\+Steps (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+of\+\_\+steps}{}\end{DoxyParamCaption})}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Set the number of steps for numerical solving. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+\_\+of\+\_\+steps} & The number of steps as an integer. \\
+\hline
+\end{DoxyParams}
+<<<<<<< HEAD
+\Hypertarget{class_ode_a53c09a13019c843e03b918438074777a}\label{class_ode_a53c09a13019c843e03b918438074777a} 
+\index{Ode@{Ode}!SetRootFinder@{SetRootFinder}}
+=======
 \Hypertarget{class_ode_a53c09a13019c843e03b918438074777a}\index{Ode@{Ode}!SetRootFinder@{SetRootFinder}}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 \index{SetRootFinder@{SetRootFinder}!Ode@{Ode}}
 \doxysubsubsection{\texorpdfstring{SetRootFinder()}{SetRootFinder()}}
-{\footnotesize\ttfamily \label{class_ode_a53c09a13019c843e03b918438074777a} 
-void Ode\+::\+Set\+Root\+Finder (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Ode\+::\+Set\+Root\+Finder (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder }\end{DoxyParamCaption})}
 
 
 
@@ -219,11 +699,69 @@ Inject a new root finder.
 {\em root\+\_\+finder} & Shared pointer to the new \doxylink{class_root_finder}{Root\+Finder}. \\
 \hline
 \end{DoxyParams}
+<<<<<<< HEAD
+\Hypertarget{class_ode_aadfe7f1ebb398afe04eb52c9a41e7099}\label{class_ode_aadfe7f1ebb398afe04eb52c9a41e7099} 
+\index{Ode@{Ode}!SetSolverMethod@{SetSolverMethod}}
+\index{SetSolverMethod@{SetSolverMethod}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetSolverMethod()}{SetSolverMethod()}}
+{\footnotesize\ttfamily void Ode\+::\+Set\+Solver\+Method (\begin{DoxyParamCaption}\item[{Solver\+Method}]{method }\end{DoxyParamCaption})}
+=======
+\Hypertarget{class_ode_aadfe7f1ebb398afe04eb52c9a41e7099}\index{Ode@{Ode}!SetSolverMethod@{SetSolverMethod}}
+\index{SetSolverMethod@{SetSolverMethod}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetSolverMethod()}{SetSolverMethod()}}
+{\footnotesize\ttfamily \label{class_ode_aadfe7f1ebb398afe04eb52c9a41e7099} 
+void Ode\+::\+Set\+Solver\+Method (\begin{DoxyParamCaption}\item[{Solver\+Method}]{method}{}\end{DoxyParamCaption})}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Get the RHS function defining the \doxylink{class_o_d_e}{ODE}. 
+
+\begin{DoxyReturn}{Returns}
+A function pointer or object representing the RHS function. This is a placeholder; actual implementation depends on how functions are represented.
+\end{DoxyReturn}
+Set the RHS function defining the \doxylink{class_o_d_e}{ODE}. 
+\begin{DoxyParams}{Parameters}
+{\em function} & A function pointer or object representing the RHS function. This is a placeholder; actual implementation depends on how functions are represented.\\
+\hline
+\end{DoxyParams}
+Set the solver method to be used. 
+\begin{DoxyParams}{Parameters}
+{\em method} & The solver method as a Solver\+Method enum. \\
+\hline
+\end{DoxyParams}
+<<<<<<< HEAD
+\Hypertarget{class_ode_a0d35e08bbd16104106d39cdde0ee1203}\label{class_ode_a0d35e08bbd16104106d39cdde0ee1203} 
+\index{Ode@{Ode}!SetStepSize@{SetStepSize}}
+\index{SetStepSize@{SetStepSize}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetStepSize()}{SetStepSize()}}
+{\footnotesize\ttfamily void Ode\+::\+Set\+Step\+Size (\begin{DoxyParamCaption}\item[{double}]{step\+\_\+size }\end{DoxyParamCaption})}
+=======
+\Hypertarget{class_ode_a0d35e08bbd16104106d39cdde0ee1203}\index{Ode@{Ode}!SetStepSize@{SetStepSize}}
+\index{SetStepSize@{SetStepSize}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetStepSize()}{SetStepSize()}}
+{\footnotesize\ttfamily \label{class_ode_a0d35e08bbd16104106d39cdde0ee1203} 
+void Ode\+::\+Set\+Step\+Size (\begin{DoxyParamCaption}\item[{double}]{step\+\_\+size}{}\end{DoxyParamCaption})}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Set the step size for numerical solving. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em step\+\_\+size} & The step size as a double. \\
+\hline
+\end{DoxyParams}
+<<<<<<< HEAD
+\Hypertarget{class_ode_aee3a5d1ff24f6143623fedc3b78ccd7f}\label{class_ode_aee3a5d1ff24f6143623fedc3b78ccd7f} 
+\index{Ode@{Ode}!SetT0@{SetT0}}
+=======
 \Hypertarget{class_ode_a4856ed6d10e8f7a8218a7f81ff576918}\index{Ode@{Ode}!SetT0@{SetT0}}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 \index{SetT0@{SetT0}!Ode@{Ode}}
 \doxysubsubsection{\texorpdfstring{SetT0()}{SetT0()}}
-{\footnotesize\ttfamily \label{class_ode_a4856ed6d10e8f7a8218a7f81ff576918} 
-void Ode\+::\+Set\+T0 (\begin{DoxyParamCaption}\item[{double}]{in\+\_\+time}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Ode\+::\+Set\+T0 (\begin{DoxyParamCaption}\item[{double}]{time }\end{DoxyParamCaption})}
 
 
 
@@ -231,14 +769,41 @@ Set the initial time.
 
 
 \begin{DoxyParams}{Parameters}
-{\em in\+\_\+time} & The new initial time. \\
+{\em time} & The new initial time as a double. \\
 \hline
 \end{DoxyParams}
+<<<<<<< HEAD
+\Hypertarget{class_ode_aa22e58ffe5005a41cf12f9ee0be14cf4}\label{class_ode_aa22e58ffe5005a41cf12f9ee0be14cf4} 
+\index{Ode@{Ode}!SetTolerance@{SetTolerance}}
+\index{SetTolerance@{SetTolerance}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetTolerance()}{SetTolerance()}}
+{\footnotesize\ttfamily void Ode\+::\+Set\+Tolerance (\begin{DoxyParamCaption}\item[{double}]{tolerance }\end{DoxyParamCaption})}
+=======
+\Hypertarget{class_ode_aa22e58ffe5005a41cf12f9ee0be14cf4}\index{Ode@{Ode}!SetTolerance@{SetTolerance}}
+\index{SetTolerance@{SetTolerance}!Ode@{Ode}}
+\doxysubsubsection{\texorpdfstring{SetTolerance()}{SetTolerance()}}
+{\footnotesize\ttfamily \label{class_ode_aa22e58ffe5005a41cf12f9ee0be14cf4} 
+void Ode\+::\+Set\+Tolerance (\begin{DoxyParamCaption}\item[{double}]{tolerance}{}\end{DoxyParamCaption})}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+
+
+
+Set the tolerance for numerical methods. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tolerance} & The tolerance as a double. \\
+\hline
+\end{DoxyParams}
+<<<<<<< HEAD
+\Hypertarget{class_ode_ac3c249eedd399493d573a5a823172b82}\label{class_ode_ac3c249eedd399493d573a5a823172b82} 
+\index{Ode@{Ode}!SetY0@{SetY0}}
+=======
 \Hypertarget{class_ode_ac3c249eedd399493d573a5a823172b82}\index{Ode@{Ode}!SetY0@{SetY0}}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 \index{SetY0@{SetY0}!Ode@{Ode}}
 \doxysubsubsection{\texorpdfstring{SetY0()}{SetY0()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_ode_ac3c249eedd399493d573a5a823172b82} 
-void Ode\+::\+Set\+Y0 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{in\+\_\+y0}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Ode\+::\+Set\+Y0 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{in\+\_\+y0 }\end{DoxyParamCaption})}
 
 
 
@@ -249,11 +814,11 @@ Set the initial state using a Tensor.
 {\em in\+\_\+y0} & The new initial state tensor. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_ode_a9c1f258b5c30cb458cb66121d76ff604}\index{Ode@{Ode}!SetY0@{SetY0}}
+\Hypertarget{class_ode_a9c1f258b5c30cb458cb66121d76ff604}\label{class_ode_a9c1f258b5c30cb458cb66121d76ff604} 
+\index{Ode@{Ode}!SetY0@{SetY0}}
 \index{SetY0@{SetY0}!Ode@{Ode}}
 \doxysubsubsection{\texorpdfstring{SetY0()}{SetY0()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_ode_a9c1f258b5c30cb458cb66121d76ff604} 
-void Ode\+::\+Set\+Y0 (\begin{DoxyParamCaption}\item[{double}]{in\+\_\+y0}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Ode\+::\+Set\+Y0 (\begin{DoxyParamCaption}\item[{double}]{in\+\_\+y0 }\end{DoxyParamCaption})}
 
 
 
@@ -268,5 +833,14 @@ Set the initial state using a scalar.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
+<<<<<<< HEAD
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/\mbox{\hyperlink{_o_d_e_8h}{ODE.\+h}}\item 
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/ode\+\_\+copy.\+h\item 
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/ODE.\+cpp\item 
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/ode\+\_\+copy.\+cc\end{DoxyCompactItemize}
+=======
 /\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/\mbox{\hyperlink{ode_8h}{ode.\+h}}\item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/ode.\+cpp\end{DoxyCompactItemize}
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/ode\+\_\+copy.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/ode.\+cpp\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/ode\+\_\+copy.\+cc\end{DoxyCompactItemize}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec

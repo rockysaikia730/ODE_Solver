@@ -95,9 +95,41 @@ public:
     DynamicTensor operator+(const DynamicTensor& second_tensor) const;
 
     /**
+     * @brief Broadcasting with Real scalar 
+     */
+    DynamicTensor operator+(double scalar) const;
+    friend DynamicTensor operator+(double scalar, const DynamicTensor& tensor);
+
+    /**
+     * @brief Broadcasting with Complex scalar 
+     */
+    DynamicTensor operator+(Complex scalar) const;
+    friend DynamicTensor operator+(Complex scalar, const DynamicTensor& tensor);
+
+    /**
      * @brief Scalar Multiplication (Tensor * double).
      */
     DynamicTensor operator*(double scalar) const;
+    friend DynamicTensor operator*(double scalar, const DynamicTensor& tensor);
+
+    /**
+     * @brief Element-wise Subtraction (t1 - t2)
+     */
+    DynamicTensor operator-(const DynamicTensor& second_tensor) const;
+
+    /**
+     * @brief Element-wise Multiplication (t1 - t2)
+     */
+    DynamicTensor operator*(const DynamicTensor& second_tensor) const;
+
+    /**
+     * @brief Element-wise Division (t1 / t2)
+     */
+    DynamicTensor operator/(const DynamicTensor& second_tensor) const;
+    /**
+     * @brief Scalar Division (Tensor / double).
+     */
+    DynamicTensor operator/(double scalar) const;
 
     /**
      * @brief Get the total number of elements in the tensor.

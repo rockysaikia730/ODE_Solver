@@ -1,17 +1,21 @@
 \doxysection{function.\+h}
-\hypertarget{function_8h_source}{}\label{function_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/function.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/function.h}}
+\hypertarget{function_8h_source}{}\label{function_8h_source}\index{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/function.h@{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/function.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FUNCTION\_H\_}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FUNCTION\_H\_}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\_tensor.h}}>}}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_function}{Function}}\ \{}
-\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_function}{\string~Function}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ Eval(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y)\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00010\ \};}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_function}{Function}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_function_a2be1da6c238e7db53480b193351b96c1}{\string~Function}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_function_a7bb6bbdd01c508cb0a4d4ad545915d3c}{Eval}}(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<Function>\ \mbox{\hyperlink{class_function_a606b5938afb38cef8b0ad96df774fe9d}{Clone}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

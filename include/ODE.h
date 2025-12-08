@@ -9,13 +9,14 @@
 #ifndef CODES_ODE_H
 #define CODES_ODE_H
 
-#include <vector>
+
 #include <string>
 #include <memory>
 #include "dynamic_tensor.h"
 #include "reader.h"
 #include "function.h"
 #include "root_finder.h"
+#include "ode_raw_data.h"
 
 /**
  * @class Ode
@@ -39,7 +40,11 @@ public:
      * @param root_finder Shared pointer to the root finding strategy (for implicit solvers).
      */
     Ode(double in_time, const DynamicTensor& in_y0, const std::string& in_name,
-        std::shared_ptr<Function> func, std::shared_ptr<RootFinder> root_finder);
+<<<<<<< HEAD
+        std::unique_ptr<Function> func, std::shared_ptr<RootFinder> root_finder);
+=======
+        std::shared_ptr<Function> func, std::shared_ptr<RootFinder> root_finder = nullptr);
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 
     /**
      * @brief Constructor with Scalar state.
@@ -51,7 +56,11 @@ public:
      * @param root_finder Shared pointer to the root finding strategy.
      */
     Ode(double in_time, const double& in_y0, const std::string& in_name,
-        std::shared_ptr<Function> func, std::shared_ptr<RootFinder> root_finder);
+<<<<<<< HEAD
+        std::unique_ptr<Function> func, std::shared_ptr<RootFinder> root_finder);
+=======
+        std::shared_ptr<Function> func, std::shared_ptr<RootFinder> root_finder = nullptr);
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 
     /**
      * @brief Constructor from Reader.
@@ -60,6 +69,26 @@ public:
     Ode(const Reader& reader);
 
     /**
+     * @brief Copy Constructor.
+     * @param other The Ode object to copy from.
+     */
+    Ode(const Ode& other);
+
+    /**
+     * @brief Copy Assignment Operator.
+     * @param other The Ode object to copy from.
+     * @return Reference to this Ode object.
+     */
+    Ode& operator=(const Ode& other);
+
+    /**
+     * @brief Constructor from OdeRawData.
+     * @param raw An OdeRawData object to initialise the ODE.
+     *
+     */
+    Ode(const OdeRawData& raw);
+    
+    /**
      * @brief Virtual destructor.
      */
     virtual ~Ode();
@@ -67,7 +96,6 @@ public:
     // =========================================================
     // Setters
     // =========================================================
-
     /**
      * @brief Set the initial time.
      * @param time The new initial time as a double.
@@ -96,13 +124,19 @@ public:
      * @brief Inject a new derivative function.
      * @param func Shared pointer to the new Function.
      */
-    void SetFunction(std::shared_ptr<Function> func);
+    void SetFunction(std::unique_ptr<Function> func);
 
     /**
      * @brief Inject a new root finder.
      * @param root_finder Shared pointer to the new RootFinder.
      */
     void SetRootFinder(std::shared_ptr<RootFinder> root_finder);
+
+    /**
+     * @brief Inject a new derivative function.
+     * @param derivative Shared pointer to the new derivative Function.
+     */
+    void SetDerivative(std::unique_ptr<Function> derivative);
 
     // =========================================================
     // Getters
@@ -125,6 +159,18 @@ public:
      * @return The name string.
      */
     const std::string& GetName() const;
+    
+    /**
+     * @brief Get the RHS function.
+     * @return Const reference to the Function.
+     */
+    const Function& GetFunction() const;
+
+    /**
+     * @brief Get the RootFinder Routine.
+     * @return Const reference to the RootFinder Routine.
+     */
+    const std::shared_ptr<RootFinder>& GetRootFinder() const;
 
     // =========================================================
     // Logic
@@ -150,10 +196,13 @@ private:
     std::string name_;
 
     /// @brief Pointer to the derivative function logic.
-    std::shared_ptr<Function> func_;
+    std::unique_ptr<Function> func_;
 
     /// @brief Pointer to the root finding logic (optional/strategy pattern).
     std::shared_ptr<RootFinder> root_finder_;
+
+    /// @brief Pointer to the derivative function (optional).
+    std::unique_ptr<Function> derivative_;
 };
 
 #endif // CODES_ODE_H

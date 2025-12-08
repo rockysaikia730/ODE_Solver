@@ -39,13 +39,12 @@ public:
      *
      * @return The calculated state tensor for the next time step.
      */
-    virtual DynamicTensor Step() = 0;
+    virtual DynamicTensor ComputeStep() = 0;
 
     /**
-     * @brief Sets the simulation start time.
-     * @param start_time The time t0.
+     * @brief Updates the solution_ and time for next time step.
      */
-    void SetStartTime(double start_time);
+    virtual void Step();
 
     /**
      * @brief Sets the simulation end time.
@@ -72,6 +71,11 @@ public:
     // --- Getters ---
 
     /**
+     * @return The final solution.
+     */
+    const DynamicTensor& GetSolution() const;
+
+    /**
      * @return The configured start time.
      */
     double GetStartTime() const;
@@ -91,6 +95,13 @@ public:
      */
     int GetNumberOfSteps() const;
 
+    /**
+     * @return The current time
+     */
+    double GetCurrentTime() const;
+
+    
+
     // --- Control Flow ---
 
     /**
@@ -99,7 +110,7 @@ public:
      * Sets current_time_ to start_time_ and current solution_ to ode_.GetCondIn().
      * This must be called before restarting a simulation.
      */
-    void Reset();
+    virtual void Reset();
 
     /**
      * @brief Executes the simulation loop (Batch Mode).
@@ -118,7 +129,7 @@ public:
      * @param end_time The target simulation time.
      * @param num_of_steps The number of intervals to divide the time span into.
      */
-    OdeSolver(const Ode& ode, double end_time, int num_of_steps);
+    OdeSolver(const Ode& ode, int num_of_steps, double end_time);
 
     /**
      * @brief Constructor for fixed step size.
@@ -127,7 +138,7 @@ public:
      * @param end_time The target simulation time.
      * @param step_size The time step (dt). Defaults to 0.01.
      */
-    OdeSolver(const Ode& ode, double end_time, double step_size = 0.01);
+    OdeSolver(const Ode& ode, double step_size = 0.01, double end_time = 0.0);
 
 protected:
     /**
@@ -145,11 +156,10 @@ protected:
     /// @brief The time step (dt).
     double step_size_;
 
-    /// @brief The current state vector y(t). Updated at every Step().
+    /// @brief The current state y(t). Updated at every Step().
     DynamicTensor solution_;
 
     /// @brief The current simulation time t. Updated at every Step().
     double current_time_;
 };
-
 #endif // CODES_ODE_SOLVER_H

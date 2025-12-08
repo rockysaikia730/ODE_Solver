@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['reader_0',['Reader',['../class_reader.html',1,'']]],
-  ['rootfinder_1',['RootFinder',['../class_root_finder.html',1,'']]]
+<<<<<<< HEAD
+  ['errorcontext_0',['ErrorContext',['../struct_error_context.html',1,'']]]
+=======
+  ['dynamictensor_0',['DynamicTensor',['../class_dynamic_tensor.html',1,'']]]
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 ];

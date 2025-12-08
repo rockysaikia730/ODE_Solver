@@ -1,13 +1,173 @@
 \doxysection{Class List}
 Here are the classes, structs, unions and interfaces with brief descriptions\+:\begin{DoxyCompactList}
+<<<<<<< HEAD
+\item\contentsline{section}{\mbox{\hyperlink{class_bin_val_reader}{Bin\+Val\+Reader}} \\*A class for reading binary values from an expression string }{\pageref{class_bin_val_reader}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_bool_val_reader}{Bool\+Val\+Reader}} \\*A class for reading boolean values from an expression string }{\pageref{class_bool_val_reader}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_csv_reader}{Csv\+Reader}} \\*A class for reading and parsing CSV (Comma-\/\+Separated Values) files. Inherits from the \doxylink{class_reader}{Reader} base class. Supports optional header row, which can be skipped during reading }{\pageref{class_csv_reader}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_dbg_silly_add}{Dbg\+Silly\+Add}} }{\pageref{class_dbg_silly_add}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_dbl_val_reader}{Dbl\+Val\+Reader}} \\*A class for reading floating point values from an expression string }{\pageref{class_dbl_val_reader}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \\*A class to represent a mathematical tensor of arbitrary rank at runtime }{\pageref{class_dynamic_tensor}}{}
-\item\contentsline{section}{\mbox{\hyperlink{class_function}{Function}} }{\pageref{class_function}}{}
-\item\contentsline{section}{\mbox{\hyperlink{class_ode}{Ode}} \\*Represents an Ordinary Differential Equation (ODE) problem definition }{\pageref{class_ode}}{}
-\item\contentsline{section}{\mbox{\hyperlink{class_o_d_e_function}{ODEFunction$<$ T $>$}} }{\pageref{class_o_d_e_function}}{}
+\item\contentsline{section}{\mbox{\hyperlink{struct_error_context}{Error\+Context}} \\*Error context class }{\pageref{struct_error_context}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_benchmark}{Fun\+Benchmark}} }{\pageref{class_fun_benchmark}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_abs}{Fun\+Cmplx\+Abs}} }{\pageref{class_fun_cmplx_abs}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_arg}{Fun\+Cmplx\+Arg}} \\*Parser callback object for returning the phase angle (or angular component) of a complex number, expressed in radians }{\pageref{class_fun_cmplx_arg}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_conj}{Fun\+Cmplx\+Conj}} \\*Parser callback object for returning the complex conjugate of the complex number }{\pageref{class_fun_cmplx_conj}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_cos}{Fun\+Cmplx\+Cos}} }{\pageref{class_fun_cmplx_cos}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_cos_h}{Fun\+Cmplx\+CosH}} }{\pageref{class_fun_cmplx_cos_h}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_exp}{Fun\+Cmplx\+Exp}} }{\pageref{class_fun_cmplx_exp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_imag}{Fun\+Cmplx\+Imag}} \\*Parser callback object for returning the imaginary part of a complex number }{\pageref{class_fun_cmplx_imag}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_ln}{Fun\+Cmplx\+Ln}} }{\pageref{class_fun_cmplx_ln}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_log}{Fun\+Cmplx\+Log}} }{\pageref{class_fun_cmplx_log}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_log10}{Fun\+Cmplx\+Log10}} }{\pageref{class_fun_cmplx_log10}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_log2}{Fun\+Cmplx\+Log2}} }{\pageref{class_fun_cmplx_log2}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_norm}{Fun\+Cmplx\+Norm}} \\*Parser callback object for returning the norm value of the complex number phase angle }{\pageref{class_fun_cmplx_norm}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_pow}{Fun\+Cmplx\+Pow}} }{\pageref{class_fun_cmplx_pow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_real}{Fun\+Cmplx\+Real}} \\*Parser callback object for returning the real part of a complex number }{\pageref{class_fun_cmplx_real}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_sin}{Fun\+Cmplx\+Sin}} }{\pageref{class_fun_cmplx_sin}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_sin_h}{Fun\+Cmplx\+SinH}} }{\pageref{class_fun_cmplx_sin_h}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_sqrt}{Fun\+Cmplx\+Sqrt}} }{\pageref{class_fun_cmplx_sqrt}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_tan}{Fun\+Cmplx\+Tan}} }{\pageref{class_fun_cmplx_tan}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_cmplx_tan_h}{Fun\+Cmplx\+TanH}} }{\pageref{class_fun_cmplx_tan_h}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_function}{Function}} \\*Abstract base class representing a mathematical function for ODEs. This class defines the interface for evaluating functions that take a time and a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} as input and return a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} as output }{\pageref{class_function}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_enable_debug_dump}{Fun\+Enable\+Debug\+Dump}} }{\pageref{class_fun_enable_debug_dump}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_enable_optimizer}{Fun\+Enable\+Optimizer}} }{\pageref{class_fun_enable_optimizer}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_list_const}{Fun\+List\+Const}} }{\pageref{class_fun_list_const}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_list_functions}{Fun\+List\+Functions}} }{\pageref{class_fun_list_functions}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_list_var}{Fun\+List\+Var}} }{\pageref{class_fun_list_var}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_matrix_eye}{Fun\+Matrix\+Eye}} \\*Parser callback object for creating unity matrices }{\pageref{class_fun_matrix_eye}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_matrix_ones}{Fun\+Matrix\+Ones}} \\*Parser callback object for creating matrices consisting entirely of ones }{\pageref{class_fun_matrix_ones}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_matrix_size}{Fun\+Matrix\+Size}} \\*Determines the dimensions of a matrix }{\pageref{class_fun_matrix_size}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_matrix_zeros}{Fun\+Matrix\+Zeros}} \\*Parser callback object for creating matrices consisting entirely of zeros }{\pageref{class_fun_matrix_zeros}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_max}{Fun\+Max}} \\*Determine maximal value from the parameter list }{\pageref{class_fun_max}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_min}{Fun\+Min}} \\*Determine minimal value from the parameter list }{\pageref{class_fun_min}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_parser_i_d}{Fun\+Parser\+ID}} \\*Parser function callback for determining the size of an array }{\pageref{class_fun_parser_i_d}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_print}{Fun\+Print}} }{\pageref{class_fun_print}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_return_false}{Fun\+Return\+False}} }{\pageref{class_fun_return_false}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_self_test}{Fun\+Self\+Test}} }{\pageref{class_fun_self_test}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_size_of}{Fun\+Size\+Of}} \\*Parser function callback for determining the size of an array }{\pageref{class_fun_size_of}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_str_len}{Fun\+Str\+Len}} \\*Callback object for determining the length of a string }{\pageref{class_fun_str_len}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_str_to_dbl}{Fun\+Str\+To\+Dbl}} \\*Parse string to a floating point value. \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} }{\pageref{class_fun_str_to_dbl}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_str_to_lower}{Fun\+Str\+To\+Lower}} \\*Convert a string to lower case letters }{\pageref{class_fun_str_to_lower}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_str_to_upper}{Fun\+Str\+To\+Upper}} \\*Convert a string to upper case letters. \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} }{\pageref{class_fun_str_to_upper}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_sum}{Fun\+Sum}} \\*Parser callback for summing up all function arguments }{\pageref{class_fun_sum}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_fun_test0}{Fun\+Test0}} }{\pageref{class_fun_test0}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_generic_token}{Generic\+Token}} \\*Default token implentation }{\pageref{class_generic_token}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_hex_val_reader}{Hex\+Val\+Reader}} \\*A class for reading hex values from an expression string }{\pageref{class_hex_val_reader}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_i_callback}{ICallback}} \\*Interface for callback objects }{\pageref{class_i_callback}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_i_oprt_bin}{IOprt\+Bin}} \\*Interface for binary operators }{\pageref{class_i_oprt_bin}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_i_oprt_bin_shortcut}{IOprt\+Bin\+Shortcut}} \\*A class for encapsulation if-\/then-\/else tokens }{\pageref{class_i_oprt_bin_shortcut}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_i_oprt_infix}{IOprt\+Infix}} \\*Interface for unary infix operators }{\pageref{class_i_oprt_infix}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_i_oprt_postfix}{IOprt\+Postfix}} \\*Interface for unary postfix operators }{\pageref{class_i_oprt_postfix}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_i_package}{IPackage}} }{\pageref{class_i_package}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_i_precedence}{IPrecedence}} \\*Interface for binary and ternary operators }{\pageref{class_i_precedence}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_i_token}{IToken}} \\*Generic token interface for expression tokens }{\pageref{class_i_token}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_i_value}{IValue}} \\*Interface to be implemented by all classes representing values }{\pageref{class_i_value}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_i_value_reader}{IValue\+Reader}} \\*Interface for custom value reader objects }{\pageref{class_i_value_reader}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_matrix}{Matrix$<$ T $>$}} }{\pageref{class_matrix}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_matrix_error}{Matrix\+Error}} }{\pageref{class_matrix_error}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_ode}{Ode}} \\*Represents an Ordinary Differential Equation (\doxylink{class_o_d_e}{ODE}) problem definition }{\pageref{class_ode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_o_d_e}{ODE}} \\*A class representing an ordinary differential equation (\doxylink{class_o_d_e}{ODE}) }{\pageref{class_o_d_e}}{}
+\item\contentsline{section}{\mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \\*A structure holding all data read from the input source in a form compatible with \doxylink{class_o_d_e}{ODE} and Solver classes. This struct serves as an intermediate container for raw data }{\pageref{struct_ode_raw_data}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_ode_solver}{Ode\+Solver}} \\*Abstract base class for iterative Ordinary Differential Equation solvers }{\pageref{class_ode_solver}}{}
-\item\contentsline{section}{\mbox{\hyperlink{class_o_d_e_table}{ODETable$<$ T $>$}} }{\pageref{class_o_d_e_table}}{}
-\item\contentsline{section}{\mbox{\hyperlink{class_reader}{Reader$<$ T $>$}} \\*Abstract base class for reading ODE input data from files }{\pageref{class_reader}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_add}{Oprt\+Add}} \\*Parser callback for implementing an addition of two noncomplex values }{\pageref{class_oprt_add}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_add_cmplx}{Oprt\+Add\+Cmplx}} \\*Parser callback for implementing an addition of two complex values }{\pageref{class_oprt_add_cmplx}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_and}{Oprt\+And}} \\*Callback class for a logic and operator }{\pageref{class_oprt_and}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_assign}{Oprt\+Assign}} \\*Assignement operator }{\pageref{class_oprt_assign}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_assign_add}{Oprt\+Assign\+Add}} \\*Assignement operator }{\pageref{class_oprt_assign_add}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_assign_div}{Oprt\+Assign\+Div}} \\*Assignement operator }{\pageref{class_oprt_assign_div}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_assign_mul}{Oprt\+Assign\+Mul}} \\*Assignement operator }{\pageref{class_oprt_assign_mul}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_assign_sub}{Oprt\+Assign\+Sub}} \\*Assignement operator }{\pageref{class_oprt_assign_sub}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_cast_to_float}{Oprt\+Cast\+To\+Float}} \\*Callback for an operator allowing to cast values to floating point values }{\pageref{class_oprt_cast_to_float}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_cast_to_int}{Oprt\+Cast\+To\+Int}} \\*Callback for an operator allowing to cast values to integer values }{\pageref{class_oprt_cast_to_int}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_colon}{Oprt\+Colon}} }{\pageref{class_oprt_colon}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_create_array}{Oprt\+Create\+Array}} \\*On the fly array creation using the curly bracket operator }{\pageref{class_oprt_create_array}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_div}{Oprt\+Div}} \\*Callback object for implementing the division of noncomplex values }{\pageref{class_oprt_div}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_div_cmplx}{Oprt\+Div\+Cmplx}} \\*Callback object for implementing the division of complex values }{\pageref{class_oprt_div_cmplx}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_e_q}{Oprt\+EQ}} \\*Callback object for testing if two values are equal }{\pageref{class_oprt_e_q}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_fact}{Oprt\+Fact}} \\*Calculate factorial of a non-\/negative integer }{\pageref{class_oprt_fact}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_g_e}{Oprt\+GE}} \\*Callback object class for the "{}\+Greater or or equal"{} operator }{\pageref{class_oprt_g_e}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_g_t}{Oprt\+GT}} \\*Callback object class for the "{}\+Greater than"{} operator }{\pageref{class_oprt_g_t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_index}{Oprt\+Index}} \\*Default implementation of a multidimensional index operator }{\pageref{class_oprt_index}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_l_e}{Oprt\+LE}} \\*Callback object class for the "{}\+Less or equal"{} operator }{\pageref{class_oprt_l_e}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_logic_and}{Oprt\+Logic\+And}} \\*Callback class for a logical and operator }{\pageref{class_oprt_logic_and}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_logic_or}{Oprt\+Logic\+Or}} \\*Callback class for a logical or operator }{\pageref{class_oprt_logic_or}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_l_t}{Oprt\+LT}} \\*Callback object class for the "{}\+Less than"{} operator }{\pageref{class_oprt_l_t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_mul}{Oprt\+Mul}} \\*Callback object for implementing the multiplications of noncomplex values }{\pageref{class_oprt_mul}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_mul_cmplx}{Oprt\+Mul\+Cmplx}} \\*Callback object for implementing the multiplications of complex values }{\pageref{class_oprt_mul_cmplx}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_n_e_q}{Oprt\+NEQ}} \\*Callback object for testing if two values are not equal }{\pageref{class_oprt_n_e_q}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_or}{Oprt\+Or}} \\*Callback class for a logic or operator }{\pageref{class_oprt_or}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_percentage}{Oprt\+Percentage}} \\*Returns percentage of given number }{\pageref{class_oprt_percentage}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_pow}{Oprt\+Pow}} \\*Raise x to the power of y }{\pageref{class_oprt_pow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_pow_cmplx}{Oprt\+Pow\+Cmplx}} \\*Raise x to the power of y }{\pageref{class_oprt_pow_cmplx}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_shl}{Oprt\+Shl}} \\*Callback class for the shift left operator }{\pageref{class_oprt_shl}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_shortcut_logic_and_begin}{Oprt\+Shortcut\+Logic\+And\+Begin}} \\*Callback class for a logical and operator. begin }{\pageref{class_oprt_shortcut_logic_and_begin}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_shortcut_logic_and_end}{Oprt\+Shortcut\+Logic\+And\+End}} \\*Callback class for a logical and operator. begin }{\pageref{class_oprt_shortcut_logic_and_end}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_shortcut_logic_or_begin}{Oprt\+Shortcut\+Logic\+Or\+Begin}} \\*Callback class for a logical or operator. begin }{\pageref{class_oprt_shortcut_logic_or_begin}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_shortcut_logic_or_end}{Oprt\+Shortcut\+Logic\+Or\+End}} \\*Callback class for a logical or operator. end }{\pageref{class_oprt_shortcut_logic_or_end}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_shr}{Oprt\+Shr}} \\*Callback class for the shift right operator }{\pageref{class_oprt_shr}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_sign}{Oprt\+Sign}} \\*Callback for the negative sign operator for noncomplex values }{\pageref{class_oprt_sign}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_sign_cmplx}{Oprt\+Sign\+Cmplx}} \\*Callback for the negative sign operator }{\pageref{class_oprt_sign_cmplx}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_sign_pos}{Oprt\+Sign\+Pos}} \\*Callback for the positive sign operator for noncomplex values }{\pageref{class_oprt_sign_pos}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_str_add}{Oprt\+Str\+Add}} }{\pageref{class_oprt_str_add}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_sub}{Oprt\+Sub}} \\*Parser callback for implementing the subtraction of two noncomplex values }{\pageref{class_oprt_sub}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_sub_cmplx}{Oprt\+Sub\+Cmplx}} \\*Parser callback for implementing the subtraction of two complex values }{\pageref{class_oprt_sub_cmplx}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_oprt_transpose}{Oprt\+Transpose}} }{\pageref{class_oprt_transpose}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_package_cmplx}{Package\+Cmplx}} \\*Package for installing complex functions and operators }{\pageref{class_package_cmplx}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_package_common}{Package\+Common}} \\*Package for installing operators and functions which are always present }{\pageref{class_package_common}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_package_matrix}{Package\+Matrix}} \\*Package for installing complex functions and operators }{\pageref{class_package_matrix}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_package_non_cmplx}{Package\+Non\+Cmplx}} \\*Package for installing complex functions and operators }{\pageref{class_package_non_cmplx}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_package_str}{Package\+Str}} \\*Package for installing unit postfix operators into mu\+ParserX }{\pageref{class_package_str}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_package_unit}{Package\+Unit}} \\*Package for installing unit postfix operators into mu\+ParserX }{\pageref{class_package_unit}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_parsed_function}{Parsed\+Function}} \\*Concrete implementation of \doxylink{class_function}{Function} using mu\+ParserX for parsing mathematical expressions }{\pageref{class_parsed_function}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_parser_error}{Parser\+Error}} \\*Error class of the parser }{\pageref{class_parser_error}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_parser_error_msg}{Parser\+Error\+Msg}} }{\pageref{class_parser_error_msg}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_parser_message_provider_base}{Parser\+Message\+Provider\+Base}} \\*Base class for Parser Message providing classes }{\pageref{class_parser_message_provider_base}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_parser_message_provider_english}{Parser\+Message\+Provider\+English}} \\*English versions of parser messages }{\pageref{class_parser_message_provider_english}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_parser_message_provider_german}{Parser\+Message\+Provider\+German}} \\*German versions of parser messages }{\pageref{class_parser_message_provider_german}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_parser_tester}{Parser\+Tester}} \\*Test cases for unit testing the parser framework }{\pageref{class_parser_tester}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_parser_x}{ParserX}} \\*The parser implementation }{\pageref{class_parser_x}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_parser_x_base}{Parser\+XBase}} \\*Implementation of the parser engine }{\pageref{class_parser_x_base}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_reader}{Reader}} \\*A class responsible for reading and parsing data from various sources. The reader can handle the simulation parameters, initial conditions, but cannot read the function itself. \doxylink{class_function}{Function} parsing is not implemented for now, it has to be passed in the constructor of the \doxylink{class_o_d_e}{ODE} solver }{\pageref{class_reader}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_root_finder}{Root\+Finder}} }{\pageref{class_root_finder}}{}
-\item\contentsline{section}{\mbox{\hyperlink{struct_scale_functor}{Scale\+Functor}} }{\pageref{struct_scale_functor}}{}
-\item\contentsline{section}{\mbox{\hyperlink{struct_table_entry}{Table\+Entry$<$ T $>$}} }{\pageref{struct_table_entry}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_r_p_n}{RPN}} \\*A class representing the reverse polnish notation of the expression }{\pageref{class_r_p_n}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classutils_1_1scoped__setter}{utils\+::scoped\+\_\+setter$<$ T $>$}} }{\pageref{classutils_1_1scoped__setter}}{}
+\item\contentsline{section}{\mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{Ode\+Raw\+Data\+::solver\+\_\+params}} \\*Structure to hold solver-\/related parameters for \doxylink{class_o_d_e}{ODE} solving }{\pageref{struct_ode_raw_data_1_1solver__params}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structsu_1_1pred_1_1_sort_by_length}{su\+::pred\+::\+Sort\+By\+Length$<$ TString $>$}} \\*Sort two strings based on their length }{\pageref{structsu_1_1pred_1_1_sort_by_length}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_stack}{Stack$<$ TVal, TCont $>$}} \\*Parser stack implementation }{\pageref{class_stack}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_string_conversion_helper}{String\+Conversion\+Helper$<$ TChar $>$}} }{\pageref{class_string_conversion_helper}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classsu_1_1_string_tokens}{su\+::\+String\+Tokens$<$ TData $>$}} }{\pageref{classsu_1_1_string_tokens}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_str_val_reader}{Str\+Val\+Reader}} \\*A class for reading strings from an expression string }{\pageref{class_str_val_reader}}{}
+\item\contentsline{section}{\mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{Ode\+Raw\+Data\+::time\+\_\+params}} \\*Structure to hold time-\/related parameters for \doxylink{class_o_d_e}{ODE} solving }{\pageref{struct_ode_raw_data_1_1time__params}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_token_if_then_else}{Token\+If\+Then\+Else}} \\*A class for encapsulation if-\/then-\/else tokens }{\pageref{class_token_if_then_else}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_token_newline}{Token\+Newline}} \\*A class for encapsulation a newline token }{\pageref{class_token_newline}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structsu_1_1_token_not_found}{su\+::\+Token\+Not\+Found}} }{\pageref{structsu_1_1_token_not_found}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_token_ptr}{Token\+Ptr$<$ T $>$}} }{\pageref{class_token_ptr}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_token_reader}{Token\+Reader}} \\*Token reader for the \doxylink{class_parser_x_base}{Parser\+XBase} class }{\pageref{class_token_reader}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_txt_reader}{Txt\+Reader}} }{\pageref{class_txt_reader}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_value}{Value}} \\*\doxylink{class_value}{Value} class of mu\+ParserX }{\pageref{class_value}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_value_cache}{Value\+Cache}} \\*Simple mechanism to recycle unused value items }{\pageref{class_value_cache}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_variable}{Variable}} \\*The variable class represents a parser variable }{\pageref{class_variable}}{}
+=======
+\item\contentsline{section}{\mbox{\hyperlink{class_adam_moulton}{Adam\+Moulton}} }{\pageref{class_adam_moulton}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_adams_bashforth}{Adams\+Bashforth}} }{\pageref{class_adams_bashforth}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_backward_euler}{Backward\+Euler}} }{\pageref{class_backward_euler}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_bdf}{Bdf}} }{\pageref{class_bdf}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_csv_reader}{Csv\+Reader}} }{\pageref{class_csv_reader}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \\*A class to represent a mathematical tensor of arbitrary rank at runtime }{\pageref{class_dynamic_tensor}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_file_reader}{File\+Reader}} }{\pageref{class_file_reader}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_forward_euler}{Forward\+Euler}} }{\pageref{class_forward_euler}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_function}{Function}} }{\pageref{class_function}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_implicit_solver_1_1_implicit_equation}{Implicit\+Solver\+::\+Implicit\+Equation}} }{\pageref{class_implicit_solver_1_1_implicit_equation}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}} }{\pageref{class_implicit_solver}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}} }{\pageref{class_multi_step_ode_solver}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_newton_raphson}{Newton\+Raphson}} }{\pageref{class_newton_raphson}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_o_d_e}{ODE}} \\*A class representing an ordinary differential equation (\doxylink{class_o_d_e}{ODE}) }{\pageref{class_o_d_e}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_ode}{Ode}} \\*Represents an Ordinary Differential Equation (\doxylink{class_o_d_e}{ODE}) problem definition }{\pageref{class_ode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \\*Raw, unparsed data extracted by a \doxylink{class_reader}{Reader}. All values are strings or simple primitives }{\pageref{struct_ode_raw_data}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_ode_solver}{Ode\+Solver}} \\*Abstract base class for iterative Ordinary Differential Equation solvers }{\pageref{class_ode_solver}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_reader}{Reader}} \\*A class responsible for reading and parsing data from various sources }{\pageref{class_reader}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_root_finder}{Root\+Finder}} }{\pageref{class_root_finder}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_runge_kutta}{Runge\+Kutta}} }{\pageref{class_runge_kutta}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_txt_reader}{Txt\+Reader}} }{\pageref{class_txt_reader}}{}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 \end{DoxyCompactList}

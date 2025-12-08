@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['file_5f_0',['file_',['../class_reader.html#a422199170aa6c35a46abe88fd4b836d9',1,'Reader']]],
-  ['filename_5f_1',['filename_',['../class_reader.html#aa5e52df9d57830b86b31ae0b478b380c',1,'Reader']]]
+<<<<<<< HEAD
+  ['end_5ftime_5f_0',['end_time_',['../class_ode_solver.html#afe384debfb2aaf066067567b86660e80',1,'OdeSolver']]],
+  ['errc_1',['Errc',['../struct_error_context.html#adbabd7e422e266f8c319e86a5557acf3',1,'ErrorContext']]]
+=======
+  ['file_5fstream_5f_0',['file_stream_',['../class_file_reader.html#a5b1035d537b44731ebbd31874676653a',1,'FileReader']]]
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 ];
