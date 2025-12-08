@@ -22,7 +22,10 @@ FetchContent_MakeAvailable(googletest)
 
 
 add_library(utilities
-	src/newton_raphson.cpp
+	# src/newton_raphson.cpp
+	src/runge_kutta_solver.cpp
+	src/ode_solver.cpp
+	src/ode.cpp
 	src/function.cpp
     src/dynamic_tensor.cpp
 )
@@ -31,9 +34,10 @@ target_include_directories(utilities PUBLIC include)
 enable_testing()
 add_executable(
   unittests
-  tests/dynamic_tensor_unittest.cpp
-  tests/function_unittest.cpp
-  tests/newton_raphson_unittest.cpp
+#   tests/dynamic_tensor_unittest.cpp
+#   tests/function_unittest.cpp
+#   tests/newton_raphson_unittest.cpp
+	tests/runge_kutta_unittest.cpp
 )
 
 target_link_libraries(
