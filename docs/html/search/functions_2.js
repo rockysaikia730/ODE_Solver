@@ -1,6 +1,7 @@
 var searchData=
 [
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['checkname_0',['CheckName',['../class_parser_x_base.html#a30bd611e39829014cf38a89ee6012cfe',1,'ParserXBase']]],
   ['clearconst_1',['ClearConst',['../class_parser_x_base.html#a741b89ace00dda5e59c2fd33d97d217b',1,'ParserXBase']]],
   ['clearfun_2',['ClearFun',['../class_parser_x_base.html#aeb2fc998e9d14203c7cd3e3c1bf77c8f',1,'ParserXBase']]],
@@ -13,6 +14,10 @@ var searchData=
   ['console_9',['console',['../mp_types_8h.html#a94f2ed9bf840a880e03010f6db29e548',1,'mpTypes.h']]],
   ['console_5fin_10',['console_in',['../mp_types_8h.html#a98895eb34cb26b9c2ae9b7628f206aaf',1,'mpTypes.h']]],
   ['csvreader_11',['CsvReader',['../class_csv_reader.html#aa6b6e6ddeb120a67ad8e077f9e07d244',1,'CsvReader']]]
+=======
+  ['close_0',['Close',['../class_file_reader.html#a01679e0c723733146c09dd681afcea24',1,'FileReader']]],
+  ['computestep_1',['ComputeStep',['../class_adams_bashforth.html#a1a7a6e06ee0fa286e0738578b77a29c1',1,'AdamsBashforth::ComputeStep()'],['../class_forward_euler.html#a21588c8895f32f0a5a58f8d71993888c',1,'ForwardEuler::ComputeStep()'],['../class_implicit_solver.html#a4f79fcbfa43f5b7c2207ce61a4420d74',1,'ImplicitSolver::ComputeStep()'],['../class_ode_solver.html#a35a9d27d9c3b484dae31ed1c6905a04a',1,'OdeSolver::ComputeStep()'],['../class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605',1,'RungeKutta::ComputeStep()']]]
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 =======
   ['close_0',['Close',['../class_file_reader.html#a01679e0c723733146c09dd681afcea24',1,'FileReader']]],
   ['computestep_1',['ComputeStep',['../class_adams_bashforth.html#a1a7a6e06ee0fa286e0738578b77a29c1',1,'AdamsBashforth::ComputeStep()'],['../class_forward_euler.html#a21588c8895f32f0a5a58f8d71993888c',1,'ForwardEuler::ComputeStep()'],['../class_implicit_solver.html#a4f79fcbfa43f5b7c2207ce61a4420d74',1,'ImplicitSolver::ComputeStep()'],['../class_ode_solver.html#a35a9d27d9c3b484dae31ed1c6905a04a',1,'OdeSolver::ComputeStep()'],['../class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605',1,'RungeKutta::ComputeStep()']]]

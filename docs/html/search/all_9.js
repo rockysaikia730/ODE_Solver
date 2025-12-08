@@ -1,6 +1,7 @@
 var searchData=
 [
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['callback_20objects_0',['Function callback objects.',['../group__functions.html',1,'']]],
   ['callbacks_1',['callbacks',['../group__binop.html',1,'Binary operator callbacks'],['../group__postop.html',1,'Postfix operator callbacks']]],
   ['char_5ftype_2',['char_type',['../mp_types_8h.html#a8b13df6c183b4cf112953b58ddf9c785',1,'mpTypes.h']]],
@@ -51,6 +52,9 @@ var searchData=
   ['console_5fin_47',['console_in',['../mp_types_8h.html#a98895eb34cb26b9c2ae9b7628f206aaf',1,'mpTypes.h']]],
   ['csvreader_48',['CsvReader',['../class_csv_reader.html',1,'CsvReader'],['../class_csv_reader.html#aa6b6e6ddeb120a67ad8e077f9e07d244',1,'CsvReader::CsvReader()']]],
   ['current_5ftime_5f_49',['current_time_',['../class_ode_solver.html#a8e1bfe7801ae316ea876682778396e24',1,'OdeSolver']]]
+=======
+  ['newtonraphson_0',['NewtonRaphson',['../class_newton_raphson.html',1,'']]]
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 =======
   ['newtonraphson_0',['NewtonRaphson',['../class_newton_raphson.html',1,'']]]
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec

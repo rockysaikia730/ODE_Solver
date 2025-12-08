@@ -2,12 +2,9 @@
 #include "dynamic_tensor.h"
 #include "function.h"
 #include "root_finder.h"
-<<<<<<< HEAD
 #include "ode_raw_data.h"
 #include "reader.h"
 #include <vector>
-=======
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 #include <string>
 #include <memory>
 

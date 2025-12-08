@@ -1,6 +1,7 @@
 var searchData=
 [
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['ecarray_5fsize_5fmismatch_0',['ecARRAY_SIZE_MISMATCH',['../mp_types_8h.html#a07c7b4f1427fb2d235f5b53f15a7a7bba9f9ce3c9cfad2f42d969097760e1624c',1,'mpTypes.h']]],
   ['ecassignement_5fto_5fvalue_1',['ecASSIGNEMENT_TO_VALUE',['../mp_types_8h.html#a07c7b4f1427fb2d235f5b53f15a7a7bbad9a0c0b1073813d6f0ce518b577bf400',1,'mpTypes.h']]],
   ['ecbuiltin_5foverload_2',['ecBUILTIN_OVERLOAD',['../mp_types_8h.html#a07c7b4f1427fb2d235f5b53f15a7a7bba67a43f290a8808622e60f919d569a033',1,'mpTypes.h']]],
@@ -60,6 +61,8 @@ var searchData=
   ['evaluaterhs_56',['EvaluateRhs',['../class_ode.html#a4d48f3f1df9423c4e835a8d142cefdea',1,'Ode']]],
   ['executing_20only_20the_20doxyfile_57',['For executing only the Doxyfile',['../md__c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1__2025-2026_2pcsc__project_2_o_d_e___solver_2_r_e_a_d_m_e.html#autotoc_md9',1,'']]]
 =======
+=======
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
   ['rank_0',['rank',['../class_dynamic_tensor.html#a094738c223cbe58ad0b81dbae138ebf6',1,'DynamicTensor']]],
   ['read_1',['Read',['../class_reader.html#a8d9e54309942b2f508ec74b3eac1da80',1,'Reader::Read()'],['../class_csv_reader.html#a88a0aa19a2a89a14a54d2c1790807b91',1,'CsvReader::Read()'],['../class_txt_reader.html#a9f16db79816689a2c72d3f258f9f39ca',1,'TxtReader::Read()']]],
   ['reader_2',['Reader',['../class_reader.html',1,'Reader'],['../class_reader.html#a6da108ba26678537964ffa902181e756',1,'Reader::Reader()']]],
@@ -67,5 +70,8 @@ var searchData=
   ['rhs_5ffunction_5fstring_4',['rhs_function_string',['../struct_ode_raw_data.html#a49d118cbf2ea90beaf5aa7bfe0fd8a99',1,'OdeRawData']]],
   ['rootfinder_5',['RootFinder',['../class_root_finder.html',1,'']]],
   ['rungekutta_6',['RungeKutta',['../class_runge_kutta.html',1,'']]]
+<<<<<<< HEAD
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 ];

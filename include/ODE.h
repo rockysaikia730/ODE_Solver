@@ -40,11 +40,7 @@ public:
      * @param root_finder Shared pointer to the root finding strategy (for implicit solvers).
      */
     Ode(double in_time, const DynamicTensor& in_y0, const std::string& in_name,
-<<<<<<< HEAD
-        std::unique_ptr<Function> func, std::shared_ptr<RootFinder> root_finder);
-=======
-        std::shared_ptr<Function> func, std::shared_ptr<RootFinder> root_finder = nullptr);
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+        std::unique_ptr<Function> func, std::shared_ptr<RootFinder> root_finder = nullptr);
 
     /**
      * @brief Constructor with Scalar state.
@@ -56,11 +52,7 @@ public:
      * @param root_finder Shared pointer to the root finding strategy.
      */
     Ode(double in_time, const double& in_y0, const std::string& in_name,
-<<<<<<< HEAD
-        std::unique_ptr<Function> func, std::shared_ptr<RootFinder> root_finder);
-=======
-        std::shared_ptr<Function> func, std::shared_ptr<RootFinder> root_finder = nullptr);
->>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+        std::unique_ptr<Function> func, std::shared_ptr<RootFinder> root_finder = nullptr);
 
     /**
      * @brief Constructor from Reader.

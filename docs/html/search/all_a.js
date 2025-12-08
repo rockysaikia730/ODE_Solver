@@ -1,6 +1,7 @@
 var searchData=
 [
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['dbgsillyadd_0',['DbgSillyAdd',['../class_dbg_silly_add.html',1,'']]],
   ['dblvalreader_1',['DblValReader',['../class_dbl_val_reader.html',1,'']]],
   ['defineconst_2',['DefineConst',['../class_parser_x_base.html#aeceb0cbb86283876d41cfd3971997967',1,'ParserXBase']]],
@@ -18,6 +19,8 @@ var searchData=
   ['dynamic_5ftensor_2eh_14',['dynamic_tensor.h',['../dynamic__tensor_8h.html',1,'']]],
   ['dynamictensor_15',['DynamicTensor',['../class_dynamic_tensor.html',1,'DynamicTensor'],['../class_dynamic_tensor.html#aaf404565bd07c4410bccaa3b94373323',1,'DynamicTensor::DynamicTensor()'],['../class_dynamic_tensor.html#a595b2d7fb3043fd29ac32cf77194aee7',1,'DynamicTensor::DynamicTensor(const std::vector&lt; size_t &gt; &amp;input_shape, double initial_value)'],['../class_dynamic_tensor.html#a34e9dacaef2bd672eda1667d5380b7c1',1,'DynamicTensor::DynamicTensor(const std::vector&lt; double &gt; &amp;data, const std::vector&lt; size_t &gt; &amp;input_shape={})']]]
 =======
+=======
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
   ['ode_0',['ODE',['../class_o_d_e.html',1,'']]],
   ['ode_1',['Ode',['../class_ode.html',1,'Ode'],['../class_ode.html#aa96be18b8d0d1fe6a521d1a91d42848e',1,'Ode::Ode(double in_time, const DynamicTensor &amp;in_y0, const std::string &amp;in_name, std::shared_ptr&lt; Function &gt; func, std::shared_ptr&lt; RootFinder &gt; root_finder)'],['../class_ode.html#aeb668eecfb030d5b19fdc28c74a28c12',1,'Ode::Ode(double in_time, const double &amp;in_y0, const std::string &amp;in_name, std::shared_ptr&lt; Function &gt; func, std::shared_ptr&lt; RootFinder &gt; root_finder)'],['../class_ode.html#a3fb641140651884add33ea329c0532cb',1,'Ode::Ode(const OdeRawData &amp;raw_data)']]],
   ['ode_2eh_2',['ode.h',['../ode_8h.html',1,'']]],
@@ -32,5 +35,8 @@ var searchData=
   ['operator_2b_11',['operator+',['../class_dynamic_tensor.html#a951b70d3817858d411b94771bc7207e0',1,'DynamicTensor']]],
   ['operator_2d_12',['operator-',['../class_dynamic_tensor.html#a05dae46dbd83e82cfeb69d331799fc6f',1,'DynamicTensor']]],
   ['operator_2f_13',['operator/',['../class_dynamic_tensor.html#aa34c71de9006beb7962e333128d35f9b',1,'DynamicTensor']]]
+<<<<<<< HEAD
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 ];

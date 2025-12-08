@@ -25,5 +25,8 @@ var searchData=
   ['getstepsize_19',['GetStepSize',['../class_ode.html#abf8066539df35587dd98f87815af9311',1,'Ode::GetStepSize()'],['../class_ode_solver.html#adee8ff045eeb481ef911c9eee1b596c8',1,'OdeSolver::GetStepSize()']]],
   ['gettimein_20',['GetTimeIn',['../class_ode.html#a68b7580e063b949bfc0046e4142ad490',1,'Ode']]],
   ['gettolerance_21',['GetTolerance',['../class_ode.html#ade5dfcb147ff53e745bf77de2aca5991',1,'Ode']]]
+<<<<<<< HEAD
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 ];

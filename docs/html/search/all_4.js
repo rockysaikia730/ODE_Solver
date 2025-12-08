@@ -7,5 +7,8 @@ var searchData=
   ['evaluate_1',['Evaluate',['../class_ode.html#a3fc74d1b3f982351bd6dad5054f2cab7',1,'Ode']]],
   ['evaluaterhs_2',['EvaluateRhs',['../class_ode.html#a4d48f3f1df9423c4e835a8d142cefdea',1,'Ode']]],
   ['executing_20only_20the_20doxyfile_3',['For executing only the Doxyfile',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md1',1,'']]]
+<<<<<<< HEAD
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 ];

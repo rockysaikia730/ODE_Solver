@@ -103,6 +103,9 @@ var menudata={children:[
 {text:"t",url:"functions_func.html#index_t"},
 {text:"~",url:"functions_func.html#index__7E"}]},
 {text:"Variables",url:"functions_vars.html"}]}]},
+<<<<<<< HEAD
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},

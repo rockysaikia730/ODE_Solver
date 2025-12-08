@@ -3,7 +3,11 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 A class responsible for reading and parsing data from various sources. The reader can handle the simulation parameters, initial conditions, but cannot read the function itself. \doxylink{class_function}{Function} parsing is not implemented for now, it has to be passed in the constructor of the \doxylink{class_o_d_e}{ODE} solver.  
+=======
+A class responsible for reading and parsing data from various sources.  
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 =======
 A class responsible for reading and parsing data from various sources.  
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
@@ -17,7 +21,11 @@ Inheritance diagram for Reader\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 <<<<<<< HEAD
+<<<<<<< HEAD
 \includegraphics[height=2.000000cm]{class_reader}
+=======
+\includegraphics[height=3.000000cm]{class_reader}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 =======
 \includegraphics[height=3.000000cm]{class_reader}
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
@@ -27,7 +35,11 @@ Inheritance diagram for Reader\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 <<<<<<< HEAD
+<<<<<<< HEAD
 \mbox{\hyperlink{class_reader_ad682ef952dbf2312dc5e5c36b7432588}{Reader}} (const std\+::string \&file\+\_\+name, char separator=\textquotesingle{};\textquotesingle{})
+=======
+\mbox{\hyperlink{class_reader_a6da108ba26678537964ffa902181e756}{Reader}} (const std\+::string \&file\+\_\+name)
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 =======
 \mbox{\hyperlink{class_reader_a6da108ba26678537964ffa902181e756}{Reader}} (const std\+::string \&file\+\_\+name)
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
@@ -36,7 +48,11 @@ Inheritance diagram for Reader\+:\begin{figure}[H]
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Reader} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
 <<<<<<< HEAD
+<<<<<<< HEAD
 virtual void \mbox{\hyperlink{class_reader_a782ef0f80b0d27b8a3e32be538fed057}{Read}} ()=0
+=======
+virtual \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \mbox{\hyperlink{class_reader_a8d9e54309942b2f508ec74b3eac1da80}{Read}} ()=0
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 =======
 virtual \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \mbox{\hyperlink{class_reader_a8d9e54309942b2f508ec74b3eac1da80}{Read}} ()=0
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
@@ -48,6 +64,7 @@ std\+::string \mbox{\hyperlink{class_reader_a5f7f2919f37f15cb95be1580b2028897}{G
 void \mbox{\hyperlink{class_reader_ae142b32ae6481733b84b20141cdafda2}{Set\+File\+Name}} (const std\+::string \&file\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Set the file name for the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_reader_aca06f0a9f6d41e0d9abf0d8d3f2be274}{Set\+File\+Extension}} (const std\+::string \&file\+\_\+extension)
+<<<<<<< HEAD
 <<<<<<< HEAD
 \begin{DoxyCompactList}\small\item\em Set the file extension for the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{class_reader_a33c491f270968d5c129807b5d3dfa3a4}{Open}} ()
@@ -64,10 +81,14 @@ const \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \& \mbox{\hyperlink
 =======
 \begin{DoxyCompactList}\small\item\em Set the file extension for the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
+\begin{DoxyCompactList}\small\item\em Set the file extension for the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{class_reader_a30a4105a8595150cb94854c71637ed3f}{Is\+Numeric}} (const std\+::string \&str) const
+<<<<<<< HEAD
 <<<<<<< HEAD
 \begin{DoxyCompactList}\small\item\em Checks if a string represents a numeric value. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_reader_a1949190ed8188132c3a25e886f10d376}{Split}} (const std\+::string \&str, const char \&separator) const
@@ -101,11 +122,15 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ \mbox{
 =======
 \begin{DoxyCompactList}\small\item\em Checks if a string represents a numeric value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
+\begin{DoxyCompactList}\small\item\em Checks if a string represents a numeric value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_reader_ac59c0d326bde29551f1639e14def45ae}\label{class_reader_ac59c0d326bde29551f1639e14def45ae} 
 std\+::string {\bfseries file\+\_\+name\+\_\+}
+<<<<<<< HEAD
 <<<<<<< HEAD
 \begin{DoxyCompactList}\small\item\em The name of the file to read from. \end{DoxyCompactList}\item 
 \Hypertarget{class_reader_a8dbbf8d9cfc3477f8681bfc356d4a287}\label{class_reader_a8dbbf8d9cfc3477f8681bfc356d4a287} 
@@ -141,6 +166,17 @@ std\+::string {\bfseries file\+\_\+extension\+\_\+}
 \doxysubsection{Detailed Description}
 A class responsible for reading and parsing data from various sources. 
 
+=======
+\item 
+\Hypertarget{class_reader_a8dbbf8d9cfc3477f8681bfc356d4a287}\label{class_reader_a8dbbf8d9cfc3477f8681bfc356d4a287} 
+std\+::string {\bfseries file\+\_\+extension\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class responsible for reading and parsing data from various sources. 
+
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 The \doxylink{class_reader}{Reader} class provides methods to read data from files, databases, or other input streams, and convert them into \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} objects for further processing. 
 
 \label{doc-constructors}
@@ -151,6 +187,9 @@ The \doxylink{class_reader}{Reader} class provides methods to read data from fil
 \doxysubsubsection{\texorpdfstring{Reader()}{Reader()}}
 {\footnotesize\ttfamily \label{class_reader_a6da108ba26678537964ffa902181e756} 
 Reader\+::\+Reader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name}{}\end{DoxyParamCaption})}
+<<<<<<< HEAD
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 
 
@@ -166,17 +205,23 @@ Constructor that initializes the \doxylink{class_reader}{Reader} with a file nam
 
 \doxysubsection{Member Function Documentation}
 <<<<<<< HEAD
+<<<<<<< HEAD
 \Hypertarget{class_reader_a5f7f2919f37f15cb95be1580b2028897}\label{class_reader_a5f7f2919f37f15cb95be1580b2028897} 
 \index{Reader@{Reader}!GetFileExtension@{GetFileExtension}}
 \index{GetFileExtension@{GetFileExtension}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{GetFileExtension()}{GetFileExtension()}}
 {\footnotesize\ttfamily std\+::string Reader\+::\+Get\+File\+Extension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 =======
+=======
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 \Hypertarget{class_reader_a5f7f2919f37f15cb95be1580b2028897}\index{Reader@{Reader}!GetFileExtension@{GetFileExtension}}
 \index{GetFileExtension@{GetFileExtension}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{GetFileExtension()}{GetFileExtension()}}
 {\footnotesize\ttfamily \label{class_reader_a5f7f2919f37f15cb95be1580b2028897} 
 std\+::string Reader\+::\+Get\+File\+Extension (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+<<<<<<< HEAD
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 
 
@@ -187,11 +232,19 @@ Get the file extension associated with the \doxylink{class_reader}{Reader}.
 The file extension as a string. 
 \end{DoxyReturn}
 <<<<<<< HEAD
+<<<<<<< HEAD
 \Hypertarget{class_reader_afff48614961ffb79bfb627adc4b52f70}\label{class_reader_afff48614961ffb79bfb627adc4b52f70} 
 \index{Reader@{Reader}!GetFileName@{GetFileName}}
 \index{GetFileName@{GetFileName}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{GetFileName()}{GetFileName()}}
 {\footnotesize\ttfamily std\+::string Reader\+::\+Get\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+=======
+\Hypertarget{class_reader_afff48614961ffb79bfb627adc4b52f70}\index{Reader@{Reader}!GetFileName@{GetFileName}}
+\index{GetFileName@{GetFileName}!Reader@{Reader}}
+\doxysubsubsection{\texorpdfstring{GetFileName()}{GetFileName()}}
+{\footnotesize\ttfamily \label{class_reader_afff48614961ffb79bfb627adc4b52f70} 
+std\+::string Reader\+::\+Get\+File\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 =======
 \Hypertarget{class_reader_afff48614961ffb79bfb627adc4b52f70}\index{Reader@{Reader}!GetFileName@{GetFileName}}
 \index{GetFileName@{GetFileName}!Reader@{Reader}}
@@ -207,6 +260,7 @@ Get the file name associated with the \doxylink{class_reader}{Reader}.
 \begin{DoxyReturn}{Returns}
 The file name as a string. 
 \end{DoxyReturn}
+<<<<<<< HEAD
 <<<<<<< HEAD
 \Hypertarget{class_reader_a58d1e5e33b0ec8169420fb3be600de32}\label{class_reader_a58d1e5e33b0ec8169420fb3be600de32} 
 \index{Reader@{Reader}!GetRawData@{GetRawData}}
@@ -466,6 +520,71 @@ Checks if a string represents a numeric value.
 
 \begin{DoxyParams}{Parameters}
 {\em str} & The string to check. \\
+=======
+\Hypertarget{class_reader_a30a4105a8595150cb94854c71637ed3f}\index{Reader@{Reader}!IsNumeric@{IsNumeric}}
+\index{IsNumeric@{IsNumeric}!Reader@{Reader}}
+\doxysubsubsection{\texorpdfstring{IsNumeric()}{IsNumeric()}}
+{\footnotesize\ttfamily \label{class_reader_a30a4105a8595150cb94854c71637ed3f} 
+bool Reader\+::\+Is\+Numeric (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Checks if a string represents a numeric value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is numeric, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_reader_a8d9e54309942b2f508ec74b3eac1da80}\index{Reader@{Reader}!Read@{Read}}
+\index{Read@{Read}!Reader@{Reader}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily \label{class_reader_a8d9e54309942b2f508ec74b3eac1da80} 
+virtual \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} Reader\+::\+Read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reads data from the source and returns it as an \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data} object. 
+
+\begin{DoxyReturn}{Returns}
+An \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data} object containing the read data. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_csv_reader_a88a0aa19a2a89a14a54d2c1790807b91}{Csv\+Reader}}, and \mbox{\hyperlink{class_txt_reader_a9f16db79816689a2c72d3f258f9f39ca}{Txt\+Reader}}.
+
+\Hypertarget{class_reader_aca06f0a9f6d41e0d9abf0d8d3f2be274}\index{Reader@{Reader}!SetFileExtension@{SetFileExtension}}
+\index{SetFileExtension@{SetFileExtension}!Reader@{Reader}}
+\doxysubsubsection{\texorpdfstring{SetFileExtension()}{SetFileExtension()}}
+{\footnotesize\ttfamily \label{class_reader_aca06f0a9f6d41e0d9abf0d8d3f2be274} 
+void Reader\+::\+Set\+File\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+extension}{}\end{DoxyParamCaption})}
+
+
+
+Set the file extension for the \doxylink{class_reader}{Reader}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+extension} & The new file extension to set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_reader_ae142b32ae6481733b84b20141cdafda2}\index{Reader@{Reader}!SetFileName@{SetFileName}}
+\index{SetFileName@{SetFileName}!Reader@{Reader}}
+\doxysubsubsection{\texorpdfstring{SetFileName()}{SetFileName()}}
+{\footnotesize\ttfamily \label{class_reader_ae142b32ae6481733b84b20141cdafda2} 
+void Reader\+::\+Set\+File\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Set the file name for the \doxylink{class_reader}{Reader}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & The new file name to set. \\
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -613,8 +732,13 @@ A vector of trimmed strings.
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 <<<<<<< HEAD
+<<<<<<< HEAD
 C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/reader.\+h\item 
 C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/reader.\+cpp\end{DoxyCompactItemize}
+=======
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/Reader.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/reader.\+cc\end{DoxyCompactItemize}
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 =======
 /\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/Reader.\+h\item 
 /\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/reader.\+cc\end{DoxyCompactItemize}

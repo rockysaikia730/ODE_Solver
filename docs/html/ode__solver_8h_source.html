@@ -110,6 +110,7 @@ $(function(){initNavTree('ode__solver_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_ode_solver.html">   26</a></span><span class="keyword">class </span><a class="code hl_class" href="class_ode_solver.html">OdeSolver</a> {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_ode_solver.html#a18be896e3a9772213317a4c554100206">   31</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_ode_solver.html#a18be896e3a9772213317a4c554100206">~OdeSolver</a>() = <span class="keywordflow">default</span>;</div>
@@ -219,10 +220,67 @@ $(function(){initNavTree('ode__solver_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="class_ode_solver.html#a8e1bfe7801ae316ea876682778396e24">  156</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_ode_solver.html#a8e1bfe7801ae316ea876682778396e24">current_time_</a>;</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>};</div>
 </div>
+=======
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_ode_solver.html">   26</a></span><span class="keyword">class </span><a class="code hl_function" href="class_ode_solver.html#ab8375f1f3330bf275d6b18fc936deb3c">OdeSolver</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_ode_solver.html#a18be896e3a9772213317a4c554100206">   31</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_ode_solver.html#a18be896e3a9772213317a4c554100206">~OdeSolver</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_ode_solver.html#a35a9d27d9c3b484dae31ed1c6905a04a">   42</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a> <a class="code hl_function" href="class_ode_solver.html#a35a9d27d9c3b484dae31ed1c6905a04a">ComputeStep</a>() = 0;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_ode_solver.html#af1842eb01ec5d591bb813ce2a064adc5">Step</a>();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ode_solver.html#a662cff46a2025f9b99295d5fcefbe0b6">SetEndTime</a>(<span class="keywordtype">double</span> end_time);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ode_solver.html#ae1242b79d094ce57a73b76661cdbdc94">SetTimeSpan</a>(<span class="keywordtype">int</span> num_of_steps);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ode_solver.html#ae1242b79d094ce57a73b76661cdbdc94">SetTimeSpan</a>(<span class="keywordtype">double</span> step_size);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// --- Getters ---</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a>&amp; <a class="code hl_function" href="class_ode_solver.html#a187c86329e6909b9830becf465c127d0">GetSolution</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_ode_solver.html#a967817c4339501ddb984023977d093a1">GetStartTime</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_ode_solver.html#a6b634912c4c923a14e5ce7994f46b2a4">GetEndTime</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_ode_solver.html#adee8ff045eeb481ef911c9eee1b596c8">GetStepSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ode_solver.html#ad0bbb5894abf1b510845a61e9b42ea61">GetNumberOfSteps</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">// --- Control Flow ---</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_ode_solver.html#a1cc5668fdf4d5bd99ee21c4f91c6aca3">Reset</a>();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ode_solver.html#a8528789990b812fe0b498fabb7e1521f">Solve</a>();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">// --- Constructors ---</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <a class="code hl_function" href="class_ode_solver.html#ab8375f1f3330bf275d6b18fc936deb3c">OdeSolver</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_ode.html">Ode</a>&amp; ode, <span class="keywordtype">int</span> num_of_steps, <span class="keywordtype">double</span> end_time);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <a class="code hl_function" href="class_ode_solver.html#ab8375f1f3330bf275d6b18fc936deb3c">OdeSolver</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_ode.html">Ode</a>&amp; ode, <span class="keywordtype">double</span> step_size = 0.01, <span class="keywordtype">double</span> end_time = 0.0);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="class_ode_solver.html#a9155f5d877dad198b513d24150dff5a4">  141</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="class_ode.html">Ode</a>&amp; <a class="code hl_variable" href="class_ode_solver.html#a9155f5d877dad198b513d24150dff5a4">ode_</a>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="class_ode_solver.html#a349bdd8382aed99df05dddd5d7d747a2">  144</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_ode_solver.html#a349bdd8382aed99df05dddd5d7d747a2">start_time_</a>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="class_ode_solver.html#afe384debfb2aaf066067567b86660e80">  147</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_ode_solver.html#afe384debfb2aaf066067567b86660e80">end_time_</a>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="class_ode_solver.html#a27c98f59e22ca709d451b8ba15bf3e16">  150</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_ode_solver.html#a27c98f59e22ca709d451b8ba15bf3e16">step_size_</a>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="class_ode_solver.html#a8e42a49ba25b6c2c5b029cd70e75d38e">  153</a></span>    <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a> <a class="code hl_variable" href="class_ode_solver.html#a8e42a49ba25b6c2c5b029cd70e75d38e">solution_</a>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="class_ode_solver.html#a8e1bfe7801ae316ea876682778396e24">  156</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_ode_solver.html#a8e1bfe7801ae316ea876682778396e24">current_time_</a>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>};</div>
+</div>
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="preprocessor">#endif </span><span class="comment">// CODES_ODE_SOLVER_H</span></div>
 <div class="ttc" id="aclass_dynamic_tensor_html"><div class="ttname"><a href="class_dynamic_tensor.html">DynamicTensor</a></div><div class="ttdoc">A class to represent a mathematical tensor of arbitrary rank at runtime.</div><div class="ttdef"><b>Definition</b> dynamic_tensor.h:29</div></div>
 <div class="ttc" id="aclass_ode_html"><div class="ttname"><a href="class_ode.html">Ode</a></div><div class="ttdoc">Represents an Ordinary Differential Equation (ODE) problem definition.</div><div class="ttdef"><b>Definition</b> ode.h:30</div></div>
 <div class="ttc" id="aclass_ode_solver_html_a187c86329e6909b9830becf465c127d0"><div class="ttname"><a href="class_ode_solver.html#a187c86329e6909b9830becf465c127d0">OdeSolver::GetSolution</a></div><div class="ttdeci">const DynamicTensor &amp; GetSolution() const</div><div class="ttdef"><b>Definition</b> ode_solver.cpp:47</div></div>
+<<<<<<< HEAD
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 <div class="ttc" id="aclass_ode_solver_html_a18be896e3a9772213317a4c554100206"><div class="ttname"><a href="class_ode_solver.html#a18be896e3a9772213317a4c554100206">OdeSolver::~OdeSolver</a></div><div class="ttdeci">virtual ~OdeSolver()=default</div><div class="ttdoc">Virtual destructor.</div></div>
 <div class="ttc" id="aclass_ode_solver_html_a1cc5668fdf4d5bd99ee21c4f91c6aca3"><div class="ttname"><a href="class_ode_solver.html#a1cc5668fdf4d5bd99ee21c4f91c6aca3">OdeSolver::Reset</a></div><div class="ttdeci">virtual void Reset()</div><div class="ttdoc">Resets the solver state to the initial conditions.</div><div class="ttdef"><b>Definition</b> ode_solver.cpp:7</div></div>

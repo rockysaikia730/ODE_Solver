@@ -1,6 +1,7 @@
 var searchData=
 [
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['funbenchmark_0',['FunBenchmark',['../class_fun_benchmark.html',1,'']]],
   ['funcmplxabs_1',['FunCmplxAbs',['../class_fun_cmplx_abs.html',1,'']]],
   ['funcmplxarg_2',['FunCmplxArg',['../class_fun_cmplx_arg.html',1,'']]],
@@ -44,6 +45,11 @@ var searchData=
   ['funstrtoupper_40',['FunStrToUpper',['../class_fun_str_to_upper.html',1,'']]],
   ['funsum_41',['FunSum',['../class_fun_sum.html',1,'']]],
   ['funtest0_42',['FunTest0',['../class_fun_test0.html',1,'']]]
+=======
+  ['filereader_0',['FileReader',['../class_file_reader.html',1,'']]],
+  ['forwardeuler_1',['ForwardEuler',['../class_forward_euler.html',1,'']]],
+  ['function_2',['Function',['../class_function.html',1,'']]]
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 =======
   ['filereader_0',['FileReader',['../class_file_reader.html',1,'']]],
   ['forwardeuler_1',['ForwardEuler',['../class_forward_euler.html',1,'']]],

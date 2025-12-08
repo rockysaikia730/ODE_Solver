@@ -1,6 +1,7 @@
 var indexSectionsWithContent =
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   0: "012789_abcdefghilmnoprstvy~",
   1: "bcdefghimoprstv",
   2: "s",
@@ -15,12 +16,17 @@ var indexSectionsWithContent =
   11: "bcfoprv",
   12: "or"
 =======
+=======
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
   0: "abcdefgimnorsty~",
   1: "abcdfimnort",
   2: "do",
   3: "abcdefgiorst~",
   4: "cefimorsty",
   5: "acdefgot"
+<<<<<<< HEAD
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 };
 
@@ -45,6 +51,9 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "pages"
+<<<<<<< HEAD
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 };
 
@@ -69,6 +78,9 @@ var indexSectionLabels =
   3: "Functions",
   4: "Variables",
   5: "Pages"
+<<<<<<< HEAD
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 };
 

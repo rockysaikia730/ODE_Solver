@@ -2,6 +2,7 @@ var searchData=
 [
   ['get_5fshape_0',['get_shape',['../class_dynamic_tensor.html#a42b1bfd00a94348fe8b1ce43a2f6cf7e',1,'DynamicTensor']]],
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['getargc_1',['GetArgc',['../class_i_callback.html#ad5772c2be118e18c542086c9889e77b1',1,'ICallback']]],
   ['getcode_2',['GetCode',['../class_parser_error.html#aef4314407491dab2aa0fc6c320834180',1,'ParserError::GetCode()'],['../class_i_token.html#af51f196a482c77b1e1b1746dc9529ef9',1,'IToken::GetCode()']]],
   ['getcomplex_3',['GetComplex',['../class_value.html#a8dc8a04aafd632989aa144004b403306',1,'Value']]],
@@ -41,6 +42,8 @@ var searchData=
   ['getvar_37',['GetVar',['../class_parser_x_base.html#ad6fb5f9628532216087e53a927fdc95e',1,'ParserXBase']]],
   ['getversion_38',['GetVersion',['../class_parser_x_base.html#a2fb190d9a43220fea0a3d91f7df227e2',1,'ParserXBase']]]
 =======
+=======
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
   ['getcondin_1',['GetCondIn',['../class_ode.html#a6c360986d0f06b497d3b311ead9c0366',1,'Ode']]],
   ['getendtime_2',['GetEndTime',['../class_ode_solver.html#a6b634912c4c923a14e5ce7994f46b2a4',1,'OdeSolver']]],
   ['getfileextension_3',['GetFileExtension',['../class_reader.html#a5f7f2919f37f15cb95be1580b2028897',1,'Reader']]],
@@ -61,5 +64,8 @@ var searchData=
   ['getstepsize_18',['GetStepSize',['../class_ode.html#abf8066539df35587dd98f87815af9311',1,'Ode::GetStepSize()'],['../class_ode_solver.html#adee8ff045eeb481ef911c9eee1b596c8',1,'OdeSolver::GetStepSize()']]],
   ['gettimein_19',['GetTimeIn',['../class_ode.html#a68b7580e063b949bfc0046e4142ad490',1,'Ode']]],
   ['gettolerance_20',['GetTolerance',['../class_ode.html#ade5dfcb147ff53e745bf77de2aca5991',1,'Ode']]]
+<<<<<<< HEAD
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 ];

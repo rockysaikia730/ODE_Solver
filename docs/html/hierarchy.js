@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "DynamicTensor", "class_dynamic_tensor.html", null ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     [ "ErrorContext", "struct_error_context.html", null ],
     [ "std::exception", null, [
       [ "std::runtime_error", null, [
@@ -176,6 +177,13 @@ var hierarchy =
     ] ],
     [ "ODE", "class_o_d_e.html", null ],
     [ "Ode", "class_ode.html", null ],
+=======
+    [ "Function", "class_function.html", [
+      [ "ImplicitSolver::ImplicitEquation", "class_implicit_solver_1_1_implicit_equation.html", null ]
+    ] ],
+    [ "ODE", "class_o_d_e.html", null ],
+    [ "Ode", "class_ode.html", null ],
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
     [ "OdeRawData", "struct_ode_raw_data.html", null ],
     [ "OdeSolver", "class_ode_solver.html", [
       [ "ForwardEuler", "class_forward_euler.html", null ],
@@ -199,5 +207,8 @@ var hierarchy =
     [ "RootFinder", "class_root_finder.html", [
       [ "NewtonRaphson", "class_newton_raphson.html", null ]
     ] ]
+<<<<<<< HEAD
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
+=======
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 ];

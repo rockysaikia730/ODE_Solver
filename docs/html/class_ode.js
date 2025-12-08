@@ -11,6 +11,10 @@ var class_ode =
     [ "GetCondIn", "class_ode.html#a6c360986d0f06b497d3b311ead9c0366", null ],
     [ "GetFinalTime", "class_ode.html#ad03b6166ce56ea984ed90777b75af169", null ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    [ "GetFunction", "class_ode.html#adcb8ece3558bd7a29aefcfe9319e7dd4", null ],
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 =======
     [ "GetFunction", "class_ode.html#adcb8ece3558bd7a29aefcfe9319e7dd4", null ],
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
@@ -21,6 +25,10 @@ var class_ode =
     [ "GetName", "class_ode.html#a6356a2c5b5b923378b5cc41951dc3575", null ],
     [ "GetNumberOfSteps", "class_ode.html#a3ef187a4dbbdebf5b21ac9683d18f245", null ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    [ "GetRootFinder", "class_ode.html#a739b332b95ace434b930cf5a879ec46c", null ],
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 =======
     [ "GetRootFinder", "class_ode.html#a739b332b95ace434b930cf5a879ec46c", null ],
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
@@ -39,7 +47,11 @@ var class_ode =
     [ "SetSolverMethod", "class_ode.html#aadfe7f1ebb398afe04eb52c9a41e7099", null ],
     [ "SetStepSize", "class_ode.html#a0d35e08bbd16104106d39cdde0ee1203", null ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     [ "SetT0", "class_ode.html#aee3a5d1ff24f6143623fedc3b78ccd7f", null ],
+=======
+    [ "SetT0", "class_ode.html#a4856ed6d10e8f7a8218a7f81ff576918", null ],
+>>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec
 =======
     [ "SetT0", "class_ode.html#a4856ed6d10e8f7a8218a7f81ff576918", null ],
 >>>>>>> 7f4853e610a3b2d09cfc4d9d898052ca571c61ec

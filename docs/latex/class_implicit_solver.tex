@@ -1,0 +1,136 @@
+\doxysection{Implicit\+Solver Class Reference}
+\hypertarget{class_implicit_solver}{}\label{class_implicit_solver}\index{ImplicitSolver@{ImplicitSolver}}
+Inheritance diagram for Implicit\+Solver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_implicit_solver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_implicit_solver_1_1_implicit_equation}{Implicit\+Equation}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_implicit_solver_a6974272e5de96d69d12f88e02dbb5a7b}\label{class_implicit_solver_a6974272e5de96d69d12f88e02dbb5a7b} 
+{\bfseries Implicit\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\item 
+\Hypertarget{class_implicit_solver_aeac055d99a35bf3480a1bcc97e4f8670}\label{class_implicit_solver_aeac055d99a35bf3480a1bcc97e4f8670} 
+{\bfseries Implicit\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\item 
+\Hypertarget{class_implicit_solver_a6bd56fb68d12b3f481168b3551e205ea}\label{class_implicit_solver_a6bd56fb68d12b3f481168b3551e205ea} 
+virtual const std\+::vector$<$ double $>$ \& {\bfseries Get\+CoeffsY} () const =0
+\item 
+\Hypertarget{class_implicit_solver_aff9693d04caf6d11e7c7c8a46fd0aa9a}\label{class_implicit_solver_aff9693d04caf6d11e7c7c8a46fd0aa9a} 
+virtual const std\+::vector$<$ double $>$ \& {\bfseries Get\+CoeffsdY} () const =0
+\item 
+virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_implicit_solver_a4f79fcbfa43f5b7c2207ce61a4420d74}{Compute\+Step}} () override
+\begin{DoxyCompactList}\small\item\em Calculates the solution at the next time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Multi\+Step\+Ode\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
+\item 
+{\bfseries Multi\+Step\+Ode\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
+\item 
+virtual void {\bfseries Init\+Buffers} ()
+\item 
+void {\bfseries Update\+Derivative} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&dydt)
+\item 
+void {\bfseries Update\+Solution} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y)
+\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}} () override
+\begin{DoxyCompactList}\small\item\em Resets the solver state to the initial conditions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90}{Step}} () override
+\begin{DoxyCompactList}\small\item\em Updates the solution\+\_\+ and time for next time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ode\+Solver} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_solver_a662cff46a2025f9b99295d5fcefbe0b6}{Set\+End\+Time}} (double end\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Sets the simulation end time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_solver_ae1242b79d094ce57a73b76661cdbdc94}{Set\+Time\+Span}} (int num\+\_\+of\+\_\+steps)
+\begin{DoxyCompactList}\small\item\em Configures the solver based on a fixed number of steps. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_solver_a673fb059d7379dfc9bfea833318b4049}{Set\+Time\+Span}} (double step\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Configures the solver based on a fixed step size. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \& \mbox{\hyperlink{class_ode_solver_a187c86329e6909b9830becf465c127d0}{Get\+Solution}} () const
+\item 
+double \mbox{\hyperlink{class_ode_solver_a967817c4339501ddb984023977d093a1}{Get\+Start\+Time}} () const
+\item 
+double \mbox{\hyperlink{class_ode_solver_a6b634912c4c923a14e5ce7994f46b2a4}{Get\+End\+Time}} () const
+\item 
+double \mbox{\hyperlink{class_ode_solver_adee8ff045eeb481ef911c9eee1b596c8}{Get\+Step\+Size}} () const
+\item 
+int \mbox{\hyperlink{class_ode_solver_ad0bbb5894abf1b510845a61e9b42ea61}{Get\+Number\+Of\+Steps}} () const
+\item 
+void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}} ()
+\begin{DoxyCompactList}\small\item\em Executes the simulation loop (Batch Mode). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Constructor for fixed number of steps. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ode_solver_aead5f819e881f42a8c398d48678e4e16}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0)
+\begin{DoxyCompactList}\small\item\em Constructor for fixed step size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_implicit_solver_ad83ba20bb35f79b715d8bc932f4a3bc6}\label{class_implicit_solver_ad83ba20bb35f79b715d8bc932f4a3bc6} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ {\bfseries root\+\_\+finder\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries order\+\_\+sol\+\_\+}
+\item 
+int {\bfseries order\+\_\+derivative\+\_\+}
+\item 
+std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\bfseries solutions\+\_\+buffer\+\_\+}
+\item 
+std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\bfseries derivative\+\_\+buffer\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{class_ode}{Ode}} \& {\bfseries ode\+\_\+}
+\begin{DoxyCompactList}\small\item\em Reference to the \doxylink{class_o_d_e}{ODE} problem definition. Guaranteed to be valid as long as the user maintains the \doxylink{class_ode}{Ode} object scope. \end{DoxyCompactList}\item 
+double {\bfseries start\+\_\+time\+\_\+}
+\begin{DoxyCompactList}\small\item\em The simulation start time. \end{DoxyCompactList}\item 
+double {\bfseries end\+\_\+time\+\_\+}
+\begin{DoxyCompactList}\small\item\em The simulation target end time. \end{DoxyCompactList}\item 
+double {\bfseries step\+\_\+size\+\_\+}
+\begin{DoxyCompactList}\small\item\em The time step (dt). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries solution\+\_\+}
+\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\item 
+double {\bfseries current\+\_\+time\+\_\+}
+\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_implicit_solver_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_implicit_solver_a4f79fcbfa43f5b7c2207ce61a4420d74}\index{ImplicitSolver@{ImplicitSolver}!ComputeStep@{ComputeStep}}
+\index{ComputeStep@{ComputeStep}!ImplicitSolver@{ImplicitSolver}}
+\doxysubsubsection{\texorpdfstring{ComputeStep()}{ComputeStep()}}
+{\footnotesize\ttfamily \label{class_implicit_solver_a4f79fcbfa43f5b7c2207ce61a4420d74} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Implicit\+Solver\+::\+Compute\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the solution at the next time step. 
+
+This is a pure virtual function that must be implemented by derived classes. It uses the specific numerical algorithm (e.\+g., RK4, Euler) to calculate y(t + dt) based on y(t).
+
+\begin{DoxyReturn}{Returns}
+The calculated state tensor for the next time step. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ode_solver_a35a9d27d9c3b484dae31ed1c6905a04a}{Ode\+Solver}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/implicit\+\_\+solver.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/implicit\+\_\+solver.\+cpp\end{DoxyCompactItemize}
