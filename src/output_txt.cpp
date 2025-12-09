@@ -25,7 +25,7 @@ void OutputTxt::SetHeader(const std::vector<std::string>& header) {
 }
 
 void OutputTxt::Write(const OdeSolver& solver) {
-    std::ofstream file(filename_, std::ios::out);
+    std::ofstream file(filename_, std::ios::binary); // Open in binary mode to avoid newline translation
     if (!file.is_open()) {
         throw std::ios_base::failure("Failed to open the output file: " + filename_);
     }
@@ -46,6 +46,6 @@ void OutputTxt::Write(const OdeSolver& solver) {
     std::vector<size_t> index(shape.size(), 0);
 
     file << "y" << separator_ << " ";
-    WriteTensorRecursive(file, solution, shape, index, 0, separator_);
+    WriteTensorRecursive(file, solution, shape, index, 0, ',');
     file << "\n";
 }

@@ -48,10 +48,6 @@ public:
 
 private:
     /**
-     * @brief The separator character used in the CSV file.
-     */
-    char separator_;
-    /**
      * @brief A header row to the CSV file.
      */
     std::vector<std::string> header_;

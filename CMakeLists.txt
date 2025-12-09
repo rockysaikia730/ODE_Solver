@@ -4,6 +4,9 @@ project(Codes)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fexec-charset=UTF-8 -finput-charset=UTF-8")
+
+
 # Everything executable
 add_executable(everything
     src/main.cpp
@@ -144,6 +147,41 @@ target_link_libraries(ode_unittest PRIVATE
 )
 
 gtest_discover_tests(ode_unittest)
+
+add_executable(output_unittest
+    Tests/output_unittest.cpp
+    src/output.cpp
+    src/output_csv.cpp
+    src/output_txt.cpp
+
+    src/reader.cpp
+    src/reader_csv.cpp
+    src/reader_txt.cpp
+
+    src/dynamic_tensor.cpp
+    src/parsed_function.cpp
+    src/function.cpp
+    src/ode.cpp
+    src/ode_raw_data.cpp
+    src/ode_solver.cpp
+    src/runge_kutta_solver.cpp
+)
+
+target_include_directories(output_unittest PRIVATE
+    include
+    src
+    ${CMAKE_SOURCE_DIR}/external/muparserx/parser
+    ${gtest_SOURCE_DIR}/include      # <-- required!
+    ${gmock_SOURCE_DIR}/include      # optional but OK
+)
+
+target_link_libraries(output_unittest PRIVATE
+    muparserx
+    GTest::gtest_main
+)
+
+gtest_discover_tests(output_unittest)
+
 
 
 # Generate documentation with Doxygen

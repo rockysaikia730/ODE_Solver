@@ -27,7 +27,7 @@ void OutputCsv::SetHeader(const std::vector<std::string>& header) {
 void OutputCsv::Write(const OdeSolver& solver) {
 
     // Overwrite file, do NOT append for final-only output
-    std::ofstream file(filename_);
+    std::ofstream file(filename_, std::ios::binary); // Open in binary mode to avoid newline translation
 
     if(!header_.empty()) {
         for(size_t i = 0; i < header_.size(); ++i) {
@@ -49,7 +49,7 @@ void OutputCsv::Write(const OdeSolver& solver) {
     std::vector<size_t> shape = solution.get_shape();
     std::vector<size_t> index(shape.size(), 0);
     file << "y" << separator_;
-    WriteTensorRecursive(file, solution, shape, index, 0, separator_);
+    WriteTensorRecursive(file, solution, shape, index, 0, ',');
 
     file << "\n";
     file.close();

@@ -20,7 +20,7 @@ public:
      * 
      * @param filename The name of the output file.
      */
-    Output(const std::string& filename, char separator = ',');
+    Output(const std::string& filename, char separator = ';');
 
     /**
      * @brief Virtual destructor.

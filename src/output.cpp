@@ -12,7 +12,7 @@ std::string Output::GetFilename() const {
 }
 
 void Output::EnsureFileExists() const {
-    std::ofstream file(filename_, std::ios::app);
+    std::ofstream file(filename_, std::ios::app | std::ios::binary); // Open in binary mode to avoid newline translation
     // The file is created if it does not exist; no need to write anything.
     file.close();
 }
