@@ -41,7 +41,7 @@ public:
      * @param root_finder Shared pointer to the root finding strategy (for implicit solvers).
      */
     Ode(double in_time, const DynamicTensor& in_y0, const std::string& in_name,
-        std::unique_ptr<Function> func, std::unique_ptr<Function> derivative = nullptr, std::shared_ptr<RootFinder> root_finder = nullptr);
+        std::shared_ptr<const Function> func, std::shared_ptr<const Function> derivative = nullptr, std::shared_ptr<RootFinder> root_finder = nullptr);
 
     /**
      * @brief Constructor with Scalar state.
@@ -54,7 +54,7 @@ public:
      * @param root_finder Shared pointer to the root finding strategy.
      */
     Ode(double in_time, const double& in_y0, const std::string& in_name,
-        std::unique_ptr<Function> func, std::unique_ptr<Function> derivative = nullptr, std::shared_ptr<RootFinder> root_finder = nullptr);
+        std::shared_ptr<const Function> func, std::shared_ptr<const Function> derivative = nullptr, std::shared_ptr<RootFinder> root_finder = nullptr);
 
     /**
      * @brief Constructor from Reader.
@@ -118,19 +118,13 @@ public:
      * @brief Inject a new derivative function.
      * @param func Shared pointer to the new Function.
      */
-    void SetFunction(std::unique_ptr<Function> func);
+    void SetFunction(std::shared_ptr<const Function> func);
 
     /**
      * @brief Inject a new root finder.
      * @param root_finder Shared pointer to the new RootFinder.
      */
     void SetRootFinder(std::shared_ptr<RootFinder> root_finder);
-
-    /**
-     * @brief Inject a new derivative function.
-     * @param derivative Shared pointer to the new derivative Function.
-     */
-    void SetDerivative(std::unique_ptr<Function> derivative);
 
     // =========================================================
     // Getters
@@ -190,16 +184,10 @@ private:
     std::string name_;
 
     /// @brief Pointer to the derivative function logic.
-    std::unique_ptr<Function> func_;
+    std::shared_ptr<const Function> func_;
 
     /// @brief Pointer to the root finding logic (optional/strategy pattern).
     std::shared_ptr<RootFinder> root_finder_;
-
-    /// @brief Pointer to the derivative function (optional).
-    std::unique_ptr<Function> derivative_;
-
-    ///@brief Helper function to verify input dimensions
-    void VerifyDimensions() const;
 };
 
 #endif // CODES_ODE_H

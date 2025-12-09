@@ -2,7 +2,7 @@
 #include "reader.h"
 #include "reader_csv.h"
 #include "ode_raw_data.h"
-
+#include "parsed_function.h"
 CsvReader::CsvReader(const std::string& file_name, char separator, bool has_header)
     : Reader(file_name, separator), has_header_(has_header) {}
 
@@ -34,11 +34,24 @@ void CsvReader::Read() {
             throw std::invalid_argument("Invalid key-value pair: " + line);
         }
 
-        std::string key = ToLower(tokens[0]);
-        std::string value = tokens[1];
+        std::string key = ToLower(TrimString(tokens[0]));
+        std::string value = TrimString(tokens[1]);
 
         InterpretKeyValuePair(key, value);
     }
 
     Close();
+
+    if (raw_data_.function_params.function_expressions.empty()) {
+        throw std::invalid_argument("No function expressions found in CSV file.");
+    }
+
+    //create function
+    raw_data_.function = std::make_shared<ParsedFunction>(
+        raw_data_.function_params.function_expressions,
+        raw_data_.function_params.function_shape,
+        raw_data_.function_params.derivative_expressions,
+        raw_data_.function_params.derivative_shape
+    );
+    
 }

@@ -54,16 +54,25 @@ struct OdeRawData {
         size_t max_iterations = 1000;
         double tolerance = 1e-6;
     };
-
+    /**
+     * @struct function_params
+     * @brief Structure to hold function-related parameters for ODE solving.
+     */
+    struct function_params {
+        std::vector<std::string> function_expressions;
+        std::vector<size_t> function_shape;
+        std::vector<std::string> derivative_expressions;
+        std::vector<size_t> derivative_shape;
+    };
     /**
      * @brief Initial condition tensor.
      */
     DynamicTensor y0;
 
     /**
-     * @brief Pointer to the function defining the ODE.
-     */    
-    std::unique_ptr<Function> function; // Or should it be a shared_ptr?
+     * @brief Function-related parameters.
+     */
+    function_params function_params;
 
     /**
      * @brief Time-related parameters.
@@ -81,9 +90,9 @@ struct OdeRawData {
     std::shared_ptr<RootFinder> root_finder;
 
     /**
-     * @brief Pointer to a derivative function (optional).
-     */
-    std::unique_ptr<Function> derivative;
+     * @brief Pointer to the function defining the ODE.
+     */    
+    std::shared_ptr<const Function> function;
 
 };
 

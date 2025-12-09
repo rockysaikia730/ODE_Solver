@@ -69,7 +69,7 @@ target_link_libraries(unittests
 include(GoogleTest)
 gtest_discover_tests(unittests)
 
-# Reader tests
+# Legacy reader test (manual test)
 add_executable(reader_test
     Tests/reader_test.cpp
     src/reader.cpp
@@ -90,6 +90,33 @@ target_include_directories(reader_test PRIVATE
 )
 
 target_link_libraries(reader_test PRIVATE muparserx GTest::gtest_main)
+
+# New GoogleTest reader unittest
+add_executable(reader_unittest
+    tests/reader_unittest.cpp
+    src/reader.cpp
+    src/reader_csv.cpp
+    src/reader_txt.cpp
+    src/dynamic_tensor.cpp
+    src/parsed_function.cpp
+    src/function.cpp
+    src/ode.cpp
+    src/ode_solver.cpp
+    src/ode_raw_data.cpp
+)
+
+target_include_directories(reader_unittest PRIVATE
+    include
+    src
+    ${CMAKE_SOURCE_DIR}/external/muparserx/parser
+)
+
+target_link_libraries(reader_unittest PRIVATE
+    muparserx
+    GTest::gtest_main
+)
+
+gtest_discover_tests(reader_unittest)
 
 # Generate documentation with Doxygen
 #find_package(Doxygen)

@@ -9,7 +9,7 @@ OdeRawData::OdeRawData(const OdeRawData& copy) {
     solver_params = copy.solver_params;
     
     if (copy.function) {
-        function = copy.function->Clone();
+        function = copy.function;
     } 
     else {
         function = nullptr;
@@ -24,7 +24,7 @@ OdeRawData& OdeRawData::operator=(const OdeRawData& other) {
         solver_params = other.solver_params;
         
         if (other.function) {
-            function = other.function->Clone();
+            function = other.function;
         } 
         else {
             function = nullptr;

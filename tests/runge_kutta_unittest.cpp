@@ -11,9 +11,6 @@ public:
     DynamicTensor Eval(double t, const DynamicTensor& y) const {
         return -1.0 * y;
     }
-    std::unique_ptr<Function> Clone() const {
-        return std::make_unique<Rhs>(*this);
-    }
 };
 
 

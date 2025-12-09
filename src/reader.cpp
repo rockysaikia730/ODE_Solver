@@ -99,7 +99,6 @@ std::vector<std::string> Reader::Trim(const std::vector<std::string>& tokens) co
 
 DynamicTensor Reader::ParseTensor(const std::string& str) {
     size_t pos = 0;
-    std::cout << "[DEBUG] ParseTensor got: >" << str << "<\n";
     if (HasComplexNumber(str)) {
         std::vector<DynamicTensor::Complex> data;
         std::vector<size_t> shape = ParseTensorRecursive(str, pos, data);
@@ -112,28 +111,32 @@ DynamicTensor Reader::ParseTensor(const std::string& str) {
 }
 
 template <typename T>
-std::vector<size_t> Reader::ParseTensorRecursive(
-    const std::string& str, size_t& pos, std::vector<T>& data)
+std::vector<size_t> Reader::ParseTensorRecursive(const std::string& str, size_t& pos, std::vector<T>& data)
 {
     std::vector<size_t> shape;
+    size_t element_count = 0; // number of elements in current dimension
+
+    //assume first char is '['
+    ++pos;
 
     while (pos < str.size()) {
 
         if (str[pos] == '[') {
             // Start of a new dimension
-            ++pos;
-
             std::vector<T> nested_data;
             std::vector<size_t> nested_shape =
                 ParseTensorRecursive(str, pos, nested_data);
 
             data.insert(data.end(), nested_data.begin(), nested_data.end());
 
-            if (shape.empty()) {
+            if (element_count == 0) {
                 shape = nested_shape;
-            } else if (shape != nested_shape) {
+            }
+            else if (shape != nested_shape) {
+                // Handle error! MISSING IMPLEMENTATION
                 throw std::invalid_argument("Inconsistent tensor shape detected.");
             }
+            ++element_count;
         }
 
         else if (str[pos] == ']') {
@@ -148,7 +151,7 @@ std::vector<size_t> Reader::ParseTensorRecursive(
         }
 
         else {
-            // Parse a scalar (double) or complex number
+            // Parse a scalar or complex number
             std::string value_str;
 
             if (str[pos] == '(') {
@@ -197,17 +200,16 @@ std::vector<size_t> Reader::ParseTensorRecursive(
             }
 
             data.push_back(value);
+            ++element_count;
         }
     }
 
-    // Compute shape
+    // Compute the actual shape
     if (shape.empty()) {
         return { data.size() };
     }
     else {
-        size_t product = 1;
-        for (auto& dim : shape) product *= dim;
-        shape.insert(shape.begin(), data.size() / product);
+        shape.insert(shape.begin(), element_count);
         return shape;
     }
 }
@@ -283,7 +285,6 @@ double Reader::ParseDouble(const std::string& str) const {
 }
 
 bool Reader::HasComplexNumber(const std::string& str) const {
-    std::cout << "[DEBUG] HasComplexNumber checking: >" << str << "<\n";
     for (size_t i = 0; i < str.size(); ++i) {
         if (str[i] == '(') {
             // Look for the closing parenthesis
@@ -321,15 +322,15 @@ void Reader::ParseSolverMethodFromString(const std::string& method_string) {
 
 
 void Reader::InterpretKeyValuePair(const std::string& key, const std::string& value) {
+    bool derivative_read = false;
 
-
-    if (key == "t0") {
+    if (key == "t") {
         raw_data_.time_params.t0 = ParseDouble(value);
     }
     else if (key == "tf") {
         raw_data_.time_params.t_final = ParseDouble(value);
     }
-    else if (key == "y0") {
+    else if (key == "y") {
         raw_data_.y0 = ParseTensor(value);
     }
     else if (key == "step_size") {
@@ -350,14 +351,19 @@ void Reader::InterpretKeyValuePair(const std::string& key, const std::string& va
         raw_data_.solver_params.max_iterations = static_cast<size_t>(ParseDouble(value));
     }
     else if (key == "function") {
-        raw_data_.function = ParseFunction(value);
+    raw_data_.function_params.function_expressions.clear();
+    size_t pos = 0;
+    raw_data_.function_params.function_shape = ParseFunctionRecursive(value, pos, raw_data_.function_params.function_expressions);
+}
+    else if(key == "derivative"){
+        size_t pos = 0;
+        raw_data_.function_params.derivative_shape = ParseFunctionRecursive(value, pos, raw_data_.function_params.derivative_expressions);
+        derivative_read = true;
     }
-    else if (key == "derivative") {
-        raw_data_.derivative = ParseFunction(value);
+    else{
+        // skip unknown keys for now
     }
-    else {
-        // Unknown key is skipped.
-    }
+    // Does not create Function yet, just stores expressions and shape
 }
 
 std::string Reader::TrimString(const std::string& str) const {
@@ -370,22 +376,15 @@ std::string Reader::TrimString(const std::string& str) const {
     return str.substr(start, end - start);
 }
 
-std::unique_ptr<Function> Reader::ParseFunction(const std::string& str) {
-    
-    size_t pos = 0;
-    std::vector<std::string> flat_expressions;
-    std::vector<size_t> shape = ParseFunctionRecursive(str, pos, flat_expressions);
-
-    return std::make_unique<ParsedFunction>(flat_expressions, shape);
-}
-
 std::vector<size_t> Reader::ParseFunctionRecursive(const std::string& str, size_t& pos, std::vector<std::string>& flat_expressions) {
     std::vector<size_t> sub_shape;
+    size_t element_count = 0; // number of elements in current dimension
+
+    // assume first char is '['
+    ++pos;
 
     while(pos < str.size()) {
         if (str[pos] == '[') {
-            // Start of a new dimension
-            ++pos; // Move past '['
             std::vector<std::string> nested_expression;
             auto nested_shape = ParseFunctionRecursive(str, pos, nested_expression); //Recursive call on nested dimension
 
@@ -399,6 +398,7 @@ std::vector<size_t> Reader::ParseFunctionRecursive(const std::string& str, size_
                 // Handle error! MISSING IMPLEMENTATION
                 throw std::invalid_argument("Inconsistent function shape detected.");
             }
+            ++element_count;
         }
         else if (str[pos] == ']') {
             // End of the current dimension
@@ -417,19 +417,18 @@ std::vector<size_t> Reader::ParseFunctionRecursive(const std::string& str, size_
             }
             token = TrimString(token);
             flat_expressions.push_back(token);
+            ++element_count;
         }
     }
+
+    // Compute the actual shape
+
     if (sub_shape.empty()) {
         return {flat_expressions.size()}; // First dimension size
     }
     else {
-        // Add current dimension size
-        size_t product = 1;
-        for (auto& dim : sub_shape){
-            product *= dim;
-        }
-
-        sub_shape.insert(sub_shape.begin(), flat_expressions.size()/product); // divide by product of nested dimensions
+       // size of first dimension
+        sub_shape.insert(sub_shape.begin(), element_count);
         return sub_shape;
     }
 }

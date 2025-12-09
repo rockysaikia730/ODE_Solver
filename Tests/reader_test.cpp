@@ -7,6 +7,7 @@
 #include "ode.h"
 #include <iostream>
 #include <memory>
+#include <fstream>
 #include <gtest/gtest.h>          // GoogleTest
 
 int main() {
@@ -47,36 +48,56 @@ int main() {
         try {
             CsvReader csvReader("test_data.csv", ';', true);
             csvReader.Read();
+
+            const auto& raw = csvReader.GetRawData();
+
             std::cout << "Reader y0 IsComplex: " << std::boolalpha 
-            << csvReader.GetRawData().y0.IsComplex() << "\n";
+                    << raw.y0.IsComplex() << "\n";
+
+            std::cout << "Reader y0 shape: ";
+            for (auto s : raw.y0.get_shape()) std::cout << s << " ";
+            std::cout << "\n";
+
+            std::cout << "Reader y0 data: " << raw.y0 << "\n";
+
+            if (raw.function) 
+                std::cout << "Reader function expressions loaded: YES\n";
+            else 
+                std::cout << "Reader function expressions loaded: NO\n";
+
             Ode odeFromCsv(csvReader);
             std::cout << "ODE constructed successfully from CSV data." << std::endl;
-        } catch (const std::exception& e) {
-            std::cerr << "Error constructing ODE from CSV data: " << e.what() << std::endl;
+        }
+        catch (const std::exception& e) {
+            std::cerr << "Error constructing ODE from CSV data: " 
+                    << e.what() << std::endl;
         }
 
-        try{
+        try {
             TxtReader txtReader("test_data.txt");
             txtReader.Read();
+
+            const auto& raw = txtReader.GetRawData();
+
+            std::cout << "Reader y0 IsComplex: " << std::boolalpha 
+                    << raw.y0.IsComplex() << "\n";
+
+            std::cout << "Reader y0 shape: ";
+            for (auto s : raw.y0.get_shape()) std::cout << s << " ";
+            std::cout << "\n";
+
+            std::cout << "Reader y0 data: " << raw.y0 << "\n";
+
+            if (raw.function) 
+                std::cout << "Reader function expressions loaded: YES\n";
+            else 
+                std::cout << "Reader function expressions loaded: NO\n";
+
             Ode odeFromTxt(txtReader);
             std::cout << "ODE constructed successfully from TXT data." << std::endl;
-        } catch (const std::exception& e) {
-            std::cerr << "Error constructing ODE from TXT data: " << e.what() << std::endl;
-        }
-        
-        std::cout << "the ODE, evaluated at t0 and y0 gives: " << std::endl;
-        try {
-            CsvReader csvReader("test_data.csv", ';', true);
-            csvReader.Read();
-            Ode odeFromCsv(csvReader);
-            DynamicTensor result = odeFromCsv.Evaluate(odeFromCsv.GetTimeIn(), odeFromCsv.GetCondIn());
-            std::cout << "ODE evaluated successfully at t0 and y0." << std::endl;
-            std::cout << "Result: ";
-            std::cout << result << std::endl;
-        }
-
-        catch (const std::exception& e) {
-            std::cerr << "Error evaluating ODE at t0 and y0: " << e.what() << std::endl;
+        }catch (const std::exception& e) {
+            std::cerr << "Error constructing ODE from TXT data: " 
+                    << e.what() << std::endl;
         }
 
         try {
@@ -180,18 +201,18 @@ int main() {
 
     {
         std::ofstream f("test_tensor.csv");
-        f << "y0; [[(1,2), (3,4)], [(5,6), (7,8)], [(9,10), (11,12)]]\n";
+        f << "y; [[(1,2), (3,4)], [(5,6), (7,8)], [(9,10), (11,12)]]\n";
         f << "function; [[y0, y1], [y2, y3], [y4, y5]]\n";
-        f << "t0; 0\n";
+        f << "t; 0\n";
         f << "tf; 1\n";
         f << "step_size; 0.1\n";
     }
 
     {
         std::ofstream f("test_tensor.txt");
-        f << "y0 = [[(1,2), (3,4)], [(5,6), (7,8)], [(9,10), (11,12)]]\n";
+        f << "y = [[(1,2), (3,4)], [(5,6), (7,8)], [(9,10), (11,12)]]\n";
         f << "function = [[y0, y1], [y2, y3], [y4, y5]]\n";
-        f << "t0 = 0\n";
+        f << "t = 0\n";
         f << "tf = 1\n";
         f << "step_size = 0.1\n";
     }
@@ -235,28 +256,28 @@ int main() {
         }
 
         // ------------------ test function ------------------
-        ASSERT_TRUE(raw.function);  // must exist
-        auto* pf = dynamic_cast<ParsedFunction*>(raw.function.get());
+        ASSERT_TRUE(raw.function);  
+        auto* pf = dynamic_cast<const ParsedFunction*>(raw.function.get());
         ASSERT_TRUE(pf);
 
-        // correct shape
-        EXPECT_EQ(pf->GetShape(), expected_shape);
-
-        // test expressions by evaluating the function:
-        // function is identity: f(y) = y
+        // Evaluate the function (identity function: f(y) = y)
         DynamicTensor result = pf->Eval(0.0, raw.y0);
 
-        EXPECT_EQ(result.get_shape(), expected_shape);
+        // Output shape must match y0 shape
+        EXPECT_EQ(result.get_shape(), raw.y0.get_shape());
         EXPECT_TRUE(result.IsComplex());
 
+        // Check values
         for (size_t i = 0; i < expected_y0.size(); ++i)
         {
-            C r = raw.y0.template flat<C>(i);
+            C r = result.flat<C>(i);
             EXPECT_NEAR(r.real(), expected_y0[i].real(), 1e-12);
             EXPECT_NEAR(r.imag(), expected_y0[i].imag(), 1e-12);
         }
 
+        std::cout << result << "\n";
         std::cout << "Reader test passed.\n";
+
     };
 
     // ---------------------------------------------------------------

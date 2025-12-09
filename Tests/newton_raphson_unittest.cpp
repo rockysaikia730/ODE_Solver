@@ -12,14 +12,6 @@ public:
     DynamicTensor Eval(double t, const DynamicTensor& y) const override {
         return y * y - num_;
     };
-    std::unique_ptr<Function> Clone() const override {
-        return std::make_unique<SquaredRoot>(*this);
-    };
-
-    const std::vector<size_t>& GetShape() const override {
-        static std::vector<size_t> shape = {1};
-        return shape;
-    };
 
     void SetNum(double num) {num_ = num;}
 private:

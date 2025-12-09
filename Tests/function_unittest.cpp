@@ -10,14 +10,6 @@ public:
     DynamicTensor Eval(double t, const DynamicTensor& y) const override {
         return y * 2.0 + t * t * 5;
     };
-    std::unique_ptr<Function> Clone() const override {
-        return std::make_unique<MyFunc>(*this);
-    };
-    const std::vector<size_t>& GetShape() const override {
-        static std::vector<size_t> shape = {1};
-        return shape;
-    };
-    
 };
 
 TEST(Function, Evaluation) {
