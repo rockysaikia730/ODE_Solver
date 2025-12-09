@@ -173,6 +173,15 @@ public:
      */
     DynamicTensor Evaluate(double t, const DynamicTensor& y) const;
 
+    /**
+     * @brief Evaluate the gradient of the derivative function.
+     * @param t The current time.
+     * @param y The current state tensor.
+     * @return A DynamicTensor representing the gradient.
+     * @remark This method uses the Function's Grad method.
+     */
+    DynamicTensor Grad(double t, const DynamicTensor& y) const;
+
 private:
     /// @brief Initial time.
     double t0_;

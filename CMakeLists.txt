@@ -118,6 +118,34 @@ target_link_libraries(reader_unittest PRIVATE
 
 gtest_discover_tests(reader_unittest)
 
+# ODE unit tests
+add_executable(ode_unittest
+    tests/ode_unittest.cpp
+    src/dynamic_tensor.cpp
+    src/function.cpp
+    src/parsed_function.cpp
+    src/ode.cpp
+    src/ode_solver.cpp
+    src/ode_raw_data.cpp
+    src/reader.cpp
+    src/reader_csv.cpp
+    src/reader_txt.cpp
+)
+
+target_include_directories(ode_unittest PRIVATE
+    include
+    src
+    ${CMAKE_SOURCE_DIR}/external/muparserx/parser
+)
+
+target_link_libraries(ode_unittest PRIVATE
+    muparserx
+    GTest::gtest_main
+)
+
+gtest_discover_tests(ode_unittest)
+
+
 # Generate documentation with Doxygen
 #find_package(Doxygen)
 #if(DOXYGEN_FOUND)

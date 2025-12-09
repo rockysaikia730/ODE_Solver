@@ -102,3 +102,7 @@ void Ode::SetFunction(std::shared_ptr<const Function> func) {
     func_->Eval(t0_, y0_); // verify dimensions after setting new function
 }
 void Ode::SetRootFinder(std::shared_ptr<RootFinder> root_finder) {root_finder_ = root_finder;}
+
+DynamicTensor Ode::Grad(double t, const DynamicTensor& y) const {
+    return func_->Grad(t, y);
+}
