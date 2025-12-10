@@ -35,7 +35,7 @@ const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{class_bdf_a4532c58e0c226a7
 \item 
 {\bfseries Implicit\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
 \item 
-virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_implicit_solver_a4f79fcbfa43f5b7c2207ce61a4420d74}{Compute\+Step}} () override
+virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_implicit_solver_a9f93bb76e5a9fa8df53c5dedd2fcaa5e}{Compute\+Step}} () override
 \begin{DoxyCompactList}\small\item\em Calculates the solution at the next time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}}
 \begin{DoxyCompactItemize}
@@ -108,7 +108,7 @@ std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\b
 \begin{DoxyCompactItemize}
 \item 
 const \mbox{\hyperlink{class_ode}{Ode}} \& {\bfseries ode\+\_\+}
-\begin{DoxyCompactList}\small\item\em Reference to the \doxylink{class_o_d_e}{ODE} problem definition. Guaranteed to be valid as long as the user maintains the \doxylink{class_ode}{Ode} object scope. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Reference to the ODE problem definition. Guaranteed to be valid as long as the user maintains the \doxylink{class_ode}{Ode} object scope. \end{DoxyCompactList}\item 
 double {\bfseries start\+\_\+time\+\_\+}
 \begin{DoxyCompactList}\small\item\em The simulation start time. \end{DoxyCompactList}\item 
 double {\bfseries end\+\_\+time\+\_\+}
@@ -116,12 +116,11 @@ double {\bfseries end\+\_\+time\+\_\+}
 double {\bfseries step\+\_\+size\+\_\+}
 \begin{DoxyCompactList}\small\item\em The time step (dt). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries solution\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\item 
 double {\bfseries current\+\_\+time\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/backward\+\_\+euler\+\_\+solver.\+h\item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/backward\+\_\+euler\+\_\+solver.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/backward\+\_\+euler\+\_\+solver.\+h\end{DoxyCompactItemize}

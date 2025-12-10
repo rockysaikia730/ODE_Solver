@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['begin_0',['begin',['../class_dynamic_tensor.html#ab3d41f03a8750b49db46f51dc61a41f7',1,'DynamicTensor']]]
+  ['close_0',['Close',['../class_reader.html#a763acd33fcb5df52793a2fa431afa0ae',1,'Reader']]],
+  ['computestep_1',['ComputeStep',['../class_adams_bashforth.html#a1a7a6e06ee0fa286e0738578b77a29c1',1,'AdamsBashforth::ComputeStep()'],['../class_forward_euler_light.html#ab238eb77ab850a76bcea2c5042cd8c60',1,'ForwardEulerLight::ComputeStep()'],['../class_implicit_solver.html#a9f93bb76e5a9fa8df53c5dedd2fcaa5e',1,'ImplicitSolver::ComputeStep()'],['../class_ode_solver.html#a35a9d27d9c3b484dae31ed1c6905a04a',1,'OdeSolver::ComputeStep()'],['../class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605',1,'RungeKutta::ComputeStep()']]],
+  ['csvreader_2',['CsvReader',['../class_csv_reader.html#aa6b6e6ddeb120a67ad8e077f9e07d244',1,'CsvReader']]]
 ];

@@ -2,7 +2,7 @@
 \hypertarget{struct_ode_raw_data}{}\label{struct_ode_raw_data}\index{OdeRawData@{OdeRawData}}
 
 
-A structure holding all data read from the input source in a form compatible with \doxylink{class_o_d_e}{ODE} and Solver classes. This struct serves as an intermediate container for raw data.  
+A structure holding all data read from the input source in a form compatible with ODE and Solver classes. This struct serves as an intermediate container for raw data.  
 
 
 
@@ -12,10 +12,12 @@ A structure holding all data read from the input source in a form compatible wit
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{solver\+\_\+params}}
-\begin{DoxyCompactList}\small\item\em Structure to hold solver-\/related parameters for \doxylink{class_o_d_e}{ODE} solving. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\+\_\+params}}
-\begin{DoxyCompactList}\small\item\em Structure to hold time-\/related parameters for \doxylink{class_o_d_e}{ODE} solving. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Structure to hold time-\/related parameters for ODE solving. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{solver\+\_\+params}}
+\begin{DoxyCompactList}\small\item\em Structure to hold solver-\/related parameters for ODE solving. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ode_raw_data_1_1function__params}{function\+\_\+params}}
+\begin{DoxyCompactList}\small\item\em Structure to hold function-\/related parameters for ODE solving. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -37,9 +39,9 @@ struct \mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\+\_\+params}}
 \Hypertarget{struct_ode_raw_data_aea54b8bbd84870e883509af463d1c1b0}\label{struct_ode_raw_data_aea54b8bbd84870e883509af463d1c1b0} 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries y0}
 \begin{DoxyCompactList}\small\item\em Initial condition tensor. \end{DoxyCompactList}\item 
-\Hypertarget{struct_ode_raw_data_ae758b90b3f8e1644570efc2ce8e57c87}\label{struct_ode_raw_data_ae758b90b3f8e1644570efc2ce8e57c87} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ {\bfseries function}
-\begin{DoxyCompactList}\small\item\em Pointer to the function defining the \doxylink{class_o_d_e}{ODE}. \end{DoxyCompactList}\item 
+\Hypertarget{struct_ode_raw_data_af6fb076d112d3e280374a2b423436569}\label{struct_ode_raw_data_af6fb076d112d3e280374a2b423436569} 
+function\+\_\+params {\bfseries function\+\_\+params}
+\begin{DoxyCompactList}\small\item\em Function-\/related parameters. \end{DoxyCompactList}\item 
 \Hypertarget{struct_ode_raw_data_a95452e49794ae26225d0cdeeee663cec}\label{struct_ode_raw_data_a95452e49794ae26225d0cdeeee663cec} 
 time\+\_\+params {\bfseries time\+\_\+params}
 \begin{DoxyCompactList}\small\item\em Time-\/related parameters. \end{DoxyCompactList}\item 
@@ -49,15 +51,14 @@ solver\+\_\+params {\bfseries solver\+\_\+params}
 \Hypertarget{struct_ode_raw_data_aed44367a2804104047b9394291cb0d58}\label{struct_ode_raw_data_aed44367a2804104047b9394291cb0d58} 
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ {\bfseries root\+\_\+finder}
 \begin{DoxyCompactList}\small\item\em Pointer to the root finding strategy (optional). \end{DoxyCompactList}\item 
-\Hypertarget{struct_ode_raw_data_a96cfff0fb5bc7cd161463fde5911b5e4}\label{struct_ode_raw_data_a96cfff0fb5bc7cd161463fde5911b5e4} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ {\bfseries derivative}
-\begin{DoxyCompactList}\small\item\em Pointer to a derivative function (optional). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{struct_ode_raw_data_a2cb79c703cb13dbc7d6e01307b61414e}\label{struct_ode_raw_data_a2cb79c703cb13dbc7d6e01307b61414e} 
+std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_function}{Function}} $>$ {\bfseries function}
+\begin{DoxyCompactList}\small\item\em Pointer to the function defining the ODE. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-A structure holding all data read from the input source in a form compatible with \doxylink{class_o_d_e}{ODE} and Solver classes. This struct serves as an intermediate container for raw data. 
+A structure holding all data read from the input source in a form compatible with ODE and Solver classes. This struct serves as an intermediate container for raw data. 
 
-The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/ode\+\_\+raw\+\_\+data.\+h\item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/ode\+\_\+raw\+\_\+data.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/ode\+\_\+raw\+\_\+data.\+h\end{DoxyCompactItemize}

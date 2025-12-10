@@ -1,14 +1,20 @@
 var searchData=
 [
-  ['ode_0',['Ode',['../class_ode.html#a159abef7cc2b214d6b518f951e09f0e1',1,'Ode::Ode(double in_time, const DynamicTensor &amp;in_y0, const std::string &amp;in_name, std::unique_ptr&lt; Function &gt; func, std::unique_ptr&lt; Function &gt; derivative=nullptr, std::shared_ptr&lt; RootFinder &gt; root_finder=nullptr)'],['../class_ode.html#a5b719e6c606f7b3fcbbb80f040efd24b',1,'Ode::Ode(double in_time, const double &amp;in_y0, const std::string &amp;in_name, std::unique_ptr&lt; Function &gt; func, std::unique_ptr&lt; Function &gt; derivative=nullptr, std::shared_ptr&lt; RootFinder &gt; root_finder=nullptr)'],['../class_ode.html#af8f3b705253b3eb58dc7e58d5dbd7c22',1,'Ode::Ode(const Reader &amp;reader)'],['../class_ode.html#a1d34ac07569d4bbe02ef04d5ad6fab2b',1,'Ode::Ode(const Ode &amp;other)'],['../class_ode.html#a757142bfffd7d5420feda0e5e6a91af9',1,'Ode::Ode(const OdeRawData &amp;raw)'],['../class_ode.html#a3fb641140651884add33ea329c0532cb',1,'Ode::Ode(const OdeRawData &amp;raw_data)']]],
-  ['oderawdata_1',['OdeRawData',['../struct_ode_raw_data.html#addbf94a0a57771671fcfd00899e54ad2',1,'OdeRawData::OdeRawData()=default'],['../struct_ode_raw_data.html#a3cf1725b2b33f4a867f117adfe4af11f',1,'OdeRawData::OdeRawData(const OdeRawData &amp;other)']]],
-  ['odesolver_2',['OdeSolver',['../class_ode_solver.html#ab8375f1f3330bf275d6b18fc936deb3c',1,'OdeSolver::OdeSolver(const Ode &amp;ode, int num_of_steps, double end_time)'],['../class_ode_solver.html#aead5f819e881f42a8c398d48678e4e16',1,'OdeSolver::OdeSolver(const Ode &amp;ode, double step_size=0.01, double end_time=0.0)']]],
-  ['open_3',['Open',['../class_reader.html#a33c491f270968d5c129807b5d3dfa3a4',1,'Reader']]],
-  ['operator_2a_4',['operator*',['../class_dynamic_tensor.html#a5c8bb1fa42a99911cfda9336b1876554',1,'DynamicTensor::operator*(double scalar) const'],['../class_dynamic_tensor.html#a2ef2a8a7880995863f339d4a064a3d4f',1,'DynamicTensor::operator*(const DynamicTensor &amp;second_tensor) const']]],
-  ['operator_2a_3d_5',['operator*=',['../class_value.html#a94be897e3f5b15e9572a36364fa63a77',1,'Value']]],
-  ['operator_2b_6',['operator+',['../class_dynamic_tensor.html#a951b70d3817858d411b94771bc7207e0',1,'DynamicTensor::operator+(const DynamicTensor &amp;second_tensor) const'],['../class_dynamic_tensor.html#a4ce651a0af3018351f27d9c397e8cd0e',1,'DynamicTensor::operator+(double scalar) const'],['../class_dynamic_tensor.html#abc4e56d2f5ee63b4907e50bd44049721',1,'DynamicTensor::operator+(Complex scalar) const']]],
-  ['operator_2d_7',['operator-',['../class_dynamic_tensor.html#a05dae46dbd83e82cfeb69d331799fc6f',1,'DynamicTensor']]],
-  ['operator_2f_8',['operator/',['../class_dynamic_tensor.html#a1dccb4f844dc683c29af7e962eeef03b',1,'DynamicTensor::operator/(const DynamicTensor &amp;second_tensor) const'],['../class_dynamic_tensor.html#aa34c71de9006beb7962e333128d35f9b',1,'DynamicTensor::operator/(double scalar) const']]],
-  ['operator_3c_3c_9',['operator&lt;&lt;',['../mp_i_value_8cpp.html#a13ad24e834c6622b24a27f8d9f9ebc97',1,'mpIValue.cpp']]],
-  ['operator_3d_10',['operator=',['../class_parser_x_base.html#ad41622b35ccf662a3dccdc1c503f1681',1,'ParserXBase::operator=()'],['../class_variable.html#a1848309a2c8f0a222a3700e112c3bcda',1,'Variable::operator=()'],['../class_ode.html#a4805c892fd883ca707d625758bad04e1',1,'Ode::operator=()'],['../struct_ode_raw_data.html#a9f5c0f8a439d20553e51daa09735324e',1,'OdeRawData::operator=()']]]
+  ['setcommentchar_0',['SetCommentChar',['../class_output_txt.html#addd1feb9fbc28ba01e481c8a8108219a',1,'OutputTxt']]],
+  ['setendtime_1',['SetEndTime',['../class_ode_solver.html#a662cff46a2025f9b99295d5fcefbe0b6',1,'OdeSolver']]],
+  ['setfileextension_2',['SetFileExtension',['../class_reader.html#aca06f0a9f6d41e0d9abf0d8d3f2be274',1,'Reader']]],
+  ['setfilename_3',['SetFileName',['../class_reader.html#ae142b32ae6481733b84b20141cdafda2',1,'Reader']]],
+  ['setfilename_4',['SetFilename',['../class_output.html#a756dbe53d44ada8ecb1adb31bb1b53a7',1,'Output']]],
+  ['setfunction_5',['SetFunction',['../class_ode.html#af3ab83837c43a9915d9c3b110ca0410f',1,'Ode']]],
+  ['setheader_6',['SetHeader',['../class_output_csv.html#a9bdef00387845cff7e8d2c22436391e2',1,'OutputCsv::SetHeader()'],['../class_output_txt.html#a9f1e22fb863f92556fc0d088ca46005f',1,'OutputTxt::SetHeader()']]],
+  ['setname_7',['SetName',['../class_ode.html#ac0bda460d709fed3c4680b0d8468d871',1,'Ode']]],
+  ['setrootfinder_8',['SetRootFinder',['../class_ode.html#a53c09a13019c843e03b918438074777a',1,'Ode']]],
+  ['setseparator_9',['SetSeparator',['../class_output_csv.html#a70e2b7744b90703781a3de8d244efa49',1,'OutputCsv::SetSeparator()'],['../class_reader.html#ad204b9322007aab318b9e444bb5dbcea',1,'Reader::SetSeparator()']]],
+  ['sett0_10',['SetT0',['../class_ode.html#aee3a5d1ff24f6143623fedc3b78ccd7f',1,'Ode']]],
+  ['settimespan_11',['SetTimeSpan',['../class_ode_solver.html#ae1242b79d094ce57a73b76661cdbdc94',1,'OdeSolver::SetTimeSpan(int num_of_steps)'],['../class_ode_solver.html#a673fb059d7379dfc9bfea833318b4049',1,'OdeSolver::SetTimeSpan(double step_size)']]],
+  ['sety0_12',['SetY0',['../class_ode.html#ac3c249eedd399493d573a5a823172b82',1,'Ode::SetY0(const DynamicTensor &amp;in_y0)'],['../class_ode.html#a9c1f258b5c30cb458cb66121d76ff604',1,'Ode::SetY0(double in_y0)']]],
+  ['size_13',['size',['../class_dynamic_tensor.html#a80d631cc2d2151a0e3c9da15edbd870d',1,'DynamicTensor']]],
+  ['solve_14',['Solve',['../class_ode_solver.html#a8528789990b812fe0b498fabb7e1521f',1,'OdeSolver']]],
+  ['split_15',['Split',['../class_reader.html#a1949190ed8188132c3a25e886f10d376',1,'Reader']]],
+  ['step_16',['Step',['../class_multi_step_ode_solver.html#aad3953387824f19957cfe9e1e4eb1b90',1,'MultiStepOdeSolver::Step()'],['../class_ode_solver.html#ac757f67f9d0d8234cd8aa79cb107816b',1,'OdeSolver::Step()']]]
 ];

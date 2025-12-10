@@ -1,0 +1,32 @@
+class OutputCsv(Output)
+  public OutputCsv(const std::string& filename, char separator)
+  public void Write(const OdeSolver& solver) override
+  public char GetSeparator() const
+  public void SetSeparator(char separator)
+  public std::vector<std::string> GetHeader() const
+  public void SetHeader(const std::vector<std::string>& header)
+
+  private std::vector<std::string> header_
+
+class OutputTxt(Output)
+  public OutputTxt(const std::string& filename, char separator, char comment_char)
+  public void Write(const OdeSolver& solver) override
+  public char GetCommentChar() const
+  public void SetCommentChar(char comment_char)
+  public std::vector<std::string> GetHeader() const
+  public void SetHeader(const std::vector<std::string>& header)
+
+  private char comment_char_
+  private std::vector<std::string> header_
+
+class Output
+  public Output(const std::string& filename, char separator)
+  public virtual ~Output()
+  public virtual void Write(const OdeSolver& solver) = 0
+  public std::string GetFilename() const
+  public void SetFilename(const std::string& filename)
+
+  protected std::string filename_
+  protected char separator_
+  protected void EnsureFileExists() const
+  protected void WriteTensorRecursive(std::ofstream& file,const DynamicTensor& tensor, const std::vector<size_t>& shape,std::vector<size_t>& index, size_t dim, char separator) const

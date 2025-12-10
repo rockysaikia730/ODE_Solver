@@ -1,11 +1,23 @@
 var searchData=
 [
-  ['_5f_5finit_5f_5f_0',['__init__',['../classgtest__test__utils_1_1_subprocess.html#a3d113c3ae02cdd33d471ab0f0acb10b5',1,'gtest_test_utils::Subprocess']]],
-  ['_5fgetchildren_1',['_GetChildren',['../classgtest__xml__test__utils_1_1_g_test_x_m_l_test_case.html#a2359b446aa283a582efe48d1e2f3f75a',1,'gtest_xml_test_utils::GTestXMLTestCase']]],
-  ['_5fgetjsonoutput_2',['_GetJsonOutput',['../classgoogletest-json-output-unittest_1_1_g_test_json_output_unit_test.html#a7349000d4345f75404b6bf1334914741',1,'googletest-json-output-unittest::GTestJsonOutputUnitTest']]],
-  ['_5fgetxmloutput_3',['_GetXmlOutput',['../classgtest__xml__output__unittest_1_1_g_test_x_m_l_output_unit_test.html#a7f42d2edba130b615874811b90fdca29',1,'gtest_xml_output_unittest::GTestXMLOutputUnitTest']]],
-  ['_5fparseandstripgtestflags_4',['_ParseAndStripGTestFlags',['../namespacegtest__test__utils.html#a7e5ea58cce374b51a2215b5ee052cf9e',1,'gtest_test_utils']]],
-  ['_5ft_5',['_T',['../mp_defines_8h.html#ae936e4c15227768f7da4e0951def89c8',1,'mpDefines.h']]],
-  ['_5ftestjsonoutput_6',['_TestJsonOutput',['../classgoogletest-json-output-unittest_1_1_g_test_json_output_unit_test.html#ac12d355fb3f8d838d13257892da3797e',1,'googletest-json-output-unittest::GTestJsonOutputUnitTest']]],
-  ['_5ftestxmloutput_7',['_TestXmlOutput',['../classgtest__xml__output__unittest_1_1_g_test_x_m_l_output_unit_test.html#a5cb9b42a81ac41fcf65436c68def0025',1,'gtest_xml_output_unittest::GTestXMLOutputUnitTest']]]
+  ['get_5fshape_0',['get_shape',['../class_dynamic_tensor.html#a42b1bfd00a94348fe8b1ce43a2f6cf7e',1,'DynamicTensor']]],
+  ['getcommentchar_1',['GetCommentChar',['../class_output_txt.html#acd0de5a24497b39ba4fa6b3d50271bf4',1,'OutputTxt']]],
+  ['getcondin_2',['GetCondIn',['../class_ode.html#a6c360986d0f06b497d3b311ead9c0366',1,'Ode']]],
+  ['getcurrenttime_3',['GetCurrentTime',['../class_ode_solver.html#a93ba8bfb62598239c78200ca6253fa02',1,'OdeSolver']]],
+  ['getendtime_4',['GetEndTime',['../class_ode_solver.html#a6b634912c4c923a14e5ce7994f46b2a4',1,'OdeSolver']]],
+  ['getfileextension_5',['GetFileExtension',['../class_reader.html#a5f7f2919f37f15cb95be1580b2028897',1,'Reader']]],
+  ['getfilename_6',['GetFileName',['../class_reader.html#afff48614961ffb79bfb627adc4b52f70',1,'Reader']]],
+  ['getfilename_7',['GetFilename',['../class_output.html#ad60b7aa242114753f0cead2648124d7e',1,'Output']]],
+  ['getfunction_8',['GetFunction',['../class_ode.html#adcb8ece3558bd7a29aefcfe9319e7dd4',1,'Ode']]],
+  ['getheader_9',['GetHeader',['../class_output_csv.html#a70af53462051a588b41d629c87778f22',1,'OutputCsv::GetHeader()'],['../class_output_txt.html#addd8a01b9f32728854bf456fc8132f50',1,'OutputTxt::GetHeader()']]],
+  ['getname_10',['GetName',['../class_ode.html#a6356a2c5b5b923378b5cc41951dc3575',1,'Ode']]],
+  ['getnumberofsteps_11',['GetNumberOfSteps',['../class_ode_solver.html#ad0bbb5894abf1b510845a61e9b42ea61',1,'OdeSolver']]],
+  ['getrawdata_12',['GetRawData',['../class_reader.html#a58d1e5e33b0ec8169420fb3be600de32',1,'Reader']]],
+  ['getrootfinder_13',['GetRootFinder',['../class_ode.html#a739b332b95ace434b930cf5a879ec46c',1,'Ode']]],
+  ['getseparator_14',['GetSeparator',['../class_output_csv.html#aa90d64ae97dd3e78494ce8ee81e1edc0',1,'OutputCsv::GetSeparator()'],['../class_reader.html#ac679fdc16a819d641ad6baee637cc618',1,'Reader::GetSeparator()']]],
+  ['getsolution_15',['GetSolution',['../class_ode_solver.html#a187c86329e6909b9830becf465c127d0',1,'OdeSolver']]],
+  ['getstarttime_16',['GetStartTime',['../class_ode_solver.html#a967817c4339501ddb984023977d093a1',1,'OdeSolver']]],
+  ['getstepsize_17',['GetStepSize',['../class_ode_solver.html#adee8ff045eeb481ef911c9eee1b596c8',1,'OdeSolver']]],
+  ['gettimein_18',['GetTimeIn',['../class_ode.html#a68b7580e063b949bfc0046e4142ad490',1,'Ode']]],
+  ['grad_19',['Grad',['../class_function.html#a27c7561a090ecc5688a662f5ab2b6902',1,'Function::Grad()'],['../class_ode.html#a952c6c6401635b3e6e39a7a16cd2f84d',1,'Ode::Grad()'],['../class_parsed_function.html#af8c84cc7c6111f48923b5d5ce644d5a8',1,'ParsedFunction::Grad()']]]
 ];

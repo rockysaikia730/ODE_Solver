@@ -13,9 +13,7 @@
 
 /**
  * @class Reader
- * @brief A class responsible for reading and parsing data from various sources.
- * The reader can handle the simulation parameters, initial conditions, but cannot read the function itself.
- * Function parsing is not implemented for now, it has to be passed in the constructor of the ODE solver.
+ * @brief A class responsible for reading and parsing data from various sources. For the time being, only file reading is supported. NOte that the readers create the ODERawData object, as well as the function object.
  */
 class Reader {
 public:
@@ -35,7 +33,6 @@ public:
      * @return sets the raw_data_ member variable.
      */
     virtual void Read() = 0;
-
 
     /**
      * @brief Get the file name associated with the Reader.
@@ -85,11 +82,6 @@ public:
      */
     char GetSeparator() const;
 
-    /**
-     * @brief Parser to convert a string into a DynamicTensor.
-     * @param str The string to parse.
-     * @return A DynamicTensor object.
-     */
 
     /**
      * @brief Get the raw data read by the Reader.
@@ -221,6 +213,7 @@ protected:
      */
     void ParseSolverMethodFromString(const std::string& method_string);
 
+<<<<<<< HEAD
     /**
      * @brief Recursive helper function that parses a function string into an instance of Function.
      * @param str The function string to parse. Expected form is a flattened list of expressions (eg. "[[sin(t)+y0, cos(t)],[y1^2, exp(t)]]" for a 2x2 system).
@@ -228,6 +221,8 @@ protected:
      */
     std::unique_ptr<Function> ParseFunction(const std::string& str);
 
+=======
+>>>>>>> refs/remotes/origin/main
     private:
 
         /**

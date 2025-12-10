@@ -2,7 +2,7 @@
 \hypertarget{class_reader}{}\label{class_reader}\index{Reader@{Reader}}
 
 
-A class responsible for reading and parsing data from various sources. The reader can handle the simulation parameters, initial conditions, but cannot read the function itself. \doxylink{class_function}{Function} parsing is not implemented for now, it has to be passed in the constructor of the \doxylink{class_o_d_e}{ODE} solver.  
+A class responsible for reading and parsing data from various sources. The reader can handle the simulation parameters, initial conditions, but cannot read the function itself. \doxylink{class_function}{Function} parsing is not implemented for now, it has to be passed in the constructor of the ODE solver.  
 
 
 
@@ -33,9 +33,9 @@ void \mbox{\hyperlink{class_reader_ae142b32ae6481733b84b20141cdafda2}{Set\+File\
 \begin{DoxyCompactList}\small\item\em Set the file name for the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_reader_aca06f0a9f6d41e0d9abf0d8d3f2be274}{Set\+File\+Extension}} (const std\+::string \&file\+\_\+extension)
 \begin{DoxyCompactList}\small\item\em Set the file extension for the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{class_reader_a33c491f270968d5c129807b5d3dfa3a4}{Open}} ()
+virtual bool \mbox{\hyperlink{class_reader_a0566befa2921baa5f4c80d8cb0a691a0}{Open}} ()
 \begin{DoxyCompactList}\small\item\em Opens the data source for reading. \end{DoxyCompactList}\item 
-\Hypertarget{class_reader_a36852f38ab45088da044919c88392311}\label{class_reader_a36852f38ab45088da044919c88392311} 
+\Hypertarget{class_reader_a763acd33fcb5df52793a2fa431afa0ae}\label{class_reader_a763acd33fcb5df52793a2fa431afa0ae} 
 virtual void {\bfseries Close} ()
 \begin{DoxyCompactList}\small\item\em Closes the data source. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_reader_ad204b9322007aab318b9e444bb5dbcea}{Set\+Separator}} (char separator)
@@ -71,7 +71,7 @@ double \mbox{\hyperlink{class_reader_a1407cb6d6c193ab9bcbcdd82558fe879}{Parse\+D
 \begin{DoxyCompactList}\small\item\em Parses a string representing a double. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_reader_a891f6505346d7f7389f5eadc35d1d1bf}{Interpret\+Key\+Value\+Pair}} (const std\+::string \&key, const std\+::string \&value)
 \begin{DoxyCompactList}\small\item\em Parses the solver method from a string and sets it in raw\+\_\+data\+\_\+. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{class_reader_ae8ecacd23cd8c0672aff1583c10b8d4d}{Trim}} (const std\+::string \&str) const
+std\+::string \mbox{\hyperlink{class_reader_ac44b41ce56079ec4f6dd3ca0eb44e0b6}{Trim\+String}} (const std\+::string \&s) const
 \begin{DoxyCompactList}\small\item\em trim a single string \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_reader_aa8fc2dbf2e8a036539e632d2aee16e3e}{Parse\+Solver\+Method\+From\+String}} (const std\+::string \&method\+\_\+string)
 \begin{DoxyCompactList}\small\item\em Parses the solver method from a string and sets it in raw\+\_\+data\+\_\+. \end{DoxyCompactList}\item 
@@ -98,14 +98,16 @@ std\+::ifstream {\bfseries file\+\_\+stream\+\_\+}
 
 
 \doxysubsection{Detailed Description}
-A class responsible for reading and parsing data from various sources. The reader can handle the simulation parameters, initial conditions, but cannot read the function itself. \doxylink{class_function}{Function} parsing is not implemented for now, it has to be passed in the constructor of the \doxylink{class_o_d_e}{ODE} solver. 
+A class responsible for reading and parsing data from various sources. The reader can handle the simulation parameters, initial conditions, but cannot read the function itself. \doxylink{class_function}{Function} parsing is not implemented for now, it has to be passed in the constructor of the ODE solver. 
 
+\label{doc-constructors}
+\Hypertarget{class_reader_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_reader_ad682ef952dbf2312dc5e5c36b7432588}\label{class_reader_ad682ef952dbf2312dc5e5c36b7432588} 
-\index{Reader@{Reader}!Reader@{Reader}}
+\Hypertarget{class_reader_ad682ef952dbf2312dc5e5c36b7432588}\index{Reader@{Reader}!Reader@{Reader}}
 \index{Reader@{Reader}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{Reader()}{Reader()}}
-{\footnotesize\ttfamily Reader\+::\+Reader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name,  }\item[{char}]{separator = {\ttfamily \textquotesingle{};\textquotesingle{}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_reader_ad682ef952dbf2312dc5e5c36b7432588} 
+Reader\+::\+Reader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name}{, }\item[{char}]{separator}{ = {\ttfamily \textquotesingle{};\textquotesingle{}}}\end{DoxyParamCaption})}
 
 
 
@@ -118,12 +120,14 @@ Constructor that initializes the \doxylink{class_reader}{Reader} with a file nam
 \end{DoxyParams}
 
 
+\label{doc-func-members}
+\Hypertarget{class_reader_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_reader_a5f7f2919f37f15cb95be1580b2028897}\label{class_reader_a5f7f2919f37f15cb95be1580b2028897} 
-\index{Reader@{Reader}!GetFileExtension@{GetFileExtension}}
+\Hypertarget{class_reader_a5f7f2919f37f15cb95be1580b2028897}\index{Reader@{Reader}!GetFileExtension@{GetFileExtension}}
 \index{GetFileExtension@{GetFileExtension}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{GetFileExtension()}{GetFileExtension()}}
-{\footnotesize\ttfamily std\+::string Reader\+::\+Get\+File\+Extension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{class_reader_a5f7f2919f37f15cb95be1580b2028897} 
+std\+::string Reader\+::\+Get\+File\+Extension (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
 
 
@@ -132,11 +136,11 @@ Get the file extension associated with the \doxylink{class_reader}{Reader}.
 \begin{DoxyReturn}{Returns}
 The file extension as a string. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_afff48614961ffb79bfb627adc4b52f70}\label{class_reader_afff48614961ffb79bfb627adc4b52f70} 
-\index{Reader@{Reader}!GetFileName@{GetFileName}}
+\Hypertarget{class_reader_afff48614961ffb79bfb627adc4b52f70}\index{Reader@{Reader}!GetFileName@{GetFileName}}
 \index{GetFileName@{GetFileName}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{GetFileName()}{GetFileName()}}
-{\footnotesize\ttfamily std\+::string Reader\+::\+Get\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{class_reader_afff48614961ffb79bfb627adc4b52f70} 
+std\+::string Reader\+::\+Get\+File\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
 
 
@@ -145,11 +149,11 @@ Get the file name associated with the \doxylink{class_reader}{Reader}.
 \begin{DoxyReturn}{Returns}
 The file name as a string. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_a58d1e5e33b0ec8169420fb3be600de32}\label{class_reader_a58d1e5e33b0ec8169420fb3be600de32} 
-\index{Reader@{Reader}!GetRawData@{GetRawData}}
+\Hypertarget{class_reader_a58d1e5e33b0ec8169420fb3be600de32}\index{Reader@{Reader}!GetRawData@{GetRawData}}
 \index{GetRawData@{GetRawData}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{GetRawData()}{GetRawData()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \& Reader\+::\+Get\+Raw\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{class_reader_a58d1e5e33b0ec8169420fb3be600de32} 
+const \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \& Reader\+::\+Get\+Raw\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -166,11 +170,11 @@ A \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} object.
 Get the raw data read by the \doxylink{class_reader}{Reader}. \begin{DoxyReturn}{Returns}
 An \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data} object containing the read data. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_ac679fdc16a819d641ad6baee637cc618}\label{class_reader_ac679fdc16a819d641ad6baee637cc618} 
-\index{Reader@{Reader}!GetSeparator@{GetSeparator}}
+\Hypertarget{class_reader_ac679fdc16a819d641ad6baee637cc618}\index{Reader@{Reader}!GetSeparator@{GetSeparator}}
 \index{GetSeparator@{GetSeparator}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{GetSeparator()}{GetSeparator()}}
-{\footnotesize\ttfamily char Reader\+::\+Get\+Separator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{class_reader_ac679fdc16a819d641ad6baee637cc618} 
+char Reader\+::\+Get\+Separator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
 
 
@@ -179,11 +183,11 @@ Gets the separator character used in the file.
 \begin{DoxyReturn}{Returns}
 The separator character. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_a891f6505346d7f7389f5eadc35d1d1bf}\label{class_reader_a891f6505346d7f7389f5eadc35d1d1bf} 
-\index{Reader@{Reader}!InterpretKeyValuePair@{InterpretKeyValuePair}}
+\Hypertarget{class_reader_a891f6505346d7f7389f5eadc35d1d1bf}\index{Reader@{Reader}!InterpretKeyValuePair@{InterpretKeyValuePair}}
 \index{InterpretKeyValuePair@{InterpretKeyValuePair}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{InterpretKeyValuePair()}{InterpretKeyValuePair()}}
-{\footnotesize\ttfamily void Reader\+::\+Interpret\+Key\+Value\+Pair (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \label{class_reader_a891f6505346d7f7389f5eadc35d1d1bf} 
+void Reader\+::\+Interpret\+Key\+Value\+Pair (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key}{, }\item[{const std\+::string \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -206,11 +210,11 @@ Key-\/value pair interpreter for reading lines.
 {\em value} & The value string. This method interprets the key-\/value pairs and updates the raw\+\_\+data\+\_\+ member variable accordingly. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_reader_a4ad23af590282f6c953777d81d190a4e}\label{class_reader_a4ad23af590282f6c953777d81d190a4e} 
-\index{Reader@{Reader}!IsComplexNumber@{IsComplexNumber}}
+\Hypertarget{class_reader_a4ad23af590282f6c953777d81d190a4e}\index{Reader@{Reader}!IsComplexNumber@{IsComplexNumber}}
 \index{IsComplexNumber@{IsComplexNumber}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{IsComplexNumber()}{IsComplexNumber()}}
-{\footnotesize\ttfamily bool Reader\+::\+Is\+Complex\+Number (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \label{class_reader_a4ad23af590282f6c953777d81d190a4e} 
+bool Reader\+::\+Is\+Complex\+Number (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -224,11 +228,11 @@ Helper function to check if string is a complex number or a double.
 \begin{DoxyReturn}{Returns}
 True if the string is complex, false if double. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_a30a4105a8595150cb94854c71637ed3f}\label{class_reader_a30a4105a8595150cb94854c71637ed3f} 
-\index{Reader@{Reader}!IsNumeric@{IsNumeric}}
+\Hypertarget{class_reader_a30a4105a8595150cb94854c71637ed3f}\index{Reader@{Reader}!IsNumeric@{IsNumeric}}
 \index{IsNumeric@{IsNumeric}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{IsNumeric()}{IsNumeric()}}
-{\footnotesize\ttfamily bool Reader\+::\+Is\+Numeric (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \label{class_reader_a30a4105a8595150cb94854c71637ed3f} 
+bool Reader\+::\+Is\+Numeric (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -242,11 +246,11 @@ Checks if a string represents a numeric value.
 \begin{DoxyReturn}{Returns}
 True if the string is numeric, false otherwise. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_a33c491f270968d5c129807b5d3dfa3a4}\label{class_reader_a33c491f270968d5c129807b5d3dfa3a4} 
-\index{Reader@{Reader}!Open@{Open}}
+\Hypertarget{class_reader_a0566befa2921baa5f4c80d8cb0a691a0}\index{Reader@{Reader}!Open@{Open}}
 \index{Open@{Open}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{Open()}{Open()}}
-{\footnotesize\ttfamily bool Reader\+::\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_reader_a0566befa2921baa5f4c80d8cb0a691a0} 
+virtual bool Reader\+::\+Open (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -255,11 +259,11 @@ Opens the data source for reading.
 \begin{DoxyReturn}{Returns}
 True if the data source was successfully opened, false otherwise. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_a149ef0f9b7c40881ec30a1dc38a8c513}\label{class_reader_a149ef0f9b7c40881ec30a1dc38a8c513} 
-\index{Reader@{Reader}!ParseComplexNumber@{ParseComplexNumber}}
+\Hypertarget{class_reader_a149ef0f9b7c40881ec30a1dc38a8c513}\index{Reader@{Reader}!ParseComplexNumber@{ParseComplexNumber}}
 \index{ParseComplexNumber@{ParseComplexNumber}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{ParseComplexNumber()}{ParseComplexNumber()}}
-{\footnotesize\ttfamily std\+::complex$<$ double $>$ Reader\+::\+Parse\+Complex\+Number (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \label{class_reader_a149ef0f9b7c40881ec30a1dc38a8c513} 
+std\+::complex$<$ double $>$ Reader\+::\+Parse\+Complex\+Number (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -273,11 +277,11 @@ Parses a string representing a complex number in the form (a,b).
 \begin{DoxyReturn}{Returns}
 A std\+::complex$<$double$>$ object. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_a1407cb6d6c193ab9bcbcdd82558fe879}\label{class_reader_a1407cb6d6c193ab9bcbcdd82558fe879} 
-\index{Reader@{Reader}!ParseDouble@{ParseDouble}}
+\Hypertarget{class_reader_a1407cb6d6c193ab9bcbcdd82558fe879}\index{Reader@{Reader}!ParseDouble@{ParseDouble}}
 \index{ParseDouble@{ParseDouble}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{ParseDouble()}{ParseDouble()}}
-{\footnotesize\ttfamily double Reader\+::\+Parse\+Double (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \label{class_reader_a1407cb6d6c193ab9bcbcdd82558fe879} 
+double Reader\+::\+Parse\+Double (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -291,11 +295,11 @@ Parses a string representing a double.
 \begin{DoxyReturn}{Returns}
 A double value. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_a0bef7707d1cf66a0b320f77212954150}\label{class_reader_a0bef7707d1cf66a0b320f77212954150} 
-\index{Reader@{Reader}!ParseFunction@{ParseFunction}}
+\Hypertarget{class_reader_a0bef7707d1cf66a0b320f77212954150}\index{Reader@{Reader}!ParseFunction@{ParseFunction}}
 \index{ParseFunction@{ParseFunction}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{ParseFunction()}{ParseFunction()}}
-{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ Reader\+::\+Parse\+Function (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \label{class_reader_a0bef7707d1cf66a0b320f77212954150} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ Reader\+::\+Parse\+Function (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -309,11 +313,11 @@ Recursive helper function that parses a function string into an instance of \dox
 \begin{DoxyReturn}{Returns}
 a pointer to the created \doxylink{class_function}{Function} instance. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_aa8fc2dbf2e8a036539e632d2aee16e3e}\label{class_reader_aa8fc2dbf2e8a036539e632d2aee16e3e} 
-\index{Reader@{Reader}!ParseSolverMethodFromString@{ParseSolverMethodFromString}}
+\Hypertarget{class_reader_aa8fc2dbf2e8a036539e632d2aee16e3e}\index{Reader@{Reader}!ParseSolverMethodFromString@{ParseSolverMethodFromString}}
 \index{ParseSolverMethodFromString@{ParseSolverMethodFromString}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{ParseSolverMethodFromString()}{ParseSolverMethodFromString()}}
-{\footnotesize\ttfamily void Reader\+::\+Parse\+Solver\+Method\+From\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{method\+\_\+string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \label{class_reader_aa8fc2dbf2e8a036539e632d2aee16e3e} 
+void Reader\+::\+Parse\+Solver\+Method\+From\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{method\+\_\+string}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -327,11 +331,11 @@ Parses the solver method from a string and sets it in raw\+\_\+data\+\_\+.
 \begin{DoxyReturn}{Returns}
 void. Sets the solver method in raw\+\_\+data\+\_\+. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_aee6eaf793ada4d73dc1d9bb28a50d2a3}\label{class_reader_aee6eaf793ada4d73dc1d9bb28a50d2a3} 
-\index{Reader@{Reader}!ParseTensor@{ParseTensor}}
+\Hypertarget{class_reader_aee6eaf793ada4d73dc1d9bb28a50d2a3}\index{Reader@{Reader}!ParseTensor@{ParseTensor}}
 \index{ParseTensor@{ParseTensor}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{ParseTensor()}{ParseTensor()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Reader\+::\+Parse\+Tensor (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \label{class_reader_aee6eaf793ada4d73dc1d9bb28a50d2a3} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Reader\+::\+Parse\+Tensor (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -345,11 +349,11 @@ Helper function to parse a string into a \doxylink{class_dynamic_tensor}{Dynamic
 \begin{DoxyReturn}{Returns}
 A \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} object. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_a782ef0f80b0d27b8a3e32be538fed057}\label{class_reader_a782ef0f80b0d27b8a3e32be538fed057} 
-\index{Reader@{Reader}!Read@{Read}}
+\Hypertarget{class_reader_a782ef0f80b0d27b8a3e32be538fed057}\index{Reader@{Reader}!Read@{Read}}
 \index{Read@{Read}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{Read()}{Read()}}
-{\footnotesize\ttfamily virtual void Reader\+::\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily \label{class_reader_a782ef0f80b0d27b8a3e32be538fed057} 
+virtual void Reader\+::\+Read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
@@ -360,13 +364,13 @@ sets the raw\+\_\+data\+\_\+ member variable.
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{class_csv_reader_a653c29a6d16c9caad06ba5a0a25a6a6c}{Csv\+Reader}}, and \mbox{\hyperlink{class_txt_reader_a331736cf6c2407d480103d3cfacc709f}{Txt\+Reader}}.
+Implemented in \mbox{\hyperlink{class_csv_reader_ae3d4bcb938083b82f85c5e5aeba6e4c1}{Csv\+Reader}}, and \mbox{\hyperlink{class_txt_reader_ab168578324d8fb2d4a30fe2089634029}{Txt\+Reader}}.
 
-\Hypertarget{class_reader_aca06f0a9f6d41e0d9abf0d8d3f2be274}\label{class_reader_aca06f0a9f6d41e0d9abf0d8d3f2be274} 
-\index{Reader@{Reader}!SetFileExtension@{SetFileExtension}}
+\Hypertarget{class_reader_aca06f0a9f6d41e0d9abf0d8d3f2be274}\index{Reader@{Reader}!SetFileExtension@{SetFileExtension}}
 \index{SetFileExtension@{SetFileExtension}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{SetFileExtension()}{SetFileExtension()}}
-{\footnotesize\ttfamily void Reader\+::\+Set\+File\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+extension }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_reader_aca06f0a9f6d41e0d9abf0d8d3f2be274} 
+void Reader\+::\+Set\+File\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+extension}{}\end{DoxyParamCaption})}
 
 
 
@@ -377,11 +381,11 @@ Set the file extension for the \doxylink{class_reader}{Reader}.
 {\em file\+\_\+extension} & The new file extension to set. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_reader_ae142b32ae6481733b84b20141cdafda2}\label{class_reader_ae142b32ae6481733b84b20141cdafda2} 
-\index{Reader@{Reader}!SetFileName@{SetFileName}}
+\Hypertarget{class_reader_ae142b32ae6481733b84b20141cdafda2}\index{Reader@{Reader}!SetFileName@{SetFileName}}
 \index{SetFileName@{SetFileName}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{SetFileName()}{SetFileName()}}
-{\footnotesize\ttfamily void Reader\+::\+Set\+File\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_reader_ae142b32ae6481733b84b20141cdafda2} 
+void Reader\+::\+Set\+File\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name}{}\end{DoxyParamCaption})}
 
 
 
@@ -392,11 +396,11 @@ Set the file name for the \doxylink{class_reader}{Reader}.
 {\em file\+\_\+name} & The new file name to set. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_reader_ad204b9322007aab318b9e444bb5dbcea}\label{class_reader_ad204b9322007aab318b9e444bb5dbcea} 
-\index{Reader@{Reader}!SetSeparator@{SetSeparator}}
+\Hypertarget{class_reader_ad204b9322007aab318b9e444bb5dbcea}\index{Reader@{Reader}!SetSeparator@{SetSeparator}}
 \index{SetSeparator@{SetSeparator}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{SetSeparator()}{SetSeparator()}}
-{\footnotesize\ttfamily void Reader\+::\+Set\+Separator (\begin{DoxyParamCaption}\item[{char}]{separator }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_reader_ad204b9322007aab318b9e444bb5dbcea} 
+void Reader\+::\+Set\+Separator (\begin{DoxyParamCaption}\item[{char}]{separator}{}\end{DoxyParamCaption})}
 
 
 
@@ -407,11 +411,11 @@ Sets the separator character used in the file.
 {\em separator} & The separator character to set. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_reader_a1949190ed8188132c3a25e886f10d376}\label{class_reader_a1949190ed8188132c3a25e886f10d376} 
-\index{Reader@{Reader}!Split@{Split}}
+\Hypertarget{class_reader_a1949190ed8188132c3a25e886f10d376}\index{Reader@{Reader}!Split@{Split}}
 \index{Split@{Split}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{Split()}{Split()}}
-{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Reader\+::\+Split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{const char \&}]{separator }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \label{class_reader_a1949190ed8188132c3a25e886f10d376} 
+std\+::vector$<$ std\+::string $>$ Reader\+::\+Split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{, }\item[{const char \&}]{separator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -427,11 +431,11 @@ Splits a string into tokens based on a delimiter.
 \begin{DoxyReturn}{Returns}
 A vector of tokens. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_a872ff0b4164a7f84c49c1b1f7fa5cdd3}\label{class_reader_a872ff0b4164a7f84c49c1b1f7fa5cdd3} 
-\index{Reader@{Reader}!ToLower@{ToLower}}
+\Hypertarget{class_reader_a872ff0b4164a7f84c49c1b1f7fa5cdd3}\index{Reader@{Reader}!ToLower@{ToLower}}
 \index{ToLower@{ToLower}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{ToLower()}{ToLower()}}
-{\footnotesize\ttfamily std\+::string Reader\+::\+To\+Lower (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \label{class_reader_a872ff0b4164a7f84c49c1b1f7fa5cdd3} 
+std\+::string Reader\+::\+To\+Lower (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -445,29 +449,11 @@ Converts a string to lowercase.
 \begin{DoxyReturn}{Returns}
 The lowercase version of the string. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_ae8ecacd23cd8c0672aff1583c10b8d4d}\label{class_reader_ae8ecacd23cd8c0672aff1583c10b8d4d} 
-\index{Reader@{Reader}!Trim@{Trim}}
+\Hypertarget{class_reader_a024e3b94ffc0b0c8a14fb6e20059ea03}\index{Reader@{Reader}!Trim@{Trim}}
 \index{Trim@{Trim}!Reader@{Reader}}
-\doxysubsubsection{\texorpdfstring{Trim()}{Trim()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily std\+::string Reader\+::\+Trim (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-trim a single string 
-
-
-\begin{DoxyParams}{Parameters}
-{\em str} & The string to trim. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The trimmed string. This method removes leading and trailing whitespace from the input string. 
-\end{DoxyReturn}
-\Hypertarget{class_reader_a024e3b94ffc0b0c8a14fb6e20059ea03}\label{class_reader_a024e3b94ffc0b0c8a14fb6e20059ea03} 
-\index{Reader@{Reader}!Trim@{Trim}}
-\index{Trim@{Trim}!Reader@{Reader}}
-\doxysubsubsection{\texorpdfstring{Trim()}{Trim()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Reader\+::\+Trim (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{tokens }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+\doxysubsubsection{\texorpdfstring{Trim()}{Trim()}}
+{\footnotesize\ttfamily \label{class_reader_a024e3b94ffc0b0c8a14fb6e20059ea03} 
+std\+::vector$<$ std\+::string $>$ Reader\+::\+Trim (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{tokens}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -481,9 +467,26 @@ Trims whitespace from each token if there is a space at the beginning or end of 
 \begin{DoxyReturn}{Returns}
 A vector of trimmed strings. 
 \end{DoxyReturn}
+\Hypertarget{class_reader_ac44b41ce56079ec4f6dd3ca0eb44e0b6}\index{Reader@{Reader}!TrimString@{TrimString}}
+\index{TrimString@{TrimString}!Reader@{Reader}}
+\doxysubsubsection{\texorpdfstring{TrimString()}{TrimString()}}
+{\footnotesize\ttfamily \label{class_reader_ac44b41ce56079ec4f6dd3ca0eb44e0b6} 
+std\+::string Reader\+::\+Trim\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+
+trim a single string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to trim. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The trimmed string. This method removes leading and trailing whitespace from the input string. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/reader.\+h\item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/reader.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/reader.\+h\end{DoxyCompactItemize}

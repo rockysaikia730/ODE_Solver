@@ -1,0 +1,54 @@
+class Reader
+  public Reader(const std::string& file_name, char separator = ';')
+  public virtual ~Reader()
+  public virtual void Read() = 0
+  public std::string GetFileName() const
+  public std::string GetFileExtension() const
+  public void SetFileName(const std::string& file_name)
+  public void SetFileExtension(const std::string& file_extension)
+  public virtual bool Open()
+  public virtual void Close()
+  public void SetSeparator(char separator)
+  public char GetSeparator() const
+  public const OdeRawData& GetRawData() const
+
+  protected std::string file_name_
+  protected std::string file_extension_
+  protected char separator_
+  protected std::ifstream file_stream_
+  protected OdeRawData raw_data_
+
+  protected bool IsNumeric(const std::string& str) const
+  protected std::vector<std::string> Split(const std::string& str, const char& separator) const
+  protected std::vector<std::string> Trim(const std::vector<std::string>& tokens) const
+  protected DynamicTensor ParseTensor(const std::string& str)
+  protected bool IsComplexNumber(const std::string& str) const
+  protected std::string ToLower(const std::string& str) const
+  protected bool LineStartsWith(const std::string& line, const std::string& start) const
+  protected bool LineEndsWith(const std::string& line, const std::string& end) const
+  protected std::complex<double> ParseComplexNumber(const std::string& str) const
+  protected double ParseDouble(const std::string& str) const
+  protected void InterpretKeyValuePair(const std::string& key, const std::string& value)
+  protected std::string TrimString(const std::string& s) const
+  protected void ParseSolverMethodFromString(const std::string& method_string)
+
+  private template <typename T>
+  private std::vector<size_t> ParseTensorRecursive(const std::string& str, size_t& pos, std::vector<T>& data)
+  private bool HasComplexNumber(const std::string& str) const
+  private std::vector<size_t> ParseFunctionRecursive(const std::string& str, size_t& pos, std::vector<std::string>& flat_expressions)
+
+
+class TxtReader(Reader)
+  public TxtReader(const std::string& file_name, char separator = '=', char inline_separator = ';', char comment_char = '#')
+  public virtual ~TxtReader()
+  public virtual void Read() override
+
+  private char comment_char_
+  private char inline_separator_
+
+class CsvReader : Reader
+  public CsvReader(const std::string& file_name, char separator = ',', bool has_header = false)
+  public virtual ~CsvReader()
+  public virtual void Read() override
+
+  private bool has_header_
