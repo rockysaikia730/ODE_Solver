@@ -213,16 +213,6 @@ protected:
      */
     void ParseSolverMethodFromString(const std::string& method_string);
 
-<<<<<<< HEAD
-    /**
-     * @brief Recursive helper function that parses a function string into an instance of Function.
-     * @param str The function string to parse. Expected form is a flattened list of expressions (eg. "[[sin(t)+y0, cos(t)],[y1^2, exp(t)]]" for a 2x2 system).
-     * @return a pointer to the created Function instance.
-     */
-    std::unique_ptr<Function> ParseFunction(const std::string& str);
-
-=======
->>>>>>> refs/remotes/origin/main
     private:
 
         /**
