@@ -2,7 +2,7 @@
 #include "ode_solver.h"
 #include "runge_kutta_solver.h"
 #include <cmath>
-
+#include <iostream>
 
 void MultiStepOdeSolver::InitBuffers() {
     solutions_buffer_.clear();
@@ -22,7 +22,7 @@ void MultiStepOdeSolver::InitBuffers() {
         current_time_ += step_size_;
 
         UpdateSolution(solution_);
-        if(order_derivative_) (ode_.Evaluate(current_time_, solution_));
+        if(order_derivative_) UpdateDerivative(ode_.Evaluate(current_time_, solution_));
     }
 }
 
@@ -33,20 +33,18 @@ void MultiStepOdeSolver::UpdateWindowSum() {
     std::deque<DynamicTensor>& y_prevs = solutions_buffer_;
     std::deque<DynamicTensor>& dy_prevs = derivative_buffer_;
 
-    double h = step_size_ * coeffs_dy[0]/coeffs_y[0];
-
     auto it_y = y_prevs.rbegin();
-    sum_tn_ = (*it_y) * (coeffs_y[1]/coeffs_y[0]);
+    sum_tn_ = ((*it_y) * (coeffs_y[1]/coeffs_y[0]));
     it_y++;
     for(int i = 2; i < coeffs_y.size(); i++) {
-        sum_tn_ = sum_tn_ + (*it_y) * (coeffs_y[i]/coeffs_y[0]);
+        sum_tn_ = (sum_tn_ + (*it_y) * (coeffs_y[i]/coeffs_y[0]));
         it_y++;
     }
-    
+    double h = step_size_;
     if(!dy_prevs.empty()) {
         auto it_dy = dy_prevs.rbegin();
         for(int i = 1; i < coeffs_dy.size(); i++) {
-            sum_tn_ = sum_tn_ -  h * (coeffs_dy[i]/coeffs_y[0]) * (*it_dy);
+            sum_tn_ = ((sum_tn_ +  ((h * (coeffs_dy[i]/coeffs_y[0])) * (*it_dy))));
             it_dy++;
         }    
     }
@@ -60,21 +58,17 @@ void MultiStepOdeSolver::Reset() {
 
 MultiStepOdeSolver::MultiStepOdeSolver(const Ode& ode, double step_size, double end_time, 
     int order_solution, int order_derivative)
-    : OdeSolver(ode, end_time, step_size), 
+    : OdeSolver(ode, step_size, end_time), 
       order_sol_(order_solution),
       order_derivative_(order_derivative)
-      {
-        Reset();
-      }
+      {}
 
 MultiStepOdeSolver::MultiStepOdeSolver(const Ode& ode, int num_of_steps, double end_time,
     int order_solution, int order_derivative)
-    : OdeSolver(ode, end_time, num_of_steps), 
+    : OdeSolver(ode, num_of_steps, end_time), 
       order_sol_(order_solution),
       order_derivative_(order_derivative)
-      {
-        Reset();
-      }
+      {}
 
 void MultiStepOdeSolver::UpdateSolution(const DynamicTensor& y) {
     solutions_buffer_.push_back(y);

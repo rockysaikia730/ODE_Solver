@@ -8,22 +8,26 @@ AdamsBashforth::AdamsBashforth(const Ode& ode, double step_size, double end_time
       order_(order) 
       {
         if(order > 4 || order < 1) throw std::invalid_argument("Order must be within 1 to 4.");
+        Reset();
       }
 
 AdamsBashforth::AdamsBashforth(const Ode& ode, int num_of_steps, double end_time, int order)
     : MultiStepOdeSolver(ode, num_of_steps, end_time, 1, order),
-      order_(order) {}
+      order_(order) 
+      {
+        Reset();
+      }
 
 const std::vector<double>& AdamsBashforth::GetCoeffsY() const {
-    static const std::vector<double> c1 = {1.0, -1.0};
+    static const std::vector<double> c1 = {1.0, 1.0};
     return c1;
 }
 
 const std::vector<double>& AdamsBashforth::GetCoeffsdY() const {
-    static const std::vector<double> c1 = {1.0};
-    static const std::vector<double> c2 = {1.5, -0.5};
-    static const std::vector<double> c3 = {23.0/12.0, -16.0/12.0, 5.0/12.0};
-    static const std::vector<double> c4 = {55.0/24.0, -59.0/24.0, 37.0/24.0, -9.0/24.0};
+    static const std::vector<double> c1 = {0.0, 1.0};
+    static const std::vector<double> c2 = {0.0, 1.5, -0.5};
+    static const std::vector<double> c3 = {0.0, 23.0/12.0, -16.0/12.0, 5.0/12.0};
+    static const std::vector<double> c4 = {0.0, 55.0/24.0, -59.0/24.0, 37.0/24.0, -9.0/24.0};
     switch(order_) {
         case 1 : return c1;
         case 2 : return c2;

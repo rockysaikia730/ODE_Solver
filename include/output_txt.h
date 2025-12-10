@@ -1,4 +1,4 @@
-#ifndef OUTPUT_TXT_H
+#ifndef OUTPUT_TXT_H_
 #define OUTPUT_TXT_H_
 #include <string>
 #include <vector>

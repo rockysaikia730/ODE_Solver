@@ -6,7 +6,7 @@
 
 ImplicitSolver::ImplicitEquation::ImplicitEquation(const ImplicitSolver& solver)
     : solver_(solver) {
-        //c0 yn + sum_{i=1} cy_i y_n-i = cdy_0 f(yn) + sum_{i} cdy_i f(y_n-i) 
+        //c0 yn  =  sum_{i=1} cy_i y_n-i  + cdy_0 f(yn) + sum_{i} cdy_i f(y_n-i) 
         cy0_  = solver_.GetCoeffsY()[0];
         cdy0_ = solver_.GetCoeffsdY()[0];
     }
@@ -14,7 +14,14 @@ ImplicitSolver::ImplicitEquation::ImplicitEquation(const ImplicitSolver& solver)
 DynamicTensor ImplicitSolver::ImplicitEquation::Eval(double t, const DynamicTensor& y_guess) const {
     double h = solver_.step_size_;
     DynamicTensor dydt = solver_.ode_.Evaluate(t + h, y_guess);
-    return y_guess + solver_.sum_tn_ - (dydt * (h * cdy0_/cy0_));
+    return ((y_guess - solver_.sum_tn_) - (dydt * (h * cdy0_/cy0_)));
+}
+
+DynamicTensor ImplicitSolver::ImplicitEquation::Grad(double t, const DynamicTensor& y_guess, double dy) const {
+    double h = solver_.step_size_;
+    DynamicTensor dfdt = solver_.ode_.GetFunction().Grad(t + h, y_guess, dy);
+    DynamicTensor ones = DynamicTensor(dfdt.get_shape(), 1.0);
+    return (ones - (dfdt * (h * cdy0_/cy0_)));
 }
 
 ImplicitSolver::ImplicitSolver(const Ode& ode, double step_size, double end_time, 
@@ -41,9 +48,7 @@ ImplicitSolver::ImplicitSolver(const Ode& ode, int num_of_steps, double end_time
       }
 
 DynamicTensor ImplicitSolver::ComputeStep() {
-    double t = current_time_ + step_size_;
-    double h = step_size_;
-    ImplicitEquation implicit_equation(*this, t, h);
+    ImplicitEquation implicit_equation(*this);
     //What is a good initial guess
-    return root_finder_->FindRoot(implicit_equation, GetSolution());
+    return root_finder_->FindRoot(implicit_equation, GetSolution(), current_time_);
 }

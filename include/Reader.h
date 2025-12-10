@@ -192,41 +192,41 @@ protected:
      */
     double ParseDouble(const std::string& str) const;
 
-        /**
-         * @brief Parses the solver method from a string and sets it in raw_data_.
-         * @param method_string 
-         * @returns a vector of size_t representing the shape of the parsed tensor.
-         * 
+    /**
+     * @brief Parses the solver method from a string and sets it in raw_data_.
+     * @param method_string 
+     * @returns a vector of size_t representing the shape of the parsed tensor.
+     */ 
 
-        /**
-         * @brief Key-value pair interpreter for reading lines.
-         * @param key The key string.
-         * @param value The value string.
-         * This method interprets the key-value pairs and updates the raw_data_ member variable accordingly.
-         */
-        void InterpretKeyValuePair(const std::string& key, const std::string& value);
+    /**
+     * @brief Key-value pair interpreter for reading lines.
+     * @param key The key string.
+     * @param value The value string.
+     * This method interprets the key-value pairs and updates the raw_data_ member variable accordingly.
+     */
+    void InterpretKeyValuePair(const std::string& key, const std::string& value);
 
-        /**
-         * @brief trim a single string
-         * @param str The string to trim.
-         * @return The trimmed string.
-         * This method removes leading and trailing whitespace from the input string.
-         */
-        std::string TrimString(const std::string& s) const;
-        
-        /**
-         * @brief Parses the solver method from a string and sets it in raw_data_.
-         * @param method_string The string representing the solver method.
-         * @return void. Sets the solver method in raw_data_.
-         */
-        void ParseSolverMethodFromString(const std::string& method_string);
+    /**
+     * @brief trim a single string
+     * @param str The string to trim.
+     * @return The trimmed string.
+     * This method removes leading and trailing whitespace from the input string.
+     */
+    std::string TrimString(const std::string& s) const;
+    
+    /**
+     * @brief Parses the solver method from a string and sets it in raw_data_.
+     * @param method_string The string representing the solver method.
+     * @return void. Sets the solver method in raw_data_.
+     */
+    void ParseSolverMethodFromString(const std::string& method_string);
 
-        /**
-         * @brief Recursive helper function that parses a function string into an instance of Function.
-         * @param str The function string to parse. Expected form is a flattened list of expressions (eg. "[[sin(t)+y0, cos(t)],[y1^2, exp(t)]]" for a 2x2 system).
-         * @return a pointer to the created Function instance.
-         */
-        std::unique_ptr<Function> ParseFunction(const std::string& str);
+    /**
+     * @brief Recursive helper function that parses a function string into an instance of Function.
+     * @param str The function string to parse. Expected form is a flattened list of expressions (eg. "[[sin(t)+y0, cos(t)],[y1^2, exp(t)]]" for a 2x2 system).
+     * @return a pointer to the created Function instance.
+     */
+    std::unique_ptr<Function> ParseFunction(const std::string& str);
 
     private:
 

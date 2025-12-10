@@ -14,9 +14,6 @@ public:
     ImplicitSolver(const Ode& ode, int num_of_steps, double end_time = 0.0, 
                    int order_solution = 1, int order_derivative = 0,
                    std::shared_ptr<RootFinder> root_finder = nullptr);
-    
-    virtual const std::vector<double>& GetCoeffsY() const = 0;
-    virtual const std::vector<double>& GetCoeffsdY() const = 0;
 
     virtual DynamicTensor ComputeStep() override;
 protected:   
@@ -24,6 +21,7 @@ protected:
     public:
         ImplicitEquation(const ImplicitSolver& solver);
         DynamicTensor Eval(double t, const DynamicTensor& y_guess) const override;
+        DynamicTensor Grad(double t, const DynamicTensor& y_guess, double dy = 0.1) const override;
     private: 
         const ImplicitSolver& solver_;
         double cdy0_;

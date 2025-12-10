@@ -5,6 +5,6 @@
 
 class NewtonRaphson : public RootFinder {
 public:
-    DynamicTensor FindRoot(const Function& f, const DynamicTensor& initial_guess, double t, int max_iter = 100) const override;
+    DynamicTensor FindRoot(const Function& f, const DynamicTensor& initial_guess, double t, int max_iter = 500) const override;
 };
 #endif
