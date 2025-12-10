@@ -16,7 +16,7 @@ public:
 
 TEST(RungeKutta, InitialisationDefault) {
     auto rhs_ptr = std::make_shared<Rhs>();
-    Ode exponential_ode(0, DynamicTensor(1), "Exponential Decay", rhs_ptr);
+    Ode exponential_ode(0.0, 1.0, "Exponential Decay", rhs_ptr);
     RungeKutta rk4(exponential_ode);
     
     EXPECT_EQ(rk4.GetStartTime(), 0);
@@ -27,7 +27,7 @@ TEST(RungeKutta, InitialisationDefault) {
 
 TEST(RungeKutta, InitialisationUserDefined) {
     auto rhs_ptr = std::make_shared<Rhs>();
-    Ode exponential_ode(0, DynamicTensor(1), "Exponential Decay", rhs_ptr);
+    Ode exponential_ode(0.0, 1.0, "Exponential Decay", rhs_ptr);
     RungeKutta rk4(exponential_ode, 0.5, 10);
     
     EXPECT_EQ(rk4.GetStartTime(), 0);
@@ -39,7 +39,7 @@ TEST(RungeKutta, InitialisationUserDefined) {
 
 TEST(RungeKutta, Solve) {
     auto rhs_ptr = std::make_shared<Rhs>();
-    Ode exponential_ode(0, DynamicTensor(1), "Exponential Decay", rhs_ptr);
+    Ode exponential_ode(0.0, 1.0, "Exponential Decay", rhs_ptr);
     RungeKutta rk4(exponential_ode, 0.01, 1);
     rk4.Solve();
     EXPECT_NEAR(rk4.GetSolution().at<double>({0}), exp(-1), 1e-4);
@@ -50,7 +50,7 @@ TEST(RungeKutta, Step) {
     auto rhs_ptr = std::make_shared<Rhs>();
 
     double t0 = 0;
-    Ode exponential_ode(t0, DynamicTensor(1), "Exponential Decay", rhs_ptr);
+    Ode exponential_ode(t0, 1.0, "Exponential Decay", rhs_ptr);
     RungeKutta rk4(exponential_ode);
 
     int iter = 1000;
