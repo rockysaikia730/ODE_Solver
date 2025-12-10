@@ -6,13 +6,13 @@
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ADAM\_MOULTON\_SOLVER}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}implicit\_solver.h"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_o_d_e_8h}{ode.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ode_8h}{ode.h}}"{}}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_adam_moulton}{AdamMoulton}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_implicit_solver}{ImplicitSolver}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }AdamMoulton\ :\ \textcolor{keyword}{public}\ ImplicitSolver\ \{}
 \DoxyCodeLine{00008\ \textcolor{keyword}{public}:\ }
-\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_adam_moulton}{AdamMoulton}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
+\DoxyCodeLine{00009\ \ \ \ \ AdamMoulton(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
 \DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\ =\ 1,\ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_adam_moulton}{AdamMoulton}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
+\DoxyCodeLine{00011\ \ \ \ \ AdamMoulton(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
 \DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\ =\ 1,\ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
 \DoxyCodeLine{00013\ \ \ \ \ }
 \DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ GetCoeffsY()\ \textcolor{keyword}{const\ override};}

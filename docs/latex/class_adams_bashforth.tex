@@ -90,7 +90,7 @@ std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\b
 \begin{DoxyCompactItemize}
 \item 
 const \mbox{\hyperlink{class_ode}{Ode}} \& {\bfseries ode\+\_\+}
-\begin{DoxyCompactList}\small\item\em Reference to the \doxylink{class_o_d_e}{ODE} problem definition. Guaranteed to be valid as long as the user maintains the \doxylink{class_ode}{Ode} object scope. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Reference to the ODE problem definition. Guaranteed to be valid as long as the user maintains the \doxylink{class_ode}{Ode} object scope. \end{DoxyCompactList}\item 
 double {\bfseries start\+\_\+time\+\_\+}
 \begin{DoxyCompactList}\small\item\em The simulation start time. \end{DoxyCompactList}\item 
 double {\bfseries end\+\_\+time\+\_\+}
@@ -98,17 +98,19 @@ double {\bfseries end\+\_\+time\+\_\+}
 double {\bfseries step\+\_\+size\+\_\+}
 \begin{DoxyCompactList}\small\item\em The time step (dt). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries solution\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\item 
 double {\bfseries current\+\_\+time\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\label{doc-func-members}
+\Hypertarget{class_adams_bashforth_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_adams_bashforth_a1a7a6e06ee0fa286e0738578b77a29c1}\label{class_adams_bashforth_a1a7a6e06ee0fa286e0738578b77a29c1} 
-\index{AdamsBashforth@{AdamsBashforth}!ComputeStep@{ComputeStep}}
+\Hypertarget{class_adams_bashforth_a1a7a6e06ee0fa286e0738578b77a29c1}\index{AdamsBashforth@{AdamsBashforth}!ComputeStep@{ComputeStep}}
 \index{ComputeStep@{ComputeStep}!AdamsBashforth@{AdamsBashforth}}
 \doxysubsubsection{\texorpdfstring{ComputeStep()}{ComputeStep()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Adams\+Bashforth\+::\+Compute\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_adams_bashforth_a1a7a6e06ee0fa286e0738578b77a29c1} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Adams\+Bashforth\+::\+Compute\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -123,21 +125,21 @@ The calculated state tensor for the next time step.
 
 Implements \mbox{\hyperlink{class_ode_solver_a35a9d27d9c3b484dae31ed1c6905a04a}{Ode\+Solver}}.
 
-\Hypertarget{class_adams_bashforth_a7f824059707e62d224e0d4b206e75e02}\label{class_adams_bashforth_a7f824059707e62d224e0d4b206e75e02} 
-\index{AdamsBashforth@{AdamsBashforth}!GetCoeffsdY@{GetCoeffsdY}}
+\Hypertarget{class_adams_bashforth_a7f824059707e62d224e0d4b206e75e02}\index{AdamsBashforth@{AdamsBashforth}!GetCoeffsdY@{GetCoeffsdY}}
 \index{GetCoeffsdY@{GetCoeffsdY}!AdamsBashforth@{AdamsBashforth}}
 \doxysubsubsection{\texorpdfstring{GetCoeffsdY()}{GetCoeffsdY()}}
-{\footnotesize\ttfamily const std\+::vector$<$ double $>$ \& Adams\+Bashforth\+::\+Get\+CoeffsdY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_adams_bashforth_a7f824059707e62d224e0d4b206e75e02} 
+const std\+::vector$<$ double $>$ \& Adams\+Bashforth\+::\+Get\+CoeffsdY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
 Implements \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}.
 
-\Hypertarget{class_adams_bashforth_a8ca9f70541dd2fc636ff19e9d8b1ea65}\label{class_adams_bashforth_a8ca9f70541dd2fc636ff19e9d8b1ea65} 
-\index{AdamsBashforth@{AdamsBashforth}!GetCoeffsY@{GetCoeffsY}}
+\Hypertarget{class_adams_bashforth_a8ca9f70541dd2fc636ff19e9d8b1ea65}\index{AdamsBashforth@{AdamsBashforth}!GetCoeffsY@{GetCoeffsY}}
 \index{GetCoeffsY@{GetCoeffsY}!AdamsBashforth@{AdamsBashforth}}
 \doxysubsubsection{\texorpdfstring{GetCoeffsY()}{GetCoeffsY()}}
-{\footnotesize\ttfamily const std\+::vector$<$ double $>$ \& Adams\+Bashforth\+::\+Get\+CoeffsY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_adams_bashforth_a8ca9f70541dd2fc636ff19e9d8b1ea65} 
+const std\+::vector$<$ double $>$ \& Adams\+Bashforth\+::\+Get\+CoeffsY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -145,7 +147,6 @@ Implements \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solve
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/adamsbashforth\+\_\+solver.\+h\item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/adamsbashforth\+\_\+solver.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/adamsbashforth\+\_\+solver.\+h\end{DoxyCompactItemize}

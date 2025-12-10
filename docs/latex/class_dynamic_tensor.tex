@@ -45,26 +45,26 @@ using {\bfseries Complex} = std\+::complex$<$double$>$
 \Hypertarget{class_dynamic_tensor_a4100eb661f083d8f602559ad7774198a}\label{class_dynamic_tensor_a4100eb661f083d8f602559ad7774198a} 
 bool {\bfseries Is\+Complex} () const
 \item 
-\Hypertarget{class_dynamic_tensor_acd36acf18da6cac52b986d9903e864ce}\label{class_dynamic_tensor_acd36acf18da6cac52b986d9903e864ce} 
+\Hypertarget{class_dynamic_tensor_a985d425433a87baaee686fc48af19b14}\label{class_dynamic_tensor_a985d425433a87baaee686fc48af19b14} 
 Type {\bfseries Get\+Type} () const
 \item 
 \Hypertarget{class_dynamic_tensor_a74eb8a4210abf2b8719ffba0e3de1dc8}\label{class_dynamic_tensor_a74eb8a4210abf2b8719ffba0e3de1dc8} 
-{\footnotesize template$<$typename T $>$ }\\T \& {\bfseries at} (const std\+::vector$<$ size\+\_\+t $>$ \&indices)
-\begin{DoxyCompactList}\small\item\em Unified Templated Accessor. Usage\+: tensor.\+at$<$double$>$(\{0\}) or tensor.\+at$<$\+Complex$>$(\{0\}) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\T \& {\bfseries at} (const std\+::vector$<$ size\+\_\+t $>$ \&indices)
+\begin{DoxyCompactList}\small\item\em Unified Templated Accessor. Usage\+: tensor.\+at$<$double$>$(\{0\}) or tensor.\+at$<$\+Complex$>$(\{0\}). \end{DoxyCompactList}\item 
 \Hypertarget{class_dynamic_tensor_ae08ce62d39b1d0cec881b9e66778216b}\label{class_dynamic_tensor_ae08ce62d39b1d0cec881b9e66778216b} 
-{\footnotesize template$<$typename T $>$ }\\const T \& {\bfseries at} (const std\+::vector$<$ size\+\_\+t $>$ \&indices) const
+{\footnotesize template$<$typename T$>$ }\\const T \& {\bfseries at} (const std\+::vector$<$ size\+\_\+t $>$ \&indices) const
 \item 
 \Hypertarget{class_dynamic_tensor_ab3d41f03a8750b49db46f51dc61a41f7}\label{class_dynamic_tensor_ab3d41f03a8750b49db46f51dc61a41f7} 
-{\footnotesize template$<$typename T $>$ }\\auto {\bfseries begin} ()
+{\footnotesize template$<$typename T$>$ }\\auto {\bfseries begin} ()
 \begin{DoxyCompactList}\small\item\em Universal Templated Iterators Usage\+: auto it = tensor.\+begin$<$double$>$();. \end{DoxyCompactList}\item 
 \Hypertarget{class_dynamic_tensor_a46150fc7719eae3c6a2a8d49ff314712}\label{class_dynamic_tensor_a46150fc7719eae3c6a2a8d49ff314712} 
-{\footnotesize template$<$typename T $>$ }\\auto {\bfseries end} ()
+{\footnotesize template$<$typename T$>$ }\\auto {\bfseries end} ()
 \item 
 \Hypertarget{class_dynamic_tensor_af93ba703877f026c7be2c06c244a3f18}\label{class_dynamic_tensor_af93ba703877f026c7be2c06c244a3f18} 
-{\footnotesize template$<$typename T $>$ }\\auto {\bfseries begin} () const
+{\footnotesize template$<$typename T$>$ }\\auto {\bfseries begin} () const
 \item 
 \Hypertarget{class_dynamic_tensor_a1abb09b3f2d36d56e1f96432e88be64f}\label{class_dynamic_tensor_a1abb09b3f2d36d56e1f96432e88be64f} 
-{\footnotesize template$<$typename T $>$ }\\auto {\bfseries end} () const
+{\footnotesize template$<$typename T$>$ }\\auto {\bfseries end} () const
 \item 
 \Hypertarget{class_dynamic_tensor_a951b70d3817858d411b94771bc7207e0}\label{class_dynamic_tensor_a951b70d3817858d411b94771bc7207e0} 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator+} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&second\+\_\+tensor) const
@@ -80,13 +80,13 @@ Type {\bfseries Get\+Type} () const
 \begin{DoxyCompactList}\small\item\em Scalar Multiplication (Tensor \texorpdfstring{$\ast$}{*} double). \end{DoxyCompactList}\item 
 \Hypertarget{class_dynamic_tensor_a05dae46dbd83e82cfeb69d331799fc6f}\label{class_dynamic_tensor_a05dae46dbd83e82cfeb69d331799fc6f} 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator-\/} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&second\+\_\+tensor) const
-\begin{DoxyCompactList}\small\item\em Element-\/wise Subtraction (t1 -\/ t2) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Element-\/wise Subtraction (t1 -\/ t2). \end{DoxyCompactList}\item 
 \Hypertarget{class_dynamic_tensor_a2ef2a8a7880995863f339d4a064a3d4f}\label{class_dynamic_tensor_a2ef2a8a7880995863f339d4a064a3d4f} 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator\texorpdfstring{$\ast$}{*}} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&second\+\_\+tensor) const
-\begin{DoxyCompactList}\small\item\em Element-\/wise Multiplication (t1 -\/ t2) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Element-\/wise Multiplication (t1 -\/ t2). \end{DoxyCompactList}\item 
 \Hypertarget{class_dynamic_tensor_a1dccb4f844dc683c29af7e962eeef03b}\label{class_dynamic_tensor_a1dccb4f844dc683c29af7e962eeef03b} 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator/} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&second\+\_\+tensor) const
-\begin{DoxyCompactList}\small\item\em Element-\/wise Division (t1 / t2) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Element-\/wise Division (t1 / t2). \end{DoxyCompactList}\item 
 \Hypertarget{class_dynamic_tensor_aa34c71de9006beb7962e333128d35f9b}\label{class_dynamic_tensor_aa34c71de9006beb7962e333128d35f9b} 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries operator/} (double scalar) const
 \begin{DoxyCompactList}\small\item\em Scalar Division (Tensor / double). \end{DoxyCompactList}\item 
@@ -96,9 +96,9 @@ const std\+::vector$<$ size\+\_\+t $>$ \& \mbox{\hyperlink{class_dynamic_tensor_
 \begin{DoxyCompactList}\small\item\em Get the shape of the tensor. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138ebf6}{rank}} () const
 \begin{DoxyCompactList}\small\item\em Get the rank (number of dimensions) of the tensor. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\const T \& \mbox{\hyperlink{class_dynamic_tensor_a5403ad1ea0c54fac03c94f4dd2285133}{flat}} (size\+\_\+t index) const
+{\footnotesize template$<$typename T$>$ }\\const T \& \mbox{\hyperlink{class_dynamic_tensor_a5403ad1ea0c54fac03c94f4dd2285133}{flat}} (size\+\_\+t index) const
 \begin{DoxyCompactList}\small\item\em Get the flattened data as a vector. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\T \& \mbox{\hyperlink{class_dynamic_tensor_a2241c8d89e1a3e78dfd3d5e89aab9254}{flat}} (size\+\_\+t index)
+{\footnotesize template$<$typename T$>$ }\\T \& \mbox{\hyperlink{class_dynamic_tensor_a2241c8d89e1a3e78dfd3d5e89aab9254}{flat}} (size\+\_\+t index)
 \begin{DoxyCompactList}\small\item\em Get the flattened data as a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -122,12 +122,14 @@ The \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} stores data in a contiguous
 \mbox{\hyperlink{_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example}{C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/dynamic\+\_\+tensor.\+h}}.\end{Desc}
 
 
+\label{doc-constructors}
+\Hypertarget{class_dynamic_tensor_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_dynamic_tensor_a595b2d7fb3043fd29ac32cf77194aee7}\label{class_dynamic_tensor_a595b2d7fb3043fd29ac32cf77194aee7} 
-\index{DynamicTensor@{DynamicTensor}!DynamicTensor@{DynamicTensor}}
+\Hypertarget{class_dynamic_tensor_a595b2d7fb3043fd29ac32cf77194aee7}\index{DynamicTensor@{DynamicTensor}!DynamicTensor@{DynamicTensor}}
 \index{DynamicTensor@{DynamicTensor}!DynamicTensor@{DynamicTensor}}
 \doxysubsubsection{\texorpdfstring{DynamicTensor()}{DynamicTensor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Dynamic\+Tensor\+::\+Dynamic\+Tensor (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{input\+\_\+shape,  }\item[{double}]{initial\+\_\+value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_a595b2d7fb3043fd29ac32cf77194aee7} 
+Dynamic\+Tensor\+::\+Dynamic\+Tensor (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{input\+\_\+shape}{, }\item[{double}]{initial\+\_\+value}{}\end{DoxyParamCaption})}
 
 
 
@@ -140,11 +142,11 @@ Shape constructor. Allocates memory based on the product of the shape dimensions
 {\em initial\+\_\+value} & The value to initialize all elements with. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_dynamic_tensor_a34e9dacaef2bd672eda1667d5380b7c1}\label{class_dynamic_tensor_a34e9dacaef2bd672eda1667d5380b7c1} 
-\index{DynamicTensor@{DynamicTensor}!DynamicTensor@{DynamicTensor}}
+\Hypertarget{class_dynamic_tensor_a34e9dacaef2bd672eda1667d5380b7c1}\index{DynamicTensor@{DynamicTensor}!DynamicTensor@{DynamicTensor}}
 \index{DynamicTensor@{DynamicTensor}!DynamicTensor@{DynamicTensor}}
 \doxysubsubsection{\texorpdfstring{DynamicTensor()}{DynamicTensor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Dynamic\+Tensor\+::\+Dynamic\+Tensor (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{data,  }\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{input\+\_\+shape = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_a34e9dacaef2bd672eda1667d5380b7c1} 
+Dynamic\+Tensor\+::\+Dynamic\+Tensor (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{data}{, }\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{input\+\_\+shape}{ = {\ttfamily \{\}}}\end{DoxyParamCaption})}
 
 
 
@@ -162,13 +164,15 @@ The size of {\ttfamily data} must exactly match the product of {\ttfamily input\
 \end{DoxyWarning}
 
 
+\label{doc-func-members}
+\Hypertarget{class_dynamic_tensor_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_dynamic_tensor_a2241c8d89e1a3e78dfd3d5e89aab9254}\label{class_dynamic_tensor_a2241c8d89e1a3e78dfd3d5e89aab9254} 
-\index{DynamicTensor@{DynamicTensor}!flat@{flat}}
+\Hypertarget{class_dynamic_tensor_a2241c8d89e1a3e78dfd3d5e89aab9254}\index{DynamicTensor@{DynamicTensor}!flat@{flat}}
 \index{flat@{flat}!DynamicTensor@{DynamicTensor}}
 \doxysubsubsection{\texorpdfstring{flat()}{flat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-T \& Dynamic\+Tensor\+::flat (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_a2241c8d89e1a3e78dfd3d5e89aab9254} 
+template$<$typename T$>$ \\
+T \& Dynamic\+Tensor\+::flat (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -180,12 +184,12 @@ A reference to the internal data vector. The caller can modify the data.
 \begin{DoxyNote}{Note}
 The changes here are suggested by Chat\+GPT. 
 \end{DoxyNote}
-\Hypertarget{class_dynamic_tensor_a5403ad1ea0c54fac03c94f4dd2285133}\label{class_dynamic_tensor_a5403ad1ea0c54fac03c94f4dd2285133} 
-\index{DynamicTensor@{DynamicTensor}!flat@{flat}}
+\Hypertarget{class_dynamic_tensor_a5403ad1ea0c54fac03c94f4dd2285133}\index{DynamicTensor@{DynamicTensor}!flat@{flat}}
 \index{flat@{flat}!DynamicTensor@{DynamicTensor}}
 \doxysubsubsection{\texorpdfstring{flat()}{flat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-const T \& Dynamic\+Tensor\+::flat (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_a5403ad1ea0c54fac03c94f4dd2285133} 
+template$<$typename T$>$ \\
+const T \& Dynamic\+Tensor\+::flat (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -200,11 +204,11 @@ The changes here are suggested by Chat\+GPT.
 \begin{Desc}
 \item[Examples]\par
 \mbox{\hyperlink{_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example}{C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/dynamic\+\_\+tensor.\+h}}.\end{Desc}
-\Hypertarget{class_dynamic_tensor_a42b1bfd00a94348fe8b1ce43a2f6cf7e}\label{class_dynamic_tensor_a42b1bfd00a94348fe8b1ce43a2f6cf7e} 
-\index{DynamicTensor@{DynamicTensor}!get\_shape@{get\_shape}}
+\Hypertarget{class_dynamic_tensor_a42b1bfd00a94348fe8b1ce43a2f6cf7e}\index{DynamicTensor@{DynamicTensor}!get\_shape@{get\_shape}}
 \index{get\_shape@{get\_shape}!DynamicTensor@{DynamicTensor}}
 \doxysubsubsection{\texorpdfstring{get\_shape()}{get\_shape()}}
-{\footnotesize\ttfamily const std\+::vector$<$ size\+\_\+t $>$ \& Dynamic\+Tensor\+::get\+\_\+shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_a42b1bfd00a94348fe8b1ce43a2f6cf7e} 
+const std\+::vector$<$ size\+\_\+t $>$ \& Dynamic\+Tensor\+::get\+\_\+shape (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
 
 
@@ -216,11 +220,11 @@ A const reference to the vector of dimensions.
 \begin{Desc}
 \item[Examples]\par
 \mbox{\hyperlink{_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example}{C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/dynamic\+\_\+tensor.\+h}}.\end{Desc}
-\Hypertarget{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138ebf6}\label{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138ebf6} 
-\index{DynamicTensor@{DynamicTensor}!rank@{rank}}
+\Hypertarget{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138ebf6}\index{DynamicTensor@{DynamicTensor}!rank@{rank}}
 \index{rank@{rank}!DynamicTensor@{DynamicTensor}}
 \doxysubsubsection{\texorpdfstring{rank()}{rank()}}
-{\footnotesize\ttfamily size\+\_\+t Dynamic\+Tensor\+::rank (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138ebf6} 
+size\+\_\+t Dynamic\+Tensor\+::rank (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
 
 
@@ -232,11 +236,11 @@ The size of the shape vector (e.\+g., a 3D volume returns 3).
 \begin{Desc}
 \item[Examples]\par
 \mbox{\hyperlink{_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example}{C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/dynamic\+\_\+tensor.\+h}}.\end{Desc}
-\Hypertarget{class_dynamic_tensor_a80d631cc2d2151a0e3c9da15edbd870d}\label{class_dynamic_tensor_a80d631cc2d2151a0e3c9da15edbd870d} 
-\index{DynamicTensor@{DynamicTensor}!size@{size}}
+\Hypertarget{class_dynamic_tensor_a80d631cc2d2151a0e3c9da15edbd870d}\index{DynamicTensor@{DynamicTensor}!size@{size}}
 \index{size@{size}!DynamicTensor@{DynamicTensor}}
 \doxysubsubsection{\texorpdfstring{size()}{size()}}
-{\footnotesize\ttfamily size\+\_\+t Dynamic\+Tensor\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{class_dynamic_tensor_a80d631cc2d2151a0e3c9da15edbd870d} 
+size\+\_\+t Dynamic\+Tensor\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
 
 
@@ -250,7 +254,6 @@ The product of all dimensions (e.\+g., 2x3x4 = 24).
 \mbox{\hyperlink{_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example}{C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/dynamic\+\_\+tensor.\+h}}.\end{Desc}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\+\_\+tensor.\+h}}\item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/dynamic\+\_\+tensor.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\+\_\+tensor.\+h}}\end{DoxyCompactItemize}

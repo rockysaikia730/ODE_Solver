@@ -1,0 +1,64 @@
+class Ode
+  public Ode(double in_time, const DynamicTensor& in_y0, const std::string& in_name, std::shared_ptr<const Function> func, std::shared_ptr<const Function> derivative,std::shared_ptr<RootFinder> root_finder)
+
+  public Ode(double in_time, const double& in_y0, const std::string& in_name, std::shared_ptr<const Function> func,std::shared_ptr<const Function> derivative, std::shared_ptr<RootFinder> root_finder)
+
+  public Ode(const Reader& reader)
+  public Ode(const Ode& other)
+  public Ode& operator=(const Ode& other)
+  public Ode(const OdeRawData& raw)
+  public virtual ~Ode()
+
+  public void SetT0(double time)
+  public void SetY0(const DynamicTensor& in_y0)
+  public void SetY0(double in_y0)
+  public void SetName(const std::string& in_name)
+  public void SetFunction(std::shared_ptr<const Function> func)
+  public void SetRootFinder(std::shared_ptr<RootFinder> root_finder)
+  public double GetTimeIn() const
+  public const DynamicTensor& GetCondIn() const
+  public const std::string& GetName() const
+  public const Function& GetFunction() const
+  public const std::shared_ptr<RootFinder>& GetRootFinder() const
+
+  public DynamicTensor Evaluate(double t, const DynamicTensor& y) const
+  public DynamicTensor Grad(double t, const DynamicTensor& y) const
+
+  private double t0_
+  private DynamicTensor y0_
+  private std::string name_
+  private std::shared_ptr<RootFinder> root_finder_
+  private std::shared_ptr<constFunction> func_
+  
+
+class OdeRawData
+  public OdeRawData()
+  public ~OdeRawData()
+  public OdeRawData(const OdeRawData& other)
+  public OdeRawData& operator=(const OdeRawData& other)
+  public DynamicTensor y0
+  public FunctionParams function_params
+  public TimeParams time_params
+  public SolverParams solver_params
+  public std::shared_ptr<RootFinder> root_finder
+  public std::shared_ptr<constFunction> function
+
+  class TimeParams(OdeRawData)
+    public struct time_params
+    public double t0
+    public double t_final
+    public double step_size
+    public size_t number_of_steps
+
+  class SolverParams(OdeRawData)
+    public SolverMethod method
+    public size_t max_iterations
+    public double tolerance
+
+class function_params(OdeRawData)
+    public std::vector<std::string> function_expressions
+    public std::vector<size_t> function_shape
+    public std::vector<std::string> derivative_expressions
+    public std::vector<size_t> derivative_shape
+
+  

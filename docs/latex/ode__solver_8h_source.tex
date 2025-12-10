@@ -3,27 +3,28 @@
 \mbox{\hyperlink{ode__solver_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ CODES\_ODE\_SOLVER\_H}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ CODES\_ODE\_SOLVER\_H}}
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ }
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <cmath>}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_o_d_e_8h}{ode.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ode_8h}{ode.h}}"{}}}
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\_tensor.h}}"{}}}
 \DoxyCodeLine{00017\ }
-\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ode_solver}{OdeSolver}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{OdeSolver}}\ \{}
 \DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_ode_solver_a18be896e3a9772213317a4c554100206}{\string~OdeSolver}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00032\ }
 \DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_ode_solver_a35a9d27d9c3b484dae31ed1c6905a04a}{ComputeStep}}()\ =\ 0;}
 \DoxyCodeLine{00043\ }
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step}}();}
 \DoxyCodeLine{00048\ }
 \DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_a662cff46a2025f9b99295d5fcefbe0b6}{SetEndTime}}(\textcolor{keywordtype}{double}\ end\_time);}
 \DoxyCodeLine{00054\ }
 \DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_ae1242b79d094ce57a73b76661cdbdc94}{SetTimeSpan}}(\textcolor{keywordtype}{int}\ num\_of\_steps);}
 \DoxyCodeLine{00064\ }
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_ae1242b79d094ce57a73b76661cdbdc94}{SetTimeSpan}}(\textcolor{keywordtype}{double}\ step\_size);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_a673fb059d7379dfc9bfea833318b4049}{SetTimeSpan}}(\textcolor{keywordtype}{double}\ step\_size);}
 \DoxyCodeLine{00070\ }
 \DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Getters\ -\/-\/-\/}}
 \DoxyCodeLine{00072\ }
@@ -43,7 +44,7 @@
 \DoxyCodeLine{00104\ }
 \DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Control\ Flow\ -\/-\/-\/}}
 \DoxyCodeLine{00106\ }
-\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_a1cc5668fdf4d5bd99ee21c4f91c6aca3}{Reset}}();}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_a1c901eb9c0357806de35654a38c7fbba}{Reset}}();}
 \DoxyCodeLine{00114\ }
 \DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}}();}
 \DoxyCodeLine{00122\ }
@@ -51,7 +52,7 @@
 \DoxyCodeLine{00124\ }
 \DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{OdeSolver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time);}
 \DoxyCodeLine{00133\ }
-\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{OdeSolver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0);}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{class_ode_solver_aead5f819e881f42a8c398d48678e4e16}{OdeSolver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0);}
 \DoxyCodeLine{00142\ }
 \DoxyCodeLine{00143\ \textcolor{keyword}{protected}:}
 \DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ \mbox{\hyperlink{class_ode_solver_a9155f5d877dad198b513d24150dff5a4}{ode\_}};}

@@ -22,7 +22,7 @@ Inheritance diagram for Runge\+Kutta\+:\begin{figure}[H]
 \item 
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ode\+Solver} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step}} ()
+virtual void \mbox{\hyperlink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step}} ()
 \begin{DoxyCompactList}\small\item\em Updates the solution\+\_\+ and time for next time step. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ode_solver_a662cff46a2025f9b99295d5fcefbe0b6}{Set\+End\+Time}} (double end\+\_\+time)
 \begin{DoxyCompactList}\small\item\em Sets the simulation end time. \end{DoxyCompactList}\item 
@@ -42,7 +42,7 @@ int \mbox{\hyperlink{class_ode_solver_ad0bbb5894abf1b510845a61e9b42ea61}{Get\+Nu
 \item 
 double \mbox{\hyperlink{class_ode_solver_a93ba8bfb62598239c78200ca6253fa02}{Get\+Current\+Time}} () const
 \item 
-virtual void \mbox{\hyperlink{class_ode_solver_a1cc5668fdf4d5bd99ee21c4f91c6aca3}{Reset}} ()
+virtual void \mbox{\hyperlink{class_ode_solver_a1c901eb9c0357806de35654a38c7fbba}{Reset}} ()
 \begin{DoxyCompactList}\small\item\em Resets the solver state to the initial conditions. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}} ()
 \begin{DoxyCompactList}\small\item\em Executes the simulation loop (Batch Mode). \end{DoxyCompactList}\item 
@@ -55,7 +55,7 @@ void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}
 \begin{DoxyCompactItemize}
 \item 
 const \mbox{\hyperlink{class_ode}{Ode}} \& {\bfseries ode\+\_\+}
-\begin{DoxyCompactList}\small\item\em Reference to the \doxylink{class_o_d_e}{ODE} problem definition. Guaranteed to be valid as long as the user maintains the \doxylink{class_ode}{Ode} object scope. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Reference to the ODE problem definition. Guaranteed to be valid as long as the user maintains the \doxylink{class_ode}{Ode} object scope. \end{DoxyCompactList}\item 
 double {\bfseries start\+\_\+time\+\_\+}
 \begin{DoxyCompactList}\small\item\em The simulation start time. \end{DoxyCompactList}\item 
 double {\bfseries end\+\_\+time\+\_\+}
@@ -63,17 +63,19 @@ double {\bfseries end\+\_\+time\+\_\+}
 double {\bfseries step\+\_\+size\+\_\+}
 \begin{DoxyCompactList}\small\item\em The time step (dt). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries solution\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\item 
 double {\bfseries current\+\_\+time\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\label{doc-func-members}
+\Hypertarget{class_runge_kutta_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_runge_kutta_aa30cf8dbdf67cb07ca8c3a48d6427605}\label{class_runge_kutta_aa30cf8dbdf67cb07ca8c3a48d6427605} 
-\index{RungeKutta@{RungeKutta}!ComputeStep@{ComputeStep}}
+\Hypertarget{class_runge_kutta_aa30cf8dbdf67cb07ca8c3a48d6427605}\index{RungeKutta@{RungeKutta}!ComputeStep@{ComputeStep}}
 \index{ComputeStep@{ComputeStep}!RungeKutta@{RungeKutta}}
 \doxysubsubsection{\texorpdfstring{ComputeStep()}{ComputeStep()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Runge\+Kutta\+::\+Compute\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_runge_kutta_aa30cf8dbdf67cb07ca8c3a48d6427605} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Runge\+Kutta\+::\+Compute\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -90,7 +92,6 @@ Implements \mbox{\hyperlink{class_ode_solver_a35a9d27d9c3b484dae31ed1c6905a04a}{
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/runge\+\_\+kutta\+\_\+solver.\+h\item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/src/runge\+\_\+kutta\+\_\+solver.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/runge\+\_\+kutta\+\_\+solver.\+h\end{DoxyCompactItemize}

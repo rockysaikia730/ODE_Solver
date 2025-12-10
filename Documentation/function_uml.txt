@@ -1,0 +1,20 @@
+class Function
+  public virtual ~Function()
+  public virtual DynamicTensor Eval(double t, const DynamicTensor& y) const = 0
+  public virtual DynamicTensor Grad(double t, const DynamicTensor& y, double dy) const
+
+class ParsedFunction(Function)
+  public ParsedFunction(const std::vector<std::string>& expressions, const std::vector<size_t>& shape, const std::vector<std::string>& derivatives, const std::vector<size_t>& derivative_shape)
+                        
+                        
+
+  public DynamicTensor Eval(double t, const DynamicTensor& y) const override
+  public DynamicTensor Grad(double t, const DynamicTensor& y, double dy) const override
+
+  private std::vector<std::string> expressions_
+  private std::vector<size_t> function_shape_
+  private std::vector<std::string> derivatives_
+  private std::vector<size_t> derivative_shape_
+  private bool VerifyDimensions(const std::vector<size_t>& shape, const DynamicTensor& y) const
+  private DynamicTensor Compute(const std::vector<std::string>& expressions,const std::vector<size_t>& shape,double t,const DynamicTensor& y,bool check_shape) const
+

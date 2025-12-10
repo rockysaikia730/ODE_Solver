@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['hasdebugstringandshortdebugstring_0',['HasDebugStringAndShortDebugString',['../classtesting_1_1internal_1_1_has_debug_string_and_short_debug_string.html',1,'testing::internal']]],
-  ['hasdebugstringmethods_1',['HasDebugStringMethods',['../struct_has_debug_string_methods.html',1,'']]],
-  ['hexvalreader_2',['HexValReader',['../class_hex_val_reader.html',1,'']]],
-  ['holder_3',['Holder',['../structtesting_1_1internal_1_1_impl_base_1_1_holder.html',1,'testing::internal::ImplBase']]]
+  ['newtonraphson_0',['NewtonRaphson',['../class_newton_raphson.html',1,'']]]
 ];

@@ -3,6 +3,7 @@
 \mbox{\hyperlink{dynamic__tensor_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ DYNAMIC\_TENSOR\_H\_}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ DYNAMIC\_TENSOR\_H\_}}
 \DoxyCodeLine{00011\ }
@@ -11,15 +12,15 @@
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <complex>}}
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <variant>}}
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \{}
 \DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Type\ \{\ REAL,\ COMPLEX\ \};}
 \DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{using\ }Complex\ =\ std::complex<double>;}
 \DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}();}
 \DoxyCodeLine{00039\ }
-\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}(\textcolor{keyword}{const}\ std::vector<size\_t>\&\ input\_shape,\ \textcolor{keywordtype}{double}\ initial\_value);}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_a595b2d7fb3043fd29ac32cf77194aee7}{DynamicTensor}}(\textcolor{keyword}{const}\ std::vector<size\_t>\&\ input\_shape,\ \textcolor{keywordtype}{double}\ initial\_value);}
 \DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}(\textcolor{keyword}{const}\ std::vector<size\_t>\&\ input\_shape,\ Complex\ initial\_value);}
-\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}(\textcolor{keyword}{const}\ std::vector<double>\&\ data,\ \textcolor{keyword}{const}\ std::vector<size\_t>\&\ input\_shape\ =\ \{\});}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_a34e9dacaef2bd672eda1667d5380b7c1}{DynamicTensor}}(\textcolor{keyword}{const}\ std::vector<double>\&\ data,\ \textcolor{keyword}{const}\ std::vector<size\_t>\&\ input\_shape\ =\ \{\});}
 \DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}(\textcolor{keyword}{const}\ std::vector<Complex>\&\ data,\ \textcolor{keyword}{const}\ std::vector<size\_t>\&\ input\_shape\ =\ \{\});}
 \DoxyCodeLine{00059\ }
 \DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}(\textcolor{keywordtype}{double}\ data);}
@@ -46,23 +47,23 @@
 \DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
 \DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{auto}\ end()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ GetVec<T>().end();\}}
 \DoxyCodeLine{00091\ }
-\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a951b70d3817858d411b94771bc7207e0}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ second\_tensor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a951b70d3817858d411b94771bc7207e0}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\&\ second\_tensor)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00097\ }
-\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a951b70d3817858d411b94771bc7207e0}{operator+}}(\textcolor{keywordtype}{double}\ scalar)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a951b70d3817858d411b94771bc7207e0}{operator+}}(\textcolor{keywordtype}{double}\ scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ tensor);}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a4ce651a0af3018351f27d9c397e8cd0e}{operator+}}(\textcolor{keywordtype}{double}\ scalar)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a951b70d3817858d411b94771bc7207e0}{operator+}}(\textcolor{keywordtype}{double}\ scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\&\ tensor);}
 \DoxyCodeLine{00103\ }
-\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a951b70d3817858d411b94771bc7207e0}{operator+}}(Complex\ scalar)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a951b70d3817858d411b94771bc7207e0}{operator+}}(Complex\ scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ tensor);}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_abc4e56d2f5ee63b4907e50bd44049721}{operator+}}(Complex\ scalar)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a951b70d3817858d411b94771bc7207e0}{operator+}}(Complex\ scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\&\ tensor);}
 \DoxyCodeLine{00109\ }
-\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a5c8bb1fa42a99911cfda9336b1876554}{operator*}}(\textcolor{keywordtype}{double}\ scalar)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a5c8bb1fa42a99911cfda9336b1876554}{operator*}}(\textcolor{keywordtype}{double}\ scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ tensor);}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a5c8bb1fa42a99911cfda9336b1876554}{operator*}}(\textcolor{keywordtype}{double}\ scalar)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a5c8bb1fa42a99911cfda9336b1876554}{operator*}}(\textcolor{keywordtype}{double}\ scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\&\ tensor);}
 \DoxyCodeLine{00115\ }
-\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a05dae46dbd83e82cfeb69d331799fc6f}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ second\_tensor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a05dae46dbd83e82cfeb69d331799fc6f}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\&\ second\_tensor)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00120\ }
-\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a5c8bb1fa42a99911cfda9336b1876554}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ second\_tensor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a2ef2a8a7880995863f339d4a064a3d4f}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\&\ second\_tensor)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00125\ }
-\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a1dccb4f844dc683c29af7e962eeef03b}{operator/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ second\_tensor)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a1dccb4f844dc683c29af7e962eeef03b}{operator/}}(\textcolor{keywordtype}{double}\ scalar)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_a1dccb4f844dc683c29af7e962eeef03b}{operator/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\&\ second\_tensor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor_aaf404565bd07c4410bccaa3b94373323}{DynamicTensor}}\ \mbox{\hyperlink{class_dynamic_tensor_aa34c71de9006beb7962e333128d35f9b}{operator/}}(\textcolor{keywordtype}{double}\ scalar)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00134\ }
 \DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_dynamic_tensor_a80d631cc2d2151a0e3c9da15edbd870d}{size}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00140\ }

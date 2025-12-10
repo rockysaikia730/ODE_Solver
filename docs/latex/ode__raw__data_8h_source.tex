@@ -11,14 +11,14 @@
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}root\_finder.h"{}}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00009\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ode_raw_data}{OdeRawData}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}{OdeRawData}}\ \{}
 \DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}{OdeRawData}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00021\ }
 \DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_abc985a147144b568f8158166b4b0e51d}{\string~OdeRawData}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}{OdeRawData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ode_raw_data}{OdeRawData}}\&\ other);}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_a3cf1725b2b33f4a867f117adfe4af11f}{OdeRawData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}{OdeRawData}}\&\ other);}
 \DoxyCodeLine{00031\ }
-\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data}{OdeRawData}}\&\ \mbox{\hyperlink{struct_ode_raw_data_a9f5c0f8a439d20553e51daa09735324e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ode_raw_data}{OdeRawData}}\&\ other);}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}{OdeRawData}}\&\ \mbox{\hyperlink{struct_ode_raw_data_a9f5c0f8a439d20553e51daa09735324e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}{OdeRawData}}\&\ other);}
 \DoxyCodeLine{00036\ }
 \DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\_params}}\ \{}
 \DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t0;}
@@ -32,21 +32,26 @@
 \DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ max\_iterations\ =\ 1000;}
 \DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tolerance\ =\ 1e-\/6;}
 \DoxyCodeLine{00056\ \ \ \ \ \};}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{struct_ode_raw_data_aea54b8bbd84870e883509af463d1c1b0}{y0}};}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00066\ \ \ \ \ std::unique\_ptr<Function>\ \mbox{\hyperlink{struct_ode_raw_data_ae758b90b3f8e1644570efc2ce8e57c87}{function}};\ \textcolor{comment}{//\ Or\ should\ it\ be\ a\ shared\_ptr?}}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\_params}}\ \mbox{\hyperlink{struct_ode_raw_data_a95452e49794ae26225d0cdeeee663cec}{time\_params}};}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{solver\_params}}\ \mbox{\hyperlink{struct_ode_raw_data_ac471176ce831357580713545540425a5}{solver\_params}};}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00081\ \ \ \ \ std::shared\_ptr<RootFinder>\ \mbox{\hyperlink{struct_ode_raw_data_aed44367a2804104047b9394291cb0d58}{root\_finder}};}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00086\ \ \ \ \ std::unique\_ptr<Function>\ \mbox{\hyperlink{struct_ode_raw_data_a96cfff0fb5bc7cd161463fde5911b5e4}{derivative}};}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \};}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ODE\_RAW\_DATA\_H\_}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ode_raw_data_1_1function__params}{function\_params}}\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::vector<std::string>\ function\_expressions;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::vector<size\_t>\ function\_shape;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::vector<std::string>\ derivative\_expressions;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ std::vector<size\_t>\ derivative\_shape;}
+\DoxyCodeLine{00066\ \ \ \ \ \};}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{struct_ode_raw_data_aea54b8bbd84870e883509af463d1c1b0}{y0}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_1_1function__params}{function\_params}}\ \mbox{\hyperlink{struct_ode_raw_data_1_1function__params}{function\_params}};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\_params}}\ \mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\_params}};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{solver\_params}}\ \mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{solver\_params}};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \ \ \ \ std::shared\_ptr<RootFinder>\ \mbox{\hyperlink{struct_ode_raw_data_aed44367a2804104047b9394291cb0d58}{root\_finder}};}
+\DoxyCodeLine{00091\ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ std::shared\_ptr<const\ Function>\ \mbox{\hyperlink{struct_ode_raw_data_a2cb79c703cb13dbc7d6e01307b61414e}{function}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ODE\_RAW\_DATA\_H\_}}
 
 \end{DoxyCode}
