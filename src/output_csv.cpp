@@ -4,31 +4,45 @@
 #include "output_csv.h"
 #include "ode_solver.h"
 
-OutputCsv::OutputCsv(const std::string& filename, char separator)
-    : Output(filename, separator) {
+//---------------------------------------------------------------------//
+// Constructor(s)
+//---------------------------------------------------------------------//
+OutputCsv::OutputCsv(const std::string& filename, char separator, char element_separator)
+    : Output(filename, separator, element_separator) {
         EnsureFileExists();
-    }
+}
 
+//---------------------------------------------------------------------//
+// Getters and Setters
+//---------------------------------------------------------------------//
+
+// get the separator character
 char OutputCsv::GetSeparator() const {
     return separator_;  
 }
 
+// set the separator character
 void OutputCsv::SetSeparator(char separator) {
     separator_ = separator;
 }
 
+// get the header row
 std::vector<std::string> OutputCsv::GetHeader() const {
     return header_;
 }
 
+// set the header row
 void OutputCsv::SetHeader(const std::vector<std::string>& header) {
     header_ = header;
 }
-void OutputCsv::Write(const OdeSolver& solver) {
 
-    // Overwrite file, do NOT append for final-only output
-    std::ofstream file(filename_, std::ios::binary); // Open in binary mode to avoid newline translation
+//---------------------------------------------------------------------//
+// Protected Methods
+//---------------------------------------------------------------------//
 
+// File specific setup for CSV output
+void OutputCsv::FileSpecificSetup(std::ofstream& file) const {
+    // Write header row
     if(!header_.empty()) {
         for(size_t i = 0; i < header_.size(); ++i) {
             file << header_[i];
@@ -38,21 +52,6 @@ void OutputCsv::Write(const OdeSolver& solver) {
         }
         file << "\n";
     }
-
-    // Writing final time  and other numerical parameters
-    file << "t" << separator_ << solver.GetCurrentTime() << "\n";
-    file << "step_size" << separator_ << solver.GetStepSize() << "\n";
-    file << "number_of_steps" << separator_ << solver.GetNumberOfSteps() << "\n";
-
-    // writing solution
-    const DynamicTensor& solution = solver.GetSolution();
-    std::vector<size_t> shape = solution.get_shape();
-    std::vector<size_t> index(shape.size(), 0);
-    file << "y" << separator_;
-    WriteTensorRecursive(file, solution, shape, index, 0, ',');
-
-    file << "\n";
-    file.close();
 }
 
 

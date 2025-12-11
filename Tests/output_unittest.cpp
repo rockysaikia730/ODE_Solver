@@ -52,7 +52,7 @@ TEST(OutputTest, CsvOutput)
     EXPECT_NE(contents.find("step_size;0.1"), std::string::npos);
 
     // Tensor format (your exact format)
-    EXPECT_NE(contents.find("y;[1, 2]"), std::string::npos)
+    EXPECT_NE(contents.find("y; [1, 2]"), std::string::npos)
         << "Tensor did not match expected CSV format: " << contents;
 }
 

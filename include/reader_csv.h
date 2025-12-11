@@ -31,6 +31,7 @@ public:
      * @brief Reads data from the CSV file and populates the raw_data_ member variable.
      */
     virtual void Read() override;
+    
 private:
 
     /**

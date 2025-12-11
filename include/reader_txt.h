@@ -29,8 +29,15 @@ public:
      */
     virtual void Read() override;
 
-    private:
+private:
+    /**
+     * @brief The character that indicates the start of a comment line.
+     */
     char comment_char_;
+    
+    /**
+     * @brief The character that separates multiple key-value pairs in a single line.
+     */
     char inline_separator_;
 };
 

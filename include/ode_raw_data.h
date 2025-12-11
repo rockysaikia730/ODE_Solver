@@ -1,11 +1,11 @@
 #ifndef ODE_RAW_DATA_H_
 #define ODE_RAW_DATA_H_
 
+#include <memory>
 #include "dynamic_tensor.h"
-#include "solver_methods.h"
 #include "function.h"
 #include "root_finder.h"
-#include <memory>
+
 
 /**
  * @struct OdeRawData
@@ -14,28 +14,6 @@
  * This struct serves as an intermediate container for raw data
 */
 struct OdeRawData {
-    /**
-     * @brief Default constructor.
-     */
-    OdeRawData() = default;
-
-    /**
-     * @brief Default Destructor.
-     */
-    ~OdeRawData() = default;
-
-    /**
-     * @brief Copy Constructor.
-     * The default implementation performs adequate member-wise copying.
-     */
-    OdeRawData(const OdeRawData& other) = default;
-
-    /**
-     * @brief Copy Assignment Operator.
-     * The default implementation performs adequate member-wise copying.
-     */
-    OdeRawData& operator=(const OdeRawData& other) = default;
-
     /**
      * @struct time_params
      * @brief Structure to hold time-related parameters for ODE solving.
@@ -67,12 +45,6 @@ struct OdeRawData {
      * @brief Structure to hold solver-related parameters for ODE solving.
      */
     struct solver_params {
-
-        /**
-         * @brief The numerical solver method to be used.
-         */
-        SolverMethod method = SolverMethod::kRungeKutta4;
-
         /**
          * @brief Maximum number of iterations for iterative solvers.
          */
@@ -83,6 +55,7 @@ struct OdeRawData {
          */
         double tolerance = 1e-6;
     };
+    
     /**
      * @struct function_params
      * @brief Structure to hold function-related parameters for ODE solving.

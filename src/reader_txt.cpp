@@ -4,42 +4,54 @@
 #include "reader_txt.h"
 #include "parsed_function.h"
 
+//------------------------------------------------------------//
+// Constructor(s)
+//------------------------------------------------------------//
 TxtReader::TxtReader(const std::string& file_name, char separator, char inline_separator, char comment_char)
     : Reader(file_name, separator), inline_separator_(inline_separator), comment_char_(comment_char) {}
 
 
+//------------------------------------------------------------//
+// Public Method(s)
+//------------------------------------------------------------//
 void TxtReader::Read() {
+
+    // Open the file
     if (!Open()) {
-        // Handle error! MISSING IMPLEMENTATION
         throw std::runtime_error("Failed to open file: " + file_name_);
     }
 
     std::string line;
 
+    // Read file line by line
     while (std::getline(file_stream_, line)) {
         std::string trimmed = TrimString(line);
         if(trimmed.empty() || LineStartsWith(trimmed, std::string(1, comment_char_))) {
             continue; // Skip empty lines and comment lines
         }
 
-        auto pairs = Split(trimmed, inline_separator_); // Split line into multiple key-value pairs
+        // Split line into multiple key-value pairs (makes it possible to have multiple pairs in one line)
+        auto pairs = Split(trimmed, inline_separator_); 
         pairs = Trim(pairs);
 
         for (const auto& pair : pairs) {
-            auto tokens = Split(pair, separator_); // Split each pair into key and value
+
+            // Split each pair into key and value
+            auto tokens = Split(pair, separator_); 
             tokens = Trim(tokens);
 
             if (tokens.size() != 2) {
-                // Handle error! MISSING IMPLEMENTATION
                 throw std::invalid_argument("Invalid key-value pair: " + pair);
             }
 
-            std::string key = ToLower(TrimString(tokens[0]));
+            // interpret key-value pair
+            std::string key = TrimString(tokens[0]);
             std::string value = TrimString(tokens[1]);
 
             InterpretKeyValuePair(key, value);
         }
     }
+
     Close();
 
     if (raw_data_.function_params.function_expressions.empty()) {

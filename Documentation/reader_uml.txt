@@ -1,7 +1,7 @@
 class Reader
   public Reader(const std::string& file_name, char separator = ';')
   public virtual ~Reader()
-  public virtual void Read() = 0
+  public pure virtual void Read() = 0
   public std::string GetFileName() const
   public std::string GetFileExtension() const
   public void SetFileName(const std::string& file_name)
@@ -30,8 +30,6 @@ class Reader
   protected double ParseDouble(const std::string& str) const
   protected void InterpretKeyValuePair(const std::string& key, const std::string& value)
   protected std::string TrimString(const std::string& s) const
-  protected void ParseSolverMethodFromString(const std::string& method_string)
-
   private template <typename T>
   private std::vector<size_t> ParseTensorRecursive(const std::string& str, size_t& pos, std::vector<T>& data)
   private bool HasComplexNumber(const std::string& str) const

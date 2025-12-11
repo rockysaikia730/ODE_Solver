@@ -8,24 +8,18 @@
 
 /**
  * @brief Derived class for outputting ODE solver results in TXT format.
+ * The output allows comments denoted by a specific character, which can be added through the
+ * SetHeader method. The printing is done in 
  */
 class OutputTxt : public Output {
 public:
     /**
      * @brief Constructor.
-     * 
      * @param filename The name of the TXT output file.
      * @param separator The separator character used in the TXT file.
      * @param comment_char The character used to denote comments in the TXT file.
      */
-    OutputTxt(const std::string& filename, char separator = ' ', char comment_char = '#');
-
-    /**
-     * @brief Overrides the Write method to output results in TXT format.
-     * 
-     * @param solver A constant reference to the OdeSolver instance containing results to output.
-     */
-    void Write(const OdeSolver& solver) override;
+    OutputTxt(const std::string& filename, char separator = ' ', char comment_char = '#', char element_separator = ',');
 
     /**
      * @brief Gets the comment character used in the TXT file.
@@ -48,8 +42,14 @@ public:
      * @param header The new header lines.
      */
     void SetHeader(const std::vector<std::string>& header);
+protected:
+    /**
+     * @brief File specific setup for TXT output.
+     * @param file The output file stream.
+     */
+    void FileSpecificSetup(std::ofstream& file) const override;
 
-    private:
+private:
     /**
      * @brief The character used to denote comments in the TXT file.
      */

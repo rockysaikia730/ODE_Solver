@@ -5,6 +5,7 @@ class OutputCsv(Output)
   public void SetSeparator(char separator)
   public std::vector<std::string> GetHeader() const
   public void SetHeader(const std::vector<std::string>& header)
+  protected void FileSpecificSetup(std::ofstream& file) const
 
   private std::vector<std::string> header_
 
@@ -16,13 +17,15 @@ class OutputTxt(Output)
   public std::vector<std::string> GetHeader() const
   public void SetHeader(const std::vector<std::string>& header)
 
+  protected void FileSpecificSetup(std::ofstream& file) const
+
   private char comment_char_
   private std::vector<std::string> header_
 
 class Output
   public Output(const std::string& filename, char separator)
   public virtual ~Output()
-  public virtual void Write(const OdeSolver& solver) = 0
+  public virtual void Write(const OdeSolver& solver)
   public std::string GetFilename() const
   public void SetFilename(const std::string& filename)
 
@@ -30,3 +33,4 @@ class Output
   protected char separator_
   protected void EnsureFileExists() const
   protected void WriteTensorRecursive(std::ofstream& file,const DynamicTensor& tensor, const std::vector<size_t>& shape,std::vector<size_t>& index, size_t dim, char separator) const
+  protected pure void FileSpecificSetup(std::ofstream& file) const

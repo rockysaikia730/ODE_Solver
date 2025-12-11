@@ -20,7 +20,8 @@ Below we will provide an overview of the classes and how they can be used.
 
 ### 1.1.1 Reader Classes
 
-At the time of writing, the `Reader` class is the parent virtual class for all readers in the project. It defines the shared interface for reading input and converting it into an `OdeRawData` object, which is then used to construct an `Ode`. The current implementations are `ReaderTxt` for text files and `ReaderCsv` for csv files. Notice that in our conception, the reader is not a dumb reader: it is tasked with creating tensor or function objects as well. The limitations will come at the end.
+At the time of writing, the `Reader` class is the parent virtual class for all readers in the project. It defines the shared interface for reading input and converting it into an `OdeRawData` object, which is then used to construct an `Ode`. The current implementations are `ReaderTxt` for text files and `ReaderCsv` for csv files. Notice that in our conception, the reader is not a dumb reader: it is tasked with creating tensor or function objects as well. The limitations will come at the end. The class diagram is included below:
+![Reader class diagram](Documentation/reader_uml.png)
 
 When reading from a file the format must follow a strict set of rules. Only key value pairs with recognised keys are processed. Each key expects a specific type of data, and incorrect or inconsistent data will cause the reader to throw an exception.
 
@@ -42,16 +43,13 @@ The accepted keys are listed below:
 5. **`number_of_steps`**  
    An alternative to `step_size`. Specifies how many steps the solver should take. Must be an integer written as a real number.
 
-6. **`solver_method`**  
-   A string that specifies which solver method is used. The value is converted to lower case and passed to `ParseSolverMethodFromString`.
-
-7. **`tolerance`**  
+6. **`tolerance`**  
    A real number that defines the tolerance used by adaptive or iterative methods. Stored in `solver_params.tolerance`.
 
-8. **`max_iterations`**  
+7. **`max_iterations`**  
    A whole number written as a real that specifies the maximum number of iterations allowed in methods that require internal iteration.
 
-9. **`function`**  
+8. **`function`**  
    Defines the right hand side of the system.  
    The value must be a nested tensor of expressions.  
    The parser extracts:
@@ -59,7 +57,7 @@ The accepted keys are listed below:
    - `function_shape`  
    No function object is created at this stage. This function creation is delegated to the sub-classes because the function needs to be created with the derivatives, and at the moment of parsing, we do not know if derivatives are provided or not.
 
-10. **`derivative`**  
+9. **`derivative`**  
     Defines the Jacobian of the system if supplied. It must be a tensor of expressions of the same shape expected for the derivative of the vector field.  
     The parser extracts:
     - `derivative_expressions`  
@@ -101,6 +99,9 @@ Finally, the `ReaderCsv` and `ReaderTxt` create a `ParsedFunction` instance. Thi
    - or that the expressions are mathematically compatible.  
    This must be improved to avoid silent errors when the derivative is supplied incorrectly.
 
+5. **Overuse of trimming**
+   I think the trimming of whitespaces throughout the code is done very frequently, so that a string might be trimmed multiple times, which decreases performance. This should be decreased if possible.
+
 ### Running the Reader Unit Tests
 
 The project uses CMake to configure and build all components, including the unit tests. The instructions below show how to configure the build directory and execute the tests.
@@ -122,7 +123,8 @@ A test case running through a whole problem will be described in the end of the 
 
 The `OdeRawData` structure acts as a container that stores all information extracted by the readers.  
 It is not responsible for verification, consistency checks or object creation.  
-Its purpose is simply to hold the raw user input in a structured format so that the `Ode` class can construct the actual mathematical object later.
+Its purpose is simply to hold the raw user input in a structured format so that the `Ode` class can construct the actual mathematical object later. The class diagram is shown below:
+![Ode class diagram with the raw data](Documentation/ode_uml.png)
 
 An `OdeRawData` instance contains three groups of parameters:
 
@@ -132,12 +134,13 @@ An `OdeRawData` instance contains three groups of parameters:
    - `t_final` the final time  
    - `step_size` if fixed step integration is used  
    - `number_of_steps` as an alternative method to define the step size
+   From here, only $t_0$ is passed into the Ode, the rest are only useful for the solver.
 
 2. **Solver parameters**  
    These parameters configure the behaviour of solvers that require iterative or adaptive strategies. They include:
    - `tolerance` a real number that controls accuracy  
-   - `max_iterations` the maximum number of internal iterations  
-   - `solver_method` an enumeration that describes which solver is used
+   - `max_iterations` the maximum number of internal iterations
+   These will nnot be passed on to the the Ode, but can be passed into the solver.
 
 3. **Function parameters**  
    These define the right hand side of the ordinary differential equation and optionally its derivative. They include:
@@ -145,72 +148,38 @@ An `OdeRawData` instance contains three groups of parameters:
    - `function_shape` the shape of the right hand side tensor  
    - `derivative_expressions` the Jacobian expressions if supplied  
    - `derivative_shape` the shape of the Jacobian  
+   These are used to create the instance of a parsed function, and only serve as a storage for when the reader has not yet constructed the function.
 
 Finally, `OdeRawData` contains the initial condition:
 
 - `y0` a `DynamicTensor` that represents the initial state of the system
+- `func_` which is a shared constant pointer to a function instance, created from the function parameters.
 
-All fields in `OdeRawData` are written exactly once by the reader and are then consumed by the `Ode` constructor.  
-The structure remains passive and does not attempt to interpret or validate the contents.
+All fields in `OdeRawData` are written exactly once by the reader and are then consumed by the `Ode` constructor. The structure remains passive and does not attempt to interpret or validate the contents.
 
 ---
 ### 1.1.3 The `Ode` Class
 
-The `Ode` class represents the full definition of an ordinary differential equation problem. It is constructed either directly from numerical values or indirectly from data supplied by a reader. Its main role is to gather all components required to describe the initial value problem and to provide uniform access to them for the solvers.
-
-An instance of `Ode` always stores:
-
+The `Ode` class represents the full definition of an ordinary differential equation problem. It is constructed either directly from numerical values or from data read by a reader. Its main role is to gather all components required to describe the initial value problem. Thereofre, it does not save the numerical parameters required to solve it. An `Ode` has as attributes:
 1. the initial time `t0`  
 2. the initial condition `y0` as a `DynamicTensor`  
 3. a name used to identify the system  
 4. a pointer to a `Function` object that represents the right hand side  
 5. an optional derivative function, supplied indirectly through the `Function` interface  
-6. an optional `RootFinder` strategy for implicit solvers
+6. an optional `RootFinder` for implicit solvers.
 
-The class offers several constructors in order to support different creation scenarios:
+See the class diagram above.
 
+An `Ode` can be created by:
 - constructing directly from numerical values and a `Function`  
 - constructing from scalar initial conditions, which are promoted to a rank one tensor  
 - constructing from a `Reader`  
 - constructing from an `OdeRawData` structure  
 - copying from another `Ode`
 
-Once constructed, an `Ode` instance exposes the following responsibilities:
+An `Ode` holds a pointer to a function (const, so that it cannot be modified) and we can evaluate said function through the `Evaluate` method. This forwards the request directly to this function and returns its value as a `DynamicTensor`. The `Ode` also provides access to the gradient of the function through the `Grad` method.
 
-1. **Storing the initial conditions**  
-   The initial time and initial state tensor are stored internally and accessed through `GetTimeIn` and `GetCondIn`.  
-   These values remain unchanged throughout the lifetime of the solver unless explicitly modified through setter methods.
-
-2. **Holding the right hand side function**  
-   The pointer `func_` stores a `Function` instance that represents the map  
-   $$
-       f(t, y) = \frac{\mathrm{d}y}{\mathrm{d}t}.
-   $$  
-   The method `Evaluate` forwards the request directly to this function and returns its value as a `DynamicTensor`.
-
-3. **Storing and providing access to the derivative**  
-   The class supports analytical gradients of the right hand side through  
-   $$
-       \nabla f(t, y).
-   $$  
-   This is accessed through the method `Grad`. Internally, this is delegated to the derivative implementation provided by the `Function`.
-
-4. **Providing a root finding strategy**  
-   The optional `RootFinder` pointer is available for implicit solvers that must solve internal nonlinear systems. This is not provided by the reader and has remained unused for the time being. The `Ode` class does not perform any root finding itself; it simply stores the strategy for use by the solver.
-
-5. **Providing safe access to its data**  
-   The class contains getter methods for:
-   - the initial time  
-   - the initial condition  
-   - the system name  
-   - the right hand side function  
-   - the root finder strategy  
-
-   These methods ensure that solver classes can reliably access all required information without modifying it unintentionally.
-
-The `Ode` class performs only limited validation.  
-It assumes that the data provided by the reader or by the user is correct and consistent.  
-It does not check the compatibility between the right hand side and the derivative function, nor does it verify the size of the tensors involved. Another shortcoming of the class is that we do not use the `RootFinder` for anyhting in the ode class, and the name of the `Ode` is also redundant for the time being.
+The `Ode` class verifies the size of its function and the validity of the initial condition (if one of them is changed through a getter or setter) by calling upon the evaluate method of the function and passing the initial condition as parameter. This assumes the evaluate method of the function internally checks the validity of the argument. No check is done on the validity of the derivatives. Another shortcoming of the class is that we do not use the `RootFinder` for anyhting in the ode class, and the name of the `Ode` is also redundant for the time being.
 
 ### Running the Ode Unit Tests
 The unittests can be run in the exact same way as the reader tests. In fact, all future tests are ran by those commands.
@@ -218,7 +187,8 @@ The unittests can be run in the exact same way as the reader tests. In fact, all
 ---
 ### 1.1.4 The `Function` Class
 
-The `Function` class defines the abstract interface for representing the right hand side of an ordinary differential equation.  
+The `Function` class defines the abstract interface for representing any function. Here, it is used to represent the right hand side of an ordinary differential equation. The class diagram is shown below:
+![Function class diagram](Documentation/function_uml.png)
 It models a mapping of the form
 
 $$
@@ -227,7 +197,7 @@ $$
 
 where `y` is a `DynamicTensor` of arbitrary shape. Solvers interact only with this interface and remain unaware of the internal implementation of the function. A user can define any of their own functions that they want to test, simply by overloading the `Eval` method.
 
-The class exposes two central operations:
+The class has two main methods
 
 1. **Evaluating the function**
 
@@ -245,9 +215,6 @@ The class exposes two central operations:
    ```
    which computes the gradient using a central finite difference scheme. This enables implicit solvers to approximate Jacobians even when no analytical derivative is supplied. Subclasses may override this method to provide an exact gradient.
 
-
-The Function class is therefore an abstraction layer separating solver logic from mathematical evaluation. Solvers rely on this interface and remain entirely independent of how the function is implemented.
-
 ### Shortcomings of the Function class
 Right now, there is no checking mechanism provided for veryfying the shape of the function and the input tensor. This responsibility is delegated to the user to verify for the time being.
 ---
@@ -263,25 +230,41 @@ A `ParsedFunction` object is created from:
 
 This structure supports both scalar and tensor valued ODE systems. The responsibilities of the class are as follows.
 
-**Storing the expressions**
-The right hand side expressions are stored in `expressions_` together with their shape in `function_shape_`. If analytical derivatives are supplied, they are stored in `derivatives_` and `derivative_shape_`. These strings remain unchanged after construction and are evaluated at runtime whenever the solver requests a function value.
+The right hand side expressions are stored in `expressions_` together with their shape in `function_shape_`. If analytical derivatives are supplied, they are stored in `derivatives_` and `derivative_shape_`. These strings remain unchanged after construction and are evaluated at runtime whenever the solver requests a function value. The `Eval` method parses and evaluates each expression using muParserX. The variables `t` and the components of the tensor `y` are injected into the parser. The method returns a DynamicTensor whose shape matches the one supplied at construction. Internally the evaluation is performed by the helper method Compute, which rebuilds the output tensor from the flattened list of computed values. The shape is verified for this method.
 
-**Evaluating the function**
-parses and evaluates each expression using muParserX. The variables `t` and the components of the tensor `y` are injected into the parser. The method returns a DynamicTensor whose shape matches the one supplied at construction. Internally the evaluation is performed by the helper method Compute, which rebuilds the output tensor from the flattened list of computed values. The shape is verified for this method.
-
-**Providing analytical gradients**
-
-If derivative expressions are provided, the class overrides the gradient method so that
+Similarly, we provide a method to calculate the gradient at a point, provided that the derivatives are also given (with their size). In this case, the class overrides the gradient method so that
 ```cpp
 DynamicTensor Grad(double t, const DynamicTensor& y) const
 ```
-returns the exact analytical Jacobian. The derivative expressions are evaluated using the same mechanism as the main function. If no derivative expressions are supplied, the class falls back to the finite difference method inherited from the base class `Function`. The shape of the derivatives is not checked right now.
+returns the exact analytical Jacobian. The derivative expressions are evaluated using the same mechanism as the main function. If no derivative expressions are given, the class falls back to the finite difference method inherited from the base class `Function`. The shape of the derivatives is not checked right now.
 
-**Supporting tensor valued functions**
+---
+### 1.1.5 The `Output` Class
 
-Because both the function and its derivative are represented as flat vectors of expressions combined with explicit shape information, the class naturally supports multidimensional output. The underlying evaluation logic does not need to change when the size of the system grows.
+The `Output` class is the abstract parent class to output a solution produced by an `OdeSolver`. Currently, it only has two subclasses, `OutputTxt` and `OutputCsv`, therefore the parent class is more like a file output class. This structure allows us to keep the solver independent of any output format, while still enabling writing the result in a desired way. The output class diagram is shown below
+![The output class diagram](Documentation/output_uml.png)
 
-In practice, a `ParsedFunction` instance is usually created by a reader after parsing the `function` and `derivative` entries of an input file. This keeps the solvers entirely independent of muParserX and allows users to describe ODE systems symbolically in a flexible and readable format. 
+The idea is that once the solver has finished its computation, an output object receives the final time and the corresponding solution values and writes them to a file using a chosen format.
+
+The `Output` class defines the common behaviour for all output formats. The constructor takes the file name and an optional separator and ensures that the file can be created. The public methods are:
+
+- `Write(const OdeSolver& solver)` which now contains the shared logic for writing numerical solver data  
+- `GetFilename()` and `SetFilename()` for file name access
+
+The difference between the parent class and its subclasses is expressed through the virtual method  `FileSpecificSetup(std::ofstream& file)`. Each subclass overrides this method to insert its own header or format specific preamble, while the general writing process (final time, step size, number of steps, tensor output) is handled inside the parent `Write` method. This avoids repeating identical code in `OutputTxt` and `OutputCsv`. Other helping functions are:
+
+- `EnsureFileExists()` which creates the file if required  
+- `WriteTensorRecursive(...)` which writes a `DynamicTensor` to the file in the same way that we read them and prints complex numbers in the form `(real, imag)`.
+
+The distinction between `.txt` and `.csv` writers is then limited to formatting:
+
+- **`OutputTxt`** writes results in a plain text format. It includes a comment character `comment_char_` and a list of header lines `header_`. Its setup method writes each header line as a comment and the main write routine adds the key value pairs such as the final time `t`, the tensor `y`, and details like the step size.
+
+- **`OutputCsv`** writes in the same way but uses a single header row rather than comment lines.
+
+### Shortcomings
+
+This class was created quickly and does not yet print all useful data. Ideally, it would output all necessary information so that the simulation could be reconstructed entirely from the file. Additional output styles, such as plotting or allowing the printing of solutions at different points, would also be good extensions. 
 
 ---
 ### REMAINING TO DO THE SOLVER, Dynamic tensor, and the main.

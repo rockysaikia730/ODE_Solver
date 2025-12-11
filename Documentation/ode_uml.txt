@@ -51,7 +51,6 @@ class OdeRawData
     public size_t number_of_steps
 
   class SolverParams(OdeRawData)
-    public SolverMethod method
     public size_t max_iterations
     public double tolerance
 

@@ -7,22 +7,18 @@
 
 /**
  * @brief Derived class for outputting ODE solver results in CSV format.
+ * The output allows a customizable separator character, which can be set through the
+ * SetSeparator method or the constructor. A header row can also be specified using the
+ * SetHeader method.
  */
 class OutputCsv : public Output {
 public:
     /**
      * @brief Constructor.
-     * 
      * @param filename The name of the CSV output file.
+     * @param separator The separator character used in the CSV file.
      */
-    OutputCsv(const std::string& filename, char separator = ';');
-
-    /**
-     * @brief Overrides the Write method to output results in CSV format.
-     * 
-     * @param solver A constant reference to the OdeSolver instance containing results to output.
-     */
-    void Write(const OdeSolver& solver) override;
+    OutputCsv(const std::string& filename, char separator = ';', char element_separator = ',');
 
     /**
      * @brief Gets the separator character used in the CSV file.
@@ -46,6 +42,13 @@ public:
      */
     void SetHeader(const std::vector<std::string>& header);
 
+protected:
+    /**
+     * @brief File specific setup for CSV output. We write the header row here.
+     * @param file The output file stream.
+     */
+    void FileSpecificSetup(std::ofstream& file) const override;
+    
 private:
     /**
      * @brief A header row to the CSV file.
