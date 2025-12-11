@@ -1,0 +1,31 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 class DynamicTensor\
+   public DynamicTensor();\
+    public DynamicTensor(const std::vector<size_t>& input_shape, double initial_value);\
+    public DynamicTensor(const std::vector<size_t>& input_shape, Complex initial_value);\
+      public DynamicTensor(const std::vector<double>& data, const std::vector<size_t>& input_shape = \{\});\
+    public DynamicTensor(const std::vector<Complex>& data, const std::vector<size_t>& input_shape = \{\});\
+    public DynamicTensor(double data);\
+    public DynamicTensor(Complex data);\
+    public bool IsComplex() const;\
+    public DynamicTensor operator+(const DynamicTensor& second_tensor) const;\
+    public DynamicTensor operator*(double scalar) const;\
+    public friend DynamicTensor operator*(double scalar, const DynamicTensor& tensor);\
+    public DynamicTensor operator-(const DynamicTensor& second_tensor) const;\
+    public DynamicTensor operator/(double scalar) const;\
+    public size_t size() const;\
+    public const std::vector<size_t>& get_shape() const;\
+    public size_t rank() const;\
+    public template <typename T> T& at(const std::vector<size_t>& indices);\
+    public template <typename T> const T& at(const std::vector<size_t>& indices) const;\
+    private std::vector<size_t> shape_;\
+    private size_t calculate_index(const std::vector<size_t>& indices) const;\
+    private template <typename T> std::vector<T>& GetVec();\
+    private std::vector<double> data_;\
+    public friend std::ostream& operator\\<\\<(std::ostream& os, const DynamicTensor& tensor);}
