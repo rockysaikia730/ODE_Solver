@@ -110,9 +110,9 @@ The project uses CMake to configure and build all components, including the unit
 ```bash
 mkdir build
 cd build
-cmake ..
-cmake --build . --config Debug
-ctest -C Debug
+cmake -G "MinGW Makefiles" ..
+mingw32-make
+unittests
 ```
 
 A test case running through a whole problem will be described in the end of the report.
