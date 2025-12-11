@@ -18,7 +18,7 @@ Below we will provide an overview of the classes and how they can be used.
 
 ### 1.1 Handling inputs
 
-### Reader Classes
+### 1.1.1 Reader Classes
 
 At the time of writing, the `Reader` class is the parent virtual class for all readers in the project. It defines the shared interface for reading input and converting it into an `OdeRawData` object, which is then used to construct an `Ode`. The current implementations are `ReaderTxt` for text files and `ReaderCsv` for csv files. Notice that in our conception, the reader is not a dumb reader: it is tasked with creating tensor or function objects as well. The limitations will come at the end.
 
@@ -116,8 +116,9 @@ ctest -C Debug
 ```
 
 A test case running through a whole problem will be described in the end of the report.
+
 ---
-### The `OdeRawData` Structure
+### 1.1.2 The `OdeRawData` Structure
 
 The `OdeRawData` structure acts as a container that stores all information extracted by the readers.  
 It is not responsible for verification, consistency checks or object creation.  
@@ -151,8 +152,9 @@ Finally, `OdeRawData` contains the initial condition:
 
 All fields in `OdeRawData` are written exactly once by the reader and are then consumed by the `Ode` constructor.  
 The structure remains passive and does not attempt to interpret or validate the contents.
+
 ---
-### The `Ode` Class
+### 1.1.3 The `Ode` Class
 
 The `Ode` class represents the full definition of an ordinary differential equation problem. It is constructed either directly from numerical values or indirectly from data supplied by a reader. Its main role is to gather all components required to describe the initial value problem and to provide uniform access to them for the solvers.
 
@@ -214,7 +216,7 @@ It does not check the compatibility between the right hand side and the derivati
 The unittests can be run in the exact same way as the reader tests. In fact, all future tests are ran by those commands.
 
 ---
-### The `Function` Class
+### 1.1.4 The `Function` Class
 
 The `Function` class defines the abstract interface for representing the right hand side of an ordinary differential equation.  
 It models a mapping of the form
