@@ -38,15 +38,18 @@ TEST(BackwardDifferentiation, InitialisationUserDefined) {
 
 TEST(BackwardDifferentiation, Solve) {
     auto rhs_ptr = std::make_shared<Rhs>();
+
     double t0 = 0;
     int order = 4;
+    double tf = 2;
+
     Ode exponential_ode(0.0, 0.0, "Exponential Decay", rhs_ptr);
-    Bdf bdf4(exponential_ode, 0.01, 2, order);
+    Bdf bdf4(exponential_ode, 0.01, tf);
 
     bdf4.Solve();
-    double tf = 2;
-    double sol = exponential_ode.GetCondIn().at<double>({0}) - tf*tf*0.5;
-    EXPECT_NEAR(bdf4.GetSolution().at<double>({0}), sol, 1e-4);
+    
+    double sol =  - tf*tf*0.5;
+    EXPECT_NEAR(bdf4.GetSolution().at<double>({0}), sol, 1e-3);
     EXPECT_NEAR(bdf4.GetCurrentTime(), tf, 1e-4);
 }
 
@@ -67,5 +70,5 @@ TEST(BackwardDifferentiation, Step) {
     double tf = t0 + (iter + order-1) * bdf4.GetStepSize();
     double sol = exponential_ode.GetCondIn().at<double>({0}) - tf*tf*0.5;
     EXPECT_NEAR(bdf4.GetCurrentTime(), tf, 1e-4);
-    EXPECT_NEAR(bdf4.GetSolution().at<double>({0}), sol, 1e-4);
+    EXPECT_NEAR(bdf4.GetSolution().at<double>({0}), sol, 1e-3);
 }

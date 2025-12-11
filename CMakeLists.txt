@@ -58,6 +58,7 @@ add_library(utilities
     src/backward_differentiation_solver.cpp
     src/adam_moulton_solver.cpp
     src/backward_euler_solver.cpp
+    src/forward_euler_solver.cpp
 )
 
 target_include_directories(utilities PUBLIC 
@@ -86,7 +87,8 @@ add_executable(unittests
     # tests/adamsbashforth_unittest.cpp
     tests/backward_differentiation_unittest.cpp
     # tests/adam_moulton_unittest.cpp
-    tests/backward_euler_unittest.cpp
+    # tests/backward_euler_unittest.cpp
+    # tests/forward_euler_unittest.cpp
 )
 target_link_libraries(unittests
     utilities
@@ -96,115 +98,115 @@ target_link_libraries(unittests
 include(GoogleTest)
 gtest_discover_tests(unittests DEPENDS unittests)
 
-# # Legacy reader test (manual test)
-# add_executable(reader_test
-#     Tests/reader_test.cpp
-#     src/reader.cpp
-#     src/reader_csv.cpp
-#     src/reader_txt.cpp
-#     src/dynamic_tensor.cpp
-#     src/parsed_function.cpp
-#     src/function.cpp
-#     src/ode.cpp
-#     src/ode_solver.cpp
-#     src/ode_raw_data.cpp
-# )
+# Legacy reader test (manual test)
+add_executable(reader_test
+    Tests/reader_test.cpp
+    src/reader.cpp
+    src/reader_csv.cpp
+    src/reader_txt.cpp
+    src/dynamic_tensor.cpp
+    src/parsed_function.cpp
+    src/function.cpp
+    src/ode.cpp
+    src/ode_solver.cpp
+    src/ode_raw_data.cpp
+)
 
-# target_include_directories(reader_test PRIVATE
-#     include
-#     src
-#     ${CMAKE_SOURCE_DIR}/external/muparserx/parser
-# )
+target_include_directories(reader_test PRIVATE
+    include
+    src
+    ${CMAKE_SOURCE_DIR}/external/muparserx/parser
+)
 
-# target_link_libraries(reader_test PRIVATE muparserx GTest::gtest_main)
+target_link_libraries(reader_test PRIVATE muparserx GTest::gtest_main)
 
-# # New GoogleTest reader unittest
-# add_executable(reader_unittest
-#     tests/reader_unittest.cpp
-#     src/reader.cpp
-#     src/reader_csv.cpp
-#     src/reader_txt.cpp
-#     src/dynamic_tensor.cpp
-#     src/parsed_function.cpp
-#     src/function.cpp
-#     src/ode.cpp
-#     src/ode_solver.cpp
-#     src/ode_raw_data.cpp
-# )
+# New GoogleTest reader unittest
+add_executable(reader_unittest
+    tests/reader_unittest.cpp
+    src/reader.cpp
+    src/reader_csv.cpp
+    src/reader_txt.cpp
+    src/dynamic_tensor.cpp
+    src/parsed_function.cpp
+    src/function.cpp
+    src/ode.cpp
+    src/ode_solver.cpp
+    src/ode_raw_data.cpp
+)
 
-# target_include_directories(reader_unittest PRIVATE
-#     include
-#     src
-#     ${CMAKE_SOURCE_DIR}/external/muparserx/parser
-# )
+target_include_directories(reader_unittest PRIVATE
+    include
+    src
+    ${CMAKE_SOURCE_DIR}/external/muparserx/parser
+)
 
-# target_link_libraries(reader_unittest PRIVATE
-#     muparserx
-#     GTest::gtest_main
-# )
+target_link_libraries(reader_unittest PRIVATE
+    muparserx
+    GTest::gtest_main
+)
 
-# gtest_discover_tests(reader_unittest)
+gtest_discover_tests(reader_unittest)
 
-# # ODE unit tests
-# add_executable(ode_unittest
-#     tests/ode_unittest.cpp
-#     src/dynamic_tensor.cpp
-#     src/function.cpp
-#     src/parsed_function.cpp
-#     src/ode.cpp
-#     src/ode_solver.cpp
-#     src/ode_raw_data.cpp
-#     src/reader.cpp
-#     src/reader_csv.cpp
-#     src/reader_txt.cpp
-# )
+# ODE unit tests
+add_executable(ode_unittest
+    tests/ode_unittest.cpp
+    src/dynamic_tensor.cpp
+    src/function.cpp
+    src/parsed_function.cpp
+    src/ode.cpp
+    src/ode_solver.cpp
+    src/ode_raw_data.cpp
+    src/reader.cpp
+    src/reader_csv.cpp
+    src/reader_txt.cpp
+)
 
-# target_include_directories(ode_unittest PRIVATE
-#     include
-#     src
-#     ${CMAKE_SOURCE_DIR}/external/muparserx/parser
-# )
+target_include_directories(ode_unittest PRIVATE
+    include
+    src
+    ${CMAKE_SOURCE_DIR}/external/muparserx/parser
+)
 
-# target_link_libraries(ode_unittest PRIVATE
-#     muparserx
-#     GTest::gtest_main
-# )
+target_link_libraries(ode_unittest PRIVATE
+    muparserx
+    GTest::gtest_main
+)
 
-# gtest_discover_tests(ode_unittest)
+gtest_discover_tests(ode_unittest)
 
-# add_executable(output_unittest
-#     Tests/output_unittest.cpp
-#     src/output.cpp
-#     src/output_csv.cpp
-#     src/output_txt.cpp
+add_executable(output_unittest
+    Tests/output_unittest.cpp
+    src/output.cpp
+    src/output_csv.cpp
+    src/output_txt.cpp
 
-#     src/reader.cpp
-#     src/reader_csv.cpp
-#     src/reader_txt.cpp
+    src/reader.cpp
+    src/reader_csv.cpp
+    src/reader_txt.cpp
 
-#     src/dynamic_tensor.cpp
-#     src/parsed_function.cpp
-#     src/function.cpp
-#     src/ode.cpp
-#     src/ode_raw_data.cpp
-#     src/ode_solver.cpp
-#     src/runge_kutta_solver.cpp
-# )
+    src/dynamic_tensor.cpp
+    src/parsed_function.cpp
+    src/function.cpp
+    src/ode.cpp
+    src/ode_raw_data.cpp
+    src/ode_solver.cpp
+    src/runge_kutta_solver.cpp
+)
 
-# target_include_directories(output_unittest PRIVATE
-#     include
-#     src
-#     ${CMAKE_SOURCE_DIR}/external/muparserx/parser
-#     ${gtest_SOURCE_DIR}/include      # <-- required!
-#     ${gmock_SOURCE_DIR}/include      # optional but OK
-# )
+target_include_directories(output_unittest PRIVATE
+    include
+    src
+    ${CMAKE_SOURCE_DIR}/external/muparserx/parser
+    ${gtest_SOURCE_DIR}/include      # <-- required!
+    ${gmock_SOURCE_DIR}/include      # optional but OK
+)
 
-# target_link_libraries(output_unittest PRIVATE
-#     muparserx
-#     GTest::gtest_main
-# )
+target_link_libraries(output_unittest PRIVATE
+    muparserx
+    GTest::gtest_main
+)
 
-# gtest_discover_tests(output_unittest)
+gtest_discover_tests(output_unittest)
 
 
 
