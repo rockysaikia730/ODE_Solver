@@ -26,22 +26,39 @@ struct OdeRawData {
 
     /**
      * @brief Copy Constructor.
+     * The default implementation performs adequate member-wise copying.
      */
-    OdeRawData(const OdeRawData& other);
+    OdeRawData(const OdeRawData& other) = default;
 
     /**
      * @brief Copy Assignment Operator.
+     * The default implementation performs adequate member-wise copying.
      */
-    OdeRawData& operator=(const OdeRawData& other);
+    OdeRawData& operator=(const OdeRawData& other) = default;
 
     /**
      * @struct time_params
      * @brief Structure to hold time-related parameters for ODE solving.
      */
     struct time_params {
+        /**
+         *  @brief Initial time. 
+        */
         double t0;
+
+        /**
+         *  @brief Final time. 
+        */
         double t_final = 0.0;
+        
+        /**
+        *@brief Time step size. 
+        */
         double step_size = 0.01;
+
+        /**
+         * @brief Number of time steps.
+         */
         size_t number_of_steps;
     };
 
@@ -50,8 +67,20 @@ struct OdeRawData {
      * @brief Structure to hold solver-related parameters for ODE solving.
      */
     struct solver_params {
+
+        /**
+         * @brief The numerical solver method to be used.
+         */
         SolverMethod method = SolverMethod::kRungeKutta4;
+
+        /**
+         * @brief Maximum number of iterations for iterative solvers.
+         */
         size_t max_iterations = 1000;
+
+        /**
+         * @brief Tolerance for iterative solvers.
+         */
         double tolerance = 1e-6;
     };
     /**
@@ -59,11 +88,27 @@ struct OdeRawData {
      * @brief Structure to hold function-related parameters for ODE solving.
      */
     struct function_params {
+        /** 
+         * @brief Vector of strings representing the function expressions.
+         */
         std::vector<std::string> function_expressions;
+        
+        /** 
+         * @brief Shape of the function output tensor.
+         */
         std::vector<size_t> function_shape;
+        
+        /** 
+         * @brief Vector of strings representing the derivative expressions.
+         */
         std::vector<std::string> derivative_expressions;
+        
+        /** 
+         * @brief Shape of the derivative output tensor.
+         */
         std::vector<size_t> derivative_shape;
     };
+    
     /**
      * @brief Initial condition tensor.
      */

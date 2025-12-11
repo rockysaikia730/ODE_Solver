@@ -1,11 +1,3 @@
-/**
- * @file Ode.h
- * @brief Header definition for the Ode class.
- *
- * This file defines the structure for an Ordinary Differential Equation problem,
- * aggregating the initial conditions, the derivative function, and the solver strategy.
- */
-
 #ifndef CODES_ODE_H
 #define CODES_ODE_H
 
@@ -21,27 +13,21 @@
 /**
  * @class Ode
  * @brief Represents an Ordinary Differential Equation (ODE) problem definition.
- *
- * The Ode class acts as a container for the problem definition. It holds:
- * 1. The Initial Value Problem (IVP) conditions (t0, y0).
- * 2. The physics/math function defining the derivative (dy/dt).
- * 3. A root finding strategy (used for implicit solving methods).
- *
- * 
+ * This class encapsulates the initial conditions, the derivative function,
+ * and the root finding strategy for implicit solvers.
  */
 class Ode {
 public:
     /**
      * @brief Constructor with Tensor state.
      * @param in_time The initial time (t0).
-     * @param in_y0 The initial state vector/tensor (y0).
+     * @param in_y0 The initial state tensor (y0).
      * @param in_name A unique identifier name for this ODE system.
-     * @param func Shared pointer to the function defining dy/dt = f(t, y).
-     * @param derivative Shared pointer to the derivative function (optional).
-     * @param root_finder Shared pointer to the root finding strategy (for implicit solvers).
+     * @param func Shared pointer to the function defining dy/dt = f(t, y) and the Jacobian
+     * @param root_finder Shared pointer to the root finding strategy.
      */
     Ode(double in_time, const DynamicTensor& in_y0, const std::string& in_name,
-        std::shared_ptr<const Function> func, std::shared_ptr<const Function> derivative = nullptr, std::shared_ptr<RootFinder> root_finder = nullptr);
+        std::shared_ptr<const Function> func, std::shared_ptr<RootFinder> root_finder = nullptr);
 
     /**
      * @brief Constructor with Scalar state.
@@ -49,16 +35,15 @@ public:
      * @param in_time The initial time (t0).
      * @param in_y0 The initial state scalar (will be converted to Tensor).
      * @param in_name A unique identifier name for this ODE system.
-     * @param func Shared pointer to the function defining dy/dt = f(t, y).
-     * @param derivative Shared pointer to the derivative function (optional).
+     * @param func Shared pointer to the function defining dy/dt = f(t, y) and the Jaciobian.
      * @param root_finder Shared pointer to the root finding strategy.
      */
     Ode(double in_time, const double& in_y0, const std::string& in_name,
-        std::shared_ptr<const Function> func, std::shared_ptr<const Function> derivative = nullptr, std::shared_ptr<RootFinder> root_finder = nullptr);
+        std::shared_ptr<const Function> func, std::shared_ptr<RootFinder> root_finder = nullptr);
 
     /**
      * @brief Constructor from Reader.
-     * @param reader A Reader object which reades from input file to initialise the ODE.
+     * @param reader A Reader object that provides OdeRawData.
      */
     Ode(const Reader& reader);
 
@@ -85,11 +70,8 @@ public:
     /**
      * @brief Virtual destructor.
      */
-    virtual ~Ode();
+    virtual ~Ode() = default;
 
-    // =========================================================
-    // Setters
-    // =========================================================
     /**
      * @brief Set the initial time.
      * @param time The new initial time as a double.
@@ -126,10 +108,6 @@ public:
      */
     void SetRootFinder(std::shared_ptr<RootFinder> root_finder);
 
-    // =========================================================
-    // Getters
-    // =========================================================
-
     /**
      * @brief Get the initial time.
      * @return The initial time (t0).
@@ -159,10 +137,6 @@ public:
      * @return Const reference to the RootFinder Routine.
      */
     const std::shared_ptr<RootFinder>& GetRootFinder() const;
-
-    // =========================================================
-    // Logic
-    // =========================================================
 
     /**
      * @brief Evaluate the derivative function f(t, y).

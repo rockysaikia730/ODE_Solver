@@ -1,4 +1,4 @@
-# ODE Solver Project Report
+# <center> ODE Solver Project Report
 
 ## 1. Implementation Overview
 
@@ -81,7 +81,7 @@ The only distinction between `.txt` and `.csv` readers is how they handle format
 
 Both reader types eventually call `InterpretKeyValuePair` to process each key and store the resulting data in `OdeRawData`.
 
-Finally, the `ReaderCsv` and `ReaderTxt` create a `ParsedFunction` instance.
+Finally, the `ReaderCsv` and `ReaderTxt` create a `ParsedFunction` instance. This is not done in an optimal way, but it could not be done in a different way the given time constraints.
 
 ### Shortcomings of the readers
 
@@ -300,3 +300,8 @@ cd build
 cmake ..
 make
 ```
+---
+## Distribution of Work
+The project was done by Ahmed Rockey Saikia and Andras Horkay. Andras worked on the classes and the corresponding unittests on `Ode`, `OdeRawData`, `Reader`, `ParsedFunction`, `ReaderCsv`, `ReaderTxt` and `Output` . Rockey worked on `Ode`, `Solver`, `DynamicTensor` graphical `Output`, and `Function`. The conception and design of the project was decided by the both of us, only the coding was done separately. Below are some notes from the authors.
+
+- Notes from Andras: I have used LLMs when commenting and debugging my code. I have used it especially a lot when developing the reader class, so that I can parse the tensors and and fucntions properly. The design of how these are read were my idea, but I needed help when doing the `Recursive` functions when parsing: `ParseFunctionRecursive` and `ParseTensor`. After this, I did feed most of my code also to ChatGPT to see if there are any improvements to be done, but it did not suggest many improvements. I have also used LLMs to generate some of the unittests. I have left comments where changes were code was made by LLMs.
