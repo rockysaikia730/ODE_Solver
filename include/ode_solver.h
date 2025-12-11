@@ -100,10 +100,6 @@ public:
      */
     double GetCurrentTime() const;
 
-    
-
-    // --- Control Flow ---
-
     /**
      * @brief Resets the solver state to the initial conditions.
      *
