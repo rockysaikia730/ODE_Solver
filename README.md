@@ -269,6 +269,7 @@ The distinction between `.txt` and `.csv` writers is then limited to formatting:
 This class was created quickly and does not yet print all useful data. Ideally, it would output all necessary information so that the simulation could be reconstructed entirely from the file. Additional output styles, such as plotting or allowing the printing of solutions at different points, would also be good extensions. 
 
 ## Abstract Base Classes for Solvers
+![Ode Solver class diagram](Documentation/OdeSolver_uml.png)
 
 ### OdeSolver
 
@@ -437,13 +438,14 @@ Constructors:
 ## Utilities
 
 ### RootFinder
+![Root Finder class diagram](Documentation/rootfinder_uml.png)
 
 The `RootFinder` class is an abstract base class that defines the interface for numerical root-finding algorithms. It is a critical dependency for all implicit ODE solvers which needs to solve non-linear equations at every time step.
 - **Polymorphic:** Allows the ODE solver to be decoupled from the specific numerical method used to solve the implicit equation.
 - **`FindRoot()` Method:** The pure virtual function that performs the rootfinding. It takes a generic `Function` object (wrapper around the equation $g(y) = 0$), an `initial_guess`, and the current time $t$.
 - **Tensor:** Designed for any rank using the `DynamicTensor` object.
 
-### NewtonRaphson
+#### NewtonRaphson
 
 The `NewtonRaphson` class is a implementation of the `RootFinder` interface. It solves for the root of a non-linear function using the iterative Newton-Raphson method. The `FindRoot` method executes a fixed number of iterations defined by `max_iter`. At each step, it updates the solution estimate using the gradient information provided by the `Function` object:
 
@@ -454,6 +456,7 @@ Shortcomings:
  1. The current implementation of Newton Raphson root finder is exclusively for 0D tensors.
 
 ### DynamicTensor
+![Dynamic Tensor class diagram](Documentation/dynamicTensor_uml.png)
 
 The `DynamicTensor` class is the core data structure used throughout the library to any tensors. It is designed to be flexible, supporting **runtime definition of dimensions** and accommodating both Real (`double`) and Complex (`std::complex<double>`) data types. We developed `DynamicTensor` to address the gap of Eigen:
 1.  **Dynamic Rank:** Unlike Eigen, which requires compile-time tensor ranks, this class supports tensors where both the shape and the rank are determined at runtime.
