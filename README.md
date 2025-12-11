@@ -285,7 +285,172 @@ In practice, a `ParsedFunction` instance is usually created by a reader after pa
 
 ---
 ### REMAINING TO DO THE SOLVER, Dynamic tensor, and the main.
-# ODE_Solver
+
+## Abstract Base Classes for Solvers
+
+### OdeSolver
+
+The `OdeSolver` class represents the abstract base class for numerically integrating Ordinary Differential Equations of the form $\frac{dy}{dt} = f(t, y)$, where the state $y$ is represented by a `DynamicTensor`. Implementations such as Forward Euler or Runge-Kutta must inherit from this class and implement the pure virtual `ComputeStep()` method specific to that method.
+
+The class offers flexible initialization via two constructors:
+- **Fixed Step Size:** Constructs the solver using the `Ode` reference, a specific step size (`step_size`) and the `end_time`.
+- **Fixed Step Count:** Constructs the solver using the `Ode` reference, total number of iterations (`num_of_steps`) and the `end_time` (automatically calculates the step size).
+
+Once constructed, an `OdeSolver` manages the simulation state by storing a constant reference to the problem as `ode_`, `start_time_`, `end_time_` and `step_size_`, the current state tensor as `solution_` and the current timestamp as `current_time_`.
+
+The class provides three primary methods to control the simulation:
+- **`Reset()`**: Reverts the solution and current time to the initial conditions defined in the ODE.
+- **`Step()`**: Advances the simulation by a single increment. It invokes `ComputeStep()` to calculate the new state, then updates `solution_` and advances `current_time_`. This method can be placed inside a custom loop for scenarios where the number of steps is dynamic or unknown.
+- **`Solve()`**: Automates the execution of the simulation from start time to end time. It repeatedly calls `Step()` until `end_time_` is reached.
+
+### MultiStepOdeSolver
+
+The `MultiStepOdeSolver` class inherits from `OdeSolver` and serves as an abstract base for methods that utilize historical data to approximate the solution. These methods generalize the integration process using the following linear multistep relationship:
+
+$$c^y_0 y_{n+1} - h c^{dy}_0 f(t_{n+1}, y_{n+1}) = \sum_{i=1}^{k} c^y_i y_{n+1-i} + h \sum_{i=1}^{k} c^{dy}_i f(t_{n+1-i}, y_{n+1-i})$$
+
+Where:
+- $h$ is the time step (`step_size_`).
+- $c^y$ and $c^{dy}$ are method-specific coefficients.
+- The Right Hand Side (RHS) represents the weighted sum of previous states and derivatives (`sum_tn_`)
+
+In this design, defining a specific solver reduces to simply defining the vectors of coefficients $c^y$ and $c^{dy}$.
+
+**Key features include:**
+- **order_solution**: The number of past solution states ($y$) to retain.
+- **order_derivative**: The number of past derivative evaluations ($dy/dt$) to retain.
+- **State Management:** The class maintains `solutions_buffer_` and `derivative_buffer_` using `std::deque` for `O(1)` push and pop operations to store the previous $y$ and $f(t,y)$ values required by the order of the method.
+- **Rhs Computation:** The class calculates and caches the variable `sum_tn_`, which represents the entire Right Hand Side of the equation above.
+- **Explicit Solver Support:** For explicit methods (where $c^{dy}_0 = 0$), the equation simplifies such that the next step $y_{n+1}$ is derived directly from the computed `sum_tn_`.
+
+**Constructors & Methods:**
+The constructors extend the base `OdeSolver` to accept `order_solution` and `order_derivative` determining the size of the buffers for solutions and derivatives.
+- **`Reset()`**: Clears the buffers and re-initializes the state.
+- **`Step()`**: Advances the simulation. It computes `sum_tn_`, updates the buffers with the new result, and manages the sliding window of history.
+- **`GetCoeffsY()` / `GetCoeffsdY()`**: Pure virtual methods that derived classes must implement to provide the specific coefficients for the algorithm.
+- **`InitBuffers()`**: Initializes the buffers for solutions and derivatives using runge kutta method which can be overriden in any derived classes.
+
+### ImplicitSolver
+
+The `ImplicitSolver` class extends `MultiStepOdeSolver` to handle **implicit** methods. Unlike explicit methods, implicit methods feature a non-zero coefficient for the current derivative term $c^{dy}\_0 \neq 0$. This means the next state $y_{n+1}$ appears on both sides of the equation making direct substitution impossible.
+
+To determine the next step, the solver treats the update rule as a root-finding problem:
+
+$$F( y_{n+1} ) = c^y_0 y_{n+1} - h c^{dy}\_0 f(t_{n+1}, y_{n+1}) - \mathrm{sum\_tn\_} = 0$$
+
+where `sum_tn_` corresponds to the cached window sum calculated by the `MultiStepOdeSolver` class.
+
+**Key features include:**
+- **Root Finding Method:** The class requires an optional pointer `std::shared_ptr<RootFinder>` during construction. This component is responsible for numerically solving the equation above at every time step. The default RootFinder is Newton-Raphson method.
+- **`ImplicitEquation` Helper:** A protected inner class that generates the implicit equation into a `Function` interface which is then used by the `RootFinder` to find the next solution.
+- **`ComputeStep()` Implementation:** Constructs the specific `ImplicitEquation` for the current time step and finds the solution of $y_{n+1}$ to the `root_finder_`.
+
+## Implicit Methods
+
+### Bdf (Backward Differentiation Formula)
+
+The `Bdf` class implements the **Backward Differentiation Formula** integration method by inheriting from `ImplicitSolver` and the update rule can be stated as:
+
+$$ \sum_{j=0}^{k} c^y_j y_{n+1-j} = h c^{dy}\_0 f(t_{n+1}, y_{n+1}) $$
+
+. BDF does not rely on the history of derivative values. Instead, it approximates the derivative using only the current and previous solution states. Consequently, the constructor initializes the base `ImplicitSolver` with `order_derivative = 0`, ensuring that the history term (`sum_tn_`) consists solely of past $y$ values.
+
+**Key features include:**
+- **Orders:** The class supports orders 1 through 4.
+- **Coefficients:** The class implements `GetCoeffsY()` and `GetCoeffsdY()` to provide the standard BDF coefficients. For a given order $k$, the update rule follows the form:
+  
+  $$y_{n+1} - h \beta_0 f(t_{n+1}, y_{n+1}) = \sum_{i=1}^{k} \alpha_i y_{n+1-i}$$
+
+  Where $\beta_0$ corresponds to the single coefficient returned by `GetCoeffsdY()` and the $\alpha_i$ values correspond to the vector returned by `GetCoeffsY()` (excluding the first element $c^y_0=1$).
+
+**Constructors:**
+The constructors accept an integer `order` (validated to be between 1 and 4). If an invalid order is provided, an `std::invalid_argument` exception is thrown.
+
+### BackwardEuler
+
+The `BackwardEuler` class is a derived class of `Bdf` that implements the **first-order Backward Differentiation Formula**.
+
+The class constructors simplify initialization by automatically setting `order = 1`, reducing the generic BDF update rule to the classic Backward Euler form:
+
+$$y_{n+1} = y_n + h f(t_{n+1}, y_{n+1})$$
+
+### AdamMoulton
+
+The `AdamMoulton` class implements the **Adams-Moulton family** of implicit linear multistep methods. It inherits from `ImplicitSolver`.
+
+Adams-Moulton methods rely on the history of derivatives.
+
+The general update rule implemented is:
+$$y_{n+1} = y_n + h \sum_{j=0}^{k} c^{dy}\_0 f(t_{n+1-j}, y_{n+1-j})$$
+
+In the context of the `MultiStepOdeSolver` architecture:
+- **`GetCoeffsY()`**: Returns coefficients representing the LHS $(y_{n+1} - y_n)$, usually $[1.0, -1.0]$.
+- **`GetCoeffsdY()`**: Returns the specific coefficients for the method order
+
+**Constructors:**
+- Accepts an `order` (typically 1 to 4).
+
+## Explicit Methods
+
+### AdamsBashforth
+
+The `AdamsBashforth` class implements the **Adams-Bashforth family** of explicit linear multistep methods. It inherits directly from `MultiStepOdeSolver`.
+
+The general update rule implemented is:
+$$y_{n+1} = y_n + h \sum_{j=1}^{k} c^{dy}\_0 f(t_{n+1-j}, y_{n+1-j})$$
+
+In the context of the `MultiStepOdeSolver` architecture:
+- **Explicit formulation:** The coefficient for the current derivative ($c^{dy}_0$) is 0.
+- **`ComputeStep()`**: Since the next state is explicitly defined by history, this method simply retrieves the cached history sum (`sum_tn_`) calculated by the base class and returns it as the new state.
+- **`GetCoeffsY()`**: Returns the coefficients representing the LHS (typically just $y_{n+1} - y_n$).
+- **`GetCoeffsdY()`**: Returns the specific $\beta$ coefficients corresponding to the method's order (e.g., weights for previous slopes).
+
+**Constructors:**
+- **Fixed Step Size:** Constructs the solver with a specific `step_size` and `order` (typically 1 to 4).
+- **Fixed Step Count:** Constructs the solver with a specific `num_of_steps` and `order`.
+
+### ForwardEuler
+
+The `ForwardEuler` class is a implementation of the **Forward Euler** method. It serves as a derived class for the `AdamsBashforth` class by setting the integration order to 1.
+As the simplest explicit method, it computes the next state $y_{n+1}$ using only the current gradient information.
+
+The update rule is the fundamental first-order explicit formula:
+$$y_{n+1} = y_n + h f(t_n, y_n)$$
+
+**Constructors:**
+- **Fixed Step Size:** Constructs the solver with a specific `step_size`.
+- **Fixed Step Count:** Constructs the solver with a specific `num_of_steps`.
+Here is the description for the `ForwardEulerLight` class.
+
+### ForwardEulerLight
+
+The `ForwardEulerLight` class is a lightweight, standalone implementation of the **Forward Euler** method. Unlike the standard `ForwardEuler` class which derives from the `AdamsBashforth` logic this class inherits directly from `OdeSolver`.
+The direct implementation avoids the overhead of managing history buffers `std::deque` and coefficient vectors. It is designed for fast performance on simple problems.
+
+The class implements the standard explicit update rule in `ComputeStep()`:
+$$y_{n+1} = y_n + h f(t_n, y_n)$$
+
+**Constructors:**
+- **Fixed Step Size:** Constructs the solver with a specific `step_size`.
+- **Fixed Step Count:** Constructs the solver with a specific `num_of_steps`.
+
+### RungeKutta
+
+The `RungeKutta` class implements the classical **4th-order Runge-Kutta (RK4)** integration scheme. It inherits directly from `OdeSolver`. Unlike the multistep methods , RK4 is a single-step but multi-stage method. It does not rely on a history buffer of previous states. Instead, it computes four intermediate slope estimates within the current time interval to achieve significantly higher accuracy than Forward Euler.
+
+The `ComputeStep()` method calculates the next state using the weighted average of these slopes:
+
+$$y_{n+1} = y_n + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4)$$
+
+Where:
+- $k_1 = f(t_n, y_n)$
+- $k_2 = f(t_n + \frac{h}{2}, y_n + \frac{h}{2}k_1)$
+- $k_3 = f(t_n + \frac{h}{2}, y_n + \frac{h}{2}k_2)$
+- $k_4 = f(t_n + h, y_n + h k_3)$
+
+**Constructors:**
+- **Fixed Step Size:** Constructs the solver with a specific `step_size`.
+- **Fixed Step Count:** Constructs the solver with a specific `num_of_steps`.
 
 # For executing only the Doxyfile
 ```bash
