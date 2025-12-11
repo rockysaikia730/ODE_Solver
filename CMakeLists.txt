@@ -80,15 +80,20 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(unittests
-    # tests/dynamic_tensor_unittest.cpp
-    # tests/function_unittest.cpp
-    # tests/newton_raphson_unittest.cpp
-    # tests/runge_kutta_unittest.cpp
-    # tests/adamsbashforth_unittest.cpp
+    #tests/dynamic_tensor_unittest.cpp
+    #tests/function_unittest.cpp
+    #tests/newton_raphson_unittest.cpp
+    tests/runge_kutta_unittest.cpp
+    #tests/adamsbashforth_unittest.cpp
     tests/backward_differentiation_unittest.cpp
+<<<<<<< HEAD
     # tests/adam_moulton_unittest.cpp
     # tests/backward_euler_unittest.cpp
     # tests/forward_euler_unittest.cpp
+=======
+    #tests/adam_moulton_unittest.cpp
+    #tests/backward_euler_unittest.cpp
+>>>>>>> refs/remotes/origin/main
 )
 target_link_libraries(unittests
     utilities

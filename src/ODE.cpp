@@ -9,29 +9,33 @@
 #include <memory>
 #include <iostream>
 
+//----------------------------------------------------------//
+// Constructors, Destructors, and Assignment Operators
+//----------------------------------------------------------//
 
+//Simple constructor from main
 Ode::Ode(double in_time, const DynamicTensor& in_y0, const std::string& in_name,
-         std::shared_ptr<const Function> func, std::shared_ptr<const Function> derivative, std::shared_ptr<RootFinder> root_finder)
+         std::shared_ptr<const Function> func, std::shared_ptr<RootFinder> root_finder)
     : t0_(in_time),
       y0_(in_y0),
       name_(in_name),
       func_(func),
       root_finder_(root_finder) {
         func_->Eval(t0_, y0_); // verify dimensions at construction
-    }
+}
 
+//Simply constructor from main with double initial condition
 Ode::Ode(double in_time, const double& in_y0, const std::string& in_name,
-         std::shared_ptr<const Function> func, std::shared_ptr<const Function> derivative, std::shared_ptr<RootFinder> root_finder)
+         std::shared_ptr<const Function> func, std::shared_ptr<RootFinder> root_finder)
     : t0_(in_time),
       y0_(in_y0),
       name_(in_name),
       func_(func),
       root_finder_(root_finder) {
         func_->Eval(t0_, y0_); // verify dimensions at construction
-      }
+}
 
-Ode::~Ode() {}
-
+//Copy Constructor from another Ode
 Ode::Ode(const Ode& other)
     : t0_(other.t0_),
       y0_(other.y0_),
@@ -41,6 +45,7 @@ Ode::Ode(const Ode& other)
         //No need to verify dimensions here as they are copied from a valid Ode
 }
 
+//Copy Assignment Operator
 Ode& Ode::operator=(const Ode& other) {
     if (this != &other) {
         t0_ = other.t0_;
@@ -53,10 +58,7 @@ Ode& Ode::operator=(const Ode& other) {
     return *this;
 }
 
-DynamicTensor Ode::Evaluate(double t, const DynamicTensor& y) const {
-    return func_->Eval(t, y);
-}
-
+//Constructor from Reader
 Ode::Ode(const Reader& reader) {
     const OdeRawData& raw_data = reader.GetRawData();
     t0_ = raw_data.time_params.t0;
@@ -68,41 +70,93 @@ Ode::Ode(const Reader& reader) {
     func_->Eval(t0_, y0_); // verify dimensions at construction
 }
 
+//Constructor from OdeRawData
 Ode::Ode(const OdeRawData& raw)
     : t0_(raw.time_params.t0),
       y0_(raw.y0),
       name_("ODE"),
       root_finder_(raw.root_finder),   // or raw.root_finder if you add it
-      func_(raw.function)
-{
+      func_(raw.function) {
     func_->Eval(t0_, y0_); // verify dimensions at construction
 }
 
-const std::string& Ode::GetName() const {return name_;}
-const DynamicTensor& Ode::GetCondIn() const {return y0_;}
-double Ode::GetTimeIn() const {return t0_;}
-const Function& Ode::GetFunction() const {return *func_;}
-const std::shared_ptr<RootFinder>& Ode::GetRootFinder() const {return root_finder_;}
+//----------------------------------------------------------//
+// Getters
+//----------------------------------------------------------//
 
-void Ode::SetT0(double time) {t0_ = time;}
+// Get the name of the system.
+const std::string& Ode::GetName() const {
+    return name_;
+}
 
+// Get the initial condition tensor.
+const DynamicTensor& Ode::GetCondIn() const {
+    return y0_;
+}
+
+// Get the initial time.
+double Ode::GetTimeIn() const {
+    return t0_;
+}
+
+// Get the RHS function. Const ensures function is not modified.
+const Function& Ode::GetFunction() const {
+    return *func_;
+}
+
+// Get the RootFinder strategy.
+const std::shared_ptr<RootFinder>& Ode::GetRootFinder() const {
+    return root_finder_;
+}
+
+//----------------------------------------------------------//
+// Setters
+//----------------------------------------------------------//
+
+// Set the initial time.
+void Ode::SetT0(double time) {
+    t0_ = time;
+}
+
+// Set the initial state using a Tensor.
 void Ode::SetY0(const DynamicTensor& y0) {
     y0_ = y0;
     func_->Eval(t0_, y0_); // verify dimensions after setting new initial condition
 }
+
+// Set the initial state using a scalar.
 void Ode::SetY0(double in_y0) {
     y0_ = DynamicTensor(in_y0);
-    func_->Eval(t0_, y0_); // verify dimensions after setting new initial condition
+    // verify dimensions after setting new initial condition (assuming eval checks this)
+    func_->Eval(t0_, y0_); 
 }
 
-void Ode::SetName(const std::string& name) {name_ = name;}
+// Set the name of the ODE system.
+void Ode::SetName(const std::string& name) {
+    name_ = name;
+}
 
+// Inject a new derivative function.
 void Ode::SetFunction(std::shared_ptr<const Function> func) {
     func_ = func;
     func_->Eval(t0_, y0_); // verify dimensions after setting new function
 }
-void Ode::SetRootFinder(std::shared_ptr<RootFinder> root_finder) {root_finder_ = root_finder;}
+
+// Set the RootFinder strategy.
+void Ode::SetRootFinder(std::shared_ptr<RootFinder> root_finder) {
+    root_finder_ = root_finder;
+}
+
+//----------------------------------------------------------//
+// Other Public Methods
+//----------------------------------------------------------//
+
+// Evaluate the derivative function f(t, y). Method delegates to stored Function object.
+DynamicTensor Ode::Evaluate(double t, const DynamicTensor& y) const {
+    return func_->Eval(t, y);
+}
 
 DynamicTensor Ode::Grad(double t, const DynamicTensor& y) const {
     return func_->Grad(t, y);
 }
+
