@@ -50,6 +50,11 @@ public:
      */
     virtual const std::vector<double>& GetCoeffsdY() const = 0;
 
+    /**
+     * @brief Reset solver state and history buffers.
+     */
+    void Reset() override;
+
 protected:
     /**
      * @brief Initialize buffers for storing solution and derivative history.
@@ -72,11 +77,6 @@ protected:
      * @brief Update cached weighted sums used by the multistep scheme.
      */
     void UpdateWindowSum();
-    
-    /**
-     * @brief Reset solver state and history buffers.
-     */
-    void Reset() override;
 
     /** @brief Order of the multistep term using past solution values. */
     int order_sol_;

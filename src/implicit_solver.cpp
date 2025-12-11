@@ -3,12 +3,17 @@
 #include "dynamic_tensor.h"
 #include <vector>
 #include <deque>
+#include <cmath>
+#include <stdexcept>
 
 ImplicitSolver::ImplicitEquation::ImplicitEquation(const ImplicitSolver& solver)
     : solver_(solver) {
         //c0 yn  =  sum_{i=1} cy_i y_n-i  + cdy_0 f(yn) + sum_{i} cdy_i f(y_n-i) 
         cy0_  = solver_.GetCoeffsY()[0];
         cdy0_ = solver_.GetCoeffsdY()[0];
+        if(std::abs(cy0_) < 1e-9) {
+            throw std::runtime_error("Division by 0. Coefficient of y set to 0");
+        }
     }
 
 DynamicTensor ImplicitSolver::ImplicitEquation::Eval(double t, const DynamicTensor& y_guess) const {

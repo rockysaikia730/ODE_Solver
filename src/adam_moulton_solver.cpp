@@ -1,10 +1,12 @@
 #include "adam_moulton_solver.h"
 #include "implicit_solver.h"
+#include <stdexcept>
 
 AdamMoulton::AdamMoulton(const Ode& ode, double step_size, double end_time, 
                 int order, std::shared_ptr<RootFinder> root_finder)
         : ImplicitSolver(ode, step_size, end_time, 1, order, root_finder),
           order_(order) {
+            if(order > 4 || order < 1) throw std::invalid_argument("Order must be within 1 to 4.");
             Reset();
           }
 
@@ -12,6 +14,7 @@ AdamMoulton::AdamMoulton(const Ode& ode, int num_of_steps, double end_time,
                 int order, std::shared_ptr<RootFinder> root_finder)
         : ImplicitSolver(ode, num_of_steps, end_time, 1, order, root_finder),
           order_(order) {
+            if(order > 4 || order < 1) throw std::invalid_argument("Order must be within 1 to 4.");
             Reset();
           }
 
