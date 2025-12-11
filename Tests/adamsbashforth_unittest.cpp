@@ -3,7 +3,7 @@
 #include "dynamic_tensor.h"
 #include "gtest/gtest.h"
 
-class Rhs : public Function {
+class RhsAB : public Function {
 public:
     DynamicTensor Eval(double t, const DynamicTensor& y) const override {
         return -1.0 * y;
@@ -11,7 +11,7 @@ public:
 };
 
 TEST(AdamsBashforth, Initialisation) {
-    auto rhs_ptr = std::make_shared<Rhs>();
+    auto rhs_ptr = std::make_shared<RhsAB>();
     Ode exponential_ode(0.0, 1.0, "Exponential Decay", rhs_ptr);
     AdamsBashforth ab4(exponential_ode);
 
@@ -24,7 +24,7 @@ TEST(AdamsBashforth, Initialisation) {
 
 
 TEST(AdamsBashforth, InitialisationUserDefined) {
-    auto rhs_ptr = std::make_shared<Rhs>();
+    auto rhs_ptr = std::make_shared<RhsAB>();
     Ode exponential_ode(0.0, 1.0, "Exponential Decay", rhs_ptr);
     AdamsBashforth ab4(exponential_ode, 0.5, 10);
 
@@ -35,7 +35,7 @@ TEST(AdamsBashforth, InitialisationUserDefined) {
 }
 
 TEST(AdamsBashforth, Solve) {
-    auto rhs_ptr = std::make_shared<Rhs>();
+    auto rhs_ptr = std::make_shared<RhsAB>();
     Ode exponential_ode(0.0, 1.0, "Exponential Decay", rhs_ptr);
     AdamsBashforth ab4(exponential_ode, 0.01, 1);
 
@@ -45,7 +45,7 @@ TEST(AdamsBashforth, Solve) {
 }
 
 TEST(AdamsBashforth, Step) {
-    auto rhs_ptr = std::make_shared<Rhs>();
+    auto rhs_ptr = std::make_shared<RhsAB>();
 
     double t0 = 0;
     int order = 4;

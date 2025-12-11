@@ -3,7 +3,7 @@
 #include "ode.h"
 #include "gtest/gtest.h"
 
-class Rhs : public Function {
+class RhsAM : public Function {
 public:
     DynamicTensor Eval(double t, const DynamicTensor& y) const override {
         return -1.0 * y;
@@ -11,7 +11,7 @@ public:
 };
 
 TEST(AdamMoulton, Initialisation) {
-    auto rhs_ptr = std::make_shared<Rhs>();
+    auto rhs_ptr = std::make_shared<RhsAM>();
     Ode exponential_ode(0.0, 1.0, "Exponential Decay", rhs_ptr);
     AdamMoulton adam_moulton(exponential_ode);
 
@@ -23,7 +23,7 @@ TEST(AdamMoulton, Initialisation) {
 }
 
 TEST(AdamMoulton, InitialisationUserDefined) {
-    auto rhs_ptr = std::make_shared<Rhs>();
+    auto rhs_ptr = std::make_shared<RhsAM>();
     Ode exponential_ode(0.0, 1.0, "Exponential Decay", rhs_ptr);
     AdamMoulton adam_moulton(exponential_ode, 0.5, 10);
 
@@ -34,7 +34,7 @@ TEST(AdamMoulton, InitialisationUserDefined) {
 }
 
 TEST(AdamMoulton, Solve) {
-    auto rhs_ptr = std::make_shared<Rhs>();
+    auto rhs_ptr = std::make_shared<RhsAM>();
     Ode exponential_ode(0.0, 1.0, "Exponential Decay", rhs_ptr);
     AdamMoulton adam_moulton(exponential_ode, 0.01, 2);
 
@@ -44,7 +44,7 @@ TEST(AdamMoulton, Solve) {
 }
 
 TEST(AdamMoulton, Step) {
-    auto rhs_ptr = std::make_shared<Rhs>();
+    auto rhs_ptr = std::make_shared<RhsAM>();
 
     double t0 = 0;
     Ode exponential_ode(t0, 1.0, "Exponential Decay", rhs_ptr);
