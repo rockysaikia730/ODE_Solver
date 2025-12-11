@@ -1,9 +1,14 @@
 var searchData=
 [
-  ['parsecomplexnumber_0',['ParseComplexNumber',['../class_reader.html#a149ef0f9b7c40881ec30a1dc38a8c513',1,'Reader']]],
-  ['parsedfunction_1',['ParsedFunction',['../class_parsed_function.html',1,'ParsedFunction'],['../class_parsed_function.html#a808273fed662cd815eaa2bb6c9c87924',1,'ParsedFunction::ParsedFunction()']]],
-  ['parsedouble_2',['ParseDouble',['../class_reader.html#a1407cb6d6c193ab9bcbcdd82558fe879',1,'Reader']]],
-  ['parsefunction_3',['ParseFunction',['../class_reader.html#a0bef7707d1cf66a0b320f77212954150',1,'Reader']]],
-  ['parsesolvermethodfromstring_4',['ParseSolverMethodFromString',['../class_reader.html#aa8fc2dbf2e8a036539e632d2aee16e3e',1,'Reader']]],
-  ['parsetensor_5',['ParseTensor',['../class_reader.html#aee6eaf793ada4d73dc1d9bb28a50d2a3',1,'Reader']]]
+  ['implementation_20overview_0',['1. Implementation Overview',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md1',1,'']]],
+  ['implicitequation_1',['ImplicitEquation',['../class_implicit_solver_1_1_implicit_equation.html',1,'ImplicitSolver']]],
+  ['implicitsolver_2',['ImplicitSolver',['../class_implicit_solver.html',1,'ImplicitSolver'],['../class_implicit_solver.html#a6974272e5de96d69d12f88e02dbb5a7b',1,'ImplicitSolver::ImplicitSolver(const Ode &amp;ode, double step_size=0.01, double end_time=0.0, int order_solution=1, int order_derivative=0, std::shared_ptr&lt; RootFinder &gt; root_finder=nullptr)'],['../class_implicit_solver.html#aeac055d99a35bf3480a1bcc97e4f8670',1,'ImplicitSolver::ImplicitSolver(const Ode &amp;ode, int num_of_steps, double end_time=0.0, int order_solution=1, int order_derivative=0, std::shared_ptr&lt; RootFinder &gt; root_finder=nullptr)']]],
+  ['initbuffers_3',['InitBuffers',['../class_multi_step_ode_solver.html#ade00d553a4968d7f5a0532f185c4149f',1,'MultiStepOdeSolver']]],
+  ['input_20tensor_20this_20responsibility_20is_20delegated_20to_20the_20user_20to_20verify_20for_20the_20time_20being_4',['Right now, there is no checking mechanism provided for veryfying the shape of the function and the input tensor. This responsibility is delegated to the user to verify for the time being.',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md15',1,'']]],
+  ['inputs_5',['1.1 Handling inputs',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md2',1,'']]],
+  ['interpretkeyvaluepair_6',['InterpretKeyValuePair',['../class_reader.html#a891f6505346d7f7389f5eadc35d1d1bf',1,'Reader']]],
+  ['is_20delegated_20to_20the_20user_20to_20verify_20for_20the_20time_20being_7',['Right now, there is no checking mechanism provided for veryfying the shape of the function and the input tensor. This responsibility is delegated to the user to verify for the time being.',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md15',1,'']]],
+  ['is_20no_20checking_20mechanism_20provided_20for_20veryfying_20the_20shape_20of_20the_20function_20and_20the_20input_20tensor_20this_20responsibility_20is_20delegated_20to_20the_20user_20to_20verify_20for_20the_20time_20being_8',['Right now, there is no checking mechanism provided for veryfying the shape of the function and the input tensor. This responsibility is delegated to the user to verify for the time being.',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md15',1,'']]],
+  ['iscomplexnumber_9',['IsComplexNumber',['../class_reader.html#a4ad23af590282f6c953777d81d190a4e',1,'Reader']]],
+  ['isnumeric_10',['IsNumeric',['../class_reader.html#a30a4105a8595150cb94854c71637ed3f',1,'Reader']]]
 ];

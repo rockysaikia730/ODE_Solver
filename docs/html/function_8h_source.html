@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ODE solver: C:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/include/function.h Source File</title>
+<title>ODE_Solver: /Users/rocky/notes/Scientific Computing/ODE_Solver/include/function.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ODE solver
+   <div id="projectname">ODE_Solver
    </div>
   </td>
  </tr>
@@ -97,22 +97,22 @@ $(function(){initNavTree('function_8h_source.html','',''); });
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="dynamic__tensor_8h.html">dynamic_tensor.h</a>&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_function.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="class_function.html">Function</a> {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_function.html#a2be1da6c238e7db53480b193351b96c1">   18</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_function.html#a2be1da6c238e7db53480b193351b96c1">~Function</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_function.html#a7bb6bbdd01c508cb0a4d4ad545915d3c">   28</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a> <a class="code hl_function" href="class_function.html#a7bb6bbdd01c508cb0a4d4ad545915d3c">Eval</a>(<span class="keywordtype">double</span> t, <span class="keyword">const</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a>&amp; y) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_function.html#a27c7561a090ecc5688a662f5ab2b6902">   37</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a> <a class="code hl_function" href="class_function.html#a27c7561a090ecc5688a662f5ab2b6902">Grad</a>(<span class="keywordtype">double</span> t, <span class="keyword">const</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a>&amp; y, <span class="keywordtype">double</span> dy = 0.1) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_function.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="class_function.html">Function</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_function.html#a2be1da6c238e7db53480b193351b96c1">   23</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_function.html#a2be1da6c238e7db53480b193351b96c1">~Function</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_function.html#a7bb6bbdd01c508cb0a4d4ad545915d3c">   33</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a> <a class="code hl_function" href="class_function.html#a7bb6bbdd01c508cb0a4d4ad545915d3c">Eval</a>(<span class="keywordtype">double</span> t, <span class="keyword">const</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a>&amp; y) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a> <a class="code hl_function" href="class_function.html#a46edab05fbafe2413e8dac3de7c6186f">Grad</a>(<span class="keywordtype">double</span> t, <span class="keyword">const</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a>&amp; y, <span class="keywordtype">double</span> dy = 0.1) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
 </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_dynamic_tensor_html"><div class="ttname"><a href="class_dynamic_tensor.html">DynamicTensor</a></div><div class="ttdoc">A class to represent a mathematical tensor of arbitrary rank at runtime.</div><div class="ttdef"><b>Definition</b> dynamic_tensor.h:30</div></div>
-<div class="ttc" id="aclass_function_html"><div class="ttname"><a href="class_function.html">Function</a></div><div class="ttdoc">Abstract base class representing a mathematical function for ODEs. This class defines the interface f...</div><div class="ttdef"><b>Definition</b> function.h:13</div></div>
-<div class="ttc" id="aclass_function_html_a27c7561a090ecc5688a662f5ab2b6902"><div class="ttname"><a href="class_function.html#a27c7561a090ecc5688a662f5ab2b6902">Function::Grad</a></div><div class="ttdeci">virtual DynamicTensor Grad(double t, const DynamicTensor &amp;y, double dy=0.1) const</div><div class="ttdoc">Finds Gradient of the function using central difference method.</div></div>
+<div class="ttc" id="aclass_function_html"><div class="ttname"><a href="class_function.html">Function</a></div><div class="ttdoc">Abstract base class representing a mathematical function for ODEs. This class defines the interface f...</div><div class="ttdef"><b>Definition</b> function.h:18</div></div>
 <div class="ttc" id="aclass_function_html_a2be1da6c238e7db53480b193351b96c1"><div class="ttname"><a href="class_function.html#a2be1da6c238e7db53480b193351b96c1">Function::~Function</a></div><div class="ttdeci">virtual ~Function()=default</div><div class="ttdoc">Virtual destructor.</div></div>
+<div class="ttc" id="aclass_function_html_a46edab05fbafe2413e8dac3de7c6186f"><div class="ttname"><a href="class_function.html#a46edab05fbafe2413e8dac3de7c6186f">Function::Grad</a></div><div class="ttdeci">virtual DynamicTensor Grad(double t, const DynamicTensor &amp;y, double dy=0.1) const</div><div class="ttdoc">Finds Gradient of the function using central difference method.</div><div class="ttdef"><b>Definition</b> function.cpp:7</div></div>
 <div class="ttc" id="aclass_function_html_a7bb6bbdd01c508cb0a4d4ad545915d3c"><div class="ttname"><a href="class_function.html#a7bb6bbdd01c508cb0a4d4ad545915d3c">Function::Eval</a></div><div class="ttdeci">virtual DynamicTensor Eval(double t, const DynamicTensor &amp;y) const =0</div><div class="ttdoc">Evaluates the function at a given time and state.</div></div>
 <div class="ttc" id="adynamic__tensor_8h_html"><div class="ttname"><a href="dynamic__tensor_8h.html">dynamic_tensor.h</a></div><div class="ttdoc">Header definition for the DynamicTensor class.</div></div>
 </div><!-- fragment --></div><!-- contents -->

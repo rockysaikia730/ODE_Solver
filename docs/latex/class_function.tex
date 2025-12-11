@@ -2,7 +2,7 @@
 \hypertarget{class_function}{}\label{class_function}\index{Function@{Function}}
 
 
-Abstract base class representing a mathematical function for ODEs. This class defines the interface for evaluating functions that take a time and a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} as input and return a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} as output.  
+Abstract base class representing a mathematical function for ODEs. This class defines the interface for evaluating functions that take a time and a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} as input and return a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} as output. Anyone overriding this class must implement the Eval method, and we also suggest to perform a check on dimensions inside the overridden method. The gradient method should also be overridden if the true gradient is known. The current gradient method uses central difference to approximate the gradient, only for real-\/valued, scalar functions.  
 
 
 
@@ -23,12 +23,12 @@ virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Function} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_function_a7bb6bbdd01c508cb0a4d4ad545915d3c}{Eval}} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y) const =0
 \begin{DoxyCompactList}\small\item\em Evaluates the function at a given time and state. \end{DoxyCompactList}\item 
-virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_function_a27c7561a090ecc5688a662f5ab2b6902}{Grad}} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y, double dy=0.\+1) const
+virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_function_a46edab05fbafe2413e8dac3de7c6186f}{Grad}} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y, double dy=0.\+1) const
 \begin{DoxyCompactList}\small\item\em Finds Gradient of the function using central difference method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Abstract base class representing a mathematical function for ODEs. This class defines the interface for evaluating functions that take a time and a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} as input and return a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} as output. 
+Abstract base class representing a mathematical function for ODEs. This class defines the interface for evaluating functions that take a time and a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} as input and return a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} as output. Anyone overriding this class must implement the Eval method, and we also suggest to perform a check on dimensions inside the overridden method. The gradient method should also be overridden if the true gradient is known. The current gradient method uses central difference to approximate the gradient, only for real-\/valued, scalar functions. 
 
 \label{doc-func-members}
 \Hypertarget{class_function_doc-func-members}
@@ -51,20 +51,17 @@ Evaluates the function at a given time and state.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The result of the function evaluation as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. 
+The result of the function evaluation as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. When implementing this method, ensure that the output tensor\textquotesingle{}s shape is compatible with the input tensor\textquotesingle{}s shape as required by the ODE system. 
 \end{DoxyReturn}
-\begin{DoxyRemark}{Remarks}
-When implementing this method, ensure that the output tensor\textquotesingle{}s shape is compatible with the input tensor\textquotesingle{}s shape as required by the ODE system. 
-\end{DoxyRemark}
 
 
 Implemented in \mbox{\hyperlink{class_implicit_solver_1_1_implicit_equation_a8e4ed6176155127e40b8fb1d9cdad06f}{Implicit\+Solver\+::\+Implicit\+Equation}}, and \mbox{\hyperlink{class_parsed_function_a874b816d9b82a34ac2bebdecc74036e4}{Parsed\+Function}}.
 
-\Hypertarget{class_function_a27c7561a090ecc5688a662f5ab2b6902}\index{Function@{Function}!Grad@{Grad}}
+\Hypertarget{class_function_a46edab05fbafe2413e8dac3de7c6186f}\index{Function@{Function}!Grad@{Grad}}
 \index{Grad@{Grad}!Function@{Function}}
 \doxysubsubsection{\texorpdfstring{Grad()}{Grad()}}
-{\footnotesize\ttfamily \label{class_function_a27c7561a090ecc5688a662f5ab2b6902} 
-virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Function\+::\+Grad (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y}{, }\item[{double}]{dy}{ = {\ttfamily 0.1}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_function_a46edab05fbafe2413e8dac3de7c6186f} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Function\+::\+Grad (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y}{, }\item[{double}]{dy}{ = {\ttfamily 0.1}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -82,10 +79,11 @@ The Gradient of the function evaluation as a \doxylink{class_dynamic_tensor}{Dyn
 \end{DoxyReturn}
 
 
-Reimplemented in \mbox{\hyperlink{class_parsed_function_af8c84cc7c6111f48923b5d5ce644d5a8}{Parsed\+Function}}.
+Reimplemented in \mbox{\hyperlink{class_implicit_solver_1_1_implicit_equation_ab5ebda2556920f006fda955b1a24c1a8}{Implicit\+Solver\+::\+Implicit\+Equation}}, and \mbox{\hyperlink{class_parsed_function_af8c84cc7c6111f48923b5d5ce644d5a8}{Parsed\+Function}}.
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/function.\+h\end{DoxyCompactItemize}
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/function.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/function.\+cpp\end{DoxyCompactItemize}

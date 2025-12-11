@@ -1,25 +1,8 @@
 var searchData=
 [
-  ['separator_5f_0',['separator_',['../class_output.html#a370190db35d04e9ab23ac8307a00b5cf',1,'Output::separator_'],['../class_reader.html#abf552b3a25392737537633019196ff08',1,'Reader::separator_']]],
-  ['setcommentchar_1',['SetCommentChar',['../class_output_txt.html#addd1feb9fbc28ba01e481c8a8108219a',1,'OutputTxt']]],
-  ['setendtime_2',['SetEndTime',['../class_ode_solver.html#a662cff46a2025f9b99295d5fcefbe0b6',1,'OdeSolver']]],
-  ['setfileextension_3',['SetFileExtension',['../class_reader.html#aca06f0a9f6d41e0d9abf0d8d3f2be274',1,'Reader']]],
-  ['setfilename_4',['SetFileName',['../class_reader.html#ae142b32ae6481733b84b20141cdafda2',1,'Reader']]],
-  ['setfilename_5',['SetFilename',['../class_output.html#a756dbe53d44ada8ecb1adb31bb1b53a7',1,'Output']]],
-  ['setfunction_6',['SetFunction',['../class_ode.html#af3ab83837c43a9915d9c3b110ca0410f',1,'Ode']]],
-  ['setheader_7',['SetHeader',['../class_output_csv.html#a9bdef00387845cff7e8d2c22436391e2',1,'OutputCsv::SetHeader()'],['../class_output_txt.html#a9f1e22fb863f92556fc0d088ca46005f',1,'OutputTxt::SetHeader()']]],
-  ['setname_8',['SetName',['../class_ode.html#ac0bda460d709fed3c4680b0d8468d871',1,'Ode']]],
-  ['setrootfinder_9',['SetRootFinder',['../class_ode.html#a53c09a13019c843e03b918438074777a',1,'Ode']]],
-  ['setseparator_10',['SetSeparator',['../class_output_csv.html#a70e2b7744b90703781a3de8d244efa49',1,'OutputCsv::SetSeparator()'],['../class_reader.html#ad204b9322007aab318b9e444bb5dbcea',1,'Reader::SetSeparator()']]],
-  ['sett0_11',['SetT0',['../class_ode.html#aee3a5d1ff24f6143623fedc3b78ccd7f',1,'Ode']]],
-  ['settimespan_12',['SetTimeSpan',['../class_ode_solver.html#ae1242b79d094ce57a73b76661cdbdc94',1,'OdeSolver::SetTimeSpan(int num_of_steps)'],['../class_ode_solver.html#a673fb059d7379dfc9bfea833318b4049',1,'OdeSolver::SetTimeSpan(double step_size)']]],
-  ['sety0_13',['SetY0',['../class_ode.html#ac3c249eedd399493d573a5a823172b82',1,'Ode::SetY0(const DynamicTensor &amp;in_y0)'],['../class_ode.html#a9c1f258b5c30cb458cb66121d76ff604',1,'Ode::SetY0(double in_y0)']]],
-  ['size_14',['size',['../class_dynamic_tensor.html#a80d631cc2d2151a0e3c9da15edbd870d',1,'DynamicTensor']]],
-  ['solution_5f_15',['solution_',['../class_ode_solver.html#a8e42a49ba25b6c2c5b029cd70e75d38e',1,'OdeSolver']]],
-  ['solve_16',['Solve',['../class_ode_solver.html#a8528789990b812fe0b498fabb7e1521f',1,'OdeSolver']]],
-  ['solver_5fparams_17',['solver_params',['../struct_ode_raw_data_1_1solver__params.html',1,'OdeRawData::solver_params'],['../struct_ode_raw_data.html#ac471176ce831357580713545540425a5',1,'OdeRawData::solver_params']]],
-  ['split_18',['Split',['../class_reader.html#a1949190ed8188132c3a25e886f10d376',1,'Reader']]],
-  ['start_5ftime_5f_19',['start_time_',['../class_ode_solver.html#a349bdd8382aed99df05dddd5d7d747a2',1,'OdeSolver']]],
-  ['step_20',['Step',['../class_multi_step_ode_solver.html#aad3953387824f19957cfe9e1e4eb1b90',1,'MultiStepOdeSolver::Step()'],['../class_ode_solver.html#ac757f67f9d0d8234cd8aa79cb107816b',1,'OdeSolver::Step()']]],
-  ['step_5fsize_5f_21',['step_size_',['../class_ode_solver.html#a27c98f59e22ca709d451b8ba15bf3e16',1,'OdeSolver']]]
+  ['main_0',['REMAINING TO DO THE SOLVER, Dynamic tensor, and the main.',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md18',1,'']]],
+  ['max_5fiterations_1',['max_iterations',['../struct_ode_raw_data_1_1solver__params.html#a7e23819614ac4fbf12ee14903e7bad91',1,'OdeRawData::solver_params']]],
+  ['mechanism_20provided_20for_20veryfying_20the_20shape_20of_20the_20function_20and_20the_20input_20tensor_20this_20responsibility_20is_20delegated_20to_20the_20user_20to_20verify_20for_20the_20time_20being_2',['Right now, there is no checking mechanism provided for veryfying the shape of the function and the input tensor. This responsibility is delegated to the user to verify for the time being.',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md15',1,'']]],
+  ['method_3',['method',['../struct_ode_raw_data_1_1solver__params.html#a52402947caf3267dd7bbb59de276ec7a',1,'OdeRawData::solver_params']]],
+  ['multistepodesolver_4',['MultiStepOdeSolver',['../class_multi_step_ode_solver.html',1,'MultiStepOdeSolver'],['../class_multi_step_ode_solver.html#a146cffeef6b16589864a568834433e98',1,'MultiStepOdeSolver::MultiStepOdeSolver(const Ode &amp;ode, double step_size=0.01, double end_time=0.0, int order_solution=1, int order_derivative=1)'],['../class_multi_step_ode_solver.html#a0908687bef779b2a8a53984d35872e8b',1,'MultiStepOdeSolver::MultiStepOdeSolver(const Ode &amp;ode, int num_of_steps, double end_time=0.0, int order_solution=1, int order_derivative=1)']]]
 ];

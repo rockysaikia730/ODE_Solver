@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ODE solver: DynamicTensor Class Reference</title>
+<title>ODE_Solver: DynamicTensor Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ODE solver
+   <div id="projectname">ODE_Solver
    </div>
   </td>
  </tr>
@@ -124,7 +124,7 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>DynamicTensor</b> (Complex data)</td></tr>
 <tr class="memitem:a4100eb661f083d8f602559ad7774198a" id="r_a4100eb661f083d8f602559ad7774198a"><td class="memItemLeft" align="right" valign="top"><a id="a4100eb661f083d8f602559ad7774198a" name="a4100eb661f083d8f602559ad7774198a"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsComplex</b> () const</td></tr>
-<tr class="memitem:a985d425433a87baaee686fc48af19b14" id="r_a985d425433a87baaee686fc48af19b14"><td class="memItemLeft" align="right" valign="top"><a id="a985d425433a87baaee686fc48af19b14" name="a985d425433a87baaee686fc48af19b14"></a>
+<tr class="memitem:acd36acf18da6cac52b986d9903e864ce" id="r_acd36acf18da6cac52b986d9903e864ce"><td class="memItemLeft" align="right" valign="top"><a id="acd36acf18da6cac52b986d9903e864ce" name="acd36acf18da6cac52b986d9903e864ce"></a>
 Type&#160;</td><td class="memItemRight" valign="bottom"><b>GetType</b> () const</td></tr>
 <tr class="memitem:a74eb8a4210abf2b8719ffba0e3de1dc8" id="r_a74eb8a4210abf2b8719ffba0e3de1dc8"><td class="memTemplParams" colspan="2"><a id="a74eb8a4210abf2b8719ffba0e3de1dc8" name="a74eb8a4210abf2b8719ffba0e3de1dc8"></a>
 template&lt;typename T&gt; </td></tr>
@@ -195,8 +195,6 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class to represent a mathematical tensor of arbitrary rank at runtime. </p>
 <p>The <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a> stores data in a contiguous 1D memory block (std::vector) but provides an interface to access elements using N-dimensional coordinates. It uses Row-Major ordering (last dimension changes fastest). </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example.html#_a0">C:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/include/dynamic_tensor.h</a>.</dd>
-</dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a595b2d7fb3043fd29ac32cf77194aee7" name="a595b2d7fb3043fd29ac32cf77194aee7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a595b2d7fb3043fd29ac32cf77194aee7">&#9670;&#160;</a></span>DynamicTensor() <span class="overload">[1/2]</span></h2>
@@ -319,8 +317,6 @@ template&lt;typename T&gt; </div>
 <p>Get the flattened data as a vector. </p>
 <dl class="section return"><dt>Returns</dt><dd>A constant reference to the internal data vector. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The changes here are suggested by ChatGPT. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example.html#a11">C:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/include/dynamic_tensor.h</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -341,8 +337,6 @@ template&lt;typename T&gt; </div>
 
 <p>Get the shape of the tensor. </p>
 <dl class="section return"><dt>Returns</dt><dd>A const reference to the vector of dimensions. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example.html#a9">C:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/include/dynamic_tensor.h</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -363,8 +357,6 @@ template&lt;typename T&gt; </div>
 
 <p>Get the rank (number of dimensions) of the tensor. </p>
 <dl class="section return"><dt>Returns</dt><dd>The size of the shape vector (e.g., a 3D volume returns 3). </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example.html#a10">C:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/include/dynamic_tensor.h</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -385,13 +377,12 @@ template&lt;typename T&gt; </div>
 
 <p>Get the total number of elements in the tensor. </p>
 <dl class="section return"><dt>Returns</dt><dd>The product of all dimensions (e.g., 2x3x4 = 24). </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example.html#a8">C:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/include/dynamic_tensor.h</a>.</dd>
-</dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/include/<a class="el" href="dynamic__tensor_8h_source.html">dynamic_tensor.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/Users/rocky/notes/Scientific Computing/ODE_Solver/include/<a class="el" href="dynamic__tensor_8h_source.html">dynamic_tensor.h</a></li>
+<li>/Users/rocky/notes/Scientific Computing/ODE_Solver/src/<b>dynamic_tensor.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

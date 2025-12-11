@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "ODE solver", "index.html", [
+  [ "ODE_Solver", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -44,7 +44,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example.html"
+"_2_users_2rocky_2notes_2_scientific_01_computing_2_o_d_e__solver_2include_2dynamic_tensor_8h-example.html",
+"struct_ode_raw_data_1_1function__params.html#a372d8716ca84a93bfbabd1b466673092"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

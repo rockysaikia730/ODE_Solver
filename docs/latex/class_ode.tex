@@ -2,7 +2,7 @@
 \hypertarget{class_ode}{}\label{class_ode}\index{Ode@{Ode}}
 
 
-Represents an Ordinary Differential Equation (ODE) problem definition.  
+Represents an Ordinary Differential Equation (ODE) problem definition. This class encapsulates the initial conditions, the derivative function, and the root finding strategy for implicit solvers.  
 
 
 
@@ -12,9 +12,9 @@ Represents an Ordinary Differential Equation (ODE) problem definition.
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_ode_ac736732af81e992bb58e727a93d3d1ab}{Ode}} (double in\+\_\+time, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&in\+\_\+y0, const std\+::string \&in\+\_\+name, std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_function}{Function}} $>$ func, std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_function}{Function}} $>$ derivative=nullptr, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\mbox{\hyperlink{class_ode_a8e925db2771c560a3c5d29bac3677a91}{Ode}} (double in\+\_\+time, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&in\+\_\+y0, const std\+::string \&in\+\_\+name, std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_function}{Function}} $>$ func, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructor with Tensor state. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_ode_aab13477c2e8a9ce93454441e4a143ce5}{Ode}} (double in\+\_\+time, const double \&in\+\_\+y0, const std\+::string \&in\+\_\+name, std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_function}{Function}} $>$ func, std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_function}{Function}} $>$ derivative=nullptr, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\mbox{\hyperlink{class_ode_a8563d6293208b60845bbc0c1bd3c1c34}{Ode}} (double in\+\_\+time, const double \&in\+\_\+y0, const std\+::string \&in\+\_\+name, std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_function}{Function}} $>$ func, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructor with Scalar state. Convenience constructor that promotes a double to a Rank-\/1 Tensor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_ode_af8f3b705253b3eb58dc7e58d5dbd7c22}{Ode}} (const \mbox{\hyperlink{class_reader}{Reader}} \&reader)
 \begin{DoxyCompactList}\small\item\em Constructor from \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
@@ -24,8 +24,8 @@ Represents an Ordinary Differential Equation (ODE) problem definition.
 \begin{DoxyCompactList}\small\item\em Copy Assignment Operator. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_ode_a757142bfffd7d5420feda0e5e6a91af9}{Ode}} (const \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \&raw)
 \begin{DoxyCompactList}\small\item\em Constructor from \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data}. \end{DoxyCompactList}\item 
-\Hypertarget{class_ode_a428fd9af9e250da57b59945d30c96cd3}\label{class_ode_a428fd9af9e250da57b59945d30c96cd3} 
-virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ode} ()
+\Hypertarget{class_ode_ac6468fab017c86c1fac0fd35545fe4b5}\label{class_ode_ac6468fab017c86c1fac0fd35545fe4b5} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ode} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ode_aee3a5d1ff24f6143623fedc3b78ccd7f}{Set\+T0}} (double time)
 \begin{DoxyCompactList}\small\item\em Set the initial time. \end{DoxyCompactList}\item 
@@ -56,23 +56,16 @@ const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder
 
 
 \doxysubsection{Detailed Description}
-Represents an Ordinary Differential Equation (ODE) problem definition. 
-
-The \doxylink{class_ode}{Ode} class acts as a container for the problem definition. It holds\+:
-\begin{DoxyEnumerate}
-\item The Initial Value Problem (IVP) conditions (t0, y0).
-\item The physics/math function defining the derivative (dy/dt).
-\item A root finding strategy (used for implicit solving methods). 
-\end{DoxyEnumerate}
+Represents an Ordinary Differential Equation (ODE) problem definition. This class encapsulates the initial conditions, the derivative function, and the root finding strategy for implicit solvers. 
 
 \label{doc-constructors}
 \Hypertarget{class_ode_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_ode_ac736732af81e992bb58e727a93d3d1ab}\index{Ode@{Ode}!Ode@{Ode}}
+\Hypertarget{class_ode_a8e925db2771c560a3c5d29bac3677a91}\index{Ode@{Ode}!Ode@{Ode}}
 \index{Ode@{Ode}!Ode@{Ode}}
 \doxysubsubsection{\texorpdfstring{Ode()}{Ode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
-{\footnotesize\ttfamily \label{class_ode_ac736732af81e992bb58e727a93d3d1ab} 
-Ode\+::\+Ode (\begin{DoxyParamCaption}\item[{double}]{in\+\_\+time}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{in\+\_\+y0}{, }\item[{const std\+::string \&}]{in\+\_\+name}{, }\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_function}{Function}} $>$}]{func}{, }\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_function}{Function}} $>$}]{derivative}{ = {\ttfamily nullptr}, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_ode_a8e925db2771c560a3c5d29bac3677a91} 
+Ode\+::\+Ode (\begin{DoxyParamCaption}\item[{double}]{in\+\_\+time}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{in\+\_\+y0}{, }\item[{const std\+::string \&}]{in\+\_\+name}{, }\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_function}{Function}} $>$}]{func}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
 
 
 
@@ -82,22 +75,20 @@ Constructor with Tensor state.
 \begin{DoxyParams}{Parameters}
 {\em in\+\_\+time} & The initial time (t0). \\
 \hline
-{\em in\+\_\+y0} & The initial state vector/tensor (y0). \\
+{\em in\+\_\+y0} & The initial state tensor (y0). \\
 \hline
 {\em in\+\_\+name} & A unique identifier name for this ODE system. \\
 \hline
-{\em func} & Shared pointer to the function defining dy/dt = f(t, y). \\
+{\em func} & Shared pointer to the function defining dy/dt = f(t, y) and the Jacobian \\
 \hline
-{\em derivative} & Shared pointer to the derivative function (optional). \\
-\hline
-{\em root\+\_\+finder} & Shared pointer to the root finding strategy (for implicit solvers). \\
+{\em root\+\_\+finder} & Shared pointer to the root finding strategy. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_ode_aab13477c2e8a9ce93454441e4a143ce5}\index{Ode@{Ode}!Ode@{Ode}}
+\Hypertarget{class_ode_a8563d6293208b60845bbc0c1bd3c1c34}\index{Ode@{Ode}!Ode@{Ode}}
 \index{Ode@{Ode}!Ode@{Ode}}
 \doxysubsubsection{\texorpdfstring{Ode()}{Ode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
-{\footnotesize\ttfamily \label{class_ode_aab13477c2e8a9ce93454441e4a143ce5} 
-Ode\+::\+Ode (\begin{DoxyParamCaption}\item[{double}]{in\+\_\+time}{, }\item[{const double \&}]{in\+\_\+y0}{, }\item[{const std\+::string \&}]{in\+\_\+name}{, }\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_function}{Function}} $>$}]{func}{, }\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_function}{Function}} $>$}]{derivative}{ = {\ttfamily nullptr}, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_ode_a8563d6293208b60845bbc0c1bd3c1c34} 
+Ode\+::\+Ode (\begin{DoxyParamCaption}\item[{double}]{in\+\_\+time}{, }\item[{const double \&}]{in\+\_\+y0}{, }\item[{const std\+::string \&}]{in\+\_\+name}{, }\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_function}{Function}} $>$}]{func}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
 
 
 
@@ -111,9 +102,7 @@ Constructor with Scalar state. Convenience constructor that promotes a double to
 \hline
 {\em in\+\_\+name} & A unique identifier name for this ODE system. \\
 \hline
-{\em func} & Shared pointer to the function defining dy/dt = f(t, y). \\
-\hline
-{\em derivative} & Shared pointer to the derivative function (optional). \\
+{\em func} & Shared pointer to the function defining dy/dt = f(t, y) and the Jaciobian. \\
 \hline
 {\em root\+\_\+finder} & Shared pointer to the root finding strategy. \\
 \hline
@@ -130,7 +119,7 @@ Constructor from \doxylink{class_reader}{Reader}.
 
 
 \begin{DoxyParams}{Parameters}
-{\em reader} & A \doxylink{class_reader}{Reader} object which reades from input file to initialise the ODE. \\
+{\em reader} & A \doxylink{class_reader}{Reader} object that provides \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data}. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_ode_a1d34ac07569d4bbe02ef04d5ad6fab2b}\index{Ode@{Ode}!Ode@{Ode}}
@@ -390,6 +379,8 @@ Set the initial state using a scalar.
 \end{DoxyParams}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/\mbox{\hyperlink{ode_8h}{ode.\+h}}\end{DoxyCompactItemize}
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/ode.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/ODE.\+cpp\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/ode\+\_\+copy.\+cc\end{DoxyCompactItemize}

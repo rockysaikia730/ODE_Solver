@@ -1,5 +1,14 @@
 \doxysection{Adam\+Moulton Class Reference}
 \hypertarget{class_adam_moulton}{}\label{class_adam_moulton}\index{AdamMoulton@{AdamMoulton}}
+
+
+Implicit multistep ODE solver implementing the Adams–\+Moulton method.  
+
+
+
+
+{\ttfamily \#include $<$adam\+\_\+moulton\+\_\+solver.\+h$>$}
+
 Inheritance diagram for Adam\+Moulton\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,47 +18,34 @@ Inheritance diagram for Adam\+Moulton\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_adam_moulton_abc62137028b966f8bfc671c66a947725}\label{class_adam_moulton_abc62137028b966f8bfc671c66a947725} 
-{\bfseries Adam\+Moulton} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order=1, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
-\item 
-\Hypertarget{class_adam_moulton_a3bb665dd50392f25d02d4ad6d345cbc3}\label{class_adam_moulton_a3bb665dd50392f25d02d4ad6d345cbc3} 
-{\bfseries Adam\+Moulton} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order=1, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
-\item 
+\mbox{\hyperlink{class_adam_moulton_a969a9527ff10e9cb6199ac59b653c1d5}{Adam\+Moulton}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order=2, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs an Adams–\+Moulton solver using a fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_adam_moulton_a920ee7649c0bb57b72af8d941f5661e4}{Adam\+Moulton}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order=2, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs an Adams–\+Moulton solver using a specified number of time steps. \end{DoxyCompactList}\item 
 const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{class_adam_moulton_ad2bfcd5f4c6cf141e975c441239cfaa6}{Get\+CoeffsY}} () const override
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the coefficients applied to solution values in the implicit Adams–\+Moulton formula. \end{DoxyCompactList}\item 
 const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{class_adam_moulton_a5c9bd3ac47674d61cedbb1bf393d3f8e}{Get\+CoeffsdY}} () const override
-\item 
-\Hypertarget{class_adam_moulton_a58a45e28426ea087a2565a2dcb00e09f}\label{class_adam_moulton_a58a45e28426ea087a2565a2dcb00e09f} 
-int {\bfseries Get\+Order} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the derivative coefficients used in the Adams–\+Moulton formula. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_adam_moulton_a58a45e28426ea087a2565a2dcb00e09f}{Get\+Order}} ()
+\begin{DoxyCompactList}\small\item\em Returns the order of the Adams–\+Moulton scheme. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Implicit\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
-\item 
-{\bfseries Implicit\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
-\item 
-virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_implicit_solver_a9f93bb76e5a9fa8df53c5dedd2fcaa5e}{Compute\+Step}} () override
-\begin{DoxyCompactList}\small\item\em Calculates the solution at the next time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_implicit_solver_a6974272e5de96d69d12f88e02dbb5a7b}{Implicit\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_implicit_solver}{Implicit\+Solver} using a fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_implicit_solver_aeac055d99a35bf3480a1bcc97e4f8670}{Implicit\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_implicit_solver}{Implicit\+Solver} using a specified number of time steps. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_implicit_solver_a4f79fcbfa43f5b7c2207ce61a4420d74}{Compute\+Step}} () override
+\begin{DoxyCompactList}\small\item\em Advances the solution by one implicit time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Multi\+Step\+Ode\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
-\item 
-{\bfseries Multi\+Step\+Ode\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
-\item 
-virtual void {\bfseries Init\+Buffers} ()
-\item 
-void {\bfseries Update\+Derivative} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&dydt)
-\item 
-void {\bfseries Update\+Solution} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y)
-\item 
-void {\bfseries Update\+Window\+Sum} ()
-\item 
-void \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}} () override
-\begin{DoxyCompactList}\small\item\em Resets the solver state to the initial conditions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_multi_step_ode_solver_a146cffeef6b16589864a568834433e98}{Multi\+Step\+Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
+\begin{DoxyCompactList}\small\item\em Constructor with fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_multi_step_ode_solver_a0908687bef779b2a8a53984d35872e8b}{Multi\+Step\+Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
+\begin{DoxyCompactList}\small\item\em Constructor using a specified number of steps. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90}{Step}} () override
-\begin{DoxyCompactList}\small\item\em Updates the solution\+\_\+ and time for next time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Advance the solution by one time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -84,26 +80,39 @@ void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}
 \item 
 \Hypertarget{class_adam_moulton_aa0e8d5badcf6e76f50bf7f0ee07bb5b8}\label{class_adam_moulton_aa0e8d5badcf6e76f50bf7f0ee07bb5b8} 
 int {\bfseries order\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Order of the Adams–\+Moulton method (number of steps used). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Init\+Buffers} ()
+\begin{DoxyCompactList}\small\item\em Initialize buffers for storing solution and derivative history. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_a2e603e3908b1c51514107b13935d02ef}{Update\+Derivative}} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&dydt)
+\begin{DoxyCompactList}\small\item\em Add a new derivative value to the history. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_a5bda016c46d93c7c7ce9e8b693048ed6}{Update\+Solution}} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y)
+\begin{DoxyCompactList}\small\item\em Add a new solution value to the history. \end{DoxyCompactList}\item 
+void {\bfseries Update\+Window\+Sum} ()
+\begin{DoxyCompactList}\small\item\em Update cached weighted sums used by the multistep scheme. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}} () override
+\begin{DoxyCompactList}\small\item\em Reset solver state and history buffers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ {\bfseries root\+\_\+finder\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Root finder used to solve the nonlinear implicit equation at each step. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
 int {\bfseries order\+\_\+sol\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Order of the multistep term using past solution values. \end{DoxyCompactList}\item 
 int {\bfseries order\+\_\+derivative\+\_\+}
-\item 
-\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries sum\+\_\+tn\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Order of the multistep term using past derivative values. \end{DoxyCompactList}\item 
 std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\bfseries solutions\+\_\+buffer\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Buffer of previously computed solution states. \end{DoxyCompactList}\item 
 std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\bfseries derivative\+\_\+buffer\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Buffer of previously computed derivative evaluations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries sum\+\_\+tn\+\_\+}
+\begin{DoxyCompactList}\small\item\em Cached weighted sum of stored solution/derivative terms. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -116,9 +125,65 @@ double {\bfseries end\+\_\+time\+\_\+}
 double {\bfseries step\+\_\+size\+\_\+}
 \begin{DoxyCompactList}\small\item\em The time step (dt). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries solution\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\item 
 double {\bfseries current\+\_\+time\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implicit multistep ODE solver implementing the Adams–\+Moulton method. 
+
+The Adams–\+Moulton family consists of implicit linear multistep methods. Unlike Adams–\+Bashforth, these methods require solving a nonlinear system at each step but generally offer higher stability and accuracy for stiff or moderately stiff ODEs. This class uses the \doxylink{class_implicit_solver}{Implicit\+Solver} interface along with a \doxylink{class_root_finder}{Root\+Finder} to perform each implicit solve. 
+
+\label{doc-constructors}
+\Hypertarget{class_adam_moulton_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_adam_moulton_a969a9527ff10e9cb6199ac59b653c1d5}\index{AdamMoulton@{AdamMoulton}!AdamMoulton@{AdamMoulton}}
+\index{AdamMoulton@{AdamMoulton}!AdamMoulton@{AdamMoulton}}
+\doxysubsubsection{\texorpdfstring{AdamMoulton()}{AdamMoulton()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_adam_moulton_a969a9527ff10e9cb6199ac59b653c1d5} 
+Adam\+Moulton\+::\+Adam\+Moulton (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{double}]{step\+\_\+size}{ = {\ttfamily 0.01}, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}, }\item[{int}]{order}{ = {\ttfamily 2}, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Constructs an Adams–\+Moulton solver using a fixed step size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & Reference to the ODE system to integrate. \\
+\hline
+{\em step\+\_\+size} & Time step size. \\
+\hline
+{\em end\+\_\+time} & Final integration time. \\
+\hline
+{\em order} & Order of the Adams–\+Moulton method (commonly 1–4). \\
+\hline
+{\em root\+\_\+finder} & Shared pointer to a \doxylink{class_root_finder}{Root\+Finder} used to solve the implicit equation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_adam_moulton_a920ee7649c0bb57b72af8d941f5661e4}\index{AdamMoulton@{AdamMoulton}!AdamMoulton@{AdamMoulton}}
+\index{AdamMoulton@{AdamMoulton}!AdamMoulton@{AdamMoulton}}
+\doxysubsubsection{\texorpdfstring{AdamMoulton()}{AdamMoulton()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_adam_moulton_a920ee7649c0bb57b72af8d941f5661e4} 
+Adam\+Moulton\+::\+Adam\+Moulton (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{int}]{num\+\_\+of\+\_\+steps}{, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}, }\item[{int}]{order}{ = {\ttfamily 2}, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Constructs an Adams–\+Moulton solver using a specified number of time steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & Reference to the ODE system to integrate. \\
+\hline
+{\em num\+\_\+of\+\_\+steps} & Number of uniform time steps. \\
+\hline
+{\em end\+\_\+time} & Final integration time. \\
+\hline
+{\em order} & Order of the Adams–\+Moulton method. \\
+\hline
+{\em root\+\_\+finder} & Shared pointer to a \doxylink{class_root_finder}{Root\+Finder} for implicit solves. \\
+\hline
+\end{DoxyParams}
 
 
 \label{doc-func-members}
@@ -132,7 +197,16 @@ const std\+::vector$<$ double $>$ \& Adam\+Moulton\+::\+Get\+CoeffsdY (\begin{Do
 
 
 
-Implements \mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}}.
+Returns the derivative coefficients used in the Adams–\+Moulton formula. 
+
+These coefficients determine the weighting of previous derivative evaluations on the right-\/hand side of the implicit step equation.
+
+\begin{DoxyReturn}{Returns}
+Constant reference to the vector of derivative coefficients. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_multi_step_ode_solver_a359ebb566d4d4e84a8408fe1d0da456d}{Multi\+Step\+Ode\+Solver}}.
 
 \Hypertarget{class_adam_moulton_ad2bfcd5f4c6cf141e975c441239cfaa6}\index{AdamMoulton@{AdamMoulton}!GetCoeffsY@{GetCoeffsY}}
 \index{GetCoeffsY@{GetCoeffsY}!AdamMoulton@{AdamMoulton}}
@@ -142,10 +216,35 @@ const std\+::vector$<$ double $>$ \& Adam\+Moulton\+::\+Get\+CoeffsY (\begin{Dox
 
 
 
-Implements \mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}}.
+Returns the coefficients applied to solution values in the implicit Adams–\+Moulton formula. 
+
+These coefficients appear in the linear multistep representation\+:    \[    \sum_{k=0}^{m} \alpha_k y_{n+1-k}
+     = h \sum_{k=0}^{m} \beta_k f(t_{n+1-k}, y_{n+1-k})
+\]
+
+\begin{DoxyReturn}{Returns}
+Constant reference to the vector of solution coefficients. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_multi_step_ode_solver_a09c62a908bebab5946e61ec2a9373f20}{Multi\+Step\+Ode\+Solver}}.
+
+\Hypertarget{class_adam_moulton_a58a45e28426ea087a2565a2dcb00e09f}\index{AdamMoulton@{AdamMoulton}!GetOrder@{GetOrder}}
+\index{GetOrder@{GetOrder}!AdamMoulton@{AdamMoulton}}
+\doxysubsubsection{\texorpdfstring{GetOrder()}{GetOrder()}}
+{\footnotesize\ttfamily \label{class_adam_moulton_a58a45e28426ea087a2565a2dcb00e09f} 
+int Adam\+Moulton\+::\+Get\+Order (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+Returns the order of the Adams–\+Moulton scheme. 
+
+\begin{DoxyReturn}{Returns}
+Integer order of the method. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/adam\+\_\+moulton\+\_\+solver.\+h\end{DoxyCompactItemize}
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/adam\+\_\+moulton\+\_\+solver.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/adam\+\_\+moulton\+\_\+solver.\+cpp\end{DoxyCompactItemize}

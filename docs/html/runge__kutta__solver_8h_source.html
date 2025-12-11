@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ODE solver: C:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/include/runge_kutta_solver.h Source File</title>
+<title>ODE_Solver: /Users/rocky/notes/Scientific Computing/ODE_Solver/include/runge_kutta_solver.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ODE solver
+   <div id="projectname">ODE_Solver
    </div>
   </td>
  </tr>
@@ -94,25 +94,24 @@ $(function(){initNavTree('runge__kutta__solver_8h_source.html','',''); });
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef RUNGE_KUTTA_SOLVER_H_</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define RUNGE_KUTTA_SOLVER_H_</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="ode_8h.html">ode.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;ode.h&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="ode__solver_8h.html">ode_solver.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_runge_kutta.html">    7</a></span><span class="keyword">class </span>RungeKutta : <span class="keyword">public</span> <a class="code hl_function" href="class_ode_solver.html#ab8375f1f3330bf275d6b18fc936deb3c">OdeSolver</a> {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    RungeKutta(<span class="keyword">const</span> <a class="code hl_class" href="class_ode.html">Ode</a>&amp; ode, <span class="keywordtype">double</span> step_size = 0.01, <span class="keywordtype">double</span> end_time = 0.0);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    RungeKutta(<span class="keyword">const</span> <a class="code hl_class" href="class_ode.html">Ode</a>&amp; ode, <span class="keywordtype">int</span> num_of_steps, <span class="keywordtype">double</span> end_time);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605">   12</a></span>    <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a> <a class="code hl_function" href="class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605">ComputeStep</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>};</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_runge_kutta.html">   15</a></span><span class="keyword">class </span><a class="code hl_function" href="class_runge_kutta.html#ad2c5fc1466e0230af1e91d3b0788316e">RungeKutta</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_ode_solver.html#ab8375f1f3330bf275d6b18fc936deb3c">OdeSolver</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="class_runge_kutta.html#ad2c5fc1466e0230af1e91d3b0788316e">RungeKutta</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_ode.html">Ode</a>&amp; ode, <span class="keywordtype">double</span> step_size = 0.01, <span class="keywordtype">double</span> end_time = 0.0);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="class_runge_kutta.html#ad2c5fc1466e0230af1e91d3b0788316e">RungeKutta</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_ode.html">Ode</a>&amp; ode, <span class="keywordtype">int</span> num_of_steps, <span class="keywordtype">double</span> end_time);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a> <a class="code hl_function" href="class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605">ComputeStep</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_dynamic_tensor_html"><div class="ttname"><a href="class_dynamic_tensor.html">DynamicTensor</a></div><div class="ttdoc">A class to represent a mathematical tensor of arbitrary rank at runtime.</div><div class="ttdef"><b>Definition</b> dynamic_tensor.h:30</div></div>
-<div class="ttc" id="aclass_ode_html"><div class="ttname"><a href="class_ode.html">Ode</a></div><div class="ttdoc">Represents an Ordinary Differential Equation (ODE) problem definition.</div><div class="ttdef"><b>Definition</b> ode.h:32</div></div>
-<div class="ttc" id="aclass_ode_solver_html_ab8375f1f3330bf275d6b18fc936deb3c"><div class="ttname"><a href="class_ode_solver.html#ab8375f1f3330bf275d6b18fc936deb3c">OdeSolver::OdeSolver</a></div><div class="ttdeci">OdeSolver(const Ode &amp;ode, int num_of_steps, double end_time)</div><div class="ttdoc">Constructor for fixed number of steps.</div></div>
-<div class="ttc" id="aclass_runge_kutta_html_aa30cf8dbdf67cb07ca8c3a48d6427605"><div class="ttname"><a href="class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605">RungeKutta::ComputeStep</a></div><div class="ttdeci">DynamicTensor ComputeStep() override</div><div class="ttdoc">Calculates the solution at the next time step.</div></div>
-<div class="ttc" id="aode_8h_html"><div class="ttname"><a href="ode_8h.html">ode.h</a></div><div class="ttdoc">Header definition for the Ode class.</div></div>
+<div class="ttc" id="aclass_ode_html"><div class="ttname"><a href="class_ode.html">Ode</a></div><div class="ttdoc">Represents an Ordinary Differential Equation (ODE) problem definition. This class encapsulates the in...</div><div class="ttdef"><b>Definition</b> ode.h:19</div></div>
+<div class="ttc" id="aclass_ode_solver_html_ab8375f1f3330bf275d6b18fc936deb3c"><div class="ttname"><a href="class_ode_solver.html#ab8375f1f3330bf275d6b18fc936deb3c">OdeSolver::OdeSolver</a></div><div class="ttdeci">OdeSolver(const Ode &amp;ode, int num_of_steps, double end_time)</div><div class="ttdoc">Constructor for fixed number of steps.</div><div class="ttdef"><b>Definition</b> ode_solver.cpp:12</div></div>
+<div class="ttc" id="aclass_runge_kutta_html_aa30cf8dbdf67cb07ca8c3a48d6427605"><div class="ttname"><a href="class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605">RungeKutta::ComputeStep</a></div><div class="ttdeci">DynamicTensor ComputeStep() override</div><div class="ttdoc">Advances the solution by one Runge–Kutta time step.</div><div class="ttdef"><b>Definition</b> runge_kutta_solver.cpp:10</div></div>
+<div class="ttc" id="aclass_runge_kutta_html_ad2c5fc1466e0230af1e91d3b0788316e"><div class="ttname"><a href="class_runge_kutta.html#ad2c5fc1466e0230af1e91d3b0788316e">RungeKutta::RungeKutta</a></div><div class="ttdeci">RungeKutta(const Ode &amp;ode, double step_size=0.01, double end_time=0.0)</div><div class="ttdoc">Constructs a Runge–Kutta solver using a fixed step size.</div><div class="ttdef"><b>Definition</b> runge_kutta_solver.cpp:4</div></div>
 <div class="ttc" id="aode__solver_8h_html"><div class="ttname"><a href="ode__solver_8h.html">ode_solver.h</a></div><div class="ttdoc">Definition of the abstract base class for ODE Solvers.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

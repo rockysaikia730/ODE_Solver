@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ODE solver: C:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/include/root_finder.h Source File</title>
+<title>ODE_Solver: /Users/rocky/notes/Scientific Computing/ODE_Solver/include/root_finder.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ODE solver
+   <div id="projectname">ODE_Solver
    </div>
   </td>
  </tr>
@@ -96,18 +96,20 @@ $(function(){initNavTree('root__finder_8h_source.html','',''); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="dynamic__tensor_8h.html">dynamic_tensor.h</a>&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;function.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_root_finder.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="class_root_finder.html">RootFinder</a> {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_root_finder.html">~RootFinder</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a> FindRoot(<span class="keyword">const</span> <a class="code hl_class" href="class_function.html">Function</a>&amp; f, <span class="keyword">const</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a>&amp; initial_guess, <span class="keywordtype">double</span> t, <span class="keywordtype">int</span> max_iter = 100) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>};</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_root_finder.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_root_finder.html">RootFinder</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_root_finder.html#a689c3d07d2a06188018cfd0163d0a9ce">   20</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_root_finder.html#a689c3d07d2a06188018cfd0163d0a9ce">~RootFinder</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_root_finder.html#a2747f99119bafaee32a70a2e2a7f4907">   32</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a> <a class="code hl_function" href="class_root_finder.html#a2747f99119bafaee32a70a2e2a7f4907">FindRoot</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_function.html">Function</a>&amp; f, <span class="keyword">const</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a>&amp; initial_guess, <span class="keywordtype">double</span> t, <span class="keywordtype">int</span> max_iter = 100) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
 </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_dynamic_tensor_html"><div class="ttname"><a href="class_dynamic_tensor.html">DynamicTensor</a></div><div class="ttdoc">A class to represent a mathematical tensor of arbitrary rank at runtime.</div><div class="ttdef"><b>Definition</b> dynamic_tensor.h:30</div></div>
-<div class="ttc" id="aclass_function_html"><div class="ttname"><a href="class_function.html">Function</a></div><div class="ttdoc">Abstract base class representing a mathematical function for ODEs. This class defines the interface f...</div><div class="ttdef"><b>Definition</b> function.h:13</div></div>
-<div class="ttc" id="aclass_root_finder_html"><div class="ttname"><a href="class_root_finder.html">RootFinder</a></div><div class="ttdef"><b>Definition</b> root_finder.h:7</div></div>
+<div class="ttc" id="aclass_function_html"><div class="ttname"><a href="class_function.html">Function</a></div><div class="ttdoc">Abstract base class representing a mathematical function for ODEs. This class defines the interface f...</div><div class="ttdef"><b>Definition</b> function.h:18</div></div>
+<div class="ttc" id="aclass_root_finder_html"><div class="ttname"><a href="class_root_finder.html">RootFinder</a></div><div class="ttdoc">Abstract base class for root-finding algorithms.</div><div class="ttdef"><b>Definition</b> root_finder.h:15</div></div>
+<div class="ttc" id="aclass_root_finder_html_a2747f99119bafaee32a70a2e2a7f4907"><div class="ttname"><a href="class_root_finder.html#a2747f99119bafaee32a70a2e2a7f4907">RootFinder::FindRoot</a></div><div class="ttdeci">virtual DynamicTensor FindRoot(const Function &amp;f, const DynamicTensor &amp;initial_guess, double t, int max_iter=100) const =0</div><div class="ttdoc">Finds the root of a nonlinear function starting from an initial guess.</div></div>
+<div class="ttc" id="aclass_root_finder_html_a689c3d07d2a06188018cfd0163d0a9ce"><div class="ttname"><a href="class_root_finder.html#a689c3d07d2a06188018cfd0163d0a9ce">RootFinder::~RootFinder</a></div><div class="ttdeci">virtual ~RootFinder()=default</div><div class="ttdoc">Virtual destructor for safe polymorphic use.</div></div>
 <div class="ttc" id="adynamic__tensor_8h_html"><div class="ttname"><a href="dynamic__tensor_8h.html">dynamic_tensor.h</a></div><div class="ttdoc">Header definition for the DynamicTensor class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

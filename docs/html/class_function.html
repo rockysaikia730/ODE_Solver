@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ODE solver: Function Class Reference</title>
+<title>ODE_Solver: Function Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ODE solver
+   <div id="projectname">ODE_Solver
    </div>
   </td>
  </tr>
@@ -92,7 +92,7 @@ $(function(){initNavTree('class_function.html','','class_function-members'); });
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract base class representing a mathematical function for ODEs. This class defines the interface for evaluating functions that take a time and a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a> as input and return a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a> as output.  
+<p>Abstract base class representing a mathematical function for ODEs. This class defines the interface for evaluating functions that take a time and a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a> as input and return a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a> as output. Anyone overriding this class must implement the Eval method, and we also suggest to perform a check on dimensions inside the overridden method. The gradient method should also be overridden if the true gradient is known. The current gradient method uses central difference to approximate the gradient, only for real-valued, scalar functions.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="function_8h_source.html">function.h</a>&gt;</code></p>
@@ -102,8 +102,8 @@ Inheritance diagram for Function:</div>
  <div class="center">
   <img src="class_function.png" usemap="#Function_map" alt=""/>
   <map id="Function_map" name="Function_map">
-<area href="class_implicit_solver_1_1_implicit_equation.html" alt="ImplicitSolver::ImplicitEquation" shape="rect" coords="0,56,179,80"/>
-<area href="class_parsed_function.html" title="Concrete implementation of Function using muParserX for parsing mathematical expressions." alt="ParsedFunction" shape="rect" coords="189,56,368,80"/>
+<area href="class_implicit_solver_1_1_implicit_equation.html" title="Nonlinear equation representing the implicit update rule at a single time step." alt="ImplicitSolver::ImplicitEquation" shape="rect" coords="0,56,179,80"/>
+<area href="class_parsed_function.html" title="Concrete implementation of Function using muParserX for parsing mathematical expressions...." alt="ParsedFunction" shape="rect" coords="189,56,368,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -114,11 +114,11 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Function</b> ()=d
 <tr class="memdesc:a2be1da6c238e7db53480b193351b96c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. <br /></td></tr>
 <tr class="memitem:a7bb6bbdd01c508cb0a4d4ad545915d3c" id="r_a7bb6bbdd01c508cb0a4d4ad545915d3c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bb6bbdd01c508cb0a4d4ad545915d3c">Eval</a> (double t, const <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> &amp;y) const =0</td></tr>
 <tr class="memdesc:a7bb6bbdd01c508cb0a4d4ad545915d3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the function at a given time and state.  <br /></td></tr>
-<tr class="memitem:a27c7561a090ecc5688a662f5ab2b6902" id="r_a27c7561a090ecc5688a662f5ab2b6902"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27c7561a090ecc5688a662f5ab2b6902">Grad</a> (double t, const <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> &amp;y, double dy=0.1) const</td></tr>
-<tr class="memdesc:a27c7561a090ecc5688a662f5ab2b6902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds Gradient of the function using central difference method.  <br /></td></tr>
+<tr class="memitem:a46edab05fbafe2413e8dac3de7c6186f" id="r_a46edab05fbafe2413e8dac3de7c6186f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46edab05fbafe2413e8dac3de7c6186f">Grad</a> (double t, const <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> &amp;y, double dy=0.1) const</td></tr>
+<tr class="memdesc:a46edab05fbafe2413e8dac3de7c6186f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds Gradient of the function using central difference method.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Abstract base class representing a mathematical function for ODEs. This class defines the interface for evaluating functions that take a time and a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a> as input and return a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a> as output. </p>
+<div class="textblock"><p>Abstract base class representing a mathematical function for ODEs. This class defines the interface for evaluating functions that take a time and a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a> as input and return a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a> as output. Anyone overriding this class must implement the Eval method, and we also suggest to perform a check on dimensions inside the overridden method. The gradient method should also be overridden if the true gradient is known. The current gradient method uses central difference to approximate the gradient, only for real-valued, scalar functions. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a7bb6bbdd01c508cb0a4d4ad545915d3c" name="a7bb6bbdd01c508cb0a4d4ad545915d3c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7bb6bbdd01c508cb0a4d4ad545915d3c">&#9670;&#160;</a></span>Eval()</h2>
@@ -155,15 +155,14 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Function</b> ()=d
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The result of the function evaluation as a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a>. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When implementing this method, ensure that the output tensor's shape is compatible with the input tensor's shape as required by the ODE system. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the function evaluation as a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a>. When implementing this method, ensure that the output tensor's shape is compatible with the input tensor's shape as required by the ODE system. </dd></dl>
 
 <p>Implemented in <a class="el" href="class_implicit_solver_1_1_implicit_equation.html#a8e4ed6176155127e40b8fb1d9cdad06f">ImplicitSolver::ImplicitEquation</a>, and <a class="el" href="class_parsed_function.html#a874b816d9b82a34ac2bebdecc74036e4">ParsedFunction</a>.</p>
 
 </div>
 </div>
-<a id="a27c7561a090ecc5688a662f5ab2b6902" name="a27c7561a090ecc5688a662f5ab2b6902"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27c7561a090ecc5688a662f5ab2b6902">&#9670;&#160;</a></span>Grad()</h2>
+<a id="a46edab05fbafe2413e8dac3de7c6186f" name="a46edab05fbafe2413e8dac3de7c6186f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46edab05fbafe2413e8dac3de7c6186f">&#9670;&#160;</a></span>Grad()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,7 +171,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Function</b> ()=d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> Function::Grad </td>
+          <td class="memname"><a class="el" href="class_dynamic_tensor.html">DynamicTensor</a> Function::Grad </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>t</em></span>, </td>
         </tr>
@@ -204,12 +203,13 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Function</b> ()=d
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The Gradient of the function evaluation as a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a>. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_parsed_function.html#af8c84cc7c6111f48923b5d5ce644d5a8">ParsedFunction</a>.</p>
+<p>Reimplemented in <a class="el" href="class_implicit_solver_1_1_implicit_equation.html#ab5ebda2556920f006fda955b1a24c1a8">ImplicitSolver::ImplicitEquation</a>, and <a class="el" href="class_parsed_function.html#af8c84cc7c6111f48923b5d5ce644d5a8">ParsedFunction</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/include/<a class="el" href="function_8h_source.html">function.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/Users/rocky/notes/Scientific Computing/ODE_Solver/include/<a class="el" href="function_8h_source.html">function.h</a></li>
+<li>/Users/rocky/notes/Scientific Computing/ODE_Solver/src/<b>function.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

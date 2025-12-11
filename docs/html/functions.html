@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ODE solver: Class Members</title>
+<title>ODE_Solver: Class Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ODE solver
+   <div id="projectname">ODE_Solver
    </div>
   </td>
  </tr>
@@ -91,24 +91,31 @@ $(function(){initNavTree('functions.html','',''); });
 <div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
 
 <h3 class="doxsection"><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>AdamMoulton()&#160;:&#160;<a class="el" href="class_adam_moulton.html#a969a9527ff10e9cb6199ac59b653c1d5">AdamMoulton</a></li>
+<li>AdamsBashforth()&#160;:&#160;<a class="el" href="class_adams_bashforth.html#ac4434a5a1d33e247298958a5896658ca">AdamsBashforth</a></li>
 <li>at()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a74eb8a4210abf2b8719ffba0e3de1dc8">DynamicTensor</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_b" name="index_b"></a>- b -</h3><ul>
+<li>BackwardEuler()&#160;:&#160;<a class="el" href="class_backward_euler.html#afa83bbf7819fe856dc6ded306c1db150">BackwardEuler</a></li>
+<li>Bdf()&#160;:&#160;<a class="el" href="class_bdf.html#a76641c4b16d7b0aa9a0c46e53b33a031">Bdf</a></li>
 <li>begin()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#ab3d41f03a8750b49db46f51dc61a41f7">DynamicTensor</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
-<li>Close()&#160;:&#160;<a class="el" href="class_reader.html#a763acd33fcb5df52793a2fa431afa0ae">Reader</a></li>
-<li>ComputeStep()&#160;:&#160;<a class="el" href="class_adams_bashforth.html#a1a7a6e06ee0fa286e0738578b77a29c1">AdamsBashforth</a>, <a class="el" href="class_forward_euler_light.html#ab238eb77ab850a76bcea2c5042cd8c60">ForwardEulerLight</a>, <a class="el" href="class_implicit_solver.html#a9f93bb76e5a9fa8df53c5dedd2fcaa5e">ImplicitSolver</a>, <a class="el" href="class_ode_solver.html#a35a9d27d9c3b484dae31ed1c6905a04a">OdeSolver</a>, <a class="el" href="class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605">RungeKutta</a></li>
+<li>Close()&#160;:&#160;<a class="el" href="class_reader.html#a36852f38ab45088da044919c88392311">Reader</a></li>
+<li>ComputeStep()&#160;:&#160;<a class="el" href="class_adams_bashforth.html#a1a7a6e06ee0fa286e0738578b77a29c1">AdamsBashforth</a>, <a class="el" href="class_forward_euler_light.html#ab238eb77ab850a76bcea2c5042cd8c60">ForwardEulerLight</a>, <a class="el" href="class_implicit_solver.html#a4f79fcbfa43f5b7c2207ce61a4420d74">ImplicitSolver</a>, <a class="el" href="class_ode_solver.html#a35a9d27d9c3b484dae31ed1c6905a04a">OdeSolver</a>, <a class="el" href="class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605">RungeKutta</a></li>
 <li>CsvReader()&#160;:&#160;<a class="el" href="class_csv_reader.html#aa6b6e6ddeb120a67ad8e077f9e07d244">CsvReader</a></li>
 <li>current_time_&#160;:&#160;<a class="el" href="class_ode_solver.html#a8e1bfe7801ae316ea876682778396e24">OdeSolver</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>derivative_buffer_&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#a4f37166a76f94fa3b72d48e746096e7e">MultiStepOdeSolver</a></li>
+<li>derivative_expressions&#160;:&#160;<a class="el" href="struct_ode_raw_data_1_1function__params.html#a04341776bd5a8414929c000db03c0a7a">OdeRawData::function_params</a></li>
+<li>derivative_shape&#160;:&#160;<a class="el" href="struct_ode_raw_data_1_1function__params.html#ac20063a1c4da53f45209e51dd3813ce6">OdeRawData::function_params</a></li>
 <li>DynamicTensor()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#aaf404565bd07c4410bccaa3b94373323">DynamicTensor</a></li>
 </ul>
 
@@ -126,14 +133,21 @@ $(function(){initNavTree('functions.html','',''); });
 <li>file_name_&#160;:&#160;<a class="el" href="class_reader.html#ac59c0d326bde29551f1639e14def45ae">Reader</a></li>
 <li>file_stream_&#160;:&#160;<a class="el" href="class_reader.html#a74a6ac6c04056f68d5cd16ddeecdae34">Reader</a></li>
 <li>filename_&#160;:&#160;<a class="el" href="class_output.html#af428a199366d1b9aba96ff12d9c60c69">Output</a></li>
+<li>FindRoot()&#160;:&#160;<a class="el" href="class_newton_raphson.html#a9015db8a55978c7d131a4784b73027f9">NewtonRaphson</a>, <a class="el" href="class_root_finder.html#a2747f99119bafaee32a70a2e2a7f4907">RootFinder</a></li>
 <li>flat()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a5403ad1ea0c54fac03c94f4dd2285133">DynamicTensor</a></li>
+<li>ForwardEuler()&#160;:&#160;<a class="el" href="class_forward_euler.html#af379ce6cb6f8e0127fbbee0ae72949d8">ForwardEuler</a></li>
+<li>ForwardEulerLight()&#160;:&#160;<a class="el" href="class_forward_euler_light.html#acdfbe27c2f92a8938c301bca17f2c868">ForwardEulerLight</a></li>
 <li>function&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#a2cb79c703cb13dbc7d6e01307b61414e">OdeRawData</a></li>
+<li>function_expressions&#160;:&#160;<a class="el" href="struct_ode_raw_data_1_1function__params.html#afe76b823a796f7a9b4efda34708a7e28">OdeRawData::function_params</a></li>
 <li>function_params&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#af6fb076d112d3e280374a2b423436569">OdeRawData</a></li>
+<li>function_shape&#160;:&#160;<a class="el" href="struct_ode_raw_data_1_1function__params.html#a372d8716ca84a93bfbabd1b466673092">OdeRawData::function_params</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_g" name="index_g"></a>- g -</h3><ul>
 <li>get_shape()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a42b1bfd00a94348fe8b1ce43a2f6cf7e">DynamicTensor</a></li>
+<li>GetCoeffsdY()&#160;:&#160;<a class="el" href="class_adam_moulton.html#a5c9bd3ac47674d61cedbb1bf393d3f8e">AdamMoulton</a>, <a class="el" href="class_adams_bashforth.html#a7f824059707e62d224e0d4b206e75e02">AdamsBashforth</a>, <a class="el" href="class_bdf.html#a4532c58e0c226a7527f59e5170c88fee">Bdf</a>, <a class="el" href="class_multi_step_ode_solver.html#a359ebb566d4d4e84a8408fe1d0da456d">MultiStepOdeSolver</a></li>
+<li>GetCoeffsY()&#160;:&#160;<a class="el" href="class_adam_moulton.html#ad2bfcd5f4c6cf141e975c441239cfaa6">AdamMoulton</a>, <a class="el" href="class_adams_bashforth.html#a8ca9f70541dd2fc636ff19e9d8b1ea65">AdamsBashforth</a>, <a class="el" href="class_bdf.html#a88a8c043f3665d605c46e876df38bedd">Bdf</a>, <a class="el" href="class_multi_step_ode_solver.html#a09c62a908bebab5946e61ec2a9373f20">MultiStepOdeSolver</a></li>
 <li>GetCommentChar()&#160;:&#160;<a class="el" href="class_output_txt.html#acd0de5a24497b39ba4fa6b3d50271bf4">OutputTxt</a></li>
 <li>GetCondIn()&#160;:&#160;<a class="el" href="class_ode.html#a6c360986d0f06b497d3b311ead9c0366">Ode</a></li>
 <li>GetCurrentTime()&#160;:&#160;<a class="el" href="class_ode_solver.html#a93ba8bfb62598239c78200ca6253fa02">OdeSolver</a></li>
@@ -145,6 +159,7 @@ $(function(){initNavTree('functions.html','',''); });
 <li>GetHeader()&#160;:&#160;<a class="el" href="class_output_csv.html#a70af53462051a588b41d629c87778f22">OutputCsv</a>, <a class="el" href="class_output_txt.html#addd8a01b9f32728854bf456fc8132f50">OutputTxt</a></li>
 <li>GetName()&#160;:&#160;<a class="el" href="class_ode.html#a6356a2c5b5b923378b5cc41951dc3575">Ode</a></li>
 <li>GetNumberOfSteps()&#160;:&#160;<a class="el" href="class_ode_solver.html#ad0bbb5894abf1b510845a61e9b42ea61">OdeSolver</a></li>
+<li>GetOrder()&#160;:&#160;<a class="el" href="class_adam_moulton.html#a58a45e28426ea087a2565a2dcb00e09f">AdamMoulton</a>, <a class="el" href="class_adams_bashforth.html#aebcc437107894dd1bd885095b3659df8">AdamsBashforth</a>, <a class="el" href="class_bdf.html#a35a6dd768ab8ab6056378f046e3dcf83">Bdf</a></li>
 <li>GetRawData()&#160;:&#160;<a class="el" href="class_reader.html#a58d1e5e33b0ec8169420fb3be600de32">Reader</a></li>
 <li>GetRootFinder()&#160;:&#160;<a class="el" href="class_ode.html#a739b332b95ace434b930cf5a879ec46c">Ode</a></li>
 <li>GetSeparator()&#160;:&#160;<a class="el" href="class_output_csv.html#aa90d64ae97dd3e78494ce8ee81e1edc0">OutputCsv</a>, <a class="el" href="class_reader.html#ac679fdc16a819d641ad6baee637cc618">Reader</a></li>
@@ -152,11 +167,13 @@ $(function(){initNavTree('functions.html','',''); });
 <li>GetStartTime()&#160;:&#160;<a class="el" href="class_ode_solver.html#a967817c4339501ddb984023977d093a1">OdeSolver</a></li>
 <li>GetStepSize()&#160;:&#160;<a class="el" href="class_ode_solver.html#adee8ff045eeb481ef911c9eee1b596c8">OdeSolver</a></li>
 <li>GetTimeIn()&#160;:&#160;<a class="el" href="class_ode.html#a68b7580e063b949bfc0046e4142ad490">Ode</a></li>
-<li>Grad()&#160;:&#160;<a class="el" href="class_function.html#a27c7561a090ecc5688a662f5ab2b6902">Function</a>, <a class="el" href="class_ode.html#a952c6c6401635b3e6e39a7a16cd2f84d">Ode</a>, <a class="el" href="class_parsed_function.html#af8c84cc7c6111f48923b5d5ce644d5a8">ParsedFunction</a></li>
+<li>Grad()&#160;:&#160;<a class="el" href="class_function.html#a46edab05fbafe2413e8dac3de7c6186f">Function</a>, <a class="el" href="class_implicit_solver_1_1_implicit_equation.html#ab5ebda2556920f006fda955b1a24c1a8">ImplicitSolver::ImplicitEquation</a>, <a class="el" href="class_ode.html#a952c6c6401635b3e6e39a7a16cd2f84d">Ode</a>, <a class="el" href="class_parsed_function.html#af8c84cc7c6111f48923b5d5ce644d5a8">ParsedFunction</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_i" name="index_i"></a>- i -</h3><ul>
+<li>ImplicitSolver()&#160;:&#160;<a class="el" href="class_implicit_solver.html#a6974272e5de96d69d12f88e02dbb5a7b">ImplicitSolver</a></li>
+<li>InitBuffers()&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#ade00d553a4968d7f5a0532f185c4149f">MultiStepOdeSolver</a></li>
 <li>InterpretKeyValuePair()&#160;:&#160;<a class="el" href="class_reader.html#a891f6505346d7f7389f5eadc35d1d1bf">Reader</a></li>
 <li>IsComplexNumber()&#160;:&#160;<a class="el" href="class_reader.html#a4ad23af590282f6c953777d81d190a4e">Reader</a></li>
 <li>IsNumeric()&#160;:&#160;<a class="el" href="class_reader.html#a30a4105a8595150cb94854c71637ed3f">Reader</a></li>
@@ -169,17 +186,32 @@ $(function(){initNavTree('functions.html','',''); });
 </ul>
 
 
+<h3 class="doxsection"><a id="index_m" name="index_m"></a>- m -</h3><ul>
+<li>max_iterations&#160;:&#160;<a class="el" href="struct_ode_raw_data_1_1solver__params.html#a7e23819614ac4fbf12ee14903e7bad91">OdeRawData::solver_params</a></li>
+<li>method&#160;:&#160;<a class="el" href="struct_ode_raw_data_1_1solver__params.html#a52402947caf3267dd7bbb59de276ec7a">OdeRawData::solver_params</a></li>
+<li>MultiStepOdeSolver()&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#a146cffeef6b16589864a568834433e98">MultiStepOdeSolver</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_n" name="index_n"></a>- n -</h3><ul>
+<li>number_of_steps&#160;:&#160;<a class="el" href="struct_ode_raw_data_1_1time__params.html#ac8b95d4206b43184aa48bb59b2de2e11">OdeRawData::time_params</a></li>
+</ul>
+
+
 <h3 class="doxsection"><a id="index_o" name="index_o"></a>- o -</h3><ul>
-<li>Ode()&#160;:&#160;<a class="el" href="class_ode.html#ac736732af81e992bb58e727a93d3d1ab">Ode</a></li>
+<li>Ode()&#160;:&#160;<a class="el" href="class_ode.html#a8e925db2771c560a3c5d29bac3677a91">Ode</a></li>
 <li>ode_&#160;:&#160;<a class="el" href="class_ode_solver.html#a9155f5d877dad198b513d24150dff5a4">OdeSolver</a></li>
 <li>OdeRawData()&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#addbf94a0a57771671fcfd00899e54ad2">OdeRawData</a></li>
 <li>OdeSolver()&#160;:&#160;<a class="el" href="class_ode_solver.html#ab8375f1f3330bf275d6b18fc936deb3c">OdeSolver</a></li>
-<li>Open()&#160;:&#160;<a class="el" href="class_reader.html#a0566befa2921baa5f4c80d8cb0a691a0">Reader</a></li>
+<li>Open()&#160;:&#160;<a class="el" href="class_reader.html#a33c491f270968d5c129807b5d3dfa3a4">Reader</a></li>
 <li>operator*()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a5c8bb1fa42a99911cfda9336b1876554">DynamicTensor</a></li>
 <li>operator+()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a951b70d3817858d411b94771bc7207e0">DynamicTensor</a></li>
 <li>operator-()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a05dae46dbd83e82cfeb69d331799fc6f">DynamicTensor</a></li>
 <li>operator/()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a1dccb4f844dc683c29af7e962eeef03b">DynamicTensor</a></li>
-<li>operator=()&#160;:&#160;<a class="el" href="class_ode.html#a4805c892fd883ca707d625758bad04e1">Ode</a>, <a class="el" href="struct_ode_raw_data.html#a9f5c0f8a439d20553e51daa09735324e">OdeRawData</a></li>
+<li>operator=()&#160;:&#160;<a class="el" href="class_ode.html#a4805c892fd883ca707d625758bad04e1">Ode</a>, <a class="el" href="struct_ode_raw_data.html#a8c809bcec444e656f03fa6f28025238e">OdeRawData</a></li>
+<li>order_&#160;:&#160;<a class="el" href="class_adam_moulton.html#aa0e8d5badcf6e76f50bf7f0ee07bb5b8">AdamMoulton</a></li>
+<li>order_derivative_&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#afb46f4af493bc59026f816c7ee45605d">MultiStepOdeSolver</a></li>
+<li>order_sol_&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#a834593ca532ca89b1282ae18ddcc7e25">MultiStepOdeSolver</a></li>
 <li>Output()&#160;:&#160;<a class="el" href="class_output.html#a70654db154ca7fd3a2363f401f99ddfb">Output</a></li>
 <li>OutputCsv()&#160;:&#160;<a class="el" href="class_output_csv.html#ae88e4a2d403762233ecfd65142beb29e">OutputCsv</a></li>
 <li>OutputTxt()&#160;:&#160;<a class="el" href="class_output_txt.html#a3948cc7cd0c3414a696a1556cfa292df">OutputTxt</a></li>
@@ -190,7 +222,6 @@ $(function(){initNavTree('functions.html','',''); });
 <li>ParseComplexNumber()&#160;:&#160;<a class="el" href="class_reader.html#a149ef0f9b7c40881ec30a1dc38a8c513">Reader</a></li>
 <li>ParsedFunction()&#160;:&#160;<a class="el" href="class_parsed_function.html#a808273fed662cd815eaa2bb6c9c87924">ParsedFunction</a></li>
 <li>ParseDouble()&#160;:&#160;<a class="el" href="class_reader.html#a1407cb6d6c193ab9bcbcdd82558fe879">Reader</a></li>
-<li>ParseFunction()&#160;:&#160;<a class="el" href="class_reader.html#a0bef7707d1cf66a0b320f77212954150">Reader</a></li>
 <li>ParseSolverMethodFromString()&#160;:&#160;<a class="el" href="class_reader.html#aa8fc2dbf2e8a036539e632d2aee16e3e">Reader</a></li>
 <li>ParseTensor()&#160;:&#160;<a class="el" href="class_reader.html#aee6eaf793ada4d73dc1d9bb28a50d2a3">Reader</a></li>
 </ul>
@@ -199,10 +230,12 @@ $(function(){initNavTree('functions.html','',''); });
 <h3 class="doxsection"><a id="index_r" name="index_r"></a>- r -</h3><ul>
 <li>rank()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a094738c223cbe58ad0b81dbae138ebf6">DynamicTensor</a></li>
 <li>raw_data_&#160;:&#160;<a class="el" href="class_reader.html#a33d6ed307d1324254b34811a9003103c">Reader</a></li>
-<li>Read()&#160;:&#160;<a class="el" href="class_csv_reader.html#ae3d4bcb938083b82f85c5e5aeba6e4c1">CsvReader</a>, <a class="el" href="class_reader.html#a782ef0f80b0d27b8a3e32be538fed057">Reader</a>, <a class="el" href="class_txt_reader.html#ab168578324d8fb2d4a30fe2089634029">TxtReader</a></li>
+<li>Read()&#160;:&#160;<a class="el" href="class_csv_reader.html#a653c29a6d16c9caad06ba5a0a25a6a6c">CsvReader</a>, <a class="el" href="class_reader.html#a782ef0f80b0d27b8a3e32be538fed057">Reader</a>, <a class="el" href="class_txt_reader.html#a331736cf6c2407d480103d3cfacc709f">TxtReader</a></li>
 <li>Reader()&#160;:&#160;<a class="el" href="class_reader.html#ad682ef952dbf2312dc5e5c36b7432588">Reader</a></li>
-<li>Reset()&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#a3753c8d27e7420e4470aa5e88e44bbee">MultiStepOdeSolver</a>, <a class="el" href="class_ode_solver.html#a1c901eb9c0357806de35654a38c7fbba">OdeSolver</a></li>
+<li>Reset()&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#a3753c8d27e7420e4470aa5e88e44bbee">MultiStepOdeSolver</a>, <a class="el" href="class_ode_solver.html#a1cc5668fdf4d5bd99ee21c4f91c6aca3">OdeSolver</a></li>
 <li>root_finder&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#aed44367a2804104047b9394291cb0d58">OdeRawData</a></li>
+<li>root_finder_&#160;:&#160;<a class="el" href="class_implicit_solver.html#ad83ba20bb35f79b715d8bc932f4a3bc6">ImplicitSolver</a></li>
+<li>RungeKutta()&#160;:&#160;<a class="el" href="class_runge_kutta.html#ad2c5fc1466e0230af1e91d3b0788316e">RungeKutta</a></li>
 </ul>
 
 
@@ -223,21 +256,34 @@ $(function(){initNavTree('functions.html','',''); });
 <li>SetY0()&#160;:&#160;<a class="el" href="class_ode.html#ac3c249eedd399493d573a5a823172b82">Ode</a></li>
 <li>size()&#160;:&#160;<a class="el" href="class_dynamic_tensor.html#a80d631cc2d2151a0e3c9da15edbd870d">DynamicTensor</a></li>
 <li>solution_&#160;:&#160;<a class="el" href="class_ode_solver.html#a8e42a49ba25b6c2c5b029cd70e75d38e">OdeSolver</a></li>
+<li>solutions_buffer_&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#a6b14064cb4f3b28f99d913874d018177">MultiStepOdeSolver</a></li>
 <li>Solve()&#160;:&#160;<a class="el" href="class_ode_solver.html#a8528789990b812fe0b498fabb7e1521f">OdeSolver</a></li>
 <li>solver_params&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#ac471176ce831357580713545540425a5">OdeRawData</a></li>
 <li>Split()&#160;:&#160;<a class="el" href="class_reader.html#a1949190ed8188132c3a25e886f10d376">Reader</a></li>
 <li>start_time_&#160;:&#160;<a class="el" href="class_ode_solver.html#a349bdd8382aed99df05dddd5d7d747a2">OdeSolver</a></li>
-<li>Step()&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#aad3953387824f19957cfe9e1e4eb1b90">MultiStepOdeSolver</a>, <a class="el" href="class_ode_solver.html#ac757f67f9d0d8234cd8aa79cb107816b">OdeSolver</a></li>
+<li>Step()&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#aad3953387824f19957cfe9e1e4eb1b90">MultiStepOdeSolver</a>, <a class="el" href="class_ode_solver.html#af1842eb01ec5d591bb813ce2a064adc5">OdeSolver</a></li>
+<li>step_size&#160;:&#160;<a class="el" href="struct_ode_raw_data_1_1time__params.html#ab6b59b6b06bf7786a8e25fe60a4c28c7">OdeRawData::time_params</a></li>
 <li>step_size_&#160;:&#160;<a class="el" href="class_ode_solver.html#a27c98f59e22ca709d451b8ba15bf3e16">OdeSolver</a></li>
+<li>sum_tn_&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#ab4c210a8b67372ce8eca42ca82b176bd">MultiStepOdeSolver</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>t0&#160;:&#160;<a class="el" href="struct_ode_raw_data_1_1time__params.html#a7a38aed0d94f2c8e1a90295ec82ce85d">OdeRawData::time_params</a></li>
+<li>t_final&#160;:&#160;<a class="el" href="struct_ode_raw_data_1_1time__params.html#a9a92634d4a2f70408221ba9d8b3bd602">OdeRawData::time_params</a></li>
 <li>time_params&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#a95452e49794ae26225d0cdeeee663cec">OdeRawData</a></li>
+<li>tolerance&#160;:&#160;<a class="el" href="struct_ode_raw_data_1_1solver__params.html#a01b628734420a4582b38efe935fdf9d3">OdeRawData::solver_params</a></li>
 <li>ToLower()&#160;:&#160;<a class="el" href="class_reader.html#a872ff0b4164a7f84c49c1b1f7fa5cdd3">Reader</a></li>
 <li>Trim()&#160;:&#160;<a class="el" href="class_reader.html#a024e3b94ffc0b0c8a14fb6e20059ea03">Reader</a></li>
 <li>TrimString()&#160;:&#160;<a class="el" href="class_reader.html#ac44b41ce56079ec4f6dd3ca0eb44e0b6">Reader</a></li>
 <li>TxtReader()&#160;:&#160;<a class="el" href="class_txt_reader.html#ad311f7e47af8a08a4ca9a162f0454956">TxtReader</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_u" name="index_u"></a>- u -</h3><ul>
+<li>UpdateDerivative()&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#a2e603e3908b1c51514107b13935d02ef">MultiStepOdeSolver</a></li>
+<li>UpdateSolution()&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#a5bda016c46d93c7c7ce9e8b693048ed6">MultiStepOdeSolver</a></li>
+<li>UpdateWindowSum()&#160;:&#160;<a class="el" href="class_multi_step_ode_solver.html#a5637d19a28ae7ac068fb5f751f1ca9d6">MultiStepOdeSolver</a></li>
 </ul>
 
 
@@ -255,11 +301,12 @@ $(function(){initNavTree('functions.html','',''); });
 <h3 class="doxsection"><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
 <li>~CsvReader()&#160;:&#160;<a class="el" href="class_csv_reader.html#ad5af5dd28d664c2aafc6ad5918c56eae">CsvReader</a></li>
 <li>~Function()&#160;:&#160;<a class="el" href="class_function.html#a2be1da6c238e7db53480b193351b96c1">Function</a></li>
-<li>~Ode()&#160;:&#160;<a class="el" href="class_ode.html#a428fd9af9e250da57b59945d30c96cd3">Ode</a></li>
+<li>~Ode()&#160;:&#160;<a class="el" href="class_ode.html#ac6468fab017c86c1fac0fd35545fe4b5">Ode</a></li>
 <li>~OdeRawData()&#160;:&#160;<a class="el" href="struct_ode_raw_data.html#abc985a147144b568f8158166b4b0e51d">OdeRawData</a></li>
 <li>~OdeSolver()&#160;:&#160;<a class="el" href="class_ode_solver.html#a18be896e3a9772213317a4c554100206">OdeSolver</a></li>
 <li>~Output()&#160;:&#160;<a class="el" href="class_output.html#affd7475aec53aa6e5f8baf651300acd8">Output</a></li>
 <li>~Reader()&#160;:&#160;<a class="el" href="class_reader.html#a5a9e1a05a3683982e7dbafd75e2ff773">Reader</a></li>
+<li>~RootFinder()&#160;:&#160;<a class="el" href="class_root_finder.html#a689c3d07d2a06188018cfd0163d0a9ce">RootFinder</a></li>
 <li>~TxtReader()&#160;:&#160;<a class="el" href="class_txt_reader.html#ad4db532b40321716319b4ab98b3f0dae">TxtReader</a></li>
 </ul>
 </div><!-- contents -->

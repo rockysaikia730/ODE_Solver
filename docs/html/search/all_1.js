@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['backwardeuler_0',['BackwardEuler',['../class_backward_euler.html',1,'']]],
-  ['bdf_1',['Bdf',['../class_bdf.html',1,'']]],
-  ['begin_2',['begin',['../class_dynamic_tensor.html#ab3d41f03a8750b49db46f51dc61a41f7',1,'DynamicTensor']]]
+  ['2_20the_20oderawdata_20structure_0',['1.1.2 The &lt;span class=&quot;tt&quot;&gt;OdeRawData&lt;/span&gt; Structure',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md8',1,'']]]
 ];

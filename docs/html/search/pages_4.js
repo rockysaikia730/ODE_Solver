@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['faq_0',['FAQ',['../md__c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1__2025-2026_2pcsc__project_2_o_d_e___solver_204174382910a37b8c2c5b43da319ee54.html',1,'GoogleTest FAQ'],['../md__c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1__2025-2026_2pcsc__project_2_o_d_e___solver_2cd599d4edf2a8ea6c4742c94d4144eb0.html',1,'Legacy gMock FAQ']]],
-  ['for_20dummies_1',['gMock for Dummies',['../md__c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1__2025-2026_2pcsc__project_2_o_d_e___solver_295bcbc15ceecba2e7e1c5fc4520e9a4c.html',1,'']]],
-  ['framework_2',['Googletest Mocking (gMock) Framework',['../md__c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1__2025-2026_2pcsc__project_2_o_d_e___solver_22ba585785fcd1e51065cb3b2f4417008.html',1,'']]],
-  ['from_20various_20build_20systems_3',['Using GoogleTest from various build systems',['../md__c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1__2025-2026_2pcsc__project_2_o_d_e___solver_2ba280907afdf8bffa0ce1d914edf3975.html',1,'']]]
+  ['and_20generating_20the_20doxygen_20documentation_0',['For compiling and generating the Doxygen documentation',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md21',1,'']]],
+  ['and_20the_20input_20tensor_20this_20responsibility_20is_20delegated_20to_20the_20user_20to_20verify_20for_20the_20time_20being_1',['Right now, there is no checking mechanism provided for veryfying the shape of the function and the input tensor. This responsibility is delegated to the user to verify for the time being.',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md15',1,'']]],
+  ['and_20the_20main_2',['REMAINING TO DO THE SOLVER, Dynamic tensor, and the main.',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md18',1,'']]]
 ];

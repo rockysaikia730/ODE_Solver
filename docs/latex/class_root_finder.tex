@@ -1,5 +1,14 @@
 \doxysection{Root\+Finder Class Reference}
 \hypertarget{class_root_finder}{}\label{class_root_finder}\index{RootFinder@{RootFinder}}
+
+
+Abstract base class for root-\/finding algorithms.  
+
+
+
+
+{\ttfamily \#include $<$root\+\_\+finder.\+h$>$}
+
 Inheritance diagram for Root\+Finder\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,11 +18,53 @@ Inheritance diagram for Root\+Finder\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_root_finder_a2747f99119bafaee32a70a2e2a7f4907}\label{class_root_finder_a2747f99119bafaee32a70a2e2a7f4907} 
-virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries Find\+Root} (const \mbox{\hyperlink{class_function}{Function}} \&f, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&initial\+\_\+guess, double t, int max\+\_\+iter=100) const =0
-\end{DoxyCompactItemize}
+\Hypertarget{class_root_finder_a689c3d07d2a06188018cfd0163d0a9ce}\label{class_root_finder_a689c3d07d2a06188018cfd0163d0a9ce} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Root\+Finder} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic use. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_root_finder_a2747f99119bafaee32a70a2e2a7f4907}{Find\+Root}} (const \mbox{\hyperlink{class_function}{Function}} \&f, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&initial\+\_\+guess, double t, int max\+\_\+iter=100) const =0
+\begin{DoxyCompactList}\small\item\em Finds the root of a nonlinear function starting from an initial guess. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for root-\/finding algorithms. 
+
+This interface defines the contract for classes that implement methods to find roots of nonlinear functions. Derived classes must implement the Find\+Root method. 
+
+\label{doc-func-members}
+\Hypertarget{class_root_finder_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_root_finder_a2747f99119bafaee32a70a2e2a7f4907}\index{RootFinder@{RootFinder}!FindRoot@{FindRoot}}
+\index{FindRoot@{FindRoot}!RootFinder@{RootFinder}}
+\doxysubsubsection{\texorpdfstring{FindRoot()}{FindRoot()}}
+{\footnotesize\ttfamily \label{class_root_finder_a2747f99119bafaee32a70a2e2a7f4907} 
+virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Root\+Finder\+::\+Find\+Root (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_function}{Function}} \&}]{f}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{initial\+\_\+guess}{, }\item[{double}]{t}{, }\item[{int}]{max\+\_\+iter}{ = {\ttfamily 100}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Finds the root of a nonlinear function starting from an initial guess. 
+
+Derived classes implement a specific root-\/finding algorithm (e.\+g., Newton–\+Raphson).
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & \doxylink{class_function}{Function} whose root is to be found. \\
+\hline
+{\em initial\+\_\+guess} & Initial guess for the root. \\
+\hline
+{\em t} & Current time (used if the function is time-\/dependent). \\
+\hline
+{\em max\+\_\+iter} & Maximum number of iterations (default 100). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Estimated root as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_newton_raphson_a9015db8a55978c7d131a4784b73027f9}{Newton\+Raphson}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/root\+\_\+finder.\+h\end{DoxyCompactItemize}
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/root\+\_\+finder.\+h\end{DoxyCompactItemize}

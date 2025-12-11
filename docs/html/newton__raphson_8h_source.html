@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ODE solver: C:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/include/newton_raphson.h Source File</title>
+<title>ODE_Solver: /Users/rocky/notes/Scientific Computing/ODE_Solver/include/newton_raphson.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ODE solver
+   <div id="projectname">ODE_Solver
    </div>
   </td>
  </tr>
@@ -95,18 +95,19 @@ $(function(){initNavTree('newton__raphson_8h_source.html','',''); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define NEWTON_RAPHSON_H_</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;root_finder.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_newton_raphson.html">    6</a></span><span class="keyword">class </span><a class="code hl_class" href="class_newton_raphson.html">NewtonRaphson</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_root_finder.html">RootFinder</a> {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a> FindRoot(<span class="keyword">const</span> <a class="code hl_class" href="class_function.html">Function</a>&amp; f, <span class="keyword">const</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a>&amp; initial_guess, <span class="keywordtype">double</span> t, <span class="keywordtype">int</span> max_iter = 100) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>};</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_newton_raphson.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="class_newton_raphson.html">NewtonRaphson</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_root_finder.html">RootFinder</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a> <a class="code hl_function" href="class_newton_raphson.html#a9015db8a55978c7d131a4784b73027f9">FindRoot</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_function.html">Function</a>&amp; f, <span class="keyword">const</span> <a class="code hl_class" href="class_dynamic_tensor.html">DynamicTensor</a>&amp; initial_guess, <span class="keywordtype">double</span> t, <span class="keywordtype">int</span> max_iter = 500) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
 </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_dynamic_tensor_html"><div class="ttname"><a href="class_dynamic_tensor.html">DynamicTensor</a></div><div class="ttdoc">A class to represent a mathematical tensor of arbitrary rank at runtime.</div><div class="ttdef"><b>Definition</b> dynamic_tensor.h:30</div></div>
-<div class="ttc" id="aclass_function_html"><div class="ttname"><a href="class_function.html">Function</a></div><div class="ttdoc">Abstract base class representing a mathematical function for ODEs. This class defines the interface f...</div><div class="ttdef"><b>Definition</b> function.h:13</div></div>
-<div class="ttc" id="aclass_newton_raphson_html"><div class="ttname"><a href="class_newton_raphson.html">NewtonRaphson</a></div><div class="ttdef"><b>Definition</b> newton_raphson.h:6</div></div>
-<div class="ttc" id="aclass_root_finder_html"><div class="ttname"><a href="class_root_finder.html">RootFinder</a></div><div class="ttdef"><b>Definition</b> root_finder.h:7</div></div>
+<div class="ttc" id="aclass_function_html"><div class="ttname"><a href="class_function.html">Function</a></div><div class="ttdoc">Abstract base class representing a mathematical function for ODEs. This class defines the interface f...</div><div class="ttdef"><b>Definition</b> function.h:18</div></div>
+<div class="ttc" id="aclass_newton_raphson_html"><div class="ttname"><a href="class_newton_raphson.html">NewtonRaphson</a></div><div class="ttdoc">Root-finding algorithm implementing the Newton–Raphson method.</div><div class="ttdef"><b>Definition</b> newton_raphson.h:14</div></div>
+<div class="ttc" id="aclass_newton_raphson_html_a9015db8a55978c7d131a4784b73027f9"><div class="ttname"><a href="class_newton_raphson.html#a9015db8a55978c7d131a4784b73027f9">NewtonRaphson::FindRoot</a></div><div class="ttdeci">DynamicTensor FindRoot(const Function &amp;f, const DynamicTensor &amp;initial_guess, double t, int max_iter=500) const override</div><div class="ttdoc">Solves for the root of a nonlinear function using Newton–Raphson iterations.</div><div class="ttdef"><b>Definition</b> newton_raphson.cpp:4</div></div>
+<div class="ttc" id="aclass_root_finder_html"><div class="ttname"><a href="class_root_finder.html">RootFinder</a></div><div class="ttdoc">Abstract base class for root-finding algorithms.</div><div class="ttdef"><b>Definition</b> root_finder.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

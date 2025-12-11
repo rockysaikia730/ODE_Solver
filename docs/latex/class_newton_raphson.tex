@@ -1,5 +1,14 @@
 \doxysection{Newton\+Raphson Class Reference}
 \hypertarget{class_newton_raphson}{}\label{class_newton_raphson}\index{NewtonRaphson@{NewtonRaphson}}
+
+
+Root-\/finding algorithm implementing the Newton–\+Raphson method.  
+
+
+
+
+{\ttfamily \#include $<$newton\+\_\+raphson.\+h$>$}
+
 Inheritance diagram for Newton\+Raphson\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,25 +18,57 @@ Inheritance diagram for Newton\+Raphson\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_newton_raphson_a61652e63666b7657edf2b0480302dca0}{Find\+Root}} (const \mbox{\hyperlink{class_function}{Function}} \&f, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&initial\+\_\+guess, double t, int max\+\_\+iter=100) const override
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_newton_raphson_a9015db8a55978c7d131a4784b73027f9}{Find\+Root}} (const \mbox{\hyperlink{class_function}{Function}} \&f, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&initial\+\_\+guess, double t, int max\+\_\+iter=500) const override
+\begin{DoxyCompactList}\small\item\em Solves for the root of a nonlinear function using Newton–\+Raphson iterations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_root_finder}{Root\+Finder}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Root\+Finder} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic use. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Root-\/finding algorithm implementing the Newton–\+Raphson method. 
+
+This class provides an implementation of the Newton–\+Raphson method to find roots of a nonlinear system defined by a \doxylink{class_function}{Function}. It iteratively updates the guess using the derivative (Jacobian) until convergence or a maximum number of iterations. 
 
 \label{doc-func-members}
 \Hypertarget{class_newton_raphson_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_newton_raphson_a61652e63666b7657edf2b0480302dca0}\index{NewtonRaphson@{NewtonRaphson}!FindRoot@{FindRoot}}
+\Hypertarget{class_newton_raphson_a9015db8a55978c7d131a4784b73027f9}\index{NewtonRaphson@{NewtonRaphson}!FindRoot@{FindRoot}}
 \index{FindRoot@{FindRoot}!NewtonRaphson@{NewtonRaphson}}
 \doxysubsubsection{\texorpdfstring{FindRoot()}{FindRoot()}}
-{\footnotesize\ttfamily \label{class_newton_raphson_a61652e63666b7657edf2b0480302dca0} 
-\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Newton\+Raphson\+::\+Find\+Root (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_function}{Function}} \&}]{f}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{initial\+\_\+guess}{, }\item[{double}]{t}{, }\item[{int}]{max\+\_\+iter}{ = {\ttfamily 100}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_newton_raphson_a9015db8a55978c7d131a4784b73027f9} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Newton\+Raphson\+::\+Find\+Root (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_function}{Function}} \&}]{f}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{initial\+\_\+guess}{, }\item[{double}]{t}{, }\item[{int}]{max\+\_\+iter}{ = {\ttfamily 500}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Implements \mbox{\hyperlink{class_root_finder}{Root\+Finder}}.
+Solves for the root of a nonlinear function using Newton–\+Raphson iterations. 
+
+The method updates the initial guess according to\+:   \[    y_{k+1} = y_k - J^{-1}(y_k) F(y_k)
+\] where $J$ is the Jacobian of $F$ at $y_k$.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & \doxylink{class_function}{Function} whose root is to be found. \\
+\hline
+{\em initial\+\_\+guess} & Initial guess for the root. \\
+\hline
+{\em t} & Current time (used if the function is time-\/dependent). \\
+\hline
+{\em max\+\_\+iter} & Maximum number of iterations (default 500). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Estimated root as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_root_finder_a2747f99119bafaee32a70a2e2a7f4907}{Root\+Finder}}.
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/newton\+\_\+raphson.\+h\end{DoxyCompactItemize}
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/newton\+\_\+raphson.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/newton\+\_\+raphson.\+cpp\end{DoxyCompactItemize}
