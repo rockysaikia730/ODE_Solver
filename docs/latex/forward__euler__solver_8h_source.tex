@@ -1,5 +1,5 @@
 \doxysection{forward\+\_\+euler\+\_\+solver.\+h}
-\hypertarget{forward__euler__solver_8h_source}{}\label{forward__euler__solver_8h_source}\index{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/forward\_euler\_solver.h@{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/forward\_euler\_solver.h}}
+\hypertarget{forward__euler__solver_8h_source}{}\label{forward__euler__solver_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/forward\_euler\_solver.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/forward\_euler\_solver.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FORWARD\_EULER\_H\_}}
@@ -7,10 +7,11 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}adamsbashforth\_solver.h"{}}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }ForwardEuler\ :\ \textcolor{keyword}{public}\ AdamsBashforth\ \{}
-\DoxyCodeLine{00007\ \ \ \ \ ForwardEuler(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0);}
-\DoxyCodeLine{00008\ \ \ \ \ ForwardEuler(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0);}
-\DoxyCodeLine{00009\ \};}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_forward_euler_af379ce6cb6f8e0127fbbee0ae72949d8}{ForwardEuler}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_adams_bashforth_ac4434a5a1d33e247298958a5896658ca}{AdamsBashforth}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:\ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_forward_euler_af379ce6cb6f8e0127fbbee0ae72949d8}{ForwardEuler}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0);}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_forward_euler_af379ce6cb6f8e0127fbbee0ae72949d8}{ForwardEuler}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0);}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -1,28 +1,26 @@
 \doxysection{adam\+\_\+moulton\+\_\+solver.\+h}
-\hypertarget{adam__moulton__solver_8h_source}{}\label{adam__moulton__solver_8h_source}\index{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/adam\_moulton\_solver.h@{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/adam\_moulton\_solver.h}}
+\hypertarget{adam__moulton__solver_8h_source}{}\label{adam__moulton__solver_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/adam\_moulton\_solver.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/adam\_moulton\_solver.h}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ADAM\_MOULTON\_SOLVER\ \_H\_}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ADAM\_MOULTON\_SOLVER}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ADAM\_MOULTON\_SOLVER\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ADAM\_MOULTON\_SOLVER\_H\_}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}implicit\_solver.h"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ode_8h}{ode.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ode.h"{}}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }AdamMoulton\ :\ \textcolor{keyword}{public}\ ImplicitSolver\ \{}
-\DoxyCodeLine{00008\ \textcolor{keyword}{public}:\ }
-\DoxyCodeLine{00009\ \ \ \ \ AdamMoulton(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\ =\ 1,\ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00011\ \ \ \ \ AdamMoulton(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\ =\ 1,\ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00013\ \ \ \ \ }
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ GetCoeffsY()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ GetCoeffsdY()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ GetOrder();}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_adam_moulton_a969a9527ff10e9cb6199ac59b653c1d5}{AdamMoulton}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_implicit_solver_a6974272e5de96d69d12f88e02dbb5a7b}{ImplicitSolver}}\ \{}
 \DoxyCodeLine{00018\ \textcolor{keyword}{public}:\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ order\_;}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \};}
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_adam_moulton_a969a9527ff10e9cb6199ac59b653c1d5}{AdamMoulton}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\ =\ 2,\ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_adam_moulton_a969a9527ff10e9cb6199ac59b653c1d5}{AdamMoulton}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\ =\ 2,\ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{class_adam_moulton_ad2bfcd5f4c6cf141e975c441239cfaa6}{GetCoeffsY}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{class_adam_moulton_a5c9bd3ac47674d61cedbb1bf393d3f8e}{GetCoeffsdY}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_adam_moulton_a58a45e28426ea087a2565a2dcb00e09f}{GetOrder}}();}
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_adam_moulton_aa0e8d5badcf6e76f50bf7f0ee07bb5b8}{order\_}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

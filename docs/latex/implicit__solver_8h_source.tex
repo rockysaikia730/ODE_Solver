@@ -1,5 +1,5 @@
 \doxysection{implicit\+\_\+solver.\+h}
-\hypertarget{implicit__solver_8h_source}{}\label{implicit__solver_8h_source}\index{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/implicit\_solver.h@{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/implicit\_solver.h}}
+\hypertarget{implicit__solver_8h_source}{}\label{implicit__solver_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/implicit\_solver.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/implicit\_solver.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IMPLICIT\_SOLVER\_H\_}}
@@ -10,32 +10,28 @@
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }ImplicitSolver\ :\ \textcolor{keyword}{public}\ MultiStepOdeSolver\ \{}
-\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00011\ \ \ \ \ ImplicitSolver(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\_solution\ =\ 1,\ \textcolor{keywordtype}{int}\ order\_derivative\ =\ 0,\ }
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00014\ \ \ \ \ ImplicitSolver(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\_solution\ =\ 1,\ \textcolor{keywordtype}{int}\ order\_derivative\ =\ 0,}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00017\ \ \ \ \ }
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::vector<double>\&\ GetCoeffsY()\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::vector<double>\&\ GetCoeffsdY()\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_implicit_solver_a9f93bb76e5a9fa8df53c5dedd2fcaa5e}{ComputeStep}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00022\ \textcolor{keyword}{protected}:\ \ \ }
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }ImplicitEquation\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_function}{Function}}\ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ ImplicitEquation(\textcolor{keyword}{const}\ ImplicitSolver\&\ solver);}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_implicit_solver_1_1_implicit_equation_a8e4ed6176155127e40b8fb1d9cdad06f}{Eval}}(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y\_guess)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{private}:\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ImplicitSolver\&\ solver\_;}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cdy0\_;}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cy0\_;}
-\DoxyCodeLine{00031\ \ \ \ \ \};}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ std::shared\_ptr<RootFinder>\ root\_finder\_;}
-\DoxyCodeLine{00034\ \};}
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_implicit_solver_a6974272e5de96d69d12f88e02dbb5a7b}{ImplicitSolver}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_multi_step_ode_solver_a146cffeef6b16589864a568834433e98}{MultiStepOdeSolver}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_implicit_solver_a6974272e5de96d69d12f88e02dbb5a7b}{ImplicitSolver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\_solution\ =\ 1,\ \textcolor{keywordtype}{int}\ order\_derivative\ =\ 0,\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_implicit_solver_a6974272e5de96d69d12f88e02dbb5a7b}{ImplicitSolver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\_solution\ =\ 1,\ \textcolor{keywordtype}{int}\ order\_derivative\ =\ 0,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_implicit_solver_a4f79fcbfa43f5b7c2207ce61a4420d74}{ComputeStep}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ \textcolor{keyword}{protected}:\ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{class\ }ImplicitEquation\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_function}{Function}}\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ ImplicitEquation(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_implicit_solver_a6974272e5de96d69d12f88e02dbb5a7b}{ImplicitSolver}}\&\ solver);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_implicit_solver_1_1_implicit_equation_a8e4ed6176155127e40b8fb1d9cdad06f}{Eval}}(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y\_guess)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_implicit_solver_1_1_implicit_equation_ab5ebda2556920f006fda955b1a24c1a8}{Grad}}(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y\_guess,\ \textcolor{keywordtype}{double}\ dy\ =\ 0.1)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{private}:\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_implicit_solver_a6974272e5de96d69d12f88e02dbb5a7b}{ImplicitSolver}}\&\ solver\_;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cdy0\_;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cy0\_;}
+\DoxyCodeLine{00102\ \ \ \ \ \};}
+\DoxyCodeLine{00106\ \ \ \ \ std::shared\_ptr<RootFinder>\ \mbox{\hyperlink{class_implicit_solver_ad83ba20bb35f79b715d8bc932f4a3bc6}{root\_finder\_}};}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

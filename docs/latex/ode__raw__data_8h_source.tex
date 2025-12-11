@@ -1,5 +1,5 @@
 \doxysection{ode\+\_\+raw\+\_\+data.\+h}
-\hypertarget{ode__raw__data_8h_source}{}\label{ode__raw__data_8h_source}\index{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/ode\_raw\_data.h@{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/ode\_raw\_data.h}}
+\hypertarget{ode__raw__data_8h_source}{}\label{ode__raw__data_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/ode\_raw\_data.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/ode\_raw\_data.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ODE\_RAW\_DATA\_H\_}}
@@ -16,42 +16,52 @@
 \DoxyCodeLine{00021\ }
 \DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_abc985a147144b568f8158166b4b0e51d}{\string~OdeRawData}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_a3cf1725b2b33f4a867f117adfe4af11f}{OdeRawData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}{OdeRawData}}\&\ other);}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}{OdeRawData}}\&\ \mbox{\hyperlink{struct_ode_raw_data_a9f5c0f8a439d20553e51daa09735324e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}{OdeRawData}}\&\ other);}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\_params}}\ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t0;}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t\_final\ =\ 0.0;}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01;}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ number\_of\_steps;}
-\DoxyCodeLine{00046\ \ \ \ \ \};}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{solver\_params}}\ \{}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ SolverMethod\ method\ =\ SolverMethod::kRungeKutta4;}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ max\_iterations\ =\ 1000;}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tolerance\ =\ 1e-\/6;}
-\DoxyCodeLine{00056\ \ \ \ \ \};}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ode_raw_data_1_1function__params}{function\_params}}\ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::vector<std::string>\ function\_expressions;}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::vector<size\_t>\ function\_shape;}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::vector<std::string>\ derivative\_expressions;}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ std::vector<size\_t>\ derivative\_shape;}
-\DoxyCodeLine{00066\ \ \ \ \ \};}
-\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{struct_ode_raw_data_aea54b8bbd84870e883509af463d1c1b0}{y0}};}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_1_1function__params}{function\_params}}\ \mbox{\hyperlink{struct_ode_raw_data_1_1function__params}{function\_params}};}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\_params}}\ \mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\_params}};}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{solver\_params}}\ \mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{solver\_params}};}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00090\ \ \ \ \ std::shared\_ptr<RootFinder>\ \mbox{\hyperlink{struct_ode_raw_data_aed44367a2804104047b9394291cb0d58}{root\_finder}};}
-\DoxyCodeLine{00091\ \ \ \ \ }
-\DoxyCodeLine{00095\ \ \ \ \ std::shared\_ptr<const\ Function>\ \mbox{\hyperlink{struct_ode_raw_data_a2cb79c703cb13dbc7d6e01307b61414e}{function}};}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00097\ \};}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ODE\_RAW\_DATA\_H\_}}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_a8b0bfa240b1e64bb1b095a32cb7882a6}{OdeRawData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}{OdeRawData}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}{OdeRawData}}\&\ \mbox{\hyperlink{struct_ode_raw_data_a8c809bcec444e656f03fa6f28025238e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ode_raw_data_addbf94a0a57771671fcfd00899e54ad2}{OdeRawData}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\_params}}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_ode_raw_data_1_1time__params_a7a38aed0d94f2c8e1a90295ec82ce85d}{t0}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_ode_raw_data_1_1time__params_a9a92634d4a2f70408221ba9d8b3bd602}{t\_final}}\ =\ 0.0;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_ode_raw_data_1_1time__params_ab6b59b6b06bf7786a8e25fe60a4c28c7}{step\_size}}\ =\ 0.01;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_ode_raw_data_1_1time__params_ac8b95d4206b43184aa48bb59b2de2e11}{number\_of\_steps}};}
+\DoxyCodeLine{00063\ \ \ \ \ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{solver\_params}}\ \{}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ SolverMethod\ \mbox{\hyperlink{struct_ode_raw_data_1_1solver__params_a52402947caf3267dd7bbb59de276ec7a}{method}}\ =\ SolverMethod::kRungeKutta4;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_ode_raw_data_1_1solver__params_a7e23819614ac4fbf12ee14903e7bad91}{max\_iterations}}\ =\ 1000;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_ode_raw_data_1_1solver__params_a01b628734420a4582b38efe935fdf9d3}{tolerance}}\ =\ 1e-\/6;}
+\DoxyCodeLine{00085\ \ \ \ \ \};}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ode_raw_data_1_1function__params}{function\_params}}\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{struct_ode_raw_data_1_1function__params_afe76b823a796f7a9b4efda34708a7e28}{function\_expressions}};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ std::vector<size\_t>\ \mbox{\hyperlink{struct_ode_raw_data_1_1function__params_a372d8716ca84a93bfbabd1b466673092}{function\_shape}};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{struct_ode_raw_data_1_1function__params_a04341776bd5a8414929c000db03c0a7a}{derivative\_expressions}};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ std::vector<size\_t>\ \mbox{\hyperlink{struct_ode_raw_data_1_1function__params_ac20063a1c4da53f45209e51dd3813ce6}{derivative\_shape}};}
+\DoxyCodeLine{00110\ \ \ \ \ \};}
+\DoxyCodeLine{00111\ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{struct_ode_raw_data_aea54b8bbd84870e883509af463d1c1b0}{y0}};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_1_1function__params}{function\_params}}\ \mbox{\hyperlink{struct_ode_raw_data_1_1function__params}{function\_params}};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\_params}}\ \mbox{\hyperlink{struct_ode_raw_data_1_1time__params}{time\_params}};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{solver\_params}}\ \mbox{\hyperlink{struct_ode_raw_data_1_1solver__params}{solver\_params}};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00135\ \ \ \ \ std::shared\_ptr<RootFinder>\ \mbox{\hyperlink{struct_ode_raw_data_aed44367a2804104047b9394291cb0d58}{root\_finder}};}
+\DoxyCodeLine{00136\ \ \ \ \ }
+\DoxyCodeLine{00140\ \ \ \ \ std::shared\_ptr<const\ Function>\ \mbox{\hyperlink{struct_ode_raw_data_a2cb79c703cb13dbc7d6e01307b61414e}{function}};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ODE\_RAW\_DATA\_H\_}}
 
 \end{DoxyCode}

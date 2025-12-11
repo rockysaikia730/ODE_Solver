@@ -3,6 +3,7 @@
 #include "runge_kutta_solver.h"
 #include <cmath>
 #include <iostream>
+#include <stdexcept>
 
 void MultiStepOdeSolver::InitBuffers() {
     solutions_buffer_.clear();
@@ -11,8 +12,11 @@ void MultiStepOdeSolver::InitBuffers() {
     RungeKutta rk4(ode_, step_size_);
 
     int order = std::max(order_sol_, order_derivative_) - 1;
+    if (end_time_ > start_time_) {
+        int total_steps = std::ceil((end_time_ - start_time_)/step_size_);
+        order = std::min(order, total_steps);
+    }
 
-    //Initial Values
     UpdateSolution(solution_);
     if(order_derivative_) UpdateDerivative(ode_.Evaluate(current_time_, solution_));
 
@@ -61,14 +65,20 @@ MultiStepOdeSolver::MultiStepOdeSolver(const Ode& ode, double step_size, double 
     : OdeSolver(ode, step_size, end_time), 
       order_sol_(order_solution),
       order_derivative_(order_derivative)
-      {}
+      {
+        if(order_sol_ < 1) throw std::invalid_argument("Order of solution should be >= 1.");
+        if(order_derivative_ < 0) throw std::invalid_argument("Order of derivative should be >= 0.");
+      }
 
 MultiStepOdeSolver::MultiStepOdeSolver(const Ode& ode, int num_of_steps, double end_time,
     int order_solution, int order_derivative)
     : OdeSolver(ode, num_of_steps, end_time), 
       order_sol_(order_solution),
       order_derivative_(order_derivative)
-      {}
+      {
+        if(order_sol_ < 1) throw std::invalid_argument("Order of solution should be >= 1.");
+        if(order_derivative_ < 0) throw std::invalid_argument("Order of derivative should be >= 0.");
+      }
 
 void MultiStepOdeSolver::UpdateSolution(const DynamicTensor& y) {
     solutions_buffer_.push_back(y);

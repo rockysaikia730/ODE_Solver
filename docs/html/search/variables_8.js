@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['m_5ffundef_0',['m_FunDef',['../class_parser_x_base.html#a59f363056a90ba9c28ac38727e22ea2b',1,'ParserXBase']]],
-  ['m_5finfixoprtdef_1',['m_InfixOprtDef',['../class_parser_x_base.html#ade0edbd8ea79f1a56d9236309f88ee63',1,'ParserXBase']]],
-  ['m_5foprtdef_2',['m_OprtDef',['../class_parser_x_base.html#a77302b00dbf00c89b65f5371f3e1bc86',1,'ParserXBase']]],
-  ['m_5foprtshortcutdef_3',['m_OprtShortcutDef',['../class_parser_x_base.html#a511d8bb96ac87e2c6c4f4d0e975fd245',1,'ParserXBase']]],
-  ['m_5fpostoprtdef_4',['m_PostOprtDef',['../class_parser_x_base.html#adeb86e4488c5950141c30c576a32cda4',1,'ParserXBase']]],
-  ['m_5fvaldef_5',['m_valDef',['../class_parser_x_base.html#a73d3ae6cfe7ac9fc5018d8d7d1f9ebf5',1,'ParserXBase']]],
-  ['m_5fvardef_6',['m_varDef',['../class_parser_x_base.html#a7ecce48e4c71e67bbe7937b99e9cd8db',1,'ParserXBase']]]
+  ['separator_5f_0',['separator_',['../class_output.html#a370190db35d04e9ab23ac8307a00b5cf',1,'Output::separator_'],['../class_reader.html#abf552b3a25392737537633019196ff08',1,'Reader::separator_']]],
+  ['solution_5f_1',['solution_',['../class_ode_solver.html#a8e42a49ba25b6c2c5b029cd70e75d38e',1,'OdeSolver']]],
+  ['solutions_5fbuffer_5f_2',['solutions_buffer_',['../class_multi_step_ode_solver.html#a6b14064cb4f3b28f99d913874d018177',1,'MultiStepOdeSolver']]],
+  ['solver_5fparams_3',['solver_params',['../struct_ode_raw_data.html#ac471176ce831357580713545540425a5',1,'OdeRawData']]],
+  ['start_5ftime_5f_4',['start_time_',['../class_ode_solver.html#a349bdd8382aed99df05dddd5d7d747a2',1,'OdeSolver']]],
+  ['step_5fsize_5',['step_size',['../struct_ode_raw_data_1_1time__params.html#ab6b59b6b06bf7786a8e25fe60a4c28c7',1,'OdeRawData::time_params']]],
+  ['step_5fsize_5f_6',['step_size_',['../class_ode_solver.html#a27c98f59e22ca709d451b8ba15bf3e16',1,'OdeSolver']]],
+  ['sum_5ftn_5f_7',['sum_tn_',['../class_multi_step_ode_solver.html#ab4c210a8b67372ce8eca42ca82b176bd',1,'MultiStepOdeSolver']]]
 ];

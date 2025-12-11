@@ -1,5 +1,14 @@
 \doxysection{Adams\+Bashforth Class Reference}
 \hypertarget{class_adams_bashforth}{}\label{class_adams_bashforth}\index{AdamsBashforth@{AdamsBashforth}}
+
+
+Explicit multistep ODE solver implementing the Adams–\+Bashforth method.  
+
+
+
+
+{\ttfamily \#include $<$adamsbashforth\+\_\+solver.\+h$>$}
+
 Inheritance diagram for Adams\+Bashforth\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,40 +18,27 @@ Inheritance diagram for Adams\+Bashforth\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_adams_bashforth_ac4434a5a1d33e247298958a5896658ca}\label{class_adams_bashforth_ac4434a5a1d33e247298958a5896658ca} 
-{\bfseries Adams\+Bashforth} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order=4)
-\item 
-\Hypertarget{class_adams_bashforth_a916f3217443f9776f30b7c2f4ad3c349}\label{class_adams_bashforth_a916f3217443f9776f30b7c2f4ad3c349} 
-{\bfseries Adams\+Bashforth} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order=4)
-\item 
+\mbox{\hyperlink{class_adams_bashforth_ac4434a5a1d33e247298958a5896658ca}{Adams\+Bashforth}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order=4)
+\begin{DoxyCompactList}\small\item\em Constructs an Adams–\+Bashforth solver using a fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_adams_bashforth_a916f3217443f9776f30b7c2f4ad3c349}{Adams\+Bashforth}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order=4)
+\begin{DoxyCompactList}\small\item\em Constructs an Adams–\+Bashforth solver using a specified number of time steps. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_adams_bashforth_a1a7a6e06ee0fa286e0738578b77a29c1}{Compute\+Step}} () override
-\begin{DoxyCompactList}\small\item\em Calculates the solution at the next time step. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Advances the solution by one Adams–\+Bashforth time step. \end{DoxyCompactList}\item 
 const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{class_adams_bashforth_a8ca9f70541dd2fc636ff19e9d8b1ea65}{Get\+CoeffsY}} () const override
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the coefficients applied to solution values in the multistep formula. \end{DoxyCompactList}\item 
 const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{class_adams_bashforth_a7f824059707e62d224e0d4b206e75e02}{Get\+CoeffsdY}} () const override
-\item 
-\Hypertarget{class_adams_bashforth_aebcc437107894dd1bd885095b3659df8}\label{class_adams_bashforth_aebcc437107894dd1bd885095b3659df8} 
-int {\bfseries Get\+Order} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the derivative coefficients for the Adams–\+Bashforth formula. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_adams_bashforth_aebcc437107894dd1bd885095b3659df8}{Get\+Order}} () const
+\begin{DoxyCompactList}\small\item\em Returns the order of the Adams–\+Bashforth scheme used by the solver. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Multi\+Step\+Ode\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
-\item 
-{\bfseries Multi\+Step\+Ode\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
-\item 
-virtual void {\bfseries Init\+Buffers} ()
-\item 
-void {\bfseries Update\+Derivative} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&dydt)
-\item 
-void {\bfseries Update\+Solution} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y)
-\item 
-void {\bfseries Update\+Window\+Sum} ()
-\item 
-void \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}} () override
-\begin{DoxyCompactList}\small\item\em Resets the solver state to the initial conditions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_multi_step_ode_solver_a146cffeef6b16589864a568834433e98}{Multi\+Step\+Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
+\begin{DoxyCompactList}\small\item\em Constructor with fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_multi_step_ode_solver_a0908687bef779b2a8a53984d35872e8b}{Multi\+Step\+Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
+\begin{DoxyCompactList}\small\item\em Constructor using a specified number of steps. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90}{Step}} () override
-\begin{DoxyCompactList}\small\item\em Updates the solution\+\_\+ and time for next time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Advance the solution by one time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -73,19 +69,32 @@ void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}
 \mbox{\hyperlink{class_ode_solver_aead5f819e881f42a8c398d48678e4e16}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0)
 \begin{DoxyCompactList}\small\item\em Constructor for fixed step size. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Init\+Buffers} ()
+\begin{DoxyCompactList}\small\item\em Initialize buffers for storing solution and derivative history. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_a2e603e3908b1c51514107b13935d02ef}{Update\+Derivative}} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&dydt)
+\begin{DoxyCompactList}\small\item\em Add a new derivative value to the history. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_a5bda016c46d93c7c7ce9e8b693048ed6}{Update\+Solution}} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y)
+\begin{DoxyCompactList}\small\item\em Add a new solution value to the history. \end{DoxyCompactList}\item 
+void {\bfseries Update\+Window\+Sum} ()
+\begin{DoxyCompactList}\small\item\em Update cached weighted sums used by the multistep scheme. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}} () override
+\begin{DoxyCompactList}\small\item\em Reset solver state and history buffers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
 int {\bfseries order\+\_\+sol\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Order of the multistep term using past solution values. \end{DoxyCompactList}\item 
 int {\bfseries order\+\_\+derivative\+\_\+}
-\item 
-\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries sum\+\_\+tn\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Order of the multistep term using past derivative values. \end{DoxyCompactList}\item 
 std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\bfseries solutions\+\_\+buffer\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Buffer of previously computed solution states. \end{DoxyCompactList}\item 
 std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\bfseries derivative\+\_\+buffer\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Buffer of previously computed derivative evaluations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries sum\+\_\+tn\+\_\+}
+\begin{DoxyCompactList}\small\item\em Cached weighted sum of stored solution/derivative terms. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -98,9 +107,61 @@ double {\bfseries end\+\_\+time\+\_\+}
 double {\bfseries step\+\_\+size\+\_\+}
 \begin{DoxyCompactList}\small\item\em The time step (dt). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries solution\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\item 
 double {\bfseries current\+\_\+time\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Explicit multistep ODE solver implementing the Adams–\+Bashforth method. 
+
+This class provides an explicit multistep method for solving ordinary differential equations. The Adams–\+Bashforth scheme uses previous derivative evaluations to compute the next state without requiring implicit root-\/solving, making it efficient for non-\/stiff systems. 
+
+\label{doc-constructors}
+\Hypertarget{class_adams_bashforth_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_adams_bashforth_ac4434a5a1d33e247298958a5896658ca}\index{AdamsBashforth@{AdamsBashforth}!AdamsBashforth@{AdamsBashforth}}
+\index{AdamsBashforth@{AdamsBashforth}!AdamsBashforth@{AdamsBashforth}}
+\doxysubsubsection{\texorpdfstring{AdamsBashforth()}{AdamsBashforth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_adams_bashforth_ac4434a5a1d33e247298958a5896658ca} 
+Adams\+Bashforth\+::\+Adams\+Bashforth (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{double}]{step\+\_\+size}{ = {\ttfamily 0.01}, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}, }\item[{int}]{order}{ = {\ttfamily 4}}\end{DoxyParamCaption})}
+
+
+
+Constructs an Adams–\+Bashforth solver using a fixed step size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & Reference to the ODE system to integrate. \\
+\hline
+{\em step\+\_\+size} & Integration time step. \\
+\hline
+{\em end\+\_\+time} & Final integration time. \\
+\hline
+{\em order} & Order of the Adams–\+Bashforth method (typically 1–4). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_adams_bashforth_a916f3217443f9776f30b7c2f4ad3c349}\index{AdamsBashforth@{AdamsBashforth}!AdamsBashforth@{AdamsBashforth}}
+\index{AdamsBashforth@{AdamsBashforth}!AdamsBashforth@{AdamsBashforth}}
+\doxysubsubsection{\texorpdfstring{AdamsBashforth()}{AdamsBashforth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_adams_bashforth_a916f3217443f9776f30b7c2f4ad3c349} 
+Adams\+Bashforth\+::\+Adams\+Bashforth (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{int}]{num\+\_\+of\+\_\+steps}{, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}, }\item[{int}]{order}{ = {\ttfamily 4}}\end{DoxyParamCaption})}
+
+
+
+Constructs an Adams–\+Bashforth solver using a specified number of time steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & Reference to the ODE system to integrate. \\
+\hline
+{\em num\+\_\+of\+\_\+steps} & Number of uniform time steps used in the integration interval. \\
+\hline
+{\em end\+\_\+time} & Final integration time. \\
+\hline
+{\em order} & Order of the Adams–\+Bashforth method. \\
+\hline
+\end{DoxyParams}
 
 
 \label{doc-func-members}
@@ -114,12 +175,13 @@ double {\bfseries current\+\_\+time\+\_\+}
 
 
 
-Calculates the solution at the next time step. 
+Advances the solution by one Adams–\+Bashforth time step. 
 
-This is a pure virtual function that must be implemented by derived classes. It uses the specific numerical algorithm (e.\+g., RK4, Euler) to calculate y(t + dt) based on y(t).
+Uses the explicit Adams–\+Bashforth formula\+:   \[    y_{n+1} = y_n + h \sum_{k=0}^{p-1} b_k f(t_{n-k}, y_{n-k})
+\]
 
 \begin{DoxyReturn}{Returns}
-The calculated state tensor for the next time step. 
+State vector at the next time step. 
 \end{DoxyReturn}
 
 
@@ -133,7 +195,16 @@ const std\+::vector$<$ double $>$ \& Adams\+Bashforth\+::\+Get\+CoeffsdY (\begin
 
 
 
-Implements \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}.
+Returns the derivative coefficients for the Adams–\+Bashforth formula. 
+
+These coefficients correspond to the explicit multistep weights associated with previous derivative evaluations.
+
+\begin{DoxyReturn}{Returns}
+Constant reference to the vector of derivative coefficients. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_multi_step_ode_solver_a359ebb566d4d4e84a8408fe1d0da456d}{Multi\+Step\+Ode\+Solver}}.
 
 \Hypertarget{class_adams_bashforth_a8ca9f70541dd2fc636ff19e9d8b1ea65}\index{AdamsBashforth@{AdamsBashforth}!GetCoeffsY@{GetCoeffsY}}
 \index{GetCoeffsY@{GetCoeffsY}!AdamsBashforth@{AdamsBashforth}}
@@ -143,10 +214,33 @@ const std\+::vector$<$ double $>$ \& Adams\+Bashforth\+::\+Get\+CoeffsY (\begin{
 
 
 
-Implements \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}.
+Returns the coefficients applied to solution values in the multistep formula. 
+
+For Adams–\+Bashforth, this typically returns zeros because the method uses only derivative terms. Included for compatibility with the \doxylink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver} interface.
+
+\begin{DoxyReturn}{Returns}
+Constant reference to the vector of coefficients. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_multi_step_ode_solver_a09c62a908bebab5946e61ec2a9373f20}{Multi\+Step\+Ode\+Solver}}.
+
+\Hypertarget{class_adams_bashforth_aebcc437107894dd1bd885095b3659df8}\index{AdamsBashforth@{AdamsBashforth}!GetOrder@{GetOrder}}
+\index{GetOrder@{GetOrder}!AdamsBashforth@{AdamsBashforth}}
+\doxysubsubsection{\texorpdfstring{GetOrder()}{GetOrder()}}
+{\footnotesize\ttfamily \label{class_adams_bashforth_aebcc437107894dd1bd885095b3659df8} 
+int Adams\+Bashforth\+::\+Get\+Order (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+Returns the order of the Adams–\+Bashforth scheme used by the solver. 
+
+\begin{DoxyReturn}{Returns}
+Order of the method. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/adamsbashforth\+\_\+solver.\+h\end{DoxyCompactItemize}
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/adamsbashforth\+\_\+solver.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/adamsbashforth\+\_\+solver.\+cpp\end{DoxyCompactItemize}

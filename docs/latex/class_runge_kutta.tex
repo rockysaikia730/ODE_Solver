@@ -1,5 +1,14 @@
 \doxysection{Runge\+Kutta Class Reference}
 \hypertarget{class_runge_kutta}{}\label{class_runge_kutta}\index{RungeKutta@{RungeKutta}}
+
+
+Explicit Runge–\+Kutta ODE solver.  
+
+
+
+
+{\ttfamily \#include $<$runge\+\_\+kutta\+\_\+solver.\+h$>$}
+
 Inheritance diagram for Runge\+Kutta\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,20 +18,18 @@ Inheritance diagram for Runge\+Kutta\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_runge_kutta_ad2c5fc1466e0230af1e91d3b0788316e}\label{class_runge_kutta_ad2c5fc1466e0230af1e91d3b0788316e} 
-{\bfseries Runge\+Kutta} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0)
-\item 
-\Hypertarget{class_runge_kutta_a8ff7c22150e0d6788e8f8b03c6dc9780}\label{class_runge_kutta_a8ff7c22150e0d6788e8f8b03c6dc9780} 
-{\bfseries Runge\+Kutta} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time)
-\item 
+\mbox{\hyperlink{class_runge_kutta_ad2c5fc1466e0230af1e91d3b0788316e}{Runge\+Kutta}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0)
+\begin{DoxyCompactList}\small\item\em Constructs a Runge–\+Kutta solver using a fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_runge_kutta_a8ff7c22150e0d6788e8f8b03c6dc9780}{Runge\+Kutta}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Constructs a Runge–\+Kutta solver using a specified number of steps. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_runge_kutta_aa30cf8dbdf67cb07ca8c3a48d6427605}{Compute\+Step}} () override
-\begin{DoxyCompactList}\small\item\em Calculates the solution at the next time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Advances the solution by one Runge–\+Kutta time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ode\+Solver} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step}} ()
+virtual void \mbox{\hyperlink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step}} ()
 \begin{DoxyCompactList}\small\item\em Updates the solution\+\_\+ and time for next time step. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ode_solver_a662cff46a2025f9b99295d5fcefbe0b6}{Set\+End\+Time}} (double end\+\_\+time)
 \begin{DoxyCompactList}\small\item\em Sets the simulation end time. \end{DoxyCompactList}\item 
@@ -42,7 +49,7 @@ int \mbox{\hyperlink{class_ode_solver_ad0bbb5894abf1b510845a61e9b42ea61}{Get\+Nu
 \item 
 double \mbox{\hyperlink{class_ode_solver_a93ba8bfb62598239c78200ca6253fa02}{Get\+Current\+Time}} () const
 \item 
-virtual void \mbox{\hyperlink{class_ode_solver_a1c901eb9c0357806de35654a38c7fbba}{Reset}} ()
+virtual void \mbox{\hyperlink{class_ode_solver_a1cc5668fdf4d5bd99ee21c4f91c6aca3}{Reset}} ()
 \begin{DoxyCompactList}\small\item\em Resets the solver state to the initial conditions. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}} ()
 \begin{DoxyCompactList}\small\item\em Executes the simulation loop (Batch Mode). \end{DoxyCompactList}\item 
@@ -63,9 +70,57 @@ double {\bfseries end\+\_\+time\+\_\+}
 double {\bfseries step\+\_\+size\+\_\+}
 \begin{DoxyCompactList}\small\item\em The time step (dt). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries solution\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\item 
 double {\bfseries current\+\_\+time\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Explicit Runge–\+Kutta ODE solver. 
+
+This class implements a classical 4th-\/order Runge–\+Kutta method for solving ordinary differential equations. It is an explicit solver suitable for non-\/stiff problems, providing higher accuracy than Forward Euler. 
+
+\label{doc-constructors}
+\Hypertarget{class_runge_kutta_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_runge_kutta_ad2c5fc1466e0230af1e91d3b0788316e}\index{RungeKutta@{RungeKutta}!RungeKutta@{RungeKutta}}
+\index{RungeKutta@{RungeKutta}!RungeKutta@{RungeKutta}}
+\doxysubsubsection{\texorpdfstring{RungeKutta()}{RungeKutta()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_runge_kutta_ad2c5fc1466e0230af1e91d3b0788316e} 
+Runge\+Kutta\+::\+Runge\+Kutta (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{double}]{step\+\_\+size}{ = {\ttfamily 0.01}, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}}\end{DoxyParamCaption})}
+
+
+
+Constructs a Runge–\+Kutta solver using a fixed step size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & Reference to the ODE system to integrate. \\
+\hline
+{\em step\+\_\+size} & Time step size. \\
+\hline
+{\em end\+\_\+time} & Final integration time. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_runge_kutta_a8ff7c22150e0d6788e8f8b03c6dc9780}\index{RungeKutta@{RungeKutta}!RungeKutta@{RungeKutta}}
+\index{RungeKutta@{RungeKutta}!RungeKutta@{RungeKutta}}
+\doxysubsubsection{\texorpdfstring{RungeKutta()}{RungeKutta()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_runge_kutta_a8ff7c22150e0d6788e8f8b03c6dc9780} 
+Runge\+Kutta\+::\+Runge\+Kutta (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{int}]{num\+\_\+of\+\_\+steps}{, }\item[{double}]{end\+\_\+time}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a Runge–\+Kutta solver using a specified number of steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & Reference to the ODE system to integrate. \\
+\hline
+{\em num\+\_\+of\+\_\+steps} & Number of uniform time steps. \\
+\hline
+{\em end\+\_\+time} & Final integration time. \\
+\hline
+\end{DoxyParams}
 
 
 \label{doc-func-members}
@@ -79,12 +134,13 @@ double {\bfseries current\+\_\+time\+\_\+}
 
 
 
-Calculates the solution at the next time step. 
+Advances the solution by one Runge–\+Kutta time step. 
 
-This is a pure virtual function that must be implemented by derived classes. It uses the specific numerical algorithm (e.\+g., RK4, Euler) to calculate y(t + dt) based on y(t).
+Typically implements the classical 4th-\/order Runge–\+Kutta formula\+:   \[    y_{n+1} = y_n + \frac{h}{6}(k_1 + 2 k_2 + 2 k_3 + k_4)
+\] where $k_i$ are slope estimates at intermediate points.
 
 \begin{DoxyReturn}{Returns}
-The calculated state tensor for the next time step. 
+State vector at the next time step. 
 \end{DoxyReturn}
 
 
@@ -92,6 +148,7 @@ Implements \mbox{\hyperlink{class_ode_solver_a35a9d27d9c3b484dae31ed1c6905a04a}{
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/runge\+\_\+kutta\+\_\+solver.\+h\end{DoxyCompactItemize}
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/runge\+\_\+kutta\+\_\+solver.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/runge\+\_\+kutta\+\_\+solver.\+cpp\end{DoxyCompactItemize}

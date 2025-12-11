@@ -1,5 +1,14 @@
 \doxysection{Implicit\+Solver\+::Implicit\+Equation Class Reference}
 \hypertarget{class_implicit_solver_1_1_implicit_equation}{}\label{class_implicit_solver_1_1_implicit_equation}\index{ImplicitSolver::ImplicitEquation@{ImplicitSolver::ImplicitEquation}}
+
+
+Nonlinear equation representing the implicit update rule at a single time step.  
+
+
+
+
+{\ttfamily \#include $<$implicit\+\_\+solver.\+h$>$}
+
 Inheritance diagram for Implicit\+Solver\+::Implicit\+Equation\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,15 +22,21 @@ Inheritance diagram for Implicit\+Solver\+::Implicit\+Equation\+:\begin{figure}[
 {\bfseries Implicit\+Equation} (const \mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}} \&solver)
 \item 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_implicit_solver_1_1_implicit_equation_a8e4ed6176155127e40b8fb1d9cdad06f}{Eval}} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y\+\_\+guess) const override
-\begin{DoxyCompactList}\small\item\em Evaluates the function at a given time and state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluates the nonlinear implicit equation at a given guess for y. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_implicit_solver_1_1_implicit_equation_ab5ebda2556920f006fda955b1a24c1a8}{Grad}} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y\+\_\+guess, double dy=0.\+1) const override
+\begin{DoxyCompactList}\small\item\em Computes the gradient of the implicit equation w.\+r.\+t. y. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_function}{Function}}}
 \begin{DoxyCompactItemize}
 \item 
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Function} ()=default
-\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
-virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_function_a27c7561a090ecc5688a662f5ab2b6902}{Grad}} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y, double dy=0.\+1) const
-\begin{DoxyCompactList}\small\item\em Finds Gradient of the function using central difference method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Nonlinear equation representing the implicit update rule at a single time step. 
+
+The implicit multistep method produces an equation of the form\+:   \[    F(t_{n+1},y_{n+1}) = 0
+\] This class provides the evaluation and finite-\/difference gradient needed by the \doxylink{class_root_finder}{Root\+Finder}. 
 
 \label{doc-func-members}
 \Hypertarget{class_implicit_solver_1_1_implicit_equation_doc-func-members}
@@ -30,31 +45,57 @@ virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlin
 \index{Eval@{Eval}!ImplicitSolver::ImplicitEquation@{ImplicitSolver::ImplicitEquation}}
 \doxysubsubsection{\texorpdfstring{Eval()}{Eval()}}
 {\footnotesize\ttfamily \label{class_implicit_solver_1_1_implicit_equation_a8e4ed6176155127e40b8fb1d9cdad06f} 
-\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Implicit\+Solver\+::\+Implicit\+Equation\+::\+Eval (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Implicit\+Solver\+::\+Implicit\+Equation\+::\+Eval (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y\+\_\+guess}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Evaluates the function at a given time and state. 
+Evaluates the nonlinear implicit equation at a given guess for y. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em t} & The time variable. \\
+{\em t} & Current time. \\
 \hline
-{\em y} & The state variable as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. \\
+{\em y\+\_\+guess} & Current guess for the next-\/step solution. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The result of the function evaluation as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. 
+Value of the implicit equation. 
 \end{DoxyReturn}
-\begin{DoxyRemark}{Remarks}
-When implementing this method, ensure that the output tensor\textquotesingle{}s shape is compatible with the input tensor\textquotesingle{}s shape as required by the ODE system. 
-\end{DoxyRemark}
 
 
 Implements \mbox{\hyperlink{class_function_a7bb6bbdd01c508cb0a4d4ad545915d3c}{Function}}.
 
+\Hypertarget{class_implicit_solver_1_1_implicit_equation_ab5ebda2556920f006fda955b1a24c1a8}\index{ImplicitSolver::ImplicitEquation@{ImplicitSolver::ImplicitEquation}!Grad@{Grad}}
+\index{Grad@{Grad}!ImplicitSolver::ImplicitEquation@{ImplicitSolver::ImplicitEquation}}
+\doxysubsubsection{\texorpdfstring{Grad()}{Grad()}}
+{\footnotesize\ttfamily \label{class_implicit_solver_1_1_implicit_equation_ab5ebda2556920f006fda955b1a24c1a8} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Implicit\+Solver\+::\+Implicit\+Equation\+::\+Grad (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y\+\_\+guess}{, }\item[{double}]{dy}{ = {\ttfamily 0.1}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+
+Computes the gradient of the implicit equation w.\+r.\+t. y. 
+
+Uses finite differences with an optional increment size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Current time. \\
+\hline
+{\em y\+\_\+guess} & Current guess for the solution. \\
+\hline
+{\em dy} & Finite-\/difference step size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Approximate gradient tensor. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_function_a46edab05fbafe2413e8dac3de7c6186f}{Function}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/implicit\+\_\+solver.\+h\end{DoxyCompactItemize}
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/implicit\+\_\+solver.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/implicit\+\_\+solver.\+cpp\end{DoxyCompactItemize}

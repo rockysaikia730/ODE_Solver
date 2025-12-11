@@ -2,6 +2,7 @@
 #include "multistep_ode_solver.h"
 #include "dynamic_tensor.h"
 #include <vector>
+#include <stdexcept>
 
 AdamsBashforth::AdamsBashforth(const Ode& ode, double step_size, double end_time, int order)
     : MultiStepOdeSolver(ode, step_size, end_time, 1, order),
@@ -15,6 +16,7 @@ AdamsBashforth::AdamsBashforth(const Ode& ode, int num_of_steps, double end_time
     : MultiStepOdeSolver(ode, num_of_steps, end_time, 1, order),
       order_(order) 
       {
+        if(order > 4 || order < 1) throw std::invalid_argument("Order must be within 1 to 4.");
         Reset();
       }
 

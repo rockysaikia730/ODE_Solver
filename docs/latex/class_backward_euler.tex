@@ -1,5 +1,14 @@
 \doxysection{Backward\+Euler Class Reference}
 \hypertarget{class_backward_euler}{}\label{class_backward_euler}\index{BackwardEuler@{BackwardEuler}}
+
+
+Implicit first-\/order ODE solver using the Backward Euler method.  
+
+
+
+
+{\ttfamily \#include $<$backward\+\_\+euler\+\_\+solver.\+h$>$}
+
 Inheritance diagram for Backward\+Euler\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,53 +18,41 @@ Inheritance diagram for Backward\+Euler\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_backward_euler_afa83bbf7819fe856dc6ded306c1db150}\label{class_backward_euler_afa83bbf7819fe856dc6ded306c1db150} 
-{\bfseries Backward\+Euler} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
-\item 
-\Hypertarget{class_backward_euler_a212dda66456ba0cb27eb37c604ec2e4c}\label{class_backward_euler_a212dda66456ba0cb27eb37c604ec2e4c} 
-{\bfseries Backward\+Euler} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_backward_euler_afa83bbf7819fe856dc6ded306c1db150}{Backward\+Euler}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a Backward Euler solver using a fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_backward_euler_a212dda66456ba0cb27eb37c604ec2e4c}{Backward\+Euler}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a Backward Euler solver using a specified number of steps. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_bdf}{Bdf}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Bdf} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order=4, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
-\item 
-{\bfseries Bdf} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order=4, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
-\item 
-int {\bfseries Get\+Order} ()
-\item 
+\mbox{\hyperlink{class_bdf_a76641c4b16d7b0aa9a0c46e53b33a031}{Bdf}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order=4, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a BDF solver using a fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bdf_ac6862d48420dee43cb56966800afbba5}{Bdf}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order=4, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a BDF solver using a specified number of time steps. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_bdf_a35a6dd768ab8ab6056378f046e3dcf83}{Get\+Order}} ()
+\begin{DoxyCompactList}\small\item\em Returns the order of the BDF method used by the solver. \end{DoxyCompactList}\item 
 const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{class_bdf_a88a8c043f3665d605c46e876df38bedd}{Get\+CoeffsY}} () const override
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the coefficients applied to solution values in the BDF formula. \end{DoxyCompactList}\item 
 const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{class_bdf_a4532c58e0c226a7527f59e5170c88fee}{Get\+CoeffsdY}} () const override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the derivative coefficient(s) used in the BDF scheme. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Implicit\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
-\item 
-{\bfseries Implicit\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
-\item 
-virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_implicit_solver_a9f93bb76e5a9fa8df53c5dedd2fcaa5e}{Compute\+Step}} () override
-\begin{DoxyCompactList}\small\item\em Calculates the solution at the next time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_implicit_solver_a6974272e5de96d69d12f88e02dbb5a7b}{Implicit\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_implicit_solver}{Implicit\+Solver} using a fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_implicit_solver_aeac055d99a35bf3480a1bcc97e4f8670}{Implicit\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_implicit_solver}{Implicit\+Solver} using a specified number of time steps. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_implicit_solver_a4f79fcbfa43f5b7c2207ce61a4420d74}{Compute\+Step}} () override
+\begin{DoxyCompactList}\small\item\em Advances the solution by one implicit time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Multi\+Step\+Ode\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
-\item 
-{\bfseries Multi\+Step\+Ode\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
-\item 
-virtual void {\bfseries Init\+Buffers} ()
-\item 
-void {\bfseries Update\+Derivative} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&dydt)
-\item 
-void {\bfseries Update\+Solution} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y)
-\item 
-void {\bfseries Update\+Window\+Sum} ()
-\item 
-void \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}} () override
-\begin{DoxyCompactList}\small\item\em Resets the solver state to the initial conditions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_multi_step_ode_solver_a146cffeef6b16589864a568834433e98}{Multi\+Step\+Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
+\begin{DoxyCompactList}\small\item\em Constructor with fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_multi_step_ode_solver_a0908687bef779b2a8a53984d35872e8b}{Multi\+Step\+Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
+\begin{DoxyCompactList}\small\item\em Constructor using a specified number of steps. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90}{Step}} () override
-\begin{DoxyCompactList}\small\item\em Updates the solution\+\_\+ and time for next time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Advance the solution by one time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -86,24 +83,37 @@ void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}
 \mbox{\hyperlink{class_ode_solver_aead5f819e881f42a8c398d48678e4e16}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0)
 \begin{DoxyCompactList}\small\item\em Constructor for fixed step size. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Init\+Buffers} ()
+\begin{DoxyCompactList}\small\item\em Initialize buffers for storing solution and derivative history. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_a2e603e3908b1c51514107b13935d02ef}{Update\+Derivative}} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&dydt)
+\begin{DoxyCompactList}\small\item\em Add a new derivative value to the history. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_a5bda016c46d93c7c7ce9e8b693048ed6}{Update\+Solution}} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y)
+\begin{DoxyCompactList}\small\item\em Add a new solution value to the history. \end{DoxyCompactList}\item 
+void {\bfseries Update\+Window\+Sum} ()
+\begin{DoxyCompactList}\small\item\em Update cached weighted sums used by the multistep scheme. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}} () override
+\begin{DoxyCompactList}\small\item\em Reset solver state and history buffers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ {\bfseries root\+\_\+finder\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Root finder used to solve the nonlinear implicit equation at each step. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
 int {\bfseries order\+\_\+sol\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Order of the multistep term using past solution values. \end{DoxyCompactList}\item 
 int {\bfseries order\+\_\+derivative\+\_\+}
-\item 
-\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries sum\+\_\+tn\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Order of the multistep term using past derivative values. \end{DoxyCompactList}\item 
 std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\bfseries solutions\+\_\+buffer\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Buffer of previously computed solution states. \end{DoxyCompactList}\item 
 std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\bfseries derivative\+\_\+buffer\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Buffer of previously computed derivative evaluations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries sum\+\_\+tn\+\_\+}
+\begin{DoxyCompactList}\small\item\em Cached weighted sum of stored solution/derivative terms. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -116,11 +126,64 @@ double {\bfseries end\+\_\+time\+\_\+}
 double {\bfseries step\+\_\+size\+\_\+}
 \begin{DoxyCompactList}\small\item\em The time step (dt). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries solution\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\item 
 double {\bfseries current\+\_\+time\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\doxysubsection{Detailed Description}
+Implicit first-\/order ODE solver using the Backward Euler method. 
+
+The Backward Euler method is a special case of the Backward Differentiation Formula (BDF) with order 1. It is an implicit method suitable for stiff ODEs, requiring a \doxylink{class_root_finder}{Root\+Finder} to solve the nonlinear equation at each time step. 
+
+\label{doc-constructors}
+\Hypertarget{class_backward_euler_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_backward_euler_afa83bbf7819fe856dc6ded306c1db150}\index{BackwardEuler@{BackwardEuler}!BackwardEuler@{BackwardEuler}}
+\index{BackwardEuler@{BackwardEuler}!BackwardEuler@{BackwardEuler}}
+\doxysubsubsection{\texorpdfstring{BackwardEuler()}{BackwardEuler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_backward_euler_afa83bbf7819fe856dc6ded306c1db150} 
+Backward\+Euler\+::\+Backward\+Euler (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{double}]{step\+\_\+size}{ = {\ttfamily 0.01}, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Constructs a Backward Euler solver using a fixed step size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & Reference to the ODE system to integrate. \\
+\hline
+{\em step\+\_\+size} & Time step size. \\
+\hline
+{\em end\+\_\+time} & Final integration time. \\
+\hline
+{\em root\+\_\+finder} & Shared pointer to a \doxylink{class_root_finder}{Root\+Finder} for implicit solves. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_backward_euler_a212dda66456ba0cb27eb37c604ec2e4c}\index{BackwardEuler@{BackwardEuler}!BackwardEuler@{BackwardEuler}}
+\index{BackwardEuler@{BackwardEuler}!BackwardEuler@{BackwardEuler}}
+\doxysubsubsection{\texorpdfstring{BackwardEuler()}{BackwardEuler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_backward_euler_a212dda66456ba0cb27eb37c604ec2e4c} 
+Backward\+Euler\+::\+Backward\+Euler (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{int}]{num\+\_\+of\+\_\+steps}{, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Constructs a Backward Euler solver using a specified number of steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & Reference to the ODE system to integrate. \\
+\hline
+{\em num\+\_\+of\+\_\+steps} & Number of uniform time steps. \\
+\hline
+{\em end\+\_\+time} & Final integration time. \\
+\hline
+{\em root\+\_\+finder} & Shared pointer to a \doxylink{class_root_finder}{Root\+Finder} for implicit solves. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/backward\+\_\+euler\+\_\+solver.\+h\end{DoxyCompactItemize}
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/backward\+\_\+euler\+\_\+solver.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/backward\+\_\+euler\+\_\+solver.\+cpp\end{DoxyCompactItemize}

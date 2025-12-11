@@ -11,7 +11,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "implicit_solver.h", "implicit__solver_8h_source.html", null ],
     [ "multistep_ode_solver.h", "multistep__ode__solver_8h_source.html", null ],
     [ "newton_raphson.h", "newton__raphson_8h_source.html", null ],
-    [ "ode.h", "ode_8h.html", "ode_8h" ],
+    [ "ode.h", "ode_8h_source.html", null ],
     [ "ode_raw_data.h", "ode__raw__data_8h_source.html", null ],
     [ "ode_solver.h", "ode__solver_8h.html", "ode__solver_8h" ],
     [ "output.h", "output_8h_source.html", null ],

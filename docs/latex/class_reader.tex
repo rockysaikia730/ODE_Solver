@@ -2,7 +2,7 @@
 \hypertarget{class_reader}{}\label{class_reader}\index{Reader@{Reader}}
 
 
-A class responsible for reading and parsing data from various sources. The reader can handle the simulation parameters, initial conditions, but cannot read the function itself. \doxylink{class_function}{Function} parsing is not implemented for now, it has to be passed in the constructor of the ODE solver.  
+A class responsible for reading and parsing data from various sources. For the time being, only file reading is supported. NOte that the readers create the ODERaw\+Data object, as well as the function object.  
 
 
 
@@ -33,9 +33,9 @@ void \mbox{\hyperlink{class_reader_ae142b32ae6481733b84b20141cdafda2}{Set\+File\
 \begin{DoxyCompactList}\small\item\em Set the file name for the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_reader_aca06f0a9f6d41e0d9abf0d8d3f2be274}{Set\+File\+Extension}} (const std\+::string \&file\+\_\+extension)
 \begin{DoxyCompactList}\small\item\em Set the file extension for the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{class_reader_a0566befa2921baa5f4c80d8cb0a691a0}{Open}} ()
+virtual bool \mbox{\hyperlink{class_reader_a33c491f270968d5c129807b5d3dfa3a4}{Open}} ()
 \begin{DoxyCompactList}\small\item\em Opens the data source for reading. \end{DoxyCompactList}\item 
-\Hypertarget{class_reader_a763acd33fcb5df52793a2fa431afa0ae}\label{class_reader_a763acd33fcb5df52793a2fa431afa0ae} 
+\Hypertarget{class_reader_a36852f38ab45088da044919c88392311}\label{class_reader_a36852f38ab45088da044919c88392311} 
 virtual void {\bfseries Close} ()
 \begin{DoxyCompactList}\small\item\em Closes the data source. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_reader_ad204b9322007aab318b9e444bb5dbcea}{Set\+Separator}} (char separator)
@@ -43,7 +43,7 @@ void \mbox{\hyperlink{class_reader_ad204b9322007aab318b9e444bb5dbcea}{Set\+Separ
 char \mbox{\hyperlink{class_reader_ac679fdc16a819d641ad6baee637cc618}{Get\+Separator}} () const
 \begin{DoxyCompactList}\small\item\em Gets the separator character used in the file. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \& \mbox{\hyperlink{class_reader_a58d1e5e33b0ec8169420fb3be600de32}{Get\+Raw\+Data}} () const
-\begin{DoxyCompactList}\small\item\em Parser to convert a string into a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the raw data read by the \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -74,9 +74,7 @@ void \mbox{\hyperlink{class_reader_a891f6505346d7f7389f5eadc35d1d1bf}{Interpret\
 std\+::string \mbox{\hyperlink{class_reader_ac44b41ce56079ec4f6dd3ca0eb44e0b6}{Trim\+String}} (const std\+::string \&s) const
 \begin{DoxyCompactList}\small\item\em trim a single string \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_reader_aa8fc2dbf2e8a036539e632d2aee16e3e}{Parse\+Solver\+Method\+From\+String}} (const std\+::string \&method\+\_\+string)
-\begin{DoxyCompactList}\small\item\em Parses the solver method from a string and sets it in raw\+\_\+data\+\_\+. \end{DoxyCompactList}\item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ \mbox{\hyperlink{class_reader_a0bef7707d1cf66a0b320f77212954150}{Parse\+Function}} (const std\+::string \&str)
-\begin{DoxyCompactList}\small\item\em Recursive helper function that parses a function string into an instance of \doxylink{class_function}{Function}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Parses the solver method from a string and sets it in raw\+\_\+data\+\_\+. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -98,7 +96,7 @@ std\+::ifstream {\bfseries file\+\_\+stream\+\_\+}
 
 
 \doxysubsection{Detailed Description}
-A class responsible for reading and parsing data from various sources. The reader can handle the simulation parameters, initial conditions, but cannot read the function itself. \doxylink{class_function}{Function} parsing is not implemented for now, it has to be passed in the constructor of the ODE solver. 
+A class responsible for reading and parsing data from various sources. For the time being, only file reading is supported. NOte that the readers create the ODERaw\+Data object, as well as the function object. 
 
 \label{doc-constructors}
 \Hypertarget{class_reader_doc-constructors}
@@ -157,17 +155,9 @@ const \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \& Reader\+::\+Get\
 
 
 
-Parser to convert a string into a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. 
+Get the raw data read by the \doxylink{class_reader}{Reader}. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em str} & The string to parse. \\
-\hline
-\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} object.
-\end{DoxyReturn}
-Get the raw data read by the \doxylink{class_reader}{Reader}. \begin{DoxyReturn}{Returns}
 An \doxylink{struct_ode_raw_data}{Ode\+Raw\+Data} object containing the read data. 
 \end{DoxyReturn}
 \Hypertarget{class_reader_ac679fdc16a819d641ad6baee637cc618}\index{Reader@{Reader}!GetSeparator@{GetSeparator}}
@@ -201,8 +191,6 @@ Parses the solver method from a string and sets it in raw\+\_\+data\+\_\+.
 \begin{DoxyReturn}{Returns}
 a vector of size\+\_\+t representing the shape of the parsed tensor.
 \end{DoxyReturn}
-/\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
-
 Key-\/value pair interpreter for reading lines. 
 \begin{DoxyParams}{Parameters}
 {\em key} & The key string. \\
@@ -246,11 +234,11 @@ Checks if a string represents a numeric value.
 \begin{DoxyReturn}{Returns}
 True if the string is numeric, false otherwise. 
 \end{DoxyReturn}
-\Hypertarget{class_reader_a0566befa2921baa5f4c80d8cb0a691a0}\index{Reader@{Reader}!Open@{Open}}
+\Hypertarget{class_reader_a33c491f270968d5c129807b5d3dfa3a4}\index{Reader@{Reader}!Open@{Open}}
 \index{Open@{Open}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{Open()}{Open()}}
-{\footnotesize\ttfamily \label{class_reader_a0566befa2921baa5f4c80d8cb0a691a0} 
-virtual bool Reader\+::\+Open (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_reader_a33c491f270968d5c129807b5d3dfa3a4} 
+bool Reader\+::\+Open (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -294,24 +282,6 @@ Parses a string representing a double.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A double value. 
-\end{DoxyReturn}
-\Hypertarget{class_reader_a0bef7707d1cf66a0b320f77212954150}\index{Reader@{Reader}!ParseFunction@{ParseFunction}}
-\index{ParseFunction@{ParseFunction}!Reader@{Reader}}
-\doxysubsubsection{\texorpdfstring{ParseFunction()}{ParseFunction()}}
-{\footnotesize\ttfamily \label{class_reader_a0bef7707d1cf66a0b320f77212954150} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_function}{Function}} $>$ Reader\+::\+Parse\+Function (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Recursive helper function that parses a function string into an instance of \doxylink{class_function}{Function}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em str} & The function string to parse. Expected form is a flattened list of expressions (eg. "{}\mbox{[}\mbox{[}sin(t)+y0, cos(t)\mbox{]},\mbox{[}y1\texorpdfstring{$^\wedge$}{\string^}2, exp(t)\mbox{]}\mbox{]}"{} for a 2x2 system). \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-a pointer to the created \doxylink{class_function}{Function} instance. 
 \end{DoxyReturn}
 \Hypertarget{class_reader_aa8fc2dbf2e8a036539e632d2aee16e3e}\index{Reader@{Reader}!ParseSolverMethodFromString@{ParseSolverMethodFromString}}
 \index{ParseSolverMethodFromString@{ParseSolverMethodFromString}!Reader@{Reader}}
@@ -364,7 +334,7 @@ sets the raw\+\_\+data\+\_\+ member variable.
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{class_csv_reader_ae3d4bcb938083b82f85c5e5aeba6e4c1}{Csv\+Reader}}, and \mbox{\hyperlink{class_txt_reader_ab168578324d8fb2d4a30fe2089634029}{Txt\+Reader}}.
+Implemented in \mbox{\hyperlink{class_csv_reader_a653c29a6d16c9caad06ba5a0a25a6a6c}{Csv\+Reader}}, and \mbox{\hyperlink{class_txt_reader_a331736cf6c2407d480103d3cfacc709f}{Txt\+Reader}}.
 
 \Hypertarget{class_reader_aca06f0a9f6d41e0d9abf0d8d3f2be274}\index{Reader@{Reader}!SetFileExtension@{SetFileExtension}}
 \index{SetFileExtension@{SetFileExtension}!Reader@{Reader}}
@@ -487,6 +457,7 @@ The trimmed string. This method removes leading and trailing whitespace from the
 \end{DoxyReturn}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/reader.\+h\end{DoxyCompactItemize}
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/reader.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/reader.\+cpp\end{DoxyCompactItemize}

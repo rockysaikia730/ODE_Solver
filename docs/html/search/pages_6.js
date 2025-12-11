@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['how_20to_20become_20a_20contributor_20and_20submit_20your_20own_20code_0',['How to become a contributor and submit your own code',['../md__c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1__2025-2026_2pcsc__project_2_o_d_e___solver_286d8ac260c9f2a29035e6a2bfb05e5d2.html',1,'']]]
+  ['checking_20mechanism_20provided_20for_20veryfying_20the_20shape_20of_20the_20function_20and_20the_20input_20tensor_20this_20responsibility_20is_20delegated_20to_20the_20user_20to_20verify_20for_20the_20time_20being_0',['Right now, there is no checking mechanism provided for veryfying the shape of the function and the input tensor. This responsibility is delegated to the user to verify for the time being.',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md15',1,'']]],
+  ['class_1',['Class',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md10',1,'1.1.3 The &lt;span class=&quot;tt&quot;&gt;Ode&lt;/span&gt; Class'],['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md13',1,'1.1.4 The &lt;span class=&quot;tt&quot;&gt;Function&lt;/span&gt; Class'],['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md16',1,'The ParsedFunction Class']]],
+  ['class_2',['Shortcomings of the Function class',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md14',1,'']]],
+  ['classes_3',['1.1.1 Reader Classes',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md3',1,'']]],
+  ['command_20prompt_4',['On Windows (PowerShell or Command Prompt)',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md6',1,'']]],
+  ['compiling_20and_20generating_20the_20doxygen_20documentation_5',['For compiling and generating the Doxygen documentation',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md21',1,'']]]
 ];

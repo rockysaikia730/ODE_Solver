@@ -45,7 +45,7 @@ using {\bfseries Complex} = std\+::complex$<$double$>$
 \Hypertarget{class_dynamic_tensor_a4100eb661f083d8f602559ad7774198a}\label{class_dynamic_tensor_a4100eb661f083d8f602559ad7774198a} 
 bool {\bfseries Is\+Complex} () const
 \item 
-\Hypertarget{class_dynamic_tensor_a985d425433a87baaee686fc48af19b14}\label{class_dynamic_tensor_a985d425433a87baaee686fc48af19b14} 
+\Hypertarget{class_dynamic_tensor_acd36acf18da6cac52b986d9903e864ce}\label{class_dynamic_tensor_acd36acf18da6cac52b986d9903e864ce} 
 Type {\bfseries Get\+Type} () const
 \item 
 \Hypertarget{class_dynamic_tensor_a74eb8a4210abf2b8719ffba0e3de1dc8}\label{class_dynamic_tensor_a74eb8a4210abf2b8719ffba0e3de1dc8} 
@@ -117,10 +117,7 @@ size\+\_\+t \mbox{\hyperlink{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138e
 \doxysubsection{Detailed Description}
 A class to represent a mathematical tensor of arbitrary rank at runtime. 
 
-The \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} stores data in a contiguous 1D memory block (std\+::vector) but provides an interface to access elements using N-\/dimensional coordinates. It uses Row-\/\+Major ordering (last dimension changes fastest). \begin{Desc}
-\item[Examples]\par
-\mbox{\hyperlink{_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example}{C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/dynamic\+\_\+tensor.\+h}}.\end{Desc}
-
+The \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} stores data in a contiguous 1D memory block (std\+::vector) but provides an interface to access elements using N-\/dimensional coordinates. It uses Row-\/\+Major ordering (last dimension changes fastest). 
 
 \label{doc-constructors}
 \Hypertarget{class_dynamic_tensor_doc-constructors}
@@ -201,9 +198,6 @@ A constant reference to the internal data vector.
 \begin{DoxyNote}{Note}
 The changes here are suggested by Chat\+GPT. 
 \end{DoxyNote}
-\begin{Desc}
-\item[Examples]\par
-\mbox{\hyperlink{_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example}{C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/dynamic\+\_\+tensor.\+h}}.\end{Desc}
 \Hypertarget{class_dynamic_tensor_a42b1bfd00a94348fe8b1ce43a2f6cf7e}\index{DynamicTensor@{DynamicTensor}!get\_shape@{get\_shape}}
 \index{get\_shape@{get\_shape}!DynamicTensor@{DynamicTensor}}
 \doxysubsubsection{\texorpdfstring{get\_shape()}{get\_shape()}}
@@ -217,9 +211,6 @@ Get the shape of the tensor.
 \begin{DoxyReturn}{Returns}
 A const reference to the vector of dimensions. 
 \end{DoxyReturn}
-\begin{Desc}
-\item[Examples]\par
-\mbox{\hyperlink{_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example}{C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/dynamic\+\_\+tensor.\+h}}.\end{Desc}
 \Hypertarget{class_dynamic_tensor_a094738c223cbe58ad0b81dbae138ebf6}\index{DynamicTensor@{DynamicTensor}!rank@{rank}}
 \index{rank@{rank}!DynamicTensor@{DynamicTensor}}
 \doxysubsubsection{\texorpdfstring{rank()}{rank()}}
@@ -233,9 +224,6 @@ Get the rank (number of dimensions) of the tensor.
 \begin{DoxyReturn}{Returns}
 The size of the shape vector (e.\+g., a 3D volume returns 3). 
 \end{DoxyReturn}
-\begin{Desc}
-\item[Examples]\par
-\mbox{\hyperlink{_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example}{C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/dynamic\+\_\+tensor.\+h}}.\end{Desc}
 \Hypertarget{class_dynamic_tensor_a80d631cc2d2151a0e3c9da15edbd870d}\index{DynamicTensor@{DynamicTensor}!size@{size}}
 \index{size@{size}!DynamicTensor@{DynamicTensor}}
 \doxysubsubsection{\texorpdfstring{size()}{size()}}
@@ -249,11 +237,9 @@ Get the total number of elements in the tensor.
 \begin{DoxyReturn}{Returns}
 The product of all dimensions (e.\+g., 2x3x4 = 24). 
 \end{DoxyReturn}
-\begin{Desc}
-\item[Examples]\par
-\mbox{\hyperlink{_c_1_2_users_2andra_2_one_drive_2_desktop_2_m_a1_2025-2026_2pcsc_project_2_o_d_e__solver_2include_2dynamic_tensor_8h-example}{C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/dynamic\+\_\+tensor.\+h}}.\end{Desc}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\+\_\+tensor.\+h}}\end{DoxyCompactItemize}
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\+\_\+tensor.\+h}}\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/dynamic\+\_\+tensor.\+cpp\end{DoxyCompactItemize}

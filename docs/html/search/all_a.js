@@ -1,4 +1,27 @@
 var searchData=
 [
-  ['newtonraphson_0',['NewtonRaphson',['../class_newton_raphson.html',1,'']]]
+  ['generating_20the_20doxygen_20documentation_0',['For compiling and generating the Doxygen documentation',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md21',1,'']]],
+  ['get_5fshape_1',['get_shape',['../class_dynamic_tensor.html#a42b1bfd00a94348fe8b1ce43a2f6cf7e',1,'DynamicTensor']]],
+  ['getcoeffsdy_2',['GetCoeffsdY',['../class_adam_moulton.html#a5c9bd3ac47674d61cedbb1bf393d3f8e',1,'AdamMoulton::GetCoeffsdY()'],['../class_adams_bashforth.html#a7f824059707e62d224e0d4b206e75e02',1,'AdamsBashforth::GetCoeffsdY()'],['../class_bdf.html#a4532c58e0c226a7527f59e5170c88fee',1,'Bdf::GetCoeffsdY()'],['../class_multi_step_ode_solver.html#a359ebb566d4d4e84a8408fe1d0da456d',1,'MultiStepOdeSolver::GetCoeffsdY()']]],
+  ['getcoeffsy_3',['GetCoeffsY',['../class_adam_moulton.html#ad2bfcd5f4c6cf141e975c441239cfaa6',1,'AdamMoulton::GetCoeffsY()'],['../class_adams_bashforth.html#a8ca9f70541dd2fc636ff19e9d8b1ea65',1,'AdamsBashforth::GetCoeffsY()'],['../class_bdf.html#a88a8c043f3665d605c46e876df38bedd',1,'Bdf::GetCoeffsY()'],['../class_multi_step_ode_solver.html#a09c62a908bebab5946e61ec2a9373f20',1,'MultiStepOdeSolver::GetCoeffsY()']]],
+  ['getcommentchar_4',['GetCommentChar',['../class_output_txt.html#acd0de5a24497b39ba4fa6b3d50271bf4',1,'OutputTxt']]],
+  ['getcondin_5',['GetCondIn',['../class_ode.html#a6c360986d0f06b497d3b311ead9c0366',1,'Ode']]],
+  ['getcurrenttime_6',['GetCurrentTime',['../class_ode_solver.html#a93ba8bfb62598239c78200ca6253fa02',1,'OdeSolver']]],
+  ['getendtime_7',['GetEndTime',['../class_ode_solver.html#a6b634912c4c923a14e5ce7994f46b2a4',1,'OdeSolver']]],
+  ['getfileextension_8',['GetFileExtension',['../class_reader.html#a5f7f2919f37f15cb95be1580b2028897',1,'Reader']]],
+  ['getfilename_9',['GetFileName',['../class_reader.html#afff48614961ffb79bfb627adc4b52f70',1,'Reader']]],
+  ['getfilename_10',['GetFilename',['../class_output.html#ad60b7aa242114753f0cead2648124d7e',1,'Output']]],
+  ['getfunction_11',['GetFunction',['../class_ode.html#adcb8ece3558bd7a29aefcfe9319e7dd4',1,'Ode']]],
+  ['getheader_12',['GetHeader',['../class_output_csv.html#a70af53462051a588b41d629c87778f22',1,'OutputCsv::GetHeader()'],['../class_output_txt.html#addd8a01b9f32728854bf456fc8132f50',1,'OutputTxt::GetHeader()']]],
+  ['getname_13',['GetName',['../class_ode.html#a6356a2c5b5b923378b5cc41951dc3575',1,'Ode']]],
+  ['getnumberofsteps_14',['GetNumberOfSteps',['../class_ode_solver.html#ad0bbb5894abf1b510845a61e9b42ea61',1,'OdeSolver']]],
+  ['getorder_15',['GetOrder',['../class_adam_moulton.html#a58a45e28426ea087a2565a2dcb00e09f',1,'AdamMoulton::GetOrder()'],['../class_adams_bashforth.html#aebcc437107894dd1bd885095b3659df8',1,'AdamsBashforth::GetOrder()'],['../class_bdf.html#a35a6dd768ab8ab6056378f046e3dcf83',1,'Bdf::GetOrder()']]],
+  ['getrawdata_16',['GetRawData',['../class_reader.html#a58d1e5e33b0ec8169420fb3be600de32',1,'Reader']]],
+  ['getrootfinder_17',['GetRootFinder',['../class_ode.html#a739b332b95ace434b930cf5a879ec46c',1,'Ode']]],
+  ['getseparator_18',['GetSeparator',['../class_output_csv.html#aa90d64ae97dd3e78494ce8ee81e1edc0',1,'OutputCsv::GetSeparator()'],['../class_reader.html#ac679fdc16a819d641ad6baee637cc618',1,'Reader::GetSeparator()']]],
+  ['getsolution_19',['GetSolution',['../class_ode_solver.html#a187c86329e6909b9830becf465c127d0',1,'OdeSolver']]],
+  ['getstarttime_20',['GetStartTime',['../class_ode_solver.html#a967817c4339501ddb984023977d093a1',1,'OdeSolver']]],
+  ['getstepsize_21',['GetStepSize',['../class_ode_solver.html#adee8ff045eeb481ef911c9eee1b596c8',1,'OdeSolver']]],
+  ['gettimein_22',['GetTimeIn',['../class_ode.html#a68b7580e063b949bfc0046e4142ad490',1,'Ode']]],
+  ['grad_23',['Grad',['../class_function.html#a46edab05fbafe2413e8dac3de7c6186f',1,'Function::Grad()'],['../class_implicit_solver_1_1_implicit_equation.html#ab5ebda2556920f006fda955b1a24c1a8',1,'ImplicitSolver::ImplicitEquation::Grad()'],['../class_ode.html#a952c6c6401635b3e6e39a7a16cd2f84d',1,'Ode::Grad()'],['../class_parsed_function.html#af8c84cc7c6111f48923b5d5ce644d5a8',1,'ParsedFunction::Grad()']]]
 ];

@@ -1,5 +1,14 @@
 \doxysection{Multi\+Step\+Ode\+Solver Class Reference}
 \hypertarget{class_multi_step_ode_solver}{}\label{class_multi_step_ode_solver}\index{MultiStepOdeSolver@{MultiStepOdeSolver}}
+
+
+Base class for multistep ODE solvers using previous solution and derivative values.  
+
+
+
+
+{\ttfamily \#include $<$multistep\+\_\+ode\+\_\+solver.\+h$>$}
+
 Inheritance diagram for Multi\+Step\+Ode\+Solver\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,34 +18,16 @@ Inheritance diagram for Multi\+Step\+Ode\+Solver\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_multi_step_ode_solver_a146cffeef6b16589864a568834433e98}\label{class_multi_step_ode_solver_a146cffeef6b16589864a568834433e98} 
-{\bfseries Multi\+Step\+Ode\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
-\item 
-\Hypertarget{class_multi_step_ode_solver_a0908687bef779b2a8a53984d35872e8b}\label{class_multi_step_ode_solver_a0908687bef779b2a8a53984d35872e8b} 
-{\bfseries Multi\+Step\+Ode\+Solver} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
-\item 
-\Hypertarget{class_multi_step_ode_solver_a1470fe4cbfa31689b110bb88324a9138}\label{class_multi_step_ode_solver_a1470fe4cbfa31689b110bb88324a9138} 
-virtual void {\bfseries Init\+Buffers} ()
-\item 
-\Hypertarget{class_multi_step_ode_solver_a2e603e3908b1c51514107b13935d02ef}\label{class_multi_step_ode_solver_a2e603e3908b1c51514107b13935d02ef} 
-void {\bfseries Update\+Derivative} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&dydt)
-\item 
-\Hypertarget{class_multi_step_ode_solver_a5bda016c46d93c7c7ce9e8b693048ed6}\label{class_multi_step_ode_solver_a5bda016c46d93c7c7ce9e8b693048ed6} 
-void {\bfseries Update\+Solution} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y)
-\item 
-\Hypertarget{class_multi_step_ode_solver_a5637d19a28ae7ac068fb5f751f1ca9d6}\label{class_multi_step_ode_solver_a5637d19a28ae7ac068fb5f751f1ca9d6} 
-void {\bfseries Update\+Window\+Sum} ()
-\item 
-void \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}} () override
-\begin{DoxyCompactList}\small\item\em Resets the solver state to the initial conditions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_multi_step_ode_solver_a146cffeef6b16589864a568834433e98}{Multi\+Step\+Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
+\begin{DoxyCompactList}\small\item\em Constructor with fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_multi_step_ode_solver_a0908687bef779b2a8a53984d35872e8b}{Multi\+Step\+Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
+\begin{DoxyCompactList}\small\item\em Constructor using a specified number of steps. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90}{Step}} () override
-\begin{DoxyCompactList}\small\item\em Updates the solution\+\_\+ and time for next time step. \end{DoxyCompactList}\item 
-\Hypertarget{class_multi_step_ode_solver_a09c62a908bebab5946e61ec2a9373f20}\label{class_multi_step_ode_solver_a09c62a908bebab5946e61ec2a9373f20} 
-virtual const std\+::vector$<$ double $>$ \& {\bfseries Get\+CoeffsY} () const =0
-\item 
-\Hypertarget{class_multi_step_ode_solver_a359ebb566d4d4e84a8408fe1d0da456d}\label{class_multi_step_ode_solver_a359ebb566d4d4e84a8408fe1d0da456d} 
-virtual const std\+::vector$<$ double $>$ \& {\bfseries Get\+CoeffsdY} () const =0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Advance the solution by one time step. \end{DoxyCompactList}\item 
+virtual const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{class_multi_step_ode_solver_a09c62a908bebab5946e61ec2a9373f20}{Get\+CoeffsY}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the coefficients for combining past solution values. \end{DoxyCompactList}\item 
+virtual const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{class_multi_step_ode_solver_a359ebb566d4d4e84a8408fe1d0da456d}{Get\+CoeffsdY}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the coefficients for combining past derivative values. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -68,24 +59,39 @@ void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}
 \begin{DoxyCompactList}\small\item\em Constructor for fixed number of steps. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_ode_solver_aead5f819e881f42a8c398d48678e4e16}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0)
 \begin{DoxyCompactList}\small\item\em Constructor for fixed step size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_multi_step_ode_solver_ade00d553a4968d7f5a0532f185c4149f}\label{class_multi_step_ode_solver_ade00d553a4968d7f5a0532f185c4149f} 
+virtual void {\bfseries Init\+Buffers} ()
+\begin{DoxyCompactList}\small\item\em Initialize buffers for storing solution and derivative history. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_a2e603e3908b1c51514107b13935d02ef}{Update\+Derivative}} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&dydt)
+\begin{DoxyCompactList}\small\item\em Add a new derivative value to the history. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_a5bda016c46d93c7c7ce9e8b693048ed6}{Update\+Solution}} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y)
+\begin{DoxyCompactList}\small\item\em Add a new solution value to the history. \end{DoxyCompactList}\item 
+\Hypertarget{class_multi_step_ode_solver_a5637d19a28ae7ac068fb5f751f1ca9d6}\label{class_multi_step_ode_solver_a5637d19a28ae7ac068fb5f751f1ca9d6} 
+void {\bfseries Update\+Window\+Sum} ()
+\begin{DoxyCompactList}\small\item\em Update cached weighted sums used by the multistep scheme. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}} () override
+\begin{DoxyCompactList}\small\item\em Reset solver state and history buffers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_multi_step_ode_solver_a834593ca532ca89b1282ae18ddcc7e25}\label{class_multi_step_ode_solver_a834593ca532ca89b1282ae18ddcc7e25} 
 int {\bfseries order\+\_\+sol\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Order of the multistep term using past solution values. \end{DoxyCompactList}\item 
 \Hypertarget{class_multi_step_ode_solver_afb46f4af493bc59026f816c7ee45605d}\label{class_multi_step_ode_solver_afb46f4af493bc59026f816c7ee45605d} 
 int {\bfseries order\+\_\+derivative\+\_\+}
-\item 
-\Hypertarget{class_multi_step_ode_solver_ab4c210a8b67372ce8eca42ca82b176bd}\label{class_multi_step_ode_solver_ab4c210a8b67372ce8eca42ca82b176bd} 
-\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries sum\+\_\+tn\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Order of the multistep term using past derivative values. \end{DoxyCompactList}\item 
 \Hypertarget{class_multi_step_ode_solver_a6b14064cb4f3b28f99d913874d018177}\label{class_multi_step_ode_solver_a6b14064cb4f3b28f99d913874d018177} 
 std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\bfseries solutions\+\_\+buffer\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Buffer of previously computed solution states. \end{DoxyCompactList}\item 
 \Hypertarget{class_multi_step_ode_solver_a4f37166a76f94fa3b72d48e746096e7e}\label{class_multi_step_ode_solver_a4f37166a76f94fa3b72d48e746096e7e} 
 std\+::deque$<$ \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} $>$ {\bfseries derivative\+\_\+buffer\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Buffer of previously computed derivative evaluations. \end{DoxyCompactList}\item 
+\Hypertarget{class_multi_step_ode_solver_ab4c210a8b67372ce8eca42ca82b176bd}\label{class_multi_step_ode_solver_ab4c210a8b67372ce8eca42ca82b176bd} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries sum\+\_\+tn\+\_\+}
+\begin{DoxyCompactList}\small\item\em Cached weighted sum of stored solution/derivative terms. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -98,27 +104,115 @@ double {\bfseries end\+\_\+time\+\_\+}
 double {\bfseries step\+\_\+size\+\_\+}
 \begin{DoxyCompactList}\small\item\em The time step (dt). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries solution\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\item 
 double {\bfseries current\+\_\+time\+\_\+}
-\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for multistep ODE solvers using previous solution and derivative values. 
+
+\label{doc-constructors}
+\Hypertarget{class_multi_step_ode_solver_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_multi_step_ode_solver_a146cffeef6b16589864a568834433e98}\index{MultiStepOdeSolver@{MultiStepOdeSolver}!MultiStepOdeSolver@{MultiStepOdeSolver}}
+\index{MultiStepOdeSolver@{MultiStepOdeSolver}!MultiStepOdeSolver@{MultiStepOdeSolver}}
+\doxysubsubsection{\texorpdfstring{MultiStepOdeSolver()}{MultiStepOdeSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_multi_step_ode_solver_a146cffeef6b16589864a568834433e98} 
+Multi\+Step\+Ode\+Solver\+::\+Multi\+Step\+Ode\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{double}]{step\+\_\+size}{ = {\ttfamily 0.01}, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}, }\item[{int}]{order\+\_\+solution}{ = {\ttfamily 1}, }\item[{int}]{order\+\_\+derivative}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
+
+
+
+Constructor with fixed step size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & ODE system to solve. \\
+\hline
+{\em step\+\_\+size} & Time step size. \\
+\hline
+{\em end\+\_\+time} & End time of integration. \\
+\hline
+{\em order\+\_\+solution} & Order of the multistep method for y. \\
+\hline
+{\em order\+\_\+derivative} & Order of the multistep method for dy/dt. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_multi_step_ode_solver_a0908687bef779b2a8a53984d35872e8b}\index{MultiStepOdeSolver@{MultiStepOdeSolver}!MultiStepOdeSolver@{MultiStepOdeSolver}}
+\index{MultiStepOdeSolver@{MultiStepOdeSolver}!MultiStepOdeSolver@{MultiStepOdeSolver}}
+\doxysubsubsection{\texorpdfstring{MultiStepOdeSolver()}{MultiStepOdeSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_multi_step_ode_solver_a0908687bef779b2a8a53984d35872e8b} 
+Multi\+Step\+Ode\+Solver\+::\+Multi\+Step\+Ode\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{int}]{num\+\_\+of\+\_\+steps}{, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}, }\item[{int}]{order\+\_\+solution}{ = {\ttfamily 1}, }\item[{int}]{order\+\_\+derivative}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
+
+
+
+Constructor using a specified number of steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & ODE system to solve. \\
+\hline
+{\em num\+\_\+of\+\_\+steps} & Number of steps to take. \\
+\hline
+{\em end\+\_\+time} & End time of integration. \\
+\hline
+{\em order\+\_\+solution} & Order of the multistep method for y. \\
+\hline
+{\em order\+\_\+derivative} & Order of the multistep method for dy/dt. \\
+\hline
+\end{DoxyParams}
 
 
 \label{doc-func-members}
 \Hypertarget{class_multi_step_ode_solver_doc-func-members}
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_multi_step_ode_solver_a359ebb566d4d4e84a8408fe1d0da456d}\index{MultiStepOdeSolver@{MultiStepOdeSolver}!GetCoeffsdY@{GetCoeffsdY}}
+\index{GetCoeffsdY@{GetCoeffsdY}!MultiStepOdeSolver@{MultiStepOdeSolver}}
+\doxysubsubsection{\texorpdfstring{GetCoeffsdY()}{GetCoeffsdY()}}
+{\footnotesize\ttfamily \label{class_multi_step_ode_solver_a359ebb566d4d4e84a8408fe1d0da456d} 
+virtual const std\+::vector$<$ double $>$ \& Multi\+Step\+Ode\+Solver\+::\+Get\+CoeffsdY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the coefficients for combining past derivative values. 
+
+\begin{DoxyReturn}{Returns}
+Vector of derivative coefficients. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_adam_moulton_a5c9bd3ac47674d61cedbb1bf393d3f8e}{Adam\+Moulton}}, \mbox{\hyperlink{class_adams_bashforth_a7f824059707e62d224e0d4b206e75e02}{Adams\+Bashforth}}, and \mbox{\hyperlink{class_bdf_a4532c58e0c226a7527f59e5170c88fee}{Bdf}}.
+
+\Hypertarget{class_multi_step_ode_solver_a09c62a908bebab5946e61ec2a9373f20}\index{MultiStepOdeSolver@{MultiStepOdeSolver}!GetCoeffsY@{GetCoeffsY}}
+\index{GetCoeffsY@{GetCoeffsY}!MultiStepOdeSolver@{MultiStepOdeSolver}}
+\doxysubsubsection{\texorpdfstring{GetCoeffsY()}{GetCoeffsY()}}
+{\footnotesize\ttfamily \label{class_multi_step_ode_solver_a09c62a908bebab5946e61ec2a9373f20} 
+virtual const std\+::vector$<$ double $>$ \& Multi\+Step\+Ode\+Solver\+::\+Get\+CoeffsY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the coefficients for combining past solution values. 
+
+\begin{DoxyReturn}{Returns}
+Vector of solution coefficients. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_adam_moulton_ad2bfcd5f4c6cf141e975c441239cfaa6}{Adam\+Moulton}}, \mbox{\hyperlink{class_adams_bashforth_a8ca9f70541dd2fc636ff19e9d8b1ea65}{Adams\+Bashforth}}, and \mbox{\hyperlink{class_bdf_a88a8c043f3665d605c46e876df38bedd}{Bdf}}.
+
 \Hypertarget{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}\index{MultiStepOdeSolver@{MultiStepOdeSolver}!Reset@{Reset}}
 \index{Reset@{Reset}!MultiStepOdeSolver@{MultiStepOdeSolver}}
 \doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
 {\footnotesize\ttfamily \label{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee} 
-void Multi\+Step\+Ode\+Solver\+::\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+void Multi\+Step\+Ode\+Solver\+::\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 
 
-Resets the solver state to the initial conditions. 
+Reset solver state and history buffers. 
 
-Sets current\+\_\+time\+\_\+ to start\+\_\+time\+\_\+ and current solution\+\_\+ to ode\+\_\+.\+Get\+Cond\+In(). This must be called before restarting a simulation. 
 
-Reimplemented from \mbox{\hyperlink{class_ode_solver_a1c901eb9c0357806de35654a38c7fbba}{Ode\+Solver}}.
+
+Reimplemented from \mbox{\hyperlink{class_ode_solver_a1cc5668fdf4d5bd99ee21c4f91c6aca3}{Ode\+Solver}}.
 
 \Hypertarget{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90}\index{MultiStepOdeSolver@{MultiStepOdeSolver}!Step@{Step}}
 \index{Step@{Step}!MultiStepOdeSolver@{MultiStepOdeSolver}}
@@ -128,14 +222,45 @@ void Multi\+Step\+Ode\+Solver\+::\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyPa
 
 
 
-Updates the solution\+\_\+ and time for next time step. 
+Advance the solution by one time step. 
 
 
 
-Reimplemented from \mbox{\hyperlink{class_ode_solver_ac757f67f9d0d8234cd8aa79cb107816b}{Ode\+Solver}}.
+Reimplemented from \mbox{\hyperlink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Ode\+Solver}}.
+
+\Hypertarget{class_multi_step_ode_solver_a2e603e3908b1c51514107b13935d02ef}\index{MultiStepOdeSolver@{MultiStepOdeSolver}!UpdateDerivative@{UpdateDerivative}}
+\index{UpdateDerivative@{UpdateDerivative}!MultiStepOdeSolver@{MultiStepOdeSolver}}
+\doxysubsubsection{\texorpdfstring{UpdateDerivative()}{UpdateDerivative()}}
+{\footnotesize\ttfamily \label{class_multi_step_ode_solver_a2e603e3908b1c51514107b13935d02ef} 
+void Multi\+Step\+Ode\+Solver\+::\+Update\+Derivative (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{dydt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+Add a new derivative value to the history. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dydt} & New derivative value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_multi_step_ode_solver_a5bda016c46d93c7c7ce9e8b693048ed6}\index{MultiStepOdeSolver@{MultiStepOdeSolver}!UpdateSolution@{UpdateSolution}}
+\index{UpdateSolution@{UpdateSolution}!MultiStepOdeSolver@{MultiStepOdeSolver}}
+\doxysubsubsection{\texorpdfstring{UpdateSolution()}{UpdateSolution()}}
+{\footnotesize\ttfamily \label{class_multi_step_ode_solver_a5bda016c46d93c7c7ce9e8b693048ed6} 
+void Multi\+Step\+Ode\+Solver\+::\+Update\+Solution (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add a new solution value to the history. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & New solution value. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/andra/\+One\+Drive/\+Desktop/\+MA1\+\_\+2025-\/2026/pcsc\+\_\+project/\+ODE\+\_\+\+Solver/include/multistep\+\_\+ode\+\_\+solver.\+h\end{DoxyCompactItemize}
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/multistep\+\_\+ode\+\_\+solver.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/multistep\+\_\+ode\+\_\+solver.\+cpp\end{DoxyCompactItemize}

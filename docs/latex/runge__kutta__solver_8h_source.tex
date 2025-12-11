@@ -1,21 +1,20 @@
 \doxysection{runge\+\_\+kutta\+\_\+solver.\+h}
-\hypertarget{runge__kutta__solver_8h_source}{}\label{runge__kutta__solver_8h_source}\index{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/runge\_kutta\_solver.h@{C:/Users/andra/OneDrive/Desktop/MA1\_2025-\/2026/pcsc\_project/ODE\_Solver/include/runge\_kutta\_solver.h}}
+\hypertarget{runge__kutta__solver_8h_source}{}\label{runge__kutta__solver_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/runge\_kutta\_solver.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/runge\_kutta\_solver.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RUNGE\_KUTTA\_SOLVER\_H\_}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RUNGE\_KUTTA\_SOLVER\_H\_}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ode_8h}{ode.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ode.h"{}}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ode__solver_8h}{ode\_solver.h}}"{}}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }RungeKutta\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{OdeSolver}}\ \{}
-\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00009\ \ \ \ \ RungeKutta(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0);}
-\DoxyCodeLine{00010\ \ \ \ \ RungeKutta(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time);}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_runge_kutta_aa30cf8dbdf67cb07ca8c3a48d6427605}{ComputeStep}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00013\ \};}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_runge_kutta_ad2c5fc1466e0230af1e91d3b0788316e}{RungeKutta}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{OdeSolver}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_runge_kutta_ad2c5fc1466e0230af1e91d3b0788316e}{RungeKutta}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0);}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_runge_kutta_ad2c5fc1466e0230af1e91d3b0788316e}{RungeKutta}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time);}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_runge_kutta_aa30cf8dbdf67cb07ca8c3a48d6427605}{ComputeStep}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

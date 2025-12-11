@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ODE solver: C:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/include/forward_euler_solver.h Source File</title>
+<title>ODE_Solver: /Users/rocky/notes/Scientific Computing/ODE_Solver/include/forward_euler_solver.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ODE solver
+   <div id="projectname">ODE_Solver
    </div>
   </td>
  </tr>
@@ -95,15 +95,18 @@ $(function(){initNavTree('forward__euler__solver_8h_source.html','',''); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FORWARD_EULER_H_</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;adamsbashforth_solver.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_forward_euler.html">    6</a></span><span class="keyword">class </span>ForwardEuler : <span class="keyword">public</span> AdamsBashforth {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    ForwardEuler(<span class="keyword">const</span> <a class="code hl_class" href="class_ode.html">Ode</a>&amp; ode, <span class="keywordtype">double</span> step_size = 0.01, <span class="keywordtype">double</span> end_time = 0.0);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    ForwardEuler(<span class="keyword">const</span> <a class="code hl_class" href="class_ode.html">Ode</a>&amp; ode, <span class="keywordtype">int</span> num_of_steps, <span class="keywordtype">double</span> end_time = 0.0);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>};</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_forward_euler.html">   16</a></span><span class="keyword">class </span><a class="code hl_function" href="class_forward_euler.html#af379ce6cb6f8e0127fbbee0ae72949d8">ForwardEuler</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_adams_bashforth.html#ac4434a5a1d33e247298958a5896658ca">AdamsBashforth</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:    </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="class_forward_euler.html#af379ce6cb6f8e0127fbbee0ae72949d8">ForwardEuler</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_ode.html">Ode</a>&amp; ode, <span class="keywordtype">double</span> step_size = 0.01, <span class="keywordtype">double</span> end_time = 0.0);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_function" href="class_forward_euler.html#af379ce6cb6f8e0127fbbee0ae72949d8">ForwardEuler</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_ode.html">Ode</a>&amp; ode, <span class="keywordtype">int</span> num_of_steps, <span class="keywordtype">double</span> end_time = 0.0);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
 </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_ode_html"><div class="ttname"><a href="class_ode.html">Ode</a></div><div class="ttdoc">Represents an Ordinary Differential Equation (ODE) problem definition.</div><div class="ttdef"><b>Definition</b> ode.h:32</div></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_adams_bashforth_html_ac4434a5a1d33e247298958a5896658ca"><div class="ttname"><a href="class_adams_bashforth.html#ac4434a5a1d33e247298958a5896658ca">AdamsBashforth::AdamsBashforth</a></div><div class="ttdeci">AdamsBashforth(const Ode &amp;ode, double step_size=0.01, double end_time=0.0, int order=4)</div><div class="ttdoc">Constructs an Adams–Bashforth solver using a fixed step size.</div><div class="ttdef"><b>Definition</b> adamsbashforth_solver.cpp:6</div></div>
+<div class="ttc" id="aclass_forward_euler_html_af379ce6cb6f8e0127fbbee0ae72949d8"><div class="ttname"><a href="class_forward_euler.html#af379ce6cb6f8e0127fbbee0ae72949d8">ForwardEuler::ForwardEuler</a></div><div class="ttdeci">ForwardEuler(const Ode &amp;ode, double step_size=0.01, double end_time=0.0)</div><div class="ttdoc">Constructs a Forward Euler solver using a fixed step size.</div><div class="ttdef"><b>Definition</b> forward_euler_solver.cpp:4</div></div>
+<div class="ttc" id="aclass_ode_html"><div class="ttname"><a href="class_ode.html">Ode</a></div><div class="ttdoc">Represents an Ordinary Differential Equation (ODE) problem definition. This class encapsulates the in...</div><div class="ttdef"><b>Definition</b> ode.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

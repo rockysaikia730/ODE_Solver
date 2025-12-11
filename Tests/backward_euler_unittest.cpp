@@ -6,7 +6,7 @@
 #include <cmath>
 #include "gtest/gtest.h"
 
-class Rhs : public Function {
+class RhsBE : public Function {
 public:
     DynamicTensor Eval(double t, const DynamicTensor& y) const override {
         return -1.0 * y;
@@ -18,7 +18,7 @@ public:
 
 
 TEST(BackwardEuler, Initialisation) {
-    auto rhs_ptr = std::make_shared<Rhs>();
+    auto rhs_ptr = std::make_shared<RhsBE>();
     Ode ode(0.0, 0.0, "-y", rhs_ptr);
     BackwardEuler be(ode);
 
@@ -29,7 +29,7 @@ TEST(BackwardEuler, Initialisation) {
 }
 
 TEST(BackwardEuler, InitialisationUserDefined) {
-    auto rhs_ptr = std::make_shared<Rhs>();
+    auto rhs_ptr = std::make_shared<RhsBE>();
     Ode ode(0.0, 0.0, "-y", rhs_ptr);
     BackwardEuler be(ode, 0.5, 10);
 
@@ -40,7 +40,7 @@ TEST(BackwardEuler, InitialisationUserDefined) {
 }
 
 TEST(BackwardEuler, Solve) {
-    auto rhs_ptr = std::make_shared<Rhs>();
+    auto rhs_ptr = std::make_shared<RhsBE>();
     double tf = 0.05;
     
     Ode ode(0.0, 1.0, "-y", rhs_ptr); 
@@ -54,7 +54,7 @@ TEST(BackwardEuler, Solve) {
 }
 
 TEST(BackwardEuler, Step) {
-    auto rhs_ptr = std::make_shared<Rhs>();
+    auto rhs_ptr = std::make_shared<RhsBE>();
     Ode ode(0.0, 1.0, "-y", rhs_ptr);
 
     double step_size = 1e-3;

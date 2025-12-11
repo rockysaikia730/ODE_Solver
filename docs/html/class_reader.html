@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ODE solver: Reader Class Reference</title>
+<title>ODE_Solver: Reader Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ODE solver
+   <div id="projectname">ODE_Solver
    </div>
   </td>
  </tr>
@@ -92,7 +92,7 @@ $(function(){initNavTree('class_reader.html','','class_reader-members'); });
 </div><!--header-->
 <div class="contents">
 
-<p>A class responsible for reading and parsing data from various sources. The reader can handle the simulation parameters, initial conditions, but cannot read the function itself. <a class="el" href="class_function.html" title="Abstract base class representing a mathematical function for ODEs. This class defines the interface f...">Function</a> parsing is not implemented for now, it has to be passed in the constructor of the ODE solver.  
+<p>A class responsible for reading and parsing data from various sources. For the time being, only file reading is supported. NOte that the readers create the ODERawData object, as well as the function object.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="reader_8h_source.html">reader.h</a>&gt;</code></p>
@@ -110,31 +110,31 @@ Inheritance diagram for Reader:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad682ef952dbf2312dc5e5c36b7432588" id="r_ad682ef952dbf2312dc5e5c36b7432588"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad682ef952dbf2312dc5e5c36b7432588">Reader</a> (const std::string &amp;file_name, char separator=';')</td></tr>
-<tr class="memdesc:ad682ef952dbf2312dc5e5c36b7432588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that initializes the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. The reader can handle the simu...">Reader</a> with a file name.  <br /></td></tr>
+<tr class="memdesc:ad682ef952dbf2312dc5e5c36b7432588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that initializes the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> with a file name.  <br /></td></tr>
 <tr class="memitem:a5a9e1a05a3683982e7dbafd75e2ff773" id="r_a5a9e1a05a3683982e7dbafd75e2ff773"><td class="memItemLeft" align="right" valign="top"><a id="a5a9e1a05a3683982e7dbafd75e2ff773" name="a5a9e1a05a3683982e7dbafd75e2ff773"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Reader</b> ()=default</td></tr>
 <tr class="memdesc:a5a9e1a05a3683982e7dbafd75e2ff773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. <br /></td></tr>
 <tr class="memitem:a782ef0f80b0d27b8a3e32be538fed057" id="r_a782ef0f80b0d27b8a3e32be538fed057"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a782ef0f80b0d27b8a3e32be538fed057">Read</a> ()=0</td></tr>
 <tr class="memdesc:a782ef0f80b0d27b8a3e32be538fed057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the source and returns it as an <a class="el" href="struct_ode_raw_data.html" title="A structure holding all data read from the input source in a form compatible with ODE and Solver clas...">OdeRawData</a> object.  <br /></td></tr>
 <tr class="memitem:afff48614961ffb79bfb627adc4b52f70" id="r_afff48614961ffb79bfb627adc4b52f70"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afff48614961ffb79bfb627adc4b52f70">GetFileName</a> () const</td></tr>
-<tr class="memdesc:afff48614961ffb79bfb627adc4b52f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the file name associated with the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. The reader can handle the simu...">Reader</a>.  <br /></td></tr>
+<tr class="memdesc:afff48614961ffb79bfb627adc4b52f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the file name associated with the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>.  <br /></td></tr>
 <tr class="memitem:a5f7f2919f37f15cb95be1580b2028897" id="r_a5f7f2919f37f15cb95be1580b2028897"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f7f2919f37f15cb95be1580b2028897">GetFileExtension</a> () const</td></tr>
-<tr class="memdesc:a5f7f2919f37f15cb95be1580b2028897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the file extension associated with the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. The reader can handle the simu...">Reader</a>.  <br /></td></tr>
+<tr class="memdesc:a5f7f2919f37f15cb95be1580b2028897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the file extension associated with the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>.  <br /></td></tr>
 <tr class="memitem:ae142b32ae6481733b84b20141cdafda2" id="r_ae142b32ae6481733b84b20141cdafda2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae142b32ae6481733b84b20141cdafda2">SetFileName</a> (const std::string &amp;file_name)</td></tr>
-<tr class="memdesc:ae142b32ae6481733b84b20141cdafda2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the file name for the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. The reader can handle the simu...">Reader</a>.  <br /></td></tr>
+<tr class="memdesc:ae142b32ae6481733b84b20141cdafda2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the file name for the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>.  <br /></td></tr>
 <tr class="memitem:aca06f0a9f6d41e0d9abf0d8d3f2be274" id="r_aca06f0a9f6d41e0d9abf0d8d3f2be274"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca06f0a9f6d41e0d9abf0d8d3f2be274">SetFileExtension</a> (const std::string &amp;file_extension)</td></tr>
-<tr class="memdesc:aca06f0a9f6d41e0d9abf0d8d3f2be274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the file extension for the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. The reader can handle the simu...">Reader</a>.  <br /></td></tr>
-<tr class="memitem:a0566befa2921baa5f4c80d8cb0a691a0" id="r_a0566befa2921baa5f4c80d8cb0a691a0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0566befa2921baa5f4c80d8cb0a691a0">Open</a> ()</td></tr>
-<tr class="memdesc:a0566befa2921baa5f4c80d8cb0a691a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the data source for reading.  <br /></td></tr>
-<tr class="memitem:a763acd33fcb5df52793a2fa431afa0ae" id="r_a763acd33fcb5df52793a2fa431afa0ae"><td class="memItemLeft" align="right" valign="top"><a id="a763acd33fcb5df52793a2fa431afa0ae" name="a763acd33fcb5df52793a2fa431afa0ae"></a>
+<tr class="memdesc:aca06f0a9f6d41e0d9abf0d8d3f2be274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the file extension for the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>.  <br /></td></tr>
+<tr class="memitem:a33c491f270968d5c129807b5d3dfa3a4" id="r_a33c491f270968d5c129807b5d3dfa3a4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33c491f270968d5c129807b5d3dfa3a4">Open</a> ()</td></tr>
+<tr class="memdesc:a33c491f270968d5c129807b5d3dfa3a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the data source for reading.  <br /></td></tr>
+<tr class="memitem:a36852f38ab45088da044919c88392311" id="r_a36852f38ab45088da044919c88392311"><td class="memItemLeft" align="right" valign="top"><a id="a36852f38ab45088da044919c88392311" name="a36852f38ab45088da044919c88392311"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Close</b> ()</td></tr>
-<tr class="memdesc:a763acd33fcb5df52793a2fa431afa0ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the data source. <br /></td></tr>
+<tr class="memdesc:a36852f38ab45088da044919c88392311"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the data source. <br /></td></tr>
 <tr class="memitem:ad204b9322007aab318b9e444bb5dbcea" id="r_ad204b9322007aab318b9e444bb5dbcea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad204b9322007aab318b9e444bb5dbcea">SetSeparator</a> (char separator)</td></tr>
 <tr class="memdesc:ad204b9322007aab318b9e444bb5dbcea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the separator character used in the file.  <br /></td></tr>
 <tr class="memitem:ac679fdc16a819d641ad6baee637cc618" id="r_ac679fdc16a819d641ad6baee637cc618"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac679fdc16a819d641ad6baee637cc618">GetSeparator</a> () const</td></tr>
 <tr class="memdesc:ac679fdc16a819d641ad6baee637cc618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the separator character used in the file.  <br /></td></tr>
 <tr class="memitem:a58d1e5e33b0ec8169420fb3be600de32" id="r_a58d1e5e33b0ec8169420fb3be600de32"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_ode_raw_data.html">OdeRawData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58d1e5e33b0ec8169420fb3be600de32">GetRawData</a> () const</td></tr>
-<tr class="memdesc:a58d1e5e33b0ec8169420fb3be600de32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parser to convert a string into a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a>.  <br /></td></tr>
+<tr class="memdesc:a58d1e5e33b0ec8169420fb3be600de32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the raw data read by the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -166,8 +166,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>LineEndsWith</b> (con
 <tr class="memdesc:ac44b41ce56079ec4f6dd3ca0eb44e0b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">trim a single string  <br /></td></tr>
 <tr class="memitem:aa8fc2dbf2e8a036539e632d2aee16e3e" id="r_aa8fc2dbf2e8a036539e632d2aee16e3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8fc2dbf2e8a036539e632d2aee16e3e">ParseSolverMethodFromString</a> (const std::string &amp;method_string)</td></tr>
 <tr class="memdesc:aa8fc2dbf2e8a036539e632d2aee16e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the solver method from a string and sets it in raw_data_.  <br /></td></tr>
-<tr class="memitem:a0bef7707d1cf66a0b320f77212954150" id="r_a0bef7707d1cf66a0b320f77212954150"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_function.html">Function</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bef7707d1cf66a0b320f77212954150">ParseFunction</a> (const std::string &amp;str)</td></tr>
-<tr class="memdesc:a0bef7707d1cf66a0b320f77212954150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursive helper function that parses a function string into an instance of <a class="el" href="class_function.html" title="Abstract base class representing a mathematical function for ODEs. This class defines the interface f...">Function</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -188,7 +186,7 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
 <tr class="memdesc:a33d6ed307d1324254b34811a9003103c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container for all read data. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A class responsible for reading and parsing data from various sources. The reader can handle the simulation parameters, initial conditions, but cannot read the function itself. <a class="el" href="class_function.html" title="Abstract base class representing a mathematical function for ODEs. This class defines the interface f...">Function</a> parsing is not implemented for now, it has to be passed in the constructor of the ODE solver. </p>
+<div class="textblock"><p>A class responsible for reading and parsing data from various sources. For the time being, only file reading is supported. NOte that the readers create the ODERawData object, as well as the function object. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad682ef952dbf2312dc5e5c36b7432588" name="ad682ef952dbf2312dc5e5c36b7432588"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad682ef952dbf2312dc5e5c36b7432588">&#9670;&#160;</a></span>Reader()</h2>
@@ -209,7 +207,7 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
       </table>
 </div><div class="memdoc">
 
-<p>Constructor that initializes the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. The reader can handle the simu...">Reader</a> with a file name. </p>
+<p>Constructor that initializes the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> with a file name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file_name</td><td>The name of the file to read data from. </td></tr>
@@ -235,7 +233,7 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
       </table>
 </div><div class="memdoc">
 
-<p>Get the file extension associated with the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. The reader can handle the simu...">Reader</a>. </p>
+<p>Get the file extension associated with the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The file extension as a string. </dd></dl>
 
 </div>
@@ -255,7 +253,7 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
       </table>
 </div><div class="memdoc">
 
-<p>Get the file name associated with the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. The reader can handle the simu...">Reader</a>. </p>
+<p>Get the file name associated with the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The file name as a string. </dd></dl>
 
 </div>
@@ -283,15 +281,8 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
 </table>
 </div><div class="memdoc">
 
-<p>Parser to convert a string into a <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>The string to parse. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_dynamic_tensor.html" title="A class to represent a mathematical tensor of arbitrary rank at runtime.">DynamicTensor</a> object.</dd></dl>
-<p>Get the raw data read by the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. The reader can handle the simu...">Reader</a>. </p><dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="struct_ode_raw_data.html" title="A structure holding all data read from the input source in a form compatible with ODE and Solver clas...">OdeRawData</a> object containing the read data. </dd></dl>
+<p>Get the raw data read by the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="struct_ode_raw_data.html" title="A structure holding all data read from the input source in a form compatible with ODE and Solver clas...">OdeRawData</a> object containing the read data. </dd></dl>
 
 </div>
 </div>
@@ -350,7 +341,6 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a vector of size_t representing the shape of the parsed tensor.</dd></dl>
-<p>/**</p>
 <p>Key-value pair interpreter for reading lines. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>The key string. </td></tr>
@@ -429,8 +419,8 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
 
 </div>
 </div>
-<a id="a0566befa2921baa5f4c80d8cb0a691a0" name="a0566befa2921baa5f4c80d8cb0a691a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0566befa2921baa5f4c80d8cb0a691a0">&#9670;&#160;</a></span>Open()</h2>
+<a id="a33c491f270968d5c129807b5d3dfa3a4" name="a33c491f270968d5c129807b5d3dfa3a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33c491f270968d5c129807b5d3dfa3a4">&#9670;&#160;</a></span>Open()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -439,7 +429,7 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool Reader::Open </td>
+          <td class="memname">bool Reader::Open </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -522,40 +512,6 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A double value. </dd></dl>
-
-</div>
-</div>
-<a id="a0bef7707d1cf66a0b320f77212954150" name="a0bef7707d1cf66a0b320f77212954150"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bef7707d1cf66a0b320f77212954150">&#9670;&#160;</a></span>ParseFunction()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_function.html">Function</a> &gt; Reader::ParseFunction </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Recursive helper function that parses a function string into an instance of <a class="el" href="class_function.html" title="Abstract base class representing a mathematical function for ODEs. This class defines the interface f...">Function</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>The function string to parse. Expected form is a flattened list of expressions (eg. "[[sin(t)+y0, cos(t)],[y1^2, exp(t)]]" for a 2x2 system). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a pointer to the created <a class="el" href="class_function.html" title="Abstract base class representing a mathematical function for ODEs. This class defines the interface f...">Function</a> instance. </dd></dl>
 
 </div>
 </div>
@@ -653,7 +609,7 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
 <p>Reads data from the source and returns it as an <a class="el" href="struct_ode_raw_data.html" title="A structure holding all data read from the input source in a form compatible with ODE and Solver clas...">OdeRawData</a> object. </p>
 <dl class="section return"><dt>Returns</dt><dd>sets the raw_data_ member variable. </dd></dl>
 
-<p>Implemented in <a class="el" href="class_csv_reader.html#ae3d4bcb938083b82f85c5e5aeba6e4c1">CsvReader</a>, and <a class="el" href="class_txt_reader.html#ab168578324d8fb2d4a30fe2089634029">TxtReader</a>.</p>
+<p>Implemented in <a class="el" href="class_csv_reader.html#a653c29a6d16c9caad06ba5a0a25a6a6c">CsvReader</a>, and <a class="el" href="class_txt_reader.html#a331736cf6c2407d480103d3cfacc709f">TxtReader</a>.</p>
 
 </div>
 </div>
@@ -672,7 +628,7 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
       </table>
 </div><div class="memdoc">
 
-<p>Set the file extension for the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. The reader can handle the simu...">Reader</a>. </p>
+<p>Set the file extension for the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file_extension</td><td>The new file extension to set. </td></tr>
@@ -697,7 +653,7 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
       </table>
 </div><div class="memdoc">
 
-<p>Set the file name for the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. The reader can handle the simu...">Reader</a>. </p>
+<p>Set the file name for the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file_name</td><td>The new file name to set. </td></tr>
@@ -873,8 +829,9 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/include/<a class="el" href="reader_8h_source.html">reader.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/Users/rocky/notes/Scientific Computing/ODE_Solver/include/<a class="el" href="reader_8h_source.html">reader.h</a></li>
+<li>/Users/rocky/notes/Scientific Computing/ODE_Solver/src/<b>reader.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
