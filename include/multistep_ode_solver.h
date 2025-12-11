@@ -36,28 +36,6 @@ public:
                        int order_solution = 1, int order_derivative = 1);
 
     /**
-     * @brief Initialize buffers for storing solution and derivative history.
-     */
-    virtual void InitBuffers();
-    /**
-     * @brief Add a new derivative value to the history.
-     * @param dydt New derivative value.
-     */
-    void UpdateDerivative(const DynamicTensor& dydt);
-    /**
-     * @brief Add a new solution value to the history.
-     * @param y New solution value.
-     */
-    void UpdateSolution(const DynamicTensor& y);
-    /**
-     * @brief Update cached weighted sums used by the multistep scheme.
-     */
-    void UpdateWindowSum();
-    /**
-     * @brief Reset solver state and history buffers.
-     */
-    void Reset() override;
-    /**
      * @brief Advance the solution by one time step.
      */
     void Step() override;
@@ -71,15 +49,47 @@ public:
      * @return Vector of derivative coefficients.
      */
     virtual const std::vector<double>& GetCoeffsdY() const = 0;
+
 protected:
+    /**
+     * @brief Initialize buffers for storing solution and derivative history.
+     */
+    virtual void InitBuffers();
+
+    /**
+     * @brief Add a new derivative value to the history.
+     * @param dydt New derivative value.
+     */
+    void UpdateDerivative(const DynamicTensor& dydt);
+
+    /**
+     * @brief Add a new solution value to the history.
+     * @param y New solution value.
+     */
+    void UpdateSolution(const DynamicTensor& y);
+
+    /**
+     * @brief Update cached weighted sums used by the multistep scheme.
+     */
+    void UpdateWindowSum();
+    
+    /**
+     * @brief Reset solver state and history buffers.
+     */
+    void Reset() override;
+
     /** @brief Order of the multistep term using past solution values. */
     int order_sol_;
+
     /** @brief Order of the multistep term using past derivative values. */
     int order_derivative_;
+
     /** @brief Buffer of previously computed solution states. */
     std::deque<DynamicTensor> solutions_buffer_;
+
     /** @brief Buffer of previously computed derivative evaluations. */
     std::deque<DynamicTensor> derivative_buffer_;
+
     /** @brief Cached weighted sum of stored solution/derivative terms. */
     DynamicTensor sum_tn_;
 };
