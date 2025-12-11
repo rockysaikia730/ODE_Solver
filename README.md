@@ -283,22 +283,19 @@ Because both the function and its derivative are represented as flat vectors of 
 
 In practice, a `ParsedFunction` instance is usually created by a reader after parsing the `function` and `derivative` entries of an input file. This keeps the solvers entirely independent of muParserX and allows users to describe ODE systems symbolically in a flexible and readable format. 
 
----
-### REMAINING TO DO THE SOLVER, Dynamic tensor, and the main.
-
 ## Abstract Base Classes for Solvers
 
 ### OdeSolver
 
 The `OdeSolver` class represents the abstract base class for numerically integrating Ordinary Differential Equations of the form $\frac{dy}{dt} = f(t, y)$, where the state $y$ is represented by a `DynamicTensor`. Implementations such as Forward Euler or Runge-Kutta must inherit from this class and implement the pure virtual `ComputeStep()` method specific to that method.
 
-The class offers flexible initialization via two constructors:
+The class offers initialization via two constructors:
 - **Fixed Step Size:** Constructs the solver using the `Ode` reference, a specific step size (`step_size`) and the `end_time`.
 - **Fixed Step Count:** Constructs the solver using the `Ode` reference, total number of iterations (`num_of_steps`) and the `end_time` (automatically calculates the step size).
 
 Once constructed, an `OdeSolver` manages the simulation state by storing a constant reference to the problem as `ode_`, `start_time_`, `end_time_` and `step_size_`, the current state tensor as `solution_` and the current timestamp as `current_time_`.
 
-The class provides three primary methods to control the simulation:
+The class provides three important methods to control the simulation:
 - **`Reset()`**: Reverts the solution and current time to the initial conditions defined in the ODE.
 - **`Step()`**: Advances the simulation by a single increment. It invokes `ComputeStep()` to calculate the new state, then updates `solution_` and advances `current_time_`. This method can be placed inside a custom loop for scenarios where the number of steps is dynamic or unknown.
 - **`Solve()`**: Automates the execution of the simulation from start time to end time. It repeatedly calls `Step()` until `end_time_` is reached.
@@ -316,14 +313,14 @@ Where:
 
 In this design, defining a specific solver reduces to simply defining the vectors of coefficients $c^y$ and $c^{dy}$.
 
-**Key features include:**
+Following are the important details of the class:
 - **order_solution**: The number of past solution states ($y$) to retain.
 - **order_derivative**: The number of past derivative evaluations ($dy/dt$) to retain.
 - **State Management:** The class maintains `solutions_buffer_` and `derivative_buffer_` using `std::deque` for `O(1)` push and pop operations to store the previous $y$ and $f(t,y)$ values required by the order of the method.
 - **Rhs Computation:** The class calculates and caches the variable `sum_tn_`, which represents the entire Right Hand Side of the equation above.
 - **Explicit Solver Support:** For explicit methods (where $c^{dy}_0 = 0$), the equation simplifies such that the next step $y_{n+1}$ is derived directly from the computed `sum_tn_`.
 
-**Constructors & Methods:**
+Constructors & Methods:
 The constructors extend the base `OdeSolver` to accept `order_solution` and `order_derivative` determining the size of the buffers for solutions and derivatives.
 - **`Reset()`**: Clears the buffers and re-initializes the state.
 - **`Step()`**: Advances the simulation. It computes `sum_tn_`, updates the buffers with the new result, and manages the sliding window of history.
@@ -340,8 +337,8 @@ $$F( y_{n+1} ) = c^y_0 y_{n+1} - h c^{dy}\_0 f(t_{n+1}, y_{n+1}) - \mathrm{sum\_
 
 where `sum_tn_` corresponds to the cached window sum calculated by the `MultiStepOdeSolver` class.
 
-**Key features include:**
-- **Root Finding Method:** The class requires an optional pointer `std::shared_ptr<RootFinder>` during construction. This component is responsible for numerically solving the equation above at every time step. The default RootFinder is Newton-Raphson method.
+Following are the details of the class:
+- **Root Finding Method:** The class has an optional pointer `std::shared_ptr<RootFinder>` during construction. This component is responsible for numerically solving the equation above at every time step. The default RootFinder is Newton-Raphson method.
 - **`ImplicitEquation` Helper:** A protected inner class that generates the implicit equation into a `Function` interface which is then used by the `RootFinder` to find the next solution.
 - **`ComputeStep()` Implementation:** Constructs the specific `ImplicitEquation` for the current time step and finds the solution of $y_{n+1}$ to the `root_finder_`.
 
@@ -355,7 +352,7 @@ $$ \sum_{j=0}^{k} c^y_j y_{n+1-j} = h c^{dy}\_0 f(t_{n+1}, y_{n+1}) $$
 
 . BDF does not rely on the history of derivative values. Instead, it approximates the derivative using only the current and previous solution states. Consequently, the constructor initializes the base `ImplicitSolver` with `order_derivative = 0`, ensuring that the history term (`sum_tn_`) consists solely of past $y$ values.
 
-**Key features include:**
+Following are the important details of the class:
 - **Orders:** The class supports orders 1 through 4.
 - **Coefficients:** The class implements `GetCoeffsY()` and `GetCoeffsdY()` to provide the standard BDF coefficients. For a given order $k$, the update rule follows the form:
   
@@ -363,7 +360,7 @@ $$ \sum_{j=0}^{k} c^y_j y_{n+1-j} = h c^{dy}\_0 f(t_{n+1}, y_{n+1}) $$
 
   Where $\beta_0$ corresponds to the single coefficient returned by `GetCoeffsdY()` and the $\alpha_i$ values correspond to the vector returned by `GetCoeffsY()` (excluding the first element $c^y_0=1$).
 
-**Constructors:**
+Constructors:
 The constructors accept an integer `order` (validated to be between 1 and 4). If an invalid order is provided, an `std::invalid_argument` exception is thrown.
 
 ### BackwardEuler
@@ -383,7 +380,7 @@ Adams-Moulton methods rely on the history of derivatives.
 The general update rule implemented is:
 $$y_{n+1} = y_n + h \sum_{j=0}^{k} c^{dy}\_0 f(t_{n+1-j}, y_{n+1-j})$$
 
-In the context of the `MultiStepOdeSolver` architecture:
+In the context of the `MultiStepOdeSolver` class:
 - **`GetCoeffsY()`**: Returns coefficients representing the LHS $(y_{n+1} - y_n)$, usually $[1.0, -1.0]$.
 - **`GetCoeffsdY()`**: Returns the specific coefficients for the method order
 
@@ -399,7 +396,7 @@ The `AdamsBashforth` class implements the **Adams-Bashforth family** of explicit
 The general update rule implemented is:
 $$y_{n+1} = y_n + h \sum_{j=1}^{k} c^{dy}\_0 f(t_{n+1-j}, y_{n+1-j})$$
 
-In the context of the `MultiStepOdeSolver` architecture:
+In the context of the `MultiStepOdeSolver` class:
 - **Explicit formulation:** The coefficient for the current derivative ($c^{dy}_0$) is 0.
 - **`ComputeStep()`**: Since the next state is explicitly defined by history, this method simply retrieves the cached history sum (`sum_tn_`) calculated by the base class and returns it as the new state.
 - **`GetCoeffsY()`**: Returns the coefficients representing the LHS (typically just $y_{n+1} - y_n$).
@@ -414,10 +411,10 @@ In the context of the `MultiStepOdeSolver` architecture:
 The `ForwardEuler` class is a implementation of the **Forward Euler** method. It serves as a derived class for the `AdamsBashforth` class by setting the integration order to 1.
 As the simplest explicit method, it computes the next state $y_{n+1}$ using only the current gradient information.
 
-The update rule is the fundamental first-order explicit formula:
+The update rule is the first-order explicit formula:
 $$y_{n+1} = y_n + h f(t_n, y_n)$$
 
-**Constructors:**
+Constructors:
 - **Fixed Step Size:** Constructs the solver with a specific `step_size`.
 - **Fixed Step Count:** Constructs the solver with a specific `num_of_steps`.
 Here is the description for the `ForwardEulerLight` class.
@@ -430,7 +427,7 @@ The direct implementation avoids the overhead of managing history buffers `std::
 The class implements the standard explicit update rule in `ComputeStep()`:
 $$y_{n+1} = y_n + h f(t_n, y_n)$$
 
-**Constructors:**
+Constructors:
 - **Fixed Step Size:** Constructs the solver with a specific `step_size`.
 - **Fixed Step Count:** Constructs the solver with a specific `num_of_steps`.
 
@@ -448,9 +445,67 @@ Where:
 - $k_3 = f(t_n + \frac{h}{2}, y_n + \frac{h}{2}k_2)$
 - $k_4 = f(t_n + h, y_n + h k_3)$
 
-**Constructors:**
+Constructors:
 - **Fixed Step Size:** Constructs the solver with a specific `step_size`.
 - **Fixed Step Count:** Constructs the solver with a specific `num_of_steps`.
+
+## Utilities
+
+### RootFinder
+
+The `RootFinder` class is an abstract base class that defines the interface for numerical root-finding algorithms. It is a critical dependency for all implicit ODE solvers which needs to solve non-linear equations at every time step.
+- **Polymorphic:** Allows the ODE solver to be decoupled from the specific numerical method used to solve the implicit equation.
+- **`FindRoot()` Method:** The pure virtual function that performs the rootfinding. It takes a generic `Function` object (wrapper around the equation $g(y) = 0$), an `initial_guess`, and the current time $t$.
+- **Tensor:** Designed for any rank using the `DynamicTensor` object.
+
+### NewtonRaphson
+
+The `NewtonRaphson` class is a implementation of the `RootFinder` interface. It solves for the root of a non-linear function using the iterative Newton-Raphson method. The `FindRoot` method executes a fixed number of iterations defined by `max_iter`. At each step, it updates the solution estimate using the gradient information provided by the `Function` object:
+
+$$y_{new} = y_{old} - \frac{f(t, y_{old})}{f'(t, y_{old})}$$
+
+Shortcomings:
+
+ 1. The current implementation of Newton Raphson root finder is exclusively for 0D tensors.
+
+### DynamicTensor
+
+The `DynamicTensor` class is the core data structure used throughout the library to any tensors. It is designed to be flexible, supporting **runtime definition of dimensions** and accommodating both Real (`double`) and Complex (`std::complex<double>`) data types. We developed `DynamicTensor` to address the gap of Eigen:
+1.  **Dynamic Rank:** Unlike Eigen, which requires compile-time tensor ranks, this class supports tensors where both the shape and the rank are determined at runtime.
+2.  **Avoidance of Templates:** We chose to use the container `std::variant` that allows Runtime Polymorphism rather than making the class a template. This prevents the need for a "header-only" library, allowing us to cleanly separate implementations into `.h` and `.cpp` files. This improves code organization and project compilation structure.
+
+Some key details of the class:
+
+  * **Rank & Shape:** Can represent scalars, vectors, matrices or N-dimensional arrays.
+  * **Real and Complex:** It uses `std::variant` to store either a `std::vector<double>` or `std::vector<std::complex<double>>`. The type is fixed at construction.
+  * **Arithmetic Operations:** It uses operator overloading for element-wise addition, subtraction, multiplication and division as well as scalar broadcasting
+  * **Memory Layout:** Stores data in a contiguous 1D memory block using std::vector.
+
+Constructors:
+
+  * **Shape Constructor:** Initializes a tensor of zeros (or a specific value) given a shape vector (e.g., `{2, 3}`).
+  * **Data Constructor:** Wraps an existing `std::vector` of data into a tensor with a specified shape.
+  * **Scalar Constructor:** Creates a rank-0 tensor from a single `double` or `Complex` value.
+
+**Example Usage:**
+
+```cpp
+// Create a 2x3 Real matrix filled with 1.0
+std::vector<size_t> shape = {2, 3};
+DynamicTensor t(shape, 1.0); 
+
+// Access element at row 0, col 1
+t.at<double>({0, 1}) = 5.0; 
+
+// Element-wise multiplication with a scalar
+DynamicTensor t2 = t * 2.0; 
+```
+Shortcomings:
+
+1. The current implementation has very limited operator overloading and so is rigid in terms of the syntax that can be used for tensor manipulation.
+2. Current implementation completely separates Complex types from Real types and does not allow for using mixed types.
+
+### REMAINING TO DO main.
 
 # For executing only the Doxyfile
 ```bash
@@ -467,6 +522,6 @@ make
 ```
 ---
 ## Distribution of Work
-The project was done by Ahmed Rockey Saikia and Andras Horkay. Andras worked on the classes and the corresponding unittests on `Ode`, `OdeRawData`, `Reader`, `ParsedFunction`, `ReaderCsv`, `ReaderTxt` and `Output` . Rockey worked on `Ode`, `Solver`, `DynamicTensor` graphical `Output`, and `Function`. The conception and design of the project was decided by the both of us, only the coding was done separately. Below are some notes from the authors.
+The project was done by Ahmed Rockey Saikia and Andras Horkay. Andras worked on the classes and the corresponding unittests on `Ode`, `OdeRawData`, `Reader`, `ParsedFunction`, `ReaderCsv`, `ReaderTxt` and `Output` . Rockey worked on `Ode`, `OdeSolver`,`MultiStepOdeSolver`, `ImplicitSolver` `DynamicTensor` graphical `Output` and `Function`. The conception and design of the project was decided by the both of us, only the coding was done separately. Below are some notes from the authors.
 
 - Notes from Andras: I have used LLMs when commenting and debugging my code. I have used it especially a lot when developing the reader class, so that I can parse the tensors and and fucntions properly. The design of how these are read were my idea, but I needed help when doing the `Recursive` functions when parsing: `ParseFunctionRecursive` and `ParseTensor`. After this, I did feed most of my code also to ChatGPT to see if there are any improvements to be done, but it did not suggest many improvements. I have also used LLMs to generate some of the unittests. I have left comments where changes were code was made by LLMs.
