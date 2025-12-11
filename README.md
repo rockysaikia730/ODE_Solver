@@ -112,7 +112,7 @@ mkdir build
 cd build
 cmake -G "MinGW Makefiles" ..
 mingw32-make
-ctest
+unittests
 ```
 
 A test case running through a whole problem will be described in the end of the report.
