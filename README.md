@@ -111,7 +111,7 @@ The project uses CMake to configure and build all components, including the unit
 mkdir build
 cd build
 cmake -G "MinGW Makefiles" ..
-mingw64-make
+mingw32-make
 ctest
 ```
 
