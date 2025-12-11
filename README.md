@@ -261,6 +261,8 @@ The distinction between `.txt` and `.csv` writers is then limited to formatting:
 - **`OutputTxt`** writes results in a plain text format. It includes a comment character `comment_char_` and a list of header lines `header_`. Its setup method writes each header line as a comment and the main write routine adds the key value pairs such as the final time `t`, the tensor `y`, and details like the step size.
 
 - **`OutputCsv`** writes in the same way but uses a single header row rather than comment lines.
+  
+- **`OutputPlotter`** uses gnuplotter to plot the datapoints in real time (works only for scalar y). It takes the solver as input and plots the current datapoint along with its history. To plot the history of the ode, the solver.Step() and plotter.Write(solver) can be put inside a loop. 
 
 ### Shortcomings
 
@@ -505,7 +507,7 @@ make
 ```
 ---
 ## Distribution of Work
-The project was done by Ahmed Rockey Saikia and Andras Horkay. Andras worked on the classes and the corresponding unittests on `Ode`, `OdeRawData`, `Reader`, `ParsedFunction`, `ReaderCsv`, `ReaderTxt` and `Output` . Rockey worked on `Ode`, `OdeSolver`,`MultiStepOdeSolver`, `ImplicitSolver` `DynamicTensor` graphical `Output` and `Function`. The conception and design of the project was decided by the both of us, only the coding was done separately. Below are some notes from the authors.
+The project was done by Ahmed Rockey Saikia and Andras Horkay. Andras worked on the classes and the corresponding unittests on `Ode`, `OdeRawData`, `Reader`, `ParsedFunction`, `ReaderCsv`, `ReaderTxt` and `Output` . Rockey worked on `Ode`, `OdeSolver`,`MultiStepOdeSolver`, `ImplicitSolver`, `DynamicTensor`, `OutputPlotter` and `Function`. The conception and design of the project was decided by the both of us, only the coding was done separately. Below are some notes from the authors.
 
 - Notes from Andras: I have used LLMs when commenting and debugging my code. I have used it especially a lot when developing the reader class, so that I can parse the tensors and and fucntions properly. The design of how these are read were my idea, but I needed help when doing the `Recursive` functions when parsing: `ParseFunctionRecursive` and `ParseTensor`. After this, I did feed most of my code also to ChatGPT to see if there are any improvements to be done, but it did not suggest many improvements. I have also used LLMs to generate some of the unittests. I have left comments where changes were code was made by LLMs.
-- Notes from Rockey: I have used LLMs for commenting my codes. For the creationg of the DynamicTensor class, I sought help from LLMs for using `std::variant` technique to store both complex and real numbers without templating. I have also used LLMs to refine some part of the report where I use it primarily for paraphrasing.
+- Notes from Rockey: I have used LLMs for commenting my codes. For creating the DynamicTensor class, I sought help from LLMs for using `std::variant` technique to store both complex and real numbers without templating. Further for the class OutputPlotter, I used LLMs for the syntax. This class is made for the verification that the code is working as expected. I have also used LLMs to refine some part of the report where I used it primarily for paraphrasing. 
