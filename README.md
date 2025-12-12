@@ -63,6 +63,9 @@ The accepted keys are listed below:
     - `derivative_expressions`  
     - `derivative_shape`  
     Providing a derivative is optional, but advised when wanting to use implicit methods.
+   
+10. **`method`**
+    Defines the method that will be used when solving the problem. It is not passed on to the ode, but to the solver.
 
 Any other keys are ignored at this stage, although support for additional parameters can be added later.
 
