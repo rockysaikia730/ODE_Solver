@@ -5,7 +5,11 @@
 #include <fstream>
 #include "reader.h"
 #include "ode_raw_data.h"
-
+/**
+ * @class TxtReader
+ * @brief A class for reading and parsing TXT (text) files.
+ * Inherits from the Reader base class. Supports comment lines and multiple key-value pairs per line.
+ */
 class TxtReader: public Reader {
 public:
     /**

@@ -7,6 +7,7 @@
 #include "parsed_function.h"
 #include "dynamic_tensor.h"
 
+
 // Direct constructor from scalar initial condition
 TEST(OdeTest, ScalarConstructor)
 {
