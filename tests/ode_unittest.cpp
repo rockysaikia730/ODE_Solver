@@ -7,14 +7,11 @@
 #include "parsed_function.h"
 #include "dynamic_tensor.h"
 
-// simplifying
-using Complex = DynamicTensor::Complex;
-
 // Direct constructor from scalar initial condition
 TEST(OdeTest, ScalarConstructor)
 {
     auto f = std::make_unique<ParsedFunction>(
-        std::vector<std::string>{"t + y0"},   // f(t,y)=t+y
+        std::vector<std::string>{"t + y0"},
         std::vector<size_t>{1}
     );
 
