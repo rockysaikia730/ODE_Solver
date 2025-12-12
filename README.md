@@ -242,9 +242,9 @@ returns the exact analytical Jacobian. The derivative expressions are evaluated 
 ### 1.1.5 The `Output` Class
 
 The `Output` class is the abstract parent class to all forms of outputting a solution. It has as direct daughter classes `OutputFile`, which takes care of text based outputs, and `OutputPlotter` which takes care of plotting the history of the solution in 1 dimension. The class diagram is below.
-![The output class diagram](Documentation/output_uml.png)
+![The output Class diagram](Documentation/output_uml.png)
 
-The idea is that once the solver has finished its computation, an output object receives the final time and the corresponding solution values and writes them to a file using a chosen format.
+The idea is that once the solver has finished its computation, an output object receives the final time and the corresponding solution values and wsrites them to a file using a chosen format.
 
 The `Output` class defines the common behaviour for all output formats. The constructor takes the file name and an optional separator and ensures that the file can be created. The public methods are:
 
