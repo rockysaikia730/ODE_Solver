@@ -4,6 +4,9 @@
 #include "backward_differentiation_solver.h"
 
 
+BackwardEuler::BackwardEuler(const Ode& ode, const Reader& reader, std::shared_ptr<RootFinder> root_finder) 
+      : Bdf(ode, reader, root_finder) {}
+
 BackwardEuler::BackwardEuler(const Ode& ode, double step_size, double end_time, 
       std::shared_ptr<RootFinder> root_finder)
     : Bdf(ode, step_size, end_time, 1, root_finder) {}

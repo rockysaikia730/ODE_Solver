@@ -16,6 +16,8 @@
  */
 class ImplicitSolver : public MultiStepOdeSolver {
 public:
+    ImplicitSolver(const Ode& ode, const Reader& reader, int order_solution, 
+        int order_derivative, std::shared_ptr<RootFinder> root_finder);
     /**
      * @brief Constructs an ImplicitSolver using a fixed step size.
      *

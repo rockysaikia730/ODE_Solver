@@ -136,6 +136,8 @@ public:
      */
     OdeSolver(const Ode& ode, double step_size = 0.01, double end_time = 0.0);
 
+    OdeSolver(const Ode& ode, const Reader& reader);
+
 protected:
     /**
      * @brief Reference to the ODE problem definition.

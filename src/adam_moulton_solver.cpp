@@ -2,6 +2,10 @@
 #include "implicit_solver.h"
 #include <stdexcept>
 
+
+AdamMoulton::AdamMoulton(const Ode& ode, const Reader& reader, std::shared_ptr<RootFinder> root_finder)
+      : ImplicitSolver(ode, reader, 1, reader.GetRawData().solver_params.order, root_finder) {}
+
 AdamMoulton::AdamMoulton(const Ode& ode, double step_size, double end_time, 
                 int order, std::shared_ptr<RootFinder> root_finder)
         : ImplicitSolver(ode, step_size, end_time, 1, order, root_finder),

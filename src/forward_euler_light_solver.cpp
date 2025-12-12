@@ -4,6 +4,9 @@
 #include "forward_euler_light_solver.h"
 
 
+ForwardEulerLight::ForwardEulerLight(const Ode& ode, const Reader& reader)
+ : OdeSolver(ode, reader) {}
+
 ForwardEulerLight::ForwardEulerLight(const Ode& ode, double step_size, double end_time)
     : OdeSolver(ode, step_size, end_time) {}
 
