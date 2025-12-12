@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fexec-charset=UTF-8 -finput-charset=UTF-8")
 
-
 # MuparserX library
 file(GLOB MUPARSERX_SOURCES
     ${CMAKE_SOURCE_DIR}/external/muparserx/parser/*.cpp
@@ -27,34 +26,11 @@ FetchContent_Declare(
 
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
-
 enable_testing()
 include(GoogleTest)
 
 # Everything executable
-add_executable(everything
-    # src/main.cpp
-    src/dynamic_tensor.cpp
-    src/ode.cpp
-    src/ode_solver.cpp
-    src/ode_raw_data.cpp
-    src/parsed_function.cpp
-    src/function.cpp
-    src/reader.cpp
-    src/reader_csv.cpp
-    src/reader_txt.cpp
-)
-
-target_include_directories(everything PRIVATE
-    include
-    src
-    ${CMAKE_SOURCE_DIR}/external/muparserx/parser
-)
-target_link_libraries(everything PRIVATE muparserx)
-
-# Utilities library
-add_library(utilities
-    src/main.cpp
+set(CORE_SOURCES
     src/dynamic_tensor.cpp
     src/ode.cpp                  
     src/ode_solver.cpp           
@@ -77,31 +53,47 @@ add_library(utilities
     src/output_plotter.cpp
 )
 
-target_include_directories(utilities PUBLIC 
+# 2. Define a static library containing the logic
+add_library(core_lib STATIC ${CORE_SOURCES})
+
+# 3. Setup include directories and dependencies for the library
+target_include_directories(core_lib PUBLIC
     include
     src
-    ${CMAKE_SOURCE_DIR}/external/muparserx/parser)
-    
-target_link_libraries(utilities PRIVATE muparserx)
-target_link_libraries(everything PRIVATE utilities)
+    ${CMAKE_SOURCE_DIR}/external/muparserx/parser
+)
 
+target_link_libraries(core_lib PUBLIC muparserx)
+
+# --- TARGET: The Main Application ---
+
+# 4. The main executable only contains main.cpp and links to the core library
+add_executable(everything src/main.cpp)
+target_link_libraries(everything PRIVATE core_lib)
+
+
+# --- TARGET: The Unit Tests ---
 
 add_executable(unittests
-    tests/dynamic_tensor_unittest.cpp
-    tests/function_unittest.cpp
-    tests/newton_raphson_unittest.cpp
-    tests/runge_kutta_unittest.cpp
-    tests/adamsbashforth_unittest.cpp
-    tests/backward_differentiation_unittest.cpp
-    tests/adam_moulton_unittest.cpp
-    tests/backward_euler_unittest.cpp
-    tests/forward_euler_unittest.cpp
+    Tests/dynamic_tensor_unittest.cpp
+    Tests/function_unittest.cpp
+    Tests/newton_raphson_unittest.cpp
+    Tests/runge_kutta_unittest.cpp
+    Tests/adamsbashforth_unittest.cpp
+    Tests/backward_differentiation_unittest.cpp
+    Tests/adam_moulton_unittest.cpp
+    Tests/backward_euler_unittest.cpp
+    Tests/forward_euler_unittest.cpp
+    Tests/output_plotter.cpp
 )
+
+# 5. Link the unittests to the core library AND GTest
 target_link_libraries(unittests
     PRIVATE
-    utilities
+    core_lib
     GTest::gtest_main
 )
+
 gtest_discover_tests(unittests)
 
 

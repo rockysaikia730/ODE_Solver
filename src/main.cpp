@@ -2,16 +2,22 @@
 #include <cmath>
 #include <memory>
 
+<<<<<<< HEAD
+=======
 #include "output_plotter.h" 
 #include "adamsbashforth_solver.h"
 #include "ode.h"
 #include "function.h"
 #include "dynamic_tensor.h"
 #include "reader_txt.h"
+>>>>>>> refs/remotes/origin/main
 
 
 
 int main() {
+<<<<<<< HEAD
+
+=======
     try{
         std::cout << "--- Reading from data/input.txt ---" << std::endl;
         TxtReader reader("data/input.txt", ';', '#');
@@ -30,5 +36,6 @@ int main() {
         return 1;
     }
     
+>>>>>>> refs/remotes/origin/main
     return 0;
 }
