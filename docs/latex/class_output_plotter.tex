@@ -1,5 +1,14 @@
 \doxysection{Output\+Plotter Class Reference}
 \hypertarget{class_output_plotter}{}\label{class_output_plotter}\index{OutputPlotter@{OutputPlotter}}
+
+
+Derived class for plotting ODE solver results in real-\/time using Gnuplot. This class opens a pipe to Gnuplot and sends data points to be plotted as the solver progresses.  
+
+
+
+
+{\ttfamily \#include $<$output\+\_\+plotter.\+h$>$}
+
 Inheritance diagram for Output\+Plotter\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -25,6 +34,9 @@ void \mbox{\hyperlink{class_output_plotter_a4634bb3a1e04a3b61f2128a41830214b}{Wr
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Output} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Derived class for plotting ODE solver results in real-\/time using Gnuplot. This class opens a pipe to Gnuplot and sends data points to be plotted as the solver progresses. 
 
 \label{doc-func-members}
 \Hypertarget{class_output_plotter_doc-func-members}
@@ -52,5 +64,5 @@ Implements \mbox{\hyperlink{class_output_a6d4530d806c96e5a781d9ba41dd04087}{Outp
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/output\+\_\+plotter.\+h\item 
-/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/output\+\_\+plotter.\+cpp\end{DoxyCompactItemize}
+include/output\+\_\+plotter.\+h\item 
+src/output\+\_\+plotter.\+cpp\end{DoxyCompactItemize}

@@ -3,8 +3,7 @@ var hierarchy =
     [ "DynamicTensor", "class_dynamic_tensor.html", null ],
     [ "Function", "class_function.html", [
       [ "ImplicitSolver::ImplicitEquation", "class_implicit_solver_1_1_implicit_equation.html", null ],
-      [ "ParsedFunction", "class_parsed_function.html", null ],
-      [ "SinOde", "class_sin_ode.html", null ]
+      [ "ParsedFunction", "class_parsed_function.html", null ]
     ] ],
     [ "OdeRawData::function_params", "struct_ode_raw_data_1_1function__params.html", null ],
     [ "Ode", "class_ode.html", null ],

@@ -45,7 +45,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_2_users_2rocky_2notes_2_scientific_01_computing_2_o_d_e__solver_2include_2dynamic_tensor_8h-example.html",
-"implicit__solver_8h_source.html"
+"multistep__ode__solver_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

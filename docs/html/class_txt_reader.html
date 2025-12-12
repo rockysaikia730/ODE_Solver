@@ -91,6 +91,11 @@ $(function(){initNavTree('class_txt_reader.html','','class_txt_reader-members');
   <div class="headertitle"><div class="title">TxtReader Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class for reading and parsing TXT (text) files. Inherits from the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> base class. Supports comment lines and multiple key-value pairs per line.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="reader__txt_8h_source.html">reader_txt.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TxtReader:</div>
 <div class="dyncontent">
@@ -104,7 +109,7 @@ Inheritance diagram for TxtReader:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad311f7e47af8a08a4ca9a162f0454956" id="r_ad311f7e47af8a08a4ca9a162f0454956"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad311f7e47af8a08a4ca9a162f0454956">TxtReader</a> (const std::string &amp;file_name, char separator='=', char inline_separator=';', char comment_char='#')</td></tr>
-<tr class="memdesc:ad311f7e47af8a08a4ca9a162f0454956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="class_txt_reader.html">TxtReader</a>.  <br /></td></tr>
+<tr class="memdesc:ad311f7e47af8a08a4ca9a162f0454956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="class_txt_reader.html" title="A class for reading and parsing TXT (text) files. Inherits from the Reader base class....">TxtReader</a>.  <br /></td></tr>
 <tr class="memitem:ad4db532b40321716319b4ab98b3f0dae" id="r_ad4db532b40321716319b4ab98b3f0dae"><td class="memItemLeft" align="right" valign="top"><a id="ad4db532b40321716319b4ab98b3f0dae" name="ad4db532b40321716319b4ab98b3f0dae"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~TxtReader</b> ()=default</td></tr>
 <tr class="memdesc:ad4db532b40321716319b4ab98b3f0dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. <br /></td></tr>
@@ -170,7 +175,9 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
 <a class="el" href="struct_ode_raw_data.html">OdeRawData</a>&#160;</td><td class="memItemRight" valign="bottom"><b>raw_data_</b></td></tr>
 <tr class="memdesc:a33d6ed307d1324254b34811a9003103c inherit pro_attribs_class_reader"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container for all read data. <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class for reading and parsing TXT (text) files. Inherits from the <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> base class. Supports comment lines and multiple key-value pairs per line. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad311f7e47af8a08a4ca9a162f0454956" name="ad311f7e47af8a08a4ca9a162f0454956"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad311f7e47af8a08a4ca9a162f0454956">&#9670;&#160;</a></span>TxtReader()</h2>
 
@@ -200,7 +207,7 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
       </table>
 </div><div class="memdoc">
 
-<p>Constructor for <a class="el" href="class_txt_reader.html">TxtReader</a>. </p>
+<p>Constructor for <a class="el" href="class_txt_reader.html" title="A class for reading and parsing TXT (text) files. Inherits from the Reader base class....">TxtReader</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file_name</td><td>The name of the text file to read from. </td></tr>
@@ -244,8 +251,8 @@ std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><b>file_stream_
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/rocky/notes/Scientific Computing/ODE_Solver/include/<a class="el" href="reader__txt_8h_source.html">reader_txt.h</a></li>
-<li>/Users/rocky/notes/Scientific Computing/ODE_Solver/src/<b>reader_txt.cpp</b></li>
+<li>include/<a class="el" href="reader__txt_8h_source.html">reader_txt.h</a></li>
+<li>src/<b>reader_txt.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

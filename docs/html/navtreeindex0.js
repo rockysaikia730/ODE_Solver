@@ -211,12 +211,10 @@ var NAVTREEINDEX0 =
 "class_runge_kutta.html#a8ff7c22150e0d6788e8f8b03c6dc9780":[0,0,23,2],
 "class_runge_kutta.html#aa30cf8dbdf67cb07ca8c3a48d6427605":[0,0,23,3],
 "class_runge_kutta.html#ad2c5fc1466e0230af1e91d3b0788316e":[0,0,23,1],
-"class_sin_ode.html":[0,0,24],
-"class_sin_ode.html#a35c8e60799375ea6b0ed3f27623ef9cc":[0,0,24,0],
-"class_txt_reader.html":[0,0,25],
-"class_txt_reader.html#a331736cf6c2407d480103d3cfacc709f":[0,0,25,2],
-"class_txt_reader.html#ad311f7e47af8a08a4ca9a162f0454956":[0,0,25,0],
-"class_txt_reader.html#ad4db532b40321716319b4ab98b3f0dae":[0,0,25,1],
+"class_txt_reader.html":[0,0,24],
+"class_txt_reader.html#a331736cf6c2407d480103d3cfacc709f":[0,0,24,2],
+"class_txt_reader.html#ad311f7e47af8a08a4ca9a162f0454956":[0,0,24,0],
+"class_txt_reader.html#ad4db532b40321716319b4ab98b3f0dae":[0,0,24,1],
 "classes.html":[0,1],
 "dir_d44c64559bbebec7f509842c48db8b23.html":[1,0,0],
 "dynamic__tensor_8h.html":[1,0,0,4],
@@ -249,5 +247,7 @@ var NAVTREEINDEX0 =
 "functions_w.html":[0,3,0,17],
 "functions_y.html":[0,3,0,18],
 "functions_~.html":[0,3,0,19],
-"hierarchy.html":[0,2]
+"hierarchy.html":[0,2],
+"implicit__solver_8h_source.html":[1,0,0,8],
+"index.html":[]
 };

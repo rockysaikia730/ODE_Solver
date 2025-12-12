@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ODE_Solver: /Users/rocky/notes/Scientific Computing/ODE_Solver/include/output_plotter.h Source File</title>
+<title>ODE_Solver: include/output_plotter.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,24 +105,23 @@ $(function(){initNavTree('output__plotter_8h_source.html','',''); });
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;utility&gt;</span>      <span class="comment">// For std::pair</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;fstream&gt;</span>      <span class="comment">// For std::ofstream (required for FileSpecificSetup signature)</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;output.h&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_output_plotter.html">   17</a></span><span class="keyword">class </span><a class="code hl_function" href="class_output_plotter.html#af2de447695dc48ea5dd22786731abf63">OutputPlotter</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_output.html#ac8c66cf55da5018b30b2f26df2545825">Output</a> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_function" href="class_output_plotter.html#af2de447695dc48ea5dd22786731abf63">OutputPlotter</a>();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="class_output_plotter.html#ab18733ca05f67cc71631a77968f4bde6">~OutputPlotter</a>();</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_output_plotter.html#a4634bb3a1e04a3b61f2128a41830214b">Write</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_ode_solver.html">OdeSolver</a>&amp; solver) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    FILE* gnuplot_pipe_;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">mutable</span> std::vector&lt;std::pair&lt;double, double&gt;&gt; history_;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_output_plotter.html">   20</a></span><span class="keyword">class </span><a class="code hl_function" href="class_output_plotter.html#af2de447695dc48ea5dd22786731abf63">OutputPlotter</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_output.html#ac8c66cf55da5018b30b2f26df2545825">Output</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="class_output_plotter.html#af2de447695dc48ea5dd22786731abf63">OutputPlotter</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="class_output_plotter.html#ab18733ca05f67cc71631a77968f4bde6">~OutputPlotter</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_output_plotter.html#a4634bb3a1e04a3b61f2128a41830214b">Write</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_ode_solver.html">OdeSolver</a>&amp; solver) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    FILE* gnuplot_pipe_;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">mutable</span> std::vector&lt;std::pair&lt;double, double&gt;&gt; history_;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
 </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_ode_solver_html"><div class="ttname"><a href="class_ode_solver.html">OdeSolver</a></div><div class="ttdoc">Abstract base class for iterative Ordinary Differential Equation solvers.</div><div class="ttdef"><b>Definition</b> ode_solver.h:26</div></div>
 <div class="ttc" id="aclass_output_html_ac8c66cf55da5018b30b2f26df2545825"><div class="ttname"><a href="class_output.html#ac8c66cf55da5018b30b2f26df2545825">Output::Output</a></div><div class="ttdeci">Output()=default</div><div class="ttdoc">Default constructor and destructor.</div></div>
 <div class="ttc" id="aclass_output_plotter_html_a4634bb3a1e04a3b61f2128a41830214b"><div class="ttname"><a href="class_output_plotter.html#a4634bb3a1e04a3b61f2128a41830214b">OutputPlotter::Write</a></div><div class="ttdeci">void Write(const OdeSolver &amp;solver) override</div><div class="ttdoc">Sends the current solver state to Gnuplot.</div><div class="ttdef"><b>Definition</b> output_plotter.cpp:30</div></div>

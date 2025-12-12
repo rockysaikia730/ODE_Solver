@@ -1,17 +1,6 @@
 var searchData=
 [
-  ['1_201_201_20reader_20classes_0',['1.1.1 Reader Classes',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md3',1,'']]],
-  ['1_201_202_20the_20oderawdata_20structure_1',['1.1.2 The &lt;span class=&quot;tt&quot;&gt;OdeRawData&lt;/span&gt; Structure',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md8',1,'']]],
-  ['1_201_203_20the_20ode_20class_2',['1.1.3 The &lt;span class=&quot;tt&quot;&gt;Ode&lt;/span&gt; Class',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md10',1,'']]],
-  ['1_201_204_20the_20function_20class_3',['1.1.4 The &lt;span class=&quot;tt&quot;&gt;Function&lt;/span&gt; Class',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md13',1,'']]],
-  ['1_201_205_20the_20output_20class_4',['1.1.5 The &lt;span class=&quot;tt&quot;&gt;Output&lt;/span&gt; Class',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md18',1,'']]],
-  ['1_201_20handling_20inputs_5',['1.1 Handling inputs',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md2',1,'']]],
-  ['1_201_20reader_20classes_6',['1.1.1 Reader Classes',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md3',1,'']]],
-  ['1_202_20the_20oderawdata_20structure_7',['1.1.2 The &lt;span class=&quot;tt&quot;&gt;OdeRawData&lt;/span&gt; Structure',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md8',1,'']]],
-  ['1_203_20the_20ode_20class_8',['1.1.3 The &lt;span class=&quot;tt&quot;&gt;Ode&lt;/span&gt; Class',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md10',1,'']]],
-  ['1_204_20the_20function_20class_9',['1.1.4 The &lt;span class=&quot;tt&quot;&gt;Function&lt;/span&gt; Class',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md13',1,'']]],
-  ['1_205_20the_20output_20class_10',['1.1.5 The &lt;span class=&quot;tt&quot;&gt;Output&lt;/span&gt; Class',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md18',1,'']]],
-  ['1_20handling_20inputs_11',['1.1 Handling inputs',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md2',1,'']]],
-  ['1_20implementation_20overview_12',['1. Implementation Overview',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md1',1,'']]],
-  ['1_20reader_20classes_13',['1.1.1 Reader Classes',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md3',1,'']]]
+  ['adammoulton_0',['AdamMoulton',['../class_adam_moulton.html',1,'AdamMoulton'],['../class_adam_moulton.html#a8f97d64ac4fad8317ea095db3ff96bdb',1,'AdamMoulton::AdamMoulton(const Ode &amp;ode, const Reader &amp;reader, std::shared_ptr&lt; RootFinder &gt; root_finder=nullptr)'],['../class_adam_moulton.html#aa275a3d79856e84cc1ad90808d341756',1,'AdamMoulton::AdamMoulton(const Ode &amp;ode, double step_size=0.01, double end_time=0.0, int order=4, std::shared_ptr&lt; RootFinder &gt; root_finder=nullptr)'],['../class_adam_moulton.html#a57869441815de6ceec118bd5d2a8df4b',1,'AdamMoulton::AdamMoulton(const Ode &amp;ode, int num_of_steps, double end_time=0.0, int order=4, std::shared_ptr&lt; RootFinder &gt; root_finder=nullptr)']]],
+  ['adamsbashforth_1',['AdamsBashforth',['../class_adams_bashforth.html',1,'AdamsBashforth'],['../class_adams_bashforth.html#a0287451fe952c308d9d6fca5e246a7f7',1,'AdamsBashforth::AdamsBashforth(const Ode &amp;ode, const Reader &amp;reader)'],['../class_adams_bashforth.html#ac4434a5a1d33e247298958a5896658ca',1,'AdamsBashforth::AdamsBashforth(const Ode &amp;ode, double step_size=0.01, double end_time=0.0, int order=4)'],['../class_adams_bashforth.html#a916f3217443f9776f30b7c2f4ad3c349',1,'AdamsBashforth::AdamsBashforth(const Ode &amp;ode, int num_of_steps, double end_time=0.0, int order=4)']]],
+  ['at_2',['at',['../class_dynamic_tensor.html#a74eb8a4210abf2b8719ffba0e3de1dc8',1,'DynamicTensor']]]
 ];

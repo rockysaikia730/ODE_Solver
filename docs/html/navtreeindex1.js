@@ -1,7 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"implicit__solver_8h_source.html":[1,0,0,8],
-"index.html":[],
 "multistep__ode__solver_8h_source.html":[1,0,0,9],
 "newton__raphson_8h_source.html":[1,0,0,10],
 "ode_8h_source.html":[1,0,0,11],

@@ -1,5 +1,5 @@
 \doxysection{output\+\_\+plotter.\+h}
-\hypertarget{output__plotter_8h_source}{}\label{output__plotter_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/output\_plotter.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/output\_plotter.h}}
+\hypertarget{output__plotter_8h_source}{}\label{output__plotter_8h_source}\index{include/output\_plotter.h@{include/output\_plotter.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//suggested\ by\ ChatGPT\ to\ handle\ Windows\ compatibility\ for\ popen/pclose}}
@@ -17,20 +17,19 @@
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <fstream>}\ \ \ \ \ \ \textcolor{comment}{//\ For\ std::ofstream\ (required\ for\ FileSpecificSetup\ signature)}}
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}output.h"{}}}
 \DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_output_plotter_af2de447695dc48ea5dd22786731abf63}{OutputPlotter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_output_ac8c66cf55da5018b30b2f26df2545825}{Output}}\ \{}
-\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_output_plotter_af2de447695dc48ea5dd22786731abf63}{OutputPlotter}}();}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_output_plotter_ab18733ca05f67cc71631a77968f4bde6}{\string~OutputPlotter}}();}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_plotter_a4634bb3a1e04a3b61f2128a41830214b}{Write}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode_solver}{OdeSolver}}\&\ solver)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00036\ \ \ \ \ FILE*\ gnuplot\_pipe\_;}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{mutable}\ std::vector<std::pair<double,\ double>>\ history\_;}
-\DoxyCodeLine{00038\ \};}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_output_plotter_af2de447695dc48ea5dd22786731abf63}{OutputPlotter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_output_ac8c66cf55da5018b30b2f26df2545825}{Output}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_output_plotter_af2de447695dc48ea5dd22786731abf63}{OutputPlotter}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_output_plotter_ab18733ca05f67cc71631a77968f4bde6}{\string~OutputPlotter}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_plotter_a4634bb3a1e04a3b61f2128a41830214b}{Write}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode_solver}{OdeSolver}}\&\ solver)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ FILE*\ gnuplot\_pipe\_;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{mutable}\ std::vector<std::pair<double,\ double>>\ history\_;}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

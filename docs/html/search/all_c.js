@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['handling_20inputs_0',['1.1 Handling inputs',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md2',1,'']]]
+  ['parsedfunction_0',['ParsedFunction',['../class_parsed_function.html',1,'ParsedFunction'],['../class_parsed_function.html#a808273fed662cd815eaa2bb6c9c87924',1,'ParsedFunction::ParsedFunction()']]]
 ];

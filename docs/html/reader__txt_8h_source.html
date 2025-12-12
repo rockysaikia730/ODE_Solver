@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ODE_Solver: /Users/rocky/notes/Scientific Computing/ODE_Solver/include/reader_txt.h Source File</title>
+<title>ODE_Solver: include/reader_txt.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -98,24 +98,23 @@ $(function(){initNavTree('reader__txt_8h_source.html','',''); });
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;reader.h&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;ode_raw_data.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_txt_reader.html">    9</a></span><span class="keyword">class </span><a class="code hl_function" href="class_txt_reader.html#ad311f7e47af8a08a4ca9a162f0454956">TxtReader</a>: <span class="keyword">public</span> <a class="code hl_function" href="class_reader.html#ad682ef952dbf2312dc5e5c36b7432588">Reader</a> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_function" href="class_txt_reader.html#ad311f7e47af8a08a4ca9a162f0454956">TxtReader</a>(<span class="keyword">const</span> std::string&amp; file_name, <span class="keywordtype">char</span> separator = <span class="charliteral">&#39;=&#39;</span>, <span class="keywordtype">char</span> inline_separator = <span class="charliteral">&#39;;&#39;</span>, <span class="keywordtype">char</span> comment_char = <span class="charliteral">&#39;#&#39;</span>);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_txt_reader.html#ad4db532b40321716319b4ab98b3f0dae">   23</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_txt_reader.html#ad4db532b40321716319b4ab98b3f0dae">~TxtReader</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_txt_reader.html#a331736cf6c2407d480103d3cfacc709f">Read</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">char</span> comment_char_;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">char</span> inline_separator_;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_txt_reader.html">   13</a></span><span class="keyword">class </span><a class="code hl_function" href="class_txt_reader.html#ad311f7e47af8a08a4ca9a162f0454956">TxtReader</a>: <span class="keyword">public</span> <a class="code hl_function" href="class_reader.html#ad682ef952dbf2312dc5e5c36b7432588">Reader</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_function" href="class_txt_reader.html#ad311f7e47af8a08a4ca9a162f0454956">TxtReader</a>(<span class="keyword">const</span> std::string&amp; file_name, <span class="keywordtype">char</span> separator = <span class="charliteral">&#39;=&#39;</span>, <span class="keywordtype">char</span> inline_separator = <span class="charliteral">&#39;;&#39;</span>, <span class="keywordtype">char</span> comment_char = <span class="charliteral">&#39;#&#39;</span>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_txt_reader.html#ad4db532b40321716319b4ab98b3f0dae">   27</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_txt_reader.html#ad4db532b40321716319b4ab98b3f0dae">~TxtReader</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_txt_reader.html#a331736cf6c2407d480103d3cfacc709f">Read</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">char</span> comment_char_;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">char</span> inline_separator_;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};</div>
 </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">// READER_TXT_H</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#endif </span><span class="comment">// READER_TXT_H</span></div>
 <div class="ttc" id="aclass_reader_html_ad682ef952dbf2312dc5e5c36b7432588"><div class="ttname"><a href="class_reader.html#ad682ef952dbf2312dc5e5c36b7432588">Reader::Reader</a></div><div class="ttdeci">Reader(const std::string &amp;file_name, char separator=&#39;;&#39;)</div><div class="ttdoc">Constructor that initializes the Reader with a file name.</div><div class="ttdef"><b>Definition</b> reader.cpp:15</div></div>
 <div class="ttc" id="aclass_txt_reader_html_a331736cf6c2407d480103d3cfacc709f"><div class="ttname"><a href="class_txt_reader.html#a331736cf6c2407d480103d3cfacc709f">TxtReader::Read</a></div><div class="ttdeci">virtual void Read() override</div><div class="ttdoc">Reads data from the text file and populates the OdeRawData structure. Comments lines starting with co...</div><div class="ttdef"><b>Definition</b> reader_txt.cpp:17</div></div>
 <div class="ttc" id="aclass_txt_reader_html_ad311f7e47af8a08a4ca9a162f0454956"><div class="ttname"><a href="class_txt_reader.html#ad311f7e47af8a08a4ca9a162f0454956">TxtReader::TxtReader</a></div><div class="ttdeci">TxtReader(const std::string &amp;file_name, char separator=&#39;=&#39;, char inline_separator=&#39;;&#39;, char comment_char=&#39;#&#39;)</div><div class="ttdoc">Constructor for TxtReader.</div><div class="ttdef"><b>Definition</b> reader_txt.cpp:10</div></div>

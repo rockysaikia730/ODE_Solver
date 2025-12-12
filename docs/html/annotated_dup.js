@@ -24,6 +24,5 @@ var annotated_dup =
     [ "Reader", "class_reader.html", "class_reader" ],
     [ "RootFinder", "class_root_finder.html", "class_root_finder" ],
     [ "RungeKutta", "class_runge_kutta.html", "class_runge_kutta" ],
-    [ "SinOde", "class_sin_ode.html", "class_sin_ode" ],
     [ "TxtReader", "class_txt_reader.html", "class_txt_reader" ]
 ];

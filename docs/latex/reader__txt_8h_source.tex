@@ -1,5 +1,5 @@
 \doxysection{reader\+\_\+txt.\+h}
-\hypertarget{reader__txt_8h_source}{}\label{reader__txt_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/reader\_txt.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/reader\_txt.h}}
+\hypertarget{reader__txt_8h_source}{}\label{reader__txt_8h_source}\index{include/reader\_txt.h@{include/reader\_txt.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ READER\_TXT\_H}}
@@ -9,21 +9,20 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}reader.h"{}}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}ode\_raw\_data.h"{}}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_txt_reader_ad311f7e47af8a08a4ca9a162f0454956}{TxtReader}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_reader_ad682ef952dbf2312dc5e5c36b7432588}{Reader}}\ \{}
-\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_txt_reader_ad311f7e47af8a08a4ca9a162f0454956}{TxtReader}}(\textcolor{keyword}{const}\ std::string\&\ file\_name,\ \textcolor{keywordtype}{char}\ separator\ =\ \textcolor{charliteral}{'='},\ \textcolor{keywordtype}{char}\ inline\_separator\ =\ \textcolor{charliteral}{';'},\ \textcolor{keywordtype}{char}\ comment\_char\ =\ \textcolor{charliteral}{'\#'});}
-\DoxyCodeLine{00019\ \ \ \ \ }
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_txt_reader_ad4db532b40321716319b4ab98b3f0dae}{\string~TxtReader}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_txt_reader_a331736cf6c2407d480103d3cfacc709f}{Read}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{char}\ comment\_char\_;}
-\DoxyCodeLine{00037\ \ \ \ \ }
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{char}\ inline\_separator\_;}
-\DoxyCodeLine{00042\ \};}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ READER\_TXT\_H}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_txt_reader_ad311f7e47af8a08a4ca9a162f0454956}{TxtReader}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_reader_ad682ef952dbf2312dc5e5c36b7432588}{Reader}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_txt_reader_ad311f7e47af8a08a4ca9a162f0454956}{TxtReader}}(\textcolor{keyword}{const}\ std::string\&\ file\_name,\ \textcolor{keywordtype}{char}\ separator\ =\ \textcolor{charliteral}{'='},\ \textcolor{keywordtype}{char}\ inline\_separator\ =\ \textcolor{charliteral}{';'},\ \textcolor{keywordtype}{char}\ comment\_char\ =\ \textcolor{charliteral}{'\#'});}
+\DoxyCodeLine{00023\ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_txt_reader_ad4db532b40321716319b4ab98b3f0dae}{\string~TxtReader}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_txt_reader_a331736cf6c2407d480103d3cfacc709f}{Read}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{char}\ comment\_char\_;}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{char}\ inline\_separator\_;}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ READER\_TXT\_H}}
 
 \end{DoxyCode}
