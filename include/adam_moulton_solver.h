@@ -16,6 +16,7 @@
  */
 class AdamMoulton : public ImplicitSolver {
 public: 
+    AdamMoulton(const Ode& ode, const Reader& reader, std::shared_ptr<RootFinder> root_finder = nullptr);
     /**
      * @brief Constructs an Adams–Moulton solver using a fixed step size.
      *

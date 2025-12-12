@@ -59,6 +59,11 @@ void MultiStepOdeSolver::Reset() {
     InitBuffers();
     UpdateWindowSum();
 }
+MultiStepOdeSolver::MultiStepOdeSolver(const Ode& ode, const Reader& reader, 
+    int order_solution, int order_derivative)
+ : OdeSolver(ode, reader), 
+   order_sol_(order_solution),
+   order_derivative_(order_derivative) {}
 
 MultiStepOdeSolver::MultiStepOdeSolver(const Ode& ode, double step_size, double end_time, 
     int order_solution, int order_derivative)

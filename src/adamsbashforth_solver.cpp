@@ -4,6 +4,13 @@
 #include <vector>
 #include <stdexcept>
 
+AdamsBashforth::AdamsBashforth(const Ode& ode, const Reader& reader)
+: MultiStepOdeSolver(ode, reader, 1, reader.GetRawData().solver_params.order),
+  order_(reader.GetRawData().solver_params.order)  {
+    if(order_ > 4 || order_ < 1) throw std::invalid_argument("Order must be within 1 to 4.");
+    Reset();
+  }
+
 AdamsBashforth::AdamsBashforth(const Ode& ode, double step_size, double end_time, int order)
     : MultiStepOdeSolver(ode, step_size, end_time, 1, order),
       order_(order) 

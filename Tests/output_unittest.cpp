@@ -35,11 +35,11 @@ TEST(OutputTest, CsvOutput)
     RungeKutta solver(ode, 0.1, 0.0);
     solver.Reset(); // solution = y0, current_time = t0
 
-    OutputCsv writer("data/test_out.csv", ';');
+    OutputCsv writer("test_out.csv", ';');
     writer.SetHeader({"H1", "H2", "H3"});
     writer.Write(solver);
 
-    std::string contents = readFile("data/test_out.csv");
+    std::string contents = readFile("test_out.csv");
     // Check header
     EXPECT_NE(contents.find("H1;H2;H3"), std::string::npos);
 
@@ -66,11 +66,11 @@ TEST(OutputTest, TxtOutput)
     RungeKutta solver(ode, 0.1, 0.0);
     solver.Reset();
 
-    OutputTxt writer("data/test_out.txt", ' ', '#');
+    OutputTxt writer("test_out.txt", ' ', '#');
     writer.SetHeader({"Header Line"});
     writer.Write(solver);
 
-    std::string contents = readFile("data/test_out.txt");
+    std::string contents = readFile("test_out.txt");
 
     EXPECT_NE(contents.find("# Header Line"), std::string::npos);
 
@@ -97,10 +97,10 @@ TEST(OutputTest, ActualFunction_Sin)
     solver.Reset();
     solver.Solve(); // Perform RK4 integration
 
-    OutputCsv writer("data/sin_out.csv", ';');
+    OutputCsv writer("sin_out.csv", ';');
     writer.Write(solver);
 
-    std::string contents = readFile("data/sin_out.csv");
+    std::string contents = readFile("sin_out.csv");
     EXPECT_FALSE(contents.empty());
 
     // Expected numerical RK4 result at t=1 (this is because ∫0^1 sin(t) dt = 1 - cos(1) = 0.459698)

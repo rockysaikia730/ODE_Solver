@@ -13,6 +13,8 @@
  */
 class MultiStepOdeSolver : public OdeSolver {
 public:
+    MultiStepOdeSolver(const Ode& ode, const Reader& reader,
+        int order_solution = 1, int order_derivative = 1);
     /**
      * @brief Constructor with fixed step size.
      * @param ode            ODE system to solve.

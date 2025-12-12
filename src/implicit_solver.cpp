@@ -29,6 +29,15 @@ DynamicTensor ImplicitSolver::ImplicitEquation::Grad(double t, const DynamicTens
     return (ones - (dfdt * (h * cdy0_/cy0_)));
 }
 
+ImplicitSolver::ImplicitSolver(const Ode& ode, const Reader& reader,
+    int order_solution, int order_derivative, std::shared_ptr<RootFinder> root_finder)
+    : MultiStepOdeSolver(ode, reader, order_solution, order_derivative)  
+    {
+        if(root_finder) root_finder_ = std::move(root_finder);
+        root_finder_ = ode_.GetRootFinder();
+        if(!root_finder_) root_finder_ = std::make_shared<NewtonRaphson>();
+    }
+
 ImplicitSolver::ImplicitSolver(const Ode& ode, double step_size, double end_time, 
     int order_solution, int order_derivative, std::shared_ptr<RootFinder> root_finder)
     : MultiStepOdeSolver(ode, step_size, end_time, 

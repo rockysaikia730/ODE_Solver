@@ -14,6 +14,7 @@
  */
 class RungeKutta : public OdeSolver {
 public:
+    RungeKutta(const Ode& ode, const Reader& reader);
     /**
      * @brief Constructs a Runge–Kutta solver using a fixed step size.
      *

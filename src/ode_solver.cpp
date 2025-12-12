@@ -10,6 +10,23 @@ void OdeSolver::Reset() {
     current_time_ = ode_.GetTimeIn();
 }
 
+OdeSolver::OdeSolver(const Ode& ode, const Reader& reader)
+  : ode_(ode) {
+    end_time_ = reader.GetRawData().time_params.t_final;
+    start_time_ = reader.GetRawData().time_params.t0;
+    step_size_ = reader.GetRawData().time_params.step_size;
+    if(end_time_ < 0) {
+          throw std::invalid_argument("Endtime must be non-negative."); 
+    }
+    if(step_size_ <= 0) {
+          throw std::invalid_argument("Step size must be positive."); 
+    }
+    if(start_time_ < 0) {
+      throw std::invalid_argument("Starttime must be non-negative."); 
+    }
+    Reset();
+  }
+
 OdeSolver::OdeSolver(const Ode& ode, int num_of_steps, double end_time)
     : ode_(ode),
       end_time_(end_time),

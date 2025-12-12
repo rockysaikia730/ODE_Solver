@@ -5,13 +5,24 @@
 #include "root_finder.h"
 #include <vector>
 
+Bdf::Bdf(const Ode& ode, const Reader& reader, std::shared_ptr<RootFinder> root_finder)
+    : ImplicitSolver(ode, 
+      reader.GetRawData().time_params.step_size, 
+      reader.GetRawData().time_params.t_final, 
+      reader.GetRawData().solver_params.order, 
+      0, root_finder),
+      order_(reader.GetRawData().solver_params.order) 
+      { 
+        if(order_ < 1 || order_ > 4) throw std::invalid_argument("Order must be within 1 and 4.");
+        Reset();
+      }
 
 Bdf::Bdf(const Ode& ode, double step_size, double end_time, int order, 
          std::shared_ptr<RootFinder> root_finder)
         : ImplicitSolver(ode, step_size, end_time, order, 0, root_finder),
           order_(order) 
           {
-            if(order_ < 1 || order_ > 4) throw std::invalid_argument("Order must be within 1 to 4.");
+            if(order_ < 1 || order_ > 4) throw std::invalid_argument("Order must be within 1 and 4.");
             Reset();
           }
 

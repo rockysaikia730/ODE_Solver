@@ -14,6 +14,7 @@
  */
 class ForwardEulerLight: public OdeSolver {
 public:
+    ForwardEulerLight(const Ode& ode, const Reader& reader);
     /**
      * @brief Constructs a Forward Euler solver using a fixed step size.
      *

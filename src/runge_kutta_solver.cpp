@@ -1,6 +1,10 @@
 #include "runge_kutta_solver.h"
 #include "ode_solver.h"
 
+RungeKutta::RungeKutta(const Ode& ode, const Reader& reader) 
+    : OdeSolver(ode, reader) {}
+
+
 RungeKutta::RungeKutta(const Ode& ode, double step_size, double end_time) 
     : OdeSolver(ode, step_size, end_time) {}
 

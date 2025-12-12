@@ -16,6 +16,7 @@
  */
 class Bdf : public ImplicitSolver {
 public:
+    Bdf(const Ode& ode, const Reader& reader, std::shared_ptr<RootFinder> root_finder = nullptr);
     /**
      * @brief Constructs a BDF solver using a fixed step size.
      *

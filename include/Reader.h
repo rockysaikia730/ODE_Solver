@@ -8,6 +8,7 @@
 #include <memory>
 #include "dynamic_tensor.h"
 #include "ode_raw_data.h"
+#include "solver_methods.h"
 
 
 /**
@@ -157,7 +158,14 @@ protected:
      */
     void InterpretKeyValuePair(const std::string& key, const std::string& value);
 
-private:    
+private:
+    /**
+     * @brief Parse the solver method from string to enum and set it in raw_data_
+     * @param method_str The method string to parse.
+     * @return The corresponding SolverMethod enum value.
+     */
+    SolverMethod ParseSolverMethod(const std::string& method_string);
+
     /**
     * @brief Recursive helper function to parse a tensor from a string. Only works for numeric types (double, complex).
     * @param str The string to parse.
