@@ -3,7 +3,8 @@ var hierarchy =
     [ "DynamicTensor", "class_dynamic_tensor.html", null ],
     [ "Function", "class_function.html", [
       [ "ImplicitSolver::ImplicitEquation", "class_implicit_solver_1_1_implicit_equation.html", null ],
-      [ "ParsedFunction", "class_parsed_function.html", null ]
+      [ "ParsedFunction", "class_parsed_function.html", null ],
+      [ "SinOde", "class_sin_ode.html", null ]
     ] ],
     [ "OdeRawData::function_params", "struct_ode_raw_data_1_1function__params.html", null ],
     [ "Ode", "class_ode.html", null ],
@@ -24,8 +25,11 @@ var hierarchy =
       [ "RungeKutta", "class_runge_kutta.html", null ]
     ] ],
     [ "Output", "class_output.html", [
-      [ "OutputCsv", "class_output_csv.html", null ],
-      [ "OutputTxt", "class_output_txt.html", null ]
+      [ "OutputFile", "class_output_file.html", [
+        [ "OutputCsv", "class_output_csv.html", null ],
+        [ "OutputTxt", "class_output_txt.html", null ]
+      ] ],
+      [ "OutputPlotter", "class_output_plotter.html", null ]
     ] ],
     [ "Reader", "class_reader.html", [
       [ "CsvReader", "class_csv_reader.html", null ],
@@ -35,6 +39,5 @@ var hierarchy =
       [ "NewtonRaphson", "class_newton_raphson.html", null ]
     ] ],
     [ "OdeRawData::solver_params", "struct_ode_raw_data_1_1solver__params.html", null ],
-    [ "TensorParser", "class_tensor_parser.html", null ],
     [ "OdeRawData::time_params", "struct_ode_raw_data_1_1time__params.html", null ]
 ];

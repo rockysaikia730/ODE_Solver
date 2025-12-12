@@ -10,39 +10,41 @@
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <deque>}}
 \DoxyCodeLine{00007\ }
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_multi_step_ode_solver_a146cffeef6b16589864a568834433e98}{MultiStepOdeSolver}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{OdeSolver}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_multi_step_ode_solver_abe8a9977841d8d305b94a408add1e9fc}{MultiStepOdeSolver}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{OdeSolver}}\ \{}
 \DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_multi_step_ode_solver_a146cffeef6b16589864a568834433e98}{MultiStepOdeSolver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\_solution\ =\ 1,\ \textcolor{keywordtype}{int}\ order\_derivative\ =\ 1);}
-\DoxyCodeLine{00026\ \ \ \ \ }
-\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_multi_step_ode_solver_a146cffeef6b16589864a568834433e98}{MultiStepOdeSolver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\_solution\ =\ 1,\ \textcolor{keywordtype}{int}\ order\_derivative\ =\ 1);}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90}{Step}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{class_multi_step_ode_solver_a09c62a908bebab5946e61ec2a9373f20}{GetCoeffsY}}()\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{class_multi_step_ode_solver_a359ebb566d4d4e84a8408fe1d0da456d}{GetCoeffsdY}}()\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multi_step_ode_solver_ade00d553a4968d7f5a0532f185c4149f}{InitBuffers}}();}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multi_step_ode_solver_a2e603e3908b1c51514107b13935d02ef}{UpdateDerivative}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ dydt);}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multi_step_ode_solver_a5bda016c46d93c7c7ce9e8b693048ed6}{UpdateSolution}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y);}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multi_step_ode_solver_a5637d19a28ae7ac068fb5f751f1ca9d6}{UpdateWindowSum}}();}
-\DoxyCodeLine{00075\ \ \ \ \ }
-\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_multi_step_ode_solver_a834593ca532ca89b1282ae18ddcc7e25}{order\_sol\_}};}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_multi_step_ode_solver_afb46f4af493bc59026f816c7ee45605d}{order\_derivative\_}};}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00088\ \ \ \ \ std::deque<DynamicTensor>\ \mbox{\hyperlink{class_multi_step_ode_solver_a6b14064cb4f3b28f99d913874d018177}{solutions\_buffer\_}};}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_multi_step_ode_solver_abe8a9977841d8d305b94a408add1e9fc}{MultiStepOdeSolver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_reader}{Reader}}\&\ reader,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\_solution\ =\ 1,\ \textcolor{keywordtype}{int}\ order\_derivative\ =\ 1);}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_multi_step_ode_solver_abe8a9977841d8d305b94a408add1e9fc}{MultiStepOdeSolver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\_solution\ =\ 1,\ \textcolor{keywordtype}{int}\ order\_derivative\ =\ 1);}
+\DoxyCodeLine{00035\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_multi_step_ode_solver_abe8a9977841d8d305b94a408add1e9fc}{MultiStepOdeSolver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\_solution\ =\ 1,\ \textcolor{keywordtype}{int}\ order\_derivative\ =\ 1);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90}{Step}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{class_multi_step_ode_solver_a09c62a908bebab5946e61ec2a9373f20}{GetCoeffsY}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{class_multi_step_ode_solver_a359ebb566d4d4e84a8408fe1d0da456d}{GetCoeffsdY}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multi_step_ode_solver_ade00d553a4968d7f5a0532f185c4149f}{InitBuffers}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multi_step_ode_solver_a2e603e3908b1c51514107b13935d02ef}{UpdateDerivative}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ dydt);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multi_step_ode_solver_a5bda016c46d93c7c7ce9e8b693048ed6}{UpdateSolution}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multi_step_ode_solver_a5637d19a28ae7ac068fb5f751f1ca9d6}{UpdateWindowSum}}();}
 \DoxyCodeLine{00089\ }
-\DoxyCodeLine{00091\ \ \ \ \ std::deque<DynamicTensor>\ \mbox{\hyperlink{class_multi_step_ode_solver_a4f37166a76f94fa3b72d48e746096e7e}{derivative\_buffer\_}};}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_multi_step_ode_solver_a834593ca532ca89b1282ae18ddcc7e25}{order\_sol\_}};}
 \DoxyCodeLine{00092\ }
-\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_multi_step_ode_solver_ab4c210a8b67372ce8eca42ca82b176bd}{sum\_tn\_}};}
-\DoxyCodeLine{00095\ \};}
-\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_multi_step_ode_solver_afb46f4af493bc59026f816c7ee45605d}{order\_derivative\_}};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00097\ \ \ \ \ std::deque<DynamicTensor>\ \mbox{\hyperlink{class_multi_step_ode_solver_a6b14064cb4f3b28f99d913874d018177}{solutions\_buffer\_}};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00100\ \ \ \ \ std::deque<DynamicTensor>\ \mbox{\hyperlink{class_multi_step_ode_solver_a4f37166a76f94fa3b72d48e746096e7e}{derivative\_buffer\_}};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_multi_step_ode_solver_ab4c210a8b67372ce8eca42ca82b176bd}{sum\_tn\_}};}
+\DoxyCodeLine{00104\ \};}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

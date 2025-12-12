@@ -1,0 +1,56 @@
+\doxysection{Output\+Plotter Class Reference}
+\hypertarget{class_output_plotter}{}\label{class_output_plotter}\index{OutputPlotter@{OutputPlotter}}
+Inheritance diagram for Output\+Plotter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_output_plotter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_output_plotter_af2de447695dc48ea5dd22786731abf63}\label{class_output_plotter_af2de447695dc48ea5dd22786731abf63} 
+{\bfseries Output\+Plotter} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_output_plotter_ab18733ca05f67cc71631a77968f4bde6}\label{class_output_plotter_ab18733ca05f67cc71631a77968f4bde6} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Output\+Plotter} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Closes the pipe to Gnuplot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_plotter_a4634bb3a1e04a3b61f2128a41830214b}{Write}} (const \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}} \&solver) override
+\begin{DoxyCompactList}\small\item\em Sends the current solver state to Gnuplot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_output}{Output}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Output} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor and destructor. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Output} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_output_plotter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_output_plotter_a4634bb3a1e04a3b61f2128a41830214b}\index{OutputPlotter@{OutputPlotter}!Write@{Write}}
+\index{Write@{Write}!OutputPlotter@{OutputPlotter}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily \label{class_output_plotter_a4634bb3a1e04a3b61f2128a41830214b} 
+void Output\+Plotter\+::\+Write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}} \&}]{solver}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sends the current solver state to Gnuplot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solver} & The solver instance containing the current time and solution. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_output_a6d4530d806c96e5a781d9ba41dd04087}{Output}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/output\+\_\+plotter.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/output\+\_\+plotter.\+cpp\end{DoxyCompactItemize}

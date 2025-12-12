@@ -50,7 +50,9 @@ void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}
 \mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time)
 \begin{DoxyCompactList}\small\item\em Constructor for fixed number of steps. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_ode_solver_aead5f819e881f42a8c398d48678e4e16}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0)
-\begin{DoxyCompactList}\small\item\em Constructor for fixed step size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor for fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ode_solver_a759c26734e6949d87dca4f024415a666}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, const \mbox{\hyperlink{class_reader}{Reader}} \&reader)
+\begin{DoxyCompactList}\small\item\em Constructor using a \doxylink{class_reader}{Reader} for configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -84,7 +86,7 @@ The \doxylink{class_ode_solver}{Ode\+Solver} manages the simulation loop, time t
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}\index{OdeSolver@{OdeSolver}!OdeSolver@{OdeSolver}}
 \index{OdeSolver@{OdeSolver}!OdeSolver@{OdeSolver}}
-\doxysubsubsection{\texorpdfstring{OdeSolver()}{OdeSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{OdeSolver()}{OdeSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily \label{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c} 
 Ode\+Solver\+::\+Ode\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{int}]{num\+\_\+of\+\_\+steps}{, }\item[{double}]{end\+\_\+time}{}\end{DoxyParamCaption})}
 
@@ -103,7 +105,7 @@ Constructor for fixed number of steps.
 \end{DoxyParams}
 \Hypertarget{class_ode_solver_aead5f819e881f42a8c398d48678e4e16}\index{OdeSolver@{OdeSolver}!OdeSolver@{OdeSolver}}
 \index{OdeSolver@{OdeSolver}!OdeSolver@{OdeSolver}}
-\doxysubsubsection{\texorpdfstring{OdeSolver()}{OdeSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{OdeSolver()}{OdeSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily \label{class_ode_solver_aead5f819e881f42a8c398d48678e4e16} 
 Ode\+Solver\+::\+Ode\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{double}]{step\+\_\+size}{ = {\ttfamily 0.01}, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}}\end{DoxyParamCaption})}
 
@@ -118,6 +120,23 @@ Constructor for fixed step size.
 {\em end\+\_\+time} & The target simulation time. \\
 \hline
 {\em step\+\_\+size} & The time step (dt). Defaults to 0.\+01. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ode_solver_a759c26734e6949d87dca4f024415a666}\index{OdeSolver@{OdeSolver}!OdeSolver@{OdeSolver}}
+\index{OdeSolver@{OdeSolver}!OdeSolver@{OdeSolver}}
+\doxysubsubsection{\texorpdfstring{OdeSolver()}{OdeSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_ode_solver_a759c26734e6949d87dca4f024415a666} 
+Ode\+Solver\+::\+Ode\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{const \mbox{\hyperlink{class_reader}{Reader}} \&}]{reader}{}\end{DoxyParamCaption})}
+
+
+
+Constructor using a \doxylink{class_reader}{Reader} for configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & A constant reference to the ODE definition. Must outlive the solver. \\
+\hline
+{\em reader} & \doxylink{class_reader}{Reader} object containing solver configuration. \\
 \hline
 \end{DoxyParams}
 

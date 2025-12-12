@@ -3,6 +3,7 @@ var class_ode_solver =
     [ "~OdeSolver", "class_ode_solver.html#a18be896e3a9772213317a4c554100206", null ],
     [ "OdeSolver", "class_ode_solver.html#ab8375f1f3330bf275d6b18fc936deb3c", null ],
     [ "OdeSolver", "class_ode_solver.html#aead5f819e881f42a8c398d48678e4e16", null ],
+    [ "OdeSolver", "class_ode_solver.html#a759c26734e6949d87dca4f024415a666", null ],
     [ "ComputeStep", "class_ode_solver.html#a35a9d27d9c3b484dae31ed1c6905a04a", null ],
     [ "GetCurrentTime", "class_ode_solver.html#a93ba8bfb62598239c78200ca6253fa02", null ],
     [ "GetEndTime", "class_ode_solver.html#a6b634912c4c923a14e5ce7994f46b2a4", null ],

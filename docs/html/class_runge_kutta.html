@@ -108,6 +108,8 @@ Inheritance diagram for RungeKutta:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a76bc3862db8254e2619dcbe3ce0dcc6a" id="r_a76bc3862db8254e2619dcbe3ce0dcc6a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76bc3862db8254e2619dcbe3ce0dcc6a">RungeKutta</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, const <a class="el" href="class_reader.html">Reader</a> &amp;reader)</td></tr>
+<tr class="memdesc:a76bc3862db8254e2619dcbe3ce0dcc6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Runge–Kutta solver using input from a <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>.  <br /></td></tr>
 <tr class="memitem:ad2c5fc1466e0230af1e91d3b0788316e" id="r_ad2c5fc1466e0230af1e91d3b0788316e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2c5fc1466e0230af1e91d3b0788316e">RungeKutta</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double step_size=0.01, double end_time=0.0)</td></tr>
 <tr class="memdesc:ad2c5fc1466e0230af1e91d3b0788316e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Runge–Kutta solver using a fixed step size.  <br /></td></tr>
 <tr class="memitem:a8ff7c22150e0d6788e8f8b03c6dc9780" id="r_a8ff7c22150e0d6788e8f8b03c6dc9780"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ff7c22150e0d6788e8f8b03c6dc9780">RungeKutta</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, int num_of_steps, double end_time)</td></tr>
@@ -140,6 +142,8 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~OdeSolver</b> ()=
 <tr class="memdesc:ab8375f1f3330bf275d6b18fc936deb3c inherit pub_methods_class_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for fixed number of steps.  <br /></td></tr>
 <tr class="memitem:aead5f819e881f42a8c398d48678e4e16 inherit pub_methods_class_ode_solver" id="r_aead5f819e881f42a8c398d48678e4e16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ode_solver.html#aead5f819e881f42a8c398d48678e4e16">OdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double step_size=0.01, double end_time=0.0)</td></tr>
 <tr class="memdesc:aead5f819e881f42a8c398d48678e4e16 inherit pub_methods_class_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for fixed step size.  <br /></td></tr>
+<tr class="memitem:a759c26734e6949d87dca4f024415a666 inherit pub_methods_class_ode_solver" id="r_a759c26734e6949d87dca4f024415a666"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ode_solver.html#a759c26734e6949d87dca4f024415a666">OdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, const <a class="el" href="class_reader.html">Reader</a> &amp;reader)</td></tr>
+<tr class="memdesc:a759c26734e6949d87dca4f024415a666 inherit pub_methods_class_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor using a <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> for configuration.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -167,8 +171,38 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
 <div class="textblock"><p>Explicit Runge–Kutta ODE solver. </p>
 <p>This class implements a classical 4th-order Runge–Kutta method for solving ordinary differential equations. It is an explicit solver suitable for non-stiff problems, providing higher accuracy than Forward Euler. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a76bc3862db8254e2619dcbe3ce0dcc6a" name="a76bc3862db8254e2619dcbe3ce0dcc6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76bc3862db8254e2619dcbe3ce0dcc6a">&#9670;&#160;</a></span>RungeKutta() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RungeKutta::RungeKutta </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_ode.html">Ode</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_reader.html">Reader</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>reader</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a Runge–Kutta solver using input from a <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ode</td><td>Reference to the ODE system to integrate. </td></tr>
+    <tr><td class="paramname">reader</td><td><a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> object containing solver configuration. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ad2c5fc1466e0230af1e91d3b0788316e" name="ad2c5fc1466e0230af1e91d3b0788316e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2c5fc1466e0230af1e91d3b0788316e">&#9670;&#160;</a></span>RungeKutta() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2c5fc1466e0230af1e91d3b0788316e">&#9670;&#160;</a></span>RungeKutta() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,7 +238,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
 </div>
 </div>
 <a id="a8ff7c22150e0d6788e8f8b03c6dc9780" name="a8ff7c22150e0d6788e8f8b03c6dc9780"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ff7c22150e0d6788e8f8b03c6dc9780">&#9670;&#160;</a></span>RungeKutta() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ff7c22150e0d6788e8f8b03c6dc9780">&#9670;&#160;</a></span>RungeKutta() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

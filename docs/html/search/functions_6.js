@@ -9,7 +9,7 @@ var searchData=
   ['getendtime_6',['GetEndTime',['../class_ode_solver.html#a6b634912c4c923a14e5ce7994f46b2a4',1,'OdeSolver']]],
   ['getfileextension_7',['GetFileExtension',['../class_reader.html#a5f7f2919f37f15cb95be1580b2028897',1,'Reader']]],
   ['getfilename_8',['GetFileName',['../class_reader.html#afff48614961ffb79bfb627adc4b52f70',1,'Reader']]],
-  ['getfilename_9',['GetFilename',['../class_output.html#ad60b7aa242114753f0cead2648124d7e',1,'Output']]],
+  ['getfilename_9',['GetFilename',['../class_output_file.html#a272bd7349ae74368192327603a7cce8b',1,'OutputFile']]],
   ['getfunction_10',['GetFunction',['../class_ode.html#adcb8ece3558bd7a29aefcfe9319e7dd4',1,'Ode']]],
   ['getheader_11',['GetHeader',['../class_output_csv.html#a70af53462051a588b41d629c87778f22',1,'OutputCsv::GetHeader()'],['../class_output_txt.html#addd8a01b9f32728854bf456fc8132f50',1,'OutputTxt::GetHeader()']]],
   ['getname_12',['GetName',['../class_ode.html#a6356a2c5b5b923378b5cc41951dc3575',1,'Ode']]],

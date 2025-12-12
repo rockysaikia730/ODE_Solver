@@ -110,10 +110,12 @@ Inheritance diagram for AdamMoulton:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a969a9527ff10e9cb6199ac59b653c1d5" id="r_a969a9527ff10e9cb6199ac59b653c1d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a969a9527ff10e9cb6199ac59b653c1d5">AdamMoulton</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double step_size=0.01, double end_time=0.0, int order=2, std::shared_ptr&lt; <a class="el" href="class_root_finder.html">RootFinder</a> &gt; root_finder=nullptr)</td></tr>
-<tr class="memdesc:a969a9527ff10e9cb6199ac59b653c1d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an Adams–Moulton solver using a fixed step size.  <br /></td></tr>
-<tr class="memitem:a920ee7649c0bb57b72af8d941f5661e4" id="r_a920ee7649c0bb57b72af8d941f5661e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a920ee7649c0bb57b72af8d941f5661e4">AdamMoulton</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, int num_of_steps, double end_time=0.0, int order=2, std::shared_ptr&lt; <a class="el" href="class_root_finder.html">RootFinder</a> &gt; root_finder=nullptr)</td></tr>
-<tr class="memdesc:a920ee7649c0bb57b72af8d941f5661e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an Adams–Moulton solver using a specified number of time steps.  <br /></td></tr>
+<tr class="memitem:a8f97d64ac4fad8317ea095db3ff96bdb" id="r_a8f97d64ac4fad8317ea095db3ff96bdb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f97d64ac4fad8317ea095db3ff96bdb">AdamMoulton</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, const <a class="el" href="class_reader.html">Reader</a> &amp;reader, std::shared_ptr&lt; <a class="el" href="class_root_finder.html">RootFinder</a> &gt; root_finder=nullptr)</td></tr>
+<tr class="memdesc:a8f97d64ac4fad8317ea095db3ff96bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an Adams–Moulton solver using input from a <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>.  <br /></td></tr>
+<tr class="memitem:aa275a3d79856e84cc1ad90808d341756" id="r_aa275a3d79856e84cc1ad90808d341756"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa275a3d79856e84cc1ad90808d341756">AdamMoulton</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double step_size=0.01, double end_time=0.0, int order=4, std::shared_ptr&lt; <a class="el" href="class_root_finder.html">RootFinder</a> &gt; root_finder=nullptr)</td></tr>
+<tr class="memdesc:aa275a3d79856e84cc1ad90808d341756"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an Adams–Moulton solver using a fixed step size.  <br /></td></tr>
+<tr class="memitem:a57869441815de6ceec118bd5d2a8df4b" id="r_a57869441815de6ceec118bd5d2a8df4b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57869441815de6ceec118bd5d2a8df4b">AdamMoulton</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, int num_of_steps, double end_time=0.0, int order=4, std::shared_ptr&lt; <a class="el" href="class_root_finder.html">RootFinder</a> &gt; root_finder=nullptr)</td></tr>
+<tr class="memdesc:a57869441815de6ceec118bd5d2a8df4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an Adams–Moulton solver using a specified number of time steps.  <br /></td></tr>
 <tr class="memitem:ad2bfcd5f4c6cf141e975c441239cfaa6" id="r_ad2bfcd5f4c6cf141e975c441239cfaa6"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2bfcd5f4c6cf141e975c441239cfaa6">GetCoeffsY</a> () const override</td></tr>
 <tr class="memdesc:ad2bfcd5f4c6cf141e975c441239cfaa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the coefficients applied to solution values in the implicit Adams–Moulton formula.  <br /></td></tr>
 <tr class="memitem:a5c9bd3ac47674d61cedbb1bf393d3f8e" id="r_a5c9bd3ac47674d61cedbb1bf393d3f8e"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c9bd3ac47674d61cedbb1bf393d3f8e">GetCoeffsdY</a> () const override</td></tr>
@@ -121,6 +123,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a58a45e28426ea087a2565a2dcb00e09f" id="r_a58a45e28426ea087a2565a2dcb00e09f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58a45e28426ea087a2565a2dcb00e09f">GetOrder</a> ()</td></tr>
 <tr class="memdesc:a58a45e28426ea087a2565a2dcb00e09f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the order of the Adams–Moulton scheme.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_implicit_solver"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_implicit_solver')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_implicit_solver.html">ImplicitSolver</a></td></tr>
+<tr class="memitem:a371f450db70c52f69c7e2bd8ef3ce7bb inherit pub_methods_class_implicit_solver" id="r_a371f450db70c52f69c7e2bd8ef3ce7bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_implicit_solver.html#a371f450db70c52f69c7e2bd8ef3ce7bb">ImplicitSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, const <a class="el" href="class_reader.html">Reader</a> &amp;reader, int order_solution, int order_derivative, std::shared_ptr&lt; <a class="el" href="class_root_finder.html">RootFinder</a> &gt; root_finder)</td></tr>
+<tr class="memdesc:a371f450db70c52f69c7e2bd8ef3ce7bb inherit pub_methods_class_implicit_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="class_implicit_solver.html" title="Multistep ODE solver that performs implicit time-stepping using a root-finding algorithm.">ImplicitSolver</a> using input from a <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>.  <br /></td></tr>
 <tr class="memitem:a6974272e5de96d69d12f88e02dbb5a7b inherit pub_methods_class_implicit_solver" id="r_a6974272e5de96d69d12f88e02dbb5a7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_implicit_solver.html#a6974272e5de96d69d12f88e02dbb5a7b">ImplicitSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double step_size=0.01, double end_time=0.0, int order_solution=1, int order_derivative=0, std::shared_ptr&lt; <a class="el" href="class_root_finder.html">RootFinder</a> &gt; root_finder=nullptr)</td></tr>
 <tr class="memdesc:a6974272e5de96d69d12f88e02dbb5a7b inherit pub_methods_class_implicit_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="class_implicit_solver.html" title="Multistep ODE solver that performs implicit time-stepping using a root-finding algorithm.">ImplicitSolver</a> using a fixed step size.  <br /></td></tr>
 <tr class="memitem:aeac055d99a35bf3480a1bcc97e4f8670 inherit pub_methods_class_implicit_solver" id="r_aeac055d99a35bf3480a1bcc97e4f8670"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_implicit_solver.html#aeac055d99a35bf3480a1bcc97e4f8670">ImplicitSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, int num_of_steps, double end_time=0.0, int order_solution=1, int order_derivative=0, std::shared_ptr&lt; <a class="el" href="class_root_finder.html">RootFinder</a> &gt; root_finder=nullptr)</td></tr>
@@ -128,12 +132,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f79fcbfa43f5b7c2207ce61a4420d74 inherit pub_methods_class_implicit_solver" id="r_a4f79fcbfa43f5b7c2207ce61a4420d74"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_dynamic_tensor.html">DynamicTensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_implicit_solver.html#a4f79fcbfa43f5b7c2207ce61a4420d74">ComputeStep</a> () override</td></tr>
 <tr class="memdesc:a4f79fcbfa43f5b7c2207ce61a4420d74 inherit pub_methods_class_implicit_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the solution by one implicit time step.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_multi_step_ode_solver"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_multi_step_ode_solver')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_multi_step_ode_solver.html">MultiStepOdeSolver</a></td></tr>
+<tr class="memitem:abe8a9977841d8d305b94a408add1e9fc inherit pub_methods_class_multi_step_ode_solver" id="r_abe8a9977841d8d305b94a408add1e9fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_step_ode_solver.html#abe8a9977841d8d305b94a408add1e9fc">MultiStepOdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, const <a class="el" href="class_reader.html">Reader</a> &amp;reader, int order_solution=1, int order_derivative=1)</td></tr>
+<tr class="memdesc:abe8a9977841d8d305b94a408add1e9fc inherit pub_methods_class_multi_step_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> input.  <br /></td></tr>
 <tr class="memitem:a146cffeef6b16589864a568834433e98 inherit pub_methods_class_multi_step_ode_solver" id="r_a146cffeef6b16589864a568834433e98"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_step_ode_solver.html#a146cffeef6b16589864a568834433e98">MultiStepOdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double step_size=0.01, double end_time=0.0, int order_solution=1, int order_derivative=1)</td></tr>
 <tr class="memdesc:a146cffeef6b16589864a568834433e98 inherit pub_methods_class_multi_step_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with fixed step size.  <br /></td></tr>
 <tr class="memitem:a0908687bef779b2a8a53984d35872e8b inherit pub_methods_class_multi_step_ode_solver" id="r_a0908687bef779b2a8a53984d35872e8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_step_ode_solver.html#a0908687bef779b2a8a53984d35872e8b">MultiStepOdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, int num_of_steps, double end_time=0.0, int order_solution=1, int order_derivative=1)</td></tr>
 <tr class="memdesc:a0908687bef779b2a8a53984d35872e8b inherit pub_methods_class_multi_step_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor using a specified number of steps.  <br /></td></tr>
 <tr class="memitem:aad3953387824f19957cfe9e1e4eb1b90 inherit pub_methods_class_multi_step_ode_solver" id="r_aad3953387824f19957cfe9e1e4eb1b90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_step_ode_solver.html#aad3953387824f19957cfe9e1e4eb1b90">Step</a> () override</td></tr>
 <tr class="memdesc:aad3953387824f19957cfe9e1e4eb1b90 inherit pub_methods_class_multi_step_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the solution by one time step.  <br /></td></tr>
+<tr class="memitem:a3753c8d27e7420e4470aa5e88e44bbee inherit pub_methods_class_multi_step_ode_solver" id="r_a3753c8d27e7420e4470aa5e88e44bbee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_step_ode_solver.html#a3753c8d27e7420e4470aa5e88e44bbee">Reset</a> () override</td></tr>
+<tr class="memdesc:a3753c8d27e7420e4470aa5e88e44bbee inherit pub_methods_class_multi_step_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset solver state and history buffers.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_ode_solver"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_ode_solver')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_ode_solver.html">OdeSolver</a></td></tr>
 <tr class="memitem:a18be896e3a9772213317a4c554100206 inherit pub_methods_class_ode_solver" id="r_a18be896e3a9772213317a4c554100206"><td class="memItemLeft" align="right" valign="top">
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~OdeSolver</b> ()=default</td></tr>
@@ -156,12 +164,8 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~OdeSolver</b> ()=
 <tr class="memdesc:ab8375f1f3330bf275d6b18fc936deb3c inherit pub_methods_class_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for fixed number of steps.  <br /></td></tr>
 <tr class="memitem:aead5f819e881f42a8c398d48678e4e16 inherit pub_methods_class_ode_solver" id="r_aead5f819e881f42a8c398d48678e4e16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ode_solver.html#aead5f819e881f42a8c398d48678e4e16">OdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double step_size=0.01, double end_time=0.0)</td></tr>
 <tr class="memdesc:aead5f819e881f42a8c398d48678e4e16 inherit pub_methods_class_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for fixed step size.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:aa0e8d5badcf6e76f50bf7f0ee07bb5b8" id="r_aa0e8d5badcf6e76f50bf7f0ee07bb5b8"><td class="memItemLeft" align="right" valign="top"><a id="aa0e8d5badcf6e76f50bf7f0ee07bb5b8" name="aa0e8d5badcf6e76f50bf7f0ee07bb5b8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>order_</b></td></tr>
-<tr class="memdesc:aa0e8d5badcf6e76f50bf7f0ee07bb5b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Order of the Adams–Moulton method (number of steps used). <br /></td></tr>
+<tr class="memitem:a759c26734e6949d87dca4f024415a666 inherit pub_methods_class_ode_solver" id="r_a759c26734e6949d87dca4f024415a666"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ode_solver.html#a759c26734e6949d87dca4f024415a666">OdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, const <a class="el" href="class_reader.html">Reader</a> &amp;reader)</td></tr>
+<tr class="memdesc:a759c26734e6949d87dca4f024415a666 inherit pub_methods_class_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor using a <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> for configuration.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -176,8 +180,6 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>InitBuffers</
 <tr class="memitem:a5637d19a28ae7ac068fb5f751f1ca9d6 inherit pro_methods_class_multi_step_ode_solver" id="r_a5637d19a28ae7ac068fb5f751f1ca9d6"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateWindowSum</b> ()</td></tr>
 <tr class="memdesc:a5637d19a28ae7ac068fb5f751f1ca9d6 inherit pro_methods_class_multi_step_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update cached weighted sums used by the multistep scheme. <br /></td></tr>
-<tr class="memitem:a3753c8d27e7420e4470aa5e88e44bbee inherit pro_methods_class_multi_step_ode_solver" id="r_a3753c8d27e7420e4470aa5e88e44bbee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_step_ode_solver.html#a3753c8d27e7420e4470aa5e88e44bbee">Reset</a> () override</td></tr>
-<tr class="memdesc:a3753c8d27e7420e4470aa5e88e44bbee inherit pro_methods_class_multi_step_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset solver state and history buffers.  <br /></td></tr>
 <tr class="inherit_header pro_attribs_class_implicit_solver"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_implicit_solver')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="class_implicit_solver.html">ImplicitSolver</a></td></tr>
 <tr class="memitem:ad83ba20bb35f79b715d8bc932f4a3bc6 inherit pro_attribs_class_implicit_solver" id="r_ad83ba20bb35f79b715d8bc932f4a3bc6"><td class="memItemLeft" align="right" valign="top">
 std::shared_ptr&lt; <a class="el" href="class_root_finder.html">RootFinder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>root_finder_</b></td></tr>
@@ -222,8 +224,44 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
 <div class="textblock"><p>Implicit multistep ODE solver implementing the Adams–Moulton method. </p>
 <p>The Adams–Moulton family consists of implicit linear multistep methods. Unlike Adams–Bashforth, these methods require solving a nonlinear system at each step but generally offer higher stability and accuracy for stiff or moderately stiff ODEs. This class uses the <a class="el" href="class_implicit_solver.html" title="Multistep ODE solver that performs implicit time-stepping using a root-finding algorithm.">ImplicitSolver</a> interface along with a <a class="el" href="class_root_finder.html" title="Abstract base class for root-finding algorithms.">RootFinder</a> to perform each implicit solve. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a969a9527ff10e9cb6199ac59b653c1d5" name="a969a9527ff10e9cb6199ac59b653c1d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a969a9527ff10e9cb6199ac59b653c1d5">&#9670;&#160;</a></span>AdamMoulton() <span class="overload">[1/2]</span></h2>
+<a id="a8f97d64ac4fad8317ea095db3ff96bdb" name="a8f97d64ac4fad8317ea095db3ff96bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f97d64ac4fad8317ea095db3ff96bdb">&#9670;&#160;</a></span>AdamMoulton() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AdamMoulton::AdamMoulton </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_ode.html">Ode</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_reader.html">Reader</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>reader</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_root_finder.html">RootFinder</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>root_finder</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an Adams–Moulton solver using input from a <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ode</td><td>Reference to the ODE system to integrate. </td></tr>
+    <tr><td class="paramname">reader</td><td><a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> object containing solver configuration. </td></tr>
+    <tr><td class="paramname">root_finder</td><td>Shared pointer to a <a class="el" href="class_root_finder.html" title="Abstract base class for root-finding algorithms.">RootFinder</a> used to solve the implicit equation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa275a3d79856e84cc1ad90808d341756" name="aa275a3d79856e84cc1ad90808d341756"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa275a3d79856e84cc1ad90808d341756">&#9670;&#160;</a></span>AdamMoulton() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,7 +284,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>order</em></span><span class="paramdefsep"> = </span><span class="paramdefval">2</span>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>order</em></span><span class="paramdefsep"> = </span><span class="paramdefval">4</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -270,8 +308,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
 
 </div>
 </div>
-<a id="a920ee7649c0bb57b72af8d941f5661e4" name="a920ee7649c0bb57b72af8d941f5661e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a920ee7649c0bb57b72af8d941f5661e4">&#9670;&#160;</a></span>AdamMoulton() <span class="overload">[2/2]</span></h2>
+<a id="a57869441815de6ceec118bd5d2a8df4b" name="a57869441815de6ceec118bd5d2a8df4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57869441815de6ceec118bd5d2a8df4b">&#9670;&#160;</a></span>AdamMoulton() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -294,7 +332,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>order</em></span><span class="paramdefsep"> = </span><span class="paramdefval">2</span>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>order</em></span><span class="paramdefsep"> = </span><span class="paramdefval">4</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

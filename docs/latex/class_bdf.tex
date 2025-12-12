@@ -18,6 +18,8 @@ Inheritance diagram for Bdf\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_bdf_ae997c1634da338406fc8e60b4705f81e}{Bdf}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, const \mbox{\hyperlink{class_reader}{Reader}} \&reader, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a BDF solver using input from a \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_bdf_a76641c4b16d7b0aa9a0c46e53b33a031}{Bdf}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order=4, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructs a BDF solver using a fixed step size. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_bdf_ac6862d48420dee43cb56966800afbba5}{Bdf}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order=4, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
@@ -31,6 +33,8 @@ const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{class_bdf_a4532c58e0c226a7
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_implicit_solver_a371f450db70c52f69c7e2bd8ef3ce7bb}{Implicit\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, const \mbox{\hyperlink{class_reader}{Reader}} \&reader, int order\+\_\+solution, int order\+\_\+derivative, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_implicit_solver}{Implicit\+Solver} using input from a \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_implicit_solver_a6974272e5de96d69d12f88e02dbb5a7b}{Implicit\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_implicit_solver}{Implicit\+Solver} using a fixed step size. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_implicit_solver_aeac055d99a35bf3480a1bcc97e4f8670}{Implicit\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=0, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$ root\+\_\+finder=nullptr)
@@ -40,12 +44,16 @@ virtual \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlin
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_multi_step_ode_solver_abe8a9977841d8d305b94a408add1e9fc}{Multi\+Step\+Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, const \mbox{\hyperlink{class_reader}{Reader}} \&reader, int order\+\_\+solution=1, int order\+\_\+derivative=1)
+\begin{DoxyCompactList}\small\item\em Constructor with \doxylink{class_reader}{Reader} input. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_multi_step_ode_solver_a146cffeef6b16589864a568834433e98}{Multi\+Step\+Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
 \begin{DoxyCompactList}\small\item\em Constructor with fixed step size. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_multi_step_ode_solver_a0908687bef779b2a8a53984d35872e8b}{Multi\+Step\+Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0, int order\+\_\+solution=1, int order\+\_\+derivative=1)
 \begin{DoxyCompactList}\small\item\em Constructor using a specified number of steps. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_multi_step_ode_solver_aad3953387824f19957cfe9e1e4eb1b90}{Step}} () override
-\begin{DoxyCompactList}\small\item\em Advance the solution by one time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Advance the solution by one time step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}} () override
+\begin{DoxyCompactList}\small\item\em Reset solver state and history buffers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -74,7 +82,9 @@ void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}
 \mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time)
 \begin{DoxyCompactList}\small\item\em Constructor for fixed number of steps. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_ode_solver_aead5f819e881f42a8c398d48678e4e16}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0)
-\begin{DoxyCompactList}\small\item\em Constructor for fixed step size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor for fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ode_solver_a759c26734e6949d87dca4f024415a666}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, const \mbox{\hyperlink{class_reader}{Reader}} \&reader)
+\begin{DoxyCompactList}\small\item\em Constructor using a \doxylink{class_reader}{Reader} for configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_multi_step_ode_solver}{Multi\+Step\+Ode\+Solver}}}
 \begin{DoxyCompactItemize}
@@ -86,9 +96,7 @@ void \mbox{\hyperlink{class_multi_step_ode_solver_a2e603e3908b1c51514107b13935d0
 void \mbox{\hyperlink{class_multi_step_ode_solver_a5bda016c46d93c7c7ce9e8b693048ed6}{Update\+Solution}} (const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y)
 \begin{DoxyCompactList}\small\item\em Add a new solution value to the history. \end{DoxyCompactList}\item 
 void {\bfseries Update\+Window\+Sum} ()
-\begin{DoxyCompactList}\small\item\em Update cached weighted sums used by the multistep scheme. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_multi_step_ode_solver_a3753c8d27e7420e4470aa5e88e44bbee}{Reset}} () override
-\begin{DoxyCompactList}\small\item\em Reset solver state and history buffers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Update cached weighted sums used by the multistep scheme. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_implicit_solver}{Implicit\+Solver}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -132,9 +140,28 @@ The BDF family consists of implicit multistep methods used primarily for stiff O
 \label{doc-constructors}
 \Hypertarget{class_bdf_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_bdf_ae997c1634da338406fc8e60b4705f81e}\index{Bdf@{Bdf}!Bdf@{Bdf}}
+\index{Bdf@{Bdf}!Bdf@{Bdf}}
+\doxysubsubsection{\texorpdfstring{Bdf()}{Bdf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_bdf_ae997c1634da338406fc8e60b4705f81e} 
+Bdf\+::\+Bdf (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{const \mbox{\hyperlink{class_reader}{Reader}} \&}]{reader}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Constructs a BDF solver using input from a \doxylink{class_reader}{Reader}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & Reference to the ODE system being integrated. \\
+\hline
+{\em reader} & \doxylink{class_reader}{Reader} object containing solver configuration. \\
+\hline
+{\em root\+\_\+finder} & Shared pointer to a \doxylink{class_root_finder}{Root\+Finder} used to solve the implicit equation. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_bdf_a76641c4b16d7b0aa9a0c46e53b33a031}\index{Bdf@{Bdf}!Bdf@{Bdf}}
 \index{Bdf@{Bdf}!Bdf@{Bdf}}
-\doxysubsubsection{\texorpdfstring{Bdf()}{Bdf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{Bdf()}{Bdf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily \label{class_bdf_a76641c4b16d7b0aa9a0c46e53b33a031} 
 Bdf\+::\+Bdf (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{double}]{step\+\_\+size}{ = {\ttfamily 0.01}, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}, }\item[{int}]{order}{ = {\ttfamily 4}, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
 
@@ -157,7 +184,7 @@ Constructs a BDF solver using a fixed step size.
 \end{DoxyParams}
 \Hypertarget{class_bdf_ac6862d48420dee43cb56966800afbba5}\index{Bdf@{Bdf}!Bdf@{Bdf}}
 \index{Bdf@{Bdf}!Bdf@{Bdf}}
-\doxysubsubsection{\texorpdfstring{Bdf()}{Bdf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{Bdf()}{Bdf()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily \label{class_bdf_ac6862d48420dee43cb56966800afbba5} 
 Bdf\+::\+Bdf (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{int}]{num\+\_\+of\+\_\+steps}{, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}, }\item[{int}]{order}{ = {\ttfamily 4}, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_root_finder}{Root\+Finder}} $>$}]{root\+\_\+finder}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
 

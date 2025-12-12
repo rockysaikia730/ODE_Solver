@@ -1,0 +1,41 @@
+\doxysection{parsed\+\_\+function.\+h}
+\hypertarget{parsed__function_8h_source}{}\label{parsed__function_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/parsed\_function.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/parsed\_function.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PARSED\_FUNCTION\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PARSED\_FUNCTION\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <mpParser.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}function.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\_tensor.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_parsed_function_a808273fed662cd815eaa2bb6c9c87924}{ParsedFunction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_function}{Function}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_parsed_function_a808273fed662cd815eaa2bb6c9c87924}{ParsedFunction}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ expressions,\ \textcolor{keyword}{const}\ std::vector<size\_t>\&\ shape,\ \textcolor{keyword}{const}\ std::vector<std::string>\&\ derivatives\ =\ \{\},\ \textcolor{keyword}{const}\ std::vector<size\_t>\&\ derivative\_shape\ =\ \{\});}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_parsed_function_a874b816d9b82a34ac2bebdecc74036e4}{Eval}}(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_parsed_function_af8c84cc7c6111f48923b5d5ce644d5a8}{Grad}}(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y,\ \textcolor{keywordtype}{double}\ dy\ =\ 0.1)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00049\ \ \ \ \ std::vector<std::string>\ expressions\_;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00054\ \ \ \ \ std::vector<size\_t>\ function\_shape\_;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00060\ \ \ \ \ std::vector<std::string>\ derivatives\_;}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ std::vector<size\_t>\ derivative\_shape\_;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ VerifyDimensions(\textcolor{keyword}{const}\ std::vector<size\_t>\&\ shape,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ Compute(\textcolor{keyword}{const}\ std::vector<std::string>\&\ expressions,\ \textcolor{keyword}{const}\ std::vector<size\_t>\&\ shape,\ \textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ y,\ \textcolor{keywordtype}{bool}\ check\_shape)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ CheckInputShape(\textcolor{keyword}{const}\ std::vector<std::string>\&\ expressions,\ \textcolor{keyword}{const}\ std::vector<size\_t>\&\ shape)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PARSED\_FUNCTION\_H\_}}
+
+\end{DoxyCode}

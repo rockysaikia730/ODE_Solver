@@ -1,0 +1,159 @@
+\doxysection{Output\+Csv Class Reference}
+\hypertarget{class_output_csv}{}\label{class_output_csv}\index{OutputCsv@{OutputCsv}}
+
+
+Derived class for outputting ODE solver results in CSV format. The output allows a customizable separator character, which can be set through the Set\+Separator method or the constructor. A header row can also be specified using the Set\+Header method.  
+
+
+
+
+{\ttfamily \#include $<$output\+\_\+csv.\+h$>$}
+
+Inheritance diagram for Output\+Csv\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_output_csv}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_output_csv_a5ad5144bc04ba0bcd16b0dc7577a93d3}{Output\+Csv}} (const std\+::string \&filename, char separator=\textquotesingle{};\textquotesingle{}, char element\+\_\+separator=\textquotesingle{},\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_output_csv_aa90d64ae97dd3e78494ce8ee81e1edc0}\label{class_output_csv_aa90d64ae97dd3e78494ce8ee81e1edc0} 
+char {\bfseries Get\+Separator} () const
+\begin{DoxyCompactList}\small\item\em Gets the separator character used in the CSV file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_csv_a70e2b7744b90703781a3de8d244efa49}{Set\+Separator}} (char separator)
+\begin{DoxyCompactList}\small\item\em Sets the separator character used in the CSV file. \end{DoxyCompactList}\item 
+\Hypertarget{class_output_csv_a70af53462051a588b41d629c87778f22}\label{class_output_csv_a70af53462051a588b41d629c87778f22} 
+std\+::vector$<$ std\+::string $>$ {\bfseries Get\+Header} () const
+\begin{DoxyCompactList}\small\item\em Gets the header row of the CSV file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_csv_a9bdef00387845cff7e8d2c22436391e2}{Set\+Header}} (const std\+::vector$<$ std\+::string $>$ \&header)
+\begin{DoxyCompactList}\small\item\em Sets the header row of the CSV file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_output_file}{Output\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_output_file_a3102bcd9fe6eea928f2e64f5848d720d}{Output\+File}} (const std\+::string \&filename, char separator=\textquotesingle{};\textquotesingle{}, char element\+\_\+separator=\textquotesingle{},\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Output\+File} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_output_file_ada3edd898ddadd6c328c508ee18c9538}{Write}} (const \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}} \&solver) override
+\begin{DoxyCompactList}\small\item\em Method to write the ODE solver results to the output file. \end{DoxyCompactList}\item 
+std\+::string {\bfseries Get\+Filename} () const
+\begin{DoxyCompactList}\small\item\em Gets the output filename. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_file_aed65cd6de590f6ee9589a2d83f9025c1}{Set\+Filename}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Sets the output filename. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_output}{Output}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Output} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor and destructor. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Output} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_output_csv_a3896e010b06a5caad88384acd3aecc5d}{File\+Specific\+Setup}} (std\+::ofstream \&file) const override
+\begin{DoxyCompactList}\small\item\em File specific setup for CSV output. We write the header row here. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_output_file}{Output\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Ensure\+File\+Exists} () const
+\begin{DoxyCompactList}\small\item\em Ensures the output file exists; creates it if it does not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_file_acfd96a28ba0bdca0713bc42ed196c1f4}{Write\+Tensor\+Recursive}} (std\+::ofstream \&file, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&tensor, const std\+::vector$<$ size\+\_\+t $>$ \&shape, std\+::vector$<$ size\+\_\+t $>$ \&index, size\+\_\+t dim) const
+\begin{DoxyCompactList}\small\item\em A helper to write recursive data structures if needed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_output_file}{Output\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries filename\+\_\+}
+\begin{DoxyCompactList}\small\item\em The name of the output file. \end{DoxyCompactList}\item 
+char {\bfseries separator\+\_\+}
+\begin{DoxyCompactList}\small\item\em The separator character used in the output file. \end{DoxyCompactList}\item 
+char {\bfseries element\+\_\+separator\+\_\+}
+\begin{DoxyCompactList}\small\item\em The separator character used between elements in tensor output (e.\+g., in nested structures). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Derived class for outputting ODE solver results in CSV format. The output allows a customizable separator character, which can be set through the Set\+Separator method or the constructor. A header row can also be specified using the Set\+Header method. 
+
+\label{doc-constructors}
+\Hypertarget{class_output_csv_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_output_csv_a5ad5144bc04ba0bcd16b0dc7577a93d3}\index{OutputCsv@{OutputCsv}!OutputCsv@{OutputCsv}}
+\index{OutputCsv@{OutputCsv}!OutputCsv@{OutputCsv}}
+\doxysubsubsection{\texorpdfstring{OutputCsv()}{OutputCsv()}}
+{\footnotesize\ttfamily \label{class_output_csv_a5ad5144bc04ba0bcd16b0dc7577a93d3} 
+Output\+Csv\+::\+Output\+Csv (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{char}]{separator}{ = {\ttfamily \textquotesingle{};\textquotesingle{}}, }\item[{char}]{element\+\_\+separator}{ = {\ttfamily \textquotesingle{},\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the CSV output file. \\
+\hline
+{\em separator} & The separator character used in the CSV file. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_output_csv_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_output_csv_a3896e010b06a5caad88384acd3aecc5d}\index{OutputCsv@{OutputCsv}!FileSpecificSetup@{FileSpecificSetup}}
+\index{FileSpecificSetup@{FileSpecificSetup}!OutputCsv@{OutputCsv}}
+\doxysubsubsection{\texorpdfstring{FileSpecificSetup()}{FileSpecificSetup()}}
+{\footnotesize\ttfamily \label{class_output_csv_a3896e010b06a5caad88384acd3aecc5d} 
+void Output\+Csv\+::\+File\+Specific\+Setup (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+File specific setup for CSV output. We write the header row here. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The output file stream. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_output_file_a4eada1b5fb089873a201b6322ca86f43}{Output\+File}}.
+
+\Hypertarget{class_output_csv_a9bdef00387845cff7e8d2c22436391e2}\index{OutputCsv@{OutputCsv}!SetHeader@{SetHeader}}
+\index{SetHeader@{SetHeader}!OutputCsv@{OutputCsv}}
+\doxysubsubsection{\texorpdfstring{SetHeader()}{SetHeader()}}
+{\footnotesize\ttfamily \label{class_output_csv_a9bdef00387845cff7e8d2c22436391e2} 
+void Output\+Csv\+::\+Set\+Header (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{header}{}\end{DoxyParamCaption})}
+
+
+
+Sets the header row of the CSV file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header} & The new header string. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_output_csv_a70e2b7744b90703781a3de8d244efa49}\index{OutputCsv@{OutputCsv}!SetSeparator@{SetSeparator}}
+\index{SetSeparator@{SetSeparator}!OutputCsv@{OutputCsv}}
+\doxysubsubsection{\texorpdfstring{SetSeparator()}{SetSeparator()}}
+{\footnotesize\ttfamily \label{class_output_csv_a70e2b7744b90703781a3de8d244efa49} 
+void Output\+Csv\+::\+Set\+Separator (\begin{DoxyParamCaption}\item[{char}]{separator}{}\end{DoxyParamCaption})}
+
+
+
+Sets the separator character used in the CSV file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em separator} & The new separator character. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/output\+\_\+csv.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/output\+\_\+csv.\+cpp\end{DoxyCompactItemize}

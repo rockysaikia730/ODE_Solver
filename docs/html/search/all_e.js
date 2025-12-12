@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['main_0',['REMAINING TO DO THE SOLVER, Dynamic tensor, and the main.',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md18',1,'']]],
-  ['max_5fiterations_1',['max_iterations',['../struct_ode_raw_data_1_1solver__params.html#a7e23819614ac4fbf12ee14903e7bad91',1,'OdeRawData::solver_params']]],
-  ['mechanism_20provided_20for_20veryfying_20the_20shape_20of_20the_20function_20and_20the_20input_20tensor_20this_20responsibility_20is_20delegated_20to_20the_20user_20to_20verify_20for_20the_20time_20being_2',['Right now, there is no checking mechanism provided for veryfying the shape of the function and the input tensor. This responsibility is delegated to the user to verify for the time being.',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md15',1,'']]],
-  ['method_3',['method',['../struct_ode_raw_data_1_1solver__params.html#a52402947caf3267dd7bbb59de276ec7a',1,'OdeRawData::solver_params']]],
-  ['multistepodesolver_4',['MultiStepOdeSolver',['../class_multi_step_ode_solver.html',1,'MultiStepOdeSolver'],['../class_multi_step_ode_solver.html#a146cffeef6b16589864a568834433e98',1,'MultiStepOdeSolver::MultiStepOdeSolver(const Ode &amp;ode, double step_size=0.01, double end_time=0.0, int order_solution=1, int order_derivative=1)'],['../class_multi_step_ode_solver.html#a0908687bef779b2a8a53984d35872e8b',1,'MultiStepOdeSolver::MultiStepOdeSolver(const Ode &amp;ode, int num_of_steps, double end_time=0.0, int order_solution=1, int order_derivative=1)']]]
+  ['lineendswith_0',['LineEndsWith',['../class_reader.html#a3b4c2e05be02fe3f4204f749c5048b1b',1,'Reader']]],
+  ['linestartswith_1',['LineStartsWith',['../class_reader.html#a8eb10986044843cbf23f9cff0fb57928',1,'Reader']]]
 ];

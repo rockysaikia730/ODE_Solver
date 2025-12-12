@@ -143,6 +143,8 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~OdeSolver</b> ()=
 <tr class="memdesc:ab8375f1f3330bf275d6b18fc936deb3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for fixed number of steps.  <br /></td></tr>
 <tr class="memitem:aead5f819e881f42a8c398d48678e4e16" id="r_aead5f819e881f42a8c398d48678e4e16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aead5f819e881f42a8c398d48678e4e16">OdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double step_size=0.01, double end_time=0.0)</td></tr>
 <tr class="memdesc:aead5f819e881f42a8c398d48678e4e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for fixed step size.  <br /></td></tr>
+<tr class="memitem:a759c26734e6949d87dca4f024415a666" id="r_a759c26734e6949d87dca4f024415a666"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a759c26734e6949d87dca4f024415a666">OdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, const <a class="el" href="class_reader.html">Reader</a> &amp;reader)</td></tr>
+<tr class="memdesc:a759c26734e6949d87dca4f024415a666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor using a <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> for configuration.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -170,7 +172,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
 <p>The <a class="el" href="class_ode_solver.html" title="Abstract base class for iterative Ordinary Differential Equation solvers.">OdeSolver</a> manages the simulation loop, time tracking, and state updates. It holds a reference to the problem definition (<a class="el" href="class_ode.html" title="Represents an Ordinary Differential Equation (ODE) problem definition. This class encapsulates the in...">Ode</a>) and uses a specific numerical method (implemented in derived classes via <a class="el" href="#af1842eb01ec5d591bb813ce2a064adc5" title="Updates the solution_ and time for next time step.">Step()</a>) to advance the solution. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab8375f1f3330bf275d6b18fc936deb3c" name="ab8375f1f3330bf275d6b18fc936deb3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8375f1f3330bf275d6b18fc936deb3c">&#9670;&#160;</a></span>OdeSolver() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8375f1f3330bf275d6b18fc936deb3c">&#9670;&#160;</a></span>OdeSolver() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,7 +208,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
 </div>
 </div>
 <a id="aead5f819e881f42a8c398d48678e4e16" name="aead5f819e881f42a8c398d48678e4e16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aead5f819e881f42a8c398d48678e4e16">&#9670;&#160;</a></span>OdeSolver() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aead5f819e881f42a8c398d48678e4e16">&#9670;&#160;</a></span>OdeSolver() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -235,6 +237,36 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
     <tr><td class="paramname">ode</td><td>A constant reference to the ODE definition. Must outlive the solver. </td></tr>
     <tr><td class="paramname">end_time</td><td>The target simulation time. </td></tr>
     <tr><td class="paramname">step_size</td><td>The time step (dt). Defaults to 0.01. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a759c26734e6949d87dca4f024415a666" name="a759c26734e6949d87dca4f024415a666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a759c26734e6949d87dca4f024415a666">&#9670;&#160;</a></span>OdeSolver() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OdeSolver::OdeSolver </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_ode.html">Ode</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_reader.html">Reader</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>reader</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor using a <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> for configuration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ode</td><td>A constant reference to the ODE definition. Must outlive the solver. </td></tr>
+    <tr><td class="paramname">reader</td><td><a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> object containing solver configuration. </td></tr>
   </table>
   </dd>
 </dl>

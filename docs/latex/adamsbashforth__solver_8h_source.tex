@@ -10,17 +10,20 @@
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\_tensor.h}}"{}}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_adams_bashforth_ac4434a5a1d33e247298958a5896658ca}{AdamsBashforth}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_multi_step_ode_solver_a146cffeef6b16589864a568834433e98}{MultiStepOdeSolver}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_adams_bashforth_a0287451fe952c308d9d6fca5e246a7f7}{AdamsBashforth}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_multi_step_ode_solver_abe8a9977841d8d305b94a408add1e9fc}{MultiStepOdeSolver}}\ \{}
 \DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_adams_bashforth_ac4434a5a1d33e247298958a5896658ca}{AdamsBashforth}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ \ \textcolor{keywordtype}{int}\ order\ =\ 4);}
-\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_adams_bashforth_ac4434a5a1d33e247298958a5896658ca}{AdamsBashforth}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ \textcolor{keywordtype}{int}\ order\ =\ 4);}
-\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_adams_bashforth_a1a7a6e06ee0fa286e0738578b77a29c1}{ComputeStep}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{class_adams_bashforth_a8ca9f70541dd2fc636ff19e9d8b1ea65}{GetCoeffsY}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{class_adams_bashforth_a7f824059707e62d224e0d4b206e75e02}{GetCoeffsdY}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_adams_bashforth_aebcc437107894dd1bd885095b3659df8}{GetOrder}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00072\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ order\_;}
-\DoxyCodeLine{00077\ \};}
-\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_adams_bashforth_a0287451fe952c308d9d6fca5e246a7f7}{AdamsBashforth}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_reader}{Reader}}\&\ reader);}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_adams_bashforth_a0287451fe952c308d9d6fca5e246a7f7}{AdamsBashforth}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ \ \textcolor{keywordtype}{int}\ order\ =\ 4);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_adams_bashforth_a0287451fe952c308d9d6fca5e246a7f7}{AdamsBashforth}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ \textcolor{keywordtype}{int}\ order\ =\ 4);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ \mbox{\hyperlink{class_adams_bashforth_a1a7a6e06ee0fa286e0738578b77a29c1}{ComputeStep}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{class_adams_bashforth_a8ca9f70541dd2fc636ff19e9d8b1ea65}{GetCoeffsY}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{class_adams_bashforth_a7f824059707e62d224e0d4b206e75e02}{GetCoeffsdY}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_adams_bashforth_aebcc437107894dd1bd885095b3659df8}{GetOrder}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{int}\ order\_;}
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

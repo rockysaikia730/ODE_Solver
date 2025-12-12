@@ -1,0 +1,60 @@
+\doxysection{Output Class Reference}
+\hypertarget{class_output}{}\label{class_output}\index{Output@{Output}}
+
+
+Abstract base class for outputting ODE solver results. Derived classes should implement the Write method to handle specific output formats.  
+
+
+
+
+{\ttfamily \#include $<$output.\+h$>$}
+
+Inheritance diagram for Output\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_output}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_output_ac8c66cf55da5018b30b2f26df2545825}\label{class_output_ac8c66cf55da5018b30b2f26df2545825} 
+{\bfseries Output} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor and destructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_output_affd7475aec53aa6e5f8baf651300acd8}\label{class_output_affd7475aec53aa6e5f8baf651300acd8} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Output} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_output_a6d4530d806c96e5a781d9ba41dd04087}{Write}} (const \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}} \&solver)=0
+\begin{DoxyCompactList}\small\item\em Method to write the ODE solver results. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for outputting ODE solver results. Derived classes should implement the Write method to handle specific output formats. 
+
+\label{doc-func-members}
+\Hypertarget{class_output_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_output_a6d4530d806c96e5a781d9ba41dd04087}\index{Output@{Output}!Write@{Write}}
+\index{Write@{Write}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily \label{class_output_a6d4530d806c96e5a781d9ba41dd04087} 
+virtual void Output\+::\+Write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}} \&}]{solver}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Method to write the ODE solver results. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solver} & A constant reference to the \doxylink{class_ode_solver}{Ode\+Solver} instance containing results to output. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_output_file_ada3edd898ddadd6c328c508ee18c9538}{Output\+File}}, and \mbox{\hyperlink{class_output_plotter_a4634bb3a1e04a3b61f2128a41830214b}{Output\+Plotter}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/output.\+h\end{DoxyCompactItemize}

@@ -2,17 +2,20 @@
 \hypertarget{solver__methods_8h_source}{}\label{solver__methods_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/solver\_methods.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/solver\_methods.h}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SOLVER\_METHODS\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SOLVER\_METHODS\_H}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SOLVER\_METHODS\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SOLVER\_METHODS\_H\_}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{enum\ class}\ SolverMethod\ \{}
-\DoxyCodeLine{00009\ \ \ \ \ kExplicitEuler,}
-\DoxyCodeLine{00010\ \ \ \ \ kImplicitEuler,}
-\DoxyCodeLine{00011\ \ \ \ \ kRungeKutta4,}
-\DoxyCodeLine{00012\ \ \ \ \ kAdamsBashforth,}
-\DoxyCodeLine{00013\ \ \ \ \ kUnknown}
-\DoxyCodeLine{00014\ \};}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SOLVER\_METHODS\_H}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{enum\ class}\ SolverMethod\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ kAdamMoulton,}
+\DoxyCodeLine{00011\ \ \ \ \ kAdamBashforth,}
+\DoxyCodeLine{00012\ \ \ \ \ kBackwardDifferentiation,}
+\DoxyCodeLine{00013\ \ \ \ \ kBackwardEuler,}
+\DoxyCodeLine{00014\ \ \ \ \ kForwardEuler,}
+\DoxyCodeLine{00015\ \ \ \ \ kForwardEulerLight,}
+\DoxyCodeLine{00016\ \ \ \ \ kRungeKutta,}
+\DoxyCodeLine{00017\ \ \ \ \ kUndefinedSolver}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SOLVER\_METHODS\_H\_}}
 
 \end{DoxyCode}

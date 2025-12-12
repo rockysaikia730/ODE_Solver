@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{iftex}
+\usepackage{ifthen}
+\usepackage{epsfig}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\color{white}
+\pagecolor{black}
+\ifPDFTeX
+\usepackage{newunicodechar}
+  \makeatletter
+    \def\doxynewunicodechar#1#2{%
+    \@tempswafalse
+    \edef\nuc@tempa{\detokenize{#1}}%
+    \if\relax\nuc@tempa\relax
+      \nuc@emptyargerr
+    \else
+      \edef\@tempb{\expandafter\@car\nuc@tempa\@nil}%
+      \nuc@check
+      \if@tempswa
+        \@namedef{u8:\nuc@tempa}{#2}%
+      \fi
+    \fi
+  }
+  \makeatother
+  \doxynewunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \doxynewunicodechar{²}{${}^{2}$}% Superscript two
+  \doxynewunicodechar{³}{${}^{3}$}% Superscript three
+
+\fi
+\pagestyle{empty}
+\begin{document}
+\[    \sum_{k=0}^{m} \alpha_k y_{n+1-k}
+     = h \sum_{k=0}^{m} \beta_k f(t_{n+1-k}, y_{n+1-k})
+\]
+\pagebreak
+
+\[    y_{n+1} = y_n + h \sum_{k=0}^{p-1} b_k f(t_{n-k}, y_{n-k})
+\]
+\pagebreak
+
+\[    \sum_{k=0}^{m} \alpha_k y_{n-k} = h \beta f(t_{n+1}, y_{n+1})
+\]
+\pagebreak
+
+$\beta$
+\pagebreak
+
+\[    y_{n+1} = y_n + h f(t_n, y_n)
+\]
+\pagebreak
+
+\[    F(t_{n+1},y_{n+1}) = 0
+\]
+\pagebreak
+
+\[    y_{k+1} = y_k - J^{-1}(y_k) F(y_k)
+\]
+\pagebreak
+
+$J$
+\pagebreak
+
+$F$
+\pagebreak
+
+$y_k$
+\pagebreak
+
+\[    y_{n+1} = y_n + \frac{h}{6}(k_1 + 2 k_2 + 2 k_3 + k_4)
+\]
+\pagebreak
+
+$k_i$
+\pagebreak
+
+\end{document}

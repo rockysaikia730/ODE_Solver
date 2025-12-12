@@ -47,34 +47,20 @@ const \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \& \mbox{\hyperlink
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{class_reader_a30a4105a8595150cb94854c71637ed3f}{Is\+Numeric}} (const std\+::string \&str) const
-\begin{DoxyCompactList}\small\item\em Checks if a string represents a numeric value. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_reader_a1949190ed8188132c3a25e886f10d376}{Split}} (const std\+::string \&str, const char \&separator) const
 \begin{DoxyCompactList}\small\item\em Splits a string into tokens based on a delimiter. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_reader_a024e3b94ffc0b0c8a14fb6e20059ea03}{Trim}} (const std\+::vector$<$ std\+::string $>$ \&tokens) const
 \begin{DoxyCompactList}\small\item\em Trims whitespace from each token if there is a space at the beginning or end of the token. It should not remove spaces within the token, as those may be vector values. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_reader_aee6eaf793ada4d73dc1d9bb28a50d2a3}{Parse\+Tensor}} (const std\+::string \&str)
-\begin{DoxyCompactList}\small\item\em Helper function to parse a string into a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_reader_a4ad23af590282f6c953777d81d190a4e}{Is\+Complex\+Number}} (const std\+::string \&str) const
-\begin{DoxyCompactList}\small\item\em Helper function to check if string is a complex number or a double. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{class_reader_a872ff0b4164a7f84c49c1b1f7fa5cdd3}{To\+Lower}} (const std\+::string \&str) const
-\begin{DoxyCompactList}\small\item\em Converts a string to lowercase. \end{DoxyCompactList}\item 
 \Hypertarget{class_reader_a8eb10986044843cbf23f9cff0fb57928}\label{class_reader_a8eb10986044843cbf23f9cff0fb57928} 
 bool {\bfseries Line\+Starts\+With} (const std\+::string \&line, const std\+::string \&start) const
-\begin{DoxyCompactList}\small\item\em Returns the starting value of line. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns true if line starts with start. \end{DoxyCompactList}\item 
 \Hypertarget{class_reader_a3b4c2e05be02fe3f4204f749c5048b1b}\label{class_reader_a3b4c2e05be02fe3f4204f749c5048b1b} 
 bool {\bfseries Line\+Ends\+With} (const std\+::string \&line, const std\+::string \&end) const
-\begin{DoxyCompactList}\small\item\em Returns the ending value of line. \end{DoxyCompactList}\item 
-std\+::complex$<$ double $>$ \mbox{\hyperlink{class_reader_a149ef0f9b7c40881ec30a1dc38a8c513}{Parse\+Complex\+Number}} (const std\+::string \&str) const
-\begin{DoxyCompactList}\small\item\em Parses a string representing a complex number in the form (a,b). \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{class_reader_a1407cb6d6c193ab9bcbcdd82558fe879}{Parse\+Double}} (const std\+::string \&str) const
-\begin{DoxyCompactList}\small\item\em Parses a string representing a double. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_reader_a891f6505346d7f7389f5eadc35d1d1bf}{Interpret\+Key\+Value\+Pair}} (const std\+::string \&key, const std\+::string \&value)
-\begin{DoxyCompactList}\small\item\em Parses the solver method from a string and sets it in raw\+\_\+data\+\_\+. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns true if line ends with end. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_reader_ac44b41ce56079ec4f6dd3ca0eb44e0b6}{Trim\+String}} (const std\+::string \&s) const
 \begin{DoxyCompactList}\small\item\em trim a single string \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_reader_aa8fc2dbf2e8a036539e632d2aee16e3e}{Parse\+Solver\+Method\+From\+String}} (const std\+::string \&method\+\_\+string)
-\begin{DoxyCompactList}\small\item\em Parses the solver method from a string and sets it in raw\+\_\+data\+\_\+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_reader_a891f6505346d7f7389f5eadc35d1d1bf}{Interpret\+Key\+Value\+Pair}} (const std\+::string \&key, const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Key-\/value pair interpreter for reading lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -181,59 +167,15 @@ void Reader\+::\+Interpret\+Key\+Value\+Pair (\begin{DoxyParamCaption}\item[{con
 
 
 
-Parses the solver method from a string and sets it in raw\+\_\+data\+\_\+. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em method\+\_\+string} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-a vector of size\+\_\+t representing the shape of the parsed tensor.
-\end{DoxyReturn}
 Key-\/value pair interpreter for reading lines. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em key} & The key string. \\
 \hline
 {\em value} & The value string. This method interprets the key-\/value pairs and updates the raw\+\_\+data\+\_\+ member variable accordingly. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_reader_a4ad23af590282f6c953777d81d190a4e}\index{Reader@{Reader}!IsComplexNumber@{IsComplexNumber}}
-\index{IsComplexNumber@{IsComplexNumber}!Reader@{Reader}}
-\doxysubsubsection{\texorpdfstring{IsComplexNumber()}{IsComplexNumber()}}
-{\footnotesize\ttfamily \label{class_reader_a4ad23af590282f6c953777d81d190a4e} 
-bool Reader\+::\+Is\+Complex\+Number (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Helper function to check if string is a complex number or a double. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em str} & The string to check. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True if the string is complex, false if double. 
-\end{DoxyReturn}
-\Hypertarget{class_reader_a30a4105a8595150cb94854c71637ed3f}\index{Reader@{Reader}!IsNumeric@{IsNumeric}}
-\index{IsNumeric@{IsNumeric}!Reader@{Reader}}
-\doxysubsubsection{\texorpdfstring{IsNumeric()}{IsNumeric()}}
-{\footnotesize\ttfamily \label{class_reader_a30a4105a8595150cb94854c71637ed3f} 
-bool Reader\+::\+Is\+Numeric (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Checks if a string represents a numeric value. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em str} & The string to check. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True if the string is numeric, false otherwise. 
-\end{DoxyReturn}
 \Hypertarget{class_reader_a33c491f270968d5c129807b5d3dfa3a4}\index{Reader@{Reader}!Open@{Open}}
 \index{Open@{Open}!Reader@{Reader}}
 \doxysubsubsection{\texorpdfstring{Open()}{Open()}}
@@ -246,78 +188,6 @@ Opens the data source for reading.
 
 \begin{DoxyReturn}{Returns}
 True if the data source was successfully opened, false otherwise. 
-\end{DoxyReturn}
-\Hypertarget{class_reader_a149ef0f9b7c40881ec30a1dc38a8c513}\index{Reader@{Reader}!ParseComplexNumber@{ParseComplexNumber}}
-\index{ParseComplexNumber@{ParseComplexNumber}!Reader@{Reader}}
-\doxysubsubsection{\texorpdfstring{ParseComplexNumber()}{ParseComplexNumber()}}
-{\footnotesize\ttfamily \label{class_reader_a149ef0f9b7c40881ec30a1dc38a8c513} 
-std\+::complex$<$ double $>$ Reader\+::\+Parse\+Complex\+Number (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Parses a string representing a complex number in the form (a,b). 
-
-
-\begin{DoxyParams}{Parameters}
-{\em str} & The string to parse. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A std\+::complex$<$double$>$ object. 
-\end{DoxyReturn}
-\Hypertarget{class_reader_a1407cb6d6c193ab9bcbcdd82558fe879}\index{Reader@{Reader}!ParseDouble@{ParseDouble}}
-\index{ParseDouble@{ParseDouble}!Reader@{Reader}}
-\doxysubsubsection{\texorpdfstring{ParseDouble()}{ParseDouble()}}
-{\footnotesize\ttfamily \label{class_reader_a1407cb6d6c193ab9bcbcdd82558fe879} 
-double Reader\+::\+Parse\+Double (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Parses a string representing a double. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em str} & The string to parse. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A double value. 
-\end{DoxyReturn}
-\Hypertarget{class_reader_aa8fc2dbf2e8a036539e632d2aee16e3e}\index{Reader@{Reader}!ParseSolverMethodFromString@{ParseSolverMethodFromString}}
-\index{ParseSolverMethodFromString@{ParseSolverMethodFromString}!Reader@{Reader}}
-\doxysubsubsection{\texorpdfstring{ParseSolverMethodFromString()}{ParseSolverMethodFromString()}}
-{\footnotesize\ttfamily \label{class_reader_aa8fc2dbf2e8a036539e632d2aee16e3e} 
-void Reader\+::\+Parse\+Solver\+Method\+From\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{method\+\_\+string}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Parses the solver method from a string and sets it in raw\+\_\+data\+\_\+. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em method\+\_\+string} & The string representing the solver method. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void. Sets the solver method in raw\+\_\+data\+\_\+. 
-\end{DoxyReturn}
-\Hypertarget{class_reader_aee6eaf793ada4d73dc1d9bb28a50d2a3}\index{Reader@{Reader}!ParseTensor@{ParseTensor}}
-\index{ParseTensor@{ParseTensor}!Reader@{Reader}}
-\doxysubsubsection{\texorpdfstring{ParseTensor()}{ParseTensor()}}
-{\footnotesize\ttfamily \label{class_reader_aee6eaf793ada4d73dc1d9bb28a50d2a3} 
-\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Reader\+::\+Parse\+Tensor (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Helper function to parse a string into a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em str} & The string to parse. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A \doxylink{class_dynamic_tensor}{Dynamic\+Tensor} object. 
 \end{DoxyReturn}
 \Hypertarget{class_reader_a782ef0f80b0d27b8a3e32be538fed057}\index{Reader@{Reader}!Read@{Read}}
 \index{Read@{Read}!Reader@{Reader}}
@@ -400,24 +270,6 @@ Splits a string into tokens based on a delimiter.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A vector of tokens. 
-\end{DoxyReturn}
-\Hypertarget{class_reader_a872ff0b4164a7f84c49c1b1f7fa5cdd3}\index{Reader@{Reader}!ToLower@{ToLower}}
-\index{ToLower@{ToLower}!Reader@{Reader}}
-\doxysubsubsection{\texorpdfstring{ToLower()}{ToLower()}}
-{\footnotesize\ttfamily \label{class_reader_a872ff0b4164a7f84c49c1b1f7fa5cdd3} 
-std\+::string Reader\+::\+To\+Lower (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Converts a string to lowercase. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em str} & The string to convert. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The lowercase version of the string. 
 \end{DoxyReturn}
 \Hypertarget{class_reader_a024e3b94ffc0b0c8a14fb6e20059ea03}\index{Reader@{Reader}!Trim@{Trim}}
 \index{Trim@{Trim}!Reader@{Reader}}

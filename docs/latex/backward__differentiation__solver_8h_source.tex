@@ -9,20 +9,23 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\_tensor.h}}"{}}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}implicit\_solver.h"{}}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bdf_a76641c4b16d7b0aa9a0c46e53b33a031}{Bdf}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_implicit_solver_a6974272e5de96d69d12f88e02dbb5a7b}{ImplicitSolver}}\ \{}
-\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_bdf_a76641c4b16d7b0aa9a0c46e53b33a031}{Bdf}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\ =\ 4,\ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_bdf_a76641c4b16d7b0aa9a0c46e53b33a031}{Bdf}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\ =\ 4,\ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bdf_a35a6dd768ab8ab6056378f046e3dcf83}{GetOrder}}();}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{class_bdf_a88a8c043f3665d605c46e876df38bedd}{GetCoeffsY}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{class_bdf_a4532c58e0c226a7527f59e5170c88fee}{GetCoeffsdY}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00066\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{int}\ order\_;}
-\DoxyCodeLine{00071\ \};}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}reader.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bdf_ae997c1634da338406fc8e60b4705f81e}{Bdf}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_implicit_solver_a371f450db70c52f69c7e2bd8ef3ce7bb}{ImplicitSolver}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_bdf_ae997c1634da338406fc8e60b4705f81e}{Bdf}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_reader}{Reader}}\&\ reader,\ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_bdf_ae997c1634da338406fc8e60b4705f81e}{Bdf}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{double}\ step\_size\ =\ 0.01,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\ =\ 4,\ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_bdf_ae997c1634da338406fc8e60b4705f81e}{Bdf}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode}{Ode}}\&\ ode,\ \textcolor{keywordtype}{int}\ num\_of\_steps,\ \textcolor{keywordtype}{double}\ end\_time\ =\ 0.0,\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\ =\ 4,\ std::shared\_ptr<RootFinder>\ root\_finder\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bdf_a35a6dd768ab8ab6056378f046e3dcf83}{GetOrder}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{class_bdf_a88a8c043f3665d605c46e876df38bedd}{GetCoeffsY}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{class_bdf_a4532c58e0c226a7527f59e5170c88fee}{GetCoeffsdY}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00075\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{int}\ order\_;}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

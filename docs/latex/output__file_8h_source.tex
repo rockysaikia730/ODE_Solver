@@ -1,0 +1,47 @@
+\doxysection{output\+\_\+file.\+h}
+\hypertarget{output__file_8h_source}{}\label{output__file_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/output\_file.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/output\_file.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ OUTPUT\_FILE\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ OUTPUT\_FILE\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\_tensor.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ode__solver_8h}{ode\_solver.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}output.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ode_solver}{OdeSolver}};\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_output_file_a3102bcd9fe6eea928f2e64f5848d720d}{OutputFile}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_output_ac8c66cf55da5018b30b2f26df2545825}{Output}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_output_file_a3102bcd9fe6eea928f2e64f5848d720d}{OutputFile}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keywordtype}{char}\ separator\ =\ \textcolor{charliteral}{';'},\ \textcolor{keywordtype}{char}\ element\_separator\ =\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_output_file_ab38e4f8aa1e1c9c71d6cf63dc575de63}{\string~OutputFile}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_file_ada3edd898ddadd6c328c508ee18c9538}{Write}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ode_solver}{OdeSolver}}\&\ solver)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ \mbox{\hyperlink{class_output_file_a272bd7349ae74368192327603a7cce8b}{GetFilename}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_file_aed65cd6de590f6ee9589a2d83f9025c1}{SetFilename}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ \mbox{\hyperlink{class_output_file_a1ad2f83a194f0dbfd91363d93e12057b}{filename\_}};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_output_file_abdb252c88a02de30e3681fb73e9fdcdd}{separator\_}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_output_file_a3622ccf36663de7c66fef6b329949f35}{element\_separator\_}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_file_a82371bd1be02eb55e1b511748ae6eb8f}{EnsureFileExists}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_file_acfd96a28ba0bdca0713bc42ed196c1f4}{WriteTensorRecursive}}(std::ofstream\&\ file,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\&\ tensor,\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<size\_t>\&\ shape,\ std::vector<size\_t>\&\ index,\ \textcolor{keywordtype}{size\_t}\ dim)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_file_a4eada1b5fb089873a201b6322ca86f43}{FileSpecificSetup}}(std::ofstream\&\ file)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OUTPUT\_FILE\_H\_}}
+
+\end{DoxyCode}

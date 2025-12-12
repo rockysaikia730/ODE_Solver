@@ -1,0 +1,119 @@
+\doxysection{Parsed\+Function Class Reference}
+\hypertarget{class_parsed_function}{}\label{class_parsed_function}\index{ParsedFunction@{ParsedFunction}}
+
+
+Concrete implementation of \doxylink{class_function}{Function} using mu\+ParserX for parsing mathematical expressions. The documentation of mu\+ParserX can be found at\+: \href{https://beltoforion.de/en/muparserx/}{\texttt{https\+://beltoforion.\+de/en/muparserx/}} This class allows users to define ODE functions using string expressions that are parsed and evaluated at runtime. It supports multiple output expressions and can handle tensor inputs.  
+
+
+
+
+{\ttfamily \#include $<$parsed\+\_\+function.\+h$>$}
+
+Inheritance diagram for Parsed\+Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_parsed_function}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_parsed_function_a808273fed662cd815eaa2bb6c9c87924}{Parsed\+Function}} (const std\+::vector$<$ std\+::string $>$ \&expressions, const std\+::vector$<$ size\+\_\+t $>$ \&shape, const std\+::vector$<$ std\+::string $>$ \&derivatives=\{\}, const std\+::vector$<$ size\+\_\+t $>$ \&derivative\+\_\+shape=\{\})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_parsed_function_a874b816d9b82a34ac2bebdecc74036e4}{Eval}} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y) const override
+\begin{DoxyCompactList}\small\item\em Evaluates the parsed function at a given time and state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_parsed_function_af8c84cc7c6111f48923b5d5ce644d5a8}{Grad}} (double t, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&y, double dy=0.\+1) const override
+\begin{DoxyCompactList}\small\item\em Overrides the gradient method if derivative expressions are provided. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_function}{Function}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Function} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete implementation of \doxylink{class_function}{Function} using mu\+ParserX for parsing mathematical expressions. The documentation of mu\+ParserX can be found at\+: \href{https://beltoforion.de/en/muparserx/}{\texttt{https\+://beltoforion.\+de/en/muparserx/}} This class allows users to define ODE functions using string expressions that are parsed and evaluated at runtime. It supports multiple output expressions and can handle tensor inputs. 
+
+\label{doc-constructors}
+\Hypertarget{class_parsed_function_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_parsed_function_a808273fed662cd815eaa2bb6c9c87924}\index{ParsedFunction@{ParsedFunction}!ParsedFunction@{ParsedFunction}}
+\index{ParsedFunction@{ParsedFunction}!ParsedFunction@{ParsedFunction}}
+\doxysubsubsection{\texorpdfstring{ParsedFunction()}{ParsedFunction()}}
+{\footnotesize\ttfamily \label{class_parsed_function_a808273fed662cd815eaa2bb6c9c87924} 
+Parsed\+Function\+::\+Parsed\+Function (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{expressions}{, }\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{shape}{, }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{derivatives}{ = {\ttfamily \{\}}, }\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{derivative\+\_\+shape}{ = {\ttfamily \{\}}}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expressions} & A vector of string expressions representing the function outputs. \\
+\hline
+{\em shape} & The shape of the output tensor. \\
+\hline
+{\em derivatives} & (Optional) A vector of string expressions representing the derivatives. \\
+\hline
+{\em derivative\+\_\+shape} & (Optional) The shape of the derivative output tensor. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_parsed_function_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_parsed_function_a874b816d9b82a34ac2bebdecc74036e4}\index{ParsedFunction@{ParsedFunction}!Eval@{Eval}}
+\index{Eval@{Eval}!ParsedFunction@{ParsedFunction}}
+\doxysubsubsection{\texorpdfstring{Eval()}{Eval()}}
+{\footnotesize\ttfamily \label{class_parsed_function_a874b816d9b82a34ac2bebdecc74036e4} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Parsed\+Function\+::\+Eval (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluates the parsed function at a given time and state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The time variable. \\
+\hline
+{\em y} & The state variable as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the function evaluation as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_function_a7bb6bbdd01c508cb0a4d4ad545915d3c}{Function}}.
+
+\Hypertarget{class_parsed_function_af8c84cc7c6111f48923b5d5ce644d5a8}\index{ParsedFunction@{ParsedFunction}!Grad@{Grad}}
+\index{Grad@{Grad}!ParsedFunction@{ParsedFunction}}
+\doxysubsubsection{\texorpdfstring{Grad()}{Grad()}}
+{\footnotesize\ttfamily \label{class_parsed_function_af8c84cc7c6111f48923b5d5ce644d5a8} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Parsed\+Function\+::\+Grad (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{y}{, }\item[{double}]{dy}{ = {\ttfamily 0.1}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Overrides the gradient method if derivative expressions are provided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The time variable. \\
+\hline
+{\em y} & The state variable as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Gradient of the function evaluation as a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_function_a46edab05fbafe2413e8dac3de7c6186f}{Function}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/parsed\+\_\+function.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/parsed\+\_\+function.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,175 @@
+\doxysection{Forward\+Euler\+Light Class Reference}
+\hypertarget{class_forward_euler_light}{}\label{class_forward_euler_light}\index{ForwardEulerLight@{ForwardEulerLight}}
+
+
+Simple explicit first-\/order ODE solver using the Forward Euler method.  
+
+
+
+
+{\ttfamily \#include $<$forward\+\_\+euler\+\_\+light\+\_\+solver.\+h$>$}
+
+Inheritance diagram for Forward\+Euler\+Light\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_forward_euler_light}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_forward_euler_light_a7a8e73dbd2b29a7752511d46c16a5999}{Forward\+Euler\+Light}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, const \mbox{\hyperlink{class_reader}{Reader}} \&reader)
+\begin{DoxyCompactList}\small\item\em Constructs a Forward Euler solver using input from a \doxylink{class_reader}{Reader}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_forward_euler_light_acdfbe27c2f92a8938c301bca17f2c868}{Forward\+Euler\+Light}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0)
+\begin{DoxyCompactList}\small\item\em Constructs a Forward Euler solver using a fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_forward_euler_light_af7c43a42ef2c6e9fc7e140a8b0dc3ee6}{Forward\+Euler\+Light}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time=0.\+0)
+\begin{DoxyCompactList}\small\item\em Constructs a Forward Euler solver using a specified number of steps. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_forward_euler_light_ab238eb77ab850a76bcea2c5042cd8c60}{Compute\+Step}} () override
+\begin{DoxyCompactList}\small\item\em Advances the solution by one Forward Euler time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ode\+Solver} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step}} ()
+\begin{DoxyCompactList}\small\item\em Updates the solution\+\_\+ and time for next time step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_solver_a662cff46a2025f9b99295d5fcefbe0b6}{Set\+End\+Time}} (double end\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Sets the simulation end time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_solver_ae1242b79d094ce57a73b76661cdbdc94}{Set\+Time\+Span}} (int num\+\_\+of\+\_\+steps)
+\begin{DoxyCompactList}\small\item\em Configures the solver based on a fixed number of steps. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_solver_a673fb059d7379dfc9bfea833318b4049}{Set\+Time\+Span}} (double step\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Configures the solver based on a fixed step size. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \& \mbox{\hyperlink{class_ode_solver_a187c86329e6909b9830becf465c127d0}{Get\+Solution}} () const
+\item 
+double \mbox{\hyperlink{class_ode_solver_a967817c4339501ddb984023977d093a1}{Get\+Start\+Time}} () const
+\item 
+double \mbox{\hyperlink{class_ode_solver_a6b634912c4c923a14e5ce7994f46b2a4}{Get\+End\+Time}} () const
+\item 
+double \mbox{\hyperlink{class_ode_solver_adee8ff045eeb481ef911c9eee1b596c8}{Get\+Step\+Size}} () const
+\item 
+int \mbox{\hyperlink{class_ode_solver_ad0bbb5894abf1b510845a61e9b42ea61}{Get\+Number\+Of\+Steps}} () const
+\item 
+double \mbox{\hyperlink{class_ode_solver_a93ba8bfb62598239c78200ca6253fa02}{Get\+Current\+Time}} () const
+\item 
+virtual void \mbox{\hyperlink{class_ode_solver_a1cc5668fdf4d5bd99ee21c4f91c6aca3}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets the solver state to the initial conditions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ode_solver_a8528789990b812fe0b498fabb7e1521f}{Solve}} ()
+\begin{DoxyCompactList}\small\item\em Executes the simulation loop (Batch Mode). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ode_solver_ab8375f1f3330bf275d6b18fc936deb3c}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, int num\+\_\+of\+\_\+steps, double end\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Constructor for fixed number of steps. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ode_solver_aead5f819e881f42a8c398d48678e4e16}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, double step\+\_\+size=0.\+01, double end\+\_\+time=0.\+0)
+\begin{DoxyCompactList}\small\item\em Constructor for fixed step size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ode_solver_a759c26734e6949d87dca4f024415a666}{Ode\+Solver}} (const \mbox{\hyperlink{class_ode}{Ode}} \&ode, const \mbox{\hyperlink{class_reader}{Reader}} \&reader)
+\begin{DoxyCompactList}\small\item\em Constructor using a \doxylink{class_reader}{Reader} for configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}}}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{class_ode}{Ode}} \& {\bfseries ode\+\_\+}
+\begin{DoxyCompactList}\small\item\em Reference to the ODE problem definition. Guaranteed to be valid as long as the user maintains the \doxylink{class_ode}{Ode} object scope. \end{DoxyCompactList}\item 
+double {\bfseries start\+\_\+time\+\_\+}
+\begin{DoxyCompactList}\small\item\em The simulation start time. \end{DoxyCompactList}\item 
+double {\bfseries end\+\_\+time\+\_\+}
+\begin{DoxyCompactList}\small\item\em The simulation target end time. \end{DoxyCompactList}\item 
+double {\bfseries step\+\_\+size\+\_\+}
+\begin{DoxyCompactList}\small\item\em The time step (dt). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} {\bfseries solution\+\_\+}
+\begin{DoxyCompactList}\small\item\em The current state y(t). Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\item 
+double {\bfseries current\+\_\+time\+\_\+}
+\begin{DoxyCompactList}\small\item\em The current simulation time t. Updated at every \doxylink{class_ode_solver_af1842eb01ec5d591bb813ce2a064adc5}{Step()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple explicit first-\/order ODE solver using the Forward Euler method. 
+
+This class implements the Forward Euler method, a basic explicit solver for ordinary differential equations. It is suitable for non-\/stiff problems and advances the solution by a single fixed step at a time. 
+
+\label{doc-constructors}
+\Hypertarget{class_forward_euler_light_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_forward_euler_light_a7a8e73dbd2b29a7752511d46c16a5999}\index{ForwardEulerLight@{ForwardEulerLight}!ForwardEulerLight@{ForwardEulerLight}}
+\index{ForwardEulerLight@{ForwardEulerLight}!ForwardEulerLight@{ForwardEulerLight}}
+\doxysubsubsection{\texorpdfstring{ForwardEulerLight()}{ForwardEulerLight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_forward_euler_light_a7a8e73dbd2b29a7752511d46c16a5999} 
+Forward\+Euler\+Light\+::\+Forward\+Euler\+Light (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{const \mbox{\hyperlink{class_reader}{Reader}} \&}]{reader}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a Forward Euler solver using input from a \doxylink{class_reader}{Reader}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & Reference to the ODE system to integrate. \\
+\hline
+{\em reader} & \doxylink{class_reader}{Reader} object containing solver configuration. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_forward_euler_light_acdfbe27c2f92a8938c301bca17f2c868}\index{ForwardEulerLight@{ForwardEulerLight}!ForwardEulerLight@{ForwardEulerLight}}
+\index{ForwardEulerLight@{ForwardEulerLight}!ForwardEulerLight@{ForwardEulerLight}}
+\doxysubsubsection{\texorpdfstring{ForwardEulerLight()}{ForwardEulerLight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_forward_euler_light_acdfbe27c2f92a8938c301bca17f2c868} 
+Forward\+Euler\+Light\+::\+Forward\+Euler\+Light (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{double}]{step\+\_\+size}{ = {\ttfamily 0.01}, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}}\end{DoxyParamCaption})}
+
+
+
+Constructs a Forward Euler solver using a fixed step size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & Reference to the ODE system to integrate. \\
+\hline
+{\em step\+\_\+size} & Time step size. \\
+\hline
+{\em end\+\_\+time} & Final integration time. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_forward_euler_light_af7c43a42ef2c6e9fc7e140a8b0dc3ee6}\index{ForwardEulerLight@{ForwardEulerLight}!ForwardEulerLight@{ForwardEulerLight}}
+\index{ForwardEulerLight@{ForwardEulerLight}!ForwardEulerLight@{ForwardEulerLight}}
+\doxysubsubsection{\texorpdfstring{ForwardEulerLight()}{ForwardEulerLight()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_forward_euler_light_af7c43a42ef2c6e9fc7e140a8b0dc3ee6} 
+Forward\+Euler\+Light\+::\+Forward\+Euler\+Light (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ode}{Ode}} \&}]{ode}{, }\item[{int}]{num\+\_\+of\+\_\+steps}{, }\item[{double}]{end\+\_\+time}{ = {\ttfamily 0.0}}\end{DoxyParamCaption})}
+
+
+
+Constructs a Forward Euler solver using a specified number of steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ode} & Reference to the ODE system to integrate. \\
+\hline
+{\em num\+\_\+of\+\_\+steps} & Number of uniform time steps. \\
+\hline
+{\em end\+\_\+time} & Final integration time. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_forward_euler_light_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_forward_euler_light_ab238eb77ab850a76bcea2c5042cd8c60}\index{ForwardEulerLight@{ForwardEulerLight}!ComputeStep@{ComputeStep}}
+\index{ComputeStep@{ComputeStep}!ForwardEulerLight@{ForwardEulerLight}}
+\doxysubsubsection{\texorpdfstring{ComputeStep()}{ComputeStep()}}
+{\footnotesize\ttfamily \label{class_forward_euler_light_ab238eb77ab850a76bcea2c5042cd8c60} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Forward\+Euler\+Light\+::\+Compute\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Advances the solution by one Forward Euler time step. 
+
+Uses the formula\+:   \[    y_{n+1} = y_n + h f(t_n, y_n)
+\]
+
+\begin{DoxyReturn}{Returns}
+State vector at the next time step. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ode_solver_a35a9d27d9c3b484dae31ed1c6905a04a}{Ode\+Solver}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/forward\+\_\+euler\+\_\+light\+\_\+solver.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/forward\+\_\+euler\+\_\+light\+\_\+solver.\+cpp\end{DoxyCompactItemize}

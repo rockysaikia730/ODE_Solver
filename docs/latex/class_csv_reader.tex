@@ -54,32 +54,18 @@ const \mbox{\hyperlink{struct_ode_raw_data}{Ode\+Raw\+Data}} \& \mbox{\hyperlink
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_reader}{Reader}}}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{class_reader_a30a4105a8595150cb94854c71637ed3f}{Is\+Numeric}} (const std\+::string \&str) const
-\begin{DoxyCompactList}\small\item\em Checks if a string represents a numeric value. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_reader_a1949190ed8188132c3a25e886f10d376}{Split}} (const std\+::string \&str, const char \&separator) const
 \begin{DoxyCompactList}\small\item\em Splits a string into tokens based on a delimiter. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_reader_a024e3b94ffc0b0c8a14fb6e20059ea03}{Trim}} (const std\+::vector$<$ std\+::string $>$ \&tokens) const
 \begin{DoxyCompactList}\small\item\em Trims whitespace from each token if there is a space at the beginning or end of the token. It should not remove spaces within the token, as those may be vector values. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_reader_aee6eaf793ada4d73dc1d9bb28a50d2a3}{Parse\+Tensor}} (const std\+::string \&str)
-\begin{DoxyCompactList}\small\item\em Helper function to parse a string into a \doxylink{class_dynamic_tensor}{Dynamic\+Tensor}. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_reader_a4ad23af590282f6c953777d81d190a4e}{Is\+Complex\+Number}} (const std\+::string \&str) const
-\begin{DoxyCompactList}\small\item\em Helper function to check if string is a complex number or a double. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{class_reader_a872ff0b4164a7f84c49c1b1f7fa5cdd3}{To\+Lower}} (const std\+::string \&str) const
-\begin{DoxyCompactList}\small\item\em Converts a string to lowercase. \end{DoxyCompactList}\item 
 bool {\bfseries Line\+Starts\+With} (const std\+::string \&line, const std\+::string \&start) const
-\begin{DoxyCompactList}\small\item\em Returns the starting value of line. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns true if line starts with start. \end{DoxyCompactList}\item 
 bool {\bfseries Line\+Ends\+With} (const std\+::string \&line, const std\+::string \&end) const
-\begin{DoxyCompactList}\small\item\em Returns the ending value of line. \end{DoxyCompactList}\item 
-std\+::complex$<$ double $>$ \mbox{\hyperlink{class_reader_a149ef0f9b7c40881ec30a1dc38a8c513}{Parse\+Complex\+Number}} (const std\+::string \&str) const
-\begin{DoxyCompactList}\small\item\em Parses a string representing a complex number in the form (a,b). \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{class_reader_a1407cb6d6c193ab9bcbcdd82558fe879}{Parse\+Double}} (const std\+::string \&str) const
-\begin{DoxyCompactList}\small\item\em Parses a string representing a double. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_reader_a891f6505346d7f7389f5eadc35d1d1bf}{Interpret\+Key\+Value\+Pair}} (const std\+::string \&key, const std\+::string \&value)
-\begin{DoxyCompactList}\small\item\em Parses the solver method from a string and sets it in raw\+\_\+data\+\_\+. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns true if line ends with end. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_reader_ac44b41ce56079ec4f6dd3ca0eb44e0b6}{Trim\+String}} (const std\+::string \&s) const
 \begin{DoxyCompactList}\small\item\em trim a single string \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_reader_aa8fc2dbf2e8a036539e632d2aee16e3e}{Parse\+Solver\+Method\+From\+String}} (const std\+::string \&method\+\_\+string)
-\begin{DoxyCompactList}\small\item\em Parses the solver method from a string and sets it in raw\+\_\+data\+\_\+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_reader_a891f6505346d7f7389f5eadc35d1d1bf}{Interpret\+Key\+Value\+Pair}} (const std\+::string \&key, const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Key-\/value pair interpreter for reading lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_reader}{Reader}}}
 \begin{DoxyCompactItemize}
 \item 

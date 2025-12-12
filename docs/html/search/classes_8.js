@@ -5,5 +5,7 @@ var searchData=
   ['odesolver_2',['OdeSolver',['../class_ode_solver.html',1,'']]],
   ['output_3',['Output',['../class_output.html',1,'']]],
   ['outputcsv_4',['OutputCsv',['../class_output_csv.html',1,'']]],
-  ['outputtxt_5',['OutputTxt',['../class_output_txt.html',1,'']]]
+  ['outputfile_5',['OutputFile',['../class_output_file.html',1,'']]],
+  ['outputplotter_6',['OutputPlotter',['../class_output_plotter.html',1,'']]],
+  ['outputtxt_7',['OutputTxt',['../class_output_txt.html',1,'']]]
 ];

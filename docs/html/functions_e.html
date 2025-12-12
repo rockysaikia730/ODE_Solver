@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ODE_Solver: /Users/rocky/notes/Scientific Computing/ODE_Solver/include/VectorOutput.h Source File</title>
+<title>ODE_Solver: Class Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('_vector_output_8h_source.html','',''); });
+$(function(){initNavTree('functions_e.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -87,37 +87,22 @@ $(function(){initNavTree('_vector_output_8h_source.html','',''); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">VectorOutput.h</div></div>
-</div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by andra on 21/11/2025.</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef CODES_VECTOROUTPUT_H</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define CODES_VECTOROUTPUT_H</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> std::vector&lt;T&gt;&amp; vec) {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    os &lt;&lt; <span class="stringliteral">&quot;[&quot;</span>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec.size(); ++i) {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        os &lt;&lt; vec[i];</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span> (i != vec.size() - 1) os &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    os &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">return</span> os;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif </span><span class="comment">//CODES_VECTOROUTPUT_H</span></div>
-</div><!-- fragment --></div><!-- contents -->
+<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
+
+<h3 class="doxsection"><a id="index_e" name="index_e"></a>- e -</h3><ul>
+<li>element_separator_&#160;:&#160;<a class="el" href="class_output_file.html#a3622ccf36663de7c66fef6b329949f35">OutputFile</a></li>
+<li>end_time_&#160;:&#160;<a class="el" href="class_ode_solver.html#afe384debfb2aaf066067567b86660e80">OdeSolver</a></li>
+<li>EnsureFileExists()&#160;:&#160;<a class="el" href="class_output_file.html#a82371bd1be02eb55e1b511748ae6eb8f">OutputFile</a></li>
+<li>Eval()&#160;:&#160;<a class="el" href="class_function.html#a7bb6bbdd01c508cb0a4d4ad545915d3c">Function</a>, <a class="el" href="class_implicit_solver_1_1_implicit_equation.html#a8e4ed6176155127e40b8fb1d9cdad06f">ImplicitSolver::ImplicitEquation</a>, <a class="el" href="class_parsed_function.html#a874b816d9b82a34ac2bebdecc74036e4">ParsedFunction</a>, <a class="el" href="class_sin_ode.html#a35c8e60799375ea6b0ed3f27623ef9cc">SinOde</a></li>
+<li>Evaluate()&#160;:&#160;<a class="el" href="class_ode.html#a3fc74d1b3f982351bd6dad5054f2cab7">Ode</a></li>
+</ul>
+</div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>include</b></li><li class="navelem"><b>VectorOutput.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

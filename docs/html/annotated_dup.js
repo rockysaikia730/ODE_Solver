@@ -17,11 +17,13 @@ var annotated_dup =
     [ "OdeSolver", "class_ode_solver.html", "class_ode_solver" ],
     [ "Output", "class_output.html", "class_output" ],
     [ "OutputCsv", "class_output_csv.html", "class_output_csv" ],
+    [ "OutputFile", "class_output_file.html", "class_output_file" ],
+    [ "OutputPlotter", "class_output_plotter.html", "class_output_plotter" ],
     [ "OutputTxt", "class_output_txt.html", "class_output_txt" ],
     [ "ParsedFunction", "class_parsed_function.html", "class_parsed_function" ],
     [ "Reader", "class_reader.html", "class_reader" ],
     [ "RootFinder", "class_root_finder.html", "class_root_finder" ],
     [ "RungeKutta", "class_runge_kutta.html", "class_runge_kutta" ],
-    [ "TensorParser", "class_tensor_parser.html", null ],
+    [ "SinOde", "class_sin_ode.html", "class_sin_ode" ],
     [ "TxtReader", "class_txt_reader.html", "class_txt_reader" ]
 ];

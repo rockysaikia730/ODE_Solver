@@ -1,0 +1,95 @@
+\doxysection{reader.\+h}
+\hypertarget{reader_8h_source}{}\label{reader_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/reader.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/reader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ READER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ READER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dynamic__tensor_8h}{dynamic\_tensor.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ode\_raw\_data.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}solver\_methods.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_reader_ad682ef952dbf2312dc5e5c36b7432588}{Reader}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_reader_ad682ef952dbf2312dc5e5c36b7432588}{Reader}}(\textcolor{keyword}{const}\ std::string\&\ file\_name,\ \textcolor{keywordtype}{char}\ separator\ =\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_reader_a5a9e1a05a3683982e7dbafd75e2ff773}{\string~Reader}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reader_a782ef0f80b0d27b8a3e32be538fed057}{Read}}()\ =\ 0;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ \mbox{\hyperlink{class_reader_afff48614961ffb79bfb627adc4b52f70}{GetFileName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ \mbox{\hyperlink{class_reader_a5f7f2919f37f15cb95be1580b2028897}{GetFileExtension}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reader_ae142b32ae6481733b84b20141cdafda2}{SetFileName}}(\textcolor{keyword}{const}\ std::string\&\ file\_name);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reader_aca06f0a9f6d41e0d9abf0d8d3f2be274}{SetFileExtension}}(\textcolor{keyword}{const}\ std::string\&\ file\_extension);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_reader_a33c491f270968d5c129807b5d3dfa3a4}{Open}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reader_a36852f38ab45088da044919c88392311}{Close}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reader_ad204b9322007aab318b9e444bb5dbcea}{SetSeparator}}(\textcolor{keywordtype}{char}\ separator);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_reader_ac679fdc16a819d641ad6baee637cc618}{GetSeparator}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ode_raw_data}{OdeRawData}}\&\ \mbox{\hyperlink{class_reader_a58d1e5e33b0ec8169420fb3be600de32}{GetRawData}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_reader_a33d6ed307d1324254b34811a9003103c}{raw\_data\_}};}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00098\ \ \ \ \ std::string\ \mbox{\hyperlink{class_reader_ac59c0d326bde29551f1639e14def45ae}{file\_name\_}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00103\ \ \ \ \ std::string\ \mbox{\hyperlink{class_reader_a8dbbf8d9cfc3477f8681bfc356d4a287}{file\_extension\_}};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_reader_abf552b3a25392737537633019196ff08}{separator\_}};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00113\ \ \ \ \ std::ifstream\ \mbox{\hyperlink{class_reader_a74a6ac6c04056f68d5cd16ddeecdae34}{file\_stream\_}};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{struct_ode_raw_data}{OdeRawData}}\ \mbox{\hyperlink{class_reader_a33d6ed307d1324254b34811a9003103c}{raw\_data\_}};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00126\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_reader_a1949190ed8188132c3a25e886f10d376}{Split}}(\textcolor{keyword}{const}\ std::string\&\ str,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\&\ separator)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00133\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_reader_a024e3b94ffc0b0c8a14fb6e20059ea03}{Trim}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ tokens)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_reader_a8eb10986044843cbf23f9cff0fb57928}{LineStartsWith}}(\textcolor{keyword}{const}\ std::string\&\ line,\ \textcolor{keyword}{const}\ std::string\&\ start)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_reader_a3b4c2e05be02fe3f4204f749c5048b1b}{LineEndsWith}}(\textcolor{keyword}{const}\ std::string\&\ line,\ \textcolor{keyword}{const}\ std::string\&\ end)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00151\ \ \ \ \ std::string\ \mbox{\hyperlink{class_reader_ac44b41ce56079ec4f6dd3ca0eb44e0b6}{TrimString}}(\textcolor{keyword}{const}\ std::string\&\ s)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reader_a891f6505346d7f7389f5eadc35d1d1bf}{InterpretKeyValuePair}}(\textcolor{keyword}{const}\ std::string\&\ key,\ \textcolor{keyword}{const}\ std::string\&\ value);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00167\ \ \ \ \ SolverMethod\ ParseSolverMethod(\textcolor{keyword}{const}\ std::string\&\ method\_string);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00177\ \ \ \ \ std::vector<size\_t>\ ParseTensorRecursive(\textcolor{keyword}{const}\ std::string\&\ str,\ \textcolor{keywordtype}{size\_t}\&\ pos,\ std::vector<T>\&\ data);}
+\DoxyCodeLine{00178\ \ \ \ \ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{bool}\ HasComplexNumber(\textcolor{keyword}{const}\ std::string\&\ str)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00192\ \ \ \ \ std::vector<size\_t>\ ParseFunctionRecursive(\textcolor{keyword}{const}\ std::string\&\ str,\ \textcolor{keywordtype}{size\_t}\&\ pos,\ std::vector<std::string>\&\ flat\_expressions);}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{class_dynamic_tensor}{DynamicTensor}}\ ParseTensor(\textcolor{keyword}{const}\ std::string\&\ str);}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsComplexNumber(\textcolor{keyword}{const}\ std::string\&\ str)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00213\ \ \ \ \ std::complex<double>\ ParseComplexNumber(\textcolor{keyword}{const}\ std::string\&\ str)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{double}\ ParseDouble(\textcolor{keyword}{const}\ std::string\&\ str)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsNumeric(\textcolor{keyword}{const}\ std::string\&\ str)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \};}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ READER\_H}}
+
+\end{DoxyCode}

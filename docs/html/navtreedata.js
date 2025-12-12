@@ -30,7 +30,7 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
@@ -45,7 +45,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_2_users_2rocky_2notes_2_scientific_01_computing_2_o_d_e__solver_2include_2dynamic_tensor_8h-example.html",
-"struct_ode_raw_data_1_1function__params.html#a372d8716ca84a93bfbabd1b466673092"
+"implicit__solver_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

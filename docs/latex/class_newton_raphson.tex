@@ -18,7 +18,7 @@ Inheritance diagram for Newton\+Raphson\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_newton_raphson_a9015db8a55978c7d131a4784b73027f9}{Find\+Root}} (const \mbox{\hyperlink{class_function}{Function}} \&f, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&initial\+\_\+guess, double t, int max\+\_\+iter=500) const override
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \mbox{\hyperlink{class_newton_raphson_a696a36a5d37e809c2abfba6c08e8e03a}{Find\+Root}} (const \mbox{\hyperlink{class_function}{Function}} \&f, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&initial\+\_\+guess, double t, int max\+\_\+iter=250) const override
 \begin{DoxyCompactList}\small\item\em Solves for the root of a nonlinear function using Newton–\+Raphson iterations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_root_finder}{Root\+Finder}}}
 \begin{DoxyCompactItemize}
@@ -35,11 +35,11 @@ This class provides an implementation of the Newton–\+Raphson method to find r
 \label{doc-func-members}
 \Hypertarget{class_newton_raphson_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_newton_raphson_a9015db8a55978c7d131a4784b73027f9}\index{NewtonRaphson@{NewtonRaphson}!FindRoot@{FindRoot}}
+\Hypertarget{class_newton_raphson_a696a36a5d37e809c2abfba6c08e8e03a}\index{NewtonRaphson@{NewtonRaphson}!FindRoot@{FindRoot}}
 \index{FindRoot@{FindRoot}!NewtonRaphson@{NewtonRaphson}}
 \doxysubsubsection{\texorpdfstring{FindRoot()}{FindRoot()}}
-{\footnotesize\ttfamily \label{class_newton_raphson_a9015db8a55978c7d131a4784b73027f9} 
-\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Newton\+Raphson\+::\+Find\+Root (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_function}{Function}} \&}]{f}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{initial\+\_\+guess}{, }\item[{double}]{t}{, }\item[{int}]{max\+\_\+iter}{ = {\ttfamily 500}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_newton_raphson_a696a36a5d37e809c2abfba6c08e8e03a} 
+\mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} Newton\+Raphson\+::\+Find\+Root (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_function}{Function}} \&}]{f}{, }\item[{const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&}]{initial\+\_\+guess}{, }\item[{double}]{t}{, }\item[{int}]{max\+\_\+iter}{ = {\ttfamily 250}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -56,7 +56,7 @@ The method updates the initial guess according to\+:   \[    y_{k+1} = y_k - J^{
 \hline
 {\em t} & Current time (used if the function is time-\/dependent). \\
 \hline
-{\em max\+\_\+iter} & Maximum number of iterations (default 500). \\
+{\em max\+\_\+iter} & Maximum number of iterations (default 250). \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

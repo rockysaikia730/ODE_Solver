@@ -1,5 +1,6 @@
 var class_multi_step_ode_solver =
 [
+    [ "MultiStepOdeSolver", "class_multi_step_ode_solver.html#abe8a9977841d8d305b94a408add1e9fc", null ],
     [ "MultiStepOdeSolver", "class_multi_step_ode_solver.html#a146cffeef6b16589864a568834433e98", null ],
     [ "MultiStepOdeSolver", "class_multi_step_ode_solver.html#a0908687bef779b2a8a53984d35872e8b", null ],
     [ "GetCoeffsdY", "class_multi_step_ode_solver.html#a359ebb566d4d4e84a8408fe1d0da456d", null ],

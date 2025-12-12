@@ -1,0 +1,33 @@
+\doxysection{output\+\_\+csv.\+h}
+\hypertarget{output__csv_8h_source}{}\label{output__csv_8h_source}\index{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/output\_csv.h@{/Users/rocky/notes/Scientific Computing/ODE\_Solver/include/output\_csv.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ OUTPUT\_CSV\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ OUTPUT\_CSV\_H\_}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}output\_file.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_output_csv_a5ad5144bc04ba0bcd16b0dc7577a93d3}{OutputCsv}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_output_file_a3102bcd9fe6eea928f2e64f5848d720d}{OutputFile}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_output_csv_a5ad5144bc04ba0bcd16b0dc7577a93d3}{OutputCsv}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keywordtype}{char}\ separator\ =\ \textcolor{charliteral}{';'},\ \textcolor{keywordtype}{char}\ element\_separator\ =\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_output_csv_aa90d64ae97dd3e78494ce8ee81e1edc0}{GetSeparator}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_csv_a70e2b7744b90703781a3de8d244efa49}{SetSeparator}}(\textcolor{keywordtype}{char}\ separator);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_output_csv_a70af53462051a588b41d629c87778f22}{GetHeader}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_csv_a9bdef00387845cff7e8d2c22436391e2}{SetHeader}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ header);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_csv_a3896e010b06a5caad88384acd3aecc5d}{FileSpecificSetup}}(std::ofstream\&\ file)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00051\ \ \ \ \ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ std::vector<std::string>\ header\_;}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OUTPUT\_CSV\_H\_}}
+
+\end{DoxyCode}

@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['adammoulton_0',['AdamMoulton',['../class_adam_moulton.html',1,'AdamMoulton'],['../class_adam_moulton.html#a969a9527ff10e9cb6199ac59b653c1d5',1,'AdamMoulton::AdamMoulton(const Ode &amp;ode, double step_size=0.01, double end_time=0.0, int order=2, std::shared_ptr&lt; RootFinder &gt; root_finder=nullptr)'],['../class_adam_moulton.html#a920ee7649c0bb57b72af8d941f5661e4',1,'AdamMoulton::AdamMoulton(const Ode &amp;ode, int num_of_steps, double end_time=0.0, int order=2, std::shared_ptr&lt; RootFinder &gt; root_finder=nullptr)']]],
-  ['adamsbashforth_1',['AdamsBashforth',['../class_adams_bashforth.html',1,'AdamsBashforth'],['../class_adams_bashforth.html#ac4434a5a1d33e247298958a5896658ca',1,'AdamsBashforth::AdamsBashforth(const Ode &amp;ode, double step_size=0.01, double end_time=0.0, int order=4)'],['../class_adams_bashforth.html#a916f3217443f9776f30b7c2f4ad3c349',1,'AdamsBashforth::AdamsBashforth(const Ode &amp;ode, int num_of_steps, double end_time=0.0, int order=4)']]],
-  ['and_20generating_20the_20doxygen_20documentation_2',['For compiling and generating the Doxygen documentation',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md21',1,'']]],
-  ['and_20the_20input_20tensor_20this_20responsibility_20is_20delegated_20to_20the_20user_20to_20verify_20for_20the_20time_20being_3',['Right now, there is no checking mechanism provided for veryfying the shape of the function and the input tensor. This responsibility is delegated to the user to verify for the time being.',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md15',1,'']]],
-  ['and_20the_20main_4',['REMAINING TO DO THE SOLVER, Dynamic tensor, and the main.',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md18',1,'']]],
-  ['at_5',['at',['../class_dynamic_tensor.html#a74eb8a4210abf2b8719ffba0e3de1dc8',1,'DynamicTensor']]]
+  ['5_20the_20output_20class_0',['1.1.5 The &lt;span class=&quot;tt&quot;&gt;Output&lt;/span&gt; Class',['..//Users/rocky/notes/Scientific Computing/ODE_Solver/README.md#autotoc_md18',1,'']]]
 ];

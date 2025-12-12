@@ -110,11 +110,15 @@ Inheritance diagram for ForwardEuler:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aeb3af064f03d3ffb431f0f13b0fd6a16" id="r_aeb3af064f03d3ffb431f0f13b0fd6a16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb3af064f03d3ffb431f0f13b0fd6a16">ForwardEuler</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, const <a class="el" href="class_reader.html">Reader</a> &amp;reader)</td></tr>
+<tr class="memdesc:aeb3af064f03d3ffb431f0f13b0fd6a16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Forward Euler solver using input from a <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>.  <br /></td></tr>
 <tr class="memitem:af379ce6cb6f8e0127fbbee0ae72949d8" id="r_af379ce6cb6f8e0127fbbee0ae72949d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af379ce6cb6f8e0127fbbee0ae72949d8">ForwardEuler</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double step_size=0.01, double end_time=0.0)</td></tr>
 <tr class="memdesc:af379ce6cb6f8e0127fbbee0ae72949d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Forward Euler solver using a fixed step size.  <br /></td></tr>
 <tr class="memitem:a908e9cab08dbfec1d325e38a83edfd5d" id="r_a908e9cab08dbfec1d325e38a83edfd5d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a908e9cab08dbfec1d325e38a83edfd5d">ForwardEuler</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, int num_of_steps, double end_time=0.0)</td></tr>
 <tr class="memdesc:a908e9cab08dbfec1d325e38a83edfd5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Forward Euler solver using a specified number of steps.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_adams_bashforth"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_adams_bashforth')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_adams_bashforth.html">AdamsBashforth</a></td></tr>
+<tr class="memitem:a0287451fe952c308d9d6fca5e246a7f7 inherit pub_methods_class_adams_bashforth" id="r_a0287451fe952c308d9d6fca5e246a7f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adams_bashforth.html#a0287451fe952c308d9d6fca5e246a7f7">AdamsBashforth</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, const <a class="el" href="class_reader.html">Reader</a> &amp;reader)</td></tr>
+<tr class="memdesc:a0287451fe952c308d9d6fca5e246a7f7 inherit pub_methods_class_adams_bashforth"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an Adams–Bashforth solver using input from a <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>.  <br /></td></tr>
 <tr class="memitem:ac4434a5a1d33e247298958a5896658ca inherit pub_methods_class_adams_bashforth" id="r_ac4434a5a1d33e247298958a5896658ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adams_bashforth.html#ac4434a5a1d33e247298958a5896658ca">AdamsBashforth</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double step_size=0.01, double end_time=0.0, int order=4)</td></tr>
 <tr class="memdesc:ac4434a5a1d33e247298958a5896658ca inherit pub_methods_class_adams_bashforth"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an Adams–Bashforth solver using a fixed step size.  <br /></td></tr>
 <tr class="memitem:a916f3217443f9776f30b7c2f4ad3c349 inherit pub_methods_class_adams_bashforth" id="r_a916f3217443f9776f30b7c2f4ad3c349"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adams_bashforth.html#a916f3217443f9776f30b7c2f4ad3c349">AdamsBashforth</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, int num_of_steps, double end_time=0.0, int order=4)</td></tr>
@@ -128,12 +132,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aebcc437107894dd1bd885095b3659df8 inherit pub_methods_class_adams_bashforth" id="r_aebcc437107894dd1bd885095b3659df8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adams_bashforth.html#aebcc437107894dd1bd885095b3659df8">GetOrder</a> () const</td></tr>
 <tr class="memdesc:aebcc437107894dd1bd885095b3659df8 inherit pub_methods_class_adams_bashforth"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the order of the Adams–Bashforth scheme used by the solver.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_multi_step_ode_solver"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_multi_step_ode_solver')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_multi_step_ode_solver.html">MultiStepOdeSolver</a></td></tr>
+<tr class="memitem:abe8a9977841d8d305b94a408add1e9fc inherit pub_methods_class_multi_step_ode_solver" id="r_abe8a9977841d8d305b94a408add1e9fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_step_ode_solver.html#abe8a9977841d8d305b94a408add1e9fc">MultiStepOdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, const <a class="el" href="class_reader.html">Reader</a> &amp;reader, int order_solution=1, int order_derivative=1)</td></tr>
+<tr class="memdesc:abe8a9977841d8d305b94a408add1e9fc inherit pub_methods_class_multi_step_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> input.  <br /></td></tr>
 <tr class="memitem:a146cffeef6b16589864a568834433e98 inherit pub_methods_class_multi_step_ode_solver" id="r_a146cffeef6b16589864a568834433e98"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_step_ode_solver.html#a146cffeef6b16589864a568834433e98">MultiStepOdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double step_size=0.01, double end_time=0.0, int order_solution=1, int order_derivative=1)</td></tr>
 <tr class="memdesc:a146cffeef6b16589864a568834433e98 inherit pub_methods_class_multi_step_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with fixed step size.  <br /></td></tr>
 <tr class="memitem:a0908687bef779b2a8a53984d35872e8b inherit pub_methods_class_multi_step_ode_solver" id="r_a0908687bef779b2a8a53984d35872e8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_step_ode_solver.html#a0908687bef779b2a8a53984d35872e8b">MultiStepOdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, int num_of_steps, double end_time=0.0, int order_solution=1, int order_derivative=1)</td></tr>
 <tr class="memdesc:a0908687bef779b2a8a53984d35872e8b inherit pub_methods_class_multi_step_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor using a specified number of steps.  <br /></td></tr>
 <tr class="memitem:aad3953387824f19957cfe9e1e4eb1b90 inherit pub_methods_class_multi_step_ode_solver" id="r_aad3953387824f19957cfe9e1e4eb1b90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_step_ode_solver.html#aad3953387824f19957cfe9e1e4eb1b90">Step</a> () override</td></tr>
 <tr class="memdesc:aad3953387824f19957cfe9e1e4eb1b90 inherit pub_methods_class_multi_step_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the solution by one time step.  <br /></td></tr>
+<tr class="memitem:a3753c8d27e7420e4470aa5e88e44bbee inherit pub_methods_class_multi_step_ode_solver" id="r_a3753c8d27e7420e4470aa5e88e44bbee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_step_ode_solver.html#a3753c8d27e7420e4470aa5e88e44bbee">Reset</a> () override</td></tr>
+<tr class="memdesc:a3753c8d27e7420e4470aa5e88e44bbee inherit pub_methods_class_multi_step_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset solver state and history buffers.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_ode_solver"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_ode_solver')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_ode_solver.html">OdeSolver</a></td></tr>
 <tr class="memitem:a18be896e3a9772213317a4c554100206 inherit pub_methods_class_ode_solver" id="r_a18be896e3a9772213317a4c554100206"><td class="memItemLeft" align="right" valign="top">
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~OdeSolver</b> ()=default</td></tr>
@@ -156,6 +164,8 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~OdeSolver</b> ()=
 <tr class="memdesc:ab8375f1f3330bf275d6b18fc936deb3c inherit pub_methods_class_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for fixed number of steps.  <br /></td></tr>
 <tr class="memitem:aead5f819e881f42a8c398d48678e4e16 inherit pub_methods_class_ode_solver" id="r_aead5f819e881f42a8c398d48678e4e16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ode_solver.html#aead5f819e881f42a8c398d48678e4e16">OdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, double step_size=0.01, double end_time=0.0)</td></tr>
 <tr class="memdesc:aead5f819e881f42a8c398d48678e4e16 inherit pub_methods_class_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for fixed step size.  <br /></td></tr>
+<tr class="memitem:a759c26734e6949d87dca4f024415a666 inherit pub_methods_class_ode_solver" id="r_a759c26734e6949d87dca4f024415a666"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ode_solver.html#a759c26734e6949d87dca4f024415a666">OdeSolver</a> (const <a class="el" href="class_ode.html">Ode</a> &amp;ode, const <a class="el" href="class_reader.html">Reader</a> &amp;reader)</td></tr>
+<tr class="memdesc:a759c26734e6949d87dca4f024415a666 inherit pub_methods_class_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor using a <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> for configuration.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -170,8 +180,6 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>InitBuffers</
 <tr class="memitem:a5637d19a28ae7ac068fb5f751f1ca9d6 inherit pro_methods_class_multi_step_ode_solver" id="r_a5637d19a28ae7ac068fb5f751f1ca9d6"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateWindowSum</b> ()</td></tr>
 <tr class="memdesc:a5637d19a28ae7ac068fb5f751f1ca9d6 inherit pro_methods_class_multi_step_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update cached weighted sums used by the multistep scheme. <br /></td></tr>
-<tr class="memitem:a3753c8d27e7420e4470aa5e88e44bbee inherit pro_methods_class_multi_step_ode_solver" id="r_a3753c8d27e7420e4470aa5e88e44bbee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_step_ode_solver.html#a3753c8d27e7420e4470aa5e88e44bbee">Reset</a> () override</td></tr>
-<tr class="memdesc:a3753c8d27e7420e4470aa5e88e44bbee inherit pro_methods_class_multi_step_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset solver state and history buffers.  <br /></td></tr>
 <tr class="inherit_header pro_attribs_class_multi_step_ode_solver"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_multi_step_ode_solver')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="class_multi_step_ode_solver.html">MultiStepOdeSolver</a></td></tr>
 <tr class="memitem:a834593ca532ca89b1282ae18ddcc7e25 inherit pro_attribs_class_multi_step_ode_solver" id="r_a834593ca532ca89b1282ae18ddcc7e25"><td class="memItemLeft" align="right" valign="top">
 int&#160;</td><td class="memItemRight" valign="bottom"><b>order_sol_</b></td></tr>
@@ -215,8 +223,38 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
 \&zwj;]" src="form_4.png"/></picture>
 </p>
  </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aeb3af064f03d3ffb431f0f13b0fd6a16" name="aeb3af064f03d3ffb431f0f13b0fd6a16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb3af064f03d3ffb431f0f13b0fd6a16">&#9670;&#160;</a></span>ForwardEuler() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ForwardEuler::ForwardEuler </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_ode.html">Ode</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_reader.html">Reader</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>reader</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a Forward Euler solver using input from a <a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ode</td><td>Reference to the ODE system to integrate. </td></tr>
+    <tr><td class="paramname">reader</td><td><a class="el" href="class_reader.html" title="A class responsible for reading and parsing data from various sources. For the time being,...">Reader</a> object containing solver configuration. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af379ce6cb6f8e0127fbbee0ae72949d8" name="af379ce6cb6f8e0127fbbee0ae72949d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af379ce6cb6f8e0127fbbee0ae72949d8">&#9670;&#160;</a></span>ForwardEuler() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af379ce6cb6f8e0127fbbee0ae72949d8">&#9670;&#160;</a></span>ForwardEuler() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -252,7 +290,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>current_time_</b></
 </div>
 </div>
 <a id="a908e9cab08dbfec1d325e38a83edfd5d" name="a908e9cab08dbfec1d325e38a83edfd5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a908e9cab08dbfec1d325e38a83edfd5d">&#9670;&#160;</a></span>ForwardEuler() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a908e9cab08dbfec1d325e38a83edfd5d">&#9670;&#160;</a></span>ForwardEuler() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

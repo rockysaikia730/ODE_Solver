@@ -1,0 +1,161 @@
+\doxysection{Output\+Txt Class Reference}
+\hypertarget{class_output_txt}{}\label{class_output_txt}\index{OutputTxt@{OutputTxt}}
+
+
+Derived class for outputting ODE solver results in TXT format. The output allows comments denoted by a specific character, which can be added through the Set\+Header method. The printing is done in.  
+
+
+
+
+{\ttfamily \#include $<$output\+\_\+txt.\+h$>$}
+
+Inheritance diagram for Output\+Txt\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_output_txt}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_output_txt_afd935abe1cb0f0917506ff44cca19548}{Output\+Txt}} (const std\+::string \&filename, char separator=\textquotesingle{} \textquotesingle{}, char comment\+\_\+char=\textquotesingle{}\#\textquotesingle{}, char element\+\_\+separator=\textquotesingle{},\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_output_txt_acd0de5a24497b39ba4fa6b3d50271bf4}\label{class_output_txt_acd0de5a24497b39ba4fa6b3d50271bf4} 
+char {\bfseries Get\+Comment\+Char} () const
+\begin{DoxyCompactList}\small\item\em Gets the comment character used in the TXT file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_txt_addd1feb9fbc28ba01e481c8a8108219a}{Set\+Comment\+Char}} (char comment\+\_\+char)
+\begin{DoxyCompactList}\small\item\em Sets the comment character used in the TXT file. \end{DoxyCompactList}\item 
+\Hypertarget{class_output_txt_addd8a01b9f32728854bf456fc8132f50}\label{class_output_txt_addd8a01b9f32728854bf456fc8132f50} 
+std\+::vector$<$ std\+::string $>$ {\bfseries Get\+Header} () const
+\begin{DoxyCompactList}\small\item\em Gets the header lines of the TXT file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_txt_a9f1e22fb863f92556fc0d088ca46005f}{Set\+Header}} (const std\+::vector$<$ std\+::string $>$ \&header)
+\begin{DoxyCompactList}\small\item\em Sets the header lines of the TXT file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_output_file}{Output\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_output_file_a3102bcd9fe6eea928f2e64f5848d720d}{Output\+File}} (const std\+::string \&filename, char separator=\textquotesingle{};\textquotesingle{}, char element\+\_\+separator=\textquotesingle{},\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Output\+File} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_output_file_ada3edd898ddadd6c328c508ee18c9538}{Write}} (const \mbox{\hyperlink{class_ode_solver}{Ode\+Solver}} \&solver) override
+\begin{DoxyCompactList}\small\item\em Method to write the ODE solver results to the output file. \end{DoxyCompactList}\item 
+std\+::string {\bfseries Get\+Filename} () const
+\begin{DoxyCompactList}\small\item\em Gets the output filename. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_file_aed65cd6de590f6ee9589a2d83f9025c1}{Set\+Filename}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Sets the output filename. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_output}{Output}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Output} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor and destructor. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Output} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_output_txt_aaf3943717ecf399486c6bf14c09d14f4}{File\+Specific\+Setup}} (std\+::ofstream \&file) const override
+\begin{DoxyCompactList}\small\item\em File specific setup for TXT output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_output_file}{Output\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Ensure\+File\+Exists} () const
+\begin{DoxyCompactList}\small\item\em Ensures the output file exists; creates it if it does not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_file_acfd96a28ba0bdca0713bc42ed196c1f4}{Write\+Tensor\+Recursive}} (std\+::ofstream \&file, const \mbox{\hyperlink{class_dynamic_tensor}{Dynamic\+Tensor}} \&tensor, const std\+::vector$<$ size\+\_\+t $>$ \&shape, std\+::vector$<$ size\+\_\+t $>$ \&index, size\+\_\+t dim) const
+\begin{DoxyCompactList}\small\item\em A helper to write recursive data structures if needed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_output_file}{Output\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries filename\+\_\+}
+\begin{DoxyCompactList}\small\item\em The name of the output file. \end{DoxyCompactList}\item 
+char {\bfseries separator\+\_\+}
+\begin{DoxyCompactList}\small\item\em The separator character used in the output file. \end{DoxyCompactList}\item 
+char {\bfseries element\+\_\+separator\+\_\+}
+\begin{DoxyCompactList}\small\item\em The separator character used between elements in tensor output (e.\+g., in nested structures). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Derived class for outputting ODE solver results in TXT format. The output allows comments denoted by a specific character, which can be added through the Set\+Header method. The printing is done in. 
+
+\label{doc-constructors}
+\Hypertarget{class_output_txt_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_output_txt_afd935abe1cb0f0917506ff44cca19548}\index{OutputTxt@{OutputTxt}!OutputTxt@{OutputTxt}}
+\index{OutputTxt@{OutputTxt}!OutputTxt@{OutputTxt}}
+\doxysubsubsection{\texorpdfstring{OutputTxt()}{OutputTxt()}}
+{\footnotesize\ttfamily \label{class_output_txt_afd935abe1cb0f0917506ff44cca19548} 
+Output\+Txt\+::\+Output\+Txt (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{char}]{separator}{ = {\ttfamily \textquotesingle{}~\textquotesingle{}}, }\item[{char}]{comment\+\_\+char}{ = {\ttfamily \textquotesingle{}\#\textquotesingle{}}, }\item[{char}]{element\+\_\+separator}{ = {\ttfamily \textquotesingle{},\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the TXT output file. \\
+\hline
+{\em separator} & The separator character used in the TXT file. \\
+\hline
+{\em comment\+\_\+char} & The character used to denote comments in the TXT file. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_output_txt_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_output_txt_aaf3943717ecf399486c6bf14c09d14f4}\index{OutputTxt@{OutputTxt}!FileSpecificSetup@{FileSpecificSetup}}
+\index{FileSpecificSetup@{FileSpecificSetup}!OutputTxt@{OutputTxt}}
+\doxysubsubsection{\texorpdfstring{FileSpecificSetup()}{FileSpecificSetup()}}
+{\footnotesize\ttfamily \label{class_output_txt_aaf3943717ecf399486c6bf14c09d14f4} 
+void Output\+Txt\+::\+File\+Specific\+Setup (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+File specific setup for TXT output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The output file stream. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_output_file_a4eada1b5fb089873a201b6322ca86f43}{Output\+File}}.
+
+\Hypertarget{class_output_txt_addd1feb9fbc28ba01e481c8a8108219a}\index{OutputTxt@{OutputTxt}!SetCommentChar@{SetCommentChar}}
+\index{SetCommentChar@{SetCommentChar}!OutputTxt@{OutputTxt}}
+\doxysubsubsection{\texorpdfstring{SetCommentChar()}{SetCommentChar()}}
+{\footnotesize\ttfamily \label{class_output_txt_addd1feb9fbc28ba01e481c8a8108219a} 
+void Output\+Txt\+::\+Set\+Comment\+Char (\begin{DoxyParamCaption}\item[{char}]{comment\+\_\+char}{}\end{DoxyParamCaption})}
+
+
+
+Sets the comment character used in the TXT file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comment\+\_\+char} & The new comment character. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_output_txt_a9f1e22fb863f92556fc0d088ca46005f}\index{OutputTxt@{OutputTxt}!SetHeader@{SetHeader}}
+\index{SetHeader@{SetHeader}!OutputTxt@{OutputTxt}}
+\doxysubsubsection{\texorpdfstring{SetHeader()}{SetHeader()}}
+{\footnotesize\ttfamily \label{class_output_txt_a9f1e22fb863f92556fc0d088ca46005f} 
+void Output\+Txt\+::\+Set\+Header (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{header}{}\end{DoxyParamCaption})}
+
+
+
+Sets the header lines of the TXT file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header} & The new header lines. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/include/output\+\_\+txt.\+h\item 
+/\+Users/rocky/notes/\+Scientific Computing/\+ODE\+\_\+\+Solver/src/output\+\_\+txt.\+cpp\end{DoxyCompactItemize}

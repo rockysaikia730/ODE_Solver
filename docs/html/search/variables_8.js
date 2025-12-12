@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['separator_5f_0',['separator_',['../class_output.html#a370190db35d04e9ab23ac8307a00b5cf',1,'Output::separator_'],['../class_reader.html#abf552b3a25392737537633019196ff08',1,'Reader::separator_']]],
+  ['separator_5f_0',['separator_',['../class_output_file.html#abdb252c88a02de30e3681fb73e9fdcdd',1,'OutputFile::separator_'],['../class_reader.html#abf552b3a25392737537633019196ff08',1,'Reader::separator_']]],
   ['solution_5f_1',['solution_',['../class_ode_solver.html#a8e42a49ba25b6c2c5b029cd70e75d38e',1,'OdeSolver']]],
   ['solutions_5fbuffer_5f_2',['solutions_buffer_',['../class_multi_step_ode_solver.html#a6b14064cb4f3b28f99d913874d018177',1,'MultiStepOdeSolver']]],
   ['solver_5fparams_3',['solver_params',['../struct_ode_raw_data.html#ac471176ce831357580713545540425a5',1,'OdeRawData']]],

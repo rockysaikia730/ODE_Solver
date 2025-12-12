@@ -16,6 +16,8 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "ode_solver.h", "ode__solver_8h.html", "ode__solver_8h" ],
     [ "output.h", "output_8h_source.html", null ],
     [ "output_csv.h", "output__csv_8h_source.html", null ],
+    [ "output_file.h", "output__file_8h_source.html", null ],
+    [ "output_plotter.h", "output__plotter_8h_source.html", null ],
     [ "output_txt.h", "output__txt_8h_source.html", null ],
     [ "parsed_function.h", "parsed__function_8h_source.html", null ],
     [ "reader.h", "reader_8h_source.html", null ],
@@ -23,7 +25,5 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "reader_txt.h", "reader__txt_8h_source.html", null ],
     [ "root_finder.h", "root__finder_8h_source.html", null ],
     [ "runge_kutta_solver.h", "runge__kutta__solver_8h_source.html", null ],
-    [ "solver_methods.h", "solver__methods_8h_source.html", null ],
-    [ "tensor_parser.h", "tensor__parser_8h_source.html", null ],
-    [ "VectorOutput.h", "_vector_output_8h_source.html", null ]
+    [ "solver_methods.h", "solver__methods_8h_source.html", null ]
 ];
