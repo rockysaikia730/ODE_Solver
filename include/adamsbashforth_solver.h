@@ -16,11 +16,6 @@
  */
 class AdamsBashforth : public MultiStepOdeSolver {
 public:
-
-    /**
-     * @brief Constructs an Adams–Bashforth solver using a fixed step size.
-     */
-    AdamsBashforth::AdamsBashforth(const Reader& reader, const Ode& ode, int order);
     /**
      * @brief Constructs an Adams–Bashforth solver using a fixed step size.
      *

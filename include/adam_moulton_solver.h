@@ -65,7 +65,7 @@ public:
      * @return Integer order of the method.
      */
     int GetOrder();
-public: 
+private: 
     /**
      * @brief Order of the Adams–Moulton method (number of steps used).
      */
