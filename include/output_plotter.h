@@ -13,7 +13,10 @@
 #include <fstream>      // For std::ofstream (required for FileSpecificSetup signature)
 #include "output.h"
 
-
+/**
+ * @brief Derived class for plotting ODE solver results in real-time using Gnuplot.
+ * This class opens a pipe to Gnuplot and sends data points to be plotted as the solver progresses.
+ */
 class OutputPlotter : public Output {
 public:
     /**
