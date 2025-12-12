@@ -1,6 +1,7 @@
 #include "ode_solver.h"
 #include "ode.h"
 #include "dynamic_tensor.h"
+#include "reader.h"
 #include <cmath>
 #include <deque>
 #include <stdexcept>
@@ -41,7 +42,26 @@ OdeSolver::OdeSolver(const Ode& ode, double step_size, double end_time)
         }
 
         Reset();
-      }
+  }
+
+OdeSolver::OdeSolver(const Reader& reader, const Ode& ode): ode_(ode) {
+    OdeRawData raw = reader.GetRawData();
+    start_time_ = raw.time_params.t0;
+    end_time_ = raw.time_params.t_final;
+    step_size_ = raw.time_params.step_size;
+    
+    if (end_time_ <= start_time_) {
+      throw std::invalid_argument("Endtime must be greater than starttime for Reader constructor.");
+    }
+    if (step_size_ <= 0) {
+      throw std::invalid_argument("Step size must be positive for Reader constructor.");
+    }
+    if (std::ceil((end_time_ - start_time_)/step_size_) != raw.time_params.number_of_steps) {
+      throw std::invalid_argument("Inconsistent number of steps in Reader constructor.");
+    }
+    
+    Reset();
+}
 
 void OdeSolver::Solve() {
     if(end_time_ <= start_time_) {

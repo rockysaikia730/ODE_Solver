@@ -1,6 +1,0 @@
-# Header Line
-t 0
-step_size 0.1
-number_of_steps 0
-
-y  [1, 2]

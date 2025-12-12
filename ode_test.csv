@@ -1,5 +1,0 @@
-y; [1.0, 2.0]
-t; 0
-tf; 1
-step_size; 0.1
-function; [y0 + y1, t + y0]

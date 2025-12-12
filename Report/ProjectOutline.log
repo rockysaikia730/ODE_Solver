@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.3)  28 NOV 2025 08:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.3)  12 DEC 2025 08:39
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **c:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/Report/ProjectOutline.tex
 (c:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/Report/ProjectOutline.tex
@@ -656,7 +655,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count354
 \l__pdf_internal_box=\box83
-) (ProjectOutline.aux)
+)
+No file ProjectOutline.aux.
 \openout1 = `ProjectOutline.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
@@ -677,7 +677,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
 LaTeX Font Info:    ... okay on input line 96.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 96.
 LaTeX Font Info:    ... okay on input line 96.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -754,12 +753,12 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 99.
  (C:\Users\andra\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 113.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 114.
  (C:\Users\andra\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
-LaTeX Warning: Reference `eq:ode' on page 1 undefined on input line 128.
+LaTeX Warning: Reference `eq:ode' on page 1 undefined on input line 129.
 
 
 
@@ -767,32 +766,32 @@ LaTeX Warning: Reference `eq:ode' on page 1 undefined on input line 128.
 
 {C:/Users/andra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
 
-LaTeX Warning: Reference `alg:forward_euler' on page 2 undefined on input line 130.
+LaTeX Warning: Reference `alg:forward_euler' on page 2 undefined on input line 131.
 
 
-LaTeX Warning: Citation `2022Forward' on page 2 undefined on input line 130.
+LaTeX Warning: Citation `2022Forward' on page 2 undefined on input line 131.
 
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 133.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 134.
 
-LaTeX Warning: Citation `ABmethod' on page 2 undefined on input line 151.
-
-
-LaTeX Warning: Reference `alg:forward_euler' on page 2 undefined on input line 151.
+LaTeX Warning: Citation `ABmethod' on page 2 undefined on input line 152.
 
 
-LaTeX Warning: Reference `alg:adams_bashforth_2' on page 2 undefined on input line 151.
+LaTeX Warning: Reference `alg:forward_euler' on page 2 undefined on input line 152.
 
 
-LaTeX Warning: Reference `alg:adams_bashforth_3' on page 2 undefined on input line 151.
+LaTeX Warning: Reference `alg:adams_bashforth_2' on page 2 undefined on input line 152.
 
 
-LaTeX Warning: Reference `alg:adams_bashforth_4' on page 2 undefined on input line 151.
+LaTeX Warning: Reference `alg:adams_bashforth_3' on page 2 undefined on input line 152.
 
 
-LaTeX Warning: Reference `alg:backward_euler' on page 2 undefined on input line 198.
+LaTeX Warning: Reference `alg:adams_bashforth_4' on page 2 undefined on input line 152.
 
 
-LaTeX Warning: Citation `2022Backward' on page 2 undefined on input line 198.
+LaTeX Warning: Reference `alg:backward_euler' on page 2 undefined on input line 199.
+
+
+LaTeX Warning: Citation `2022Backward' on page 2 undefined on input line 199.
 
 
 
@@ -800,16 +799,16 @@ LaTeX Warning: Citation `2022Backward' on page 2 undefined on input line 198.
 
 [3]
 
-LaTeX Warning: Reference `alg:rk2' on page 4 undefined on input line 214.
+LaTeX Warning: Reference `alg:rk2' on page 4 undefined on input line 215.
 
 
-LaTeX Warning: Reference `alg:rk3' on page 4 undefined on input line 214.
+LaTeX Warning: Reference `alg:rk3' on page 4 undefined on input line 215.
 
 
-LaTeX Warning: Reference `alg:rk4' on page 4 undefined on input line 214.
+LaTeX Warning: Reference `alg:rk4' on page 4 undefined on input line 215.
 
 
-LaTeX Warning: Citation `RKmethods' on page 4 undefined on input line 214.
+LaTeX Warning: Citation `RKmethods' on page 4 undefined on input line 215.
 
 
 
@@ -821,31 +820,31 @@ LaTeX Warning: Citation `RKmethods' on page 4 undefined on input line 214.
 
 [7]
 
-LaTeX Warning: Reference `fig:ode_class_diagram' on page 8 undefined on input line 323.
+LaTeX Warning: Reference `fig:ode_class_diagram' on page 8 undefined on input line 324.
 
-<data_class_diagram.pdf, id=192, 614.295pt x 307.1475pt>
+<data_class_diagram.pdf, id=193, 614.295pt x 307.1475pt>
 File: data_class_diagram.pdf Graphic file (type pdf)
 <use data_class_diagram.pdf>
-Package pdftex.def Info: data_class_diagram.pdf  used on input line 326.
+Package pdftex.def Info: data_class_diagram.pdf  used on input line 327.
 (pdftex.def)             Requested size: 281.85587pt x 140.92868pt.
 
-LaTeX Warning: Reference `fig:input_class_diagram' on page 8 undefined on input line 335.
+LaTeX Warning: Reference `fig:input_class_diagram' on page 8 undefined on input line 336.
 
-<input_class_diagram.pdf, id=193, 625.33624pt x 321.2pt>
+<input_class_diagram.pdf, id=194, 625.33624pt x 321.2pt>
 File: input_class_diagram.pdf Graphic file (type pdf)
 <use input_class_diagram.pdf>
-Package pdftex.def Info: input_class_diagram.pdf  used on input line 338.
+Package pdftex.def Info: input_class_diagram.pdf  used on input line 339.
 (pdftex.def)             Requested size: 281.85587pt x 144.77391pt.
 
 
 [8 <./data_class_diagram.pdf>]
 
-LaTeX Warning: Reference `fig:solver_class_diagram' on page 9 undefined on input line 344.
+LaTeX Warning: Reference `fig:solver_class_diagram' on page 9 undefined on input line 345.
 
-<solver_class_diagram.pdf, id=207, 840.13875pt x 465.74pt>
+<solver_class_diagram.pdf, id=208, 840.13875pt x 465.74pt>
 File: solver_class_diagram.pdf Graphic file (type pdf)
 <use solver_class_diagram.pdf>
-Package pdftex.def Info: solver_class_diagram.pdf  used on input line 350.
+Package pdftex.def Info: solver_class_diagram.pdf  used on input line 351.
 (pdftex.def)             Requested size: 281.85587pt x 156.24594pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -854,12 +853,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [9 <./input_class_diagram.pdf>]
 
-LaTeX Warning: Reference `fig:output_class_diagram' on page 10 undefined on input line 365.
+LaTeX Warning: Reference `fig:output_class_diagram' on page 10 undefined on input line 366.
 
-<output_class_diagram.pdf, id=231, 333.245pt x 192.72pt>
+<output_class_diagram.pdf, id=232, 333.245pt x 192.72pt>
 File: output_class_diagram.pdf Graphic file (type pdf)
 <use output_class_diagram.pdf>
-Package pdftex.def Info: output_class_diagram.pdf  used on input line 368.
+Package pdftex.def Info: output_class_diagram.pdf  used on input line 369.
 (pdftex.def)             Requested size: 281.85587pt x 163.0129pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -868,19 +867,19 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [10 <./solver_class_diagram.pdf>]
 
-LaTeX Warning: Reference `fig:final_reader_class_diagram' on page 11 undefined on input line 387.
+LaTeX Warning: Reference `fig:final_reader_class_diagram' on page 11 undefined on input line 388.
 
 
-LaTeX Warning: File `final_reader_class_diagram.pdf' not found on input line 390.
+LaTeX Warning: File `final_reader_class_diagram.pdf' not found on input line 391.
 
 
-c:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/Report/ProjectOutline.tex:390: Package pdftex.def Error: File `final_reader_class_diagram.pdf' not found: using draft setting.
+! Package pdftex.def Error: File `final_reader_class_diagram.pdf' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.390 ...extwidth]{final_reader_class_diagram.pdf}
+l.391 ...extwidth]{final_reader_class_diagram.pdf}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -889,19 +888,19 @@ If that doesn't work, type  X <return>  to quit.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `fig:final_ode_class_diagram' on page 11 undefined on input line 396.
+LaTeX Warning: Reference `fig:final_ode_class_diagram' on page 11 undefined on input line 397.
 
 
-LaTeX Warning: File `final_ode_class_diagram.pdf' not found on input line 399.
+LaTeX Warning: File `final_ode_class_diagram.pdf' not found on input line 400.
 
 
-c:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/Report/ProjectOutline.tex:399: Package pdftex.def Error: File `final_ode_class_diagram.pdf' not found: using draft setting.
+! Package pdftex.def Error: File `final_ode_class_diagram.pdf' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.399 ...6\textwidth]{final_ode_class_diagram.pdf}
+l.400 ...6\textwidth]{final_ode_class_diagram.pdf}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -910,12 +909,12 @@ If that doesn't work, type  X <return>  to quit.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `fig:final_solver_class_diagram' on page 11 undefined on input line 404.
+LaTeX Warning: Reference `fig:final_solver_class_diagram' on page 11 undefined on input line 405.
 
-<final_solver_class_diagram.pdf, id=256, 1071.00125pt x 434.62375pt>
+<final_solver_class_diagram.pdf, id=257, 1071.00125pt x 434.62375pt>
 File: final_solver_class_diagram.pdf Graphic file (type pdf)
 <use final_solver_class_diagram.pdf>
-Package pdftex.def Info: final_solver_class_diagram.pdf  used on input line 407.
+Package pdftex.def Info: final_solver_class_diagram.pdf  used on input line 408.
 (pdftex.def)             Requested size: 281.85587pt x 114.37892pt.
 
 
@@ -924,19 +923,19 @@ Package pdftex.def Info: final_solver_class_diagram.pdf  used on input line 407.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `fig:final_writer_class_diagram' on page 12 undefined on input line 413.
+LaTeX Warning: Reference `fig:final_writer_class_diagram' on page 12 undefined on input line 414.
 
 
-LaTeX Warning: File `final_writer_class_diagram.pdf' not found on input line 416.
+LaTeX Warning: File `final_writer_class_diagram.pdf' not found on input line 417.
 
 
-c:/Users/andra/OneDrive/Desktop/MA1_2025-2026/pcsc_project/ODE_Solver/Report/ProjectOutline.tex:416: Package pdftex.def Error: File `final_writer_class_diagram.pdf' not found: using draft setting.
+! Package pdftex.def Error: File `final_writer_class_diagram.pdf' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.416 ...extwidth]{final_writer_class_diagram.pdf}
+l.417 ...extwidth]{final_writer_class_diagram.pdf}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -969,20 +968,20 @@ Package rerunfilecheck Warning: File `ProjectOutline.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `ProjectOutline.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  60FA74F06732EEBD4E91F2F4250BA1AC;2474.
+(rerunfilecheck)             After:  07CADC23EF0AE0CBAEDED393D19BF462;2772.
  ) 
 Here is how much of TeX's memory you used:
- 30240 strings out of 473682
- 607167 string characters out of 5719216
- 1015223 words of memory out of 5000000
- 52691 multiletter control sequences out of 15000+600000
+ 30238 strings out of 473682
+ 607032 string characters out of 5719216
+ 1015232 words of memory out of 5000000
+ 52690 multiletter control sequences out of 15000+600000
  589458 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,11n,107p,1820b,1324s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/andra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ProjectOutline.pdf (14 pages, 279622 bytes).
+Output written on ProjectOutline.pdf (14 pages, 280124 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
- 139 named destinations out of 1000 (max. 500000)
+ 404 PDF objects out of 1000 (max. 8388607)
+ 140 named destinations out of 1000 (max. 500000)
  182 words of extra memory for PDF output out of 10000 (max. 10000000)
 
