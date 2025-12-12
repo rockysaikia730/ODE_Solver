@@ -281,10 +281,26 @@ std::vector<size_t> Reader::ParseTensorRecursive(const std::string& str, size_t&
 
         // We parse a value (complex or double)
         else {
-
+    
             // find the end of value
             std::string value_str;
-            while (pos < str.size() && str[pos] != ',' && str[pos] != ']' && str[pos] != '[') {
+            int bracket_level = 0;
+
+            while (pos < str.size()){
+                if (str[pos] == '(') {
+                    // complex number start
+                    bracket_level++;
+                }
+                else if (str[pos] == ')') {
+                    // complex number end
+                    bracket_level--;
+                }
+
+                // Break if we reach a comma or closing bracket at the top level
+                if ((str[pos] == ',' || str[pos] == ']') && bracket_level == 0) {
+                    break;
+                }
+
                 value_str += str[pos];
                 ++pos;
             }
@@ -373,7 +389,6 @@ std::complex<double> Reader::ParseComplexNumber(const std::string& str) const {
     std::string content = trimmed_str.substr(1, trimmed_str.size() - 2); 
     auto parts = Split(content, ',');
     parts = Trim(parts);
-
     double real = std::stod(parts[0]);
     double imag = std::stod(parts[1]);
 
