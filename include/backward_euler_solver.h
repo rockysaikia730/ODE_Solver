@@ -14,6 +14,13 @@
  */
 class BackwardEuler: public Bdf {
 public:
+
+    /**
+     * @brief Constructs a Backward Euler solver using input from a Reader.
+     * @param ode         Reference to the ODE system to integrate.
+     * @param reader      Reader object containing solver configuration.
+     * @param root_finder Shared pointer to a RootFinder for implicit solves.
+     */
     BackwardEuler(const Ode& ode, const Reader& reader, std::shared_ptr<RootFinder> root_finder = nullptr); 
     /**
      * @brief Constructs a Backward Euler solver using a fixed step size.

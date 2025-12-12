@@ -15,6 +15,12 @@
  */
 class ForwardEuler : public AdamsBashforth {
 public:
+
+    /**
+     * @brief Constructs a Forward Euler solver using input from a Reader.
+     * @param ode         Reference to the ODE system to integrate.
+     * @param reader      Reader object containing solver configuration.
+     */
     ForwardEuler(const Ode& ode, const Reader& reader);
     /**
      * @brief Constructs a Forward Euler solver using a fixed step size.

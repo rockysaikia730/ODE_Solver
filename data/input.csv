@@ -1,1 +1,7 @@
-
+t;0.0
+tf;3.0
+step_size;0.01
+y;[0]
+function;[sin(t)]
+method;RungeKutta
+order;4

@@ -16,6 +16,11 @@
  */
 class AdamsBashforth : public MultiStepOdeSolver {
 public:
+    /**
+     * @brief Constructs an Adams–Bashforth solver using input from a Reader.
+     * @param ode         Reference to the ODE system to integrate.
+     * @param reader      Reader object containing solver configuration.
+     */
     AdamsBashforth(const Ode& ode, const Reader& reader);
     /**
      * @brief Constructs an Adams–Bashforth solver using a fixed step size.

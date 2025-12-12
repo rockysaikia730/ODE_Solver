@@ -17,6 +17,12 @@
  */
 class AdamMoulton : public ImplicitSolver {
 public: 
+    /**
+     * @brief Constructs an Adams–Moulton solver using input from a Reader.
+     * @param ode            Reference to the ODE system to integrate.
+     * @param reader         Reader object containing solver configuration.
+     * @param root_finder    Shared pointer to a RootFinder used to solve the implicit equation.
+     */
     AdamMoulton(const Ode& ode, const Reader& reader, std::shared_ptr<RootFinder> root_finder = nullptr);
     /**
      * @brief Constructs an Adams–Moulton solver using a fixed step size.

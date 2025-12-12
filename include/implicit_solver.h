@@ -16,6 +16,14 @@
  */
 class ImplicitSolver : public MultiStepOdeSolver {
 public:
+    /**
+     * @brief Constructs an ImplicitSolver using input from a Reader.
+     * @param ode               Reference to the ODE system to integrate.
+     * @param reader            Reader object containing solver configuration.
+     * @param order_solution    Order of the multistep scheme for the solution.
+     * @param order_derivative  Order of the multistep scheme for the derivative.
+     * @param root_finder       Shared pointer to a RootFinder used to solve implicit equations.
+     */
     ImplicitSolver(const Ode& ode, const Reader& reader, int order_solution, 
         int order_derivative, std::shared_ptr<RootFinder> root_finder);
     /**

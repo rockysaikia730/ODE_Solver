@@ -7,8 +7,8 @@
 #include "parsed_function.h"
 #include "dynamic_tensor.h"
 
-// Utility alias
-using C = DynamicTensor::Complex;
+// simplifying
+using Complex = DynamicTensor::Complex;
 
 // Direct constructor from scalar initial condition
 TEST(OdeTest, ScalarConstructor)

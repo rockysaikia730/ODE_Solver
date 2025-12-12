@@ -4,6 +4,7 @@
 
 #include "output_csv.h"
 #include "output_txt.h"
+#include "output_file.h"
 #include "runge_kutta_solver.h"
 #include "parsed_function.h"
 #include "dynamic_tensor.h"
@@ -31,7 +32,6 @@ TEST(OutputTest, CsvOutput)
     DynamicTensor y0(std::vector<double>{1, 2}, {2});
     Ode ode(0.0, y0, "csv_test", std::move(f), nullptr);
 
-    // Real solver
     RungeKutta solver(ode, 0.1, 0.0);
     solver.Reset(); // solution = y0, current_time = t0
 
@@ -40,14 +40,13 @@ TEST(OutputTest, CsvOutput)
     writer.Write(solver);
 
     std::string contents = readFile("test_out.csv");
-    // Check header
+
     EXPECT_NE(contents.find("H1;H2;H3"), std::string::npos);
 
-    // Metadata
     EXPECT_NE(contents.find("t;0"), std::string::npos);
     EXPECT_NE(contents.find("step_size;0.1"), std::string::npos);
 
-    // Tensor format (your exact format)
+
     EXPECT_NE(contents.find("y; [1, 2]"), std::string::npos)
         << "Tensor did not match expected CSV format: " << contents;
 }

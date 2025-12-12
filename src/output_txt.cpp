@@ -1,6 +1,7 @@
 #include <fstream>
 #include "ode_solver.h"
 #include "output_txt.h"
+#include "output_file.h"
 
 
 //---------------------------------------------------------------------//

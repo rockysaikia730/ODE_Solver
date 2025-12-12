@@ -13,6 +13,13 @@
  */
 class MultiStepOdeSolver : public OdeSolver {
 public:
+    /**
+     * @brief Constructor with Reader input.
+     * @param ode            ODE system to solve.
+     * @param reader         Reader object containing solver configuration.
+     * @param order_solution Order of the multistep method for y.
+     * @param order_derivative Order of the multistep method for dy/dt.
+     */
     MultiStepOdeSolver(const Ode& ode, const Reader& reader,
         int order_solution = 1, int order_derivative = 1);
     /**

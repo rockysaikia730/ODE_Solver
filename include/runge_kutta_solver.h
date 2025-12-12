@@ -14,6 +14,11 @@
  */
 class RungeKutta : public OdeSolver {
 public:
+    /**
+     * @brief Constructs a Runge–Kutta solver using input from a Reader.
+     * @param ode         Reference to the ODE system to integrate.
+     * @param reader      Reader object containing solver configuration.
+     */
     RungeKutta(const Ode& ode, const Reader& reader);
     /**
      * @brief Constructs a Runge–Kutta solver using a fixed step size.

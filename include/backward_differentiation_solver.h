@@ -17,6 +17,12 @@
  */
 class Bdf : public ImplicitSolver {
 public:
+    /**
+     * @brief Constructs a BDF solver using input from a Reader.
+     * @param ode               Reference to the ODE system being integrated.
+     * @param reader            Reader object containing solver configuration.
+     * @param root_finder       Shared pointer to a RootFinder used to solve the implicit equation.
+     */
     Bdf(const Ode& ode, const Reader& reader, std::shared_ptr<RootFinder> root_finder = nullptr);
     /**
      * @brief Constructs a BDF solver using a fixed step size.

@@ -49,7 +49,11 @@ set(CORE_SOURCES
     src/adam_moulton_solver.cpp
     src/backward_euler_solver.cpp
     src/forward_euler_solver.cpp
+    src/forward_euler_light_solver.cpp
     src/output.cpp
+    src/output_file.cpp
+    src/output_csv.cpp
+    src/output_txt.cpp
     src/output_plotter.cpp
 )
 
@@ -156,6 +160,7 @@ add_executable(output_unittest
     src/output.cpp
     src/output_csv.cpp
     src/output_txt.cpp
+    src/output_file.cpp
 
     src/reader.cpp
     src/reader_csv.cpp

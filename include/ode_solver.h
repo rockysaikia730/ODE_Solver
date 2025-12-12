@@ -136,6 +136,12 @@ public:
      */
     OdeSolver(const Ode& ode, double step_size = 0.01, double end_time = 0.0);
 
+    /**
+     * @brief Constructor using a Reader for configuration.
+     *
+     * @param ode A constant reference to the ODE definition. Must outlive the solver.
+     * @param reader Reader object containing solver configuration.
+     */
     OdeSolver(const Ode& ode, const Reader& reader);
 
 protected:
