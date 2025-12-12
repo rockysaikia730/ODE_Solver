@@ -514,6 +514,15 @@ Executing the OdeSolver :
 ```bash
 ./build/ode_solver <input_file_path> <output_file_path> <optional_flag_for_plotting>
 ```
+Example Usage:
+```bash
+# With plotting
+./build/ode_solver data/input.txt data/output.txt 1
+
+# Without plotting
+./build/ode_solver data/input.txt data/output.txt 0
+```
+
 Generating the Doxygen documentation :
 ```bash 
 doxygen docs/Doxyfile
