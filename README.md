@@ -496,24 +496,30 @@ Shortcomings:
 1. The current implementation has very limited operator overloading and so is rigid in terms of the syntax that can be used for tensor manipulation.
 2. Current implementation completely separates Complex types from Real types and does not allow for using mixed types.
 
-### REMAINING TO DO main.
+### Instructions for Building and Documentation
 
-# For executing only the Doxyfile
+Building the project:
 ```bash
-cd docs
-doxygen
-```
-
-# For compiling and generating the Doxygen documentation
-```bash
-mkdir build
-cd build
+mkdir build && cd build
 cmake ..
-make
+cmake --build .
 ```
+Running the tests :
+```bash
+ctest --test-dir build
+```
+Executing the OdeSolver :
+```bash
+./build/ode_solver <input_file_path> <output_file_path> <optional_flag_for_plotting>
+```
+Generating the Doxygen documentation :
+```bash 
+doxygen docs/Doxyfile
+```
+
 ---
 ## Distribution of Work
 The project was done by Ahmed Rockey Saikia and Andras Horkay. Andras worked on the classes and the corresponding unittests on `Ode`, `OdeRawData`, `Reader`, `ParsedFunction`, `ReaderCsv`, `ReaderTxt` and `Output` . Rockey worked on `Ode`, `OdeSolver`,`MultiStepOdeSolver`, `ImplicitSolver`, `DynamicTensor`, `OutputPlotter` and `Function`. The conception and design of the project was decided by the both of us, only the coding was done separately. Below are some notes from the authors.
 
 - Notes from Andras: I have used LLMs when commenting and debugging my code. I have used it especially a lot when developing the reader class, so that I can parse the tensors and and fucntions properly. The design of how these are read were my idea, but I needed help when doing the `Recursive` functions when parsing: `ParseFunctionRecursive` and `ParseTensor`. After this, I did feed most of my code also to ChatGPT to see if there are any improvements to be done, but it did not suggest many improvements. I have also used LLMs to generate some of the unittests. I have left comments where changes were code was made by LLMs.
-- Notes from Rockey: I have used LLMs for commenting my codes. For creating the DynamicTensor class, I sought help from LLMs for using `std::variant` technique to store both complex and real numbers without templating. Further for the class OutputPlotter, I used LLMs for the syntax. This class is made for the verification that the code is working as expected. I have also used LLMs to refine some part of the report where I used it primarily for paraphrasing. 
+- Notes from Rockey: I have used LLMs for commenting my codes. For creating the DynamicTensor class, I sought help from LLMs for using `std::variant` technique to store both complex and real numbers without templating and for generating the tests for DynamicTensors. Further for the class OutputPlotter, I used LLMs for the syntax. This class is made for the verification that the code is working as expected. I have also used LLMs to refine some part of the report where I used it primarily for paraphrasing.

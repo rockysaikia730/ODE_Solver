@@ -1,35 +1,30 @@
 cmake_minimum_required(VERSION 3.22)
-project(Codes)
+project(ODE_Solver)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fexec-charset=UTF-8 -finput-charset=UTF-8")
 
-# MuparserX library
-file(GLOB MUPARSERX_SOURCES
-    ${CMAKE_SOURCE_DIR}/external/muparserx/parser/*.cpp
-)
+# --- MuparserX ---
+file(GLOB MUPARSERX_SOURCES ${CMAKE_SOURCE_DIR}/external/muparserx/parser/*.cpp)
 list(FILTER MUPARSERX_SOURCES EXCLUDE REGEX "mpTest.cpp")
-add_library(muparserx ${MUPARSERX_SOURCES})
-target_include_directories(muparserx PUBLIC
-    ${CMAKE_SOURCE_DIR}/external/muparserx/parser
-)
 
-# Google Test
-# cmake_policy(SET CMP0135 NEW)
+add_library(muparserx ${MUPARSERX_SOURCES})
+target_include_directories(muparserx PUBLIC ${CMAKE_SOURCE_DIR}/external/muparserx/parser)
+
+# --- Google Test ---
 include(FetchContent)
 FetchContent_Declare(
     googletest
     SOURCE_DIR ${CMAKE_SOURCE_DIR}/external/googletest-03597a01ee50ed33e9dfd640b249b4be3799d395
 )
-
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 enable_testing()
 include(GoogleTest)
 
-# Everything executable
+
+#----- All files ------
 set(CORE_SOURCES
     src/dynamic_tensor.cpp
     src/ode.cpp                  
@@ -52,32 +47,30 @@ set(CORE_SOURCES
     src/forward_euler_light_solver.cpp
     src/output.cpp
     src/output_file.cpp
+    src/output_plotter.cpp
     src/output_csv.cpp
     src/output_txt.cpp
-    src/output_plotter.cpp
 )
 
-# 2. Define a static library containing the logic
 add_library(core_lib STATIC ${CORE_SOURCES})
 
-# 3. Setup include directories and dependencies for the library
 target_include_directories(core_lib PUBLIC
     include
     src
     ${CMAKE_SOURCE_DIR}/external/muparserx/parser
 )
-
 target_link_libraries(core_lib PUBLIC muparserx)
 
-# --- TARGET: The Main Application ---
+add_executable(ode_solver src/main.cpp)
+target_link_libraries(ode_solver PRIVATE core_lib)
 
-# 4. The main executable only contains main.cpp and links to the core library
-add_executable(everything src/main.cpp)
-target_link_libraries(everything PRIVATE core_lib)
+macro(add_project_test test_name source_file)
+    add_executable(${test_name} ${source_file})
+    target_link_libraries(${test_name} PRIVATE core_lib GTest::gtest_main)
+    gtest_discover_tests(${test_name})
+endmacro()
 
-
-# --- TARGET: The Unit Tests ---
-
+# ---- All Tests ----
 add_executable(unittests
     Tests/dynamic_tensor_unittest.cpp
     Tests/function_unittest.cpp
@@ -89,108 +82,15 @@ add_executable(unittests
     Tests/backward_euler_unittest.cpp
     Tests/forward_euler_unittest.cpp
     Tests/output_plotter.cpp
+    Tests/reader_unittest.cpp
+    Tests/ode_unittest.cpp
+    Tests/output_unittest.cpp
 )
-
-# 5. Link the unittests to the core library AND GTest
-target_link_libraries(unittests
-    PRIVATE
-    core_lib
-    GTest::gtest_main
-)
-
+target_link_libraries(unittests PRIVATE core_lib GTest::gtest_main)
 gtest_discover_tests(unittests)
 
 
-# New GoogleTest reader unittest
-add_executable(reader_unittest
-    tests/reader_unittest.cpp
-    src/reader.cpp
-    src/reader_csv.cpp
-    src/reader_txt.cpp
-    src/dynamic_tensor.cpp
-    src/parsed_function.cpp
-    src/function.cpp
-    src/ode.cpp
-    src/ode_solver.cpp
-    src/ode_raw_data.cpp
-)
-
-target_include_directories(reader_unittest PRIVATE
-    include
-    src
-    ${CMAKE_SOURCE_DIR}/external/muparserx/parser
-)
-
-target_link_libraries(reader_unittest PRIVATE
-    muparserx
-    GTest::gtest_main
-)
-
-gtest_discover_tests(reader_unittest)
-
-# ODE unit tests
-add_executable(ode_unittest
-    tests/ode_unittest.cpp
-    src/dynamic_tensor.cpp
-    src/function.cpp
-    src/parsed_function.cpp
-    src/ode.cpp
-    src/ode_solver.cpp
-    src/ode_raw_data.cpp
-    src/reader.cpp
-    src/reader_csv.cpp
-    src/reader_txt.cpp
-)
-
-target_include_directories(ode_unittest PRIVATE
-    include
-    src
-    ${CMAKE_SOURCE_DIR}/external/muparserx/parser
-)
-
-target_link_libraries(ode_unittest PRIVATE
-    muparserx
-    GTest::gtest_main
-)
-
-gtest_discover_tests(ode_unittest)
-
-add_executable(output_unittest
-    Tests/output_unittest.cpp
-    src/output.cpp
-    src/output_csv.cpp
-    src/output_txt.cpp
-    src/output_file.cpp
-
-    src/reader.cpp
-    src/reader_csv.cpp
-    src/reader_txt.cpp
-
-    src/dynamic_tensor.cpp
-    src/parsed_function.cpp
-    src/function.cpp
-    src/ode.cpp
-    src/ode_raw_data.cpp
-    src/ode_solver.cpp
-    src/runge_kutta_solver.cpp
-)
-
-target_include_directories(output_unittest PRIVATE
-    include
-    src
-    ${CMAKE_SOURCE_DIR}/external/muparserx/parser
-    ${gtest_SOURCE_DIR}/include      
-    ${gmock_SOURCE_DIR}/include     
-)
-
-target_link_libraries(output_unittest PRIVATE
-    muparserx
-    GTest::gtest_main
-)
-
-gtest_discover_tests(output_unittest)
-
-#Generate documentation with Doxygen
+# ---- Doxygen Generation -----
 # find_package(Doxygen)
 # if(DOXYGEN_FOUND)
 #    add_custom_target(doxygen ALL
