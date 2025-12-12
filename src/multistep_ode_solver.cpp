@@ -70,20 +70,9 @@ MultiStepOdeSolver::MultiStepOdeSolver(const Ode& ode, double step_size, double 
         if(order_derivative_ < 0) throw std::invalid_argument("Order of derivative should be >= 0.");
       }
 
-
 MultiStepOdeSolver::MultiStepOdeSolver(const Ode& ode, int num_of_steps, double end_time,
     int order_solution, int order_derivative)
     : OdeSolver(ode, num_of_steps, end_time), 
-      order_sol_(order_solution),
-      order_derivative_(order_derivative)
-      {
-        if(order_sol_ < 1) throw std::invalid_argument("Order of solution should be >= 1.");
-        if(order_derivative_ < 0) throw std::invalid_argument("Order of derivative should be >= 0.");
-      }
-
-MultiStepOdeSolver::MultiStepOdeSolver(const Reader& reader, const Ode& ode, 
-    int order_solution, int order_derivative)
-    : OdeSolver(reader, ode), 
       order_sol_(order_solution),
       order_derivative_(order_derivative)
       {

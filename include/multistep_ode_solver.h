@@ -23,15 +23,6 @@ public:
      */
     MultiStepOdeSolver(const Ode& ode, double step_size = 0.01, double end_time = 0.0, 
                         int order_solution = 1, int order_derivative = 1);
-
-    /**
-     * @brief Constructor using a Reader.
-     * @param reader         Reader object to configure the solver.
-     * @param ode            ODE system to solve.
-     * @param order_solution Order of the multistep method for y.
-     */
-    MultiStepOdeSolver(const Reader& reader, const Ode& ode, 
-                       int order_solution = 1, int order_derivative = 1);
     
     /**
      * @brief Constructor using a specified number of steps.
