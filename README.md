@@ -261,12 +261,15 @@ The distinction between `.txt` and `.csv` writers is then limited to formatting:
 - **`OutputTxt`** writes results in a plain text format. It includes a comment character `comment_char_` and a list of header lines `header_`. Its setup method writes each header line as a comment and the main write routine adds the key value pairs such as the final time `t`, the tensor `y`, and details like the step size.
 
 - **`OutputCsv`** writes in the same way but uses a single header row rather than comment lines.
+  
+- **`OutputPlotter`** uses gnuplotter to plot the datapoints in real time (works only for scalar y). It takes the solver as input and plots the current datapoint along with its history. To plot the history of the ode, the solver.Step() and plotter.Write(solver) can be put inside a loop. 
 
 ### Shortcomings
 
 This class was created quickly and does not yet print all useful data. Ideally, it would output all necessary information so that the simulation could be reconstructed entirely from the file. Additional output styles, such as plotting or allowing the printing of solutions at different points, would also be good extensions. 
 
 ## Abstract Base Classes for Solvers
+![Ode Solver class diagram](Documentation/OdeSolver_uml.png)
 
 ### OdeSolver
 
@@ -435,13 +438,14 @@ Constructors:
 ## Utilities
 
 ### RootFinder
+![Root Finder class diagram](Documentation/rootfinder_uml.png)
 
 The `RootFinder` class is an abstract base class that defines the interface for numerical root-finding algorithms. It is a critical dependency for all implicit ODE solvers which needs to solve non-linear equations at every time step.
 - **Polymorphic:** Allows the ODE solver to be decoupled from the specific numerical method used to solve the implicit equation.
 - **`FindRoot()` Method:** The pure virtual function that performs the rootfinding. It takes a generic `Function` object (wrapper around the equation $g(y) = 0$), an `initial_guess`, and the current time $t$.
 - **Tensor:** Designed for any rank using the `DynamicTensor` object.
 
-### NewtonRaphson
+#### NewtonRaphson
 
 The `NewtonRaphson` class is a implementation of the `RootFinder` interface. It solves for the root of a non-linear function using the iterative Newton-Raphson method. The `FindRoot` method executes a fixed number of iterations defined by `max_iter`. At each step, it updates the solution estimate using the gradient information provided by the `Function` object:
 
@@ -452,6 +456,7 @@ Shortcomings:
  1. The current implementation of Newton Raphson root finder is exclusively for 0D tensors.
 
 ### DynamicTensor
+![Dynamic Tensor class diagram](Documentation/dynamicTensor_uml.png)
 
 The `DynamicTensor` class is the core data structure used throughout the library to any tensors. It is designed to be flexible, supporting **runtime definition of dimensions** and accommodating both Real (`double`) and Complex (`std::complex<double>`) data types. We developed `DynamicTensor` to address the gap of Eigen:
 1.  **Dynamic Rank:** Unlike Eigen, which requires compile-time tensor ranks, this class supports tensors where both the shape and the rank are determined at runtime.
@@ -505,7 +510,7 @@ make
 ```
 ---
 ## Distribution of Work
-The project was done by Ahmed Rockey Saikia and Andras Horkay. Andras worked on the classes and the corresponding unittests on `Ode`, `OdeRawData`, `Reader`, `ParsedFunction`, `ReaderCsv`, `ReaderTxt` and `Output` . Rockey worked on `Ode`, `OdeSolver`,`MultiStepOdeSolver`, `ImplicitSolver` `DynamicTensor` graphical `Output` and `Function`. The conception and design of the project was decided by the both of us, only the coding was done separately. Below are some notes from the authors.
+The project was done by Ahmed Rockey Saikia and Andras Horkay. Andras worked on the classes and the corresponding unittests on `Ode`, `OdeRawData`, `Reader`, `ParsedFunction`, `ReaderCsv`, `ReaderTxt` and `Output` . Rockey worked on `Ode`, `OdeSolver`,`MultiStepOdeSolver`, `ImplicitSolver`, `DynamicTensor`, `OutputPlotter` and `Function`. The conception and design of the project was decided by the both of us, only the coding was done separately. Below are some notes from the authors.
 
 - Notes from Andras: I have used LLMs when commenting and debugging my code. I have used it especially a lot when developing the reader class, so that I can parse the tensors and and fucntions properly. The design of how these are read were my idea, but I needed help when doing the `Recursive` functions when parsing: `ParseFunctionRecursive` and `ParseTensor`. After this, I did feed most of my code also to ChatGPT to see if there are any improvements to be done, but it did not suggest many improvements. I have also used LLMs to generate some of the unittests. I have left comments where changes were code was made by LLMs.
-- Notes from Rockey: I have used LLMs for commenting my codes. For the creationg of the DynamicTensor class, I sought help from LLMs for using `std::variant` technique to store both complex and real numbers without templating. I have also used LLMs to refine some part of the report where I use it primarily for paraphrasing.
+- Notes from Rockey: I have used LLMs for commenting my codes. For creating the DynamicTensor class, I sought help from LLMs for using `std::variant` technique to store both complex and real numbers without templating. Further for the class OutputPlotter, I used LLMs for the syntax. This class is made for the verification that the code is working as expected. I have also used LLMs to refine some part of the report where I used it primarily for paraphrasing. 

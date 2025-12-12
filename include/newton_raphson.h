@@ -25,9 +25,9 @@ public:
      * @param f             Function whose root is to be found.
      * @param initial_guess Initial guess for the root.
      * @param t             Current time (used if the function is time-dependent).
-     * @param max_iter      Maximum number of iterations (default 500).
+     * @param max_iter      Maximum number of iterations (default 250).
      * @return              Estimated root as a DynamicTensor.
      */
-    DynamicTensor FindRoot(const Function& f, const DynamicTensor& initial_guess, double t, int max_iter = 500) const override;
+    DynamicTensor FindRoot(const Function& f, const DynamicTensor& initial_guess, double t, int max_iter = 250) const override;
 };
 #endif
