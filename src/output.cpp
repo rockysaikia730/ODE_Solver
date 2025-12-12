@@ -1,25 +1,27 @@
 #include <string>
 #include <fstream>
+#include "output_file.h"
+#include "ode_solver.h"
 #include "output.h"
 
 //---------------------------------------------------------------------//
 // Constructor(s)
 //---------------------------------------------------------------------//
 
-Output::Output(const std::string& filename, char separator, char element_separator)
-    : filename_(filename), separator_(separator), element_separator_(element_separator) {
+OutputFile::OutputFile(const std::string& filename, char separator, char element_separator)
+    : filename_(filename), separator_(separator), element_separator_(element_separator){
     EnsureFileExists();
     }
 
 //---------------------------------------------------------------------//
 // Getters and Setters
 //---------------------------------------------------------------------//
-void Output::SetFilename(const std::string& filename) {
+void OutputFile::SetFilename(const std::string& filename) {
     filename_ = filename;
     EnsureFileExists();
 }
 
-std::string Output::GetFilename() const {
+std::string OutputFile::GetFilename() const {
     return filename_;
 }
 
@@ -28,7 +30,7 @@ std::string Output::GetFilename() const {
 //---------------------------------------------------------------------//
 
 // A helper to write recursive data structures if needed. LLMs helped here.
-void Output::WriteTensorRecursive(std::ofstream& file, const DynamicTensor& tensor, 
+void OutputFile::WriteTensorRecursive(std::ofstream& file, const DynamicTensor& tensor, 
                                   const std::vector<size_t>& shape, std::vector<size_t>& index, size_t dim) const {
 
     // Base case: reached the last dimension
@@ -60,7 +62,7 @@ void Output::WriteTensorRecursive(std::ofstream& file, const DynamicTensor& tens
 }
 
 // Make sure the file exists, create if not
-void Output::EnsureFileExists() const {
+void OutputFile::EnsureFileExists() const {
 
     // Open in binary mode to avoid newline translation. This was suggested by ChatGPT, when the tests failed due to newlines.
     std::ofstream file(filename_, std::ios::app | std::ios::binary); 
@@ -70,7 +72,7 @@ void Output::EnsureFileExists() const {
 }
 
 //Writer method implementation
-void Output::Write(const OdeSolver& solver) const {
+void OutputFile::Write(const OdeSolver& solver) {
     std::ofstream file(filename_, std::ios::binary); // Open in binary mode to avoid newline translation (done due to suggestion by ChatGPT, when tests were failing)
     
     if (!file.is_open()) {

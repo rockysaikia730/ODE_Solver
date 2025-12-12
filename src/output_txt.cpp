@@ -1,5 +1,4 @@
 #include <fstream>
-#include "output.h"
 #include "ode_solver.h"
 #include "output_txt.h"
 
@@ -8,7 +7,7 @@
 // Constructor(s)
 //---------------------------------------------------------------------//
 OutputTxt::OutputTxt(const std::string& filename, char separator, char comment_char, char element_separator)
-    : Output(filename, separator, element_separator), comment_char_(comment_char) {
+    : OutputFile(filename, separator, element_separator), comment_char_(comment_char) {
         EnsureFileExists();
     }
 

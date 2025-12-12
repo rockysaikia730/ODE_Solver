@@ -7,8 +7,8 @@
 
 // Constructor
 OutputPlotter::OutputPlotter() 
-    : gnuplot_pipe_(nullptr),
-      Output("Plotting") {
+    : gnuplot_pipe_(nullptr), Output()
+    {
     gnuplot_pipe_ = popen("gnuplot -persistent", "w");
     if (!gnuplot_pipe_) {
         throw std::runtime_error("Could not find or open Gnuplot. Please ensure Gnuplot is installed and in your system PATH.");
@@ -27,12 +27,7 @@ OutputPlotter::~OutputPlotter() {
     }
 }
 
-// Base class requirement
-void OutputPlotter::FileSpecificSetup(std::ofstream& file) const {
-    std::cout << "Gnuplot Writer Ready." << std::endl;
-}
-
-void OutputPlotter::Write(const OdeSolver& solver) const {
+void OutputPlotter::Write(const OdeSolver& solver) {
     double t = solver.GetCurrentTime();
     double y = solver.GetSolution().at<double>({0});
     history_.push_back({t, y});

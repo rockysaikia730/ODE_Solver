@@ -2,7 +2,7 @@
 #define OUTPUT_TXT_H_
 #include <string>
 #include <vector>
-#include "output.h"
+#include "output_file.h"
 #include "ode_solver.h"
 
 
@@ -11,7 +11,7 @@
  * The output allows comments denoted by a specific character, which can be added through the
  * SetHeader method. The printing is done in 
  */
-class OutputTxt : public Output {
+class OutputTxt : public OutputFile {
 public:
     /**
      * @brief Constructor.

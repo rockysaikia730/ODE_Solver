@@ -8,7 +8,7 @@
 // Constructor(s)
 //---------------------------------------------------------------------//
 OutputCsv::OutputCsv(const std::string& filename, char separator, char element_separator)
-    : Output(filename, separator, element_separator) {
+    : OutputFile(filename, separator, element_separator) {
         EnsureFileExists();
 }
 

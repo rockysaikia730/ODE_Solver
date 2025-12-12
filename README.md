@@ -241,7 +241,7 @@ returns the exact analytical Jacobian. The derivative expressions are evaluated 
 ---
 ### 1.1.5 The `Output` Class
 
-The `Output` class is the abstract parent class to output a solution produced by an `OdeSolver`. Currently, it only has two subclasses, `OutputTxt` and `OutputCsv`, therefore the parent class is more like a file output class. This structure allows us to keep the solver independent of any output format, while still enabling writing the result in a desired way. The output class diagram is shown below
+The `Output` class is the abstract parent class to all forms of outputting a solution. It has as direct daughter classes `OutputFile`, which takes care of text based outputs, and `OutputPlotter` which takes care of plotting the history of the solution in 1 dimension. The class diagram is below.
 ![The output class diagram](Documentation/output_uml.png)
 
 The idea is that once the solver has finished its computation, an output object receives the final time and the corresponding solution values and writes them to a file using a chosen format.

@@ -2,7 +2,7 @@
 #define OUTPUT_CSV_H_
 #include <vector>
 #include <string>
-#include "output.h"
+#include "output_file.h"
 
 
 /**
@@ -11,7 +11,7 @@
  * SetSeparator method or the constructor. A header row can also be specified using the
  * SetHeader method.
  */
-class OutputCsv : public Output {
+class OutputCsv : public OutputFile {
 public:
     /**
      * @brief Constructor.

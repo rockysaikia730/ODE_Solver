@@ -1,36 +1,51 @@
-class OutputCsv(Output)
-  public OutputCsv(const std::string& filename, char separator)
-  public void Write(const OdeSolver& solver) override
-  public char GetSeparator() const
-  public void SetSeparator(char separator)
-  public std::vector<std::string> GetHeader() const
-  public void SetHeader(const std::vector<std::string>& header)
-  protected void FileSpecificSetup(std::ofstream& file) const
-
-  private std::vector<std::string> header_
-
-class OutputTxt(Output)
-  public OutputTxt(const std::string& filename, char separator, char comment_char)
-  public void Write(const OdeSolver& solver) override
-  public char GetCommentChar() const
-  public void SetCommentChar(char comment_char)
-  public std::vector<std::string> GetHeader() const
-  public void SetHeader(const std::vector<std::string>& header)
-
-  protected void FileSpecificSetup(std::ofstream& file) const
-
-  private char comment_char_
-  private std::vector<std::string> header_
-
 class Output
-  public Output(const std::string& filename, char separator)
+  public Output()
   public virtual ~Output()
-  public virtual void Write(const OdeSolver& solver)
+  public pure virtual void Write(const OdeSolver& solver)
+
+class OutputFile(Output)
+  public OutputFile(const std::string& filename,  char separator, char element_separator)
+ 
+  public void Write(const OdeSolver& solver) override
   public std::string GetFilename() const
   public void SetFilename(const std::string& filename)
 
   protected std::string filename_
   protected char separator_
+  protected char element_separator_
+
   protected void EnsureFileExists() const
-  protected void WriteTensorRecursive(std::ofstream& file,const DynamicTensor& tensor, const std::vector<size_t>& shape,std::vector<size_t>& index, size_t dim, char separator) const
-  protected pure void FileSpecificSetup(std::ofstream& file) const
+  protected void WriteTensorRecursive(std::ofstream& file,const DynamicTensor& tensor, const std::vector<size_t>& shape,std::vector<size_t>& index,size_t dim) const
+  protected pure virtual void FileSpecificSetup(std::ofstream& file) const
+
+class OutputCsv(OutputFile)
+  public OutputCsv(const std::string& filename,char separator,char element_separator)
+  public char GetSeparator() const
+  public void SetSeparator(char separator)
+  public std::vector<std::string> GetHeader() const
+  public void SetHeader(const std::vector<std::string>& header)
+
+  protected void FileSpecificSetup(std::ofstream& file) const override
+
+  private std::vector<std::string> header_
+
+class OutputTxt(OutputFile)
+  public OutputTxt(const std::string& filename,char separator, char comment_char, char element_separator)
+  public char GetCommentChar() const
+  public void SetCommentChar(char comment_char)
+  public std::vector<std::string> GetHeader() const
+  public void SetHeader(const std::vector<std::string>& header)
+
+  protected void FileSpecificSetup(std::ofstream& file) const override
+
+  private char comment_char_
+  private std::vector<std::string> header_
+
+class OutputPlotter(Output)
+  public OutputPlotter()
+  public ~OutputPlotter()
+
+  public void Write(const OdeSolver& solver) override
+
+  private FILE* gnuplot_pipe_
+  private mutable vector_pair_double_double history_

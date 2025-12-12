@@ -104,27 +104,6 @@ target_link_libraries(unittests
 )
 gtest_discover_tests(unittests)
 
-# Legacy reader test (manual test)
-add_executable(reader_test
-    Tests/reader_test.cpp
-    src/reader.cpp
-    src/reader_csv.cpp
-    src/reader_txt.cpp
-    src/dynamic_tensor.cpp
-    src/parsed_function.cpp
-    src/function.cpp
-    src/ode.cpp
-    src/ode_solver.cpp
-    src/ode_raw_data.cpp
-)
-
-target_include_directories(reader_test PRIVATE
-    include
-    src
-    ${CMAKE_SOURCE_DIR}/external/muparserx/parser
-)
-
-target_link_libraries(reader_test PRIVATE muparserx GTest::gtest_main)
 
 # New GoogleTest reader unittest
 add_executable(reader_unittest
