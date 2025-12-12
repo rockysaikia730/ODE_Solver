@@ -14,6 +14,7 @@
 #include <cmath>
 #include "ode.h"
 #include "dynamic_tensor.h"
+#include "reader.h"
 
 /**
  * @class OdeSolver
@@ -29,6 +30,11 @@ public:
      * @brief Virtual destructor.
      */
     virtual ~OdeSolver() = default;
+
+    /**
+     * @brief Constructor from Reader and Ode.
+     */
+    OdeSolver::OdeSolver(const Reader& reader, const Ode& ode);
 
     /**
      * @brief Calculates the solution at the next time step.
