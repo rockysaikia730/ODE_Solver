@@ -34,13 +34,5 @@ public:
      */
     BackwardEuler(const Ode& ode, int num_of_steps, double end_time = 0.0, 
                   std::shared_ptr<RootFinder> root_finder = nullptr);
-    /**
-     * @brief Constructs a Backward Euler solver using a Reader to configure time settings.
-     * @param reader            Reader object to configure the solver.
-     * @param ode               Reference to the ODE system being integrated.
-     * @param root_finder       Shared pointer to a RootFinder for implicit solves.
-     */
-    BackwardEuler(const Reader& reader, const Ode& ode, 
-                  std::shared_ptr<RootFinder> root_finder = nullptr);
 };
 #endif

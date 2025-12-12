@@ -39,9 +39,6 @@ public:
      */
     AdamMoulton(const Ode& ode, int num_of_steps, double end_time = 0.0, 
                 int order = 2, std::shared_ptr<RootFinder> root_finder = nullptr);
-
-    AdamMoulton(const Reader& reader, const Ode& ode, 
-                std::shared_ptr<RootFinder> root_finder = nullptr);
     /**
      * @brief Returns the coefficients applied to solution values in the implicit Adams–Moulton formula.
      *

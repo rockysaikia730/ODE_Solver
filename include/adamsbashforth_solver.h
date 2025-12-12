@@ -37,13 +37,6 @@ public:
     AdamsBashforth(const Ode& ode, int num_of_steps, double end_time = 0.0, int order = 4);
 
     /**
-     * @brief Contructs an Adams–Bashforth solver using a Reader to configure time settings.
-     * @param reader       Reader object to configure the solver.
-     * @param ode          ODE system to solve.
-     * @param order        Order of the Adams–Bashforth method.
-     */
-    AdamsBashforth(const Reader& reader, const Ode& ode, int order = 4);
-    /**
      * @brief Advances the solution by one Adams–Bashforth time step.
      *
      * Uses the explicit Adams–Bashforth formula:

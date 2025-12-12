@@ -53,15 +53,6 @@ ImplicitSolver::ImplicitSolver(const Ode& ode, int num_of_steps, double end_time
         if(!root_finder_) root_finder_ = std::make_shared<NewtonRaphson>();
       }
 
-ImplicitSolver::ImplicitSolver(const Reader& reader, const Ode& ode, 
-    int order_solution, int order_derivative, std::shared_ptr<RootFinder> root_finder)
-    : MultiStepOdeSolver(reader, ode, order_solution, order_derivative) 
-      {
-        if(root_finder) root_finder_ = std::move(root_finder);
-        root_finder_ = ode_.GetRootFinder();
-        if(!root_finder_) root_finder_ = std::make_shared<NewtonRaphson>();
-      }
-
 DynamicTensor ImplicitSolver::ComputeStep() {
     ImplicitEquation implicit_equation(*this);
     //What is a good initial guess

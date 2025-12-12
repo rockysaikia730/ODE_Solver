@@ -32,13 +32,6 @@ public:
     RungeKutta(const Ode& ode, int num_of_steps, double end_time);
 
     /**
-     * @brief Constructs a Runge–Kutta solver using a Reader to configure time settings.
-     * @param reader            Reader object to configure the solver.
-     * @param ode               Reference to the ODE system being integrated.
-     */
-    RungeKutta(const Reader& reader, const Ode& ode);
-    
-    /**
      * @brief Advances the solution by one Runge–Kutta time step.
      *
      * Typically implements the classical 4th-order Runge–Kutta formula:

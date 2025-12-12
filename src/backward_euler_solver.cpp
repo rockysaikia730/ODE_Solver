@@ -11,7 +11,3 @@ BackwardEuler::BackwardEuler(const Ode& ode, double step_size, double end_time,
 BackwardEuler::BackwardEuler(const Ode& ode, int num_of_steps, double end_time, 
                   std::shared_ptr<RootFinder> root_finder)
     : Bdf(ode, num_of_steps, end_time, 1, root_finder)  {}
-
-BackwardEuler::BackwardEuler(const Reader& reader, const Ode& ode, 
-                  std::shared_ptr<RootFinder> root_finder)
-    : Bdf(reader, ode, 1, root_finder) {}

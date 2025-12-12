@@ -15,6 +15,3 @@ DynamicTensor ForwardEulerLight::ComputeStep() {
         DynamicTensor dydt = ode_.Evaluate(current_time_, y);
         return y + (dydt * step_size_);
 }
-
-ForwardEulerLight::ForwardEulerLight(const Reader& reader, const Ode& ode)
-    : OdeSolver(reader, ode) {}

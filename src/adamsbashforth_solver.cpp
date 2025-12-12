@@ -12,14 +12,6 @@ AdamsBashforth::AdamsBashforth(const Ode& ode, double step_size, double end_time
         Reset();
       }
 
-AdamsBashforth::AdamsBashforth(const Reader& reader, const Ode& ode, int order)
-    : MultiStepOdeSolver(reader, ode, 1, order),
-      order_(order) 
-      {
-        if(order > 4 || order < 1) throw std::invalid_argument("Order must be within 1 to 4.");
-        Reset();
-      }
-
 AdamsBashforth::AdamsBashforth(const Ode& ode, int num_of_steps, double end_time, int order)
     : MultiStepOdeSolver(ode, num_of_steps, end_time, 1, order),
       order_(order) 
