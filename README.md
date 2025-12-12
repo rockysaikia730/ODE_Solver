@@ -322,9 +322,11 @@ The `ImplicitSolver` class extends `MultiStepOdeSolver` to handle **implicit** m
 
 To determine the next step, the solver treats the update rule as a root-finding problem:
 
-$$F( y_{n+1} ) = c^y_0 y_{n+1} - h c^{dy}\_0 f(t_{n+1}, y_{n+1}) - \mathrm{sum\_tn\_} = 0$$
+$$
+F(y_{n+1}) = c^{y}_{0} y_{n+1} - h c^{dy}_{0} f(t_{n+1}, y_{n+1}) - S = 0
+$$
 
-where `sum_tn_` corresponds to the cached window sum calculated by the `MultiStepOdeSolver` class.
+where `S` is `sum_tn_` corresponds to the cached window sum calculated by the `MultiStepOdeSolver` class.
 
 Following are the details of the class:
 - **Root Finding Method:** The class has an optional pointer `std::shared_ptr<RootFinder>` during construction. This component is responsible for numerically solving the equation above at every time step. The default RootFinder is Newton-Raphson method.
