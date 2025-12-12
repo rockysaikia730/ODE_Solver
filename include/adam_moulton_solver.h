@@ -34,7 +34,7 @@ public:
      * @param root_finder    Shared pointer to a RootFinder used to solve the implicit equation.
      */
     AdamMoulton(const Ode& ode, double step_size = 0.01, double end_time = 0.0, 
-                int order = 2, std::shared_ptr<RootFinder> root_finder = nullptr);
+                int order = 4, std::shared_ptr<RootFinder> root_finder = nullptr);
     /**
      * @brief Constructs an Adams–Moulton solver using a specified number of time steps.
      *
@@ -45,7 +45,7 @@ public:
      * @param root_finder     Shared pointer to a RootFinder for implicit solves.
      */
     AdamMoulton(const Ode& ode, int num_of_steps, double end_time = 0.0, 
-                int order = 2, std::shared_ptr<RootFinder> root_finder = nullptr);
+                int order = 4, std::shared_ptr<RootFinder> root_finder = nullptr);
     /**
      * @brief Returns the coefficients applied to solution values in the implicit Adams–Moulton formula.
      *

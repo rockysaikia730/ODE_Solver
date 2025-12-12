@@ -4,7 +4,11 @@
 
 
 AdamMoulton::AdamMoulton(const Ode& ode, const Reader& reader, std::shared_ptr<RootFinder> root_finder)
-      : ImplicitSolver(ode, reader, 1, reader.GetRawData().solver_params.order, root_finder) {}
+      : ImplicitSolver(ode, reader, 1, reader.GetRawData().solver_params.order, root_finder),
+        order_(reader.GetRawData().solver_params.order) {
+        if(order_ > 4 || order_ < 1) throw std::invalid_argument("Order must be within 1 to 4.");
+            Reset();
+      }
 
 AdamMoulton::AdamMoulton(const Ode& ode, double step_size, double end_time, 
                 int order, std::shared_ptr<RootFinder> root_finder)
@@ -29,7 +33,7 @@ const std::vector<double>& AdamMoulton::GetCoeffsY() const {
 
 const std::vector<double>& AdamMoulton::GetCoeffsdY() const {
     static const std::vector<double> c1 = {1.0};
-    static const std::vector<double> c2 = {1.0/2.0, 1.0/2.0};
+    static const std::vector<double> c2 = {1.0/2.0, 1.0/2.0 };
     static const std::vector<double> c3 = {5.0/12.0, 8.0/12.0, -1.0/12.0};
     static const std::vector<double> c4 = {9.0/24.0, 19.0/24.0, -5.0/24.0, 1.0/24.0};
 
