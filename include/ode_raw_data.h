@@ -5,6 +5,7 @@
 #include "dynamic_tensor.h"
 #include "function.h"
 #include "root_finder.h"
+#include "solver_methods.h"
 
 
 /**
@@ -54,6 +55,16 @@ struct OdeRawData {
          * @brief Tolerance for iterative solvers.
          */
         double tolerance = 1e-6;
+        
+        /**
+         * @brief Order of solver (for multistep methods).
+         */
+        int order = 4;
+
+        /**
+         * @brief Solver method as an enum.
+         */
+        SolverMethod method = SolverMethod::kRungeKutta;
     };
     
     /**

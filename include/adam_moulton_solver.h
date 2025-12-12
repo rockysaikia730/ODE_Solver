@@ -41,7 +41,7 @@ public:
                 int order = 2, std::shared_ptr<RootFinder> root_finder = nullptr);
 
     AdamMoulton(const Reader& reader, const Ode& ode, 
-                int order = 2, std::shared_ptr<RootFinder> root_finder = nullptr);
+                std::shared_ptr<RootFinder> root_finder = nullptr);
     /**
      * @brief Returns the coefficients applied to solution values in the implicit Adams–Moulton formula.
      *

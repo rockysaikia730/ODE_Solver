@@ -185,16 +185,24 @@ void Reader::InterpretKeyValuePair(const std::string& key, const std::string& va
     else if (key == "function") {
     size_t pos = 0;
     raw_data_.function_params.function_shape = ParseFunctionRecursive(value, pos, raw_data_.function_params.function_expressions);
-}
+    }
     else if(key == "derivative"){
         size_t pos = 0;
         raw_data_.function_params.derivative_shape = ParseFunctionRecursive(value, pos, raw_data_.function_params.derivative_expressions);
+    }
+    else if(key == "order"){
+        raw_data_.solver_params.order = static_cast<int>(ParseDouble(value));
+    }
+    else if (key == "method"){
+        
+        raw_data_.solver_params.method = ParseSolverMethod(value);
     }
     else{
         // skip unknown keys
     }
     // Does not create Function yet, just stores expressions and shape
 }
+
 
 // Trim a single string
 std::string Reader::TrimString(const std::string& str) const {
@@ -216,6 +224,35 @@ std::string Reader::TrimString(const std::string& str) const {
 //------------------------------------------------------------//
 // Private Method(s)
 //------------------------------------------------------------//
+
+// Parse solver method from string to enum
+SolverMethod Reader::ParseSolverMethod(const std::string& method){
+    if (method == "AdamMoulton") {
+        return SolverMethod::kAdamMoulton;
+    }
+    else if (method == "AdamBashforth") {
+        return SolverMethod::kAdamBashforth;
+    }
+    else if (method == "BackwardDifferentiation") {
+        return SolverMethod::kBackwardDifferentiation;
+    }
+    else if (method == "BackwardEuler") {
+        return SolverMethod::kBackwardEuler;
+    }
+    else if (method == "ForwardEuler") {
+        return SolverMethod::kForwardEuler;
+    }
+    else if (method == "ForwardEulerLight") {
+        return SolverMethod::kForwardEulerLight;
+    }
+    else if (method == "RungeKutta") {
+        return SolverMethod::kRungeKutta;
+    }
+    else {
+        // Unknown method, return undefined
+        return SolverMethod::kUndefinedSolver;
+    }
+}
 
 // Parses a tensor from its string representation.
 DynamicTensor Reader::ParseTensor(const std::string& str) {
