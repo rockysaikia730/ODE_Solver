@@ -42,6 +42,18 @@ public:
     ImplicitSolver(const Ode& ode, int num_of_steps, double end_time = 0.0, 
                    int order_solution = 1, int order_derivative = 0,
                    std::shared_ptr<RootFinder> root_finder = nullptr);
+
+    /**
+     * @brief Constructor using a Reader to configure time settings.
+     * @param reader            Reader object to configure the solver.
+     * @param ode               Reference to the ODE system to integrate.
+     * @param order_solution    Order of the multistep scheme for the solution.
+     * @param order_derivative  Order of the multistep scheme for the derivative.
+     * @param root_finder       Shared pointer to a RootFinder used to solve implicit equations.
+     */
+    ImplicitSolver(const Reader& reader, const Ode& ode, 
+                   int order_solution = 1, int order_derivative = 0,
+                   std::shared_ptr<RootFinder> root_finder = nullptr);
     /**
      * @brief Advances the solution by one implicit time step.
      *

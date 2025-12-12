@@ -24,7 +24,14 @@ Bdf::Bdf(const Ode& ode, int num_of_steps, double end_time, int order,
             Reset();
           }
 
-
+Bdf::Bdf(const Reader& reader, const Ode& ode, int order, 
+        std::shared_ptr<RootFinder> root_finder)
+        : ImplicitSolver(reader, ode, order, 0, root_finder),
+          order_(order) 
+          {
+            if(order_ < 1 || order_ > 4) throw std::invalid_argument("Order must be within 1 to 4.");
+            Reset();
+          }
 const std::vector<double>& Bdf::GetCoeffsY() const {
     static const std::vector<double> c1 = {1.0, 1.0};
     static const std::vector<double> c2 = {1.0, 4.0/3.0, -1.0/3.0};

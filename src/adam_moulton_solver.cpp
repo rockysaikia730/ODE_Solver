@@ -18,6 +18,14 @@ AdamMoulton::AdamMoulton(const Ode& ode, int num_of_steps, double end_time,
             Reset();
           }
 
+AdamMoulton::AdamMoulton(const Reader& reader, const Ode& ode, 
+                int order, std::shared_ptr<RootFinder> root_finder)
+        : ImplicitSolver(reader, ode, 1, order, root_finder),
+          order_(order) {
+            if(order > 4 || order < 1) throw std::invalid_argument("Order must be within 1 to 4.");
+            Reset();
+          }
+
 const std::vector<double>& AdamMoulton::GetCoeffsY() const {
     static const std::vector<double> c1 = {1.0, 1.0};
     return c1;

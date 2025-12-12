@@ -23,6 +23,13 @@ public:
      * @param end_time    Final integration time.
      */    
     ForwardEuler(const Ode& ode, double step_size = 0.01, double end_time = 0.0);
+
+    /**
+     * @brief Constructs a Forward Euler solver using a Reader to configure time settings.
+     * @param reader            Reader object to configure the solver.
+     * @param ode               Reference to the ODE system being integrated.
+     */
+    ForwardEuler(const Reader& reader, const Ode& ode);
     /**
      * @brief Constructs a Forward Euler solver using a specified number of steps.
      *

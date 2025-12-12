@@ -5,6 +5,7 @@
 #include <vector>
 #include "dynamic_tensor.h"
 #include "implicit_solver.h"
+#include "reader.h"
 
 /**
  * @class Bdf
@@ -37,6 +38,16 @@ public:
      * @param root_finder     Shared pointer to a RootFinder used to solve the implicit equation.
      */
     Bdf(const Ode& ode, int num_of_steps, double end_time = 0.0, 
+        int order = 4, std::shared_ptr<RootFinder> root_finder = nullptr);
+
+    /**
+     * @brief Constructs a BDF solver using a Reader to configure time settings.
+     * @param reader            Reader object to configure the solver.
+     * @param ode               Reference to the ODE system being integrated.
+     * @param order            Order of the BDF method.
+     * @param root_finder       Shared pointer to a RootFinder used to solve the implicit equation.
+     */
+    Bdf(const Reader& reader, const Ode& ode, 
         int order = 4, std::shared_ptr<RootFinder> root_finder = nullptr);
     /**
      * @brief Returns the order of the BDF method used by the solver.

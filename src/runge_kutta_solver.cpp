@@ -7,6 +7,9 @@ RungeKutta::RungeKutta(const Ode& ode, double step_size, double end_time)
 RungeKutta::RungeKutta(const Ode& ode, int num_of_steps, double end_time) 
     : OdeSolver(ode, num_of_steps, end_time) {}
 
+RungeKutta::RungeKutta(const Reader& reader, const Ode& ode)
+    : OdeSolver(reader, ode) {}
+
 DynamicTensor RungeKutta::ComputeStep() {
     static const double coeffs[3][2] = {
                                         {0.5, 0.5},
