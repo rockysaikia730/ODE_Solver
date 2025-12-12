@@ -64,7 +64,6 @@ TEST(BackwardDifferentiation, Step) {
     int iter = 1000;
     for(int i=0; i<iter; i++) {
         bdf4.Step();
-        std::cout << bdf4.GetSolution() << std::endl;
     }
 
     double tf = t0 + (iter + order-1) * bdf4.GetStepSize();
