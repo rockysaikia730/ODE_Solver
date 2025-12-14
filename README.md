@@ -499,12 +499,16 @@ Shortcomings:
 2. Current implementation completely separates Complex types from Real types and does not allow for using mixed types.
 
 ### Instructions for Building and Documentation
+Cloning the repository:
+
+```bash
+git clone --recurse-submodules https://github.com/rockysaikia730/ODE_Solver.git
+```
 
 Building the project:
 ```bash
-mkdir build && cd build
-cmake ..
-cmake --build .
+cmake -B build
+cmake --build . -- -j
 ```
 Running the tests :
 ```bash
