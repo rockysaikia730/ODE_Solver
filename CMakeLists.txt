@@ -64,12 +64,6 @@ target_link_libraries(core_lib PUBLIC muparserx)
 add_executable(ode_solver src/main.cpp)
 target_link_libraries(ode_solver PRIVATE core_lib)
 
-macro(add_project_test test_name source_file)
-    add_executable(${test_name} ${source_file})
-    target_link_libraries(${test_name} PRIVATE core_lib GTest::gtest_main)
-    gtest_discover_tests(${test_name})
-endmacro()
-
 # ---- All Tests ----
 add_executable(unittests
     Tests/dynamic_tensor_unittest.cpp
