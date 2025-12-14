@@ -19,7 +19,7 @@ TEST(AdamMoulton, Initialisation) {
     EXPECT_EQ(adam_moulton.GetCurrentTime(), 0.01 * (adam_moulton.GetOrder()-1));
     EXPECT_EQ(adam_moulton.GetEndTime(), 0.0);
     EXPECT_EQ(adam_moulton.GetStepSize(), 0.01);
-    EXPECT_EQ(adam_moulton.GetOrder(), 2);
+    EXPECT_EQ(adam_moulton.GetOrder(), 4);
 }
 
 TEST(AdamMoulton, InitialisationUserDefined) {

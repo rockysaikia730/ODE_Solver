@@ -75,7 +75,7 @@ add_executable(unittests
     Tests/dynamic_tensor_unittest.cpp
     Tests/function_unittest.cpp
     Tests/newton_raphson_unittest.cpp
-    #Tests/runge_kutta_unittest.cpp
+    Tests/runge_kutta_unittest.cpp
     Tests/adamsbashforth_unittest.cpp
     Tests/backward_differentiation_unittest.cpp
     Tests/adam_moulton_unittest.cpp
