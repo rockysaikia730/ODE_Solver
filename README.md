@@ -508,7 +508,7 @@ git clone --recurse-submodules https://github.com/rockysaikia730/ODE_Solver.git
 Building the project:
 ```bash
 cmake -B build
-cmake --build . -- -j
+cmake --build build -- -j
 ```
 Running the tests :
 ```bash
