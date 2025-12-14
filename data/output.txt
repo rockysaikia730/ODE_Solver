@@ -1,8 +1,4 @@
-t=3.03
+t=3
 step_size=0.01
 number_of_steps=300
-<<<<<<< HEAD
-y= [1.99378]
-=======
 y= [1.98999]
->>>>>>> refs/remotes/origin/main
